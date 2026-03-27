@@ -1,9 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// Serve the dashboard HTML at the root URL
+app.use(express.static(path.join(__dirname, 'public')));
 
 // In-memory data store
 let igData = {
@@ -107,7 +111,7 @@ app.post('/update', (req, res) => {
 });
 
 // ── HEALTH CHECK ──────────────────────────────────────────────────────────
-app.get('/', (req, res) => {
+app.get('/health', (req, res) => {
   res.json({
     status: 'Tribal Cowboy Webhook Server is running',
     instagram_last_updated: igData.last_updated || 'No data yet',

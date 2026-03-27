@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Tribal Cowboy LLC — Command Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FAFAF7;--white:#FFFFFF;--gold:#D4A843;--gold-dark:#A07A1E;
+  --gold-deeper:#854F0B;--amber-bg:#FAEEDA;--amber-text:#633806;
+  --green-bg:#EAF3DE;--green-text:#27500A;--green-dark:#3B6D11;
+  --teal:#0F6E56;--teal-bg:#E1F5EE;--teal-text:#085041;
+  --red-bg:#FCEBEB;--red-text:#791F1F;--red-dark:#A32D2D;
+  --border:#E8E4DC;--text:#1A1410;--text-mid:#5C5040;--text-light:#8A7D6E;
+  --card-shadow:0 1px 4px rgba(0,0,0,0.07);
+}
+body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min-height:100vh}
+
+/* HEADER */
+.hdr{background:var(--white);border-bottom:4px solid var(--gold);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--card-shadow)}
+.hdr-left{}
+.hdr-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text);letter-spacing:0.01em}
+.hdr-name em{color:var(--gold-dark);font-style:italic}
+.hdr-sub{font-size:11px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin-top:2px}
+.hdr-right{text-align:right}
+.hdr-date{font-size:13px;color:var(--text-mid);font-weight:700}
+.live-pill{display:inline-flex;align-items:center;gap:5px;background:var(--green-bg);color:var(--green-text);font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;margin-top:5px;letter-spacing:0.05em}
+.live-dot{width:6px;height:6px;background:var(--green-dark);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+.refresh-note{font-size:11px;color:var(--text-light);margin-top:3px}
+
+/* TABS */
+.tabs{display:flex;gap:4px;padding:0.85rem 1.25rem 0;background:var(--white);border-bottom:1.5px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:0.55rem 1rem;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;color:var(--text-light);cursor:pointer;border-bottom:3px solid transparent;border-radius:6px 6px 0 0;transition:all 0.15s;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+.tab.on{color:var(--gold-dark);border-bottom-color:var(--gold);background:var(--amber-bg)}
+.tab:hover:not(.on){background:#F5F2EC;color:var(--text)}
+
+/* BODY */
+.body{padding:1rem 1.25rem;max-width:700px;margin:0 auto}
+
+/* GREETING */
+.greet{background:var(--amber-bg);border-left:5px solid var(--gold);border-radius:0 10px 10px 0;padding:1rem 1.1rem;margin-bottom:1rem;font-family:'Playfair Display',serif;font-size:15px;color:var(--amber-text);font-style:italic;line-height:1.7}
+.greet strong{color:#412402;font-style:normal;font-weight:700}
+
+/* ERROR BANNER */
+.api-notice{background:var(--teal-bg);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:0.75rem 1rem;margin-bottom:1rem;font-size:13px;color:var(--teal-text);font-weight:700;line-height:1.5;display:none}
+.api-notice a{color:var(--teal);text-decoration:underline;cursor:pointer}
+
+/* STAT CARDS */
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:1rem}
+.sc{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:1rem 1.1rem;box-shadow:var(--card-shadow)}
+.sc-label{font-size:11px;font-weight:700;color:var(--text-light);margin-bottom:6px;letter-spacing:0.07em;text-transform:uppercase}
+.sc-val{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;line-height:1;color:var(--text)}
+.sc-val.amber{color:var(--gold-deeper)}
+.sc-val.teal{color:var(--teal)}
+.sc-val.green{color:var(--green-dark)}
+.sc-delta{font-size:12px;font-weight:700;margin-top:5px}
+.up{color:var(--green-dark)}.dn{color:var(--red-dark)}.neutral{color:var(--gold-deeper)}
+.loading-val{font-size:14px;color:var(--text-light);font-family:'Lato',sans-serif;font-style:italic}
+
+/* SECTIONS */
+.section{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;box-shadow:var(--card-shadow)}
+.sec-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:0.85rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+/* BADGES */
+.badge{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:0.04em;white-space:nowrap}
+.badge-green{background:var(--green-bg);color:var(--green-text)}
+.badge-amber{background:var(--amber-bg);color:var(--amber-text)}
+.badge-red{background:var(--red-bg);color:var(--red-text)}
+.badge-teal{background:var(--teal-bg);color:var(--teal-text)}
+
+/* ROW ITEMS */
+.row-item{display:flex;align-items:center;justify-content:space-between;padding:0.7rem 0.85rem;border-radius:8px;margin-bottom:7px;border:1px solid var(--border);background:#FAFAF7}
+.row-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:500;color:var(--text)}
+.row-meta{font-size:12px;color:var(--text-light);font-weight:700;margin-top:2px}
+.row-right{text-align:right;flex-shrink:0;padding-left:10px}
+.row-date{font-size:12px;font-weight:700;color:var(--text-mid);margin-bottom:4px}
+
+/* WORKING/FLOPPING */
+.ww{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ww-card{border-radius:10px;padding:0.85rem}
+.ww-card.w{background:var(--green-bg);border:1.5px solid #97C459}
+.ww-card.f{background:var(--red-bg);border:1.5px solid #F09595}
+.ww-title{font-size:11px;font-weight:700;margin-bottom:0.5rem;letter-spacing:0.07em;text-transform:uppercase}
+.w .ww-title{color:var(--green-text)}.f .ww-title{color:var(--red-text)}
+.ww-item{font-size:13px;font-weight:400;line-height:1.9;padding-left:12px;position:relative}
+.ww-item::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%}
+.w .ww-item{color:var(--green-dark)}.w .ww-item::before{background:var(--green-dark)}
+.f .ww-item{color:var(--red-dark)}.f .ww-item::before{background:var(--red-dark)}
+
+/* COMMENTS */
+.comment-card{background:#FAFAF7;border-radius:10px;border:1px solid var(--border);border-left:5px solid var(--gold);padding:0.85rem 1rem;margin-bottom:9px}
+.comment-src{font-size:10px;font-weight:700;color:var(--gold-deeper);margin-bottom:5px;letter-spacing:0.08em;text-transform:uppercase}
+.comment-txt{font-family:'Playfair Display',serif;font-size:14px;color:var(--text);font-style:italic;line-height:1.7}
+.comment-who{font-size:12px;color:var(--text-light);font-weight:700;margin-top:5px}
+
+/* BARS */
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.bar-lbl{font-size:13px;font-weight:700;color:var(--text);width:115px;flex-shrink:0}
+.bar-track{flex:1;height:10px;background:#F0EDE6;border-radius:5px;overflow:hidden;border:1px solid var(--border)}
+.bar-fill{height:100%;border-radius:5px;background:var(--gold)}
+.bar-pct{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--gold-deeper);width:36px;text-align:right}
+
+/* BOOKINGS EDITOR */
+.edit-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;color:var(--gold-dark);background:var(--amber-bg);border:1px solid var(--gold);border-radius:6px;padding:4px 10px;cursor:pointer;letter-spacing:0.04em;margin-left:auto}
+.edit-btn:hover{background:var(--gold);color:#fff}
+.booking-form{display:none;background:#F5F0E8;border-radius:10px;padding:1rem;margin-top:0.75rem;border:1px solid var(--gold)}
+.booking-form.open{display:block}
+.form-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:0.75rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.form-row input, .form-row select{font-family:'Lato',sans-serif;font-size:13px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;background:var(--white);color:var(--text);width:100%}
+.form-full input{font-family:'Lato',sans-serif;font-size:13px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;background:var(--white);color:var(--text);width:100%;margin-bottom:8px}
+.form-actions{display:flex;gap:8px;margin-top:4px}
+.btn-save{font-family:'Lato',sans-serif;font-size:13px;font-weight:700;background:var(--gold);color:#412402;border:none;border-radius:6px;padding:8px 18px;cursor:pointer;letter-spacing:0.04em}
+.btn-cancel{font-family:'Lato',sans-serif;font-size:13px;font-weight:700;background:none;color:var(--text-light);border:1px solid var(--border);border-radius:6px;padding:8px 14px;cursor:pointer}
+.del-btn{font-size:11px;color:var(--red-dark);cursor:pointer;font-weight:700;background:none;border:none;padding:2px 6px;font-family:'Lato',sans-serif}
+.del-btn:hover{text-decoration:underline}
+
+/* POST CARDS */
+.post-card{background:#FAFAF7;border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.85rem;margin-bottom:7px}
+.post-caption{font-family:'Playfair Display',serif;font-size:14px;color:var(--text);line-height:1.6;font-style:italic;margin-bottom:6px}
+.post-stats{display:flex;gap:1rem;flex-wrap:wrap}
+.post-stat{font-size:12px;font-weight:700;color:var(--text-light)}
+.post-stat span{color:var(--text-mid)}
+
+/* FOOTER */
+.ftr{padding:0.7rem 1.25rem;border-top:1.5px solid var(--border);display:flex;justify-content:space-between;background:var(--white);margin-top:0.5rem}
+.ftr-txt{font-size:12px;color:var(--text-light);font-weight:700;letter-spacing:0.03em}
+
+/* PAGES */
+.page{display:none}.page.on{display:block}
+
+/* SETUP MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);border-radius:16px;padding:1.5rem;max-width:500px;width:100%;max-height:90vh;overflow-y:auto}
+.modal h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--text);margin-bottom:0.5rem}
+.modal p{font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:1rem}
+.modal label{display:block;font-size:12px;font-weight:700;color:var(--text-mid);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px;margin-top:0.75rem}
+.modal input{width:100%;font-family:'Lato',sans-serif;font-size:14px;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;color:var(--text);margin-bottom:4px}
+.modal input:focus{outline:none;border-color:var(--gold)}
+.modal-hint{font-size:11px;color:var(--text-light);line-height:1.5;margin-bottom:0.5rem}
+.modal-actions{display:flex;gap:8px;margin-top:1.25rem}
+.btn-primary{font-family:'Lato',sans-serif;font-size:14px;font-weight:700;background:var(--gold);color:#412402;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;flex:1}
+.btn-secondary{font-family:'Lato',sans-serif;font-size:14px;font-weight:700;background:none;color:var(--text-mid);border:1.5px solid var(--border);border-radius:8px;padding:10px 16px;cursor:pointer}
+.step-list{padding-left:1rem}
+.step-list li{font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:2px}
+.step-list a{color:var(--teal);text-decoration:underline}
+
+@media(max-width:480px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ww{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .hdr-name{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- MANUAL STATS EDITOR -->
+<div class="modal-overlay" id="setupModal">
+  <div class="modal">
+    <h2>Update Your Stats</h2>
+    <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:1rem">Open Instagram Insights on your phone, type your numbers here, and hit Save. Takes 2 minutes. Your webhook server will automatically pull live data once Meta approves the app.</p>
+
+    <div style="background:#F5F2EC;border-radius:8px;padding:0.75rem 1rem;margin-bottom:1rem">
+      <p style="font-size:12px;font-weight:700;color:var(--gold-deeper);margin-bottom:2px">INSTAGRAM</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Followers</label><input type="number" id="m-ig-followers" placeholder="e.g. 2847"></div>
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Weekly Reach</label><input type="number" id="m-ig-reach" placeholder="e.g. 4812"></div>
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Impressions (7d)</label><input type="number" id="m-ig-impressions" placeholder="e.g. 18400"></div>
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Profile Views (7d)</label><input type="number" id="m-ig-views" placeholder="e.g. 312"></div>
+      </div>
+    </div>
+
+    <div style="background:#F5F2EC;border-radius:8px;padding:0.75rem 1rem;margin-bottom:1rem">
+      <p style="font-size:12px;font-weight:700;color:var(--gold-deeper);margin-bottom:2px">FACEBOOK</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Page Followers</label><input type="number" id="m-fb-followers" placeholder="e.g. 246"></div>
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Weekly Reach</label><input type="number" id="m-fb-reach" placeholder="e.g. 3100"></div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:var(--text-light);margin-bottom:0.75rem">Where to find these: Instagram app &rarr; Professional dashboard &rarr; Insights. Facebook &rarr; Tribal Cowboy page &rarr; Insights.</p>
+
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeStatsEditor()">Cancel</button>
+      <button class="btn-primary" onclick="saveManualStats()">Save Stats</button>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-left">
+    <div class="hdr-name">Tribal <em>Cowboy</em> LLC</div>
+    <div class="hdr-sub">Command Center</div>
+  </div>
+  <div class="hdr-right">
+    <div class="hdr-date" id="todayDate"></div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+      <div class="live-pill"><span class="live-dot"></span> <span id="liveLabel">Live</span></div>
+      <button onclick="openStatsEditor()" style="font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--amber-bg);color:var(--gold-deeper);border:1px solid var(--gold);border-radius:20px;padding:4px 10px;cursor:pointer;letter-spacing:0.04em">Update Stats</button>
+    </div>
+    <div class="refresh-note" id="lastRefresh"></div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab on" onclick="go('overview',this)">Overview</div>
+  <div class="tab" onclick="go('instagram',this)">Instagram</div>
+  <div class="tab" onclick="go('facebook',this)">Facebook</div>
+  <div class="tab" onclick="go('deals',this)">Bookings</div>
+  <div class="tab" onclick="go('heart',this)">Why I Do This</div>
+</div>
+
+<!-- MAIN BODY -->
+<div class="body">
+
+  <!-- API NOTICE -->
+  <div class="api-notice" id="apiNotice">
+    Using saved data. <a href="#" onclick="openStatsEditor()">Update your stats manually</a> or check your webhook server is running at tribal-cowboy-webhook.onrender.com
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div id="p-overview" class="page on">
+    <div class="greet" id="greetMsg">Good morning, Stacie. Loading your latest data...</div>
+    <div class="stats">
+      <div class="sc"><div class="sc-label">Weekly Reach</div><div class="sc-val amber" id="ov-reach"><span class="loading-val">Loading...</span></div><div class="sc-delta up" id="ov-reach-d"></div></div>
+      <div class="sc"><div class="sc-label">Bookings This Month</div><div class="sc-val" id="ov-bookings">—</div><div class="sc-delta up" id="ov-book-d"></div></div>
+      <div class="sc"><div class="sc-label">Revenue This Month</div><div class="sc-val teal" id="ov-revenue">—</div><div class="sc-delta up" id="ov-rev-d"></div></div>
+      <div class="sc"><div class="sc-label">Open Inquiries</div><div class="sc-val green" id="ov-inquiries">—</div><div class="sc-delta neutral" id="ov-inq-d"></div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Upcoming Events <span class="badge badge-teal">This Month</span></div>
+      <div id="ov-events"></div>
+    </div>
+  </div>
+
+  <!-- INSTAGRAM TAB -->
+  <div id="p-instagram" class="page">
+    <div class="stats">
+      <div class="sc"><div class="sc-label">Followers</div><div class="sc-val amber" id="ig-followers"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="ig-fol-d"></div></div>
+      <div class="sc"><div class="sc-label">Reach (7 days)</div><div class="sc-val" id="ig-reach"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="ig-reach-d"></div></div>
+      <div class="sc"><div class="sc-label">Impressions (7d)</div><div class="sc-val teal" id="ig-impress"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="ig-imp-d"></div></div>
+      <div class="sc"><div class="sc-label">Profile Views (7d)</div><div class="sc-val green" id="ig-views"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="ig-view-d"></div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Recent Posts</div>
+      <div id="ig-posts"><div style="font-size:13px;color:var(--text-light);font-style:italic">Loading recent posts...</div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">What is working</div>
+      <div class="ww">
+        <div class="ww-card w">
+          <div class="ww-title">Working</div>
+          <div class="ww-item">Clydesdale video</div>
+          <div class="ww-item">SpotMyPhotos callouts</div>
+          <div class="ww-item">Family &amp; kid stories</div>
+          <div class="ww-item">Behind-the-scenes reels</div>
+        </div>
+        <div class="ww-card f">
+          <div class="ww-title">Not working</div>
+          <div class="ww-item">Static price posts</div>
+          <div class="ww-item">Text-heavy captions</div>
+          <div class="ww-item">Generic event promos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FACEBOOK TAB -->
+  <div id="p-facebook" class="page">
+    <div class="stats">
+      <div class="sc"><div class="sc-label">Page Followers</div><div class="sc-val amber" id="fb-followers"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="fb-fol-d"></div></div>
+      <div class="sc"><div class="sc-label">Page Reach (7d)</div><div class="sc-val" id="fb-reach"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="fb-reach-d"></div></div>
+      <div class="sc"><div class="sc-label">Post Engagements</div><div class="sc-val teal" id="fb-engage"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="fb-eng-d"></div></div>
+      <div class="sc"><div class="sc-label">Page Views (7d)</div><div class="sc-val green" id="fb-views"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="fb-view-d"></div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Recent Facebook Posts</div>
+      <div id="fb-posts"><div style="font-size:13px;color:var(--text-light);font-style:italic">Loading recent posts...</div></div>
+    </div>
+  </div>
+
+  <!-- BOOKINGS TAB -->
+  <div id="p-deals" class="page">
+    <div class="stats">
+      <div class="sc"><div class="sc-label">Confirmed</div><div class="sc-val green" id="bk-confirmed">—</div><div class="sc-delta up">This month</div></div>
+      <div class="sc"><div class="sc-label">Pending</div><div class="sc-val amber" id="bk-pending">—</div><div class="sc-delta neutral">Needs follow-up</div></div>
+      <div class="sc"><div class="sc-label">Revenue (MTD)</div><div class="sc-val teal" id="bk-revenue">—</div><div class="sc-delta up">Booked</div></div>
+      <div class="sc"><div class="sc-label">Pipeline</div><div class="sc-val" id="bk-pipeline">—</div><div class="sc-delta neutral">Est. value</div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Booking Pipeline
+        <button class="edit-btn" onclick="toggleForm()">+ Add Booking</button>
+      </div>
+      <div class="booking-form" id="bookingForm">
+        <div class="form-title">Add a booking or inquiry</div>
+        <div class="form-full"><input type="text" id="bk-name" placeholder="Event or client name"></div>
+        <div class="form-row">
+          <input type="text" id="bk-type" placeholder="Service type (e.g. Pony Rides)">
+          <input type="date" id="bk-date">
+        </div>
+        <div class="form-row">
+          <input type="text" id="bk-value" placeholder="Value (e.g. $600)">
+          <select id="bk-status">
+            <option value="Confirmed">Confirmed</option>
+            <option value="Pending">Pending</option>
+            <option value="Inquiry Sent">Inquiry Sent</option>
+          </select>
+        </div>
+        <div class="form-full"><input type="text" id="bk-notes" placeholder="Notes (next step, contact, etc.)"></div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="toggleForm()">Cancel</button>
+          <button class="btn-save" onclick="addBooking()">Save Booking</button>
+        </div>
+      </div>
+      <div id="bookings-list"></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Service Popularity</div>
+      <div class="bar-row"><span class="bar-lbl">Photo Prop</span><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div><span class="bar-pct">78%</span></div>
+      <div class="bar-row"><span class="bar-lbl">Pony Rides</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><span class="bar-pct">55%</span></div>
+      <div class="bar-row"><span class="bar-lbl">Pony Parties</span><div class="bar-track"><div class="bar-fill" style="width:42%"></div></div><span class="bar-pct">42%</span></div>
+      <div class="bar-row"><span class="bar-lbl">Wagon Rides</span><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div><span class="bar-pct">30%</span></div>
+      <div class="bar-row"><span class="bar-lbl">Ed. Programs</span><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div><span class="bar-pct">20%</span></div>
+    </div>
+  </div>
+
+  <!-- WHY I DO THIS TAB -->
+  <div id="p-heart" class="page">
+    <div class="greet">"We bring horses to the people who need them most. Every child who touches a horse for the first time leaves a little different." &mdash; Stacie</div>
+    <div class="section">
+      <div class="sec-title">What people are saying</div>
+      <div class="comment-card"><div class="comment-src">Instagram</div><div class="comment-txt">"My daughter hasn't stopped talking about the pony. She told her whole class. This was the best day of her year."</div><div class="comment-who">&#8212; @north_idaho_mama</div></div>
+      <div class="comment-card"><div class="comment-src">Facebook</div><div class="comment-txt">"The Clydesdales were stunning. Photos through SpotMyPhotos came instantly. Hiring again for sure."</div><div class="comment-who">&#8212; Tamara L., Hayden ID</div></div>
+      <div class="comment-card"><div class="comment-src">Booking Form</div><div class="comment-txt">"We've done the pony party twice now. You are the most professional and warm team we've ever hired."</div><div class="comment-who">&#8212; Client, Coeur d'Alene</div></div>
+      <div class="comment-card"><div class="comment-src">Instagram Story Reply</div><div class="comment-txt">"Seeing Indigenous-owned in your bio made me book immediately. Representation matters and so do these animals."</div><div class="comment-who">&#8212; @spokane_mom_life</div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">How people feel about Tribal Cowboy</div>
+      <div class="bar-row"><span class="bar-lbl">Would rebook</span><div class="bar-track"><div class="bar-fill" style="width:89%"></div></div><span class="bar-pct">89%</span></div>
+      <div class="bar-row"><span class="bar-lbl">Professionalism</span><div class="bar-track"><div class="bar-fill" style="width:94%"></div></div><span class="bar-pct">94%</span></div>
+      <div class="bar-row"><span class="bar-lbl">Animal connection</span><div class="bar-track"><div class="bar-fill" style="width:87%"></div></div><span class="bar-pct">87%</span></div>
+      <div class="bar-row"><span class="bar-lbl">Family experience</span><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div><span class="bar-pct">92%</span></div>
+    </div>
+  </div>
+
+</div><!-- end body -->
+
+<div class="ftr">
+  <span class="ftr-txt">www.tribalcowboy.com</span>
+  <span class="ftr-txt"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a43444c456a5e5843484b4649455d48455304494547">[email&#160;protected]</a></span>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── SAMPLE DATA (used when no API tokens set) ──────────────────────────────
+const SAMPLE = {
+  ig:{followers:2847,reach:4812,impressions:18400,profileViews:312,
+    posts:[
+      {caption:"When the Clydesdales show up to the party... the whole crowd stops.",likes:214,comments:18,saves:44},
+      {caption:"Your kiddo on a pony + SpotMyPhotos = photos in your hands before you leave.",likes:187,comments:29,saves:61},
+      {caption:"North Idaho spring is calling. Wagon rides are booking for May.",likes:143,comments:11,saves:22}
+    ]
+  },
+  fb:{followers:1203,reach:3100,engagement:287,views:420,
+    posts:[
+      {message:"Tribal Cowboy is headed to North 40 Spring Fest on April 5th! Pony rides, photos, and all the good stuff.",likes:98,comments:14,shares:22},
+      {message:"SpotMyPhotos means your family's pony photos are delivered instantly via facial recognition. No waiting, no hunting.",likes:74,comments:9,shares:11}
+    ]
+  }
+};
+
+const DEFAULT_BOOKINGS = [
+  {name:"North 40 Spring Fest",type:"Pony Rides",date:"2026-04-05",value:"$600",status:"Confirmed",notes:"Follow up Apr 1"},
+  {name:"Silver Lake Mall Pop-Up",type:"Photo Prop",date:"2026-04-12",value:"$800",status:"Pending",notes:"Awaiting contract"},
+  {name:"Cocolalla Church Fest",type:"Pony + Photo",date:"2026-04-19",value:"$450",status:"Confirmed",notes:"Confirmed, prep now"},
+  {name:"Private Birthday Party",type:"Pony Party",date:"2026-04-27",value:"$350",status:"Confirmed",notes:"Deposit received"},
+  {name:"Art on the Green CdA",type:"Featured Experience",date:"2026-07-01",value:"$1,200",status:"Inquiry Sent",notes:"Proposal sent"}
+];
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+let bookings = JSON.parse(localStorage.getItem('tc_bookings') || 'null') || DEFAULT_BOOKINGS;
+let igData = null, fbData = null;
+
+// ── INIT ───────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', ()=>{
+  setDate();
+  renderBookings();
+  fetchFromWebhook();
+  setInterval(fetchFromWebhook, 5*60*1000);
+});
+
+function setDate(){
+  const d = new Date();
+  document.getElementById('todayDate').textContent = d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+}
+
+// ── WEBHOOK SERVER ────────────────────────────────────────────────────────
+const WEBHOOK_URL = 'https://tribal-cowboy-webhook.onrender.com';
+
+async function fetchFromWebhook(){
+  try {
+    const r = await fetch(`${WEBHOOK_URL}/data`);
+    if(!r.ok) throw new Error('Server not responding');
+    const data = await r.json();
+
+    // Use webhook data if it has been updated, otherwise use saved manual data
+    if(data.instagram && data.instagram.last_updated){
+      igData = { ...igData, ...data.instagram };
+    }
+    if(data.facebook && data.facebook.last_updated){
+      fbData = { ...fbData, ...data.facebook };
+    }
+
+    renderInstagram();
+    renderFacebook();
+    renderOverview();
+    updateLastRefresh();
+    document.getElementById('liveLabel').textContent = 'Live';
+    document.getElementById('apiNotice').style.display = 'none';
+  } catch(e){
+    console.warn('Webhook server error:', e.message);
+    useSavedData();
+  }
+}
+
+async function pushToWebhook(type, data){
+  try {
+    await fetch(`${WEBHOOK_URL}/update`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({type, data})
+    });
+  } catch(e){
+    console.warn('Could not push to webhook:', e.message);
+  }
+}
+
+function useSavedData(){
+  const savedIg = localStorage.getItem('tc_ig_data');
+  const savedFb = localStorage.getItem('tc_fb_data');
+  igData = savedIg ? JSON.parse(savedIg) : SAMPLE.ig;
+  fbData = savedFb ? JSON.parse(savedFb) : SAMPLE.fb;
+  renderInstagram();
+  renderFacebook();
+  renderOverview();
+  document.getElementById('liveLabel').textContent = savedIg ? 'Manual' : 'Sample Data';
+  document.getElementById('apiNotice').style.display = savedIg ? 'none' : 'block';
+}
+
+// ── RENDER INSTAGRAM ───────────────────────────────────────────────────────
+function renderInstagram(){
+  if(!igData) return;
+  document.getElementById('ig-followers').textContent = fmt(igData.followers);
+  document.getElementById('ig-fol-d').className='sc-delta up';
+  document.getElementById('ig-fol-d').textContent='▲ Growing';
+  document.getElementById('ig-reach').textContent = fmt(igData.reach);
+  document.getElementById('ig-reach-d').className='sc-delta up';
+  document.getElementById('ig-reach-d').textContent='▲ 7 day total';
+  document.getElementById('ig-impress').textContent = fmt(igData.impressions);
+  document.getElementById('ig-imp-d').className='sc-delta';
+  document.getElementById('ig-imp-d').textContent='7 day total';
+  document.getElementById('ig-views').textContent = fmt(igData.profileViews);
+  document.getElementById('ig-view-d').className='sc-delta';
+  document.getElementById('ig-view-d').textContent='7 day total';
+
+  const postsEl = document.getElementById('ig-posts');
+  if(igData.posts&&igData.posts.length){
+    postsEl.innerHTML = igData.posts.map(p=>`
+      <div class="post-card">
+        <div class="post-caption">${escHtml(p.caption||'(no caption)')}</div>
+        <div class="post-stats">
+          <span class="post-stat">&#9829; <span>${fmt(p.likes)}</span></span>
+          <span class="post-stat">&#128172; <span>${fmt(p.comments)}</span></span>
+          ${p.saves?`<span class="post-stat">&#128278; <span>${fmt(p.saves)} saves</span></span>`:''}
+        </div>
+      </div>`).join('');
+  } else {
+    postsEl.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic">No recent posts found.</div>';
+  }
+}
+
+// ── RENDER FACEBOOK ────────────────────────────────────────────────────────
+function renderFacebook(){
+  if(!fbData) return;
+  document.getElementById('fb-followers').textContent = fmt(fbData.followers);
+  document.getElementById('fb-fol-d').className='sc-delta up';
+  document.getElementById('fb-fol-d').textContent='▲ Page likes';
+  document.getElementById('fb-reach').textContent = fmt(fbData.reach);
+  document.getElementById('fb-reach-d').className='sc-delta up';
+  document.getElementById('fb-reach-d').textContent='▲ 7 day reach';
+  document.getElementById('fb-engage').textContent = fmt(fbData.engagement);
+  document.getElementById('fb-eng-d').className='sc-delta';
+  document.getElementById('fb-eng-d').textContent='7 day total';
+  document.getElementById('fb-views').textContent = fmt(fbData.views);
+  document.getElementById('fb-view-d').className='sc-delta';
+  document.getElementById('fb-view-d').textContent='7 day total';
+
+  const postsEl = document.getElementById('fb-posts');
+  if(fbData.posts&&fbData.posts.length){
+    postsEl.innerHTML = fbData.posts.map(p=>`
+      <div class="post-card">
+        <div class="post-caption">${escHtml(p.message||'(no message)')}</div>
+        <div class="post-stats">
+          <span class="post-stat">&#9829; <span>${fmt(p.likes)}</span></span>
+          <span class="post-stat">&#128172; <span>${fmt(p.comments)}</span></span>
+          <span class="post-stat">&#8594; <span>${fmt(p.shares)} shares</span></span>
+        </div>
+      </div>`).join('');
+  } else {
+    postsEl.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic">No recent posts found.</div>';
+  }
+}
+
+// ── RENDER OVERVIEW ────────────────────────────────────────────────────────
+function renderOverview(){
+  const h = new Date().getHours();
+  const greet = h<12?'Good morning':h<17?'Good afternoon':'Good evening';
+  const confirmed = bookings.filter(b=>b.status==='Confirmed').length;
+  const pending = bookings.filter(b=>b.status==='Pending'||b.status==='Inquiry Sent').length;
+  document.getElementById('greetMsg').innerHTML = `${greet}, Stacie. You have <strong>${confirmed} confirmed bookings</strong> this month and <strong>${pending} items</strong> needing attention.`;
+
+  if(igData){
+    document.getElementById('ov-reach').textContent = fmt(igData.reach);
+    document.getElementById('ov-reach-d').className='sc-delta up';
+    document.getElementById('ov-reach-d').textContent='▲ 7 day Instagram reach';
+  }
+
+  document.getElementById('ov-bookings').textContent = confirmed;
+  document.getElementById('ov-book-d').className='sc-delta up';
+  document.getElementById('ov-book-d').textContent=`▲ ${confirmed} confirmed`;
+
+  const revenue = bookings.filter(b=>b.status==='Confirmed').reduce((s,b)=>s+parseMoney(b.value),0);
+  document.getElementById('ov-revenue').textContent = '$'+revenue.toLocaleString();
+  document.getElementById('ov-rev-d').className='sc-delta up';
+  document.getElementById('ov-rev-d').textContent='▲ Confirmed value';
+
+  document.getElementById('ov-inquiries').textContent = pending;
+  document.getElementById('ov-inq-d').className='sc-delta neutral';
+  document.getElementById('ov-inq-d').textContent='► Needs follow-up';
+
+  const statusClass = {Confirmed:'badge-green',Pending:'badge-amber','Inquiry Sent':'badge-red'};
+  const eventsEl = document.getElementById('ov-events');
+  const sorted = [...bookings].sort((a,b)=>new Date(a.date)-new Date(b.date));
+  eventsEl.innerHTML = sorted.map(b=>`
+    <div class="row-item">
+      <div>
+        <div class="row-name">${escHtml(b.name)}</div>
+        <div class="row-meta">${escHtml(b.type)}${b.notes?` &bull; ${escHtml(b.notes)}`:''}</div>
+      </div>
+      <div class="row-right">
+        <div class="row-date">${formatDate(b.date)}</div>
+        <span class="badge ${statusClass[b.status]||'badge-amber'}">${b.status}</span>
+      </div>
+    </div>`).join('');
+}
+
+// ── BOOKINGS ───────────────────────────────────────────────────────────────
+function renderBookings(){
+  const statusClass={Confirmed:'badge-green',Pending:'badge-amber','Inquiry Sent':'badge-red'};
+  const el = document.getElementById('bookings-list');
+  if(!bookings.length){
+    el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic;padding:0.5rem">No bookings yet. Add one above.</div>';
+  } else {
+    el.innerHTML = bookings.map((b,i)=>`
+      <div class="row-item">
+        <div>
+          <div class="row-name">${escHtml(b.name)}</div>
+          <div class="row-meta">${escHtml(b.type)} &bull; ${escHtml(b.value)} &bull; ${formatDate(b.date)}${b.notes?` &bull; ${escHtml(b.notes)}`:''}</div>
+        </div>
+        <div class="row-right">
+          <span class="badge ${statusClass[b.status]||'badge-amber'}">${b.status}</span>
+          <br><button class="del-btn" onclick="deleteBooking(${i})">remove</button>
+        </div>
+      </div>`).join('');
+  }
+  const confirmed = bookings.filter(b=>b.status==='Confirmed').length;
+  const pending = bookings.filter(b=>b.status==='Pending').length;
+  const revenue = bookings.filter(b=>b.status==='Confirmed').reduce((s,b)=>s+parseMoney(b.value),0);
+  const pipeline = bookings.reduce((s,b)=>s+parseMoney(b.value),0);
+  document.getElementById('bk-confirmed').textContent = confirmed;
+  document.getElementById('bk-pending').textContent = pending;
+  document.getElementById('bk-revenue').textContent = '$'+revenue.toLocaleString();
+  document.getElementById('bk-pipeline').textContent = '$'+pipeline.toLocaleString();
+  saveBookings();
+}
+
+function addBooking(){
+  const name=document.getElementById('bk-name').value.trim();
+  if(!name){alert('Please enter an event name.');return;}
+  bookings.push({
+    name,
+    type:document.getElementById('bk-type').value.trim()||'General',
+    date:document.getElementById('bk-date').value||new Date().toISOString().split('T')[0],
+    value:document.getElementById('bk-value').value.trim()||'$0',
+    status:document.getElementById('bk-status').value,
+    notes:document.getElementById('bk-notes').value.trim()
+  });
+  ['bk-name','bk-type','bk-date','bk-value','bk-notes'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('bk-status').value='Confirmed';
+  toggleForm();
+  renderBookings();
+  renderOverview();
+}
+
+function deleteBooking(i){
+  if(!confirm('Remove this booking?')) return;
+  bookings.splice(i,1);
+  renderBookings();
+  renderOverview();
+}
+
+function saveBookings(){localStorage.setItem('tc_bookings',JSON.stringify(bookings));}
+function toggleForm(){document.getElementById('bookingForm').classList.toggle('open');}
+
+// ── MANUAL STATS MODAL ────────────────────────────────────────────────────
+function openStatsEditor(){
+  // Pre-fill with current values
+  if(igData){
+    document.getElementById('m-ig-followers').value = igData.followers||'';
+    document.getElementById('m-ig-reach').value = igData.reach||'';
+    document.getElementById('m-ig-impressions').value = igData.impressions||'';
+    document.getElementById('m-ig-views').value = igData.profile_views||igData.profileViews||'';
+  }
+  if(fbData){
+    document.getElementById('m-fb-followers').value = fbData.followers||'';
+    document.getElementById('m-fb-reach').value = fbData.reach||'';
+  }
+  document.getElementById('setupModal').classList.add('open');
+}
+function closeStatsEditor(){
+  document.getElementById('setupModal').classList.remove('open');
+}
+async function saveManualStats(){
+  const ig = {
+    followers: parseInt(document.getElementById('m-ig-followers').value)||0,
+    reach: parseInt(document.getElementById('m-ig-reach').value)||0,
+    impressions: parseInt(document.getElementById('m-ig-impressions').value)||0,
+    profile_views: parseInt(document.getElementById('m-ig-views').value)||0,
+    posts: igData ? igData.posts : []
+  };
+  const fb = {
+    followers: parseInt(document.getElementById('m-fb-followers').value)||0,
+    reach: parseInt(document.getElementById('m-fb-reach').value)||0,
+    engagement: fbData ? fbData.engagement : 0
+  };
+  // Save locally right away
+  localStorage.setItem('tc_ig_data', JSON.stringify(ig));
+  localStorage.setItem('tc_fb_data', JSON.stringify(fb));
+  igData = ig; fbData = fb;
+  // Also push to webhook server
+  try {
+    await Promise.all([
+      fetch(WEBHOOK_URL+'/update',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'instagram',data:ig})}),
+      fetch(WEBHOOK_URL+'/update',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'facebook',data:fb})})
+    ]);
+  } catch(e){ console.warn('Webhook push failed, saved locally only'); }
+  closeStatsEditor();
+  renderInstagram(); renderFacebook(); renderOverview();
+  document.getElementById('liveLabel').textContent = 'Updated';
+  updateLastRefresh();
+}
+
+// ── UTILS ──────────────────────────────────────────────────────────────────
+function go(name,el){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('p-'+name).classList.add('on');
+}
+function fmt(n){if(n===undefined||n===null)return'—';return Number(n).toLocaleString();}
+function parseMoney(s){return parseInt((s||'0').replace(/[^0-9]/g,''))||0;}
+function escHtml(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function formatDate(d){if(!d)return'TBD';try{return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'})}catch(e){return d;}}
+function updateLastRefresh(){
+  const now=new Date();
+  document.getElementById('lastRefresh').textContent='Updated 
