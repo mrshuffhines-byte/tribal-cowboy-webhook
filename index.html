@@ -188,11 +188,46 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .warn-title{font-size:11px;font-weight:700;color:#7A5000;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px}
 .warn-body{font-size:13px;color:#5C3D00;line-height:1.7}
 
+/* MONTHLY CALENDAR GRID */
+.cal-grid-wrap{border-radius:12px;overflow:hidden;border:1.5px solid var(--border);margin-bottom:1rem}
+.cal-dow-row{display:grid;grid-template-columns:repeat(7,1fr);background:var(--cream)}
+.cal-dow{padding:7px 0;text-align:center;font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.08em;text-transform:uppercase;border-bottom:1.5px solid var(--border)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);background:var(--border);gap:1px}
+.cal-cell{background:var(--white);min-height:72px;padding:5px 4px 4px;display:flex;flex-direction:column;cursor:pointer;transition:background 0.1s;position:relative}
+.cal-cell:hover{background:#FBF7EF}
+.cal-cell.other-month{background:#F7F5F1}
+.cal-cell.other-month .cal-dn{color:var(--text-light)}
+.cal-cell.today .cal-dn{background:var(--gold);color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center}
+.cal-dn{font-size:12px;font-weight:700;color:var(--text);width:22px;height:22px;display:flex;align-items:center;justify-content:center;margin-bottom:2px;flex-shrink:0}
+.cpill{font-size:9px;font-weight:700;padding:2px 4px;border-radius:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;margin-bottom:1px;line-height:1.4}
+.cpill.ig{background:#F0E6F6;color:#6A0DAD}
+.cpill.fb{background:#E8EFF8;color:#1A3A7A}
+.cpill.tt{background:#FFE8F0;color:#CC0033}
+.cpill.bk{background:var(--green-bg);color:var(--green-dark)}
+.cal-more{font-size:9px;color:var(--text-light);font-weight:700;padding-left:2px}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem}
+.cal-nav-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--text)}
+.cal-nav-btn{background:none;border:1.5px solid var(--border);border-radius:6px;padding:3px 11px;cursor:pointer;font-size:17px;color:var(--text-mid);line-height:1.4}
+.cal-nav-btn:hover{background:var(--amber-bg);border-color:var(--gold)}
+.cal-today-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--white);color:var(--text-mid);border:1.5px solid var(--border);border-radius:6px;padding:4px 10px;cursor:pointer}
+.cal-today-btn:hover{border-color:var(--gold);color:var(--gold-dark)}
+.cal-legend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:0.75rem;align-items:center}
+.cl-item{display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--text-mid)}
+.cl-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+/* Day detail panel */
+.day-panel{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;display:none}
+.day-panel.open{display:block}
+.day-panel-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:center}
+.day-panel-close{font-size:18px;color:var(--text-light);cursor:pointer;background:none;border:none;line-height:1}
+
 @media(max-width:480px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ww{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
   .hdr-name{font-size:18px}
+  .cal-cell{min-height:52px}
+  .cal-dn{font-size:11px}
+  .cpill{font-size:8px}
 }
 </style>
 </head>
@@ -265,6 +300,7 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
   <div class="tab" onclick="go('tiktok',this)">TikTok</div>
   <div class="tab" onclick="go('deals',this)">Bookings</div>
   <div class="tab" onclick="go('content',this)">Content</div>
+  <div class="tab" onclick="go('calendar',this);renderCalGrid()">Calendar</div>
   <div class="tab" onclick="go('heart',this)">Why I Do This</div>
 </div>
 
@@ -536,6 +572,88 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
     </div>
   </div>
 
+  <!-- CALENDAR TAB -->
+  <div id="p-calendar" class="page">
+
+    <div class="cal-nav">
+      <div style="display:flex;gap:6px;align-items:center">
+        <button class="cal-nav-btn" onclick="prevMonth()">&#8249;</button>
+        <button class="cal-nav-btn" onclick="nextMonth()">&#8250;</button>
+        <button class="cal-today-btn" onclick="goToday()">Today</button>
+      </div>
+      <div class="cal-nav-title" id="cal-month-title">March 2026</div>
+      <button class="edit-btn" onclick="openCalAdd()">+ Add Post</button>
+    </div>
+
+    <div class="cal-legend">
+      <span class="cl-item"><span class="cl-dot" style="background:#C77DFF"></span>Instagram</span>
+      <span class="cl-item"><span class="cl-dot" style="background:#4267B2"></span>Facebook</span>
+      <span class="cl-item"><span class="cl-dot" style="background:#FF2D55"></span>TikTok</span>
+      <span class="cl-item"><span class="cl-dot" style="background:#3B6D11"></span>Booking</span>
+    </div>
+
+    <!-- Day detail panel — appears when you tap a day -->
+    <div class="day-panel" id="dayPanel">
+      <div class="day-panel-title">
+        <span id="dayPanelTitle">Friday, March 27</span>
+        <button class="day-panel-close" onclick="closeDayPanel()">&#x2715;</button>
+      </div>
+      <div id="dayPanelContent"></div>
+      <div style="margin-top:0.75rem">
+        <button class="btn-save" style="font-size:12px;padding:6px 14px" onclick="openCalAddDate()">+ Add post for this day</button>
+      </div>
+    </div>
+
+    <!-- Add post quick form -->
+    <div class="booking-form" id="calAddForm" style="margin-bottom:1rem">
+      <div class="form-title">Schedule a post</div>
+      <div class="form-row">
+        <select id="cadd-platform">
+          <option value="ig">Instagram</option>
+          <option value="fb">Facebook</option>
+          <option value="tt">TikTok</option>
+        </select>
+        <input type="date" id="cadd-date">
+      </div>
+      <div class="form-row">
+        <select id="cadd-pillar">
+          <option value="The Animals">The Animals</option>
+          <option value="The Moments">The Moments</option>
+          <option value="The Work">The Work</option>
+          <option value="Indigenous Identity">Indigenous Identity</option>
+          <option value="Events & Booking">Events &amp; Booking</option>
+          <option value="Education">Education</option>
+          <option value="North Idaho Life">North Idaho Life</option>
+        </select>
+        <select id="cadd-status">
+          <option value="idea">Idea</option>
+          <option value="draft">Draft</option>
+          <option value="ready">Ready</option>
+          <option value="posted">Posted</option>
+        </select>
+      </div>
+      <div class="form-full"><input type="text" id="cadd-caption" placeholder="Caption or idea..."></div>
+      <div class="form-actions">
+        <button class="btn-cancel" onclick="closeCalAdd()">Cancel</button>
+        <button class="btn-save" onclick="saveCalAdd()">Save</button>
+      </div>
+    </div>
+
+    <div class="cal-grid-wrap">
+      <div class="cal-dow-row">
+        <div class="cal-dow">Sun</div>
+        <div class="cal-dow">Mon</div>
+        <div class="cal-dow">Tue</div>
+        <div class="cal-dow">Wed</div>
+        <div class="cal-dow">Thu</div>
+        <div class="cal-dow">Fri</div>
+        <div class="cal-dow">Sat</div>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+
+  </div>
+
   <!-- WHY I DO THIS TAB -->
   <div id="p-heart" class="page">
     <div class="greet">"We bring horses to the people who need them most. Every child who touches a horse for the first time leaves a little different." &mdash; Stacie</div>
@@ -586,8 +704,18 @@ const SAMPLE = {
 };
 
 const DEFAULT_BOOKINGS = [];
+const FAKE_BOOKING_NAMES = ['North 40 Spring Fest','Silver Lake Mall Pop-Up','Cocolalla Church Fest','Private Birthday Party','Art on the Green CdA'];
 
 // ── STATE ──────────────────────────────────────────────────────────────────
+// One-time cleanup: remove any placeholder bookings that shipped in early versions
+(function cleanFakeBookings(){
+  try{
+    const stored=JSON.parse(localStorage.getItem('tc_bookings')||'[]');
+    const cleaned=stored.filter(b=>!FAKE_BOOKING_NAMES.includes(b.name));
+    if(cleaned.length!==stored.length)localStorage.setItem('tc_bookings',JSON.stringify(cleaned));
+  }catch(e){}
+})();
+
 let bookings = JSON.parse(localStorage.getItem('tc_bookings') || 'null') || DEFAULT_BOOKINGS;
 let igData = null, fbData = null;
 
@@ -945,6 +1073,8 @@ function deleteCalPost(i){
   calPosts.splice(i,1);
   localStorage.setItem('tc_cal_posts',JSON.stringify(calPosts));
   renderCalendar();
+  renderCalGrid();
+  if(calSelectedDate)calCellClick(calSelectedDate);
 }
 
 function filterCal(platform, btn){
@@ -970,6 +1100,147 @@ function formatDate(d){if(!d)return'TBD';try{return new Date(d+'T12:00:00').toLo
 function updateLastRefresh(){
   const now=new Date();
   document.getElementById('lastRefresh').textContent='Updated '+now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+}
+
+// ── MONTHLY CALENDAR ────────────────────────────────────────────────────────
+const MONTH_NAMES=['January','February','March','April','May','June','July','August','September','October','November','December'];
+let calViewYear=new Date().getFullYear();
+let calViewMonth=new Date().getMonth();
+let calSelectedDate=null;
+
+function renderCalGrid(){
+  const year=calViewYear, month=calViewMonth;
+  const today=new Date();
+  document.getElementById('cal-month-title').textContent=MONTH_NAMES[month]+' '+year;
+
+  // Build post lookup by date
+  const postMap={};
+  calPosts.forEach(p=>{
+    if(p.date){if(!postMap[p.date])postMap[p.date]=[];postMap[p.date].push(p);}
+  });
+  // Build booking lookup by date
+  const bkMap={};
+  bookings.forEach(b=>{
+    if(b.date){if(!bkMap[b.date])bkMap[b.date]=[];bkMap[b.date].push(b);}
+  });
+
+  const firstDOW=new Date(year,month,1).getDay();
+  const daysInMonth=new Date(year,month+1,0).getDate();
+  const daysInPrev=new Date(year,month,0).getDate();
+  const totalCells=Math.ceil((firstDOW+daysInMonth)/7)*7;
+
+  let html='';
+  let dayCount=1, nextDay=1;
+  for(let i=0;i<totalCells;i++){
+    let cellDate, isCur=true;
+    if(i<firstDOW){cellDate=new Date(year,month-1,daysInPrev-firstDOW+i+1);isCur=false;}
+    else if(dayCount>daysInMonth){cellDate=new Date(year,month+1,nextDay++);isCur=false;}
+    else{cellDate=new Date(year,month,dayCount++);}
+
+    const ds=cellDate.toISOString().split('T')[0];
+    const isToday=cellDate.toDateString()===today.toDateString();
+    const posts=postMap[ds]||[];
+    const bks=bkMap[ds]||[];
+    const dayNum=cellDate.getDate();
+
+    let cls='cal-cell';
+    if(!isCur)cls+=' other-month';
+    if(isToday)cls+=' today';
+
+    const maxPills=3;
+    const allItems=[
+      ...posts.map(p=>({type:p.platform,label:(PLAT_LABEL[p.platform]||p.platform)+': '+(p.caption||'').substring(0,14)+((p.caption||'').length>14?'…':'')})),
+      ...bks.map(b=>({type:'bk',label:(b.name||'').substring(0,16)+((b.name||'').length>16?'…':'')}))
+    ];
+    const shown=allItems.slice(0,maxPills);
+    const extra=allItems.length-maxPills;
+
+    const pillsHtml=shown.map(it=>`<div class="cpill ${escHtml(it.type)}">${escHtml(it.label)}</div>`).join('');
+    const moreHtml=extra>0?`<div class="cal-more">+${extra} more</div>`:'';
+    const addDot=allItems.length===0&&isCur?`<div class="cal-add-hint"></div>`:'';
+
+    html+=`<div class="${cls}" onclick="calCellClick('${ds}')">
+      <div class="cal-dn">${dayNum}</div>
+      ${pillsHtml}${moreHtml}${addDot}
+    </div>`;
+  }
+  document.getElementById('cal-grid').innerHTML=html;
+}
+
+function prevMonth(){calViewMonth--;if(calViewMonth<0){calViewMonth=11;calViewYear--;}renderCalGrid();}
+function nextMonth(){calViewMonth++;if(calViewMonth>11){calViewMonth=0;calViewYear++;}renderCalGrid();}
+function goToday(){calViewYear=new Date().getFullYear();calViewMonth=new Date().getMonth();renderCalGrid();}
+
+function calCellClick(ds){
+  calSelectedDate=ds;
+  const d=new Date(ds+'T12:00:00');
+  const label=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+  document.getElementById('dayPanelTitle').textContent=label;
+
+  const posts=calPosts.filter(p=>p.date===ds);
+  const bks=bookings.filter(b=>b.date===ds);
+
+  let html='';
+  if(!posts.length&&!bks.length){
+    html='<div style="font-size:13px;color:var(--text-light);font-style:italic">Nothing scheduled. Add a post below.</div>';
+  }
+  posts.forEach((p,i)=>{
+    const origIdx=calPosts.indexOf(p);
+    html+=`<div class="cal-entry ${escHtml(p.platform)}" style="margin-bottom:7px">
+      <div class="cal-date">${PLAT_LABEL[p.platform]||p.platform} &bull; <span class="${STATUS_CLASS[p.status]||'st-idea'}">${STATUS_LABEL[p.status]||p.status}</span></div>
+      <div class="cal-caption">${escHtml(p.caption||'(no caption)')}</div>
+      <div class="cal-meta"><span class="pillar-tag">${escHtml(p.pillar)}</span><button class="del-btn" onclick="deleteCalPost(${origIdx})">remove</button></div>
+    </div>`;
+  });
+  bks.forEach(b=>{
+    const sc={Confirmed:'badge-green',Pending:'badge-amber','Inquiry Sent':'badge-red'};
+    html+=`<div class="row-item" style="margin-bottom:7px">
+      <div><div class="row-name">${escHtml(b.name)}</div><div class="row-meta">${escHtml(b.type)} &bull; ${escHtml(b.value)}</div></div>
+      <span class="badge ${sc[b.status]||'badge-amber'}">${b.status}</span>
+    </div>`;
+  });
+
+  document.getElementById('dayPanelContent').innerHTML=html;
+  document.getElementById('dayPanel').classList.add('open');
+  document.getElementById('calAddForm').classList.remove('open');
+  document.getElementById('dayPanel').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function closeDayPanel(){
+  document.getElementById('dayPanel').classList.remove('open');
+  calSelectedDate=null;
+}
+
+function openCalAdd(){
+  document.getElementById('calAddForm').classList.add('open');
+  document.getElementById('dayPanel').classList.remove('open');
+  if(!document.getElementById('cadd-date').value){
+    document.getElementById('cadd-date').value=new Date().toISOString().split('T')[0];
+  }
+}
+function openCalAddDate(){
+  document.getElementById('cadd-date').value=calSelectedDate||new Date().toISOString().split('T')[0];
+  document.getElementById('calAddForm').classList.add('open');
+}
+function closeCalAdd(){document.getElementById('calAddForm').classList.remove('open');}
+
+function saveCalAdd(){
+  const caption=document.getElementById('cadd-caption').value.trim();
+  if(!caption){alert('Add a caption or idea.');return;}
+  calPosts.push({
+    platform:document.getElementById('cadd-platform').value,
+    date:document.getElementById('cadd-date').value||new Date().toISOString().split('T')[0],
+    pillar:document.getElementById('cadd-pillar').value,
+    status:document.getElementById('cadd-status').value,
+    caption
+  });
+  document.getElementById('cadd-caption').value='';
+  localStorage.setItem('tc_cal_posts',JSON.stringify(calPosts));
+  closeCalAdd();
+  renderCalGrid();
+  renderCalendar();
+  // Refresh day panel if open
+  if(calSelectedDate)calCellClick(calSelectedDate);
 }
 </script>
 </body>
