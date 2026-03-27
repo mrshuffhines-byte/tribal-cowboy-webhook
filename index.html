@@ -378,13 +378,7 @@ const SAMPLE = {
   }
 };
 
-const DEFAULT_BOOKINGS = [
-  {name:"North 40 Spring Fest",type:"Pony Rides",date:"2026-04-05",value:"$600",status:"Confirmed",notes:"Follow up Apr 1"},
-  {name:"Silver Lake Mall Pop-Up",type:"Photo Prop",date:"2026-04-12",value:"$800",status:"Pending",notes:"Awaiting contract"},
-  {name:"Cocolalla Church Fest",type:"Pony + Photo",date:"2026-04-19",value:"$450",status:"Confirmed",notes:"Confirmed, prep now"},
-  {name:"Private Birthday Party",type:"Pony Party",date:"2026-04-27",value:"$350",status:"Confirmed",notes:"Deposit received"},
-  {name:"Art on the Green CdA",type:"Featured Experience",date:"2026-07-01",value:"$1,200",status:"Inquiry Sent",notes:"Proposal sent"}
-];
+const DEFAULT_BOOKINGS = [];
 
 // ── STATE ──────────────────────────────────────────────────────────────────
 let bookings = JSON.parse(localStorage.getItem('tc_bookings') || 'null') || DEFAULT_BOOKINGS;
