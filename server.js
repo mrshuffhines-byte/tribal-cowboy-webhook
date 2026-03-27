@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // Serve the dashboard HTML at the root URL
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 // ── PERSISTENT STORAGE ────────────────────────────────────────────────────
 // Stats are saved to data.json so they survive Render free tier spin-downs.
