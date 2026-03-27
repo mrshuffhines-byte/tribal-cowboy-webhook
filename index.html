@@ -220,6 +220,25 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .day-panel-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:center}
 .day-panel-close{font-size:18px;color:var(--text-light);cursor:pointer;background:none;border:none;line-height:1}
 
+/* AGENT CARDS */
+.agent-card{background:#FAFAF7;border:1.5px solid var(--border);border-radius:10px;padding:0.85rem 1rem;margin-bottom:9px}
+.agent-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
+.agent-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--text)}
+.agent-desc{font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:8px}
+.agent-trigger{display:flex;align-items:center;gap:8px;background:#F0EDE6;border-radius:7px;padding:7px 10px}
+.trigger-text{font-size:12px;color:var(--amber-text);font-style:italic;flex:1;line-height:1.5}
+.copy-trigger-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--gold);color:#412402;border:none;border-radius:5px;padding:4px 10px;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.copy-trigger-btn:hover{background:var(--gold-dark);color:#fff}
+
+/* BRAND HUB */
+.hash-group{background:#FAFAF7;border:1.5px solid var(--border);border-radius:10px;padding:0.85rem 1rem;margin-bottom:9px}
+.hash-platform-label{font-size:11px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:6px}
+.hash-tags{font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:8px;word-break:break-word}
+.copy-hash-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--amber-bg);color:var(--gold-deeper);border:1px solid var(--gold);border-radius:5px;padding:4px 10px;cursor:pointer}
+.copy-hash-btn:hover{background:var(--gold);color:#412402}
+.cta-row{display:flex;align-items:center;gap:10px;background:#FAFAF7;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px}
+.cta-text{font-size:13px;color:var(--text-mid);flex:1;font-style:italic}
+
 @media(max-width:480px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ww{grid-template-columns:1fr 1fr}
@@ -301,6 +320,8 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
   <div class="tab" onclick="go('deals',this)">Bookings</div>
   <div class="tab" onclick="go('content',this)">Content</div>
   <div class="tab" onclick="go('calendar',this);renderCalGrid()">Calendar</div>
+  <div class="tab" onclick="go('agents',this)">Agent Hub</div>
+  <div class="tab" onclick="go('brand',this)">Brand Hub</div>
   <div class="tab" onclick="go('heart',this)">Why I Do This</div>
 </div>
 
@@ -654,6 +675,186 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 
   </div>
 
+  <!-- AGENT HUB TAB -->
+  <div id="p-agents" class="page">
+    <div class="section">
+      <div class="sec-title">Your Agent System <span class="badge badge-teal">13 Agents</span></div>
+      <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:1rem">Open Claude Code in your TribalCowboy-Social folder. Copy the trigger phrase and paste it in.</p>
+
+      <div style="font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin:0 0 8px">Content &amp; Copy</div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Copywriter</div><span class="badge badge-amber">Copy</span></div>
+        <div class="agent-desc">Writes all captions, hooks, scripts, and website text. Applies brand voice and uses your horse names automatically.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-1">Write an Instagram caption about [topic or moment]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-1')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Content Strategist</div><span class="badge badge-amber">Strategy</span></div>
+        <div class="agent-desc">Builds monthly and weekly content calendars. Manages pillar rotation, funnel coverage, and posting cadence per platform.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-2">Build this week's content calendar — today is [date], upcoming events: [list any]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-2')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Creative Direction</div><span class="badge badge-amber">Visual</span></div>
+        <div class="agent-desc">Produces shot lists, reel structures, carousel layouts, and visual tone direction for upcoming content.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-3">Give me a shot list and reel structure for [topic or event]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-3')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Brand Voice Agent</div><span class="badge badge-amber">Brand</span></div>
+        <div class="agent-desc">Guards brand identity. Audits drafts against voice rules, banned phrases, and Indigenous identity guidelines.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-4">Audit this draft for brand voice: [paste copy]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-4')">Copy</button></div>
+      </div>
+
+      <div style="font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin:14px 0 8px">Engagement &amp; Community</div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Comment &amp; DM Response</div><span class="badge badge-teal">Engagement</span></div>
+        <div class="agent-desc">Classifies inbound messages into 11 types and 5 tiers. Drafts replies that protect brand while staying warm.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-5">Classify this message and draft a reply: [paste comment or DM]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-5')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Story Engagement</div><span class="badge badge-teal">Engagement</span></div>
+        <div class="agent-desc">Creates daily and weekly story strategies, story sequences, polls, Q&amp;A prompts, and reply drafts.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-6">Plan this week's Instagram stories — theme: [topic or season]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-6')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">TikTok Growth</div><span class="badge badge-teal">TikTok</span></div>
+        <div class="agent-desc">Manages TikTok Business and Personal strategies separately. Develops series concepts, hooks, and monetization-friendly content.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-7">Give me 5 TikTok hooks for [topic] — under 30 seconds each</span><button class="copy-trigger-btn" onclick="copyTrig('tr-7')">Copy</button></div>
+      </div>
+
+      <div style="font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin:14px 0 8px">Business &amp; Revenue</div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Creator Income</div><span class="badge badge-green">Revenue</span></div>
+        <div class="agent-desc">Evaluates brand partnerships, builds UGC offers, tracks monetization experiments, and manages your media kit.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-8">Find brand deal opportunities for Tribal Cowboy in [category — outdoor, Western, kids, family]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-8')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Corporate &amp; Luxury Leads</div><span class="badge badge-green">Revenue</span></div>
+        <div class="agent-desc">Develops corporate buyer messaging, event proposals, outreach sequences, and pricing frameworks for high-value clients.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-9">Draft outreach to [company or venue] for a corporate event — service: [type]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-9')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Trend &amp; Market Intelligence</div><span class="badge badge-green">Research</span></div>
+        <div class="agent-desc">Monitors trends, researches competitors, identifies partnership opportunities, and provides market signals.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-10">What horse and equine content is trending on [platform] right now? What should Tribal Cowboy be doing?</span><button class="copy-trigger-btn" onclick="copyTrig('tr-10')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Website &amp; SEO</div><span class="badge badge-green">Web</span></div>
+        <div class="agent-desc">Handles website audits, page copy drafts, SEO keyword strategy, and landing page optimization.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-11">Audit the tribalcowboy.com [page name] page — what needs to change?</span><button class="copy-trigger-btn" onclick="copyTrig('tr-11')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Operations &amp; Templates</div><span class="badge badge-green">Ops</span></div>
+        <div class="agent-desc">Maintains SOPs, reply banks, booking templates, and reusable workflows so nothing gets rebuilt from scratch.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-12">I need a template for [booking confirmation / inquiry reply / event follow-up]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-12')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Orchestrator</div><span class="badge badge-amber">Master</span></div>
+        <div class="agent-desc">Routes requests to the right agent, manages the approval queue, and maintains business priority order.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-13">Route this: [describe what you need — content, booking, research, reply, etc.]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-13')">Copy</button></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BRAND HUB TAB -->
+  <div id="p-brand" class="page">
+
+    <div class="section">
+      <div class="sec-title">Hashtag Bank</div>
+
+      <div class="hash-group">
+        <div class="hash-platform-label">Instagram Core <span style="font-weight:400;color:var(--text-light)">(use 5-10 per post)</span></div>
+        <div class="hash-tags" id="hb-ig-core">#TribalCowboy #NorthIdaho #IdahoHorses #ClydesdaleHorse #PonyParty #HorsePhotography #IndigenousOwned #NiseanMaidu #EquestrianLife #HorsesOfInstagram</div>
+        <button class="copy-hash-btn" onclick="copyHash('hb-ig-core')">Copy All</button>
+      </div>
+
+      <div class="hash-group">
+        <div class="hash-platform-label">Instagram Event / Service</div>
+        <div class="hash-tags" id="hb-ig-event">#CorporateEvents #KidsParty #PonyRides #WagonRide #FamilyFun #NorthIdahoEvents #EasternWashington #AtholIdaho</div>
+        <button class="copy-hash-btn" onclick="copyHash('hb-ig-event')">Copy All</button>
+      </div>
+
+      <div class="hash-group">
+        <div class="hash-platform-label">Instagram Reach <span style="font-weight:400;color:var(--text-light)">(rotate)</span></div>
+        <div class="hash-tags" id="hb-ig-reach">#HorseMom #FarmLife #WesternLifestyle #CountryLife #HorseLife #RanchLife #HorsesOfIG</div>
+        <button class="copy-hash-btn" onclick="copyHash('hb-ig-reach')">Copy All</button>
+      </div>
+
+      <div class="hash-group">
+        <div class="hash-platform-label">TikTok</div>
+        <div class="hash-tags" id="hb-tt">#HorseTok #NorthIdaho #TribalCowboy #ClydesdaleTok #PonyParty #IndigenousCreator #IdahoTikTok #HorseGirl</div>
+        <button class="copy-hash-btn" onclick="copyHash('hb-tt')">Copy All</button>
+      </div>
+
+      <div class="hash-group">
+        <div class="hash-platform-label">Facebook <span style="font-weight:400;color:var(--text-light)">(2-3 max)</span></div>
+        <div class="hash-tags" id="hb-fb">#NorthIdahoEvents #TribalCowboy #IdahoHorses</div>
+        <button class="copy-hash-btn" onclick="copyHash('hb-fb')">Copy All</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Your Herd</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Belle — Clydesdale</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">22 years old. Bay roan. The matriarch. Calm, commanding presence.</div></div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Jill — Clydesdale</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">13 years old. Bay roan. Dependable, hardworking. Abby's mom.</div></div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Abby — Clydesdale</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">7 years old. Bay roan. Jill's daughter. Curious, photogenic.</div></div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Millie — Clydesdale</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">5 years old. Belle's daughter. Playful, personality-forward.</div></div>
+        <div style="background:#F0EDE6;border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--text-mid);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">The Minis</div><div style="font-size:12px;color:var(--text-mid);line-height:1.6">Monster Unicorn, Master Chief, Reba, Dolly, Lainey, Minimus</div></div>
+        <div style="background:#F0EDE6;border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--text-mid);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Personal Horses</div><div style="font-size:12px;color:var(--text-mid);line-height:1.6">Jolene, Rowdy (in training), Nash (in training)</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Brand Voice — Quick Rules</div>
+      <div style="background:var(--red-bg);border:1.5px solid #F09595;border-radius:10px;padding:0.85rem 1rem;margin-bottom:10px">
+        <div style="font-size:11px;font-weight:700;color:var(--red-text);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:6px">Never Say</div>
+        <div style="font-size:13px;color:var(--red-dark);line-height:1.8">leverage &bull; synergy &bull; unique experience &bull; memories to last a lifetime &bull; making memories &bull; your special day &bull; dreams come true &bull; delve &bull; testament to &bull; it's worth noting &bull; seamlessly &bull; At Tribal Cowboy, we believe</div>
+      </div>
+      <div style="background:var(--green-bg);border:1.5px solid #97C459;border-radius:10px;padding:0.85rem 1rem;margin-bottom:10px">
+        <div style="font-size:11px;font-weight:700;color:var(--green-text);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:6px">Always Do</div>
+        <div style="font-size:13px;color:var(--green-dark);line-height:1.8">Use horse names (Millie, Belle, Abby) &bull; First or third person only &bull; Max 1 exclamation mark &bull; Specificity over generality &bull; Humor when horses earn it &bull; Indigenous identity with dignity, never as a marketing badge</div>
+      </div>
+      <div style="background:var(--teal-bg);border-radius:10px;padding:0.85rem 1rem">
+        <div style="font-size:11px;font-weight:700;color:var(--teal-text);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:6px">Tone By Platform</div>
+        <div style="font-size:13px;color:var(--teal-text);line-height:1.9"><strong>Instagram:</strong> Warm, visual, a little story. Caption tells the moment.<br><strong>Facebook:</strong> Slightly longer, community-forward. Local angle always.<br><strong>TikTok:</strong> Direct, punchy, hook in the first line. Talk to camera energy.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">CTA Bank</div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div class="cta-row"><span class="cta-text" id="cta-1">Check availability at www.tribalcowboy.com</span><button class="copy-hash-btn" onclick="copyHash('cta-1')">Copy</button></div>
+        <div class="cta-row"><span class="cta-text" id="cta-2">DM us to check dates</span><button class="copy-hash-btn" onclick="copyHash('cta-2')">Copy</button></div>
+        <div class="cta-row"><span class="cta-text" id="cta-3">Link in bio to book</span><button class="copy-hash-btn" onclick="copyHash('cta-3')">Copy</button></div>
+        <div class="cta-row"><span class="cta-text" id="cta-4">Email info@tribalcowboy.com</span><button class="copy-hash-btn" onclick="copyHash('cta-4')">Copy</button></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Seasonal Notes</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:var(--green-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--green-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Spring Mar-May</div><div style="font-size:12px;color:var(--green-dark);line-height:1.6">Booking season opens. Mother's Day pony parties. End-of-school events.</div></div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Summer Jun-Aug</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">Peak season. Corporate events, fairs, family reunions, birthday parties.</div></div>
+        <div style="background:#F0EDE6;border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Fall Sep-Nov</div><div style="font-size:12px;color:var(--text-mid);line-height:1.6">Harvest festivals. Back-to-school programs. Holiday teasers.</div></div>
+        <div style="background:var(--teal-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--teal-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Winter Dec-Feb</div><div style="font-size:12px;color:var(--teal-text);line-height:1.6">Holiday wagon rides. Off-season behind-the-scenes. Book early spring.</div></div>
+      </div>
+    </div>
+
+  </div>
+
   <!-- WHY I DO THIS TAB -->
   <div id="p-heart" class="page">
     <div class="greet">"We bring horses to the people who need them most. Every child who touches a horse for the first time leaves a little different." &mdash; Stacie</div>
@@ -725,6 +926,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   renderBookings();
   renderTikTok();
   renderCalendar();
+  renderCalGrid();
   fetchFromWebhook();
   setInterval(fetchFromWebhook, 5*60*1000);
 });
@@ -743,20 +945,35 @@ async function fetchFromWebhook(){
     if(!r.ok) throw new Error('Server not responding');
     const data = await r.json();
 
-    // Use webhook data if it has been updated, otherwise use saved manual data
+    const savedIg = localStorage.getItem('tc_ig_data');
+    const savedFb = localStorage.getItem('tc_fb_data');
+
+    // Priority: server with real data > localStorage > zeros — never stay null
     if(data.instagram && data.instagram.last_updated){
-      igData = { ...igData, ...data.instagram };
+      igData = data.instagram;
+      localStorage.setItem('tc_ig_data', JSON.stringify(igData));
+    } else if(savedIg){
+      igData = JSON.parse(savedIg);
+    } else {
+      igData = {followers:0,reach:0,impressions:0,profile_views:0,posts:[],comments:[],last_updated:null};
     }
+
     if(data.facebook && data.facebook.last_updated){
-      fbData = { ...fbData, ...data.facebook };
+      fbData = data.facebook;
+      localStorage.setItem('tc_fb_data', JSON.stringify(fbData));
+    } else if(savedFb){
+      fbData = JSON.parse(savedFb);
+    } else {
+      fbData = {followers:0,reach:0,engagement:0,views:0,posts:[],last_updated:null};
     }
 
     renderInstagram();
     renderFacebook();
     renderOverview();
     updateLastRefresh();
-    document.getElementById('liveLabel').textContent = 'Live';
-    document.getElementById('apiNotice').style.display = 'none';
+    const hasReal = igData.last_updated;
+    document.getElementById('liveLabel').textContent = hasReal ? 'Live' : (savedIg ? 'Saved' : 'No Data Yet');
+    document.getElementById('apiNotice').style.display = hasReal || savedIg ? 'none' : 'block';
   } catch(e){
     console.warn('Webhook server error:', e.message);
     useSavedData();
@@ -778,12 +995,12 @@ async function pushToWebhook(type, data){
 function useSavedData(){
   const savedIg = localStorage.getItem('tc_ig_data');
   const savedFb = localStorage.getItem('tc_fb_data');
-  igData = savedIg ? JSON.parse(savedIg) : SAMPLE.ig;
-  fbData = savedFb ? JSON.parse(savedFb) : SAMPLE.fb;
+  igData = savedIg ? JSON.parse(savedIg) : {followers:0,reach:0,impressions:0,profile_views:0,posts:[],comments:[],last_updated:null};
+  fbData = savedFb ? JSON.parse(savedFb) : {followers:0,reach:0,engagement:0,views:0,posts:[],last_updated:null};
   renderInstagram();
   renderFacebook();
   renderOverview();
-  document.getElementById('liveLabel').textContent = savedIg ? 'Manual' : 'Sample Data';
+  document.getElementById('liveLabel').textContent = savedIg ? 'Saved' : 'Offline';
   document.getElementById('apiNotice').style.display = savedIg ? 'none' : 'block';
 }
 
@@ -799,7 +1016,7 @@ function renderInstagram(){
   document.getElementById('ig-impress').textContent = fmt(igData.impressions);
   document.getElementById('ig-imp-d').className='sc-delta';
   document.getElementById('ig-imp-d').textContent='7 day total';
-  document.getElementById('ig-views').textContent = fmt(igData.profileViews);
+  document.getElementById('ig-views').textContent = fmt(igData.profile_views||igData.profileViews);
   document.getElementById('ig-view-d').className='sc-delta';
   document.getElementById('ig-view-d').textContent='7 day total';
 
@@ -1223,6 +1440,30 @@ function openCalAddDate(){
   document.getElementById('calAddForm').classList.add('open');
 }
 function closeCalAdd(){document.getElementById('calAddForm').classList.remove('open');}
+
+// ── COPY HELPERS ───────────────────────────────────────────────────────────
+function copyTrig(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  navigator.clipboard.writeText(el.textContent).then(()=>{
+    const btn=el.nextElementSibling;
+    const orig=btn.textContent;
+    btn.textContent='Copied!';
+    btn.style.background='var(--green-dark)';
+    btn.style.color='#fff';
+    setTimeout(()=>{btn.textContent=orig;btn.style.background='';btn.style.color='';},1800);
+  });
+}
+function copyHash(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  navigator.clipboard.writeText(el.textContent).then(()=>{
+    const btn=el.nextElementSibling;
+    const orig=btn.textContent;
+    btn.textContent='Copied!';
+    setTimeout(()=>{btn.textContent=orig;},1800);
+  });
+}
 
 function saveCalAdd(){
   const caption=document.getElementById('cadd-caption').value.trim();
