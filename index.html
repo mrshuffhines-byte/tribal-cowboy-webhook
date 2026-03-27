@@ -682,4 +682,8 @@ function escHtml(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
 function formatDate(d){if(!d)return'TBD';try{return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'})}catch(e){return d;}}
 function updateLastRefresh(){
   const now=new Date();
-  document.getElementById('lastRefresh').textContent='Updated 
+  document.getElementById('lastRefresh').textContent='Updated '+now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+}
+</script>
+</body>
+</html>
