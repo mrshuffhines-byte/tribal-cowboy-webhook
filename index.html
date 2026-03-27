@@ -151,6 +151,43 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .step-list li{font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:2px}
 .step-list a{color:var(--teal);text-decoration:underline}
 
+/* TIKTOK BADGE */
+.tt-badge{background:#FFE8F0;color:#CC0033;border:1.5px solid #FF2D55;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.05em}
+
+/* CONTENT CALENDAR */
+.cal-entry{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:0.85rem 1rem;margin-bottom:8px;border-left:5px solid var(--gold)}
+.cal-entry.ig{border-left-color:#C77DFF}
+.cal-entry.fb{border-left-color:#4267B2}
+.cal-entry.tt{border-left-color:#FF2D55}
+.cal-date{font-size:11px;font-weight:700;color:var(--text-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px}
+.cal-caption{font-family:'Playfair Display',serif;font-size:14px;color:var(--text);line-height:1.6;margin-bottom:6px}
+.cal-meta{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.pillar-tag{font-size:10px;font-weight:700;background:#F0EDE6;color:var(--text-mid);padding:2px 8px;border-radius:10px;letter-spacing:0.04em}
+.st-idea{background:#F0EDE6;color:var(--text-mid);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.st-draft{background:var(--amber-bg);color:var(--amber-text);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.st-ready{background:var(--teal-bg);color:var(--teal-text);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.st-posted{background:var(--green-bg);color:var(--green-text);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.cal-filter{display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap}
+.cf-btn{font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;cursor:pointer;border:1.5px solid var(--border);background:var(--white);color:var(--text-mid);letter-spacing:0.04em;transition:all 0.15s}
+.cf-btn.on{background:var(--amber-bg);border-color:var(--gold);color:var(--gold-dark)}
+
+/* TIP CARDS */
+.tip-card{border-radius:12px;padding:1rem 1.1rem;margin-bottom:10px;border:1.5px solid}
+.tip-card.ig{background:#FAF4FF;border-color:#C77DFF}
+.tip-card.fb{background:#EEF2FB;border-color:#4267B2}
+.tip-card.tt{background:#FFF0F5;border-color:#FF2D55}
+.tip-plat{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px}
+.tip-card.ig .tip-plat{color:#6A0DAD}
+.tip-card.fb .tip-plat{color:#1A3A7A}
+.tip-card.tt .tip-plat{color:#CC0033}
+.tip-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
+.tip-list{list-style:none;padding:0;margin:6px 0 0}
+.tip-list li{font-size:13px;color:var(--text-mid);line-height:1.8;padding-left:14px;position:relative}
+.tip-list li::before{content:'→';position:absolute;left:0;color:var(--gold-dark)}
+.warn-box{background:#FFF3CD;border:1.5px solid #E6A817;border-radius:10px;padding:0.85rem 1rem;margin-bottom:12px}
+.warn-title{font-size:11px;font-weight:700;color:#7A5000;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px}
+.warn-body{font-size:13px;color:#5C3D00;line-height:1.7}
+
 @media(max-width:480px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ww{grid-template-columns:1fr 1fr}
@@ -185,7 +222,17 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       </div>
     </div>
 
-    <p style="font-size:11px;color:var(--text-light);margin-bottom:0.75rem">Where to find these: Instagram app &rarr; Professional dashboard &rarr; Insights. Facebook &rarr; Tribal Cowboy page &rarr; Insights.</p>
+    <div style="background:#F5F2EC;border-radius:8px;padding:0.75rem 1rem;margin-bottom:1rem">
+      <p style="font-size:12px;font-weight:700;color:#CC0033;margin-bottom:2px">TIKTOK</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Followers</label><input type="number" id="m-tt-followers" placeholder="e.g. 1240"></div>
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Total Views</label><input type="number" id="m-tt-views" placeholder="e.g. 45000"></div>
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Likes (7d)</label><input type="number" id="m-tt-likes" placeholder="e.g. 312"></div>
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Comments (7d)</label><input type="number" id="m-tt-comments" placeholder="e.g. 48"></div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:var(--text-light);margin-bottom:0.75rem">TikTok: app &rarr; Profile &rarr; Analytics. Instagram: app &rarr; Professional dashboard &rarr; Insights. Facebook &rarr; Tribal Cowboy page &rarr; Insights.</p>
 
     <div class="modal-actions">
       <button class="btn-secondary" onclick="closeStatsEditor()">Cancel</button>
@@ -215,7 +262,9 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
   <div class="tab on" onclick="go('overview',this)">Overview</div>
   <div class="tab" onclick="go('instagram',this)">Instagram</div>
   <div class="tab" onclick="go('facebook',this)">Facebook</div>
+  <div class="tab" onclick="go('tiktok',this)">TikTok</div>
   <div class="tab" onclick="go('deals',this)">Bookings</div>
+  <div class="tab" onclick="go('content',this)">Content</div>
   <div class="tab" onclick="go('heart',this)">Why I Do This</div>
 </div>
 
@@ -282,10 +331,163 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       <div class="sc"><div class="sc-label">Post Engagements</div><div class="sc-val teal" id="fb-engage"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="fb-eng-d"></div></div>
       <div class="sc"><div class="sc-label">Page Views (7d)</div><div class="sc-val green" id="fb-views"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="fb-view-d"></div></div>
     </div>
+    <div class="warn-box">
+      <div class="warn-title">Why Facebook looks low</div>
+      <div class="warn-body">Instagram posts shared to Facebook are treated as cross-posts by the algorithm — Facebook actively reduces their reach because the content wasn't made natively. Your 246 followers aren't seeing the posts the way your 820 Instagram followers are. This is a known Meta issue, not a you issue.</div>
+    </div>
+    <div class="section">
+      <div class="sec-title">What actually works on Facebook</div>
+      <div class="tip-card fb">
+        <div class="tip-plat">Facebook</div>
+        <div class="tip-title">Post natively at least 2x a week</div>
+        <ul class="tip-list">
+          <li>Write the post directly in Facebook, not pushed from Instagram</li>
+          <li>Facebook favors text-heavy posts with a question or local angle — "Anyone else in North Idaho looking for something to do with the kids this Saturday?"</li>
+          <li>Events drive massive organic reach on Facebook — create an Event for every booking that has a public component</li>
+          <li>Facebook Groups are your best friend — post in North Idaho family groups, CdA events groups, Spokane parenting groups</li>
+          <li>Go Live for 5 minutes with the horses — Facebook still boosts Live video more than any other format</li>
+          <li>Share your Instagram Reels to Facebook manually as a native upload, not through the auto-share toggle</li>
+        </ul>
+      </div>
+    </div>
     <div class="section">
       <div class="sec-title">Recent Facebook Posts</div>
-      <div id="fb-posts"><div style="font-size:13px;color:var(--text-light);font-style:italic">Loading recent posts...</div></div>
+      <div id="fb-posts"><div style="font-size:13px;color:var(--text-light);font-style:italic">No posts loaded yet.</div></div>
     </div>
+  </div>
+
+  <!-- TIKTOK TAB -->
+  <div id="p-tiktok" class="page">
+    <div class="stats">
+      <div class="sc"><div class="sc-label">Followers</div><div class="sc-val amber" id="tt-followers"><span class="loading-val">—</span></div><div class="sc-delta" id="tt-fol-d"></div></div>
+      <div class="sc"><div class="sc-label">Total Views</div><div class="sc-val" id="tt-views"><span class="loading-val">—</span></div><div class="sc-delta neutral">Lifetime</div></div>
+      <div class="sc"><div class="sc-label">Likes (7d)</div><div class="sc-val teal" id="tt-likes"><span class="loading-val">—</span></div><div class="sc-delta" id="tt-likes-d"></div></div>
+      <div class="sc"><div class="sc-label">Comments (7d)</div><div class="sc-val green" id="tt-comments"><span class="loading-val">—</span></div><div class="sc-delta" id="tt-com-d"></div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">What works on TikTok</div>
+      <div class="tip-card tt">
+        <div class="tip-plat">TikTok</div>
+        <div class="tip-title">Hook in the first 2 seconds — always</div>
+        <ul class="tip-list">
+          <li>Start with the horse on screen, not with you talking — movement stops the scroll</li>
+          <li>Text overlay hooks: "POV: you brought a Clydesdale to a kids birthday party" or "What 1,800 lbs of horse looks like next to a 4-year-old"</li>
+          <li>TikTok pushes horse content hard — #HorseTok has billions of views. You belong there.</li>
+          <li>Keep it under 30 seconds for maximum reach — show one moment, don't try to fit everything</li>
+          <li>Reply to comments with a video — TikTok boosts video replies heavily</li>
+          <li>Post 3-5x per week if you can. Consistency matters more than production quality.</li>
+          <li>Indigenous creator content performs well — lean into your story authentically</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section" style="background:var(--teal-bg);border-color:var(--teal)">
+      <div class="sec-title" style="color:var(--teal-text)">Update TikTok stats</div>
+      <div style="font-size:13px;color:var(--teal-text);line-height:1.7">TikTok doesn't connect to this dashboard automatically yet. Hit <strong>Update Stats</strong> in the header and enter your numbers from TikTok Analytics (Profile &rarr; Creator tools &rarr; Analytics).</div>
+    </div>
+  </div>
+
+  <!-- CONTENT TAB -->
+  <div id="p-content" class="page">
+
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Content Calendar
+        <button class="edit-btn" onclick="toggleCalForm()">+ Add Post</button>
+      </div>
+      <div class="booking-form" id="calForm">
+        <div class="form-title">Plan a post</div>
+        <div class="form-row">
+          <select id="cal-platform">
+            <option value="ig">Instagram</option>
+            <option value="fb">Facebook</option>
+            <option value="tt">TikTok</option>
+          </select>
+          <input type="date" id="cal-date">
+        </div>
+        <div class="form-row">
+          <select id="cal-pillar">
+            <option value="The Animals">The Animals</option>
+            <option value="The Moments">The Moments</option>
+            <option value="The Work">The Work</option>
+            <option value="Indigenous Identity">Indigenous Identity</option>
+            <option value="Events & Booking">Events &amp; Booking</option>
+            <option value="Education">Education</option>
+            <option value="North Idaho Life">North Idaho Life</option>
+          </select>
+          <select id="cal-status">
+            <option value="idea">Idea</option>
+            <option value="draft">Draft</option>
+            <option value="ready">Ready</option>
+            <option value="posted">Posted</option>
+          </select>
+        </div>
+        <div class="form-full"><input type="text" id="cal-caption" placeholder="Caption draft or idea..."></div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="toggleCalForm()">Cancel</button>
+          <button class="btn-save" onclick="addCalPost()">Save</button>
+        </div>
+      </div>
+      <div class="cal-filter">
+        <button class="cf-btn on" onclick="filterCal('all',this)">All</button>
+        <button class="cf-btn" onclick="filterCal('ig',this)">Instagram</button>
+        <button class="cf-btn" onclick="filterCal('fb',this)">Facebook</button>
+        <button class="cf-btn" onclick="filterCal('tt',this)">TikTok</button>
+      </div>
+      <div id="cal-list"></div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Platform Tips</div>
+      <div class="tip-card ig">
+        <div class="tip-plat">Instagram</div>
+        <div class="tip-title">Your strongest platform — keep the momentum</div>
+        <ul class="tip-list">
+          <li>Reels outperform static posts 3:1 — even a shaky 15-second clip of Millie counts</li>
+          <li>Stories every day keeps you at the top of the feed — behind-the-scenes, polls, Q&amp;A</li>
+          <li>Carousels get saved more than any other format — use them for education posts</li>
+          <li>Caption the first line as if it's the only line people will read — hook first, story second</li>
+          <li>Tag your location on every post — North Idaho, Athol, Coeur d'Alene, Spokane</li>
+          <li>Respond to every comment within 2 hours of posting — Instagram rewards early engagement</li>
+        </ul>
+      </div>
+      <div class="tip-card fb">
+        <div class="tip-plat">Facebook</div>
+        <div class="tip-title">Don't just cross-post — post natively</div>
+        <ul class="tip-list">
+          <li>2x native posts per week minimum — written directly in Facebook, not pushed from Instagram</li>
+          <li>Create a Facebook Event for anything bookable or public-facing — Events get massive free reach</li>
+          <li>Post in local groups: North Idaho Family Fun, CdA Events, Spokane Kids Activities</li>
+          <li>Facebook Live with the horses — even 5 minutes gets boosted more than any other format</li>
+          <li>Ask a local question in the caption: "What's your go-to family activity in North Idaho this spring?"</li>
+          <li>Upload Reels directly to Facebook as a native video — don't rely on the auto-share from Instagram</li>
+        </ul>
+      </div>
+      <div class="tip-card tt">
+        <div class="tip-plat">TikTok</div>
+        <div class="tip-title">Biggest growth potential right now</div>
+        <ul class="tip-list">
+          <li>Start every video with the horse moving — don't start with you talking</li>
+          <li>Text hook on screen: "POV: 1,800 lbs of Clydesdale just showed up to a birthday party"</li>
+          <li>#HorseTok has billions of views — you belong in that space</li>
+          <li>Post 3-5x per week — volume and consistency beat perfection on TikTok</li>
+          <li>Reply to comments with video replies — TikTok boosts these heavily</li>
+          <li>Keep it under 30 seconds for max reach — one moment, one reaction, done</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Content Pillars — Rotate Through These</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">The Animals</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">Millie &amp; Abby, pony personalities, barn moments</div></div>
+        <div style="background:var(--green-bg);border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:var(--green-text);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">The Moments</div><div style="font-size:12px;color:var(--green-dark);line-height:1.6">Guest reactions, kids meeting horses, real emotion</div></div>
+        <div style="background:var(--teal-bg);border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:var(--teal-text);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">The Work</div><div style="font-size:12px;color:var(--teal-text);line-height:1.6">Grooming, setup, hauling — the effort behind it</div></div>
+        <div style="background:#F0EDE6;border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:var(--text-mid);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">Indigenous Identity</div><div style="font-size:12px;color:var(--text-mid);line-height:1.6">Nisenan Maidu, land, culture — with dignity</div></div>
+        <div style="background:var(--red-bg);border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:var(--red-text);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">Events &amp; Booking</div><div style="font-size:12px;color:var(--red-dark);line-height:1.6">1 in 5 posts max — availability, how to book</div></div>
+        <div style="background:#EEF2FB;border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:#1A3A7A;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">North Idaho Life</div><div style="font-size:12px;color:#1A3A7A;line-height:1.6">Seasons, land, the region — place is part of brand</div></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- BOOKINGS TAB -->
@@ -361,6 +563,11 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── TIKTOK + CONTENT CALENDAR STATE ────────────────────────────────────────
+let ttData = JSON.parse(localStorage.getItem('tc_tt_data') || 'null') || {followers:0,views:0,likes:0,comments:0};
+let calPosts = JSON.parse(localStorage.getItem('tc_cal_posts') || '[]');
+let calFilter = 'all';
+
 // ── SAMPLE DATA (used when no API tokens set) ──────────────────────────────
 const SAMPLE = {
   ig:{followers:2847,reach:4812,impressions:18400,profileViews:312,
@@ -388,6 +595,8 @@ let igData = null, fbData = null;
 document.addEventListener('DOMContentLoaded', ()=>{
   setDate();
   renderBookings();
+  renderTikTok();
+  renderCalendar();
   fetchFromWebhook();
   setInterval(fetchFromWebhook, 5*60*1000);
 });
@@ -628,6 +837,12 @@ function openStatsEditor(){
     document.getElementById('m-fb-followers').value = fbData.followers||'';
     document.getElementById('m-fb-reach').value = fbData.reach||'';
   }
+  if(ttData){
+    document.getElementById('m-tt-followers').value = ttData.followers||'';
+    document.getElementById('m-tt-views').value = ttData.views||'';
+    document.getElementById('m-tt-likes').value = ttData.likes||'';
+    document.getElementById('m-tt-comments').value = ttData.comments||'';
+  }
   document.getElementById('setupModal').classList.add('open');
 }
 function closeStatsEditor(){
@@ -646,10 +861,17 @@ async function saveManualStats(){
     reach: parseInt(document.getElementById('m-fb-reach').value)||0,
     engagement: fbData ? fbData.engagement : 0
   };
+  const tt = {
+    followers: parseInt(document.getElementById('m-tt-followers').value)||ttData.followers||0,
+    views: parseInt(document.getElementById('m-tt-views').value)||ttData.views||0,
+    likes: parseInt(document.getElementById('m-tt-likes').value)||ttData.likes||0,
+    comments: parseInt(document.getElementById('m-tt-comments').value)||ttData.comments||0
+  };
   // Save locally right away
   localStorage.setItem('tc_ig_data', JSON.stringify(ig));
   localStorage.setItem('tc_fb_data', JSON.stringify(fb));
-  igData = ig; fbData = fb;
+  localStorage.setItem('tc_tt_data', JSON.stringify(tt));
+  igData = ig; fbData = fb; ttData = tt;
   // Also push to webhook server
   try {
     await Promise.all([
@@ -658,10 +880,81 @@ async function saveManualStats(){
     ]);
   } catch(e){ console.warn('Webhook push failed, saved locally only'); }
   closeStatsEditor();
-  renderInstagram(); renderFacebook(); renderOverview();
+  renderInstagram(); renderFacebook(); renderTikTok(); renderOverview();
   document.getElementById('liveLabel').textContent = 'Updated';
   updateLastRefresh();
 }
+
+// ── TIKTOK ─────────────────────────────────────────────────────────────────
+function renderTikTok(){
+  document.getElementById('tt-followers').textContent = fmt(ttData.followers);
+  document.getElementById('tt-fol-d').textContent = ttData.followers ? 'Lifetime' : 'Add via Update Stats';
+  document.getElementById('tt-views').textContent = fmt(ttData.views);
+  document.getElementById('tt-likes').textContent = fmt(ttData.likes);
+  document.getElementById('tt-likes-d').textContent = ttData.likes ? '7 day total' : '';
+  document.getElementById('tt-comments').textContent = fmt(ttData.comments);
+  document.getElementById('tt-com-d').textContent = ttData.comments ? '7 day total' : '';
+}
+
+// ── CONTENT CALENDAR ───────────────────────────────────────────────────────
+const PLAT_LABEL = {ig:'Instagram',fb:'Facebook',tt:'TikTok'};
+const STATUS_CLASS = {idea:'st-idea',draft:'st-draft',ready:'st-ready',posted:'st-posted'};
+const STATUS_LABEL = {idea:'Idea',draft:'Draft',ready:'Ready to Post',posted:'Posted'};
+
+function renderCalendar(){
+  const el = document.getElementById('cal-list');
+  const filtered = calFilter==='all' ? calPosts : calPosts.filter(p=>p.platform===calFilter);
+  const sorted = [...filtered].sort((a,b)=>new Date(a.date)-new Date(b.date));
+  if(!sorted.length){
+    el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic;padding:0.5rem">No posts planned yet. Hit + Add Post to start.</div>';
+    return;
+  }
+  el.innerHTML = sorted.map((p,i)=>{
+    const origIdx = calPosts.indexOf(p);
+    return `<div class="cal-entry ${escHtml(p.platform)}">
+      <div class="cal-date">${PLAT_LABEL[p.platform]||p.platform} &bull; ${p.date?formatDate(p.date):'No date'}</div>
+      <div class="cal-caption">${escHtml(p.caption||'(no caption)')}</div>
+      <div class="cal-meta">
+        <span class="pillar-tag">${escHtml(p.pillar)}</span>
+        <span class="${STATUS_CLASS[p.status]||'st-idea'}">${STATUS_LABEL[p.status]||p.status}</span>
+        <button class="del-btn" onclick="deleteCalPost(${origIdx})">remove</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function addCalPost(){
+  const caption = document.getElementById('cal-caption').value.trim();
+  if(!caption){alert('Add a caption or idea first.');return;}
+  calPosts.push({
+    platform: document.getElementById('cal-platform').value,
+    date: document.getElementById('cal-date').value || new Date().toISOString().split('T')[0],
+    pillar: document.getElementById('cal-pillar').value,
+    status: document.getElementById('cal-status').value,
+    caption
+  });
+  document.getElementById('cal-caption').value='';
+  document.getElementById('cal-date').value='';
+  localStorage.setItem('tc_cal_posts',JSON.stringify(calPosts));
+  toggleCalForm();
+  renderCalendar();
+}
+
+function deleteCalPost(i){
+  if(!confirm('Remove this post?')) return;
+  calPosts.splice(i,1);
+  localStorage.setItem('tc_cal_posts',JSON.stringify(calPosts));
+  renderCalendar();
+}
+
+function filterCal(platform, btn){
+  calFilter = platform;
+  document.querySelectorAll('.cf-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderCalendar();
+}
+
+function toggleCalForm(){document.getElementById('calForm').classList.toggle('open');}
 
 // ── UTILS ──────────────────────────────────────────────────────────────────
 function go(name,el){
