@@ -239,6 +239,27 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .cta-row{display:flex;align-items:center;gap:10px;background:#FAFAF7;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px}
 .cta-text{font-size:13px;color:var(--text-mid);flex:1;font-style:italic}
 
+/* ASK CLAUDE FLOATING BUTTON */
+.claude-fab{position:fixed;bottom:24px;right:20px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.claude-fab-btn{width:56px;height:56px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;font-size:22px;transition:transform 0.15s,box-shadow 0.15s}
+.claude-fab-btn:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,0.22)}
+.claude-fab-label{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;color:var(--white);background:var(--text);border-radius:20px;padding:3px 10px;letter-spacing:0.05em;white-space:nowrap;pointer-events:none;opacity:0;transform:translateX(4px);transition:opacity 0.15s,transform 0.15s}
+.claude-fab:hover .claude-fab-label{opacity:1;transform:translateX(0)}
+.claude-panel{display:none;position:fixed;bottom:90px;right:20px;z-index:499;width:340px;max-height:75vh;background:var(--white);border:2px solid var(--gold);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.18);overflow:hidden;flex-direction:column}
+.claude-panel.open{display:flex}
+.claude-panel-hdr{background:var(--gold);padding:0.85rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.claude-panel-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#412402}
+.claude-panel-close{background:none;border:none;font-size:18px;color:#412402;cursor:pointer;line-height:1;padding:0}
+.claude-panel-body{overflow-y:auto;padding:1rem;flex:1}
+.claude-q-input{width:100%;font-family:'Lato',sans-serif;font-size:13px;padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;color:var(--text);resize:none;margin-bottom:8px;box-sizing:border-box}
+.claude-q-input:focus{outline:none;border-color:var(--gold)}
+.claude-send-btn{width:100%;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;background:var(--gold);color:#412402;border:none;border-radius:8px;padding:9px;cursor:pointer;margin-bottom:1rem}
+.claude-send-btn:hover{background:var(--gold-dark);color:#fff}
+.claude-quick-label{font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:7px}
+.claude-quick-btn{display:block;width:100%;text-align:left;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;color:var(--amber-text);background:var(--amber-bg);border:1px solid var(--gold);border-radius:7px;padding:7px 10px;cursor:pointer;margin-bottom:5px;line-height:1.5}
+.claude-quick-btn:hover{background:var(--gold);color:#412402}
+.claude-copied-msg{font-size:11px;color:var(--green-dark);font-weight:700;text-align:center;padding:4px;display:none}
+
 @media(max-width:480px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ww{grid-template-columns:1fr 1fr}
@@ -247,6 +268,7 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
   .cal-cell{min-height:52px}
   .cal-dn{font-size:11px}
   .cpill{font-size:8px}
+  .claude-panel{width:calc(100vw - 32px);right:16px}
 }
 </style>
 </head>
@@ -1480,9 +1502,65 @@ function saveCalAdd(){
   closeCalAdd();
   renderCalGrid();
   renderCalendar();
-  // Refresh day panel if open
   if(calSelectedDate)calCellClick(calSelectedDate);
 }
+
+// ── ASK CLAUDE ──────────────────────────────────────────────────────────────
+function toggleClaudePanel(){
+  document.getElementById('claudePanel').classList.toggle('open');
+}
+function closeClaudePanel(){
+  document.getElementById('claudePanel').classList.remove('open');
+}
+function sendToClaudeCode(){
+  const q = document.getElementById('claudeQuestion').value.trim();
+  if(!q){alert('Type a question first.');return;}
+  navigator.clipboard.writeText(q).then(()=>{
+    const msg = document.getElementById('claudeCopied');
+    msg.style.display='block';
+    msg.textContent='Copied! Paste it into Claude Code.';
+    setTimeout(()=>{msg.style.display='none';},3000);
+    document.getElementById('claudeQuestion').value='';
+  });
+}
+function useQuickPrompt(text){
+  document.getElementById('claudeQuestion').value=text;
+  document.getElementById('claudeQuestion').focus();
+}
 </script>
+
+<!-- FLOATING ASK CLAUDE BUTTON -->
+<div class="claude-fab">
+  <span class="claude-fab-label">Ask Claude</span>
+  <button class="claude-fab-btn" onclick="toggleClaudePanel()" title="Ask Claude">🤠</button>
+</div>
+
+<!-- ASK CLAUDE PANEL -->
+<div class="claude-panel" id="claudePanel">
+  <div class="claude-panel-hdr">
+    <div class="claude-panel-title">Ask Claude</div>
+    <button class="claude-panel-close" onclick="closeClaudePanel()">&#x2715;</button>
+  </div>
+  <div class="claude-panel-body">
+    <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Type your question, hit Copy, then paste into Claude Code in your <strong>TribalCowboy-Social</strong> folder.</p>
+    <textarea class="claude-q-input" id="claudeQuestion" rows="3" placeholder="e.g. Write an Instagram caption about Millie in the spring mud..."></textarea>
+    <button class="claude-send-btn" onclick="sendToClaudeCode()">Copy to Claude Code</button>
+    <div class="claude-copied-msg" id="claudeCopied"></div>
+
+    <div class="claude-quick-label">Quick Prompts</div>
+
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Write an Instagram caption about [describe the moment or photo]')">Write an Instagram caption</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Write a Facebook post about [topic] — make it native Facebook, not a cross-post')">Write a Facebook post</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Give me 3 TikTok hooks for [topic]. Start with the horse on screen.')">TikTok hooks</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Build this week\\'s content calendar. Today is '+new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+'. Upcoming bookings: [list any]. Use all 7 content pillars, rotate platforms.')">Plan this week\u2019s content</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Classify this message and draft a reply using the 5-tier system: [paste the comment or DM]')">Respond to a DM or comment</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Give me a shot list and reel structure for [describe what you have to film today]')">Shot list for today</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Draft corporate event outreach email to [company name] in [industry] — located in [city]')">Corporate outreach email</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('What brand deal opportunities should I pursue in Q2? Review creator-income-roadmap.md and give me the top 3 with pitch angles.')">Brand deal opportunities</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Audit this caption for brand voice — check against banned phrases and voice rules: [paste draft]')">Audit brand voice</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Plan the Mother\\'s Day campaign for May 11. Build the full content arc, shot list, pricing, and booking CTA sequence.')">Plan Mother\u2019s Day campaign</button>
+  </div>
+</div>
+
 </body>
 </html>
