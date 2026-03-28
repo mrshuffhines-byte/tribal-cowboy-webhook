@@ -345,6 +345,67 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .photo-copy-btn{width:100%;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;background:var(--teal);color:#fff;border:none;border-radius:7px;padding:8px;cursor:pointer;display:none}
 .photo-copy-btn:hover{background:var(--teal-text)}
 
+/* INCOME STREAMS */
+.income-total-bar{background:var(--amber-bg);border:1.5px solid var(--gold);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
+.income-total-label{font-size:11px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:3px}
+.income-total-val{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold-deeper)}
+.income-stream-card{background:#FAFAF7;border:1.5px solid var(--border);border-radius:10px;padding:0.75rem 0.85rem;margin-bottom:7px;display:flex;align-items:center;gap:10px}
+.income-stream-icon{font-size:20px;flex-shrink:0}
+.income-stream-name{font-size:13px;font-weight:700;color:var(--text);flex:1}
+.income-stream-amt{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--teal)}
+.income-stream-sub{font-size:11px;color:var(--text-light);margin-top:1px}
+.income-entry-row{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0.75rem;border-radius:7px;border:1px solid var(--border);background:var(--white);margin-bottom:5px}
+.income-entry-name{font-size:13px;font-weight:700;color:var(--text)}
+.income-entry-meta{font-size:11px;color:var(--text-light);margin-top:1px}
+.income-entry-amt{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--teal);flex-shrink:0;padding-left:8px}
+.income-add-form{background:#F5F2EC;border-radius:10px;padding:0.85rem;margin-bottom:1rem;border:1px solid var(--gold);display:none}
+.income-add-form.open{display:block}
+
+/* CRM DETAIL */
+.bk-row-wrap{margin-bottom:7px}
+.bk-row-wrap .row-item{margin-bottom:0;border-radius:8px 8px 0 0;cursor:pointer;border-bottom:none}
+.bk-row-wrap .row-item.closed{border-radius:8px;border-bottom:1px solid var(--border);margin-bottom:0}
+.crm-detail{display:none;background:#F5F2EC;border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:0.75rem 0.85rem}
+.crm-detail.open{display:block}
+.crm-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.crm-field{font-size:12px;color:var(--text-mid);line-height:1.6}
+.crm-field strong{display:block;font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1px}
+.crm-followup-alert{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:8px}
+.crm-fu-overdue{background:var(--red-bg);color:var(--red-dark)}
+.crm-fu-today{background:var(--amber-bg);color:var(--amber-text)}
+.crm-fu-future{background:var(--green-bg);color:var(--green-dark)}
+.crm-note-add{width:100%;font-family:'Lato',sans-serif;font-size:12px;padding:7px 9px;border:1.5px solid var(--border);border-radius:6px;margin-bottom:6px;resize:none}
+.crm-action-row{display:flex;gap:7px;flex-wrap:wrap}
+.crm-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;padding:5px 12px;border-radius:6px;cursor:pointer;border:none}
+.crm-btn-primary{background:var(--gold);color:#412402}
+.crm-btn-confirm{background:var(--green-bg);color:var(--green-dark);border:1px solid var(--green-dark)!important;border:none}
+.crm-btn-del{background:var(--red-bg);color:var(--red-dark)}
+
+/* WEEKLY REVIEW */
+.weekly-review{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;box-shadow:var(--card-shadow)}
+.wr-hdr{display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+.wr-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text)}
+.wr-week-range{font-size:11px;color:var(--text-light);font-weight:700}
+.wr-toggle{font-size:13px;color:var(--text-light);transition:transform 0.2s}
+.wr-body{display:none;margin-top:0.85rem}
+.wr-body.open{display:block}
+.wr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:0.75rem}
+.wr-cell{background:#FAFAF7;border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.75rem}
+.wr-cell-lbl{font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px}
+.wr-cell-val{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--text);line-height:1}
+.wr-cell-sub{font-size:11px;color:var(--text-light);margin-top:2px}
+.wr-prompt{background:var(--amber-bg);border-radius:8px;padding:0.75rem;font-size:13px;color:var(--amber-text);font-style:italic;line-height:1.7}
+
+/* EMAIL / SUBSCRIBER TRACKER */
+.email-tracker{background:var(--white);border:1.5px solid var(--teal);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;box-shadow:var(--card-shadow)}
+.et-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
+.et-label{font-size:11px;font-weight:700;color:var(--teal-text);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:3px}
+.et-count{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--teal);line-height:1}
+.et-sub{font-size:12px;color:var(--text-light);font-weight:700;margin-top:3px}
+.et-edit-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--teal-bg);color:var(--teal-text);border:1px solid var(--teal);border-radius:6px;padding:5px 11px;cursor:pointer;flex-shrink:0;margin-top:4px}
+.et-form{display:none;border-top:1px solid var(--border);padding-top:0.75rem;margin-top:0.75rem}
+.et-form.open{display:block}
+
 @media(max-width:480px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ww{grid-template-columns:1fr 1fr}
@@ -426,6 +487,7 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
   <div class="tab" onclick="go('facebook',this)">Facebook</div>
   <div class="tab" onclick="go('tiktok',this)">TikTok</div>
   <div class="tab" onclick="go('deals',this)">Bookings</div>
+  <div class="tab" onclick="go('income',this)">Income</div>
   <div class="tab" onclick="go('content',this)">Content</div>
   <div class="tab" onclick="go('calendar',this);renderCalGrid()">Calendar</div>
   <div class="tab" onclick="go('agents',this)">Agent Hub</div>
@@ -464,6 +526,60 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       <div class="score-card"><div class="score-label">Revenue Booked</div><div class="score-val" id="sc-rev">—</div><div class="score-delta">confirmed</div></div>
       <div class="score-card"><div class="score-label">Weekly Reach</div><div class="score-val amber" id="sc-reach">—</div><div class="score-delta">IG + FB</div></div>
       <div class="score-card"><div class="score-label">Open Tasks</div><div class="score-val" id="sc-tasks">—</div><div class="score-delta">need action</div></div>
+    </div>
+
+    <!-- EMAIL / SUBSCRIBER TRACKER -->
+    <div class="email-tracker">
+      <div class="et-top">
+        <div>
+          <div class="et-label">Email / Subscriber List</div>
+          <div class="et-count" id="et-count">0</div>
+          <div class="et-sub" id="et-sub">Add your list — this drives real money</div>
+        </div>
+        <button class="et-edit-btn" onclick="toggleEtForm()">Edit</button>
+      </div>
+      <div class="et-form" id="etForm">
+        <div class="form-row">
+          <select id="et-platform">
+            <option value="Substack">Substack</option>
+            <option value="Mailchimp">Mailchimp</option>
+            <option value="Flodesk">Flodesk</option>
+            <option value="ConvertKit">ConvertKit</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="number" id="et-count-input" placeholder="Subscriber count">
+        </div>
+        <div class="form-row">
+          <input type="date" id="et-last-sent" placeholder="Last email sent">
+          <input type="number" id="et-open-rate" placeholder="Open rate %" max="100">
+        </div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="toggleEtForm()">Cancel</button>
+          <button class="btn-save" onclick="saveEmailList()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEKLY REVIEW -->
+    <div class="weekly-review">
+      <div class="wr-hdr" onclick="toggleWeeklyReview()">
+        <div>
+          <div class="wr-title">Weekly Review</div>
+          <div class="wr-week-range" id="wr-range">This week</div>
+        </div>
+        <span class="wr-toggle" id="wr-toggle">▼</span>
+      </div>
+      <div class="wr-body" id="wrBody">
+        <div class="wr-grid">
+          <div class="wr-cell"><div class="wr-cell-lbl">Posts This Week</div><div class="wr-cell-val" id="wr-posts">0</div><div class="wr-cell-sub" id="wr-posts-sub">IG / FB / TT</div></div>
+          <div class="wr-cell"><div class="wr-cell-lbl">Total Reach</div><div class="wr-cell-val" id="wr-reach">—</div><div class="wr-cell-sub">IG + FB combined</div></div>
+          <div class="wr-cell"><div class="wr-cell-lbl">Bookings Received</div><div class="wr-cell-val" id="wr-bookings">0</div><div class="wr-cell-sub" id="wr-bk-sub">this week</div></div>
+          <div class="wr-cell"><div class="wr-cell-lbl">Revenue Booked</div><div class="wr-cell-val" id="wr-revenue">$0</div><div class="wr-cell-sub">confirmed only</div></div>
+          <div class="wr-cell"><div class="wr-cell-lbl">Top Pillar</div><div class="wr-cell-val" style="font-size:13px;margin-top:2px" id="wr-pillar">—</div><div class="wr-cell-sub">most posted this week</div></div>
+          <div class="wr-cell"><div class="wr-cell-lbl">Open Tasks</div><div class="wr-cell-val" id="wr-tasks">0</div><div class="wr-cell-sub">need action</div></div>
+        </div>
+        <div class="wr-prompt" id="wr-prompt">Loading your weekly snapshot...</div>
+      </div>
     </div>
 
     <div class="stats">
@@ -771,6 +887,11 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       <div id="bookings-list"></div>
     </div>
     <div class="section">
+      <div class="sec-title">Source Attribution</div>
+      <div style="font-size:12px;color:var(--text-mid);line-height:1.7;margin-bottom:8px">Where your bookings come from</div>
+      <div id="source-chart"></div>
+    </div>
+    <div class="section">
       <div class="sec-title">Service Popularity</div>
       <div class="bar-row"><span class="bar-lbl">Photo Prop</span><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div><span class="bar-pct">78%</span></div>
       <div class="bar-row"><span class="bar-lbl">Pony Rides</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><span class="bar-pct">55%</span></div>
@@ -778,6 +899,76 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       <div class="bar-row"><span class="bar-lbl">Wagon Rides</span><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div><span class="bar-pct">30%</span></div>
       <div class="bar-row"><span class="bar-lbl">Ed. Programs</span><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div><span class="bar-pct">20%</span></div>
     </div>
+  </div>
+
+  <!-- INCOME TAB -->
+  <div id="p-income" class="page">
+
+    <div class="income-total-bar">
+      <div>
+        <div class="income-total-label">Total Income — This Month</div>
+        <div class="income-total-val" id="income-total">$0</div>
+      </div>
+      <button class="edit-btn" onclick="toggleIncomeForm()">+ Add Income</button>
+    </div>
+
+    <div class="income-add-form" id="incomeAddForm">
+      <div class="form-title">Record income received</div>
+      <div class="form-row">
+        <select id="inc-stream">
+          <option value="Booking">Event Booking</option>
+          <option value="Affiliate">Affiliate / Referral (SpotMyPhotos)</option>
+          <option value="Brand Deal">Brand Deal / Sponsored Post</option>
+          <option value="Digital">Digital Product Sale</option>
+          <option value="Creator Fund">TikTok Creator Fund</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="number" id="inc-amount" placeholder="Amount — no $ sign">
+      </div>
+      <div class="form-row">
+        <input type="date" id="inc-date">
+        <input type="text" id="inc-notes" placeholder="Source, brand, notes...">
+      </div>
+      <div class="form-actions">
+        <button class="btn-cancel" onclick="toggleIncomeForm()">Cancel</button>
+        <button class="btn-save" onclick="addIncomeEntry()">Save</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">By Stream — This Month</div>
+      <div id="income-by-stream"></div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        All Income Entries
+        <span style="font-size:11px;font-weight:700;color:var(--text-light);letter-spacing:0.05em">Most recent first</span>
+      </div>
+      <div id="income-entries-list"><div style="font-size:13px;color:var(--text-light);font-style:italic">No income recorded yet. Hit + Add Income to start.</div></div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Monthly Goal</div>
+      <div id="income-goal-bar-wrap">
+        <div class="bar-row"><span class="bar-lbl" id="income-goal-lbl">Goal: not set</span><div class="bar-track"><div class="bar-fill" id="income-goal-fill" style="width:0%"></div></div><span class="bar-pct" id="income-goal-pct">0%</span></div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+        <input type="number" id="income-goal-input" placeholder="Monthly goal ($)" style="font-family:'Lato',sans-serif;font-size:13px;padding:7px 10px;border:1px solid var(--border);border-radius:6px;width:160px">
+        <button class="btn-save" style="padding:7px 14px;font-size:12px" onclick="saveIncomeGoal()">Set Goal</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Income Streams Guide</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:var(--teal-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--teal-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Affiliate / Referral</div><div style="font-size:12px;color:var(--teal-text);line-height:1.6">SpotMyPhotos referrals, Amazon links in bio, gear/supply brands you actually use</div></div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Brand Deals</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">Paid posts with outdoor, Western, family, kids, or equine brands. Rate: 1–3% of following minimum.</div></div>
+        <div style="background:#EEF2FB;border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:#1A3A7A;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Digital Products</div><div style="font-size:12px;color:#1A3A7A;line-height:1.6">Horse event planning guide, pony party checklist, photo prop venue kit — sell once, earn forever</div></div>
+        <div style="background:var(--green-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--green-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Creator Fund / TikTok</div><div style="font-size:12px;color:var(--green-dark);line-height:1.6">TikTok Creator Rewards pays $0.40–$0.72 per 1,000 views on eligible content. #HorseTok scales fast.</div></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- CALENDAR TAB -->
@@ -845,6 +1036,11 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
         <button class="btn-cancel" onclick="closeCalAdd()">Cancel</button>
         <button class="btn-save" onclick="saveCalAdd()">Save</button>
       </div>
+    </div>
+
+    <div style="margin-bottom:0.75rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <button class="edit-btn" onclick="loadCalTemplate()" style="font-size:12px;padding:6px 14px">↺ Load Weekly Rhythm Template</button>
+      <span style="font-size:11px;color:var(--text-light)">Mon Reel · Wed Carousel · Fri FB Native · Sun TikTok</span>
     </div>
 
     <div class="cal-grid-wrap">
@@ -1139,6 +1335,11 @@ let ttData = JSON.parse(localStorage.getItem('tc_tt_data') || 'null') || {follow
 let calPosts = JSON.parse(localStorage.getItem('tc_cal_posts') || '[]');
 let calFilter = 'all';
 
+// ── INCOME + EMAIL STATE ─────────────────────────────────────────────────────
+let incomeEntries = JSON.parse(localStorage.getItem('tc_income') || '[]');
+let incomeGoal = parseInt(localStorage.getItem('tc_income_goal') || '0');
+let emailList = JSON.parse(localStorage.getItem('tc_email_list') || '{"platform":"Substack","count":0,"lastSent":"","openRate":""}');
+
 // ── TASKS STATE ─────────────────────────────────────────────────────────────
 let tasks = JSON.parse(localStorage.getItem('tc_tasks') || '[]');
 let taskFilter = 'all';
@@ -1187,6 +1388,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
   renderCalGrid();
   renderTasks();
   renderFocusPanel();
+  renderIncome();
+  renderEmailTracker();
+  renderWeeklyReview();
   fetchFromWebhook();
   setInterval(fetchFromWebhook, 5*60*1000);
 });
@@ -1357,6 +1561,7 @@ function renderOverview(){
 
   renderScorecard();
   renderFocusPanel();
+  renderWeeklyReview();
 
   const statusClass = {Confirmed:'badge-green',Pending:'badge-amber','Inquiry Sent':'badge-red'};
   const eventsEl = document.getElementById('ov-events');
@@ -1381,17 +1586,44 @@ function renderBookings(){
   if(!bookings.length){
     el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic;padding:0.5rem">No bookings yet. Add one above.</div>';
   } else {
-    el.innerHTML = bookings.map((b,i)=>`
-      <div class="row-item">
-        <div style="flex:1;min-width:0">
-          <div class="row-name">${escHtml(b.name)}</div>
-          <div class="row-meta">${escHtml(b.type)} &bull; ${escHtml(b.value)} &bull; ${formatDate(b.date)}${b.source?` &bull; via ${escHtml(b.source)}`:''}${b.followup?` &bull; follow-up ${formatDate(b.followup)}`:''}${b.notes?` &bull; ${escHtml(b.notes)}`:''}</div>
+    const today = new Date().toISOString().split('T')[0];
+    el.innerHTML = bookings.map((b,i)=>{
+      let fuTag = '';
+      if(b.followup){
+        if(b.followup<today) fuTag=`<span class="crm-followup-alert crm-fu-overdue">⚠ Follow-up overdue</span>`;
+        else if(b.followup===today) fuTag=`<span class="crm-followup-alert crm-fu-today">Follow up today</span>`;
+        else fuTag=`<span class="crm-followup-alert crm-fu-future">Follow up ${formatDate(b.followup)}</span>`;
+      }
+      return `<div class="bk-row-wrap" id="bkwrap-${i}">
+        <div class="row-item closed" id="bkrow-${i}" onclick="toggleCRM(${i})" style="cursor:pointer;border-radius:8px;border:1.5px solid var(--border)">
+          <div style="flex:1;min-width:0">
+            <div class="row-name">${escHtml(b.name)}</div>
+            <div class="row-meta">${escHtml(b.type)} &bull; ${escHtml(b.value)} &bull; ${formatDate(b.date)}${b.source?` &bull; via ${escHtml(b.source)}`:''}</div>
+          </div>
+          <div class="row-right">
+            <span class="badge ${statusClass[b.status]||'badge-amber'}">${b.status}</span>
+            <div style="font-size:11px;color:var(--text-light);margin-top:3px;text-align:right">tap for detail ▼</div>
+          </div>
         </div>
-        <div class="row-right">
-          <span class="badge ${statusClass[b.status]||'badge-amber'}">${b.status}</span>
-          <br><button class="del-btn" onclick="deleteBooking(${i})">remove</button>
+        <div class="crm-detail" id="crm-${i}">
+          ${fuTag}
+          <div class="crm-grid">
+            <div class="crm-field"><strong>Service</strong>${escHtml(b.type)||'—'}</div>
+            <div class="crm-field"><strong>Value</strong>${escHtml(b.value)||'—'}</div>
+            <div class="crm-field"><strong>Event Date</strong>${formatDate(b.date)||'—'}</div>
+            <div class="crm-field"><strong>How Found Us</strong>${escHtml(b.source)||'Not recorded'}</div>
+            <div class="crm-field"><strong>Follow-up Date</strong>${formatDate(b.followup)||'Not set'}</div>
+            <div class="crm-field"><strong>Status</strong>${escHtml(b.status)}</div>
+          </div>
+          ${b.notes?`<div class="crm-field" style="margin-bottom:8px"><strong>Notes</strong>${escHtml(b.notes)}</div>`:''}
+          <div class="crm-action-row">
+            ${b.status!=='Confirmed'?`<button class="crm-btn crm-btn-confirm" onclick="confirmBooking(${i})">✓ Mark Confirmed</button>`:''}
+            <button class="crm-btn crm-btn-primary" onclick="snoozeFollowup(${i})">Snooze follow-up 1 week</button>
+            <button class="crm-btn crm-btn-del" onclick="deleteBooking(${i})">Remove</button>
+          </div>
         </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   }
   const confirmed = bookings.filter(b=>b.status==='Confirmed').length;
   const pending = bookings.filter(b=>b.status==='Pending').length;
@@ -1401,6 +1633,7 @@ function renderBookings(){
   document.getElementById('bk-pending').textContent = pending;
   document.getElementById('bk-revenue').textContent = '$'+revenue.toLocaleString();
   document.getElementById('bk-pipeline').textContent = '$'+pipeline.toLocaleString();
+  renderSourceChart();
   saveBookings();
 }
 
@@ -1758,6 +1991,265 @@ function saveCalAdd(){
   renderCalGrid();
   renderCalendar();
   if(calSelectedDate)calCellClick(calSelectedDate);
+}
+
+// ── CRM HELPERS ──────────────────────────────────────────────────────────────
+function toggleCRM(i){
+  const det=document.getElementById('crm-'+i);
+  const row=document.getElementById('bkrow-'+i);
+  if(!det)return;
+  const isOpen=det.classList.contains('open');
+  // close all others
+  document.querySelectorAll('.crm-detail').forEach(d=>d.classList.remove('open'));
+  document.querySelectorAll('[id^="bkrow-"]').forEach(r=>{r.style.borderRadius='8px';r.querySelector('div.row-right div:last-child').textContent='tap for detail ▼';});
+  if(!isOpen){
+    det.classList.add('open');
+    row.style.borderRadius='8px 8px 0 0';
+    row.querySelector('div.row-right div:last-child').textContent='tap to close ▲';
+  }
+}
+function confirmBooking(i){
+  bookings[i].status='Confirmed';
+  saveBookings();
+  renderBookings();
+  renderOverview();
+}
+function snoozeFollowup(i){
+  const next=new Date(Date.now()+7*86400000).toISOString().split('T')[0];
+  bookings[i].followup=next;
+  saveBookings();
+  renderBookings();
+}
+function renderSourceChart(){
+  const el=document.getElementById('source-chart');
+  if(!el)return;
+  const tally={};
+  bookings.forEach(b=>{const s=b.source||'Not recorded';tally[s]=(tally[s]||0)+1;});
+  const total=bookings.length;
+  if(!total){el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic">Add bookings with source info to see attribution.</div>';return;}
+  el.innerHTML=Object.entries(tally).sort((a,b)=>b[1]-a[1]).map(([src,cnt])=>`
+    <div class="bar-row">
+      <span class="bar-lbl" style="font-size:12px">${escHtml(src)}</span>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(cnt/total*100)}%;background:var(--teal)"></div></div>
+      <span class="bar-pct" style="font-size:12px;color:var(--teal)">${cnt}</span>
+    </div>`).join('');
+}
+
+// ── INCOME STREAMS ───────────────────────────────────────────────────────────
+const INCOME_ICONS={'Booking':'🐴','Affiliate':'🔗','Brand Deal':'🤝','Digital':'📦','Creator Fund':'🎵','Other':'💰'};
+function toggleIncomeForm(){document.getElementById('incomeAddForm').classList.toggle('open');}
+function addIncomeEntry(){
+  const amount=parseFloat(document.getElementById('inc-amount').value)||0;
+  if(!amount){alert('Enter an amount.');return;}
+  incomeEntries.push({
+    id:Date.now(),
+    stream:document.getElementById('inc-stream').value,
+    amount,
+    date:document.getElementById('inc-date').value||new Date().toISOString().split('T')[0],
+    notes:document.getElementById('inc-notes').value.trim()
+  });
+  document.getElementById('inc-amount').value='';
+  document.getElementById('inc-date').value='';
+  document.getElementById('inc-notes').value='';
+  localStorage.setItem('tc_income',JSON.stringify(incomeEntries));
+  toggleIncomeForm();
+  renderIncome();
+}
+function deleteIncomeEntry(id){
+  if(!confirm('Remove this entry?'))return;
+  incomeEntries=incomeEntries.filter(e=>e.id!==id);
+  localStorage.setItem('tc_income',JSON.stringify(incomeEntries));
+  renderIncome();
+}
+function renderIncome(){
+  const now=new Date();
+  const ym=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;
+  const thisMonth=incomeEntries.filter(e=>e.date&&e.date.startsWith(ym));
+  const total=thisMonth.reduce((s,e)=>s+e.amount,0);
+  const totalEl=document.getElementById('income-total');
+  if(totalEl)totalEl.textContent='$'+total.toLocaleString();
+  // By stream
+  const byStream={};
+  thisMonth.forEach(e=>{byStream[e.stream]=(byStream[e.stream]||0)+e.amount;});
+  const streamEl=document.getElementById('income-by-stream');
+  if(streamEl){
+    if(!Object.keys(byStream).length){
+      streamEl.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic">No income recorded for this month yet.</div>';
+    } else {
+      streamEl.innerHTML=Object.entries(byStream).sort((a,b)=>b[1]-a[1]).map(([s,a])=>`
+        <div class="income-stream-card">
+          <div class="income-stream-icon">${INCOME_ICONS[s]||'💰'}</div>
+          <div><div class="income-stream-name">${escHtml(s)}</div><div class="income-stream-sub">${thisMonth.filter(e=>e.stream===s).length} entries this month</div></div>
+          <div class="income-stream-amt">$${a.toLocaleString()}</div>
+        </div>`).join('');
+    }
+  }
+  // All entries list
+  const listEl=document.getElementById('income-entries-list');
+  if(listEl){
+    if(!incomeEntries.length){
+      listEl.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic">No income recorded yet. Hit + Add Income to start.</div>';
+    } else {
+      const sorted=[...incomeEntries].sort((a,b)=>new Date(b.date)-new Date(a.date));
+      listEl.innerHTML=sorted.map(e=>`
+        <div class="income-entry-row">
+          <div>
+            <div class="income-entry-name">${INCOME_ICONS[e.stream]||'💰'} ${escHtml(e.stream)}${e.notes?` — ${escHtml(e.notes)}`:''}</div>
+            <div class="income-entry-meta">${formatDate(e.date)}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div class="income-entry-amt">$${e.amount.toLocaleString()}</div>
+            <button class="del-btn" onclick="deleteIncomeEntry(${e.id})">×</button>
+          </div>
+        </div>`).join('');
+    }
+  }
+  // Goal bar
+  if(incomeGoal>0){
+    const pct=Math.min(100,Math.round(total/incomeGoal*100));
+    const fillEl=document.getElementById('income-goal-fill');
+    if(fillEl)fillEl.style.width=pct+'%';
+    const pctEl=document.getElementById('income-goal-pct');
+    if(pctEl)pctEl.textContent=pct+'%';
+    const lblEl=document.getElementById('income-goal-lbl');
+    if(lblEl)lblEl.textContent=`Goal: $${incomeGoal.toLocaleString()} (${pct}% reached)`;
+  }
+  const goalInput=document.getElementById('income-goal-input');
+  if(goalInput&&incomeGoal)goalInput.value=incomeGoal;
+}
+function saveIncomeGoal(){
+  const g=parseInt(document.getElementById('income-goal-input').value)||0;
+  incomeGoal=g;
+  localStorage.setItem('tc_income_goal',g);
+  renderIncome();
+}
+
+// ── EMAIL / SUBSCRIBER TRACKER ────────────────────────────────────────────────
+function toggleEtForm(){document.getElementById('etForm').classList.toggle('open');}
+function saveEmailList(){
+  emailList={
+    platform:document.getElementById('et-platform').value,
+    count:parseInt(document.getElementById('et-count-input').value)||0,
+    lastSent:document.getElementById('et-last-sent').value||'',
+    openRate:document.getElementById('et-open-rate').value||''
+  };
+  localStorage.setItem('tc_email_list',JSON.stringify(emailList));
+  toggleEtForm();
+  renderEmailTracker();
+}
+function renderEmailTracker(){
+  const cntEl=document.getElementById('et-count');
+  if(cntEl)cntEl.textContent=emailList.count>0?emailList.count.toLocaleString():'0';
+  const subEl=document.getElementById('et-sub');
+  if(subEl){
+    const parts=[];
+    if(emailList.platform)parts.push(emailList.platform);
+    if(emailList.lastSent)parts.push('Last sent '+formatDate(emailList.lastSent));
+    if(emailList.openRate)parts.push(emailList.openRate+'% open rate');
+    subEl.textContent=parts.length?parts.join(' · '):'Add your list — this drives real money';
+  }
+  // Pre-fill form
+  const platEl=document.getElementById('et-platform');
+  if(platEl)platEl.value=emailList.platform||'Substack';
+  const cInputEl=document.getElementById('et-count-input');
+  if(cInputEl&&emailList.count)cInputEl.value=emailList.count;
+  const lsEl=document.getElementById('et-last-sent');
+  if(lsEl&&emailList.lastSent)lsEl.value=emailList.lastSent;
+  const orEl=document.getElementById('et-open-rate');
+  if(orEl&&emailList.openRate)orEl.value=emailList.openRate;
+}
+
+// ── WEEKLY REVIEW ────────────────────────────────────────────────────────────
+function toggleWeeklyReview(){
+  const body=document.getElementById('wrBody');
+  const tog=document.getElementById('wr-toggle');
+  if(!body)return;
+  body.classList.toggle('open');
+  if(tog)tog.textContent=body.classList.contains('open')?'▲':'▼';
+  if(body.classList.contains('open'))renderWeeklyReview();
+}
+function renderWeeklyReview(){
+  const today=new Date();
+  const sun=new Date(today);sun.setDate(today.getDate()-today.getDay());
+  const sat=new Date(sun);sat.setDate(sun.getDate()+6);
+  const ws=sun.toISOString().split('T')[0];
+  const we=sat.toISOString().split('T')[0];
+  const rangeEl=document.getElementById('wr-range');
+  if(rangeEl)rangeEl.textContent=formatDate(ws)+' – '+formatDate(we);
+  const weekPosts=calPosts.filter(p=>p.date&&p.date>=ws&&p.date<=we);
+  const ig=weekPosts.filter(p=>p.platform==='ig').length;
+  const fb=weekPosts.filter(p=>p.platform==='fb').length;
+  const tt=weekPosts.filter(p=>p.platform==='tt').length;
+  const wr_posts=document.getElementById('wr-posts');
+  if(wr_posts)wr_posts.textContent=weekPosts.length;
+  const wr_sub=document.getElementById('wr-posts-sub');
+  if(wr_sub)wr_sub.textContent=`IG ${ig} · FB ${fb} · TT ${tt}`;
+  const totalReach=(igData?igData.reach:0)+(fbData?fbData.reach:0);
+  const wr_reach=document.getElementById('wr-reach');
+  if(wr_reach)wr_reach.textContent=totalReach>0?fmt(totalReach):'—';
+  const weekBks=bookings.filter(b=>b.date&&b.date>=ws&&b.date<=we);
+  const wr_bk=document.getElementById('wr-bookings');
+  if(wr_bk)wr_bk.textContent=weekBks.length;
+  const wr_bk_sub=document.getElementById('wr-bk-sub');
+  if(wr_bk_sub)wr_bk_sub.textContent=weekBks.length===1?'1 booked':'booked this week';
+  const weekRev=weekBks.filter(b=>b.status==='Confirmed').reduce((s,b)=>s+parseMoney(b.value),0);
+  const wr_rev=document.getElementById('wr-revenue');
+  if(wr_rev)wr_rev.textContent='$'+weekRev.toLocaleString();
+  // Top pillar
+  const pillarTally={};
+  weekPosts.forEach(p=>{if(p.pillar)pillarTally[p.pillar]=(pillarTally[p.pillar]||0)+1;});
+  const topPillar=Object.entries(pillarTally).sort((a,b)=>b[1]-a[1])[0];
+  const wr_pil=document.getElementById('wr-pillar');
+  if(wr_pil)wr_pil.textContent=topPillar?topPillar[0]:'No posts yet';
+  const openTk=tasks.filter(t=>!t.done).length;
+  const wr_tk=document.getElementById('wr-tasks');
+  if(wr_tk)wr_tk.textContent=openTk;
+  // Reflection prompt
+  const day=today.getDay();
+  const prompts=[
+    'Start of the week — what\'s the one post that could drive the most bookings this week?',
+    'Monday check-in — are your focus items set? Add tasks for anything that needs to happen this week.',
+    'Mid-week — have you replied to every comment from Monday\'s post?',
+    'Hump day — what content can you batch for the rest of the week while you have momentum?',
+    'Thursday — check your follow-up dates. Anyone in your pipeline gone cold?',
+    'Friday — post something real today. Not promotional. Show the horses.',
+    'Sunday review — '+weekPosts.length+' post'+(weekPosts.length!==1?'s':'')+' scheduled this week. '+
+      (weekBks.length?weekBks.length+' booking'+(weekBks.length!==1?'s':'')+' received. ':'No new bookings this week — what content are you missing? ')+
+      (openTk?openTk+' task'+(openTk!==1?'s':'')+' open heading into next week.':'All tasks clear. Good week.')
+  ];
+  const wr_prompt=document.getElementById('wr-prompt');
+  if(wr_prompt)wr_prompt.textContent=prompts[day];
+}
+
+// ── CALENDAR WEEKLY TEMPLATE ─────────────────────────────────────────────────
+function loadCalTemplate(){
+  if(calPosts.length>0&&!confirm('This will ADD the template posts to your existing calendar (won\'t delete anything). Continue?'))return;
+  const today=new Date();
+  const monday=new Date(today);
+  monday.setDate(today.getDate()+(1-today.getDay()+7)%7);
+  const template=[
+    {offset:0,platform:'ig',pillar:'The Animals',status:'idea',caption:'[TEMPLATE] Reel: [Horse name] doing [specific behavior] — 15 seconds, no talking, just the horse'},
+    {offset:2,platform:'ig',pillar:'The Moments',status:'idea',caption:'[TEMPLATE] Carousel: [Event] moment — guest reaction, kid with horse, or behind-the-scenes sequence'},
+    {offset:4,platform:'fb',pillar:'Events & Booking',status:'idea',caption:'[TEMPLATE] Facebook native post: local angle + booking CTA — "Anyone in North Idaho looking for [service] this [month]?"'},
+    {offset:6,platform:'tt',pillar:'The Animals',status:'idea',caption:'[TEMPLATE] TikTok: POV hook + horse on screen in first 2 seconds + text overlay — under 30 seconds'}
+  ];
+  for(let week=0;week<4;week++){
+    template.forEach(t=>{
+      const d=new Date(monday);
+      d.setDate(monday.getDate()+week*7+t.offset);
+      calPosts.push({
+        platform:t.platform,
+        date:d.toISOString().split('T')[0],
+        pillar:t.pillar,
+        status:t.status,
+        caption:t.caption
+      });
+    });
+  }
+  localStorage.setItem('tc_cal_posts',JSON.stringify(calPosts));
+  renderCalGrid();
+  renderCalendar();
+  renderScorecard();
 }
 
 // ── TASKS ────────────────────────────────────────────────────────────────────
