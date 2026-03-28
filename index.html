@@ -80,6 +80,23 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .row-right{text-align:right;flex-shrink:0;padding-left:10px}
 .row-date{font-size:12px;font-weight:700;color:var(--text-mid);margin-bottom:4px}
 
+/* BEST TIMES TO POST */
+.post-times{margin-top:0}
+.pt-next{background:var(--amber-bg);border:1.5px solid var(--gold);border-radius:10px;padding:0.75rem 1rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.pt-next-icon{font-size:20px;flex-shrink:0}
+.pt-next-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-deeper);margin-bottom:2px}
+.pt-next-val{font-size:14px;font-weight:700;color:var(--text)}
+.pt-next-sub{font-size:12px;color:var(--text-mid);margin-top:1px}
+.pt-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.pt-row{display:flex;align-items:flex-start;gap:8px}
+.pt-day{font-size:11px;font-weight:700;color:var(--text-mid);letter-spacing:0.06em;text-transform:uppercase;width:72px;flex-shrink:0;padding-top:4px}
+.pt-slots{display:flex;flex-wrap:wrap;gap:5px}
+.pt-slot{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;border:1.5px solid var(--border);color:var(--text-mid);background:#FAFAF8;white-space:nowrap}
+.pt-slot.prime{background:var(--amber-bg);border-color:var(--gold);color:var(--gold-dark)}
+.pt-slot.good{background:var(--green-bg);border-color:#97C459;color:var(--green-dark)}
+.pt-why{font-size:12px;color:var(--text-light);line-height:1.6;border-top:1px solid var(--border);padding-top:8px;margin-top:4px}
+.pt-why strong{color:var(--text-mid)}
+
 /* WORKING/FLOPPING */
 .ww{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .ww-card{border-radius:10px;padding:0.85rem}
@@ -665,6 +682,48 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       <div class="sc"><div class="sc-label">Profile Views (7d)</div><div class="sc-val green" id="ig-views"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="ig-view-d"></div></div>
     </div>
     <div class="section">
+      <div class="sec-title">Best Times to Post</div>
+      <div class="post-times">
+        <div class="pt-next" id="pt-next-ig">
+          <div class="pt-next-icon">🕐</div>
+          <div>
+            <div class="pt-next-label">Next Best Window</div>
+            <div class="pt-next-val" id="pt-next-ig-val">Loading...</div>
+            <div class="pt-next-sub" id="pt-next-ig-sub"></div>
+          </div>
+        </div>
+        <div class="pt-grid">
+          <div class="pt-row">
+            <div class="pt-day">Mon–Wed</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">7–8 AM</span>
+              <span class="pt-slot">11 AM–1 PM</span>
+              <span class="pt-slot prime">7–9 PM</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Thu–Fri</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">6–8 AM</span>
+              <span class="pt-slot">12–2 PM</span>
+              <span class="pt-slot prime">6–9 PM ★</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Sat–Sun</div>
+            <div class="pt-slots">
+              <span class="pt-slot prime">9–11 AM ★</span>
+              <span class="pt-slot good">1–3 PM</span>
+              <span class="pt-slot">6–8 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-why">
+          <strong>★ Top windows</strong> — Thu/Fri evening and Sat/Sun morning are when family + equine audiences are most active. <strong>Reels</strong> get pushed by the algorithm for 24–48 hrs after posting — publish in the evening so the overnight distribution cycle catches morning scrollers. <strong>Avoid</strong> Monday before 9 AM and Sunday after 9 PM (lowest engagement for this niche).
+        </div>
+      </div>
+    </div>
+    <div class="section">
       <div class="sec-title">Recent Posts</div>
       <div id="ig-posts"><div style="font-size:13px;color:var(--text-light);font-style:italic">Loading recent posts...</div></div>
     </div>
@@ -728,6 +787,45 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       <div class="warn-body">Instagram posts shared to Facebook are treated as cross-posts by the algorithm — Facebook actively reduces their reach because the content wasn't made natively. Your 246 followers aren't seeing the posts the way your 820 Instagram followers are. This is a known Meta issue, not a you issue.</div>
     </div>
     <div class="section">
+      <div class="sec-title">Best Times to Post</div>
+      <div class="post-times">
+        <div class="pt-next" id="pt-next-fb">
+          <div class="pt-next-icon">🕐</div>
+          <div>
+            <div class="pt-next-label">Next Best Window</div>
+            <div class="pt-next-val" id="pt-next-fb-val">Loading...</div>
+            <div class="pt-next-sub" id="pt-next-fb-sub"></div>
+          </div>
+        </div>
+        <div class="pt-grid">
+          <div class="pt-row">
+            <div class="pt-day">Tue–Wed</div>
+            <div class="pt-slots">
+              <span class="pt-slot prime">8–10 AM ★</span>
+              <span class="pt-slot good">1–3 PM</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Thu–Fri</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">8–9 AM</span>
+              <span class="pt-slot prime">1–4 PM ★</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Sat–Sun</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">10 AM–12 PM</span>
+              <span class="pt-slot">2–4 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-why">
+          <strong>★ Top windows</strong> — Tuesday/Wednesday morning and Thursday afternoon are Facebook's peak for local family and event content. <strong>Events</strong> posted 2+ weeks out get the most organic spread — Facebook still favors event RSVPs heavily. <strong>Avoid</strong> Friday after 5 PM and all day Monday (lowest page reach for small businesses).
+        </div>
+      </div>
+    </div>
+    <div class="section">
       <div class="sec-title">What actually works on Facebook</div>
       <div class="tip-card fb">
         <div class="tip-plat">Facebook</div>
@@ -782,6 +880,46 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       <div class="sc"><div class="sc-label">Total Views</div><div class="sc-val" id="tt-views"><span class="loading-val">—</span></div><div class="sc-delta neutral">Lifetime</div></div>
       <div class="sc"><div class="sc-label">Likes (7d)</div><div class="sc-val teal" id="tt-likes"><span class="loading-val">—</span></div><div class="sc-delta" id="tt-likes-d"></div></div>
       <div class="sc"><div class="sc-label">Comments (7d)</div><div class="sc-val green" id="tt-comments"><span class="loading-val">—</span></div><div class="sc-delta" id="tt-com-d"></div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Best Times to Post</div>
+      <div class="post-times">
+        <div class="pt-next" id="pt-next-tt">
+          <div class="pt-next-icon">🕐</div>
+          <div>
+            <div class="pt-next-label">Next Best Window</div>
+            <div class="pt-next-val" id="pt-next-tt-val">Loading...</div>
+            <div class="pt-next-sub" id="pt-next-tt-sub"></div>
+          </div>
+        </div>
+        <div class="pt-grid">
+          <div class="pt-row">
+            <div class="pt-day">Tue–Thu</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">7–9 AM</span>
+              <span class="pt-slot">12–2 PM</span>
+              <span class="pt-slot prime">7–10 PM ★</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Fri</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">7–9 AM</span>
+              <span class="pt-slot prime">5–8 PM ★</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Sat–Sun</div>
+            <div class="pt-slots">
+              <span class="pt-slot prime">11 AM–1 PM ★</span>
+              <span class="pt-slot good">7–9 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-why">
+          <strong>★ Top windows</strong> — Friday evening and Saturday midday are peak for #HorseTok. TikTok's algorithm pushes content for 3–7 days, so timing matters less than consistency — but posting before your audience's active hours gives the first-hour engagement spike that signals the algorithm to distribute wider. <strong>Avoid</strong> Sunday morning and Monday before noon (lowest #HorseTok activity).
+        </div>
+      </div>
     </div>
     <div class="section">
       <div class="sec-title">What works on TikTok</div>
@@ -1439,6 +1577,126 @@ let calFilter = 'all';
 // ── POST PERFORMANCE STATE ───────────────────────────────────────────────────
 let postPerf = JSON.parse(localStorage.getItem('tc_post_perf') || '[]');
 
+// ── BEST TIMES TO POST ───────────────────────────────────────────────────────
+// Windows: [dayOfWeek (0=Sun..6=Sat), startHour, endHour, label, isPrime]
+const POST_WINDOWS = {
+  ig: [
+    [1,'7:00 AM','8:00 AM','Mon–Wed morning',false],
+    [1,'7:00 PM','9:00 PM','Mon–Wed evening',true],
+    [1,'11:00 AM','1:00 PM','Mon–Wed midday',false],
+    [2,'7:00 AM','8:00 AM','Mon–Wed morning',false],
+    [2,'7:00 PM','9:00 PM','Mon–Wed evening',true],
+    [2,'11:00 AM','1:00 PM','Mon–Wed midday',false],
+    [3,'7:00 AM','8:00 AM','Mon–Wed morning',false],
+    [3,'7:00 PM','9:00 PM','Mon–Wed evening',true],
+    [3,'11:00 AM','1:00 PM','Mon–Wed midday',false],
+    [4,'6:00 AM','8:00 AM','Thu–Fri morning',false],
+    [4,'6:00 PM','9:00 PM','Thu–Fri evening ★',true],
+    [4,'12:00 PM','2:00 PM','Thu–Fri midday',false],
+    [5,'6:00 AM','8:00 AM','Thu–Fri morning',false],
+    [5,'6:00 PM','9:00 PM','Thu–Fri evening ★',true],
+    [5,'12:00 PM','2:00 PM','Thu–Fri midday',false],
+    [6,'9:00 AM','11:00 AM','Sat–Sun morning ★',true],
+    [6,'1:00 PM','3:00 PM','Sat–Sun afternoon',false],
+    [6,'6:00 PM','8:00 PM','Sat–Sun evening',false],
+    [0,'9:00 AM','11:00 AM','Sat–Sun morning ★',true],
+    [0,'1:00 PM','3:00 PM','Sat–Sun afternoon',false],
+    [0,'6:00 PM','8:00 PM','Sat–Sun evening',false],
+  ],
+  fb: [
+    [2,'8:00 AM','10:00 AM','Tue–Wed morning ★',true],
+    [2,'1:00 PM','3:00 PM','Tue–Wed afternoon',false],
+    [3,'8:00 AM','10:00 AM','Tue–Wed morning ★',true],
+    [3,'1:00 PM','3:00 PM','Tue–Wed afternoon',false],
+    [4,'8:00 AM','9:00 AM','Thu–Fri morning',false],
+    [4,'1:00 PM','4:00 PM','Thu–Fri afternoon ★',true],
+    [5,'8:00 AM','9:00 AM','Thu–Fri morning',false],
+    [5,'1:00 PM','4:00 PM','Thu–Fri afternoon ★',true],
+    [6,'10:00 AM','12:00 PM','Sat–Sun morning',false],
+    [6,'2:00 PM','4:00 PM','Sat–Sun afternoon',false],
+    [0,'10:00 AM','12:00 PM','Sat–Sun morning',false],
+    [0,'2:00 PM','4:00 PM','Sat–Sun afternoon',false],
+  ],
+  tt: [
+    [2,'7:00 AM','9:00 AM','Tue–Thu morning',false],
+    [2,'7:00 PM','10:00 PM','Tue–Thu evening ★',true],
+    [2,'12:00 PM','2:00 PM','Tue–Thu midday',false],
+    [3,'7:00 AM','9:00 AM','Tue–Thu morning',false],
+    [3,'7:00 PM','10:00 PM','Tue–Thu evening ★',true],
+    [3,'12:00 PM','2:00 PM','Tue–Thu midday',false],
+    [4,'7:00 AM','9:00 AM','Tue–Thu morning',false],
+    [4,'7:00 PM','10:00 PM','Tue–Thu evening ★',true],
+    [4,'12:00 PM','2:00 PM','Tue–Thu midday',false],
+    [5,'7:00 AM','9:00 AM','Fri morning',false],
+    [5,'5:00 PM','8:00 PM','Fri evening ★',true],
+    [6,'11:00 AM','1:00 PM','Sat–Sun midday ★',true],
+    [6,'7:00 PM','9:00 PM','Sat–Sun evening',false],
+    [0,'11:00 AM','1:00 PM','Sat–Sun midday ★',true],
+    [0,'7:00 PM','9:00 PM','Sat–Sun evening',false],
+  ]
+};
+
+function parseHour(str) {
+  const [time, ampm] = str.split(' ');
+  let [h, m] = time.split(':').map(Number);
+  if (ampm === 'PM' && h !== 12) h += 12;
+  if (ampm === 'AM' && h === 12) h = 0;
+  return h + m / 60;
+}
+
+function calcNextWindow(platform) {
+  const now = new Date();
+  const curDay = now.getDay();
+  const curHour = now.getHours() + now.getMinutes() / 60;
+  const windows = POST_WINDOWS[platform];
+  const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  // Sort: first look within today (remaining windows), then future days this week, then wrap
+  let best = null;
+  let bestMinutes = Infinity;
+
+  for (const w of windows) {
+    const [wDay, wStart, wEnd, wLabel, wPrime] = w;
+    const startH = parseHour(wStart);
+    const endH = parseHour(wEnd);
+    let daysAhead = (wDay - curDay + 7) % 7;
+    // If same day, check if window hasn't ended
+    if (daysAhead === 0 && curHour >= endH) daysAhead = 7;
+    const minutesUntilStart = daysAhead === 0
+      ? Math.max(0, (startH - curHour) * 60)
+      : daysAhead * 24 * 60 + (startH - curHour) * 60;
+
+    if (minutesUntilStart < bestMinutes) {
+      bestMinutes = minutesUntilStart;
+      const isLive = daysAhead === 0 && curHour >= startH && curHour < endH;
+      best = { wStart, wEnd, wLabel, wPrime, daysAhead, wDay, isLive };
+    }
+  }
+
+  if (!best) return;
+
+  const valEl = document.getElementById(`pt-next-${platform}-val`);
+  const subEl = document.getElementById(`pt-next-${platform}-sub`);
+  const boxEl = document.getElementById(`pt-next-${platform}`);
+  if (!valEl) return;
+
+  if (best.isLive) {
+    valEl.textContent = `Post now — window open until ${best.wEnd}`;
+    subEl.textContent = best.wLabel;
+    boxEl.style.borderColor = '#97C459';
+    boxEl.style.background = 'var(--green-bg)';
+    document.querySelector(`#pt-next-${platform} .pt-next-icon`).textContent = '🟢';
+  } else {
+    const dayName = best.daysAhead === 0 ? 'Today' : best.daysAhead === 1 ? 'Tomorrow' : DAYS[best.wDay];
+    valEl.textContent = `${dayName} · ${best.wStart}–${best.wEnd}`;
+    subEl.textContent = best.wLabel + (best.wPrime ? ' — peak window' : '');
+  }
+}
+
+function initPostingTimes() {
+  ['ig','fb','tt'].forEach(calcNextWindow);
+}
+
 // ── INCOME + EMAIL STATE ─────────────────────────────────────────────────────
 let incomeEntries = JSON.parse(localStorage.getItem('tc_income') || '[]');
 let incomeGoal = parseInt(localStorage.getItem('tc_income_goal') || '0');
@@ -1498,6 +1756,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   renderPostPerf('ig');
   renderPostPerf('fb');
   renderPostPerf('tt');
+  initPostingTimes();
   fetchFromWebhook();
   setInterval(fetchFromWebhook, 5*60*1000);
 });
