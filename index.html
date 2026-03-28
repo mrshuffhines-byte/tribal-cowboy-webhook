@@ -491,6 +491,7 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
     <div class="hdr-date" id="todayDate"></div>
     <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
       <div class="live-pill"><span class="live-dot"></span> <span id="liveLabel">Live</span></div>
+      <button onclick="triggerRefresh()" id="refreshBtn" style="font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--teal-bg);color:var(--teal-text);border:1px solid var(--teal);border-radius:20px;padding:4px 10px;cursor:pointer;letter-spacing:0.04em">Refresh</button>
       <button onclick="openStatsEditor()" style="font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--amber-bg);color:var(--gold-deeper);border:1px solid var(--gold);border-radius:20px;padding:4px 10px;cursor:pointer;letter-spacing:0.04em">Update Stats</button>
     </div>
     <div class="refresh-note" id="lastRefresh"></div>
@@ -1559,6 +1560,31 @@ async function pushToWebhook(type, data){
     });
   } catch(e){
     console.warn('Could not push to webhook:', e.message);
+  }
+}
+
+async function triggerRefresh(){
+  const btn = document.getElementById('refreshBtn');
+  btn.textContent = 'Pulling...';
+  btn.disabled = true;
+  try {
+    const r = await fetch(`${WEBHOOK_URL}/refresh`, { method: 'POST' });
+    if (!r.ok) throw new Error('Server error');
+    const data = await r.json();
+    if (data.instagram?.last_updated) igData = { ...igData, ...data.instagram };
+    if (data.facebook?.last_updated)  fbData = { ...fbData, ...data.facebook };
+    renderInstagram();
+    renderFacebook();
+    renderOverview();
+    updateLastRefresh();
+    document.getElementById('liveLabel').textContent = 'Live';
+    document.getElementById('apiNotice').style.display = 'none';
+    btn.textContent = 'Done';
+    setTimeout(() => { btn.textContent = 'Refresh'; btn.disabled = false; }, 2000);
+  } catch(e) {
+    console.warn('Refresh failed:', e.message);
+    btn.textContent = 'Refresh';
+    btn.disabled = false;
   }
 }
 

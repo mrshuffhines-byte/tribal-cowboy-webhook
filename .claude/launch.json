@@ -3,14 +3,8 @@
   "configurations": [
     {
       "name": "Tribal Cowboy Webhook Server",
-      "runtimeExecutable": "node",
-      "runtimeArgs": ["server.js"],
-      "port": 3000
-    },
-    {
-      "name": "Tribal Cowboy Dev (nodemon)",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": ["start"],
       "port": 3000
     }
   ]
