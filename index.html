@@ -259,6 +259,28 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .claude-quick-btn{display:block;width:100%;text-align:left;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;color:var(--amber-text);background:var(--amber-bg);border:1px solid var(--gold);border-radius:7px;padding:7px 10px;cursor:pointer;margin-bottom:5px;line-height:1.5}
 .claude-quick-btn:hover{background:var(--gold);color:#412402}
 .claude-copied-msg{font-size:11px;color:var(--green-dark);font-weight:700;text-align:center;padding:4px;display:none}
+.claude-tabs{display:flex;gap:4px;padding:0.5rem 1rem 0;background:var(--gold);flex-shrink:0}
+.claude-tab{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;padding:5px 12px;border-radius:6px 6px 0 0;cursor:pointer;border:none;letter-spacing:0.05em;text-transform:uppercase;background:rgba(255,255,255,0.25);color:#412402;transition:background 0.15s}
+.claude-tab.on{background:var(--white);color:var(--gold-deeper)}
+.claude-view{display:none}.claude-view.on{display:block}
+/* PHOTO DROP */
+.photo-drop-zone{border:2px dashed var(--gold);border-radius:10px;padding:1.5rem 1rem;text-align:center;cursor:pointer;background:var(--amber-bg);transition:background 0.15s;margin-bottom:10px}
+.photo-drop-zone:hover,.photo-drop-zone.drag-over{background:#F5E8C8;border-color:var(--gold-dark)}
+.photo-drop-icon{font-size:28px;margin-bottom:6px}
+.photo-drop-txt{font-size:12px;font-weight:700;color:var(--amber-text);line-height:1.6}
+.photo-drop-hint{font-size:11px;color:var(--text-light);margin-top:3px}
+.photo-preview-wrap{margin-bottom:10px;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);display:none}
+.photo-preview-wrap img{width:100%;display:block;max-height:180px;object-fit:cover}
+.photo-preview-name{font-size:11px;color:var(--text-light);font-weight:700;padding:5px 8px;background:var(--cream)}
+.photo-desc-input{width:100%;font-family:'Lato',sans-serif;font-size:12px;padding:8px 10px;border:1.5px solid var(--border);border-radius:7px;color:var(--text);resize:none;margin-bottom:8px;box-sizing:border-box}
+.photo-desc-input:focus{outline:none;border-color:var(--gold)}
+.photo-generate-btn{width:100%;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;background:var(--gold);color:#412402;border:none;border-radius:8px;padding:9px;cursor:pointer;margin-bottom:8px}
+.photo-generate-btn:hover{background:var(--gold-dark);color:#fff}
+.photo-result{background:#F5F2EC;border-radius:8px;padding:0.85rem;margin-bottom:8px;display:none}
+.photo-result-label{font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px}
+.photo-result-text{font-size:12px;color:var(--text-mid);line-height:1.7;white-space:pre-wrap}
+.photo-copy-btn{width:100%;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;background:var(--teal);color:#fff;border:none;border-radius:7px;padding:8px;cursor:pointer;display:none}
+.photo-copy-btn:hover{background:var(--teal-text)}
 
 @media(max-width:480px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -1512,6 +1534,12 @@ function toggleClaudePanel(){
 function closeClaudePanel(){
   document.getElementById('claudePanel').classList.remove('open');
 }
+function switchClaudeTab(tab,btn){
+  document.querySelectorAll('.claude-tab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.claude-view').forEach(v=>v.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('cv-'+tab).classList.add('on');
+}
 function sendToClaudeCode(){
   const q = document.getElementById('claudeQuestion').value.trim();
   if(!q){alert('Type a question first.');return;}
@@ -1527,6 +1555,95 @@ function useQuickPrompt(text){
   document.getElementById('claudeQuestion').value=text;
   document.getElementById('claudeQuestion').focus();
 }
+
+// ── PHOTO DROP ───────────────────────────────────────────────────────────────
+let photoDataUrl = null;
+let photoFileName = null;
+
+function photoDragOver(e){e.preventDefault();document.getElementById('photoDropZone').classList.add('drag-over');}
+function photoDragLeave(e){document.getElementById('photoDropZone').classList.remove('drag-over');}
+function photoDrop(e){
+  e.preventDefault();
+  document.getElementById('photoDropZone').classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if(file && file.type.startsWith('image/')) loadPhotoFile(file);
+}
+function photoFileSelected(input){
+  const file = input.files[0];
+  if(file) loadPhotoFile(file);
+}
+function loadPhotoFile(file){
+  photoFileName = file.name;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    photoDataUrl = e.target.result;
+    document.getElementById('photoPreviewImg').src = photoDataUrl;
+    document.getElementById('photoPreviewName').textContent = file.name + ' — ' + (file.size/1024).toFixed(0) + ' KB';
+    document.getElementById('photoPreviewWrap').style.display='block';
+    document.getElementById('photoDropZone').style.display='none';
+    const btn = document.getElementById('photoGenBtn');
+    btn.disabled=false;
+    btn.style.opacity='1';
+    document.getElementById('photoResult').style.display='none';
+    document.getElementById('photoCopyBtn').style.display='none';
+  };
+  reader.readAsDataURL(file);
+}
+function generatePhotoPrompt(){
+  if(!photoDataUrl){return;}
+  const desc = document.getElementById('photoDesc').value.trim();
+  const prompt = `I have a photo from Tribal Cowboy LLC (@TribalCowboy) — an Indigenous-owned equine experience business in Athol, Idaho owned by Stacie (Nisenan Maidu).
+
+${desc ? 'PHOTO DESCRIPTION FROM STACIE: ' + desc + '\n' : ''}The photo file is: ${photoFileName}
+Drag the photo into this Claude Code window along with this message so you can see it.
+
+Please give me all of the following:
+
+1. INSTAGRAM CAPTION — warm, visual, specific. Max 150 words. Hook first, story second. No em dashes. Max 1 exclamation mark. Never use: "making memories," "unique experience," "dreams come true," "leverage," "synergy," "seamlessly," "testament to," "delve." Use horse names if you can tell who's in the photo: Clydesdales are Belle (22yo matriarch), Jill (13yo), Abby (7yo, Jill's daughter), Millie (5yo, Belle's daughter). Minis: Monster Unicorn, Master Chief, Reba, Dolly, Lainey, Minimus.
+
+2. FACEBOOK VERSION — slightly longer, community-forward, same voice rules.
+
+3. TIKTOK HOOK — first line stops the scroll. Punchy, direct, under 30 words. Talk to camera energy.
+
+4. HASHTAGS — 8-10 for Instagram chosen from: #TribalCowboy #NorthIdaho #IdahoHorses #ClydesdaleHorse #PonyParty #HorsePhotography #IndigenousOwned #NiseanMaidu #EquestrianLife #HorsesOfInstagram #HorseMom #FarmLife #WesternLifestyle #HorseLife #RanchLife #ClydesdaleTok #HorseTok #NorthIdahoEvents #EasternWashington
+
+5. CONTENT PILLAR — pick one: The Animals / The Moments / The Work / Indigenous Identity / Events & Booking / Education / North Idaho Life. Explain why.
+
+6. BEST PLATFORM to post this first and why.
+
+7. AGENTS TO USE — from these 13, list which 2-3 are most relevant and what to ask each:
+   - Copywriter (captions, hooks, scripts)
+   - Content Strategist (calendar placement, pillar rotation)
+   - Creative Direction (shot list, visual framing)
+   - Brand Voice Agent (audit for voice rules)
+   - Story Engagement (Instagram/Facebook stories)
+   - TikTok Growth (hooks, series potential)
+   - Comment/DM Response (reply drafts)
+   - Corporate Leads (if corporate-relevant)
+   - Creator Income (if brand deal potential)
+
+8. SUGGESTED POSTING TIME — best day and time for this type of content.
+
+9. ONE EDIT SUGGESTION — if anything could make this photo perform better (crop, caption tweak, etc).`;
+
+  document.getElementById('photoResultText').textContent = prompt;
+  document.getElementById('photoResult').style.display='block';
+  document.getElementById('photoCopyBtn').style.display='block';
+  document.getElementById('photoCopyBtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function copyPhotoPrompt(){
+  const text = document.getElementById('photoResultText').textContent;
+  navigator.clipboard.writeText(text).then(()=>{
+    const msg = document.getElementById('photoCopied');
+    msg.style.display='block';
+    msg.textContent='Copied! Drag the photo into Claude Code, then paste this prompt.';
+    document.getElementById('photoCopyBtn').textContent='Copied!';
+    setTimeout(()=>{
+      msg.style.display='none';
+      document.getElementById('photoCopyBtn').textContent='Copy Full Prompt to Claude Code';
+    },3000);
+  });
+}
 </script>
 
 <!-- FLOATING ASK CLAUDE BUTTON -->
@@ -1537,18 +1654,22 @@ function useQuickPrompt(text){
 
 <!-- ASK CLAUDE PANEL -->
 <div class="claude-panel" id="claudePanel">
-  <div class="claude-panel-hdr">
+  <div class="claude-panel-hdr" style="padding-bottom:0">
     <div class="claude-panel-title">Ask Claude</div>
     <button class="claude-panel-close" onclick="closeClaudePanel()">&#x2715;</button>
   </div>
-  <div class="claude-panel-body">
+  <div class="claude-tabs">
+    <button class="claude-tab on" onclick="switchClaudeTab('ask',this)">Ask</button>
+    <button class="claude-tab" onclick="switchClaudeTab('photo',this)">Photo Drop</button>
+  </div>
+
+  <!-- ASK VIEW -->
+  <div class="claude-panel-body claude-view on" id="cv-ask">
     <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Type your question, hit Copy, then paste into Claude Code in your <strong>TribalCowboy-Social</strong> folder.</p>
     <textarea class="claude-q-input" id="claudeQuestion" rows="3" placeholder="e.g. Write an Instagram caption about Millie in the spring mud..."></textarea>
     <button class="claude-send-btn" onclick="sendToClaudeCode()">Copy to Claude Code</button>
     <div class="claude-copied-msg" id="claudeCopied"></div>
-
     <div class="claude-quick-label">Quick Prompts</div>
-
     <button class="claude-quick-btn" onclick="useQuickPrompt('Write an Instagram caption about [describe the moment or photo]')">Write an Instagram caption</button>
     <button class="claude-quick-btn" onclick="useQuickPrompt('Write a Facebook post about [topic] — make it native Facebook, not a cross-post')">Write a Facebook post</button>
     <button class="claude-quick-btn" onclick="useQuickPrompt('Give me 3 TikTok hooks for [topic]. Start with the horse on screen.')">TikTok hooks</button>
@@ -1559,6 +1680,34 @@ function useQuickPrompt(text){
     <button class="claude-quick-btn" onclick="useQuickPrompt('What brand deal opportunities should I pursue in Q2? Review creator-income-roadmap.md and give me the top 3 with pitch angles.')">Brand deal opportunities</button>
     <button class="claude-quick-btn" onclick="useQuickPrompt('Audit this caption for brand voice — check against banned phrases and voice rules: [paste draft]')">Audit brand voice</button>
     <button class="claude-quick-btn" onclick="useQuickPrompt('Plan the Mother\'s Day campaign for May 11. Build the full content arc, shot list, pricing, and booking CTA sequence.')">Plan Mother's Day campaign</button>
+  </div>
+
+  <!-- PHOTO DROP VIEW -->
+  <div class="claude-panel-body claude-view" id="cv-photo">
+    <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Drop a photo and get a full caption pack — Instagram, Facebook, TikTok, hashtags, pillar, and agent recommendations. Copy to Claude Code.</p>
+
+    <div class="photo-drop-zone" id="photoDropZone" onclick="document.getElementById('photoFileInput').click()" ondragover="photoDragOver(event)" ondragleave="photoDragLeave(event)" ondrop="photoDrop(event)">
+      <div class="photo-drop-icon">📸</div>
+      <div class="photo-drop-txt">Tap to choose a photo<br>or drag and drop here</div>
+      <div class="photo-drop-hint">JPG, PNG, HEIC — any photo from your phone or camera roll</div>
+    </div>
+    <input type="file" id="photoFileInput" accept="image/*" style="display:none" onchange="photoFileSelected(this)">
+
+    <div class="photo-preview-wrap" id="photoPreviewWrap">
+      <img id="photoPreviewImg" src="" alt="Preview">
+      <div class="photo-preview-name" id="photoPreviewName"></div>
+    </div>
+
+    <textarea class="photo-desc-input" id="photoDesc" rows="2" placeholder="Optional: describe what's happening — horse names, the moment, the event..."></textarea>
+
+    <button class="photo-generate-btn" id="photoGenBtn" onclick="generatePhotoPrompt()" disabled style="opacity:0.5">Build Caption Pack</button>
+
+    <div class="photo-result" id="photoResult">
+      <div class="photo-result-label">Caption Pack — Ready to Copy</div>
+      <div class="photo-result-text" id="photoResultText"></div>
+    </div>
+    <button class="photo-copy-btn" id="photoCopyBtn" onclick="copyPhotoPrompt()">Copy Full Prompt to Claude Code</button>
+    <div class="claude-copied-msg" id="photoCopied"></div>
   </div>
 </div>
 
