@@ -406,6 +406,24 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .et-form{display:none;border-top:1px solid var(--border);padding-top:0.75rem;margin-top:0.75rem}
 .et-form.open{display:block}
 
+/* POST PERFORMANCE LOG */
+.perf-form{background:#F5F2EC;border-radius:10px;padding:0.85rem;margin-bottom:0.85rem;border:1px solid var(--gold);display:none}
+.perf-form.open{display:block}
+.perf-entry{background:#FAFAF7;border:1.5px solid var(--border);border-radius:9px;padding:0.75rem 0.85rem;margin-bottom:7px;position:relative}
+.perf-entry.perf-winner{background:var(--green-bg);border-color:var(--green-dark);border-width:2px}
+.perf-winner-badge{position:absolute;top:8px;right:8px;background:var(--green-dark);color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:0.05em;text-transform:uppercase}
+.perf-entry-date{font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px}
+.perf-entry-caption{font-family:'Playfair Display',serif;font-size:13px;color:var(--text);line-height:1.5;margin-bottom:8px;font-style:italic}
+.perf-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:7px}
+.perf-stat-cell{text-align:center;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:6px 4px}
+.perf-entry.perf-winner .perf-stat-cell{background:rgba(255,255,255,0.7)}
+.perf-stat-num{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text);line-height:1}
+.perf-stat-num.money{color:var(--green-dark)}
+.perf-stat-num.dms{color:var(--teal)}
+.perf-stat-lbl{font-size:9px;font-weight:700;color:var(--text-light);letter-spacing:0.05em;text-transform:uppercase;margin-top:2px}
+.perf-bk-tag{display:inline-flex;align-items:center;gap:4px;background:var(--green-bg);color:var(--green-dark);font-size:11px;font-weight:700;padding:3px 9px;border-radius:10px}
+.perf-dm-tag{display:inline-flex;align-items:center;gap:4px;background:var(--teal-bg);color:var(--teal-text);font-size:11px;font-weight:700;padding:3px 9px;border-radius:10px}
+
 @media(max-width:480px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ww{grid-template-columns:1fr 1fr}
@@ -579,6 +597,7 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
           <div class="wr-cell"><div class="wr-cell-lbl">Open Tasks</div><div class="wr-cell-val" id="wr-tasks">0</div><div class="wr-cell-sub">need action</div></div>
         </div>
         <div class="wr-prompt" id="wr-prompt">Loading your weekly snapshot...</div>
+        <div id="wr-top-post" style="display:none;background:var(--green-bg);border:1.5px solid var(--green-dark);border-radius:8px;padding:0.75rem 0.85rem;margin-top:8px"></div>
       </div>
     </div>
 
@@ -666,6 +685,33 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
         </div>
       </div>
     </div>
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Post Performance Log
+        <button class="edit-btn" onclick="togglePerfForm('ig')">+ Log a Post</button>
+      </div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">After you post, log the stats here. Views + Saves + DMs + bookings attributed = the only numbers that matter.</p>
+      <div class="perf-form" id="perf-form-ig">
+        <div class="form-full"><input type="text" id="pp-caption-ig" placeholder="Caption or post description (first line is enough)"></div>
+        <div class="form-row">
+          <input type="date" id="pp-date-ig">
+          <input type="number" id="pp-views-ig" placeholder="Views / reach">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-saves-ig" placeholder="Saves">
+          <input type="number" id="pp-dms-ig" placeholder="DMs this post drove">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-bk-ig" placeholder="Bookings attributed">
+          <input type="text" id="pp-notes-ig" placeholder="Notes (Reel / Carousel / Story)">
+        </div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="togglePerfForm('ig')">Cancel</button>
+          <button class="btn-save" onclick="addPerfEntry('ig')">Save Post</button>
+        </div>
+      </div>
+      <div id="perf-list-ig"></div>
+    </div>
   </div>
 
   <!-- FACEBOOK TAB -->
@@ -699,6 +745,33 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       <div class="sec-title">Recent Facebook Posts</div>
       <div id="fb-posts"><div style="font-size:13px;color:var(--text-light);font-style:italic">No posts loaded yet.</div></div>
     </div>
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Post Performance Log
+        <button class="edit-btn" onclick="togglePerfForm('fb')">+ Log a Post</button>
+      </div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Track your native Facebook posts. Shares are the biggest reach driver here — log them every time.</p>
+      <div class="perf-form" id="perf-form-fb">
+        <div class="form-full"><input type="text" id="pp-caption-fb" placeholder="Post description or first line of caption"></div>
+        <div class="form-row">
+          <input type="date" id="pp-date-fb">
+          <input type="number" id="pp-views-fb" placeholder="Reach / views">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-saves-fb" placeholder="Shares">
+          <input type="number" id="pp-dms-fb" placeholder="DMs / messages driven">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-bk-fb" placeholder="Bookings attributed">
+          <input type="text" id="pp-notes-fb" placeholder="Notes (native / Event / Live)">
+        </div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="togglePerfForm('fb')">Cancel</button>
+          <button class="btn-save" onclick="addPerfEntry('fb')">Save Post</button>
+        </div>
+      </div>
+      <div id="perf-list-fb"></div>
+    </div>
   </div>
 
   <!-- TIKTOK TAB -->
@@ -728,6 +801,33 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
     <div class="section" style="background:var(--teal-bg);border-color:var(--teal)">
       <div class="sec-title" style="color:var(--teal-text)">Update TikTok stats</div>
       <div style="font-size:13px;color:var(--teal-text);line-height:1.7">TikTok doesn't connect to this dashboard automatically yet. Hit <strong>Update Stats</strong> in the header and enter your numbers from TikTok Analytics (Profile &rarr; Creator tools &rarr; Analytics).</div>
+    </div>
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Post Performance Log
+        <button class="edit-btn" onclick="togglePerfForm('tt')">+ Log a Post</button>
+      </div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Log every TikTok after it's been up 48 hours. Views past 500 = worth noting. Views past 5,000 = repeat that format.</p>
+      <div class="perf-form" id="perf-form-tt">
+        <div class="form-full"><input type="text" id="pp-caption-tt" placeholder="Hook or description (what was the first line on screen?)"></div>
+        <div class="form-row">
+          <input type="date" id="pp-date-tt">
+          <input type="number" id="pp-views-tt" placeholder="Views (48hr)">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-saves-tt" placeholder="Saves / favorites">
+          <input type="number" id="pp-dms-tt" placeholder="Profile visits / DMs driven">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-bk-tt" placeholder="Bookings attributed">
+          <input type="text" id="pp-notes-tt" placeholder="Notes (hook style, audio, length)">
+        </div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="togglePerfForm('tt')">Cancel</button>
+          <button class="btn-save" onclick="addPerfEntry('tt')">Save Post</button>
+        </div>
+      </div>
+      <div id="perf-list-tt"></div>
     </div>
   </div>
 
@@ -1335,6 +1435,9 @@ let ttData = JSON.parse(localStorage.getItem('tc_tt_data') || 'null') || {follow
 let calPosts = JSON.parse(localStorage.getItem('tc_cal_posts') || '[]');
 let calFilter = 'all';
 
+// ── POST PERFORMANCE STATE ───────────────────────────────────────────────────
+let postPerf = JSON.parse(localStorage.getItem('tc_post_perf') || '[]');
+
 // ── INCOME + EMAIL STATE ─────────────────────────────────────────────────────
 let incomeEntries = JSON.parse(localStorage.getItem('tc_income') || '[]');
 let incomeGoal = parseInt(localStorage.getItem('tc_income_goal') || '0');
@@ -1391,6 +1494,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
   renderIncome();
   renderEmailTracker();
   renderWeeklyReview();
+  renderPostPerf('ig');
+  renderPostPerf('fb');
+  renderPostPerf('tt');
   fetchFromWebhook();
   setInterval(fetchFromWebhook, 5*60*1000);
 });
@@ -1993,6 +2099,76 @@ function saveCalAdd(){
   if(calSelectedDate)calCellClick(calSelectedDate);
 }
 
+// ── POST PERFORMANCE LOG ─────────────────────────────────────────────────────
+function togglePerfForm(plat){
+  const f = document.getElementById('perf-form-'+plat);
+  if(!f) return;
+  f.classList.toggle('open');
+  const dInp = document.getElementById('pp-date-'+plat);
+  if(dInp && !dInp.value) dInp.value = new Date().toISOString().split('T')[0];
+}
+
+function addPerfEntry(plat){
+  const caption = (document.getElementById('pp-caption-'+plat)||{}).value||'';
+  if(!caption.trim()){alert('Add a caption or description first.');return;}
+  postPerf.push({
+    id: Date.now(),
+    platform: plat,
+    caption: caption.trim(),
+    date: document.getElementById('pp-date-'+plat).value || new Date().toISOString().split('T')[0],
+    views: parseInt(document.getElementById('pp-views-'+plat).value)||0,
+    saves: parseInt(document.getElementById('pp-saves-'+plat).value)||0,
+    dms:   parseInt(document.getElementById('pp-dms-'+plat).value)||0,
+    bookings: parseInt(document.getElementById('pp-bk-'+plat).value)||0,
+    notes: (document.getElementById('pp-notes-'+plat)||{}).value||''
+  });
+  ['pp-caption-','pp-views-','pp-saves-','pp-dms-','pp-bk-','pp-notes-'].forEach(pre=>{
+    const el=document.getElementById(pre+plat);if(el)el.value='';
+  });
+  localStorage.setItem('tc_post_perf',JSON.stringify(postPerf));
+  togglePerfForm(plat);
+  renderPostPerf(plat);
+}
+
+function deletePerfEntry(id){
+  if(!confirm('Remove this post entry?'))return;
+  postPerf=postPerf.filter(p=>p.id!==id);
+  localStorage.setItem('tc_post_perf',JSON.stringify(postPerf));
+  ['ig','fb','tt'].forEach(p=>renderPostPerf(p));
+}
+
+function renderPostPerf(plat){
+  const el=document.getElementById('perf-list-'+plat);
+  if(!el)return;
+  const platLabel={'ig':'Instagram','fb':'Facebook','tt':'TikTok'};
+  const saveLabel={'ig':'Saves','fb':'Shares','tt':'Saves'};
+  const posts=[...postPerf.filter(p=>p.platform===plat)].sort((a,b)=>new Date(b.date)-new Date(a.date));
+  if(!posts.length){
+    el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic;padding:0.5rem 0">No posts logged yet. Hit + Log a Post after you publish something.</div>';
+    return;
+  }
+  // Best post = most bookings, then DMs, then views
+  const bestId=[...posts].sort((a,b)=>(b.bookings-a.bookings)||(b.dms-a.dms)||(b.views-a.views))[0].id;
+  el.innerHTML=posts.map(p=>`
+    <div class="perf-entry ${p.id===bestId&&(p.bookings||p.dms||p.views)?'perf-winner':''}">
+      ${p.id===bestId&&(p.bookings||p.dms||p.views)?'<span class="perf-winner-badge">TOP POST</span>':''}
+      <div class="perf-entry-date">${formatDate(p.date)}</div>
+      <div class="perf-entry-caption">${escHtml(p.caption)}</div>
+      <div class="perf-stats-grid">
+        <div class="perf-stat-cell"><div class="perf-stat-num">${p.views?fmt(p.views):'—'}</div><div class="perf-stat-lbl">Views</div></div>
+        <div class="perf-stat-cell"><div class="perf-stat-num">${p.saves?fmt(p.saves):'—'}</div><div class="perf-stat-lbl">${saveLabel[plat]}</div></div>
+        <div class="perf-stat-cell"><div class="perf-stat-num dms">${p.dms||'—'}</div><div class="perf-stat-lbl">DMs</div></div>
+        <div class="perf-stat-cell"><div class="perf-stat-num money">${p.bookings||'—'}</div><div class="perf-stat-lbl">Bookings</div></div>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+        ${p.bookings?`<span class="perf-bk-tag">🐴 ${p.bookings} booking${p.bookings!==1?'s':''}</span>`:''}
+        ${p.dms?`<span class="perf-dm-tag">💬 ${p.dms} DM${p.dms!==1?'s':''}</span>`:''}
+        ${p.notes?`<span style="font-size:11px;color:var(--text-light);font-style:italic">${escHtml(p.notes)}</span>`:''}
+        <button class="del-btn" onclick="deletePerfEntry(${p.id})" style="margin-left:auto">remove</button>
+      </div>
+    </div>`).join('');
+}
+
 // ── CRM HELPERS ──────────────────────────────────────────────────────────────
 function toggleCRM(i){
   const det=document.getElementById('crm-'+i);
@@ -2219,6 +2395,20 @@ function renderWeeklyReview(){
   ];
   const wr_prompt=document.getElementById('wr-prompt');
   if(wr_prompt)wr_prompt.textContent=prompts[day];
+  // Top performing post across all time
+  const topPost=[...postPerf].sort((a,b)=>(b.bookings-a.bookings)||(b.dms-a.dms)||(b.views-a.views))[0];
+  const tpEl=document.getElementById('wr-top-post');
+  if(tpEl){
+    if(topPost&&(topPost.bookings||topPost.dms||topPost.views)){
+      const platNames={'ig':'Instagram','fb':'Facebook','tt':'TikTok'};
+      tpEl.innerHTML=`<div style="font-size:10px;font-weight:700;color:var(--green-text);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px">Top Performing Post (All Time)</div>
+        <div style="font-family:'Playfair Display',serif;font-size:13px;color:var(--text);font-style:italic;margin-bottom:4px">${escHtml(topPost.caption.substring(0,80)+(topPost.caption.length>80?'…':''))}</div>
+        <div style="font-size:11px;color:var(--green-dark);font-weight:700">${platNames[topPost.platform]||topPost.platform} · ${formatDate(topPost.date)} · ${topPost.views?fmt(topPost.views)+' views':''}${topPost.bookings?' · 🐴 '+topPost.bookings+' booking'+(topPost.bookings!==1?'s':''):''}${topPost.dms?' · 💬 '+topPost.dms+' DMs':''}</div>`;
+      tpEl.style.display='block';
+    } else {
+      tpEl.style.display='none';
+    }
+  }
 }
 
 // ── CALENDAR WEEKLY TEMPLATE ─────────────────────────────────────────────────
