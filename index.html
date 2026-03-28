@@ -154,6 +154,69 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 /* TIKTOK BADGE */
 .tt-badge{background:#FFE8F0;color:#CC0033;border:1.5px solid #FF2D55;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.05em}
 
+/* DAILY FOCUS PANEL */
+.focus-panel{background:var(--white);border:2px solid var(--gold);border-radius:14px;padding:1rem 1.1rem;margin-bottom:1rem;box-shadow:0 2px 8px rgba(212,168,67,0.15)}
+.focus-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.85rem}
+.focus-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--text)}
+.focus-subtitle{font-size:11px;color:var(--text-light);font-weight:700;letter-spacing:0.06em;text-transform:uppercase}
+.focus-item{display:flex;align-items:flex-start;gap:10px;padding:0.7rem 0.75rem;border-radius:8px;margin-bottom:6px;transition:opacity 0.2s}
+.focus-item.urgent{background:#FFF3F3;border:1.5px solid #F09595}
+.focus-item.normal{background:var(--amber-bg);border:1.5px solid var(--gold)}
+.focus-item.done-item{opacity:0.45}
+.focus-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--gold);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all 0.15s;background:var(--white)}
+.focus-check.checked{background:var(--green-dark);border-color:var(--green-dark);color:#fff}
+.focus-check.checked::after{content:'✓';font-size:11px;font-weight:700;color:#fff}
+.focus-item-text{flex:1}
+.focus-item-label{font-size:13px;font-weight:700;color:var(--text);line-height:1.4}
+.focus-item-sub{font-size:11px;color:var(--text-light);margin-top:2px}
+.focus-item.done-item .focus-item-label{text-decoration:line-through;color:var(--text-light)}
+.focus-win{background:var(--green-bg);border:1.5px solid var(--green-dark);border-radius:10px;padding:0.75rem 1rem;text-align:center;font-family:'Playfair Display',serif;font-size:15px;color:var(--green-dark);font-style:italic;display:none}
+
+/* SCORECARD */
+.scorecard{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:1rem}
+.score-card{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:0.75rem 0.85rem;box-shadow:var(--card-shadow)}
+.score-label{font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px}
+.score-val{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--text);line-height:1}
+.score-delta{font-size:11px;font-weight:700;color:var(--text-light);margin-top:3px}
+
+/* TASKS */
+.task-filter-row{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.task-filter-btn{font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;cursor:pointer;border:1.5px solid var(--border);background:var(--white);color:var(--text-mid);letter-spacing:0.04em;transition:all 0.15s}
+.task-filter-btn.on{background:var(--amber-bg);border-color:var(--gold);color:var(--gold-dark)}
+.task-item{display:flex;align-items:flex-start;gap:10px;padding:0.7rem 0.85rem;border-radius:8px;margin-bottom:6px;border:1.5px solid var(--border);background:var(--white);transition:opacity 0.2s}
+.task-item.done{opacity:0.4}
+.task-check{width:18px;height:18px;border-radius:4px;border:2px solid var(--border);cursor:pointer;flex-shrink:0;margin-top:2px;transition:all 0.15s;background:var(--white)}
+.task-check.checked{background:var(--green-dark);border-color:var(--green-dark)}
+.task-item.done .task-name{text-decoration:line-through;color:var(--text-light)}
+.task-name{font-size:13px;font-weight:700;color:var(--text);line-height:1.4;flex:1}
+.task-meta{font-size:11px;color:var(--text-light);margin-top:2px}
+.task-due-urgent{color:var(--red-dark);font-weight:700}
+.task-due-soon{color:var(--gold-deeper);font-weight:700}
+.task-cat-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:0.04em;flex-shrink:0}
+.tc-Content{background:#F0E6F6;color:#6A0DAD}
+.tc-Booking{background:var(--green-bg);color:var(--green-dark)}
+.tc-Business{background:var(--teal-bg);color:var(--teal-text)}
+.tc-Admin{background:#F0EDE6;color:var(--text-mid)}
+.task-form-wrap{background:#F5F2EC;border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid var(--gold);display:none}
+.task-form-wrap.open{display:block}
+
+/* CAPTION TEMPLATES */
+.cap-tmpl-card{background:#FAFAF7;border:1.5px solid var(--border);border-radius:10px;padding:0.85rem 1rem;margin-bottom:8px}
+.cap-tmpl-platform{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.cap-tmpl-platform.ig{color:#6A0DAD}.cap-tmpl-platform.fb{color:#1A3A7A}.cap-tmpl-platform.tt{color:#CC0033}
+.cap-tmpl-text{font-family:'Playfair Display',serif;font-size:14px;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:8px}
+.cap-tmpl-text mark{background:var(--amber-bg);color:var(--gold-deeper);border-radius:3px;padding:0 3px;font-style:normal;font-weight:700}
+.cap-tmpl-copy{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--amber-bg);color:var(--gold-deeper);border:1px solid var(--gold);border-radius:5px;padding:4px 10px;cursor:pointer}
+.cap-tmpl-copy:hover{background:var(--gold);color:#412402}
+
+/* QUICK START */
+.qs-btn{display:block;width:100%;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;background:var(--gold);color:#412402;border:none;border-radius:12px;padding:14px;cursor:pointer;margin-bottom:1rem;text-align:center;box-shadow:0 2px 8px rgba(212,168,67,0.25)}
+.qs-btn:hover{background:var(--gold-dark);color:#fff}
+.qs-routes{display:none;background:var(--amber-bg);border:1.5px solid var(--gold);border-radius:10px;padding:0.85rem;margin-bottom:1rem}
+.qs-routes.open{display:block}
+.qs-route{display:block;width:100%;text-align:left;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;color:var(--amber-text);background:var(--white);border:1px solid var(--border);border-radius:7px;padding:8px 12px;cursor:pointer;margin-bottom:5px}
+.qs-route:hover{background:var(--gold);color:#412402;border-color:var(--gold)}
+
 /* CONTENT CALENDAR */
 .cal-entry{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:0.85rem 1rem;margin-bottom:8px;border-left:5px solid var(--gold)}
 .cal-entry.ig{border-left-color:#C77DFF}
@@ -358,6 +421,7 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 <!-- TABS -->
 <div class="tabs">
   <div class="tab on" onclick="go('overview',this)">Overview</div>
+  <div class="tab" onclick="go('tasks',this)">Tasks</div>
   <div class="tab" onclick="go('instagram',this)">Instagram</div>
   <div class="tab" onclick="go('facebook',this)">Facebook</div>
   <div class="tab" onclick="go('tiktok',this)">TikTok</div>
@@ -379,16 +443,80 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 
   <!-- OVERVIEW TAB -->
   <div id="p-overview" class="page on">
-    <div class="greet" id="greetMsg">Good morning, Stacie. Loading your latest data...</div>
+    <div class="greet" id="greetMsg">Good morning, Stacie.</div>
+
+    <!-- DAILY FOCUS PANEL -->
+    <div class="focus-panel">
+      <div class="focus-hdr">
+        <div>
+          <div class="focus-title">Today's Focus</div>
+          <div class="focus-subtitle" id="focusDate">Loading...</div>
+        </div>
+        <span class="badge badge-amber" id="focusDoneCount">0 of 3</span>
+      </div>
+      <div id="focusItems"></div>
+      <div class="focus-win" id="focusWin">All done. That's a good day. ✦</div>
+    </div>
+
+    <!-- WEEK SCORECARD -->
+    <div class="scorecard">
+      <div class="score-card"><div class="score-label">Posts This Week</div><div class="score-val" id="sc-posts">—</div><div class="score-delta" id="sc-posts-d">scheduled</div></div>
+      <div class="score-card"><div class="score-label">Revenue Booked</div><div class="score-val" id="sc-rev">—</div><div class="score-delta">confirmed</div></div>
+      <div class="score-card"><div class="score-label">Weekly Reach</div><div class="score-val amber" id="sc-reach">—</div><div class="score-delta">IG + FB</div></div>
+      <div class="score-card"><div class="score-label">Open Tasks</div><div class="score-val" id="sc-tasks">—</div><div class="score-delta">need action</div></div>
+    </div>
+
     <div class="stats">
-      <div class="sc"><div class="sc-label">Weekly Reach</div><div class="sc-val amber" id="ov-reach"><span class="loading-val">Loading...</span></div><div class="sc-delta up" id="ov-reach-d"></div></div>
-      <div class="sc"><div class="sc-label">Bookings This Month</div><div class="sc-val" id="ov-bookings">—</div><div class="sc-delta up" id="ov-book-d"></div></div>
+      <div class="sc"><div class="sc-label">IG Reach (7d)</div><div class="sc-val amber" id="ov-reach"><span class="loading-val">—</span></div><div class="sc-delta up" id="ov-reach-d"></div></div>
+      <div class="sc"><div class="sc-label">Confirmed Bookings</div><div class="sc-val" id="ov-bookings">—</div><div class="sc-delta up" id="ov-book-d"></div></div>
       <div class="sc"><div class="sc-label">Revenue This Month</div><div class="sc-val teal" id="ov-revenue">—</div><div class="sc-delta up" id="ov-rev-d"></div></div>
       <div class="sc"><div class="sc-label">Open Inquiries</div><div class="sc-val green" id="ov-inquiries">—</div><div class="sc-delta neutral" id="ov-inq-d"></div></div>
     </div>
     <div class="section">
       <div class="sec-title">Upcoming Events <span class="badge badge-teal">This Month</span></div>
-      <div id="ov-events"></div>
+      <div id="ov-events"><div style="font-size:13px;color:var(--text-light);font-style:italic">No bookings yet — add one in the Bookings tab.</div></div>
+    </div>
+  </div>
+
+  <!-- TASKS TAB -->
+  <div id="p-tasks" class="page">
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Tasks
+        <button class="edit-btn" onclick="toggleTaskForm()">+ Add Task</button>
+      </div>
+      <div class="task-form-wrap" id="taskFormWrap">
+        <div class="form-full"><input type="text" id="tk-name" placeholder="What needs to get done?"></div>
+        <div class="form-row">
+          <select id="tk-cat">
+            <option value="Content">Content</option>
+            <option value="Booking">Booking</option>
+            <option value="Business">Business</option>
+            <option value="Admin">Admin</option>
+          </select>
+          <input type="date" id="tk-due">
+        </div>
+        <div class="form-row">
+          <select id="tk-priority">
+            <option value="normal">Normal</option>
+            <option value="high">High Priority</option>
+            <option value="low">Low Priority</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="toggleTaskForm()">Cancel</button>
+          <button class="btn-save" onclick="addTask()">Add Task</button>
+        </div>
+      </div>
+      <div class="task-filter-row">
+        <button class="task-filter-btn on" onclick="filterTasks('all',this)">All</button>
+        <button class="task-filter-btn" onclick="filterTasks('Content',this)">Content</button>
+        <button class="task-filter-btn" onclick="filterTasks('Booking',this)">Booking</button>
+        <button class="task-filter-btn" onclick="filterTasks('Business',this)">Business</button>
+        <button class="task-filter-btn" onclick="filterTasks('Admin',this)">Admin</button>
+        <button class="task-filter-btn" onclick="filterTasks('done',this)">Done</button>
+      </div>
+      <div id="tasks-list"></div>
     </div>
   </div>
 
@@ -620,6 +748,21 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
           </select>
         </div>
         <div class="form-full"><input type="text" id="bk-notes" placeholder="Notes (next step, contact, etc.)"></div>
+        <div class="form-row">
+          <select id="bk-source">
+            <option value="">How did they find us?</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="TikTok">TikTok</option>
+            <option value="Referral">Referral / Word of mouth</option>
+            <option value="Google">Google / Search</option>
+            <option value="Repeat">Repeat client</option>
+            <option value="Event">Saw us at an event</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="date" id="bk-followup" title="Follow-up date">
+        </div>
+        <div style="font-size:11px;color:var(--text-light);margin-bottom:8px">Second field: follow-up date (when to check in)</div>
         <div class="form-actions">
           <button class="btn-cancel" onclick="toggleForm()">Cancel</button>
           <button class="btn-save" onclick="addBooking()">Save Booking</button>
@@ -721,6 +864,20 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 
   <!-- AGENT HUB TAB -->
   <div id="p-agents" class="page">
+
+    <button class="qs-btn" onclick="toggleQuickStart()">🤠 Quick Start — What do you need help with?</button>
+    <div class="qs-routes" id="qsRoutes">
+      <div style="font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:7px">Pick what you need right now</div>
+      <button class="qs-route" onclick="quickRoute('Write an Instagram caption about [describe the moment or photo]')">✍️ Write a caption or post</button>
+      <button class="qs-route" onclick="quickRoute('Build this week\'s content calendar. Today is '+new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+'. Upcoming events: [list any]. Rotate all 7 pillars.')">📅 Plan this week's content</button>
+      <button class="qs-route" onclick="quickRoute('Classify this message and draft a reply using the 5-tier system: [paste the comment or DM]')">💬 Respond to a DM or comment</button>
+      <button class="qs-route" onclick="quickRoute('Give me 5 TikTok hooks for [topic] — punchy, under 30 words, horse on screen first')">🎵 TikTok hooks</button>
+      <button class="qs-route" onclick="quickRoute('Draft outreach to [company name] in [industry] for a corporate event — service: Pony Rides / Wagon Rides / Photo Prop Experience')">🤝 Corporate outreach</button>
+      <button class="qs-route" onclick="quickRoute('Find brand deal opportunities for Tribal Cowboy — focus on outdoor, Western, kids, family brands in Q2')">💰 Brand deal opportunities</button>
+      <button class="qs-route" onclick="quickRoute('Audit this draft for brand voice — check banned phrases, exclamation marks, Indigenous identity handling: [paste copy]')">🔍 Audit brand voice</button>
+      <button class="qs-route" onclick="quickRoute('Route this task to the right agent and tell me exactly what to say: [describe what you need]')">🎯 Not sure — just route me</button>
+    </div>
+
     <div class="section">
       <div class="sec-title">Your Agent System <span class="badge badge-teal">13 Agents</span></div>
       <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:1rem">Open Claude Code in your TribalCowboy-Social folder. Copy the trigger phrase and paste it in.</p>
@@ -888,6 +1045,57 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
     </div>
 
     <div class="section">
+      <div class="sec-title">Caption Templates — Fill in the Blanks</div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Tap Copy on any template, fill in the <mark style="background:var(--amber-bg);color:var(--gold-deeper);padding:0 3px;border-radius:3px">highlighted</mark> parts, and you've got a post.</p>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform ig">Instagram — The Animals</div>
+        <div class="cap-tmpl-text" id="ct-1"><mark>[Horse name]</mark> has been doing this thing lately where she <mark>[funny/specific behavior]</mark>. Every single time. 1,800 pounds of horse with the personality of a <mark>[comparison]</mark>.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-1')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform ig">Instagram — The Moments</div>
+        <div class="cap-tmpl-text" id="ct-2">The kid walked up, stopped, and just stared. <mark>[What happened next — specific]</mark>. Her mom told me later that was the first time she'd stopped talking all day. That's what horses do.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-2')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform fb">Facebook — Events &amp; Booking</div>
+        <div class="cap-tmpl-text" id="ct-3">We're booking <mark>[event type]</mark> for <mark>[month/season]</mark> now. If you've been thinking about it, <mark>[month]</mark> fills up faster than people expect. Check availability at www.tribalcowboy.com or DM me here.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-3')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform ig">Instagram — The Work</div>
+        <div class="cap-tmpl-text" id="ct-4"><mark>[Time]</mark> AM. <mark>[What you're doing — grooming, loading, setting up]</mark> before anyone else is awake. This is the part nobody sees. The part that makes the rest of it possible.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-4')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform tt">TikTok — Hook Templates</div>
+        <div class="cap-tmpl-text" id="ct-5">POV: You brought a <mark>[horse name/type]</mark> to a <mark>[event type]</mark> and this happened.
+—
+What 1,800 lbs of Clydesdale looks like next to a <mark>[comparison — 4-year-old / golden retriever / folding table]</mark>.
+—
+Nobody warned the <mark>[person/group]</mark> about <mark>[horse name]</mark>.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-5')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform ig">Instagram — Indigenous Identity</div>
+        <div class="cap-tmpl-text" id="ct-6"><mark>[What you were doing with the horses — specific moment]</mark>. My grandmother's people have a relationship with this land that goes back <mark>[timeframe]</mark>. Running Tribal Cowboy isn't separate from that. It's the same thread.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-6')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform fb">Facebook — North Idaho Life</div>
+        <div class="cap-tmpl-text" id="ct-7"><mark>[Season/weather/time of year]</mark> in North Idaho looks like <mark>[specific visual — mud, snow, wildflowers, golden fields]</mark>. This is home. This is where the horses live. This is the only place I'd want to do this work.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-7')">Copy Template</button>
+      </div>
+    </div>
+
+    <div class="section">
       <div class="sec-title">Seasonal Notes</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
         <div style="background:var(--green-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--green-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Spring Mar-May</div><div style="font-size:12px;color:var(--green-dark);line-height:1.6">Booking season opens. Mother's Day pony parties. End-of-school events.</div></div>
@@ -931,6 +1139,12 @@ let ttData = JSON.parse(localStorage.getItem('tc_tt_data') || 'null') || {follow
 let calPosts = JSON.parse(localStorage.getItem('tc_cal_posts') || '[]');
 let calFilter = 'all';
 
+// ── TASKS STATE ─────────────────────────────────────────────────────────────
+let tasks = JSON.parse(localStorage.getItem('tc_tasks') || '[]');
+let taskFilter = 'all';
+let focusChecked = JSON.parse(localStorage.getItem('tc_focus_checked') || '{}');
+let focusDateKey = localStorage.getItem('tc_focus_date') || null;
+
 // ── SAMPLE DATA (used when no API tokens set) ──────────────────────────────
 const SAMPLE = {
   ig:{followers:2847,reach:4812,impressions:18400,profileViews:312,
@@ -971,6 +1185,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   renderTikTok();
   renderCalendar();
   renderCalGrid();
+  renderTasks();
+  renderFocusPanel();
   fetchFromWebhook();
   setInterval(fetchFromWebhook, 5*60*1000);
 });
@@ -1139,6 +1355,9 @@ function renderOverview(){
   document.getElementById('ov-inq-d').className='sc-delta neutral';
   document.getElementById('ov-inq-d').textContent='► Needs follow-up';
 
+  renderScorecard();
+  renderFocusPanel();
+
   const statusClass = {Confirmed:'badge-green',Pending:'badge-amber','Inquiry Sent':'badge-red'};
   const eventsEl = document.getElementById('ov-events');
   const sorted = [...bookings].sort((a,b)=>new Date(a.date)-new Date(b.date));
@@ -1164,9 +1383,9 @@ function renderBookings(){
   } else {
     el.innerHTML = bookings.map((b,i)=>`
       <div class="row-item">
-        <div>
+        <div style="flex:1;min-width:0">
           <div class="row-name">${escHtml(b.name)}</div>
-          <div class="row-meta">${escHtml(b.type)} &bull; ${escHtml(b.value)} &bull; ${formatDate(b.date)}${b.notes?` &bull; ${escHtml(b.notes)}`:''}</div>
+          <div class="row-meta">${escHtml(b.type)} &bull; ${escHtml(b.value)} &bull; ${formatDate(b.date)}${b.source?` &bull; via ${escHtml(b.source)}`:''}${b.followup?` &bull; follow-up ${formatDate(b.followup)}`:''}${b.notes?` &bull; ${escHtml(b.notes)}`:''}</div>
         </div>
         <div class="row-right">
           <span class="badge ${statusClass[b.status]||'badge-amber'}">${b.status}</span>
@@ -1194,10 +1413,13 @@ function addBooking(){
     date:document.getElementById('bk-date').value||new Date().toISOString().split('T')[0],
     value:document.getElementById('bk-value').value.trim()||'$0',
     status:document.getElementById('bk-status').value,
-    notes:document.getElementById('bk-notes').value.trim()
+    notes:document.getElementById('bk-notes').value.trim(),
+    source:document.getElementById('bk-source').value||'',
+    followup:document.getElementById('bk-followup').value||''
   });
-  ['bk-name','bk-type','bk-date','bk-value','bk-notes'].forEach(id=>document.getElementById(id).value='');
+  ['bk-name','bk-type','bk-date','bk-value','bk-notes','bk-followup'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('bk-status').value='Confirmed';
+  document.getElementById('bk-source').value='';
   toggleForm();
   renderBookings();
   renderOverview();
@@ -1508,6 +1730,17 @@ function copyHash(id){
     setTimeout(()=>{btn.textContent=orig;},1800);
   });
 }
+function copyCapTemplate(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  navigator.clipboard.writeText(el.innerText).then(()=>{
+    const btn=el.nextElementSibling;
+    const orig=btn.textContent;
+    btn.textContent='Copied!';
+    btn.style.background='var(--green-dark)';btn.style.color='#fff';
+    setTimeout(()=>{btn.textContent=orig;btn.style.background='';btn.style.color='';},1800);
+  });
+}
 
 function saveCalAdd(){
   const caption=document.getElementById('cadd-caption').value.trim();
@@ -1525,6 +1758,188 @@ function saveCalAdd(){
   renderCalGrid();
   renderCalendar();
   if(calSelectedDate)calCellClick(calSelectedDate);
+}
+
+// ── TASKS ────────────────────────────────────────────────────────────────────
+function toggleTaskForm(){
+  document.getElementById('taskFormWrap').classList.toggle('open');
+}
+
+function addTask(){
+  const name = document.getElementById('tk-name').value.trim();
+  if(!name){alert('Enter a task name first.');return;}
+  tasks.push({
+    id: Date.now(),
+    name,
+    cat: document.getElementById('tk-cat').value,
+    due: document.getElementById('tk-due').value || null,
+    priority: document.getElementById('tk-priority').value,
+    done: false,
+    created: new Date().toISOString()
+  });
+  document.getElementById('tk-name').value='';
+  document.getElementById('tk-due').value='';
+  document.getElementById('tk-priority').value='normal';
+  saveTasks();
+  toggleTaskForm();
+  renderTasks();
+  renderScorecard();
+  renderFocusPanel();
+}
+
+function renderTasks(){
+  const el = document.getElementById('tasks-list');
+  if(!el) return;
+  const today = new Date().toISOString().split('T')[0];
+  const tomorrow = new Date(Date.now()+86400000).toISOString().split('T')[0];
+  let filtered;
+  if(taskFilter==='all') filtered = tasks.filter(t=>!t.done);
+  else if(taskFilter==='done') filtered = tasks.filter(t=>t.done);
+  else filtered = tasks.filter(t=>t.cat===taskFilter && !t.done);
+
+  if(!filtered.length){
+    el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic;padding:0.5rem">'+(taskFilter==='done'?'No completed tasks yet.':'Nothing here yet. Hit + Add Task.')+'</div>';
+    return;
+  }
+  el.innerHTML = filtered.map(t=>{
+    const origIdx = tasks.indexOf(t);
+    let dueClass='', dueText='';
+    if(t.due){
+      if(t.due<today){dueClass='task-due-urgent';dueText='⚠ Overdue';}
+      else if(t.due===today){dueClass='task-due-urgent';dueText='Due today';}
+      else if(t.due===tomorrow){dueClass='task-due-soon';dueText='Due tomorrow';}
+      else dueText='Due '+formatDate(t.due);
+    }
+    return `<div class="task-item ${t.done?'done':''}">
+      <div class="task-check ${t.done?'checked':''}" onclick="toggleTask(${origIdx})"></div>
+      <div style="flex:1;min-width:0">
+        <div class="task-name">${escHtml(t.name)}</div>
+        ${dueText?`<div class="task-meta ${dueClass}">${dueText}</div>`:''}
+      </div>
+      <span class="task-cat-badge tc-${escHtml(t.cat)}">${escHtml(t.cat)}</span>
+      <button class="del-btn" onclick="deleteTask(${origIdx})" style="margin-left:4px;font-size:14px;line-height:1">×</button>
+    </div>`;
+  }).join('');
+}
+
+function filterTasks(cat, btn){
+  taskFilter = cat;
+  document.querySelectorAll('.task-filter-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderTasks();
+}
+
+function toggleTask(i){
+  tasks[i].done = !tasks[i].done;
+  saveTasks();
+  renderTasks();
+  renderScorecard();
+  renderFocusPanel();
+}
+
+function deleteTask(i){
+  if(!confirm('Remove this task?')) return;
+  tasks.splice(i,1);
+  saveTasks();
+  renderTasks();
+  renderScorecard();
+}
+
+function saveTasks(){localStorage.setItem('tc_tasks',JSON.stringify(tasks));}
+
+// ── DAILY FOCUS PANEL ────────────────────────────────────────────────────────
+function renderFocusPanel(){
+  const today = new Date().toISOString().split('T')[0];
+  // Reset checked state if it's a new day
+  if(focusDateKey !== today){
+    focusDateKey = today;
+    focusChecked = {};
+    localStorage.setItem('tc_focus_date', today);
+    localStorage.setItem('tc_focus_checked', '{}');
+  }
+  const focusDateEl = document.getElementById('focusDate');
+  if(focusDateEl) focusDateEl.textContent = new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+
+  // Build list: overdue/today tasks first, then pending bookings, then open tasks
+  const urgent = tasks.filter(t=>!t.done && t.due && t.due<=today);
+  const pendingBks = bookings.filter(b=>b.status==='Pending'||b.status==='Inquiry Sent');
+  let items = [];
+  urgent.slice(0,2).forEach(t=>items.push({id:'t'+t.id,label:t.name,sub:t.due<today?'Overdue — needs attention':'Due today',type:'urgent'}));
+  if(items.length<3) pendingBks.slice(0,3-items.length).forEach(b=>items.push({id:'bk'+b.name.replace(/\s/g,''),label:'Follow up: '+b.name,sub:b.status+(b.notes?' — '+b.notes.substring(0,40):''),type:'normal'}));
+  if(items.length<3){
+    const more = tasks.filter(t=>!t.done && !urgent.includes(t)).slice(0,3-items.length);
+    more.forEach(t=>items.push({id:'t'+t.id,label:t.name,sub:t.due?'Due '+formatDate(t.due):t.cat,type:'normal'}));
+  }
+  // Default prompts if nothing exists yet
+  if(!items.length){
+    items=[
+      {id:'def1',label:'Post on Instagram today',sub:'Keep the momentum going',type:'normal'},
+      {id:'def2',label:'Reply to comments & DMs',sub:'Within 2 hours of your last post',type:'normal'},
+      {id:'def3',label:'Plan tomorrow\'s content',sub:'Pick a pillar and platform',type:'normal'}
+    ];
+  }
+  items = items.slice(0,3);
+
+  let doneCount=0;
+  const html = items.map(item=>{
+    const checked=!!focusChecked[item.id];
+    if(checked) doneCount++;
+    return `<div class="focus-item ${item.type} ${checked?'done-item':''}" id="fi-${item.id}">
+      <div class="focus-check ${checked?'checked':''}" onclick="checkFocusItem('${item.id}')"></div>
+      <div class="focus-item-text">
+        <div class="focus-item-label">${escHtml(item.label)}</div>
+        <div class="focus-item-sub">${escHtml(item.sub)}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const focusEl = document.getElementById('focusItems');
+  if(focusEl) focusEl.innerHTML=html;
+  const cntEl = document.getElementById('focusDoneCount');
+  if(cntEl) cntEl.textContent=doneCount+' of '+items.length;
+  const winEl = document.getElementById('focusWin');
+  if(winEl) winEl.style.display=(doneCount===items.length&&items.length>0)?'block':'none';
+}
+
+function checkFocusItem(id){
+  focusChecked[id]=!focusChecked[id];
+  localStorage.setItem('tc_focus_checked',JSON.stringify(focusChecked));
+  renderFocusPanel();
+}
+
+// ── SCORECARD ────────────────────────────────────────────────────────────────
+function renderScorecard(){
+  const today = new Date();
+  const sun = new Date(today); sun.setDate(today.getDate()-today.getDay());
+  const sat = new Date(sun); sat.setDate(sun.getDate()+6);
+  const ws = sun.toISOString().split('T')[0];
+  const we = sat.toISOString().split('T')[0];
+  const postsThisWeek = calPosts.filter(p=>p.date&&p.date>=ws&&p.date<=we);
+  const readyPosted = postsThisWeek.filter(p=>p.status==='ready'||p.status==='posted').length;
+  const scPost = document.getElementById('sc-posts');
+  if(scPost){scPost.textContent=postsThisWeek.length||'0';document.getElementById('sc-posts-d').textContent=readyPosted+' ready / posted';}
+  const revenue = bookings.filter(b=>b.status==='Confirmed').reduce((s,b)=>s+parseMoney(b.value),0);
+  const scRev = document.getElementById('sc-rev');
+  if(scRev) scRev.textContent = revenue>0?'$'+revenue.toLocaleString():'$0';
+  const totalReach = (igData?igData.reach:0)+(fbData?fbData.reach:0);
+  const scReach = document.getElementById('sc-reach');
+  if(scReach) scReach.textContent = totalReach>0?fmt(totalReach):'—';
+  const openTasks = tasks.filter(t=>!t.done).length;
+  const scTasks = document.getElementById('sc-tasks');
+  if(scTasks) scTasks.textContent = openTasks;
+}
+
+// ── QUICK START ──────────────────────────────────────────────────────────────
+function toggleQuickStart(){
+  document.getElementById('qsRoutes').classList.toggle('open');
+}
+function quickRoute(trigger){
+  document.getElementById('claudeQuestion').value=trigger;
+  document.getElementById('claudePanel').classList.add('open');
+  document.getElementById('cv-ask').classList.add('on');
+  document.getElementById('cv-photo').classList.remove('on');
+  document.querySelectorAll('.claude-tab').forEach((b,i)=>{b.classList[i===0?'add':'remove']('on');});
+  document.getElementById('claudeQuestion').focus();
 }
 
 // ── ASK CLAUDE ──────────────────────────────────────────────────────────────
