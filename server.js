@@ -5,12 +5,12 @@ const fs = require('fs');
 const https = require('https');
 const app = express();
 
-// ── ACUITY SCHEDULING API ─────────────────────────────────────────────────
+// ââ ACUITY SCHEDULING API âââââââââââââââââââââââââââââââââââââââââââââââââ
 // Acuity uses Basic Auth with your User ID and API Key
 // Set these in Render environment variables:
-//   ACUITY_USER_ID    — your Acuity user ID (found in Acuity > Integrations > API)
-//   ACUITY_API_KEY    — your Acuity API key
-//   ACUITY_BOOKING_URL — your public Acuity scheduling page URL
+//   ACUITY_USER_ID    â your Acuity user ID (found in Acuity > Integrations > API)
+//   ACUITY_API_KEY    â your Acuity API key
+//   ACUITY_BOOKING_URL â your public Acuity scheduling page URL
 const ACUITY_BASE = 'https://acuityscheduling.com/api/v1';
 
 function acuityGet(endpoint) {
@@ -65,17 +65,17 @@ function acuityPost(endpoint, data) {
   });
 }
 
-// ── TWILIO SMS ────────────────────────────────────────────────────────────
+// ââ TWILIO SMS ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // Set in Render environment variables:
-//   TWILIO_ACCOUNT_SID  — your Twilio account SID
-//   TWILIO_AUTH_TOKEN   — your Twilio auth token
-//   TWILIO_PHONE_NUMBER — your Twilio phone number (e.g. +12085551234)
+//   TWILIO_ACCOUNT_SID  â your Twilio account SID
+//   TWILIO_AUTH_TOKEN   â your Twilio auth token
+//   TWILIO_PHONE_NUMBER â your Twilio phone number (e.g. +12085551234)
 function sendSMS(to, message) {
   const sid = process.env.TWILIO_ACCOUNT_SID;
   const token = process.env.TWILIO_AUTH_TOKEN;
   const from = process.env.TWILIO_PHONE_NUMBER;
   if (!sid || !token || !from) {
-    console.log('Twilio not configured — skipping SMS');
+    console.log('Twilio not configured â skipping SMS');
     return Promise.resolve(null);
   }
 
@@ -123,9 +123,9 @@ app.use(express.json());
 // Serve the dashboard HTML at the root URL
 app.use(express.static(__dirname));
 
-// ── PERSISTENT STORAGE ────────────────────────────────────────────────────
+// ââ PERSISTENT STORAGE ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // Stats are saved to data.json so they survive Render free tier spin-downs.
-// Note: a full redeploy will reset the filesystem — for that, add a Render
+// Note: a full redeploy will reset the filesystem â for that, add a Render
 // Persistent Disk or migrate to a hosted DB like Supabase (free tier).
 const DATA_FILE = path.join(__dirname, 'data.json');
 
@@ -168,9 +168,9 @@ let igData = saved.instagram;
 let fbData = saved.facebook;
 let voiceInquiries = saved.voice_inquiries || [];
 
-console.log(`Stats loaded — IG followers: ${igData.followers} | FB followers: ${fbData.followers} | Voice inquiries: ${voiceInquiries.length}`);
+console.log(`Stats loaded â IG followers: ${igData.followers} | FB followers: ${fbData.followers} | Voice inquiries: ${voiceInquiries.length}`);
 
-// ── META GRAPH API HELPERS ─────────────────────────────────────────────────
+// ââ META GRAPH API HELPERS âââââââââââââââââââââââââââââââââââââââââââââââââ
 function graphGet(path) {
   return new Promise((resolve, reject) => {
     const url = `https://graph.facebook.com/v19.0${path}`;
@@ -190,12 +190,12 @@ function graphGet(path) {
   });
 }
 
-// ── PULL INSTAGRAM STATS ───────────────────────────────────────────────────
+// ââ PULL INSTAGRAM STATS âââââââââââââââââââââââââââââââââââââââââââââââââââ
 async function refreshInstagram() {
   const token = process.env.META_ACCESS_TOKEN;
   const igId  = process.env.IG_USER_ID;
   if (!token || !igId) {
-    console.log('Instagram refresh skipped — META_ACCESS_TOKEN or IG_USER_ID not set');
+    console.log('Instagram refresh skipped â META_ACCESS_TOKEN or IG_USER_ID not set');
     return;
   }
 
@@ -217,7 +217,7 @@ async function refreshInstagram() {
         if (metric.name === 'profile_views') igData.profile_views = latest;
       });
     } catch (insightErr) {
-      // insights require instagram_manage_insights — log but don't crash
+      // insights require instagram_manage_insights â log but don't crash
       console.warn('IG insights error (token may need instagram_manage_insights):', insightErr.message);
     }
 
@@ -239,18 +239,18 @@ async function refreshInstagram() {
 
     igData.last_updated = new Date().toISOString();
     saveData();
-    console.log(`Instagram refreshed — followers: ${igData.followers}, reach: ${igData.reach}`);
+    console.log(`Instagram refreshed â followers: ${igData.followers}, reach: ${igData.reach}`);
   } catch (err) {
     console.error('Instagram refresh failed:', err.message);
   }
 }
 
-// ── PULL FACEBOOK STATS ────────────────────────────────────────────────────
+// ââ PULL FACEBOOK STATS ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 async function refreshFacebook() {
   const token  = process.env.META_ACCESS_TOKEN;
   const pageId = process.env.FB_PAGE_ID;
   if (!token || !pageId) {
-    console.log('Facebook refresh skipped — META_ACCESS_TOKEN or FB_PAGE_ID not set');
+    console.log('Facebook refresh skipped â META_ACCESS_TOKEN or FB_PAGE_ID not set');
     return;
   }
 
@@ -292,13 +292,13 @@ async function refreshFacebook() {
 
     fbData.last_updated = new Date().toISOString();
     saveData();
-    console.log(`Facebook refreshed — followers: ${fbData.followers}, reach: ${fbData.reach}`);
+    console.log(`Facebook refreshed â followers: ${fbData.followers}, reach: ${fbData.reach}`);
   } catch (err) {
     console.error('Facebook refresh failed:', err.message);
   }
 }
 
-// ── DAILY PULL SCHEDULER ───────────────────────────────────────────────────
+// ââ DAILY PULL SCHEDULER âââââââââââââââââââââââââââââââââââââââââââââââââââ
 // Runs once on startup, then every 24 hours.
 // Also runs at 7 AM Pacific (15:00 UTC) each day so stats are fresh each morning.
 async function runDailyRefresh() {
@@ -313,7 +313,7 @@ runDailyRefresh();
 // Then every 24 hours
 setInterval(runDailyRefresh, 24 * 60 * 60 * 1000);
 
-// ── WEBHOOK VERIFICATION ──────────────────────────────────────────────────
+// ââ WEBHOOK VERIFICATION ââââââââââââââââââââââââââââââââââââââââââââââââââ
 // Meta calls this URL when you register the webhook to confirm it is real
 app.get('/webhook', (req, res) => {
   const VERIFY_TOKEN = process.env.VERIFY_TOKEN || 'tribalcowboy2024';
@@ -330,7 +330,7 @@ app.get('/webhook', (req, res) => {
   }
 });
 
-// ── RECEIVE WEBHOOK EVENTS ────────────────────────────────────────────────
+// ââ RECEIVE WEBHOOK EVENTS ââââââââââââââââââââââââââââââââââââââââââââââââ
 // Meta sends data here whenever something happens on Instagram or Facebook
 app.post('/webhook', (req, res) => {
   const body = req.body;
@@ -373,7 +373,7 @@ app.post('/webhook', (req, res) => {
   }
 });
 
-// ── READ DATA ─────────────────────────────────────────────────────────────
+// ââ READ DATA âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // Dashboard fetches this URL to get the latest data
 app.get('/data', (req, res) => {
   res.json({
@@ -384,7 +384,7 @@ app.get('/data', (req, res) => {
   });
 });
 
-// ── MANUAL REFRESH TRIGGER ─────────────────────────────────────────────────
+// ââ MANUAL REFRESH TRIGGER âââââââââââââââââââââââââââââââââââââââââââââââââ
 // Hit this endpoint from the dashboard to force an immediate Meta pull
 app.post('/refresh', async (req, res) => {
   console.log('Manual refresh triggered');
@@ -392,7 +392,7 @@ app.post('/refresh', async (req, res) => {
   res.json({ success: true, instagram: igData, facebook: fbData });
 });
 
-// ── MANUAL UPDATE ─────────────────────────────────────────────────────────
+// ââ MANUAL UPDATE âââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // Dashboard can push your manually entered stats here
 app.post('/update', (req, res) => {
   const { type, data } = req.body;
@@ -407,7 +407,7 @@ app.post('/update', (req, res) => {
   res.json({ success: true });
 });
 
-// ── VOICE INQUIRY (from ElevenLabs agent) ─────────────────────────────
+// ââ VOICE INQUIRY (from ElevenLabs agent) âââââââââââââââââââââââââââââ
 // The ElevenLabs conversational AI agent posts here when it collects
 // booking details from a caller on tribalcowboy.com.
 // Now with auto-SMS follow-up via Twilio and Acuity booking link.
@@ -431,7 +431,7 @@ app.post('/voice-inquiry', async (req, res) => {
   // Keep last 50 inquiries
   if (voiceInquiries.length > 50) voiceInquiries = voiceInquiries.slice(0, 50);
   saveData();
-  console.log(`Voice inquiry received: ${inquiry.caller_name} — ${inquiry.service_requested}`);
+  console.log(`Voice inquiry received: ${inquiry.caller_name} â ${inquiry.service_requested}`);
 
   // Auto-send SMS follow-up if we have a phone number
   if (phone_number) {
@@ -471,7 +471,7 @@ app.patch('/voice-inquiry/:id', (req, res) => {
   res.json({ success: true, inquiry });
 });
 
-// ── ACUITY: CHECK AVAILABILITY ────────────────────────────────────────────
+// ââ ACUITY: CHECK AVAILABILITY ââââââââââââââââââââââââââââââââââââââââââââ
 // ElevenLabs agent (or dashboard) can call this to check open dates
 // GET /acuity/availability?date=2026-06-15&appointmentTypeID=12345
 app.get('/acuity/availability', async (req, res) => {
@@ -489,7 +489,7 @@ app.get('/acuity/availability', async (req, res) => {
   }
 });
 
-// ── ACUITY: LIST APPOINTMENT TYPES ────────────────────────────────────────
+// ââ ACUITY: LIST APPOINTMENT TYPES ââââââââââââââââââââââââââââââââââââââââ
 // Returns all your Acuity appointment types so the agent knows what to offer
 app.get('/acuity/appointment-types', async (req, res) => {
   try {
@@ -501,7 +501,7 @@ app.get('/acuity/appointment-types', async (req, res) => {
   }
 });
 
-// ── ACUITY: GET TIME SLOTS ────────────────────────────────────────────────
+// ââ ACUITY: GET TIME SLOTS ââââââââââââââââââââââââââââââââââââââââââââââââ
 // Returns available time slots for a specific date and appointment type
 // GET /acuity/times?date=2026-06-15&appointmentTypeID=12345
 app.get('/acuity/times', async (req, res) => {
@@ -518,7 +518,7 @@ app.get('/acuity/times', async (req, res) => {
   }
 });
 
-// ── ACUITY: BOOK APPOINTMENT ──────────────────────────────────────────────
+// ââ ACUITY: BOOK APPOINTMENT ââââââââââââââââââââââââââââââââââââââââââââââ
 // ElevenLabs agent calls this to actually create a booking
 // POST /acuity/book { appointmentTypeID, datetime, firstName, lastName, email, phone, notes }
 app.post('/acuity/book', async (req, res) => {
@@ -548,7 +548,7 @@ app.post('/acuity/book', async (req, res) => {
       event_location: '',
       phone_number: phone || '',
       notes: notes || '',
-      source: 'Voice Assistant — Direct Book',
+      source: 'Voice Assistant â Direct Book',
       status: 'Booked',
       acuity_id: appointment.id,
       received_at: new Date().toISOString()
@@ -575,7 +575,7 @@ app.post('/acuity/book', async (req, res) => {
   }
 });
 
-// ── TWILIO: SEND BOOKING LINK ─────────────────────────────────────────────
+// ââ TWILIO: SEND BOOKING LINK âââââââââââââââââââââââââââââââââââââââââââââ
 // Manual trigger to text someone the booking link
 // POST /send-booking-link { phone, name }
 app.post('/send-booking-link', async (req, res) => {
@@ -593,7 +593,7 @@ app.post('/send-booking-link', async (req, res) => {
   }
 });
 
-// ── HEALTH CHECK ──────────────────────────────────────────────────────────
+// ââ HEALTH CHECK ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 app.get('/health', (req, res) => {
   res.json({
     status: 'Tribal Cowboy Webhook Server is running',
