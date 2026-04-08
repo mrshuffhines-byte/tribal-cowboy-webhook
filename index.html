@@ -80,6 +80,23 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .row-right{text-align:right;flex-shrink:0;padding-left:10px}
 .row-date{font-size:12px;font-weight:700;color:var(--text-mid);margin-bottom:4px}
 
+/* BEST TIMES TO POST */
+.post-times{margin-top:0}
+.pt-next{background:var(--amber-bg);border:1.5px solid var(--gold);border-radius:10px;padding:0.75rem 1rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.pt-next-icon{font-size:20px;flex-shrink:0}
+.pt-next-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-deeper);margin-bottom:2px}
+.pt-next-val{font-size:14px;font-weight:700;color:var(--text)}
+.pt-next-sub{font-size:12px;color:var(--text-mid);margin-top:1px}
+.pt-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.pt-row{display:flex;align-items:flex-start;gap:8px}
+.pt-day{font-size:11px;font-weight:700;color:var(--text-mid);letter-spacing:0.06em;text-transform:uppercase;width:72px;flex-shrink:0;padding-top:4px}
+.pt-slots{display:flex;flex-wrap:wrap;gap:5px}
+.pt-slot{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;border:1.5px solid var(--border);color:var(--text-mid);background:#FAFAF8;white-space:nowrap}
+.pt-slot.prime{background:var(--amber-bg);border-color:var(--gold);color:var(--gold-dark)}
+.pt-slot.good{background:var(--green-bg);border-color:#97C459;color:var(--green-dark)}
+.pt-why{font-size:12px;color:var(--text-light);line-height:1.6;border-top:1px solid var(--border);padding-top:8px;margin-top:4px}
+.pt-why strong{color:var(--text-mid)}
+
 /* WORKING/FLOPPING */
 .ww{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .ww-card{border-radius:10px;padding:0.85rem}
@@ -97,6 +114,7 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .comment-src{font-size:10px;font-weight:700;color:var(--gold-deeper);margin-bottom:5px;letter-spacing:0.08em;text-transform:uppercase}
 .comment-txt{font-family:'Playfair Display',serif;font-size:14px;color:var(--text);font-style:italic;line-height:1.7}
 .comment-who{font-size:12px;color:var(--text-light);font-weight:700;margin-top:5px}
+
 
 /* VOICE INQUIRY CARDS */
 .vi-card{background:#FAFAF7;border-radius:10px;border:1px solid var(--border);border-left:5px solid var(--teal);padding:0.85rem 1rem;margin-bottom:9px}
@@ -168,11 +186,288 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 .step-list li{font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:2px}
 .step-list a{color:var(--teal);text-decoration:underline}
 
+/* TIKTOK BADGE */
+.tt-badge{background:#FFE8F0;color:#CC0033;border:1.5px solid #FF2D55;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.05em}
+
+/* DAILY FOCUS PANEL */
+.focus-panel{background:var(--white);border:2px solid var(--gold);border-radius:14px;padding:1rem 1.1rem;margin-bottom:1rem;box-shadow:0 2px 8px rgba(212,168,67,0.15)}
+.focus-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.85rem}
+.focus-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--text)}
+.focus-subtitle{font-size:11px;color:var(--text-light);font-weight:700;letter-spacing:0.06em;text-transform:uppercase}
+.focus-item{display:flex;align-items:flex-start;gap:10px;padding:0.7rem 0.75rem;border-radius:8px;margin-bottom:6px;transition:opacity 0.2s}
+.focus-item.urgent{background:#FFF3F3;border:1.5px solid #F09595}
+.focus-item.normal{background:var(--amber-bg);border:1.5px solid var(--gold)}
+.focus-item.done-item{opacity:0.45}
+.focus-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--gold);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all 0.15s;background:var(--white)}
+.focus-check.checked{background:var(--green-dark);border-color:var(--green-dark);color:#fff}
+.focus-check.checked::after{content:'✓';font-size:11px;font-weight:700;color:#fff}
+.focus-item-text{flex:1}
+.focus-item-label{font-size:13px;font-weight:700;color:var(--text);line-height:1.4}
+.focus-item-sub{font-size:11px;color:var(--text-light);margin-top:2px}
+.focus-item.done-item .focus-item-label{text-decoration:line-through;color:var(--text-light)}
+.focus-win{background:var(--green-bg);border:1.5px solid var(--green-dark);border-radius:10px;padding:0.75rem 1rem;text-align:center;font-family:'Playfair Display',serif;font-size:15px;color:var(--green-dark);font-style:italic;display:none}
+
+/* SCORECARD */
+.scorecard{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:1rem}
+.score-card{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:0.75rem 0.85rem;box-shadow:var(--card-shadow)}
+.score-label{font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px}
+.score-val{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--text);line-height:1}
+.score-delta{font-size:11px;font-weight:700;color:var(--text-light);margin-top:3px}
+
+/* TASKS */
+.task-filter-row{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.task-filter-btn{font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;cursor:pointer;border:1.5px solid var(--border);background:var(--white);color:var(--text-mid);letter-spacing:0.04em;transition:all 0.15s}
+.task-filter-btn.on{background:var(--amber-bg);border-color:var(--gold);color:var(--gold-dark)}
+.task-item{display:flex;align-items:flex-start;gap:10px;padding:0.7rem 0.85rem;border-radius:8px;margin-bottom:6px;border:1.5px solid var(--border);background:var(--white);transition:opacity 0.2s}
+.task-item.done{opacity:0.4}
+.task-check{width:18px;height:18px;border-radius:4px;border:2px solid var(--border);cursor:pointer;flex-shrink:0;margin-top:2px;transition:all 0.15s;background:var(--white)}
+.task-check.checked{background:var(--green-dark);border-color:var(--green-dark)}
+.task-item.done .task-name{text-decoration:line-through;color:var(--text-light)}
+.task-name{font-size:13px;font-weight:700;color:var(--text);line-height:1.4;flex:1}
+.task-meta{font-size:11px;color:var(--text-light);margin-top:2px}
+.task-due-urgent{color:var(--red-dark);font-weight:700}
+.task-due-soon{color:var(--gold-deeper);font-weight:700}
+.task-cat-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:0.04em;flex-shrink:0}
+.tc-Content{background:#F0E6F6;color:#6A0DAD}
+.tc-Booking{background:var(--green-bg);color:var(--green-dark)}
+.tc-Business{background:var(--teal-bg);color:var(--teal-text)}
+.tc-Admin{background:#F0EDE6;color:var(--text-mid)}
+.task-form-wrap{background:#F5F2EC;border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid var(--gold);display:none}
+.task-form-wrap.open{display:block}
+
+/* CAPTION TEMPLATES */
+.cap-tmpl-card{background:#FAFAF7;border:1.5px solid var(--border);border-radius:10px;padding:0.85rem 1rem;margin-bottom:8px}
+.cap-tmpl-platform{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.cap-tmpl-platform.ig{color:#6A0DAD}.cap-tmpl-platform.fb{color:#1A3A7A}.cap-tmpl-platform.tt{color:#CC0033}
+.cap-tmpl-text{font-family:'Playfair Display',serif;font-size:14px;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:8px}
+.cap-tmpl-text mark{background:var(--amber-bg);color:var(--gold-deeper);border-radius:3px;padding:0 3px;font-style:normal;font-weight:700}
+.cap-tmpl-copy{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--amber-bg);color:var(--gold-deeper);border:1px solid var(--gold);border-radius:5px;padding:4px 10px;cursor:pointer}
+.cap-tmpl-copy:hover{background:var(--gold);color:#412402}
+
+/* QUICK START */
+.qs-btn{display:block;width:100%;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;background:var(--gold);color:#412402;border:none;border-radius:12px;padding:14px;cursor:pointer;margin-bottom:1rem;text-align:center;box-shadow:0 2px 8px rgba(212,168,67,0.25)}
+.qs-btn:hover{background:var(--gold-dark);color:#fff}
+.qs-routes{display:none;background:var(--amber-bg);border:1.5px solid var(--gold);border-radius:10px;padding:0.85rem;margin-bottom:1rem}
+.qs-routes.open{display:block}
+.qs-route{display:block;width:100%;text-align:left;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;color:var(--amber-text);background:var(--white);border:1px solid var(--border);border-radius:7px;padding:8px 12px;cursor:pointer;margin-bottom:5px}
+.qs-route:hover{background:var(--gold);color:#412402;border-color:var(--gold)}
+
+/* CONTENT CALENDAR */
+.cal-entry{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:0.85rem 1rem;margin-bottom:8px;border-left:5px solid var(--gold)}
+.cal-entry.ig{border-left-color:#C77DFF}
+.cal-entry.fb{border-left-color:#4267B2}
+.cal-entry.tt{border-left-color:#FF2D55}
+.cal-date{font-size:11px;font-weight:700;color:var(--text-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px}
+.cal-caption{font-family:'Playfair Display',serif;font-size:14px;color:var(--text);line-height:1.6;margin-bottom:6px}
+.cal-meta{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.pillar-tag{font-size:10px;font-weight:700;background:#F0EDE6;color:var(--text-mid);padding:2px 8px;border-radius:10px;letter-spacing:0.04em}
+.st-idea{background:#F0EDE6;color:var(--text-mid);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.st-draft{background:var(--amber-bg);color:var(--amber-text);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.st-ready{background:var(--teal-bg);color:var(--teal-text);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.st-posted{background:var(--green-bg);color:var(--green-text);font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.cal-filter{display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap}
+.cf-btn{font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;cursor:pointer;border:1.5px solid var(--border);background:var(--white);color:var(--text-mid);letter-spacing:0.04em;transition:all 0.15s}
+.cf-btn.on{background:var(--amber-bg);border-color:var(--gold);color:var(--gold-dark)}
+
+/* TIP CARDS */
+.tip-card{border-radius:12px;padding:1rem 1.1rem;margin-bottom:10px;border:1.5px solid}
+.tip-card.ig{background:#FAF4FF;border-color:#C77DFF}
+.tip-card.fb{background:#EEF2FB;border-color:#4267B2}
+.tip-card.tt{background:#FFF0F5;border-color:#FF2D55}
+.tip-plat{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px}
+.tip-card.ig .tip-plat{color:#6A0DAD}
+.tip-card.fb .tip-plat{color:#1A3A7A}
+.tip-card.tt .tip-plat{color:#CC0033}
+.tip-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
+.tip-list{list-style:none;padding:0;margin:6px 0 0}
+.tip-list li{font-size:13px;color:var(--text-mid);line-height:1.8;padding-left:14px;position:relative}
+.tip-list li::before{content:'→';position:absolute;left:0;color:var(--gold-dark)}
+.warn-box{background:#FFF3CD;border:1.5px solid #E6A817;border-radius:10px;padding:0.85rem 1rem;margin-bottom:12px}
+.warn-title{font-size:11px;font-weight:700;color:#7A5000;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px}
+.warn-body{font-size:13px;color:#5C3D00;line-height:1.7}
+
+/* MONTHLY CALENDAR GRID */
+.cal-grid-wrap{border-radius:12px;overflow:hidden;border:1.5px solid var(--border);margin-bottom:1rem}
+.cal-dow-row{display:grid;grid-template-columns:repeat(7,1fr);background:var(--cream)}
+.cal-dow{padding:7px 0;text-align:center;font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.08em;text-transform:uppercase;border-bottom:1.5px solid var(--border)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);background:var(--border);gap:1px}
+.cal-cell{background:var(--white);min-height:72px;padding:5px 4px 4px;display:flex;flex-direction:column;cursor:pointer;transition:background 0.1s;position:relative}
+.cal-cell:hover{background:#FBF7EF}
+.cal-cell.other-month{background:#F7F5F1}
+.cal-cell.other-month .cal-dn{color:var(--text-light)}
+.cal-cell.today .cal-dn{background:var(--gold);color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center}
+.cal-dn{font-size:12px;font-weight:700;color:var(--text);width:22px;height:22px;display:flex;align-items:center;justify-content:center;margin-bottom:2px;flex-shrink:0}
+.cpill{font-size:9px;font-weight:700;padding:2px 4px;border-radius:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;margin-bottom:1px;line-height:1.4}
+.cpill.ig{background:#F0E6F6;color:#6A0DAD}
+.cpill.fb{background:#E8EFF8;color:#1A3A7A}
+.cpill.tt{background:#FFE8F0;color:#CC0033}
+.cpill.bk{background:var(--green-bg);color:var(--green-dark)}
+.cal-more{font-size:9px;color:var(--text-light);font-weight:700;padding-left:2px}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem}
+.cal-nav-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--text)}
+.cal-nav-btn{background:none;border:1.5px solid var(--border);border-radius:6px;padding:3px 11px;cursor:pointer;font-size:17px;color:var(--text-mid);line-height:1.4}
+.cal-nav-btn:hover{background:var(--amber-bg);border-color:var(--gold)}
+.cal-today-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--white);color:var(--text-mid);border:1.5px solid var(--border);border-radius:6px;padding:4px 10px;cursor:pointer}
+.cal-today-btn:hover{border-color:var(--gold);color:var(--gold-dark)}
+.cal-legend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:0.75rem;align-items:center}
+.cl-item{display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--text-mid)}
+.cl-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+/* Day detail panel */
+.day-panel{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;display:none}
+.day-panel.open{display:block}
+.day-panel-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:center}
+.day-panel-close{font-size:18px;color:var(--text-light);cursor:pointer;background:none;border:none;line-height:1}
+
+/* AGENT CARDS */
+.agent-card{background:#FAFAF7;border:1.5px solid var(--border);border-radius:10px;padding:0.85rem 1rem;margin-bottom:9px}
+.agent-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
+.agent-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--text)}
+.agent-desc{font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:8px}
+.agent-trigger{display:flex;align-items:center;gap:8px;background:#F0EDE6;border-radius:7px;padding:7px 10px}
+.trigger-text{font-size:12px;color:var(--amber-text);font-style:italic;flex:1;line-height:1.5}
+.copy-trigger-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--gold);color:#412402;border:none;border-radius:5px;padding:4px 10px;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.copy-trigger-btn:hover{background:var(--gold-dark);color:#fff}
+
+/* BRAND HUB */
+.hash-group{background:#FAFAF7;border:1.5px solid var(--border);border-radius:10px;padding:0.85rem 1rem;margin-bottom:9px}
+.hash-platform-label{font-size:11px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:6px}
+.hash-tags{font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:8px;word-break:break-word}
+.copy-hash-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--amber-bg);color:var(--gold-deeper);border:1px solid var(--gold);border-radius:5px;padding:4px 10px;cursor:pointer}
+.copy-hash-btn:hover{background:var(--gold);color:#412402}
+.cta-row{display:flex;align-items:center;gap:10px;background:#FAFAF7;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px}
+.cta-text{font-size:13px;color:var(--text-mid);flex:1;font-style:italic}
+
+/* ASK CLAUDE FLOATING BUTTON */
+.claude-fab{position:fixed;bottom:24px;right:20px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.claude-fab-btn{width:56px;height:56px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;font-size:22px;transition:transform 0.15s,box-shadow 0.15s}
+.claude-fab-btn:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,0.22)}
+.claude-fab-label{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;color:var(--white);background:var(--text);border-radius:20px;padding:3px 10px;letter-spacing:0.05em;white-space:nowrap;pointer-events:none;opacity:0;transform:translateX(4px);transition:opacity 0.15s,transform 0.15s}
+.claude-fab:hover .claude-fab-label{opacity:1;transform:translateX(0)}
+.claude-panel{display:none;position:fixed;bottom:90px;right:20px;z-index:499;width:340px;max-height:75vh;background:var(--white);border:2px solid var(--gold);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.18);overflow:hidden;flex-direction:column}
+.claude-panel.open{display:flex}
+.claude-panel-hdr{background:var(--gold);padding:0.85rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.claude-panel-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#412402}
+.claude-panel-close{background:none;border:none;font-size:18px;color:#412402;cursor:pointer;line-height:1;padding:0}
+.claude-panel-body{overflow-y:auto;padding:1rem;flex:1}
+.claude-q-input{width:100%;font-family:'Lato',sans-serif;font-size:13px;padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;color:var(--text);resize:none;margin-bottom:8px;box-sizing:border-box}
+.claude-q-input:focus{outline:none;border-color:var(--gold)}
+.claude-send-btn{width:100%;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;background:var(--gold);color:#412402;border:none;border-radius:8px;padding:9px;cursor:pointer;margin-bottom:1rem}
+.claude-send-btn:hover{background:var(--gold-dark);color:#fff}
+.claude-quick-label{font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:7px}
+.claude-quick-btn{display:block;width:100%;text-align:left;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;color:var(--amber-text);background:var(--amber-bg);border:1px solid var(--gold);border-radius:7px;padding:7px 10px;cursor:pointer;margin-bottom:5px;line-height:1.5}
+.claude-quick-btn:hover{background:var(--gold);color:#412402}
+.claude-copied-msg{font-size:11px;color:var(--green-dark);font-weight:700;text-align:center;padding:4px;display:none}
+.claude-tabs{display:flex;gap:4px;padding:0.5rem 1rem 0;background:var(--gold);flex-shrink:0}
+.claude-tab{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;padding:5px 12px;border-radius:6px 6px 0 0;cursor:pointer;border:none;letter-spacing:0.05em;text-transform:uppercase;background:rgba(255,255,255,0.25);color:#412402;transition:background 0.15s}
+.claude-tab.on{background:var(--white);color:var(--gold-deeper)}
+.claude-view{display:none}.claude-view.on{display:block}
+/* PHOTO DROP */
+.photo-drop-zone{border:2px dashed var(--gold);border-radius:10px;padding:1.5rem 1rem;text-align:center;cursor:pointer;background:var(--amber-bg);transition:background 0.15s;margin-bottom:10px}
+.photo-drop-zone:hover,.photo-drop-zone.drag-over{background:#F5E8C8;border-color:var(--gold-dark)}
+.photo-drop-icon{font-size:28px;margin-bottom:6px}
+.photo-drop-txt{font-size:12px;font-weight:700;color:var(--amber-text);line-height:1.6}
+.photo-drop-hint{font-size:11px;color:var(--text-light);margin-top:3px}
+.photo-preview-wrap{margin-bottom:10px;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);display:none}
+.photo-preview-wrap img{width:100%;display:block;max-height:180px;object-fit:cover}
+.photo-preview-name{font-size:11px;color:var(--text-light);font-weight:700;padding:5px 8px;background:var(--cream)}
+.photo-desc-input{width:100%;font-family:'Lato',sans-serif;font-size:12px;padding:8px 10px;border:1.5px solid var(--border);border-radius:7px;color:var(--text);resize:none;margin-bottom:8px;box-sizing:border-box}
+.photo-desc-input:focus{outline:none;border-color:var(--gold)}
+.photo-generate-btn{width:100%;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;background:var(--gold);color:#412402;border:none;border-radius:8px;padding:9px;cursor:pointer;margin-bottom:8px}
+.photo-generate-btn:hover{background:var(--gold-dark);color:#fff}
+.photo-result{background:#F5F2EC;border-radius:8px;padding:0.85rem;margin-bottom:8px;display:none}
+.photo-result-label{font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px}
+.photo-result-text{font-size:12px;color:var(--text-mid);line-height:1.7;white-space:pre-wrap}
+.photo-copy-btn{width:100%;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;background:var(--teal);color:#fff;border:none;border-radius:7px;padding:8px;cursor:pointer;display:none}
+.photo-copy-btn:hover{background:var(--teal-text)}
+
+/* INCOME STREAMS */
+.income-total-bar{background:var(--amber-bg);border:1.5px solid var(--gold);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
+.income-total-label{font-size:11px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:3px}
+.income-total-val{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold-deeper)}
+.income-stream-card{background:#FAFAF7;border:1.5px solid var(--border);border-radius:10px;padding:0.75rem 0.85rem;margin-bottom:7px;display:flex;align-items:center;gap:10px}
+.income-stream-icon{font-size:20px;flex-shrink:0}
+.income-stream-name{font-size:13px;font-weight:700;color:var(--text);flex:1}
+.income-stream-amt{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--teal)}
+.income-stream-sub{font-size:11px;color:var(--text-light);margin-top:1px}
+.income-entry-row{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0.75rem;border-radius:7px;border:1px solid var(--border);background:var(--white);margin-bottom:5px}
+.income-entry-name{font-size:13px;font-weight:700;color:var(--text)}
+.income-entry-meta{font-size:11px;color:var(--text-light);margin-top:1px}
+.income-entry-amt{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--teal);flex-shrink:0;padding-left:8px}
+.income-add-form{background:#F5F2EC;border-radius:10px;padding:0.85rem;margin-bottom:1rem;border:1px solid var(--gold);display:none}
+.income-add-form.open{display:block}
+
+/* CRM DETAIL */
+.bk-row-wrap{margin-bottom:7px}
+.bk-row-wrap .row-item{margin-bottom:0;border-radius:8px 8px 0 0;cursor:pointer;border-bottom:none}
+.bk-row-wrap .row-item.closed{border-radius:8px;border-bottom:1px solid var(--border);margin-bottom:0}
+.crm-detail{display:none;background:#F5F2EC;border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:0.75rem 0.85rem}
+.crm-detail.open{display:block}
+.crm-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.crm-field{font-size:12px;color:var(--text-mid);line-height:1.6}
+.crm-field strong{display:block;font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1px}
+.crm-followup-alert{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:8px}
+.crm-fu-overdue{background:var(--red-bg);color:var(--red-dark)}
+.crm-fu-today{background:var(--amber-bg);color:var(--amber-text)}
+.crm-fu-future{background:var(--green-bg);color:var(--green-dark)}
+.crm-note-add{width:100%;font-family:'Lato',sans-serif;font-size:12px;padding:7px 9px;border:1.5px solid var(--border);border-radius:6px;margin-bottom:6px;resize:none}
+.crm-action-row{display:flex;gap:7px;flex-wrap:wrap}
+.crm-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;padding:5px 12px;border-radius:6px;cursor:pointer;border:none}
+.crm-btn-primary{background:var(--gold);color:#412402}
+.crm-btn-confirm{background:var(--green-bg);color:var(--green-dark);border:1px solid var(--green-dark)!important;border:none}
+.crm-btn-del{background:var(--red-bg);color:var(--red-dark)}
+
+/* WEEKLY REVIEW */
+.weekly-review{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;box-shadow:var(--card-shadow)}
+.wr-hdr{display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+.wr-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text)}
+.wr-week-range{font-size:11px;color:var(--text-light);font-weight:700}
+.wr-toggle{font-size:13px;color:var(--text-light);transition:transform 0.2s}
+.wr-body{display:none;margin-top:0.85rem}
+.wr-body.open{display:block}
+.wr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:0.75rem}
+.wr-cell{background:#FAFAF7;border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.75rem}
+.wr-cell-lbl{font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px}
+.wr-cell-val{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--text);line-height:1}
+.wr-cell-sub{font-size:11px;color:var(--text-light);margin-top:2px}
+.wr-prompt{background:var(--amber-bg);border-radius:8px;padding:0.75rem;font-size:13px;color:var(--amber-text);font-style:italic;line-height:1.7}
+
+/* EMAIL / SUBSCRIBER TRACKER */
+.email-tracker{background:var(--white);border:1.5px solid var(--teal);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;box-shadow:var(--card-shadow)}
+.et-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
+.et-label{font-size:11px;font-weight:700;color:var(--teal-text);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:3px}
+.et-count{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--teal);line-height:1}
+.et-sub{font-size:12px;color:var(--text-light);font-weight:700;margin-top:3px}
+.et-edit-btn{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;background:var(--teal-bg);color:var(--teal-text);border:1px solid var(--teal);border-radius:6px;padding:5px 11px;cursor:pointer;flex-shrink:0;margin-top:4px}
+.et-form{display:none;border-top:1px solid var(--border);padding-top:0.75rem;margin-top:0.75rem}
+.et-form.open{display:block}
+
+/* POST PERFORMANCE LOG */
+.perf-form{background:#F5F2EC;border-radius:10px;padding:0.85rem;margin-bottom:0.85rem;border:1px solid var(--gold);display:none}
+.perf-form.open{display:block}
+.perf-entry{background:#FAFAF7;border:1.5px solid var(--border);border-radius:9px;padding:0.75rem 0.85rem;margin-bottom:7px;position:relative}
+.perf-entry.perf-winner{background:var(--green-bg);border-color:var(--green-dark);border-width:2px}
+.perf-winner-badge{position:absolute;top:8px;right:8px;background:var(--green-dark);color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:0.05em;text-transform:uppercase}
+.perf-entry-date{font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px}
+.perf-entry-caption{font-family:'Playfair Display',serif;font-size:13px;color:var(--text);line-height:1.5;margin-bottom:8px;font-style:italic}
+.perf-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:7px}
+.perf-stat-cell{text-align:center;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:6px 4px}
+.perf-entry.perf-winner .perf-stat-cell{background:rgba(255,255,255,0.7)}
+.perf-stat-num{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text);line-height:1}
+.perf-stat-num.money{color:var(--green-dark)}
+.perf-stat-num.dms{color:var(--teal)}
+.perf-stat-lbl{font-size:9px;font-weight:700;color:var(--text-light);letter-spacing:0.05em;text-transform:uppercase;margin-top:2px}
+.perf-bk-tag{display:inline-flex;align-items:center;gap:4px;background:var(--green-bg);color:var(--green-dark);font-size:11px;font-weight:700;padding:3px 9px;border-radius:10px}
+.perf-dm-tag{display:inline-flex;align-items:center;gap:4px;background:var(--teal-bg);color:var(--teal-text);font-size:11px;font-weight:700;padding:3px 9px;border-radius:10px}
+
 @media(max-width:480px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ww{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
   .hdr-name{font-size:18px}
+  .cal-cell{min-height:52px}
+  .cal-dn{font-size:11px}
+  .cpill{font-size:8px}
+  .claude-panel{width:calc(100vw - 32px);right:16px}
 }
 </style>
 </head>
@@ -202,7 +497,17 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       </div>
     </div>
 
-    <p style="font-size:11px;color:var(--text-light);margin-bottom:0.75rem">Where to find these: Instagram app &rarr; Professional dashboard &rarr; Insights. Facebook &rarr; Tribal Cowboy page &rarr; Insights.</p>
+    <div style="background:#F5F2EC;border-radius:8px;padding:0.75rem 1rem;margin-bottom:1rem">
+      <p style="font-size:12px;font-weight:700;color:#CC0033;margin-bottom:2px">TIKTOK</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Followers</label><input type="number" id="m-tt-followers" placeholder="e.g. 1240"></div>
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Total Views</label><input type="number" id="m-tt-views" placeholder="e.g. 45000"></div>
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Likes (7d)</label><input type="number" id="m-tt-likes" placeholder="e.g. 312"></div>
+        <div><label style="font-size:11px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px">Comments (7d)</label><input type="number" id="m-tt-comments" placeholder="e.g. 48"></div>
+      </div>
+    </div>
+
+    <p style="font-size:11px;color:var(--text-light);margin-bottom:0.75rem">TikTok: app &rarr; Profile &rarr; Analytics. Instagram: app &rarr; Professional dashboard &rarr; Insights. Facebook &rarr; Tribal Cowboy page &rarr; Insights.</p>
 
     <div class="modal-actions">
       <button class="btn-secondary" onclick="closeStatsEditor()">Cancel</button>
@@ -231,9 +536,16 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 <!-- TABS -->
 <div class="tabs">
   <div class="tab on" onclick="go('overview',this)">Overview</div>
+  <div class="tab" onclick="go('tasks',this)">Tasks</div>
   <div class="tab" onclick="go('instagram',this)">Instagram</div>
   <div class="tab" onclick="go('facebook',this)">Facebook</div>
+  <div class="tab" onclick="go('tiktok',this)">TikTok</div>
   <div class="tab" onclick="go('deals',this)">Bookings</div>
+  <div class="tab" onclick="go('income',this)">Income</div>
+  <div class="tab" onclick="go('content',this)">Content</div>
+  <div class="tab" onclick="go('calendar',this);renderCalGrid()">Calendar</div>
+  <div class="tab" onclick="go('agents',this)">Agent Hub</div>
+  <div class="tab" onclick="go('brand',this)">Brand Hub</div>
   <div class="tab" onclick="go('voice',this)">Voice Leads</div>
   <div class="tab" onclick="go('heart',this)">Why I Do This</div>
 </div>
@@ -248,16 +560,135 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 
   <!-- OVERVIEW TAB -->
   <div id="p-overview" class="page on">
-    <div class="greet" id="greetMsg">Good morning, Stacie. Loading your latest data...</div>
+    <div class="greet" id="greetMsg">Good morning, Stacie.</div>
+
+    <!-- DAILY FOCUS PANEL -->
+    <div class="focus-panel">
+      <div class="focus-hdr">
+        <div>
+          <div class="focus-title">Today's Focus</div>
+          <div class="focus-subtitle" id="focusDate">Loading...</div>
+        </div>
+        <span class="badge badge-amber" id="focusDoneCount">0 of 3</span>
+      </div>
+      <div id="focusItems"></div>
+      <div class="focus-win" id="focusWin">All done. That's a good day. ✦</div>
+    </div>
+
+    <!-- WEEK SCORECARD -->
+    <div class="scorecard">
+      <div class="score-card"><div class="score-label">Posts This Week</div><div class="score-val" id="sc-posts">—</div><div class="score-delta" id="sc-posts-d">scheduled</div></div>
+      <div class="score-card"><div class="score-label">Revenue Booked</div><div class="score-val" id="sc-rev">—</div><div class="score-delta">confirmed</div></div>
+      <div class="score-card"><div class="score-label">Weekly Reach</div><div class="score-val amber" id="sc-reach">—</div><div class="score-delta">IG + FB</div></div>
+      <div class="score-card"><div class="score-label">Open Tasks</div><div class="score-val" id="sc-tasks">—</div><div class="score-delta">need action</div></div>
+    </div>
+
+    <!-- EMAIL / SUBSCRIBER TRACKER -->
+    <div class="email-tracker">
+      <div class="et-top">
+        <div>
+          <div class="et-label">Email / Subscriber List</div>
+          <div class="et-count" id="et-count">0</div>
+          <div class="et-sub" id="et-sub">Add your list — this drives real money</div>
+        </div>
+        <button class="et-edit-btn" onclick="toggleEtForm()">Edit</button>
+      </div>
+      <div class="et-form" id="etForm">
+        <div class="form-row">
+          <select id="et-platform">
+            <option value="Substack">Substack</option>
+            <option value="Mailchimp">Mailchimp</option>
+            <option value="Flodesk">Flodesk</option>
+            <option value="ConvertKit">ConvertKit</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="number" id="et-count-input" placeholder="Subscriber count">
+        </div>
+        <div class="form-row">
+          <input type="date" id="et-last-sent" placeholder="Last email sent">
+          <input type="number" id="et-open-rate" placeholder="Open rate %" max="100">
+        </div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="toggleEtForm()">Cancel</button>
+          <button class="btn-save" onclick="saveEmailList()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEKLY REVIEW -->
+    <div class="weekly-review">
+      <div class="wr-hdr" onclick="toggleWeeklyReview()">
+        <div>
+          <div class="wr-title">Weekly Review</div>
+          <div class="wr-week-range" id="wr-range">This week</div>
+        </div>
+        <span class="wr-toggle" id="wr-toggle">▼</span>
+      </div>
+      <div class="wr-body" id="wrBody">
+        <div class="wr-grid">
+          <div class="wr-cell"><div class="wr-cell-lbl">Posts This Week</div><div class="wr-cell-val" id="wr-posts">0</div><div class="wr-cell-sub" id="wr-posts-sub">IG / FB / TT</div></div>
+          <div class="wr-cell"><div class="wr-cell-lbl">Total Reach</div><div class="wr-cell-val" id="wr-reach">—</div><div class="wr-cell-sub">IG + FB combined</div></div>
+          <div class="wr-cell"><div class="wr-cell-lbl">Bookings Received</div><div class="wr-cell-val" id="wr-bookings">0</div><div class="wr-cell-sub" id="wr-bk-sub">this week</div></div>
+          <div class="wr-cell"><div class="wr-cell-lbl">Revenue Booked</div><div class="wr-cell-val" id="wr-revenue">$0</div><div class="wr-cell-sub">confirmed only</div></div>
+          <div class="wr-cell"><div class="wr-cell-lbl">Top Pillar</div><div class="wr-cell-val" style="font-size:13px;margin-top:2px" id="wr-pillar">—</div><div class="wr-cell-sub">most posted this week</div></div>
+          <div class="wr-cell"><div class="wr-cell-lbl">Open Tasks</div><div class="wr-cell-val" id="wr-tasks">0</div><div class="wr-cell-sub">need action</div></div>
+        </div>
+        <div class="wr-prompt" id="wr-prompt">Loading your weekly snapshot...</div>
+        <div id="wr-top-post" style="display:none;background:var(--green-bg);border:1.5px solid var(--green-dark);border-radius:8px;padding:0.75rem 0.85rem;margin-top:8px"></div>
+      </div>
+    </div>
+
     <div class="stats">
-      <div class="sc"><div class="sc-label">Weekly Reach</div><div class="sc-val amber" id="ov-reach"><span class="loading-val">Loading...</span></div><div class="sc-delta up" id="ov-reach-d"></div></div>
-      <div class="sc"><div class="sc-label">Bookings This Month</div><div class="sc-val" id="ov-bookings">—</div><div class="sc-delta up" id="ov-book-d"></div></div>
+      <div class="sc"><div class="sc-label">IG Reach (7d)</div><div class="sc-val amber" id="ov-reach"><span class="loading-val">—</span></div><div class="sc-delta up" id="ov-reach-d"></div></div>
+      <div class="sc"><div class="sc-label">Confirmed Bookings</div><div class="sc-val" id="ov-bookings">—</div><div class="sc-delta up" id="ov-book-d"></div></div>
       <div class="sc"><div class="sc-label">Revenue This Month</div><div class="sc-val teal" id="ov-revenue">—</div><div class="sc-delta up" id="ov-rev-d"></div></div>
       <div class="sc"><div class="sc-label">Open Inquiries</div><div class="sc-val green" id="ov-inquiries">—</div><div class="sc-delta neutral" id="ov-inq-d"></div></div>
     </div>
     <div class="section">
       <div class="sec-title">Upcoming Events <span class="badge badge-teal">This Month</span></div>
-      <div id="ov-events"></div>
+      <div id="ov-events"><div style="font-size:13px;color:var(--text-light);font-style:italic">No bookings yet — add one in the Bookings tab.</div></div>
+    </div>
+  </div>
+
+  <!-- TASKS TAB -->
+  <div id="p-tasks" class="page">
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Tasks
+        <button class="edit-btn" onclick="toggleTaskForm()">+ Add Task</button>
+      </div>
+      <div class="task-form-wrap" id="taskFormWrap">
+        <div class="form-full"><input type="text" id="tk-name" placeholder="What needs to get done?"></div>
+        <div class="form-row">
+          <select id="tk-cat">
+            <option value="Content">Content</option>
+            <option value="Booking">Booking</option>
+            <option value="Business">Business</option>
+            <option value="Admin">Admin</option>
+          </select>
+          <input type="date" id="tk-due">
+        </div>
+        <div class="form-row">
+          <select id="tk-priority">
+            <option value="normal">Normal</option>
+            <option value="high">High Priority</option>
+            <option value="low">Low Priority</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="toggleTaskForm()">Cancel</button>
+          <button class="btn-save" onclick="addTask()">Add Task</button>
+        </div>
+      </div>
+      <div class="task-filter-row">
+        <button class="task-filter-btn on" onclick="filterTasks('all',this)">All</button>
+        <button class="task-filter-btn" onclick="filterTasks('Content',this)">Content</button>
+        <button class="task-filter-btn" onclick="filterTasks('Booking',this)">Booking</button>
+        <button class="task-filter-btn" onclick="filterTasks('Business',this)">Business</button>
+        <button class="task-filter-btn" onclick="filterTasks('Admin',this)">Admin</button>
+        <button class="task-filter-btn" onclick="filterTasks('done',this)">Done</button>
+      </div>
+      <div id="tasks-list"></div>
     </div>
   </div>
 
@@ -268,6 +699,48 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       <div class="sc"><div class="sc-label">Reach (7 days)</div><div class="sc-val" id="ig-reach"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="ig-reach-d"></div></div>
       <div class="sc"><div class="sc-label">Impressions (7d)</div><div class="sc-val teal" id="ig-impress"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="ig-imp-d"></div></div>
       <div class="sc"><div class="sc-label">Profile Views (7d)</div><div class="sc-val green" id="ig-views"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="ig-view-d"></div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Best Times to Post</div>
+      <div class="post-times">
+        <div class="pt-next" id="pt-next-ig">
+          <div class="pt-next-icon">🕐</div>
+          <div>
+            <div class="pt-next-label">Next Best Window</div>
+            <div class="pt-next-val" id="pt-next-ig-val">Loading...</div>
+            <div class="pt-next-sub" id="pt-next-ig-sub"></div>
+          </div>
+        </div>
+        <div class="pt-grid">
+          <div class="pt-row">
+            <div class="pt-day">Mon–Wed</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">7–8 AM</span>
+              <span class="pt-slot">11 AM–1 PM</span>
+              <span class="pt-slot prime">7–9 PM</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Thu–Fri</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">6–8 AM</span>
+              <span class="pt-slot">12–2 PM</span>
+              <span class="pt-slot prime">6–9 PM ★</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Sat–Sun</div>
+            <div class="pt-slots">
+              <span class="pt-slot prime">9–11 AM ★</span>
+              <span class="pt-slot good">1–3 PM</span>
+              <span class="pt-slot">6–8 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-why">
+          <strong>★ Top windows</strong> — Thu/Fri evening and Sat/Sun morning are when family + equine audiences are most active. <strong>Reels</strong> get pushed by the algorithm for 24–48 hrs after posting — publish in the evening so the overnight distribution cycle catches morning scrollers. <strong>Avoid</strong> Monday before 9 AM and Sunday after 9 PM (lowest engagement for this niche).
+        </div>
+      </div>
     </div>
     <div class="section">
       <div class="sec-title">Recent Posts</div>
@@ -291,6 +764,33 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
         </div>
       </div>
     </div>
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Post Performance Log
+        <button class="edit-btn" onclick="togglePerfForm('ig')">+ Log a Post</button>
+      </div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">After you post, log the stats here. Views + Saves + DMs + bookings attributed = the only numbers that matter.</p>
+      <div class="perf-form" id="perf-form-ig">
+        <div class="form-full"><input type="text" id="pp-caption-ig" placeholder="Caption or post description (first line is enough)"></div>
+        <div class="form-row">
+          <input type="date" id="pp-date-ig">
+          <input type="number" id="pp-views-ig" placeholder="Views / reach">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-saves-ig" placeholder="Saves">
+          <input type="number" id="pp-dms-ig" placeholder="DMs this post drove">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-bk-ig" placeholder="Bookings attributed">
+          <input type="text" id="pp-notes-ig" placeholder="Notes (Reel / Carousel / Story)">
+        </div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="togglePerfForm('ig')">Cancel</button>
+          <button class="btn-save" onclick="addPerfEntry('ig')">Save Post</button>
+        </div>
+      </div>
+      <div id="perf-list-ig"></div>
+    </div>
   </div>
 
   <!-- FACEBOOK TAB -->
@@ -301,10 +801,296 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
       <div class="sc"><div class="sc-label">Post Engagements</div><div class="sc-val teal" id="fb-engage"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="fb-eng-d"></div></div>
       <div class="sc"><div class="sc-label">Page Views (7d)</div><div class="sc-val green" id="fb-views"><span class="loading-val">Loading...</span></div><div class="sc-delta" id="fb-view-d"></div></div>
     </div>
+    <div class="warn-box">
+      <div class="warn-title">Why Facebook looks low</div>
+      <div class="warn-body">Instagram posts shared to Facebook are treated as cross-posts by the algorithm — Facebook actively reduces their reach because the content wasn't made natively. Your 246 followers aren't seeing the posts the way your 820 Instagram followers are. This is a known Meta issue, not a you issue.</div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Best Times to Post</div>
+      <div class="post-times">
+        <div class="pt-next" id="pt-next-fb">
+          <div class="pt-next-icon">🕐</div>
+          <div>
+            <div class="pt-next-label">Next Best Window</div>
+            <div class="pt-next-val" id="pt-next-fb-val">Loading...</div>
+            <div class="pt-next-sub" id="pt-next-fb-sub"></div>
+          </div>
+        </div>
+        <div class="pt-grid">
+          <div class="pt-row">
+            <div class="pt-day">Tue–Wed</div>
+            <div class="pt-slots">
+              <span class="pt-slot prime">8–10 AM ★</span>
+              <span class="pt-slot good">1–3 PM</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Thu–Fri</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">8–9 AM</span>
+              <span class="pt-slot prime">1–4 PM ★</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Sat–Sun</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">10 AM–12 PM</span>
+              <span class="pt-slot">2–4 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-why">
+          <strong>★ Top windows</strong> — Tuesday/Wednesday morning and Thursday afternoon are Facebook's peak for local family and event content. <strong>Events</strong> posted 2+ weeks out get the most organic spread — Facebook still favors event RSVPs heavily. <strong>Avoid</strong> Friday after 5 PM and all day Monday (lowest page reach for small businesses).
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="sec-title">What actually works on Facebook</div>
+      <div class="tip-card fb">
+        <div class="tip-plat">Facebook</div>
+        <div class="tip-title">Post natively at least 2x a week</div>
+        <ul class="tip-list">
+          <li>Write the post directly in Facebook, not pushed from Instagram</li>
+          <li>Facebook favors text-heavy posts with a question or local angle — "Anyone else in North Idaho looking for something to do with the kids this Saturday?"</li>
+          <li>Events drive massive organic reach on Facebook — create an Event for every booking that has a public component</li>
+          <li>Facebook Groups are your best friend — post in North Idaho family groups, CdA events groups, Spokane parenting groups</li>
+          <li>Go Live for 5 minutes with the horses — Facebook still boosts Live video more than any other format</li>
+          <li>Share your Instagram Reels to Facebook manually as a native upload, not through the auto-share toggle</li>
+        </ul>
+      </div>
+    </div>
     <div class="section">
       <div class="sec-title">Recent Facebook Posts</div>
-      <div id="fb-posts"><div style="font-size:13px;color:var(--text-light);font-style:italic">Loading recent posts...</div></div>
+      <div id="fb-posts"><div style="font-size:13px;color:var(--text-light);font-style:italic">No posts loaded yet.</div></div>
     </div>
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Post Performance Log
+        <button class="edit-btn" onclick="togglePerfForm('fb')">+ Log a Post</button>
+      </div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Track your native Facebook posts. Shares are the biggest reach driver here — log them every time.</p>
+      <div class="perf-form" id="perf-form-fb">
+        <div class="form-full"><input type="text" id="pp-caption-fb" placeholder="Post description or first line of caption"></div>
+        <div class="form-row">
+          <input type="date" id="pp-date-fb">
+          <input type="number" id="pp-views-fb" placeholder="Reach / views">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-saves-fb" placeholder="Shares">
+          <input type="number" id="pp-dms-fb" placeholder="DMs / messages driven">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-bk-fb" placeholder="Bookings attributed">
+          <input type="text" id="pp-notes-fb" placeholder="Notes (native / Event / Live)">
+        </div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="togglePerfForm('fb')">Cancel</button>
+          <button class="btn-save" onclick="addPerfEntry('fb')">Save Post</button>
+        </div>
+      </div>
+      <div id="perf-list-fb"></div>
+    </div>
+  </div>
+
+  <!-- TIKTOK TAB -->
+  <div id="p-tiktok" class="page">
+    <div class="stats">
+      <div class="sc"><div class="sc-label">Followers</div><div class="sc-val amber" id="tt-followers"><span class="loading-val">—</span></div><div class="sc-delta" id="tt-fol-d"></div></div>
+      <div class="sc"><div class="sc-label">Total Views</div><div class="sc-val" id="tt-views"><span class="loading-val">—</span></div><div class="sc-delta neutral">Lifetime</div></div>
+      <div class="sc"><div class="sc-label">Likes (7d)</div><div class="sc-val teal" id="tt-likes"><span class="loading-val">—</span></div><div class="sc-delta" id="tt-likes-d"></div></div>
+      <div class="sc"><div class="sc-label">Comments (7d)</div><div class="sc-val green" id="tt-comments"><span class="loading-val">—</span></div><div class="sc-delta" id="tt-com-d"></div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Best Times to Post</div>
+      <div class="post-times">
+        <div class="pt-next" id="pt-next-tt">
+          <div class="pt-next-icon">🕐</div>
+          <div>
+            <div class="pt-next-label">Next Best Window</div>
+            <div class="pt-next-val" id="pt-next-tt-val">Loading...</div>
+            <div class="pt-next-sub" id="pt-next-tt-sub"></div>
+          </div>
+        </div>
+        <div class="pt-grid">
+          <div class="pt-row">
+            <div class="pt-day">Tue–Thu</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">7–9 AM</span>
+              <span class="pt-slot">12–2 PM</span>
+              <span class="pt-slot prime">7–10 PM ★</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Fri</div>
+            <div class="pt-slots">
+              <span class="pt-slot good">7–9 AM</span>
+              <span class="pt-slot prime">5–8 PM ★</span>
+            </div>
+          </div>
+          <div class="pt-row">
+            <div class="pt-day">Sat–Sun</div>
+            <div class="pt-slots">
+              <span class="pt-slot prime">11 AM–1 PM ★</span>
+              <span class="pt-slot good">7–9 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-why">
+          <strong>★ Top windows</strong> — Friday evening and Saturday midday are peak for #HorseTok. TikTok's algorithm pushes content for 3–7 days, so timing matters less than consistency — but posting before your audience's active hours gives the first-hour engagement spike that signals the algorithm to distribute wider. <strong>Avoid</strong> Sunday morning and Monday before noon (lowest #HorseTok activity).
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="sec-title">What works on TikTok</div>
+      <div class="tip-card tt">
+        <div class="tip-plat">TikTok</div>
+        <div class="tip-title">Hook in the first 2 seconds — always</div>
+        <ul class="tip-list">
+          <li>Start with the horse on screen, not with you talking — movement stops the scroll</li>
+          <li>Text overlay hooks: "POV: you brought a Clydesdale to a kids birthday party" or "What 1,800 lbs of horse looks like next to a 4-year-old"</li>
+          <li>TikTok pushes horse content hard — #HorseTok has billions of views. You belong there.</li>
+          <li>Keep it under 30 seconds for maximum reach — show one moment, don't try to fit everything</li>
+          <li>Reply to comments with a video — TikTok boosts video replies heavily</li>
+          <li>Post 3-5x per week if you can. Consistency matters more than production quality.</li>
+          <li>Indigenous creator content performs well — lean into your story authentically</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section" style="background:var(--teal-bg);border-color:var(--teal)">
+      <div class="sec-title" style="color:var(--teal-text)">Update TikTok stats</div>
+      <div style="font-size:13px;color:var(--teal-text);line-height:1.7">TikTok doesn't connect to this dashboard automatically yet. Hit <strong>Update Stats</strong> in the header and enter your numbers from TikTok Analytics (Profile &rarr; Creator tools &rarr; Analytics).</div>
+    </div>
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Post Performance Log
+        <button class="edit-btn" onclick="togglePerfForm('tt')">+ Log a Post</button>
+      </div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Log every TikTok after it's been up 48 hours. Views past 500 = worth noting. Views past 5,000 = repeat that format.</p>
+      <div class="perf-form" id="perf-form-tt">
+        <div class="form-full"><input type="text" id="pp-caption-tt" placeholder="Hook or description (what was the first line on screen?)"></div>
+        <div class="form-row">
+          <input type="date" id="pp-date-tt">
+          <input type="number" id="pp-views-tt" placeholder="Views (48hr)">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-saves-tt" placeholder="Saves / favorites">
+          <input type="number" id="pp-dms-tt" placeholder="Profile visits / DMs driven">
+        </div>
+        <div class="form-row">
+          <input type="number" id="pp-bk-tt" placeholder="Bookings attributed">
+          <input type="text" id="pp-notes-tt" placeholder="Notes (hook style, audio, length)">
+        </div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="togglePerfForm('tt')">Cancel</button>
+          <button class="btn-save" onclick="addPerfEntry('tt')">Save Post</button>
+        </div>
+      </div>
+      <div id="perf-list-tt"></div>
+    </div>
+  </div>
+
+  <!-- CONTENT TAB -->
+  <div id="p-content" class="page">
+
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        Content Calendar
+        <button class="edit-btn" onclick="toggleCalForm()">+ Add Post</button>
+      </div>
+      <div class="booking-form" id="calForm">
+        <div class="form-title">Plan a post</div>
+        <div class="form-row">
+          <select id="cal-platform">
+            <option value="ig">Instagram</option>
+            <option value="fb">Facebook</option>
+            <option value="tt">TikTok</option>
+          </select>
+          <input type="date" id="cal-date">
+        </div>
+        <div class="form-row">
+          <select id="cal-pillar">
+            <option value="The Animals">The Animals</option>
+            <option value="The Moments">The Moments</option>
+            <option value="The Work">The Work</option>
+            <option value="Indigenous Identity">Indigenous Identity</option>
+            <option value="Events & Booking">Events &amp; Booking</option>
+            <option value="Education">Education</option>
+            <option value="North Idaho Life">North Idaho Life</option>
+          </select>
+          <select id="cal-status">
+            <option value="idea">Idea</option>
+            <option value="draft">Draft</option>
+            <option value="ready">Ready</option>
+            <option value="posted">Posted</option>
+          </select>
+        </div>
+        <div class="form-full"><input type="text" id="cal-caption" placeholder="Caption draft or idea..."></div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="toggleCalForm()">Cancel</button>
+          <button class="btn-save" onclick="addCalPost()">Save</button>
+        </div>
+      </div>
+      <div class="cal-filter">
+        <button class="cf-btn on" onclick="filterCal('all',this)">All</button>
+        <button class="cf-btn" onclick="filterCal('ig',this)">Instagram</button>
+        <button class="cf-btn" onclick="filterCal('fb',this)">Facebook</button>
+        <button class="cf-btn" onclick="filterCal('tt',this)">TikTok</button>
+      </div>
+      <div id="cal-list"></div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Platform Tips</div>
+      <div class="tip-card ig">
+        <div class="tip-plat">Instagram</div>
+        <div class="tip-title">Your strongest platform — keep the momentum</div>
+        <ul class="tip-list">
+          <li>Reels outperform static posts 3:1 — even a shaky 15-second clip of Millie counts</li>
+          <li>Stories every day keeps you at the top of the feed — behind-the-scenes, polls, Q&amp;A</li>
+          <li>Carousels get saved more than any other format — use them for education posts</li>
+          <li>Caption the first line as if it's the only line people will read — hook first, story second</li>
+          <li>Tag your location on every post — North Idaho, Athol, Coeur d'Alene, Spokane</li>
+          <li>Respond to every comment within 2 hours of posting — Instagram rewards early engagement</li>
+        </ul>
+      </div>
+      <div class="tip-card fb">
+        <div class="tip-plat">Facebook</div>
+        <div class="tip-title">Don't just cross-post — post natively</div>
+        <ul class="tip-list">
+          <li>2x native posts per week minimum — written directly in Facebook, not pushed from Instagram</li>
+          <li>Create a Facebook Event for anything bookable or public-facing — Events get massive free reach</li>
+          <li>Post in local groups: North Idaho Family Fun, CdA Events, Spokane Kids Activities</li>
+          <li>Facebook Live with the horses — even 5 minutes gets boosted more than any other format</li>
+          <li>Ask a local question in the caption: "What's your go-to family activity in North Idaho this spring?"</li>
+          <li>Upload Reels directly to Facebook as a native video — don't rely on the auto-share from Instagram</li>
+        </ul>
+      </div>
+      <div class="tip-card tt">
+        <div class="tip-plat">TikTok</div>
+        <div class="tip-title">Biggest growth potential right now</div>
+        <ul class="tip-list">
+          <li>Start every video with the horse moving — don't start with you talking</li>
+          <li>Text hook on screen: "POV: 1,800 lbs of Clydesdale just showed up to a birthday party"</li>
+          <li>#HorseTok has billions of views — you belong in that space</li>
+          <li>Post 3-5x per week — volume and consistency beat perfection on TikTok</li>
+          <li>Reply to comments with video replies — TikTok boosts these heavily</li>
+          <li>Keep it under 30 seconds for max reach — one moment, one reaction, done</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Content Pillars — Rotate Through These</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">The Animals</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">Millie &amp; Abby, pony personalities, barn moments</div></div>
+        <div style="background:var(--green-bg);border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:var(--green-text);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">The Moments</div><div style="font-size:12px;color:var(--green-dark);line-height:1.6">Guest reactions, kids meeting horses, real emotion</div></div>
+        <div style="background:var(--teal-bg);border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:var(--teal-text);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">The Work</div><div style="font-size:12px;color:var(--teal-text);line-height:1.6">Grooming, setup, hauling — the effort behind it</div></div>
+        <div style="background:#F0EDE6;border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:var(--text-mid);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">Indigenous Identity</div><div style="font-size:12px;color:var(--text-mid);line-height:1.6">Nisenan Maidu, land, culture — with dignity</div></div>
+        <div style="background:var(--red-bg);border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:var(--red-text);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">Events &amp; Booking</div><div style="font-size:12px;color:var(--red-dark);line-height:1.6">1 in 5 posts max — availability, how to book</div></div>
+        <div style="background:#EEF2FB;border-radius:8px;padding:0.7rem 0.85rem"><div style="font-size:10px;font-weight:700;color:#1A3A7A;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px">North Idaho Life</div><div style="font-size:12px;color:#1A3A7A;line-height:1.6">Seasons, land, the region — place is part of brand</div></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- BOOKINGS TAB -->
@@ -336,12 +1122,32 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
           </select>
         </div>
         <div class="form-full"><input type="text" id="bk-notes" placeholder="Notes (next step, contact, etc.)"></div>
+        <div class="form-row">
+          <select id="bk-source">
+            <option value="">How did they find us?</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="TikTok">TikTok</option>
+            <option value="Referral">Referral / Word of mouth</option>
+            <option value="Google">Google / Search</option>
+            <option value="Repeat">Repeat client</option>
+            <option value="Event">Saw us at an event</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="date" id="bk-followup" title="Follow-up date">
+        </div>
+        <div style="font-size:11px;color:var(--text-light);margin-bottom:8px">Second field: follow-up date (when to check in)</div>
         <div class="form-actions">
           <button class="btn-cancel" onclick="toggleForm()">Cancel</button>
           <button class="btn-save" onclick="addBooking()">Save Booking</button>
         </div>
       </div>
       <div id="bookings-list"></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Source Attribution</div>
+      <div style="font-size:12px;color:var(--text-mid);line-height:1.7;margin-bottom:8px">Where your bookings come from</div>
+      <div id="source-chart"></div>
     </div>
     <div class="section">
       <div class="sec-title">Service Popularity</div>
@@ -353,12 +1159,414 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
     </div>
   </div>
 
-  <!-- VOICE LEADS TAB -->
+  <!-- INCOME TAB -->
+  <div id="p-income" class="page">
+
+    <div class="income-total-bar">
+      <div>
+        <div class="income-total-label">Total Income — This Month</div>
+        <div class="income-total-val" id="income-total">$0</div>
+      </div>
+      <button class="edit-btn" onclick="toggleIncomeForm()">+ Add Income</button>
+    </div>
+
+    <div class="income-add-form" id="incomeAddForm">
+      <div class="form-title">Record income received</div>
+      <div class="form-row">
+        <select id="inc-stream">
+          <option value="Booking">Event Booking</option>
+          <option value="Affiliate">Affiliate / Referral (SpotMyPhotos)</option>
+          <option value="Brand Deal">Brand Deal / Sponsored Post</option>
+          <option value="Digital">Digital Product Sale</option>
+          <option value="Creator Fund">TikTok Creator Fund</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="number" id="inc-amount" placeholder="Amount — no $ sign">
+      </div>
+      <div class="form-row">
+        <input type="date" id="inc-date">
+        <input type="text" id="inc-notes" placeholder="Source, brand, notes...">
+      </div>
+      <div class="form-actions">
+        <button class="btn-cancel" onclick="toggleIncomeForm()">Cancel</button>
+        <button class="btn-save" onclick="addIncomeEntry()">Save</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">By Stream — This Month</div>
+      <div id="income-by-stream"></div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title" style="justify-content:space-between">
+        All Income Entries
+        <span style="font-size:11px;font-weight:700;color:var(--text-light);letter-spacing:0.05em">Most recent first</span>
+      </div>
+      <div id="income-entries-list"><div style="font-size:13px;color:var(--text-light);font-style:italic">No income recorded yet. Hit + Add Income to start.</div></div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Monthly Goal</div>
+      <div id="income-goal-bar-wrap">
+        <div class="bar-row"><span class="bar-lbl" id="income-goal-lbl">Goal: not set</span><div class="bar-track"><div class="bar-fill" id="income-goal-fill" style="width:0%"></div></div><span class="bar-pct" id="income-goal-pct">0%</span></div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+        <input type="number" id="income-goal-input" placeholder="Monthly goal ($)" style="font-family:'Lato',sans-serif;font-size:13px;padding:7px 10px;border:1px solid var(--border);border-radius:6px;width:160px">
+        <button class="btn-save" style="padding:7px 14px;font-size:12px" onclick="saveIncomeGoal()">Set Goal</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Income Streams Guide</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:var(--teal-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--teal-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Affiliate / Referral</div><div style="font-size:12px;color:var(--teal-text);line-height:1.6">SpotMyPhotos referrals, Amazon links in bio, gear/supply brands you actually use</div></div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Brand Deals</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">Paid posts with outdoor, Western, family, kids, or equine brands. Rate: 1–3% of following minimum.</div></div>
+        <div style="background:#EEF2FB;border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:#1A3A7A;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Digital Products</div><div style="font-size:12px;color:#1A3A7A;line-height:1.6">Horse event planning guide, pony party checklist, photo prop venue kit — sell once, earn forever</div></div>
+        <div style="background:var(--green-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--green-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Creator Fund / TikTok</div><div style="font-size:12px;color:var(--green-dark);line-height:1.6">TikTok Creator Rewards pays $0.40–$0.72 per 1,000 views on eligible content. #HorseTok scales fast.</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CALENDAR TAB -->
+  <div id="p-calendar" class="page">
+
+    <div class="cal-nav">
+      <div style="display:flex;gap:6px;align-items:center">
+        <button class="cal-nav-btn" onclick="prevMonth()">&#8249;</button>
+        <button class="cal-nav-btn" onclick="nextMonth()">&#8250;</button>
+        <button class="cal-today-btn" onclick="goToday()">Today</button>
+      </div>
+      <div class="cal-nav-title" id="cal-month-title">March 2026</div>
+      <button class="edit-btn" onclick="openCalAdd()">+ Add Post</button>
+    </div>
+
+    <div class="cal-legend">
+      <span class="cl-item"><span class="cl-dot" style="background:#C77DFF"></span>Instagram</span>
+      <span class="cl-item"><span class="cl-dot" style="background:#4267B2"></span>Facebook</span>
+      <span class="cl-item"><span class="cl-dot" style="background:#FF2D55"></span>TikTok</span>
+      <span class="cl-item"><span class="cl-dot" style="background:#3B6D11"></span>Booking</span>
+    </div>
+
+    <!-- Day detail panel — appears when you tap a day -->
+    <div class="day-panel" id="dayPanel">
+      <div class="day-panel-title">
+        <span id="dayPanelTitle">Friday, March 27</span>
+        <button class="day-panel-close" onclick="closeDayPanel()">&#x2715;</button>
+      </div>
+      <div id="dayPanelContent"></div>
+      <div style="margin-top:0.75rem">
+        <button class="btn-save" style="font-size:12px;padding:6px 14px" onclick="openCalAddDate()">+ Add post for this day</button>
+      </div>
+    </div>
+
+    <!-- Add post quick form -->
+    <div class="booking-form" id="calAddForm" style="margin-bottom:1rem">
+      <div class="form-title">Schedule a post</div>
+      <div class="form-row">
+        <select id="cadd-platform">
+          <option value="ig">Instagram</option>
+          <option value="fb">Facebook</option>
+          <option value="tt">TikTok</option>
+        </select>
+        <input type="date" id="cadd-date">
+      </div>
+      <div class="form-row">
+        <select id="cadd-pillar">
+          <option value="The Animals">The Animals</option>
+          <option value="The Moments">The Moments</option>
+          <option value="The Work">The Work</option>
+          <option value="Indigenous Identity">Indigenous Identity</option>
+          <option value="Events & Booking">Events &amp; Booking</option>
+          <option value="Education">Education</option>
+          <option value="North Idaho Life">North Idaho Life</option>
+        </select>
+        <select id="cadd-status">
+          <option value="idea">Idea</option>
+          <option value="draft">Draft</option>
+          <option value="ready">Ready</option>
+          <option value="posted">Posted</option>
+        </select>
+      </div>
+      <div class="form-full"><input type="text" id="cadd-caption" placeholder="Caption or idea..."></div>
+      <div class="form-actions">
+        <button class="btn-cancel" onclick="closeCalAdd()">Cancel</button>
+        <button class="btn-save" onclick="saveCalAdd()">Save</button>
+      </div>
+    </div>
+
+    <div style="margin-bottom:0.75rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <button class="edit-btn" onclick="loadCalTemplate()" style="font-size:12px;padding:6px 14px">↺ Load Weekly Rhythm Template</button>
+      <span style="font-size:11px;color:var(--text-light)">Mon Reel · Wed Carousel · Fri FB Native · Sun TikTok</span>
+    </div>
+
+    <div class="cal-grid-wrap">
+      <div class="cal-dow-row">
+        <div class="cal-dow">Sun</div>
+        <div class="cal-dow">Mon</div>
+        <div class="cal-dow">Tue</div>
+        <div class="cal-dow">Wed</div>
+        <div class="cal-dow">Thu</div>
+        <div class="cal-dow">Fri</div>
+        <div class="cal-dow">Sat</div>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+
+  </div>
+
+  <!-- AGENT HUB TAB -->
+  <div id="p-agents" class="page">
+
+    <button class="qs-btn" onclick="toggleQuickStart()">🤠 Quick Start — What do you need help with?</button>
+    <div class="qs-routes" id="qsRoutes">
+      <div style="font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:7px">Pick what you need right now</div>
+      <button class="qs-route" onclick="quickRoute('Write an Instagram caption about [describe the moment or photo]')">✍️ Write a caption or post</button>
+      <button class="qs-route" onclick="quickRoute('Build this week\'s content calendar. Today is '+new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+'. Upcoming events: [list any]. Rotate all 7 pillars.')">📅 Plan this week's content</button>
+      <button class="qs-route" onclick="quickRoute('Classify this message and draft a reply using the 5-tier system: [paste the comment or DM]')">💬 Respond to a DM or comment</button>
+      <button class="qs-route" onclick="quickRoute('Give me 5 TikTok hooks for [topic] — punchy, under 30 words, horse on screen first')">🎵 TikTok hooks</button>
+      <button class="qs-route" onclick="quickRoute('Draft outreach to [company name] in [industry] for a corporate event — service: Pony Rides / Wagon Rides / Photo Prop Experience')">🤝 Corporate outreach</button>
+      <button class="qs-route" onclick="quickRoute('Find brand deal opportunities for Tribal Cowboy — focus on outdoor, Western, kids, family brands in Q2')">💰 Brand deal opportunities</button>
+      <button class="qs-route" onclick="quickRoute('Audit this draft for brand voice — check banned phrases, exclamation marks, Indigenous identity handling: [paste copy]')">🔍 Audit brand voice</button>
+      <button class="qs-route" onclick="quickRoute('Route this task to the right agent and tell me exactly what to say: [describe what you need]')">🎯 Not sure — just route me</button>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Your Agent System <span class="badge badge-teal">13 Agents</span></div>
+      <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:1rem">Open Claude Code in your TribalCowboy-Social folder. Copy the trigger phrase and paste it in.</p>
+
+      <div style="font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin:0 0 8px">Content &amp; Copy</div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Copywriter</div><span class="badge badge-amber">Copy</span></div>
+        <div class="agent-desc">Writes all captions, hooks, scripts, and website text. Applies brand voice and uses your horse names automatically.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-1">Write an Instagram caption about [topic or moment]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-1')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Content Strategist</div><span class="badge badge-amber">Strategy</span></div>
+        <div class="agent-desc">Builds monthly and weekly content calendars. Manages pillar rotation, funnel coverage, and posting cadence per platform.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-2">Build this week's content calendar — today is [date], upcoming events: [list any]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-2')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Creative Direction</div><span class="badge badge-amber">Visual</span></div>
+        <div class="agent-desc">Produces shot lists, reel structures, carousel layouts, and visual tone direction for upcoming content.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-3">Give me a shot list and reel structure for [topic or event]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-3')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Brand Voice Agent</div><span class="badge badge-amber">Brand</span></div>
+        <div class="agent-desc">Guards brand identity. Audits drafts against voice rules, banned phrases, and Indigenous identity guidelines.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-4">Audit this draft for brand voice: [paste copy]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-4')">Copy</button></div>
+      </div>
+
+      <div style="font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin:14px 0 8px">Engagement &amp; Community</div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Comment &amp; DM Response</div><span class="badge badge-teal">Engagement</span></div>
+        <div class="agent-desc">Classifies inbound messages into 11 types and 5 tiers. Drafts replies that protect brand while staying warm.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-5">Classify this message and draft a reply: [paste comment or DM]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-5')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Story Engagement</div><span class="badge badge-teal">Engagement</span></div>
+        <div class="agent-desc">Creates daily and weekly story strategies, story sequences, polls, Q&amp;A prompts, and reply drafts.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-6">Plan this week's Instagram stories — theme: [topic or season]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-6')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">TikTok Growth</div><span class="badge badge-teal">TikTok</span></div>
+        <div class="agent-desc">Manages TikTok Business and Personal strategies separately. Develops series concepts, hooks, and monetization-friendly content.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-7">Give me 5 TikTok hooks for [topic] — under 30 seconds each</span><button class="copy-trigger-btn" onclick="copyTrig('tr-7')">Copy</button></div>
+      </div>
+
+      <div style="font-size:10px;font-weight:700;color:var(--text-light);letter-spacing:0.09em;text-transform:uppercase;margin:14px 0 8px">Business &amp; Revenue</div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Creator Income</div><span class="badge badge-green">Revenue</span></div>
+        <div class="agent-desc">Evaluates brand partnerships, builds UGC offers, tracks monetization experiments, and manages your media kit.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-8">Find brand deal opportunities for Tribal Cowboy in [category — outdoor, Western, kids, family]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-8')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Corporate &amp; Luxury Leads</div><span class="badge badge-green">Revenue</span></div>
+        <div class="agent-desc">Develops corporate buyer messaging, event proposals, outreach sequences, and pricing frameworks for high-value clients.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-9">Draft outreach to [company or venue] for a corporate event — service: [type]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-9')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Trend &amp; Market Intelligence</div><span class="badge badge-green">Research</span></div>
+        <div class="agent-desc">Monitors trends, researches competitors, identifies partnership opportunities, and provides market signals.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-10">What horse and equine content is trending on [platform] right now? What should Tribal Cowboy be doing?</span><button class="copy-trigger-btn" onclick="copyTrig('tr-10')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Website &amp; SEO</div><span class="badge badge-green">Web</span></div>
+        <div class="agent-desc">Handles website audits, page copy drafts, SEO keyword strategy, and landing page optimization.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-11">Audit the tribalcowboy.com [page name] page — what needs to change?</span><button class="copy-trigger-btn" onclick="copyTrig('tr-11')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Operations &amp; Templates</div><span class="badge badge-green">Ops</span></div>
+        <div class="agent-desc">Maintains SOPs, reply banks, booking templates, and reusable workflows so nothing gets rebuilt from scratch.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-12">I need a template for [booking confirmation / inquiry reply / event follow-up]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-12')">Copy</button></div>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-header"><div class="agent-name">Orchestrator</div><span class="badge badge-amber">Master</span></div>
+        <div class="agent-desc">Routes requests to the right agent, manages the approval queue, and maintains business priority order.</div>
+        <div class="agent-trigger"><span class="trigger-text" id="tr-13">Route this: [describe what you need — content, booking, research, reply, etc.]</span><button class="copy-trigger-btn" onclick="copyTrig('tr-13')">Copy</button></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BRAND HUB TAB -->
+  <div id="p-brand" class="page">
+
+    <div class="section">
+      <div class="sec-title">Hashtag Bank</div>
+
+      <div class="hash-group">
+        <div class="hash-platform-label">Instagram Core <span style="font-weight:400;color:var(--text-light)">(use 5-10 per post)</span></div>
+        <div class="hash-tags" id="hb-ig-core">#TribalCowboy #NorthIdaho #IdahoHorses #ClydesdaleHorse #PonyParty #HorsePhotography #IndigenousOwned #NiseanMaidu #EquestrianLife #HorsesOfInstagram</div>
+        <button class="copy-hash-btn" onclick="copyHash('hb-ig-core')">Copy All</button>
+      </div>
+
+      <div class="hash-group">
+        <div class="hash-platform-label">Instagram Event / Service</div>
+        <div class="hash-tags" id="hb-ig-event">#CorporateEvents #KidsParty #PonyRides #WagonRide #FamilyFun #NorthIdahoEvents #EasternWashington #AtholIdaho</div>
+        <button class="copy-hash-btn" onclick="copyHash('hb-ig-event')">Copy All</button>
+      </div>
+
+      <div class="hash-group">
+        <div class="hash-platform-label">Instagram Reach <span style="font-weight:400;color:var(--text-light)">(rotate)</span></div>
+        <div class="hash-tags" id="hb-ig-reach">#HorseMom #FarmLife #WesternLifestyle #CountryLife #HorseLife #RanchLife #HorsesOfIG</div>
+        <button class="copy-hash-btn" onclick="copyHash('hb-ig-reach')">Copy All</button>
+      </div>
+
+      <div class="hash-group">
+        <div class="hash-platform-label">TikTok</div>
+        <div class="hash-tags" id="hb-tt">#HorseTok #NorthIdaho #TribalCowboy #ClydesdaleTok #PonyParty #IndigenousCreator #IdahoTikTok #HorseGirl</div>
+        <button class="copy-hash-btn" onclick="copyHash('hb-tt')">Copy All</button>
+      </div>
+
+      <div class="hash-group">
+        <div class="hash-platform-label">Facebook <span style="font-weight:400;color:var(--text-light)">(2-3 max)</span></div>
+        <div class="hash-tags" id="hb-fb">#NorthIdahoEvents #TribalCowboy #IdahoHorses</div>
+        <button class="copy-hash-btn" onclick="copyHash('hb-fb')">Copy All</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Your Herd</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Belle — Clydesdale</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">22 years old. Bay roan. The matriarch. Calm, commanding presence.</div></div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Jill — Clydesdale</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">13 years old. Bay roan. Dependable, hardworking. Abby's mom.</div></div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Abby — Clydesdale</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">7 years old. Bay roan. Jill's daughter. Curious, photogenic.</div></div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Millie — Clydesdale</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">5 years old. Belle's daughter. Playful, personality-forward.</div></div>
+        <div style="background:#F0EDE6;border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--text-mid);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">The Minis</div><div style="font-size:12px;color:var(--text-mid);line-height:1.6">Monster Unicorn, Master Chief, Reba, Dolly, Lainey, Minimus</div></div>
+        <div style="background:#F0EDE6;border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--text-mid);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Personal Horses</div><div style="font-size:12px;color:var(--text-mid);line-height:1.6">Jolene, Rowdy (in training), Nash (in training)</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Brand Voice — Quick Rules</div>
+      <div style="background:var(--red-bg);border:1.5px solid #F09595;border-radius:10px;padding:0.85rem 1rem;margin-bottom:10px">
+        <div style="font-size:11px;font-weight:700;color:var(--red-text);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:6px">Never Say</div>
+        <div style="font-size:13px;color:var(--red-dark);line-height:1.8">leverage &bull; synergy &bull; unique experience &bull; memories to last a lifetime &bull; making memories &bull; your special day &bull; dreams come true &bull; delve &bull; testament to &bull; it's worth noting &bull; seamlessly &bull; At Tribal Cowboy, we believe</div>
+      </div>
+      <div style="background:var(--green-bg);border:1.5px solid #97C459;border-radius:10px;padding:0.85rem 1rem;margin-bottom:10px">
+        <div style="font-size:11px;font-weight:700;color:var(--green-text);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:6px">Always Do</div>
+        <div style="font-size:13px;color:var(--green-dark);line-height:1.8">Use horse names (Millie, Belle, Abby) &bull; First or third person only &bull; Max 1 exclamation mark &bull; Specificity over generality &bull; Humor when horses earn it &bull; Indigenous identity with dignity, never as a marketing badge</div>
+      </div>
+      <div style="background:var(--teal-bg);border-radius:10px;padding:0.85rem 1rem">
+        <div style="font-size:11px;font-weight:700;color:var(--teal-text);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:6px">Tone By Platform</div>
+        <div style="font-size:13px;color:var(--teal-text);line-height:1.9"><strong>Instagram:</strong> Warm, visual, a little story. Caption tells the moment.<br><strong>Facebook:</strong> Slightly longer, community-forward. Local angle always.<br><strong>TikTok:</strong> Direct, punchy, hook in the first line. Talk to camera energy.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">CTA Bank</div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div class="cta-row"><span class="cta-text" id="cta-1">Check availability at www.tribalcowboy.com</span><button class="copy-hash-btn" onclick="copyHash('cta-1')">Copy</button></div>
+        <div class="cta-row"><span class="cta-text" id="cta-2">DM us to check dates</span><button class="copy-hash-btn" onclick="copyHash('cta-2')">Copy</button></div>
+        <div class="cta-row"><span class="cta-text" id="cta-3">Link in bio to book</span><button class="copy-hash-btn" onclick="copyHash('cta-3')">Copy</button></div>
+        <div class="cta-row"><span class="cta-text" id="cta-4">Email info@tribalcowboy.com</span><button class="copy-hash-btn" onclick="copyHash('cta-4')">Copy</button></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Caption Templates — Fill in the Blanks</div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Tap Copy on any template, fill in the <mark style="background:var(--amber-bg);color:var(--gold-deeper);padding:0 3px;border-radius:3px">highlighted</mark> parts, and you've got a post.</p>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform ig">Instagram — The Animals</div>
+        <div class="cap-tmpl-text" id="ct-1"><mark>[Horse name]</mark> has been doing this thing lately where she <mark>[funny/specific behavior]</mark>. Every single time. 1,800 pounds of horse with the personality of a <mark>[comparison]</mark>.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-1')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform ig">Instagram — The Moments</div>
+        <div class="cap-tmpl-text" id="ct-2">The kid walked up, stopped, and just stared. <mark>[What happened next — specific]</mark>. Her mom told me later that was the first time she'd stopped talking all day. That's what horses do.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-2')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform fb">Facebook — Events &amp; Booking</div>
+        <div class="cap-tmpl-text" id="ct-3">We're booking <mark>[event type]</mark> for <mark>[month/season]</mark> now. If you've been thinking about it, <mark>[month]</mark> fills up faster than people expect. Check availability at www.tribalcowboy.com or DM me here.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-3')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform ig">Instagram — The Work</div>
+        <div class="cap-tmpl-text" id="ct-4"><mark>[Time]</mark> AM. <mark>[What you're doing — grooming, loading, setting up]</mark> before anyone else is awake. This is the part nobody sees. The part that makes the rest of it possible.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-4')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform tt">TikTok — Hook Templates</div>
+        <div class="cap-tmpl-text" id="ct-5">POV: You brought a <mark>[horse name/type]</mark> to a <mark>[event type]</mark> and this happened.
+—
+What 1,800 lbs of Clydesdale looks like next to a <mark>[comparison — 4-year-old / golden retriever / folding table]</mark>.
+—
+Nobody warned the <mark>[person/group]</mark> about <mark>[horse name]</mark>.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-5')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform ig">Instagram — Indigenous Identity</div>
+        <div class="cap-tmpl-text" id="ct-6"><mark>[What you were doing with the horses — specific moment]</mark>. My grandmother's people have a relationship with this land that goes back <mark>[timeframe]</mark>. Running Tribal Cowboy isn't separate from that. It's the same thread.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-6')">Copy Template</button>
+      </div>
+
+      <div class="cap-tmpl-card">
+        <div class="cap-tmpl-platform fb">Facebook — North Idaho Life</div>
+        <div class="cap-tmpl-text" id="ct-7"><mark>[Season/weather/time of year]</mark> in North Idaho looks like <mark>[specific visual — mud, snow, wildflowers, golden fields]</mark>. This is home. This is where the horses live. This is the only place I'd want to do this work.</div>
+        <button class="cap-tmpl-copy" onclick="copyCapTemplate('ct-7')">Copy Template</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">Seasonal Notes</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:var(--green-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--green-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Spring Mar-May</div><div style="font-size:12px;color:var(--green-dark);line-height:1.6">Booking season opens. Mother's Day pony parties. End-of-school events.</div></div>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--gold-deeper);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Summer Jun-Aug</div><div style="font-size:12px;color:var(--amber-text);line-height:1.6">Peak season. Corporate events, fairs, family reunions, birthday parties.</div></div>
+        <div style="background:#F0EDE6;border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Fall Sep-Nov</div><div style="font-size:12px;color:var(--text-mid);line-height:1.6">Harvest festivals. Back-to-school programs. Holiday teasers.</div></div>
+        <div style="background:var(--teal-bg);border-radius:8px;padding:0.75rem"><div style="font-size:10px;font-weight:700;color:var(--teal-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">Winter Dec-Feb</div><div style="font-size:12px;color:var(--teal-text);line-height:1.6">Holiday wagon rides. Off-season behind-the-scenes. Book early spring.</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHY I DO THIS TAB -->
   <div id="p-voice" class="page">
     <div class="greet">These are leads from your website voice assistant. When someone talks to the AI on tribalcowboy.com and asks about booking, their info shows up here.</div>
     <div class="stats">
-      <div class="sc"><div class="sc-label">Total Inquiries</div><div class="sc-val amber" id="vi-total">0</div><div class="sc-delta" id="vi-total-d"></div></div>
-      <div class="sc"><div class="sc-label">New (Uncontacted)</div><div class="sc-val green" id="vi-new">0</div><div class="sc-delta neutral" id="vi-new-d">Needs follow-up</div></div>
+      <div class="sc"><div class="sc-label">Total Inquiries</div><div class="sc-val" id="vi-total">0</div><div class="sc-delta neutral" id="vi-total-d"></div></div>
+      <div class="sc"><div class="sc-label">New (Uncontacted)</div><div class="sc-val teal" id="vi-new">0</div><div class="sc-delta" style="color:var(--teal)">Needs follow-up</div></div>
     </div>
     <div class="section">
       <div class="sec-title">Recent Voice Inquiries <span class="badge badge-teal">From Website</span></div>
@@ -366,7 +1574,6 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
     </div>
   </div>
 
-  <!-- WHY I DO THIS TAB -->
   <div id="p-heart" class="page">
     <div class="greet">"We bring horses to the people who need them most. Every child who touches a horse for the first time leaves a little different." &mdash; Stacie</div>
     <div class="section">
@@ -393,6 +1600,145 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── TIKTOK + CONTENT CALENDAR STATE ────────────────────────────────────────
+let ttData = JSON.parse(localStorage.getItem('tc_tt_data') || 'null') || {followers:0,views:0,likes:0,comments:0};
+let calPosts = JSON.parse(localStorage.getItem('tc_cal_posts') || '[]');
+let calFilter = 'all';
+
+// ── POST PERFORMANCE STATE ───────────────────────────────────────────────────
+let postPerf = JSON.parse(localStorage.getItem('tc_post_perf') || '[]');
+
+// ── BEST TIMES TO POST ───────────────────────────────────────────────────────
+// Windows: [dayOfWeek (0=Sun..6=Sat), startHour, endHour, label, isPrime]
+const POST_WINDOWS = {
+  ig: [
+    [1,'7:00 AM','8:00 AM','Mon–Wed morning',false],
+    [1,'7:00 PM','9:00 PM','Mon–Wed evening',true],
+    [1,'11:00 AM','1:00 PM','Mon–Wed midday',false],
+    [2,'7:00 AM','8:00 AM','Mon–Wed morning',false],
+    [2,'7:00 PM','9:00 PM','Mon–Wed evening',true],
+    [2,'11:00 AM','1:00 PM','Mon–Wed midday',false],
+    [3,'7:00 AM','8:00 AM','Mon–Wed morning',false],
+    [3,'7:00 PM','9:00 PM','Mon–Wed evening',true],
+    [3,'11:00 AM','1:00 PM','Mon–Wed midday',false],
+    [4,'6:00 AM','8:00 AM','Thu–Fri morning',false],
+    [4,'6:00 PM','9:00 PM','Thu–Fri evening ★',true],
+    [4,'12:00 PM','2:00 PM','Thu–Fri midday',false],
+    [5,'6:00 AM','8:00 AM','Thu–Fri morning',false],
+    [5,'6:00 PM','9:00 PM','Thu–Fri evening ★',true],
+    [5,'12:00 PM','2:00 PM','Thu–Fri midday',false],
+    [6,'9:00 AM','11:00 AM','Sat–Sun morning ★',true],
+    [6,'1:00 PM','3:00 PM','Sat–Sun afternoon',false],
+    [6,'6:00 PM','8:00 PM','Sat–Sun evening',false],
+    [0,'9:00 AM','11:00 AM','Sat–Sun morning ★',true],
+    [0,'1:00 PM','3:00 PM','Sat–Sun afternoon',false],
+    [0,'6:00 PM','8:00 PM','Sat–Sun evening',false],
+  ],
+  fb: [
+    [2,'8:00 AM','10:00 AM','Tue–Wed morning ★',true],
+    [2,'1:00 PM','3:00 PM','Tue–Wed afternoon',false],
+    [3,'8:00 AM','10:00 AM','Tue–Wed morning ★',true],
+    [3,'1:00 PM','3:00 PM','Tue–Wed afternoon',false],
+    [4,'8:00 AM','9:00 AM','Thu–Fri morning',false],
+    [4,'1:00 PM','4:00 PM','Thu–Fri afternoon ★',true],
+    [5,'8:00 AM','9:00 AM','Thu–Fri morning',false],
+    [5,'1:00 PM','4:00 PM','Thu–Fri afternoon ★',true],
+    [6,'10:00 AM','12:00 PM','Sat–Sun morning',false],
+    [6,'2:00 PM','4:00 PM','Sat–Sun afternoon',false],
+    [0,'10:00 AM','12:00 PM','Sat–Sun morning',false],
+    [0,'2:00 PM','4:00 PM','Sat–Sun afternoon',false],
+  ],
+  tt: [
+    [2,'7:00 AM','9:00 AM','Tue–Thu morning',false],
+    [2,'7:00 PM','10:00 PM','Tue–Thu evening ★',true],
+    [2,'12:00 PM','2:00 PM','Tue–Thu midday',false],
+    [3,'7:00 AM','9:00 AM','Tue–Thu morning',false],
+    [3,'7:00 PM','10:00 PM','Tue–Thu evening ★',true],
+    [3,'12:00 PM','2:00 PM','Tue–Thu midday',false],
+    [4,'7:00 AM','9:00 AM','Tue–Thu morning',false],
+    [4,'7:00 PM','10:00 PM','Tue–Thu evening ★',true],
+    [4,'12:00 PM','2:00 PM','Tue–Thu midday',false],
+    [5,'7:00 AM','9:00 AM','Fri morning',false],
+    [5,'5:00 PM','8:00 PM','Fri evening ★',true],
+    [6,'11:00 AM','1:00 PM','Sat–Sun midday ★',true],
+    [6,'7:00 PM','9:00 PM','Sat–Sun evening',false],
+    [0,'11:00 AM','1:00 PM','Sat–Sun midday ★',true],
+    [0,'7:00 PM','9:00 PM','Sat–Sun evening',false],
+  ]
+};
+
+function parseHour(str) {
+  const [time, ampm] = str.split(' ');
+  let [h, m] = time.split(':').map(Number);
+  if (ampm === 'PM' && h !== 12) h += 12;
+  if (ampm === 'AM' && h === 12) h = 0;
+  return h + m / 60;
+}
+
+function calcNextWindow(platform) {
+  const now = new Date();
+  const curDay = now.getDay();
+  const curHour = now.getHours() + now.getMinutes() / 60;
+  const windows = POST_WINDOWS[platform];
+  const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  // Sort: first look within today (remaining windows), then future days this week, then wrap
+  let best = null;
+  let bestMinutes = Infinity;
+
+  for (const w of windows) {
+    const [wDay, wStart, wEnd, wLabel, wPrime] = w;
+    const startH = parseHour(wStart);
+    const endH = parseHour(wEnd);
+    let daysAhead = (wDay - curDay + 7) % 7;
+    // If same day, check if window hasn't ended
+    if (daysAhead === 0 && curHour >= endH) daysAhead = 7;
+    const minutesUntilStart = daysAhead === 0
+      ? Math.max(0, (startH - curHour) * 60)
+      : daysAhead * 24 * 60 + (startH - curHour) * 60;
+
+    if (minutesUntilStart < bestMinutes) {
+      bestMinutes = minutesUntilStart;
+      const isLive = daysAhead === 0 && curHour >= startH && curHour < endH;
+      best = { wStart, wEnd, wLabel, wPrime, daysAhead, wDay, isLive };
+    }
+  }
+
+  if (!best) return;
+
+  const valEl = document.getElementById(`pt-next-${platform}-val`);
+  const subEl = document.getElementById(`pt-next-${platform}-sub`);
+  const boxEl = document.getElementById(`pt-next-${platform}`);
+  if (!valEl) return;
+
+  if (best.isLive) {
+    valEl.textContent = `Post now — window open until ${best.wEnd}`;
+    subEl.textContent = best.wLabel;
+    boxEl.style.borderColor = '#97C459';
+    boxEl.style.background = 'var(--green-bg)';
+    document.querySelector(`#pt-next-${platform} .pt-next-icon`).textContent = '🟢';
+  } else {
+    const dayName = best.daysAhead === 0 ? 'Today' : best.daysAhead === 1 ? 'Tomorrow' : DAYS[best.wDay];
+    valEl.textContent = `${dayName} · ${best.wStart}–${best.wEnd}`;
+    subEl.textContent = best.wLabel + (best.wPrime ? ' — peak window' : '');
+  }
+}
+
+function initPostingTimes() {
+  ['ig','fb','tt'].forEach(calcNextWindow);
+}
+
+// ── INCOME + EMAIL STATE ─────────────────────────────────────────────────────
+let incomeEntries = JSON.parse(localStorage.getItem('tc_income') || '[]');
+let incomeGoal = parseInt(localStorage.getItem('tc_income_goal') || '0');
+let emailList = JSON.parse(localStorage.getItem('tc_email_list') || '{"platform":"Substack","count":0,"lastSent":"","openRate":""}');
+
+// ── TASKS STATE ─────────────────────────────────────────────────────────────
+let tasks = JSON.parse(localStorage.getItem('tc_tasks') || '[]');
+let taskFilter = 'all';
+let focusChecked = JSON.parse(localStorage.getItem('tc_focus_checked') || '{}');
+let focusDateKey = localStorage.getItem('tc_focus_date') || null;
+
 // ── SAMPLE DATA (used when no API tokens set) ──────────────────────────────
 const SAMPLE = {
   ig:{followers:2847,reach:4812,impressions:18400,profileViews:312,
@@ -410,15 +1756,19 @@ const SAMPLE = {
   }
 };
 
-const DEFAULT_BOOKINGS = [
-  {name:"North 40 Spring Fest",type:"Pony Rides",date:"2026-04-05",value:"$600",status:"Confirmed",notes:"Follow up Apr 1"},
-  {name:"Silver Lake Mall Pop-Up",type:"Photo Prop",date:"2026-04-12",value:"$800",status:"Pending",notes:"Awaiting contract"},
-  {name:"Cocolalla Church Fest",type:"Pony + Photo",date:"2026-04-19",value:"$450",status:"Confirmed",notes:"Confirmed, prep now"},
-  {name:"Private Birthday Party",type:"Pony Party",date:"2026-04-27",value:"$350",status:"Confirmed",notes:"Deposit received"},
-  {name:"Art on the Green CdA",type:"Featured Experience",date:"2026-07-01",value:"$1,200",status:"Inquiry Sent",notes:"Proposal sent"}
-];
+const DEFAULT_BOOKINGS = [];
+const FAKE_BOOKING_NAMES = ['North 40 Spring Fest','Silver Lake Mall Pop-Up','Cocolalla Church Fest','Private Birthday Party','Art on the Green CdA'];
 
 // ── STATE ──────────────────────────────────────────────────────────────────
+// One-time cleanup: remove any placeholder bookings that shipped in early versions
+(function cleanFakeBookings(){
+  try{
+    const stored=JSON.parse(localStorage.getItem('tc_bookings')||'[]');
+    const cleaned=stored.filter(b=>!FAKE_BOOKING_NAMES.includes(b.name));
+    if(cleaned.length!==stored.length)localStorage.setItem('tc_bookings',JSON.stringify(cleaned));
+  }catch(e){}
+})();
+
 let bookings = JSON.parse(localStorage.getItem('tc_bookings') || 'null') || DEFAULT_BOOKINGS;
 let igData = null, fbData = null;
 
@@ -426,6 +1776,18 @@ let igData = null, fbData = null;
 document.addEventListener('DOMContentLoaded', ()=>{
   setDate();
   renderBookings();
+  renderTikTok();
+  renderCalendar();
+  renderCalGrid();
+  renderTasks();
+  renderFocusPanel();
+  renderIncome();
+  renderEmailTracker();
+  renderWeeklyReview();
+  renderPostPerf('ig');
+  renderPostPerf('fb');
+  renderPostPerf('tt');
+  initPostingTimes();
   fetchFromWebhook();
   setInterval(fetchFromWebhook, 5*60*1000);
 });
@@ -444,22 +1806,37 @@ async function fetchFromWebhook(){
     if(!r.ok) throw new Error('Server not responding');
     const data = await r.json();
 
-    // Use webhook data if it has been updated, otherwise use saved manual data
+    const savedIg = localStorage.getItem('tc_ig_data');
+    const savedFb = localStorage.getItem('tc_fb_data');
+
+    // Priority: server with real data > localStorage > zeros — never stay null
     if(data.instagram && data.instagram.last_updated){
-      igData = { ...igData, ...data.instagram };
-    }
-    if(data.facebook && data.facebook.last_updated){
-      fbData = { ...fbData, ...data.facebook };
+      igData = data.instagram;
+      localStorage.setItem('tc_ig_data', JSON.stringify(igData));
+    } else if(savedIg){
+      igData = JSON.parse(savedIg);
+    } else {
+      igData = {followers:0,reach:0,impressions:0,profile_views:0,posts:[],comments:[],last_updated:null};
     }
 
-    if(data.voice_inquiries) voiceInquiries = data.voice_inquiries;
+    if(data.facebook && data.facebook.last_updated){
+      fbData = data.facebook;
+      localStorage.setItem('tc_fb_data', JSON.stringify(fbData));
+    } else if(savedFb){
+      fbData = JSON.parse(savedFb);
+    } else {
+      fbData = {followers:0,reach:0,engagement:0,views:0,posts:[],last_updated:null};
+    }
+
     renderInstagram();
     renderFacebook();
+    if(data.voice_inquiries) voiceInquiries = data.voice_inquiries;
     renderOverview();
     renderVoiceInquiries();
     updateLastRefresh();
-    document.getElementById('liveLabel').textContent = 'Live';
-    document.getElementById('apiNotice').style.display = 'none';
+    const hasReal = igData.last_updated;
+    document.getElementById('liveLabel').textContent = hasReal ? 'Live' : (savedIg ? 'Saved' : 'No Data Yet');
+    document.getElementById('apiNotice').style.display = hasReal || savedIg ? 'none' : 'block';
   } catch(e){
     console.warn('Webhook server error:', e.message);
     useSavedData();
@@ -492,6 +1869,8 @@ async function triggerRefresh(){
     renderFacebook();
     renderOverview();
     updateLastRefresh();
+    document.getElementById('liveLabel').textContent = 'Live';
+    document.getElementById('apiNotice').style.display = 'none';
     btn.textContent = 'Done';
     setTimeout(() => { btn.textContent = 'Refresh'; btn.disabled = false; }, 2000);
   } catch(e) {
@@ -504,13 +1883,12 @@ async function triggerRefresh(){
 function useSavedData(){
   const savedIg = localStorage.getItem('tc_ig_data');
   const savedFb = localStorage.getItem('tc_fb_data');
-  igData = savedIg ? JSON.parse(savedIg) : SAMPLE.ig;
-  fbData = savedFb ? JSON.parse(savedFb) : SAMPLE.fb;
+  igData = savedIg ? JSON.parse(savedIg) : {followers:0,reach:0,impressions:0,profile_views:0,posts:[],comments:[],last_updated:null};
+  fbData = savedFb ? JSON.parse(savedFb) : {followers:0,reach:0,engagement:0,views:0,posts:[],last_updated:null};
   renderInstagram();
   renderFacebook();
   renderOverview();
-  renderVoiceInquiries();
-  document.getElementById('liveLabel').textContent = savedIg ? 'Manual' : 'Sample Data';
+  document.getElementById('liveLabel').textContent = savedIg ? 'Saved' : 'Offline';
   document.getElementById('apiNotice').style.display = savedIg ? 'none' : 'block';
 }
 
@@ -526,7 +1904,7 @@ function renderInstagram(){
   document.getElementById('ig-impress').textContent = fmt(igData.impressions);
   document.getElementById('ig-imp-d').className='sc-delta';
   document.getElementById('ig-imp-d').textContent='7 day total';
-  document.getElementById('ig-views').textContent = fmt(igData.profileViews);
+  document.getElementById('ig-views').textContent = fmt(igData.profile_views||igData.profileViews);
   document.getElementById('ig-view-d').className='sc-delta';
   document.getElementById('ig-view-d').textContent='7 day total';
 
@@ -601,10 +1979,13 @@ function renderOverview(){
   document.getElementById('ov-rev-d').className='sc-delta up';
   document.getElementById('ov-rev-d').textContent='▲ Confirmed value';
 
-  const voiceNew = voiceInquiries.filter(i=>i.status==='New').length;
-  document.getElementById('ov-inquiries').textContent = pending + voiceNew;
+  document.getElementById('ov-inquiries').textContent = pending;
   document.getElementById('ov-inq-d').className='sc-delta neutral';
-  document.getElementById('ov-inq-d').textContent=voiceNew ? `► ${voiceNew} voice + ${pending} booking` : '► Needs follow-up';
+  document.getElementById('ov-inq-d').textContent='► Needs follow-up';
+
+  renderScorecard();
+  renderFocusPanel();
+  renderWeeklyReview();
 
   const statusClass = {Confirmed:'badge-green',Pending:'badge-amber','Inquiry Sent':'badge-red'};
   const eventsEl = document.getElementById('ov-events');
@@ -629,17 +2010,44 @@ function renderBookings(){
   if(!bookings.length){
     el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic;padding:0.5rem">No bookings yet. Add one above.</div>';
   } else {
-    el.innerHTML = bookings.map((b,i)=>`
-      <div class="row-item">
-        <div>
-          <div class="row-name">${escHtml(b.name)}</div>
-          <div class="row-meta">${escHtml(b.type)} &bull; ${escHtml(b.value)} &bull; ${formatDate(b.date)}${b.notes?` &bull; ${escHtml(b.notes)}`:''}</div>
+    const today = new Date().toISOString().split('T')[0];
+    el.innerHTML = bookings.map((b,i)=>{
+      let fuTag = '';
+      if(b.followup){
+        if(b.followup<today) fuTag=`<span class="crm-followup-alert crm-fu-overdue">⚠ Follow-up overdue</span>`;
+        else if(b.followup===today) fuTag=`<span class="crm-followup-alert crm-fu-today">Follow up today</span>`;
+        else fuTag=`<span class="crm-followup-alert crm-fu-future">Follow up ${formatDate(b.followup)}</span>`;
+      }
+      return `<div class="bk-row-wrap" id="bkwrap-${i}">
+        <div class="row-item closed" id="bkrow-${i}" onclick="toggleCRM(${i})" style="cursor:pointer;border-radius:8px;border:1.5px solid var(--border)">
+          <div style="flex:1;min-width:0">
+            <div class="row-name">${escHtml(b.name)}</div>
+            <div class="row-meta">${escHtml(b.type)} &bull; ${escHtml(b.value)} &bull; ${formatDate(b.date)}${b.source?` &bull; via ${escHtml(b.source)}`:''}</div>
+          </div>
+          <div class="row-right">
+            <span class="badge ${statusClass[b.status]||'badge-amber'}">${b.status}</span>
+            <div style="font-size:11px;color:var(--text-light);margin-top:3px;text-align:right">tap for detail ▼</div>
+          </div>
         </div>
-        <div class="row-right">
-          <span class="badge ${statusClass[b.status]||'badge-amber'}">${b.status}</span>
-          <br><button class="del-btn" onclick="deleteBooking(${i})">remove</button>
+        <div class="crm-detail" id="crm-${i}">
+          ${fuTag}
+          <div class="crm-grid">
+            <div class="crm-field"><strong>Service</strong>${escHtml(b.type)||'—'}</div>
+            <div class="crm-field"><strong>Value</strong>${escHtml(b.value)||'—'}</div>
+            <div class="crm-field"><strong>Event Date</strong>${formatDate(b.date)||'—'}</div>
+            <div class="crm-field"><strong>How Found Us</strong>${escHtml(b.source)||'Not recorded'}</div>
+            <div class="crm-field"><strong>Follow-up Date</strong>${formatDate(b.followup)||'Not set'}</div>
+            <div class="crm-field"><strong>Status</strong>${escHtml(b.status)}</div>
+          </div>
+          ${b.notes?`<div class="crm-field" style="margin-bottom:8px"><strong>Notes</strong>${escHtml(b.notes)}</div>`:''}
+          <div class="crm-action-row">
+            ${b.status!=='Confirmed'?`<button class="crm-btn crm-btn-confirm" onclick="confirmBooking(${i})">✓ Mark Confirmed</button>`:''}
+            <button class="crm-btn crm-btn-primary" onclick="snoozeFollowup(${i})">Snooze follow-up 1 week</button>
+            <button class="crm-btn crm-btn-del" onclick="deleteBooking(${i})">Remove</button>
+          </div>
         </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   }
   const confirmed = bookings.filter(b=>b.status==='Confirmed').length;
   const pending = bookings.filter(b=>b.status==='Pending').length;
@@ -649,6 +2057,7 @@ function renderBookings(){
   document.getElementById('bk-pending').textContent = pending;
   document.getElementById('bk-revenue').textContent = '$'+revenue.toLocaleString();
   document.getElementById('bk-pipeline').textContent = '$'+pipeline.toLocaleString();
+  renderSourceChart();
   saveBookings();
 }
 
@@ -661,10 +2070,13 @@ function addBooking(){
     date:document.getElementById('bk-date').value||new Date().toISOString().split('T')[0],
     value:document.getElementById('bk-value').value.trim()||'$0',
     status:document.getElementById('bk-status').value,
-    notes:document.getElementById('bk-notes').value.trim()
+    notes:document.getElementById('bk-notes').value.trim(),
+    source:document.getElementById('bk-source').value||'',
+    followup:document.getElementById('bk-followup').value||''
   });
-  ['bk-name','bk-type','bk-date','bk-value','bk-notes'].forEach(id=>document.getElementById(id).value='');
+  ['bk-name','bk-type','bk-date','bk-value','bk-notes','bk-followup'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('bk-status').value='Confirmed';
+  document.getElementById('bk-source').value='';
   toggleForm();
   renderBookings();
   renderOverview();
@@ -693,6 +2105,12 @@ function openStatsEditor(){
     document.getElementById('m-fb-followers').value = fbData.followers||'';
     document.getElementById('m-fb-reach').value = fbData.reach||'';
   }
+  if(ttData){
+    document.getElementById('m-tt-followers').value = ttData.followers||'';
+    document.getElementById('m-tt-views').value = ttData.views||'';
+    document.getElementById('m-tt-likes').value = ttData.likes||'';
+    document.getElementById('m-tt-comments').value = ttData.comments||'';
+  }
   document.getElementById('setupModal').classList.add('open');
 }
 function closeStatsEditor(){
@@ -711,10 +2129,17 @@ async function saveManualStats(){
     reach: parseInt(document.getElementById('m-fb-reach').value)||0,
     engagement: fbData ? fbData.engagement : 0
   };
+  const tt = {
+    followers: parseInt(document.getElementById('m-tt-followers').value)||ttData.followers||0,
+    views: parseInt(document.getElementById('m-tt-views').value)||ttData.views||0,
+    likes: parseInt(document.getElementById('m-tt-likes').value)||ttData.likes||0,
+    comments: parseInt(document.getElementById('m-tt-comments').value)||ttData.comments||0
+  };
   // Save locally right away
   localStorage.setItem('tc_ig_data', JSON.stringify(ig));
   localStorage.setItem('tc_fb_data', JSON.stringify(fb));
-  igData = ig; fbData = fb;
+  localStorage.setItem('tc_tt_data', JSON.stringify(tt));
+  igData = ig; fbData = fb; ttData = tt;
   // Also push to webhook server
   try {
     await Promise.all([
@@ -723,10 +2148,85 @@ async function saveManualStats(){
     ]);
   } catch(e){ console.warn('Webhook push failed, saved locally only'); }
   closeStatsEditor();
-  renderInstagram(); renderFacebook(); renderOverview();
+  renderInstagram(); renderFacebook(); renderTikTok(); renderOverview();
   document.getElementById('liveLabel').textContent = 'Updated';
   updateLastRefresh();
 }
+
+// ── TIKTOK ─────────────────────────────────────────────────────────────────
+function renderTikTok(){
+  document.getElementById('tt-followers').textContent = fmt(ttData.followers);
+  document.getElementById('tt-fol-d').textContent = ttData.followers ? 'Lifetime' : 'Add via Update Stats';
+  document.getElementById('tt-views').textContent = fmt(ttData.views);
+  document.getElementById('tt-likes').textContent = fmt(ttData.likes);
+  document.getElementById('tt-likes-d').textContent = ttData.likes ? '7 day total' : '';
+  document.getElementById('tt-comments').textContent = fmt(ttData.comments);
+  document.getElementById('tt-com-d').textContent = ttData.comments ? '7 day total' : '';
+}
+
+// ── CONTENT CALENDAR ───────────────────────────────────────────────────────
+const PLAT_LABEL = {ig:'Instagram',fb:'Facebook',tt:'TikTok'};
+const STATUS_CLASS = {idea:'st-idea',draft:'st-draft',ready:'st-ready',posted:'st-posted'};
+const STATUS_LABEL = {idea:'Idea',draft:'Draft',ready:'Ready to Post',posted:'Posted'};
+
+function renderCalendar(){
+  const el = document.getElementById('cal-list');
+  const filtered = calFilter==='all' ? calPosts : calPosts.filter(p=>p.platform===calFilter);
+  const sorted = [...filtered].sort((a,b)=>new Date(a.date)-new Date(b.date));
+  if(!sorted.length){
+    el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic;padding:0.5rem">No posts planned yet. Hit + Add Post to start.</div>';
+    return;
+  }
+  el.innerHTML = sorted.map((p,i)=>{
+    const origIdx = calPosts.indexOf(p);
+    return `<div class="cal-entry ${escHtml(p.platform)}">
+      <div class="cal-date">${PLAT_LABEL[p.platform]||p.platform} &bull; ${p.date?formatDate(p.date):'No date'}</div>
+      <div class="cal-caption">${escHtml(p.caption||'(no caption)')}</div>
+      <div class="cal-meta">
+        <span class="pillar-tag">${escHtml(p.pillar)}</span>
+        <span class="${STATUS_CLASS[p.status]||'st-idea'}">${STATUS_LABEL[p.status]||p.status}</span>
+        <button class="del-btn" onclick="deleteCalPost(${origIdx})">remove</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function addCalPost(){
+  const caption = document.getElementById('cal-caption').value.trim();
+  if(!caption){alert('Add a caption or idea first.');return;}
+  calPosts.push({
+    platform: document.getElementById('cal-platform').value,
+    date: document.getElementById('cal-date').value || new Date().toISOString().split('T')[0],
+    pillar: document.getElementById('cal-pillar').value,
+    status: document.getElementById('cal-status').value,
+    caption
+  });
+  document.getElementById('cal-caption').value='';
+  document.getElementById('cal-date').value='';
+  localStorage.setItem('tc_cal_posts',JSON.stringify(calPosts));
+  toggleCalForm();
+  renderCalendar();
+}
+
+function deleteCalPost(i){
+  if(!confirm('Remove this post?')) return;
+  calPosts.splice(i,1);
+  localStorage.setItem('tc_cal_posts',JSON.stringify(calPosts));
+  renderCalendar();
+  renderCalGrid();
+  if(calSelectedDate)calCellClick(calSelectedDate);
+}
+
+function filterCal(platform, btn){
+  calFilter = platform;
+  document.querySelectorAll('.cf-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderCalendar();
+}
+
+function toggleCalForm(){document.getElementById('calForm').classList.toggle('open');}
+
+// ── UTILS ──────────────────────────────────────────────────────────────────
 
 // ── VOICE INQUIRIES ───────────────────────────────────────────────────
 let voiceInquiries = [];
@@ -736,56 +2236,32 @@ function renderVoiceInquiries(){
   const totalEl = document.getElementById('vi-total');
   const newEl = document.getElementById('vi-new');
   const totalDelta = document.getElementById('vi-total-d');
-
   totalEl.textContent = voiceInquiries.length;
   const newCount = voiceInquiries.filter(i=>i.status==='New').length;
   newEl.textContent = newCount;
   totalDelta.textContent = voiceInquiries.length ? 'All time' : '';
   totalDelta.className = 'sc-delta neutral';
-
   if(!voiceInquiries.length){
     el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic">No voice inquiries yet. Once someone uses the voice assistant on your website and asks about booking, their info will appear here.</div>';
     return;
   }
-
   el.innerHTML = voiceInquiries.map(i => {
     const statusClass = i.status==='Booked'?'booked':i.status==='Contacted'?'contacted':'';
     const badgeClass = i.status==='New'?'badge-teal':i.status==='Contacted'?'badge-amber':'badge-green';
     const timeAgo = getTimeAgo(i.received_at);
-    return `
-    <div class="vi-card ${statusClass}">
-      <div class="vi-header">
-        <div class="vi-name">${escHtml(i.caller_name)}</div>
-        <div style="display:flex;align-items:center;gap:8px">
-          <span class="badge ${badgeClass}">${i.status}</span>
-          <span class="vi-time">${timeAgo}</span>
-        </div>
-      </div>
-      <div class="vi-detail"><strong>Service:</strong> ${escHtml(i.service_requested)}</div>
-      ${i.event_date?`<div class="vi-detail"><strong>Date:</strong> ${escHtml(i.event_date)}</div>`:''}
-      ${i.guest_count?`<div class="vi-detail"><strong>Guests:</strong> ${escHtml(String(i.guest_count))}</div>`:''}
-      ${i.event_location?`<div class="vi-detail"><strong>Location:</strong> ${escHtml(i.event_location)}</div>`:''}
-      ${i.notes?`<div class="vi-detail"><strong>Notes:</strong> ${escHtml(i.notes)}</div>`:''}
-      <div class="vi-actions">
-        ${i.status==='New'?`<button class="vi-btn mark-contacted" onclick="updateInquiry('${i.id}','Contacted')">Mark Contacted</button>`:''}
-        ${i.status!=='Booked'?`<button class="vi-btn mark-booked" onclick="updateInquiry('${i.id}','Booked')">Mark Booked</button>`:''}
-        ${i.status!=='Dismissed'?`<button class="vi-btn mark-dismiss" onclick="updateInquiry('${i.id}','Dismissed')">Dismiss</button>`:''}
-      </div>
-    </div>`;
+    return '<div class="vi-card '+statusClass+'"><div class="vi-header"><div class="vi-name">'+escHtml(i.caller_name)+'</div><div style="display:flex;align-items:center;gap:8px"><span class="badge '+badgeClass+'">'+i.status+'</span><span class="vi-time">'+timeAgo+'</span></div></div><div class="vi-detail"><strong>Service:</strong> '+escHtml(i.service_requested)+'</div>'+(i.event_date?'<div class="vi-detail"><strong>Date:</strong> '+escHtml(i.event_date)+'</div>':'')+(i.guest_count?'<div class="vi-detail"><strong>Guests:</strong> '+escHtml(String(i.guest_count))+'</div>':'')+(i.event_location?'<div class="vi-detail"><strong>Location:</strong> '+escHtml(i.event_location)+'</div>':'')+(i.notes?'<div class="vi-detail"><strong>Notes:</strong> '+escHtml(i.notes)+'</div>':'')+'<div class="vi-actions">'+(i.status==='New'?'<button class="vi-btn mark-contacted" onclick="updateInquiry(\x27"+i.id+"\x27,\x27Contacted\x27)">Mark Contacted</button>':'')+(i.status!=='Booked'?'<button class="vi-btn mark-booked" onclick="updateInquiry(\x27"+i.id+"\x27,\x27Booked\x27)">Mark Booked</button>':'')+(i.status!=='Dismissed'?'<button class="vi-btn mark-dismiss" onclick="updateInquiry(\x27"+i.id+"\x27,\x27Dismissed\x27)">Dismiss</button>':'')+'</div></div>';
   }).join('');
 }
 
 async function updateInquiry(id, status){
-  // Update locally first
   const inquiry = voiceInquiries.find(i=>i.id===id);
   if(inquiry) inquiry.status = status;
   renderVoiceInquiries();
-  // Push to server
   try {
-    await fetch(`${WEBHOOK_URL}/voice-inquiry/${id}`, {
+    await fetch(WEBHOOK_URL+'/voice-inquiry/'+id, {
       method: 'PATCH',
       headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({status})
+      body: JSON.stringify({status:status})
     });
   } catch(e){ console.warn('Could not update inquiry on server:', e.message); }
 }
@@ -803,7 +2279,6 @@ function getTimeAgo(dateStr){
   return new Date(dateStr).toLocaleDateString('en-US',{month:'short',day:'numeric'});
 }
 
-// ── UTILS ──────────────────────────────────────────────────────────────────
 function go(name,el){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
@@ -816,4 +2291,892 @@ function escHtml(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
 function formatDate(d){if(!d)return'TBD';try{return new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'})}catch(e){return d;}}
 function updateLastRefresh(){
   const now=new Date();
-  document.getElementById('lastRefresh').textContent='Updated 
+  document.getElementById('lastRefresh').textContent='Updated '+now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+}
+
+// ── MONTHLY CALENDAR ────────────────────────────────────────────────────────
+const MONTH_NAMES=['January','February','March','April','May','June','July','August','September','October','November','December'];
+let calViewYear=new Date().getFullYear();
+let calViewMonth=new Date().getMonth();
+let calSelectedDate=null;
+
+function renderCalGrid(){
+  const year=calViewYear, month=calViewMonth;
+  const today=new Date();
+  document.getElementById('cal-month-title').textContent=MONTH_NAMES[month]+' '+year;
+
+  // Build post lookup by date
+  const postMap={};
+  calPosts.forEach(p=>{
+    if(p.date){if(!postMap[p.date])postMap[p.date]=[];postMap[p.date].push(p);}
+  });
+  // Build booking lookup by date
+  const bkMap={};
+  bookings.forEach(b=>{
+    if(b.date){if(!bkMap[b.date])bkMap[b.date]=[];bkMap[b.date].push(b);}
+  });
+
+  const firstDOW=new Date(year,month,1).getDay();
+  const daysInMonth=new Date(year,month+1,0).getDate();
+  const daysInPrev=new Date(year,month,0).getDate();
+  const totalCells=Math.ceil((firstDOW+daysInMonth)/7)*7;
+
+  let html='';
+  let dayCount=1, nextDay=1;
+  for(let i=0;i<totalCells;i++){
+    let cellDate, isCur=true;
+    if(i<firstDOW){cellDate=new Date(year,month-1,daysInPrev-firstDOW+i+1);isCur=false;}
+    else if(dayCount>daysInMonth){cellDate=new Date(year,month+1,nextDay++);isCur=false;}
+    else{cellDate=new Date(year,month,dayCount++);}
+
+    const ds=cellDate.toISOString().split('T')[0];
+    const isToday=cellDate.toDateString()===today.toDateString();
+    const posts=postMap[ds]||[];
+    const bks=bkMap[ds]||[];
+    const dayNum=cellDate.getDate();
+
+    let cls='cal-cell';
+    if(!isCur)cls+=' other-month';
+    if(isToday)cls+=' today';
+
+    const maxPills=3;
+    const allItems=[
+      ...posts.map(p=>({type:p.platform,label:(PLAT_LABEL[p.platform]||p.platform)+': '+(p.caption||'').substring(0,14)+((p.caption||'').length>14?'…':'')})),
+      ...bks.map(b=>({type:'bk',label:(b.name||'').substring(0,16)+((b.name||'').length>16?'…':'')}))
+    ];
+    const shown=allItems.slice(0,maxPills);
+    const extra=allItems.length-maxPills;
+
+    const pillsHtml=shown.map(it=>`<div class="cpill ${escHtml(it.type)}">${escHtml(it.label)}</div>`).join('');
+    const moreHtml=extra>0?`<div class="cal-more">+${extra} more</div>`:'';
+    const addDot=allItems.length===0&&isCur?`<div class="cal-add-hint"></div>`:'';
+
+    html+=`<div class="${cls}" onclick="calCellClick('${ds}')">
+      <div class="cal-dn">${dayNum}</div>
+      ${pillsHtml}${moreHtml}${addDot}
+    </div>`;
+  }
+  document.getElementById('cal-grid').innerHTML=html;
+}
+
+function prevMonth(){calViewMonth--;if(calViewMonth<0){calViewMonth=11;calViewYear--;}renderCalGrid();}
+function nextMonth(){calViewMonth++;if(calViewMonth>11){calViewMonth=0;calViewYear++;}renderCalGrid();}
+function goToday(){calViewYear=new Date().getFullYear();calViewMonth=new Date().getMonth();renderCalGrid();}
+
+function calCellClick(ds){
+  calSelectedDate=ds;
+  const d=new Date(ds+'T12:00:00');
+  const label=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+  document.getElementById('dayPanelTitle').textContent=label;
+
+  const posts=calPosts.filter(p=>p.date===ds);
+  const bks=bookings.filter(b=>b.date===ds);
+
+  let html='';
+  if(!posts.length&&!bks.length){
+    html='<div style="font-size:13px;color:var(--text-light);font-style:italic">Nothing scheduled. Add a post below.</div>';
+  }
+  posts.forEach((p,i)=>{
+    const origIdx=calPosts.indexOf(p);
+    html+=`<div class="cal-entry ${escHtml(p.platform)}" style="margin-bottom:7px">
+      <div class="cal-date">${PLAT_LABEL[p.platform]||p.platform} &bull; <span class="${STATUS_CLASS[p.status]||'st-idea'}">${STATUS_LABEL[p.status]||p.status}</span></div>
+      <div class="cal-caption">${escHtml(p.caption||'(no caption)')}</div>
+      <div class="cal-meta"><span class="pillar-tag">${escHtml(p.pillar)}</span><button class="del-btn" onclick="deleteCalPost(${origIdx})">remove</button></div>
+    </div>`;
+  });
+  bks.forEach(b=>{
+    const sc={Confirmed:'badge-green',Pending:'badge-amber','Inquiry Sent':'badge-red'};
+    html+=`<div class="row-item" style="margin-bottom:7px">
+      <div><div class="row-name">${escHtml(b.name)}</div><div class="row-meta">${escHtml(b.type)} &bull; ${escHtml(b.value)}</div></div>
+      <span class="badge ${sc[b.status]||'badge-amber'}">${b.status}</span>
+    </div>`;
+  });
+
+  document.getElementById('dayPanelContent').innerHTML=html;
+  document.getElementById('dayPanel').classList.add('open');
+  document.getElementById('calAddForm').classList.remove('open');
+  document.getElementById('dayPanel').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function closeDayPanel(){
+  document.getElementById('dayPanel').classList.remove('open');
+  calSelectedDate=null;
+}
+
+function openCalAdd(){
+  document.getElementById('calAddForm').classList.add('open');
+  document.getElementById('dayPanel').classList.remove('open');
+  if(!document.getElementById('cadd-date').value){
+    document.getElementById('cadd-date').value=new Date().toISOString().split('T')[0];
+  }
+}
+function openCalAddDate(){
+  document.getElementById('cadd-date').value=calSelectedDate||new Date().toISOString().split('T')[0];
+  document.getElementById('calAddForm').classList.add('open');
+}
+function closeCalAdd(){document.getElementById('calAddForm').classList.remove('open');}
+
+// ── COPY HELPERS ───────────────────────────────────────────────────────────
+function copyTrig(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  navigator.clipboard.writeText(el.textContent).then(()=>{
+    const btn=el.nextElementSibling;
+    const orig=btn.textContent;
+    btn.textContent='Copied!';
+    btn.style.background='var(--green-dark)';
+    btn.style.color='#fff';
+    setTimeout(()=>{btn.textContent=orig;btn.style.background='';btn.style.color='';},1800);
+  });
+}
+function copyHash(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  navigator.clipboard.writeText(el.textContent).then(()=>{
+    const btn=el.nextElementSibling;
+    const orig=btn.textContent;
+    btn.textContent='Copied!';
+    setTimeout(()=>{btn.textContent=orig;},1800);
+  });
+}
+function copyCapTemplate(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  navigator.clipboard.writeText(el.innerText).then(()=>{
+    const btn=el.nextElementSibling;
+    const orig=btn.textContent;
+    btn.textContent='Copied!';
+    btn.style.background='var(--green-dark)';btn.style.color='#fff';
+    setTimeout(()=>{btn.textContent=orig;btn.style.background='';btn.style.color='';},1800);
+  });
+}
+
+function saveCalAdd(){
+  const caption=document.getElementById('cadd-caption').value.trim();
+  if(!caption){alert('Add a caption or idea.');return;}
+  calPosts.push({
+    platform:document.getElementById('cadd-platform').value,
+    date:document.getElementById('cadd-date').value||new Date().toISOString().split('T')[0],
+    pillar:document.getElementById('cadd-pillar').value,
+    status:document.getElementById('cadd-status').value,
+    caption
+  });
+  document.getElementById('cadd-caption').value='';
+  localStorage.setItem('tc_cal_posts',JSON.stringify(calPosts));
+  closeCalAdd();
+  renderCalGrid();
+  renderCalendar();
+  if(calSelectedDate)calCellClick(calSelectedDate);
+}
+
+// ── POST PERFORMANCE LOG ─────────────────────────────────────────────────────
+function togglePerfForm(plat){
+  const f = document.getElementById('perf-form-'+plat);
+  if(!f) return;
+  f.classList.toggle('open');
+  const dInp = document.getElementById('pp-date-'+plat);
+  if(dInp && !dInp.value) dInp.value = new Date().toISOString().split('T')[0];
+}
+
+function addPerfEntry(plat){
+  const caption = (document.getElementById('pp-caption-'+plat)||{}).value||'';
+  if(!caption.trim()){alert('Add a caption or description first.');return;}
+  postPerf.push({
+    id: Date.now(),
+    platform: plat,
+    caption: caption.trim(),
+    date: document.getElementById('pp-date-'+plat).value || new Date().toISOString().split('T')[0],
+    views: parseInt(document.getElementById('pp-views-'+plat).value)||0,
+    saves: parseInt(document.getElementById('pp-saves-'+plat).value)||0,
+    dms:   parseInt(document.getElementById('pp-dms-'+plat).value)||0,
+    bookings: parseInt(document.getElementById('pp-bk-'+plat).value)||0,
+    notes: (document.getElementById('pp-notes-'+plat)||{}).value||''
+  });
+  ['pp-caption-','pp-views-','pp-saves-','pp-dms-','pp-bk-','pp-notes-'].forEach(pre=>{
+    const el=document.getElementById(pre+plat);if(el)el.value='';
+  });
+  localStorage.setItem('tc_post_perf',JSON.stringify(postPerf));
+  togglePerfForm(plat);
+  renderPostPerf(plat);
+}
+
+function deletePerfEntry(id){
+  if(!confirm('Remove this post entry?'))return;
+  postPerf=postPerf.filter(p=>p.id!==id);
+  localStorage.setItem('tc_post_perf',JSON.stringify(postPerf));
+  ['ig','fb','tt'].forEach(p=>renderPostPerf(p));
+}
+
+function renderPostPerf(plat){
+  const el=document.getElementById('perf-list-'+plat);
+  if(!el)return;
+  const platLabel={'ig':'Instagram','fb':'Facebook','tt':'TikTok'};
+  const saveLabel={'ig':'Saves','fb':'Shares','tt':'Saves'};
+  const posts=[...postPerf.filter(p=>p.platform===plat)].sort((a,b)=>new Date(b.date)-new Date(a.date));
+  if(!posts.length){
+    el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic;padding:0.5rem 0">No posts logged yet. Hit + Log a Post after you publish something.</div>';
+    return;
+  }
+  // Best post = most bookings, then DMs, then views
+  const bestId=[...posts].sort((a,b)=>(b.bookings-a.bookings)||(b.dms-a.dms)||(b.views-a.views))[0].id;
+  el.innerHTML=posts.map(p=>`
+    <div class="perf-entry ${p.id===bestId&&(p.bookings||p.dms||p.views)?'perf-winner':''}">
+      ${p.id===bestId&&(p.bookings||p.dms||p.views)?'<span class="perf-winner-badge">TOP POST</span>':''}
+      <div class="perf-entry-date">${formatDate(p.date)}</div>
+      <div class="perf-entry-caption">${escHtml(p.caption)}</div>
+      <div class="perf-stats-grid">
+        <div class="perf-stat-cell"><div class="perf-stat-num">${p.views?fmt(p.views):'—'}</div><div class="perf-stat-lbl">Views</div></div>
+        <div class="perf-stat-cell"><div class="perf-stat-num">${p.saves?fmt(p.saves):'—'}</div><div class="perf-stat-lbl">${saveLabel[plat]}</div></div>
+        <div class="perf-stat-cell"><div class="perf-stat-num dms">${p.dms||'—'}</div><div class="perf-stat-lbl">DMs</div></div>
+        <div class="perf-stat-cell"><div class="perf-stat-num money">${p.bookings||'—'}</div><div class="perf-stat-lbl">Bookings</div></div>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+        ${p.bookings?`<span class="perf-bk-tag">🐴 ${p.bookings} booking${p.bookings!==1?'s':''}</span>`:''}
+        ${p.dms?`<span class="perf-dm-tag">💬 ${p.dms} DM${p.dms!==1?'s':''}</span>`:''}
+        ${p.notes?`<span style="font-size:11px;color:var(--text-light);font-style:italic">${escHtml(p.notes)}</span>`:''}
+        <button class="del-btn" onclick="deletePerfEntry(${p.id})" style="margin-left:auto">remove</button>
+      </div>
+    </div>`).join('');
+}
+
+// ── CRM HELPERS ──────────────────────────────────────────────────────────────
+function toggleCRM(i){
+  const det=document.getElementById('crm-'+i);
+  const row=document.getElementById('bkrow-'+i);
+  if(!det)return;
+  const isOpen=det.classList.contains('open');
+  // close all others
+  document.querySelectorAll('.crm-detail').forEach(d=>d.classList.remove('open'));
+  document.querySelectorAll('[id^="bkrow-"]').forEach(r=>{r.style.borderRadius='8px';r.querySelector('div.row-right div:last-child').textContent='tap for detail ▼';});
+  if(!isOpen){
+    det.classList.add('open');
+    row.style.borderRadius='8px 8px 0 0';
+    row.querySelector('div.row-right div:last-child').textContent='tap to close ▲';
+  }
+}
+function confirmBooking(i){
+  bookings[i].status='Confirmed';
+  saveBookings();
+  renderBookings();
+  renderOverview();
+}
+function snoozeFollowup(i){
+  const next=new Date(Date.now()+7*86400000).toISOString().split('T')[0];
+  bookings[i].followup=next;
+  saveBookings();
+  renderBookings();
+}
+function renderSourceChart(){
+  const el=document.getElementById('source-chart');
+  if(!el)return;
+  const tally={};
+  bookings.forEach(b=>{const s=b.source||'Not recorded';tally[s]=(tally[s]||0)+1;});
+  const total=bookings.length;
+  if(!total){el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic">Add bookings with source info to see attribution.</div>';return;}
+  el.innerHTML=Object.entries(tally).sort((a,b)=>b[1]-a[1]).map(([src,cnt])=>`
+    <div class="bar-row">
+      <span class="bar-lbl" style="font-size:12px">${escHtml(src)}</span>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(cnt/total*100)}%;background:var(--teal)"></div></div>
+      <span class="bar-pct" style="font-size:12px;color:var(--teal)">${cnt}</span>
+    </div>`).join('');
+}
+
+// ── INCOME STREAMS ───────────────────────────────────────────────────────────
+const INCOME_ICONS={'Booking':'🐴','Affiliate':'🔗','Brand Deal':'🤝','Digital':'📦','Creator Fund':'🎵','Other':'💰'};
+function toggleIncomeForm(){document.getElementById('incomeAddForm').classList.toggle('open');}
+function addIncomeEntry(){
+  const amount=parseFloat(document.getElementById('inc-amount').value)||0;
+  if(!amount){alert('Enter an amount.');return;}
+  incomeEntries.push({
+    id:Date.now(),
+    stream:document.getElementById('inc-stream').value,
+    amount,
+    date:document.getElementById('inc-date').value||new Date().toISOString().split('T')[0],
+    notes:document.getElementById('inc-notes').value.trim()
+  });
+  document.getElementById('inc-amount').value='';
+  document.getElementById('inc-date').value='';
+  document.getElementById('inc-notes').value='';
+  localStorage.setItem('tc_income',JSON.stringify(incomeEntries));
+  toggleIncomeForm();
+  renderIncome();
+}
+function deleteIncomeEntry(id){
+  if(!confirm('Remove this entry?'))return;
+  incomeEntries=incomeEntries.filter(e=>e.id!==id);
+  localStorage.setItem('tc_income',JSON.stringify(incomeEntries));
+  renderIncome();
+}
+function renderIncome(){
+  const now=new Date();
+  const ym=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;
+  const thisMonth=incomeEntries.filter(e=>e.date&&e.date.startsWith(ym));
+  const total=thisMonth.reduce((s,e)=>s+e.amount,0);
+  const totalEl=document.getElementById('income-total');
+  if(totalEl)totalEl.textContent='$'+total.toLocaleString();
+  // By stream
+  const byStream={};
+  thisMonth.forEach(e=>{byStream[e.stream]=(byStream[e.stream]||0)+e.amount;});
+  const streamEl=document.getElementById('income-by-stream');
+  if(streamEl){
+    if(!Object.keys(byStream).length){
+      streamEl.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic">No income recorded for this month yet.</div>';
+    } else {
+      streamEl.innerHTML=Object.entries(byStream).sort((a,b)=>b[1]-a[1]).map(([s,a])=>`
+        <div class="income-stream-card">
+          <div class="income-stream-icon">${INCOME_ICONS[s]||'💰'}</div>
+          <div><div class="income-stream-name">${escHtml(s)}</div><div class="income-stream-sub">${thisMonth.filter(e=>e.stream===s).length} entries this month</div></div>
+          <div class="income-stream-amt">$${a.toLocaleString()}</div>
+        </div>`).join('');
+    }
+  }
+  // All entries list
+  const listEl=document.getElementById('income-entries-list');
+  if(listEl){
+    if(!incomeEntries.length){
+      listEl.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic">No income recorded yet. Hit + Add Income to start.</div>';
+    } else {
+      const sorted=[...incomeEntries].sort((a,b)=>new Date(b.date)-new Date(a.date));
+      listEl.innerHTML=sorted.map(e=>`
+        <div class="income-entry-row">
+          <div>
+            <div class="income-entry-name">${INCOME_ICONS[e.stream]||'💰'} ${escHtml(e.stream)}${e.notes?` — ${escHtml(e.notes)}`:''}</div>
+            <div class="income-entry-meta">${formatDate(e.date)}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div class="income-entry-amt">$${e.amount.toLocaleString()}</div>
+            <button class="del-btn" onclick="deleteIncomeEntry(${e.id})">×</button>
+          </div>
+        </div>`).join('');
+    }
+  }
+  // Goal bar
+  if(incomeGoal>0){
+    const pct=Math.min(100,Math.round(total/incomeGoal*100));
+    const fillEl=document.getElementById('income-goal-fill');
+    if(fillEl)fillEl.style.width=pct+'%';
+    const pctEl=document.getElementById('income-goal-pct');
+    if(pctEl)pctEl.textContent=pct+'%';
+    const lblEl=document.getElementById('income-goal-lbl');
+    if(lblEl)lblEl.textContent=`Goal: $${incomeGoal.toLocaleString()} (${pct}% reached)`;
+  }
+  const goalInput=document.getElementById('income-goal-input');
+  if(goalInput&&incomeGoal)goalInput.value=incomeGoal;
+}
+function saveIncomeGoal(){
+  const g=parseInt(document.getElementById('income-goal-input').value)||0;
+  incomeGoal=g;
+  localStorage.setItem('tc_income_goal',g);
+  renderIncome();
+}
+
+// ── EMAIL / SUBSCRIBER TRACKER ────────────────────────────────────────────────
+function toggleEtForm(){document.getElementById('etForm').classList.toggle('open');}
+function saveEmailList(){
+  emailList={
+    platform:document.getElementById('et-platform').value,
+    count:parseInt(document.getElementById('et-count-input').value)||0,
+    lastSent:document.getElementById('et-last-sent').value||'',
+    openRate:document.getElementById('et-open-rate').value||''
+  };
+  localStorage.setItem('tc_email_list',JSON.stringify(emailList));
+  toggleEtForm();
+  renderEmailTracker();
+}
+function renderEmailTracker(){
+  const cntEl=document.getElementById('et-count');
+  if(cntEl)cntEl.textContent=emailList.count>0?emailList.count.toLocaleString():'0';
+  const subEl=document.getElementById('et-sub');
+  if(subEl){
+    const parts=[];
+    if(emailList.platform)parts.push(emailList.platform);
+    if(emailList.lastSent)parts.push('Last sent '+formatDate(emailList.lastSent));
+    if(emailList.openRate)parts.push(emailList.openRate+'% open rate');
+    subEl.textContent=parts.length?parts.join(' · '):'Add your list — this drives real money';
+  }
+  // Pre-fill form
+  const platEl=document.getElementById('et-platform');
+  if(platEl)platEl.value=emailList.platform||'Substack';
+  const cInputEl=document.getElementById('et-count-input');
+  if(cInputEl&&emailList.count)cInputEl.value=emailList.count;
+  const lsEl=document.getElementById('et-last-sent');
+  if(lsEl&&emailList.lastSent)lsEl.value=emailList.lastSent;
+  const orEl=document.getElementById('et-open-rate');
+  if(orEl&&emailList.openRate)orEl.value=emailList.openRate;
+}
+
+// ── WEEKLY REVIEW ────────────────────────────────────────────────────────────
+function toggleWeeklyReview(){
+  const body=document.getElementById('wrBody');
+  const tog=document.getElementById('wr-toggle');
+  if(!body)return;
+  body.classList.toggle('open');
+  if(tog)tog.textContent=body.classList.contains('open')?'▲':'▼';
+  if(body.classList.contains('open'))renderWeeklyReview();
+}
+function renderWeeklyReview(){
+  const today=new Date();
+  const sun=new Date(today);sun.setDate(today.getDate()-today.getDay());
+  const sat=new Date(sun);sat.setDate(sun.getDate()+6);
+  const ws=sun.toISOString().split('T')[0];
+  const we=sat.toISOString().split('T')[0];
+  const rangeEl=document.getElementById('wr-range');
+  if(rangeEl)rangeEl.textContent=formatDate(ws)+' – '+formatDate(we);
+  const weekPosts=calPosts.filter(p=>p.date&&p.date>=ws&&p.date<=we);
+  const ig=weekPosts.filter(p=>p.platform==='ig').length;
+  const fb=weekPosts.filter(p=>p.platform==='fb').length;
+  const tt=weekPosts.filter(p=>p.platform==='tt').length;
+  const wr_posts=document.getElementById('wr-posts');
+  if(wr_posts)wr_posts.textContent=weekPosts.length;
+  const wr_sub=document.getElementById('wr-posts-sub');
+  if(wr_sub)wr_sub.textContent=`IG ${ig} · FB ${fb} · TT ${tt}`;
+  const totalReach=(igData?igData.reach:0)+(fbData?fbData.reach:0);
+  const wr_reach=document.getElementById('wr-reach');
+  if(wr_reach)wr_reach.textContent=totalReach>0?fmt(totalReach):'—';
+  const weekBks=bookings.filter(b=>b.date&&b.date>=ws&&b.date<=we);
+  const wr_bk=document.getElementById('wr-bookings');
+  if(wr_bk)wr_bk.textContent=weekBks.length;
+  const wr_bk_sub=document.getElementById('wr-bk-sub');
+  if(wr_bk_sub)wr_bk_sub.textContent=weekBks.length===1?'1 booked':'booked this week';
+  const weekRev=weekBks.filter(b=>b.status==='Confirmed').reduce((s,b)=>s+parseMoney(b.value),0);
+  const wr_rev=document.getElementById('wr-revenue');
+  if(wr_rev)wr_rev.textContent='$'+weekRev.toLocaleString();
+  // Top pillar
+  const pillarTally={};
+  weekPosts.forEach(p=>{if(p.pillar)pillarTally[p.pillar]=(pillarTally[p.pillar]||0)+1;});
+  const topPillar=Object.entries(pillarTally).sort((a,b)=>b[1]-a[1])[0];
+  const wr_pil=document.getElementById('wr-pillar');
+  if(wr_pil)wr_pil.textContent=topPillar?topPillar[0]:'No posts yet';
+  const openTk=tasks.filter(t=>!t.done).length;
+  const wr_tk=document.getElementById('wr-tasks');
+  if(wr_tk)wr_tk.textContent=openTk;
+  // Reflection prompt
+  const day=today.getDay();
+  const prompts=[
+    'Start of the week — what\'s the one post that could drive the most bookings this week?',
+    'Monday check-in — are your focus items set? Add tasks for anything that needs to happen this week.',
+    'Mid-week — have you replied to every comment from Monday\'s post?',
+    'Hump day — what content can you batch for the rest of the week while you have momentum?',
+    'Thursday — check your follow-up dates. Anyone in your pipeline gone cold?',
+    'Friday — post something real today. Not promotional. Show the horses.',
+    'Sunday review — '+weekPosts.length+' post'+(weekPosts.length!==1?'s':'')+' scheduled this week. '+
+      (weekBks.length?weekBks.length+' booking'+(weekBks.length!==1?'s':'')+' received. ':'No new bookings this week — what content are you missing? ')+
+      (openTk?openTk+' task'+(openTk!==1?'s':'')+' open heading into next week.':'All tasks clear. Good week.')
+  ];
+  const wr_prompt=document.getElementById('wr-prompt');
+  if(wr_prompt)wr_prompt.textContent=prompts[day];
+  // Top performing post across all time
+  const topPost=[...postPerf].sort((a,b)=>(b.bookings-a.bookings)||(b.dms-a.dms)||(b.views-a.views))[0];
+  const tpEl=document.getElementById('wr-top-post');
+  if(tpEl){
+    if(topPost&&(topPost.bookings||topPost.dms||topPost.views)){
+      const platNames={'ig':'Instagram','fb':'Facebook','tt':'TikTok'};
+      tpEl.innerHTML=`<div style="font-size:10px;font-weight:700;color:var(--green-text);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px">Top Performing Post (All Time)</div>
+        <div style="font-family:'Playfair Display',serif;font-size:13px;color:var(--text);font-style:italic;margin-bottom:4px">${escHtml(topPost.caption.substring(0,80)+(topPost.caption.length>80?'…':''))}</div>
+        <div style="font-size:11px;color:var(--green-dark);font-weight:700">${platNames[topPost.platform]||topPost.platform} · ${formatDate(topPost.date)} · ${topPost.views?fmt(topPost.views)+' views':''}${topPost.bookings?' · 🐴 '+topPost.bookings+' booking'+(topPost.bookings!==1?'s':''):''}${topPost.dms?' · 💬 '+topPost.dms+' DMs':''}</div>`;
+      tpEl.style.display='block';
+    } else {
+      tpEl.style.display='none';
+    }
+  }
+}
+
+// ── CALENDAR WEEKLY TEMPLATE ─────────────────────────────────────────────────
+function loadCalTemplate(){
+  if(calPosts.length>0&&!confirm('This will ADD the template posts to your existing calendar (won\'t delete anything). Continue?'))return;
+  const today=new Date();
+  const monday=new Date(today);
+  monday.setDate(today.getDate()+(1-today.getDay()+7)%7);
+  const template=[
+    {offset:0,platform:'ig',pillar:'The Animals',status:'idea',caption:'[TEMPLATE] Reel: [Horse name] doing [specific behavior] — 15 seconds, no talking, just the horse'},
+    {offset:2,platform:'ig',pillar:'The Moments',status:'idea',caption:'[TEMPLATE] Carousel: [Event] moment — guest reaction, kid with horse, or behind-the-scenes sequence'},
+    {offset:4,platform:'fb',pillar:'Events & Booking',status:'idea',caption:'[TEMPLATE] Facebook native post: local angle + booking CTA — "Anyone in North Idaho looking for [service] this [month]?"'},
+    {offset:6,platform:'tt',pillar:'The Animals',status:'idea',caption:'[TEMPLATE] TikTok: POV hook + horse on screen in first 2 seconds + text overlay — under 30 seconds'}
+  ];
+  for(let week=0;week<4;week++){
+    template.forEach(t=>{
+      const d=new Date(monday);
+      d.setDate(monday.getDate()+week*7+t.offset);
+      calPosts.push({
+        platform:t.platform,
+        date:d.toISOString().split('T')[0],
+        pillar:t.pillar,
+        status:t.status,
+        caption:t.caption
+      });
+    });
+  }
+  localStorage.setItem('tc_cal_posts',JSON.stringify(calPosts));
+  renderCalGrid();
+  renderCalendar();
+  renderScorecard();
+}
+
+// ── TASKS ────────────────────────────────────────────────────────────────────
+function toggleTaskForm(){
+  document.getElementById('taskFormWrap').classList.toggle('open');
+}
+
+function addTask(){
+  const name = document.getElementById('tk-name').value.trim();
+  if(!name){alert('Enter a task name first.');return;}
+  tasks.push({
+    id: Date.now(),
+    name,
+    cat: document.getElementById('tk-cat').value,
+    due: document.getElementById('tk-due').value || null,
+    priority: document.getElementById('tk-priority').value,
+    done: false,
+    created: new Date().toISOString()
+  });
+  document.getElementById('tk-name').value='';
+  document.getElementById('tk-due').value='';
+  document.getElementById('tk-priority').value='normal';
+  saveTasks();
+  toggleTaskForm();
+  renderTasks();
+  renderScorecard();
+  renderFocusPanel();
+}
+
+function renderTasks(){
+  const el = document.getElementById('tasks-list');
+  if(!el) return;
+  const today = new Date().toISOString().split('T')[0];
+  const tomorrow = new Date(Date.now()+86400000).toISOString().split('T')[0];
+  let filtered;
+  if(taskFilter==='all') filtered = tasks.filter(t=>!t.done);
+  else if(taskFilter==='done') filtered = tasks.filter(t=>t.done);
+  else filtered = tasks.filter(t=>t.cat===taskFilter && !t.done);
+
+  if(!filtered.length){
+    el.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic;padding:0.5rem">'+(taskFilter==='done'?'No completed tasks yet.':'Nothing here yet. Hit + Add Task.')+'</div>';
+    return;
+  }
+  el.innerHTML = filtered.map(t=>{
+    const origIdx = tasks.indexOf(t);
+    let dueClass='', dueText='';
+    if(t.due){
+      if(t.due<today){dueClass='task-due-urgent';dueText='⚠ Overdue';}
+      else if(t.due===today){dueClass='task-due-urgent';dueText='Due today';}
+      else if(t.due===tomorrow){dueClass='task-due-soon';dueText='Due tomorrow';}
+      else dueText='Due '+formatDate(t.due);
+    }
+    return `<div class="task-item ${t.done?'done':''}">
+      <div class="task-check ${t.done?'checked':''}" onclick="toggleTask(${origIdx})"></div>
+      <div style="flex:1;min-width:0">
+        <div class="task-name">${escHtml(t.name)}</div>
+        ${dueText?`<div class="task-meta ${dueClass}">${dueText}</div>`:''}
+      </div>
+      <span class="task-cat-badge tc-${escHtml(t.cat)}">${escHtml(t.cat)}</span>
+      <button class="del-btn" onclick="deleteTask(${origIdx})" style="margin-left:4px;font-size:14px;line-height:1">×</button>
+    </div>`;
+  }).join('');
+}
+
+function filterTasks(cat, btn){
+  taskFilter = cat;
+  document.querySelectorAll('.task-filter-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderTasks();
+}
+
+function toggleTask(i){
+  tasks[i].done = !tasks[i].done;
+  saveTasks();
+  renderTasks();
+  renderScorecard();
+  renderFocusPanel();
+}
+
+function deleteTask(i){
+  if(!confirm('Remove this task?')) return;
+  tasks.splice(i,1);
+  saveTasks();
+  renderTasks();
+  renderScorecard();
+}
+
+function saveTasks(){localStorage.setItem('tc_tasks',JSON.stringify(tasks));}
+
+// ── DAILY FOCUS PANEL ────────────────────────────────────────────────────────
+function renderFocusPanel(){
+  const today = new Date().toISOString().split('T')[0];
+  // Reset checked state if it's a new day
+  if(focusDateKey !== today){
+    focusDateKey = today;
+    focusChecked = {};
+    localStorage.setItem('tc_focus_date', today);
+    localStorage.setItem('tc_focus_checked', '{}');
+  }
+  const focusDateEl = document.getElementById('focusDate');
+  if(focusDateEl) focusDateEl.textContent = new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+
+  // Build list: overdue/today tasks first, then pending bookings, then open tasks
+  const urgent = tasks.filter(t=>!t.done && t.due && t.due<=today);
+  const pendingBks = bookings.filter(b=>b.status==='Pending'||b.status==='Inquiry Sent');
+  let items = [];
+  urgent.slice(0,2).forEach(t=>items.push({id:'t'+t.id,label:t.name,sub:t.due<today?'Overdue — needs attention':'Due today',type:'urgent'}));
+  if(items.length<3) pendingBks.slice(0,3-items.length).forEach(b=>items.push({id:'bk'+b.name.replace(/\s/g,''),label:'Follow up: '+b.name,sub:b.status+(b.notes?' — '+b.notes.substring(0,40):''),type:'normal'}));
+  if(items.length<3){
+    const more = tasks.filter(t=>!t.done && !urgent.includes(t)).slice(0,3-items.length);
+    more.forEach(t=>items.push({id:'t'+t.id,label:t.name,sub:t.due?'Due '+formatDate(t.due):t.cat,type:'normal'}));
+  }
+  // Default prompts if nothing exists yet
+  if(!items.length){
+    items=[
+      {id:'def1',label:'Post on Instagram today',sub:'Keep the momentum going',type:'normal'},
+      {id:'def2',label:'Reply to comments & DMs',sub:'Within 2 hours of your last post',type:'normal'},
+      {id:'def3',label:'Plan tomorrow\'s content',sub:'Pick a pillar and platform',type:'normal'}
+    ];
+  }
+  items = items.slice(0,3);
+
+  let doneCount=0;
+  const html = items.map(item=>{
+    const checked=!!focusChecked[item.id];
+    if(checked) doneCount++;
+    return `<div class="focus-item ${item.type} ${checked?'done-item':''}" id="fi-${item.id}">
+      <div class="focus-check ${checked?'checked':''}" onclick="checkFocusItem('${item.id}')"></div>
+      <div class="focus-item-text">
+        <div class="focus-item-label">${escHtml(item.label)}</div>
+        <div class="focus-item-sub">${escHtml(item.sub)}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const focusEl = document.getElementById('focusItems');
+  if(focusEl) focusEl.innerHTML=html;
+  const cntEl = document.getElementById('focusDoneCount');
+  if(cntEl) cntEl.textContent=doneCount+' of '+items.length;
+  const winEl = document.getElementById('focusWin');
+  if(winEl) winEl.style.display=(doneCount===items.length&&items.length>0)?'block':'none';
+}
+
+function checkFocusItem(id){
+  focusChecked[id]=!focusChecked[id];
+  localStorage.setItem('tc_focus_checked',JSON.stringify(focusChecked));
+  renderFocusPanel();
+}
+
+// ── SCORECARD ────────────────────────────────────────────────────────────────
+function renderScorecard(){
+  const today = new Date();
+  const sun = new Date(today); sun.setDate(today.getDate()-today.getDay());
+  const sat = new Date(sun); sat.setDate(sun.getDate()+6);
+  const ws = sun.toISOString().split('T')[0];
+  const we = sat.toISOString().split('T')[0];
+  const postsThisWeek = calPosts.filter(p=>p.date&&p.date>=ws&&p.date<=we);
+  const readyPosted = postsThisWeek.filter(p=>p.status==='ready'||p.status==='posted').length;
+  const scPost = document.getElementById('sc-posts');
+  if(scPost){scPost.textContent=postsThisWeek.length||'0';document.getElementById('sc-posts-d').textContent=readyPosted+' ready / posted';}
+  const revenue = bookings.filter(b=>b.status==='Confirmed').reduce((s,b)=>s+parseMoney(b.value),0);
+  const scRev = document.getElementById('sc-rev');
+  if(scRev) scRev.textContent = revenue>0?'$'+revenue.toLocaleString():'$0';
+  const totalReach = (igData?igData.reach:0)+(fbData?fbData.reach:0);
+  const scReach = document.getElementById('sc-reach');
+  if(scReach) scReach.textContent = totalReach>0?fmt(totalReach):'—';
+  const openTasks = tasks.filter(t=>!t.done).length;
+  const scTasks = document.getElementById('sc-tasks');
+  if(scTasks) scTasks.textContent = openTasks;
+}
+
+// ── QUICK START ──────────────────────────────────────────────────────────────
+function toggleQuickStart(){
+  document.getElementById('qsRoutes').classList.toggle('open');
+}
+function quickRoute(trigger){
+  document.getElementById('claudeQuestion').value=trigger;
+  document.getElementById('claudePanel').classList.add('open');
+  document.getElementById('cv-ask').classList.add('on');
+  document.getElementById('cv-photo').classList.remove('on');
+  document.querySelectorAll('.claude-tab').forEach((b,i)=>{b.classList[i===0?'add':'remove']('on');});
+  document.getElementById('claudeQuestion').focus();
+}
+
+// ── ASK CLAUDE ──────────────────────────────────────────────────────────────
+function toggleClaudePanel(){
+  document.getElementById('claudePanel').classList.toggle('open');
+}
+function closeClaudePanel(){
+  document.getElementById('claudePanel').classList.remove('open');
+}
+function switchClaudeTab(tab,btn){
+  document.querySelectorAll('.claude-tab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.claude-view').forEach(v=>v.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('cv-'+tab).classList.add('on');
+}
+function sendToClaudeCode(){
+  const q = document.getElementById('claudeQuestion').value.trim();
+  if(!q){alert('Type a question first.');return;}
+  navigator.clipboard.writeText(q).then(()=>{
+    const msg = document.getElementById('claudeCopied');
+    msg.style.display='block';
+    msg.textContent='Copied! Paste it into Claude Code.';
+    setTimeout(()=>{msg.style.display='none';},3000);
+    document.getElementById('claudeQuestion').value='';
+  });
+}
+function useQuickPrompt(text){
+  document.getElementById('claudeQuestion').value=text;
+  document.getElementById('claudeQuestion').focus();
+}
+
+// ── PHOTO DROP ───────────────────────────────────────────────────────────────
+let photoDataUrl = null;
+let photoFileName = null;
+
+function photoDragOver(e){e.preventDefault();document.getElementById('photoDropZone').classList.add('drag-over');}
+function photoDragLeave(e){document.getElementById('photoDropZone').classList.remove('drag-over');}
+function photoDrop(e){
+  e.preventDefault();
+  document.getElementById('photoDropZone').classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if(file && file.type.startsWith('image/')) loadPhotoFile(file);
+}
+function photoFileSelected(input){
+  const file = input.files[0];
+  if(file) loadPhotoFile(file);
+}
+function loadPhotoFile(file){
+  photoFileName = file.name;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    photoDataUrl = e.target.result;
+    document.getElementById('photoPreviewImg').src = photoDataUrl;
+    document.getElementById('photoPreviewName').textContent = file.name + ' — ' + (file.size/1024).toFixed(0) + ' KB';
+    document.getElementById('photoPreviewWrap').style.display='block';
+    document.getElementById('photoDropZone').style.display='none';
+    const btn = document.getElementById('photoGenBtn');
+    btn.disabled=false;
+    btn.style.opacity='1';
+    document.getElementById('photoResult').style.display='none';
+    document.getElementById('photoCopyBtn').style.display='none';
+  };
+  reader.readAsDataURL(file);
+}
+function generatePhotoPrompt(){
+  if(!photoDataUrl){return;}
+  const desc = document.getElementById('photoDesc').value.trim();
+  const prompt = `I have a photo from Tribal Cowboy LLC (@TribalCowboy) — an Indigenous-owned equine experience business in Athol, Idaho owned by Stacie (Nisenan Maidu).
+
+${desc ? 'PHOTO DESCRIPTION FROM STACIE: ' + desc + '\n' : ''}The photo file is: ${photoFileName}
+Drag the photo into this Claude Code window along with this message so you can see it.
+
+Please give me all of the following:
+
+1. INSTAGRAM CAPTION — warm, visual, specific. Max 150 words. Hook first, story second. No em dashes. Max 1 exclamation mark. Never use: "making memories," "unique experience," "dreams come true," "leverage," "synergy," "seamlessly," "testament to," "delve." Use horse names if you can tell who's in the photo: Clydesdales are Belle (22yo matriarch), Jill (13yo), Abby (7yo, Jill's daughter), Millie (5yo, Belle's daughter). Minis: Monster Unicorn, Master Chief, Reba, Dolly, Lainey, Minimus.
+
+2. FACEBOOK VERSION — slightly longer, community-forward, same voice rules.
+
+3. TIKTOK HOOK — first line stops the scroll. Punchy, direct, under 30 words. Talk to camera energy.
+
+4. HASHTAGS — 8-10 for Instagram chosen from: #TribalCowboy #NorthIdaho #IdahoHorses #ClydesdaleHorse #PonyParty #HorsePhotography #IndigenousOwned #NiseanMaidu #EquestrianLife #HorsesOfInstagram #HorseMom #FarmLife #WesternLifestyle #HorseLife #RanchLife #ClydesdaleTok #HorseTok #NorthIdahoEvents #EasternWashington
+
+5. CONTENT PILLAR — pick one: The Animals / The Moments / The Work / Indigenous Identity / Events & Booking / Education / North Idaho Life. Explain why.
+
+6. BEST PLATFORM to post this first and why.
+
+7. AGENTS TO USE — from these 13, list which 2-3 are most relevant and what to ask each:
+   - Copywriter (captions, hooks, scripts)
+   - Content Strategist (calendar placement, pillar rotation)
+   - Creative Direction (shot list, visual framing)
+   - Brand Voice Agent (audit for voice rules)
+   - Story Engagement (Instagram/Facebook stories)
+   - TikTok Growth (hooks, series potential)
+   - Comment/DM Response (reply drafts)
+   - Corporate Leads (if corporate-relevant)
+   - Creator Income (if brand deal potential)
+
+8. SUGGESTED POSTING TIME — best day and time for this type of content.
+
+9. ONE EDIT SUGGESTION — if anything could make this photo perform better (crop, caption tweak, etc).`;
+
+  document.getElementById('photoResultText').textContent = prompt;
+  document.getElementById('photoResult').style.display='block';
+  document.getElementById('photoCopyBtn').style.display='block';
+  document.getElementById('photoCopyBtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function copyPhotoPrompt(){
+  const text = document.getElementById('photoResultText').textContent;
+  navigator.clipboard.writeText(text).then(()=>{
+    const msg = document.getElementById('photoCopied');
+    msg.style.display='block';
+    msg.textContent='Copied! Drag the photo into Claude Code, then paste this prompt.';
+    document.getElementById('photoCopyBtn').textContent='Copied!';
+    setTimeout(()=>{
+      msg.style.display='none';
+      document.getElementById('photoCopyBtn').textContent='Copy Full Prompt to Claude Code';
+    },3000);
+  });
+}
+</script>
+
+<!-- FLOATING ASK CLAUDE BUTTON -->
+<div class="claude-fab">
+  <span class="claude-fab-label">Ask Claude</span>
+  <button class="claude-fab-btn" onclick="toggleClaudePanel()" title="Ask Claude">🤠</button>
+</div>
+
+<!-- ASK CLAUDE PANEL -->
+<div class="claude-panel" id="claudePanel">
+  <div class="claude-panel-hdr" style="padding-bottom:0">
+    <div class="claude-panel-title">Ask Claude</div>
+    <button class="claude-panel-close" onclick="closeClaudePanel()">&#x2715;</button>
+  </div>
+  <div class="claude-tabs">
+    <button class="claude-tab on" onclick="switchClaudeTab('ask',this)">Ask</button>
+    <button class="claude-tab" onclick="switchClaudeTab('photo',this)">Photo Drop</button>
+  </div>
+
+  <!-- ASK VIEW -->
+  <div class="claude-panel-body claude-view on" id="cv-ask">
+    <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Type your question, hit Copy, then paste into Claude Code in your <strong>TribalCowboy-Social</strong> folder.</p>
+    <textarea class="claude-q-input" id="claudeQuestion" rows="3" placeholder="e.g. Write an Instagram caption about Millie in the spring mud..."></textarea>
+    <button class="claude-send-btn" onclick="sendToClaudeCode()">Copy to Claude Code</button>
+    <div class="claude-copied-msg" id="claudeCopied"></div>
+    <div class="claude-quick-label">Quick Prompts</div>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Write an Instagram caption about [describe the moment or photo]')">Write an Instagram caption</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Write a Facebook post about [topic] — make it native Facebook, not a cross-post')">Write a Facebook post</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Give me 3 TikTok hooks for [topic]. Start with the horse on screen.')">TikTok hooks</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Build this week\'s content calendar. Today is '+new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+'. Upcoming bookings: [list any]. Use all 7 content pillars, rotate platforms.')">Plan this week's content</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Classify this message and draft a reply using the 5-tier system: [paste the comment or DM]')">Respond to a DM or comment</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Give me a shot list and reel structure for [describe what you have to film today]')">Shot list for today</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Draft corporate event outreach email to [company name] in [industry] — located in [city]')">Corporate outreach email</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('What brand deal opportunities should I pursue in Q2? Review creator-income-roadmap.md and give me the top 3 with pitch angles.')">Brand deal opportunities</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Audit this caption for brand voice — check against banned phrases and voice rules: [paste draft]')">Audit brand voice</button>
+    <button class="claude-quick-btn" onclick="useQuickPrompt('Plan the Mother\'s Day campaign for May 11. Build the full content arc, shot list, pricing, and booking CTA sequence.')">Plan Mother's Day campaign</button>
+  </div>
+
+  <!-- PHOTO DROP VIEW -->
+  <div class="claude-panel-body claude-view" id="cv-photo">
+    <p style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:10px">Drop a photo and get a full caption pack — Instagram, Facebook, TikTok, hashtags, pillar, and agent recommendations. Copy to Claude Code.</p>
+
+    <div class="photo-drop-zone" id="photoDropZone" onclick="document.getElementById('photoFileInput').click()" ondragover="photoDragOver(event)" ondragleave="photoDragLeave(event)" ondrop="photoDrop(event)">
+      <div class="photo-drop-icon">📸</div>
+      <div class="photo-drop-txt">Tap to choose a photo<br>or drag and drop here</div>
+      <div class="photo-drop-hint">JPG, PNG, HEIC — any photo from your phone or camera roll</div>
+    </div>
+    <input type="file" id="photoFileInput" accept="image/*" style="display:none" onchange="photoFileSelected(this)">
+
+    <div class="photo-preview-wrap" id="photoPreviewWrap">
+      <img id="photoPreviewImg" src="" alt="Preview">
+      <div class="photo-preview-name" id="photoPreviewName"></div>
+    </div>
+
+    <textarea class="photo-desc-input" id="photoDesc" rows="2" placeholder="Optional: describe what's happening — horse names, the moment, the event..."></textarea>
+
+    <button class="photo-generate-btn" id="photoGenBtn" onclick="generatePhotoPrompt()" disabled style="opacity:0.5">Build Caption Pack</button>
+
+    <div class="photo-result" id="photoResult">
+      <div class="photo-result-label">Caption Pack — Ready to Copy</div>
+      <div class="photo-result-text" id="photoResultText"></div>
+    </div>
+    <button class="photo-copy-btn" id="photoCopyBtn" onclick="copyPhotoPrompt()">Copy Full Prompt to Claude Code</button>
+    <div class="claude-copied-msg" id="photoCopied"></div>
+  </div>
+</div>
+
+</body>
+</html>
