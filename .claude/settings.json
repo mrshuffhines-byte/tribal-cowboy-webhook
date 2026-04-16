@@ -5,7 +5,7 @@
       "args": ["-y", "n8n-mcp@latest"],
       "env": {
         "N8N_API_URL": "https://stacieh.app.n8n.cloud/api/v1",
-        "N8N_API_KEY": "YOUR_N8N_API_KEY_HERE"
+        "N8N_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkODhkYjUxMS0xZThkLTQ2NjctOTI3ZC1kMzdhMDc3M2Y5MzkiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwianRpIjoiMWFkZGQ0MTctYmE4Yi00YWU0LTg2NTQtZjcyYjY4MjZhYTYxIiwiaWF0IjoxNzc2MzgxMTE5fQ.IMZRd_my04VRJfL6Bt8BSxYt_xNxr81-IgYIS_OmRwQ"
       }
     }
   }
