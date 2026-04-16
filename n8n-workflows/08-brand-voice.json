@@ -3,15 +3,48 @@
   "nodes": [
     {
       "parameters": {
-        "httpMethod": "POST",
-        "path": "tribal-cowboy-brand-voice",
-        "responseMode": "lastNode",
-        "options": {}
+        "formTitle": "Tribal Cowboy — Brand Voice Review",
+        "formDescription": "Paste any content before it goes out — captions, emails, proposals, SMS — and get a brand voice check with a corrected version.",
+        "responseMode": "onReceived",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Content Type",
+              "fieldType": "select",
+              "requiredField": true,
+              "fieldOptions": {
+                "values": [
+                  {"option": "Instagram Caption"},
+                  {"option": "Facebook Post"},
+                  {"option": "TikTok Caption"},
+                  {"option": "Email"},
+                  {"option": "SMS Message"},
+                  {"option": "Proposal"},
+                  {"option": "Website Copy"},
+                  {"option": "Other"}
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Content to Review",
+              "fieldType": "textarea",
+              "requiredField": true,
+              "placeholder": "Paste the full content you want reviewed here..."
+            }
+          ]
+        },
+        "options": {
+          "respondWithOptions": {
+            "values": {
+              "formSubmittedText": "Your content is being reviewed. Check n8n executions for the full brand voice analysis and corrected version."
+            }
+          }
+        }
       },
-      "id": "webhook-voice",
-      "name": "Content Review Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
+      "id": "form-trigger-voice",
+      "name": "Content Review Form",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
       "position": [240, 300],
       "webhookId": "tribal-cowboy-brand-voice"
     },
@@ -22,7 +55,7 @@
             {
               "id": "prompt-var",
               "name": "prompt",
-              "value": "=Review this Tribal Cowboy content for brand voice consistency.\n\nContent type: {{ $json.body.content_type || $json.content_type || 'unspecified' }}\nContent to review: {{ $json.body.input || $json.input }}\n\nReturn the full Brand Voice Review including: Overall Assessment, What's Working, What Needs Fixing (table format), Revised Full Version, and Brand Voice Score.",
+              "value": "=Review this Tribal Cowboy content for brand voice consistency.\n\nContent type: {{ $json['Content Type'] }}\nContent to review: {{ $json['Content to Review'] }}\n\nReturn the full Brand Voice Review including: Overall Assessment, What's Working, What Needs Fixing (table format), Revised Full Version, and Brand Voice Score out of 10.",
               "type": "string"
             }
           ]
@@ -42,7 +75,7 @@
         "messages": {
           "messageValues": [
             {
-              "message": "You are the Brand Voice Agent for Tribal Cowboy LLC — the final gatekeeper for all written communication.\n\nTRIBAL COWBOY VOICE ATTRIBUTES:\n1. Warm — talk like we know them, real human warmth, not stiff or corporate\n2. Confident — know our worth, no hedging, no apologizing\n3. Celebratory — in the business of joy, language feels like a celebration\n4. Authentic — no buzzwords, filler, or corporate speak\n5. Community-rooted — we care about people, not just clients\n6. Professional — grammar matters, no typos, polished\n\nBY CHANNEL:\n- Instagram/TikTok: conversational, energetic, story-driven, short punchy, 1-3 emojis, hashtags at end\n- Facebook: slightly longer, narrative, community-focused\n- Email: warm opener, clear purpose, short paragraphs, bullets, clear next step\n- SMS: ultra-brief, warm, first name, one action, under 160 chars\n- Proposals: formal but approachable, value before price, 'investment' not 'cost'\n- Website: confident, scannable, CTAs every section\n\nUSE: unforgettable, let's make this happen, we'd love to, your celebration/event/moment, investment, secure your date, community, family, together\n\nAVOID: just (minimizing), sorry to bother, cheap/affordable/budget-friendly, ASAP, to whom it may concern, synergy/leverage/holistic/solutions, pleased to inform, all caps outside headers\n\nREVIEW FORMAT:\n\n**Brand Voice Review: [Content Type]**\n\n**Overall Assessment:** [On-brand / Needs work / Off-brand] — 1 sentence\n\n**What's Working:**\n- [specific strong elements]\n\n**What Needs Fixing:**\n| Original | Issue | Revised |\n|----------|-------|---------|\n| [quote] | [why off] | [fixed] |\n\n**Revised Full Version:**\n[complete corrected version]\n\n**Brand Voice Score:** [X/10] — with note on what would make it a 10\n\nRULES: Always provide the full corrected version. Explain the WHY behind every change. If fundamentally off-brand, say so clearly. Standard: would this make Tribal Cowboy proud?"
+              "message": "You are the Brand Voice Agent for Tribal Cowboy LLC — the final gatekeeper for all written communication.\n\nTRIBAL COWBOY VOICE ATTRIBUTES:\n1. Warm — real human warmth, not stiff or corporate\n2. Confident — know our worth, no hedging, no apologizing\n3. Celebratory — language feels like a celebration\n4. Authentic — no buzzwords or corporate speak\n5. Community-rooted — we care about people, not just clients\n6. Professional — grammar matters, no typos, polished\n\nUSE: unforgettable, let's make this happen, we'd love to, your celebration/event/moment, investment, secure your date, community, family, together\n\nAVOID: just (minimizing), sorry to bother, cheap/affordable/budget-friendly, ASAP, to whom it may concern, synergy/leverage/holistic/solutions, pleased to inform, all caps outside headers\n\nREVIEW FORMAT:\n\n**Brand Voice Review: [Content Type]**\n\n**Overall Assessment:** [On-brand / Needs work / Off-brand] — 1 sentence\n\n**What's Working:**\n- [specific strong elements]\n\n**What Needs Fixing:**\n| Original | Issue | Revised |\n|----------|-------|---------|\n| [quote] | [why off] | [fixed] |\n\n**Revised Full Version:**\n[complete corrected version]\n\n**Brand Voice Score:** [X/10] — with note on what would make it a 10\n\nRULES: Always provide the full corrected version. Explain the WHY behind every change. Standard: would this make Tribal Cowboy proud?"
             }
           ]
         },
@@ -69,7 +102,7 @@
     }
   ],
   "connections": {
-    "Content Review Webhook": {
+    "Content Review Form": {
       "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]]
     },
     "Build Prompt": {

@@ -3,15 +3,53 @@
   "nodes": [
     {
       "parameters": {
-        "httpMethod": "POST",
-        "path": "tribal-cowboy-email",
-        "responseMode": "lastNode",
-        "options": {}
+        "formTitle": "Tribal Cowboy — Email Writer",
+        "formDescription": "Fill in the details and get a professional, on-brand email drafted for you.",
+        "responseMode": "onReceived",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Email Type",
+              "fieldType": "select",
+              "requiredField": true,
+              "fieldOptions": {
+                "values": [
+                  {"option": "Proposal"},
+                  {"option": "Inquiry Response"},
+                  {"option": "Follow-Up"},
+                  {"option": "Partnership Pitch"},
+                  {"option": "Difficult Client"},
+                  {"option": "Thank You"},
+                  {"option": "Vendor Outreach"}
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Recipient",
+              "fieldType": "text",
+              "requiredField": true,
+              "placeholder": "e.g. Corporate event planner, school principal, venue manager"
+            },
+            {
+              "fieldLabel": "Context and Details",
+              "fieldType": "textarea",
+              "requiredField": true,
+              "placeholder": "Describe the situation, event details, what you need the email to accomplish..."
+            }
+          ]
+        },
+        "options": {
+          "respondWithOptions": {
+            "values": {
+              "formSubmittedText": "Your email is being drafted. Check n8n executions for the finished email."
+            }
+          }
+        }
       },
-      "id": "webhook-email",
-      "name": "Email Request Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
+      "id": "form-trigger-email",
+      "name": "Email Request Form",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
       "position": [240, 300],
       "webhookId": "tribal-cowboy-email"
     },
@@ -22,7 +60,7 @@
             {
               "id": "prompt-var",
               "name": "prompt",
-              "value": "=Draft a professional email from Tribal Cowboy.\n\nEmail type: {{ $json.body.email_type || $json.email_type || 'general' }}\nRecipient: {{ $json.body.recipient || $json.recipient || 'Client' }}\nContext/details: {{ $json.body.context || $json.context || $json.body.input || $json.input }}\n\nProvide: 1) Subject line, 2) Full email body, 3) Suggested signature line.",
+              "value": "=Draft a professional email from Tribal Cowboy.\n\nEmail type: {{ $json['Email Type'] }}\nRecipient: {{ $json['Recipient'] }}\nContext/details: {{ $json['Context and Details'] }}\n\nProvide: 1) Subject line, 2) Full email body, 3) Suggested signature line.",
               "type": "string"
             }
           ]
@@ -69,7 +107,7 @@
     }
   ],
   "connections": {
-    "Email Request Webhook": {
+    "Email Request Form": {
       "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]]
     },
     "Build Prompt": {
