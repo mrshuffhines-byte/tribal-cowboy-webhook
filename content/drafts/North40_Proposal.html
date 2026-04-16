@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>North 40 Outfitters — Equine Activation Proposal</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --timber:   #2C2520;
+  --saddle:   #574838;
+  --gold:     #D4A843;
+  --leather:  #C8A96E;
+  --cream:    #F3EDE3;
+  --teal:     #1A7A6B;
+  --brick:    #8B1A1A;
+  --nearblk:  #1E1208;
+  --muted:    #8A7560;
+  --offwhite: #FFFCF7;
+  --goldlt:   #FAF4EA;
+  --teallt:   #EEF7F5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page { size: 8.5in 11in; margin: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+}
+
+.page {
+  width: 8.5in;
+  height: 11in;
+  position: relative;
+  page-break-after: always;
+  overflow: hidden;
+}
+
+/* ── DARK PAGE (Cover, section dividers) ─────────────── */
+.page-dark {
+  background: var(--timber);
+}
+
+.band-top {
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--gold);
+}
+.band-top-inner {
+  position: absolute; top: 12px; left: 0; right: 0; height: 1.5px;
+  background: rgba(200, 169, 110, 0.5);
+}
+.band-bottom {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+  background: var(--gold);
+}
+.band-bottom-inner {
+  position: absolute; bottom: 12px; left: 0; right: 0; height: 1.5px;
+  background: rgba(200, 169, 110, 0.5);
+}
+
+/* ── COVER ───────────────────────────────────────────── */
+.cover-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 11in;
+  padding: 0.9in 1in;
+  text-align: center;
+}
+
+.cover-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 28px;
+}
+
+.cover-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.cover-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--leather);
+  line-height: 1.5;
+  max-width: 5.5in;
+  margin-bottom: 34px;
+}
+
+.cover-rule {
+  width: 3in;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 34px;
+}
+
+.cover-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+}
+
+.cover-meta strong {
+  color: var(--leather);
+  font-weight: 600;
+}
+
+.cover-footer {
+  position: absolute;
+  bottom: 28px;
+  left: 0; right: 0;
+  padding: 0 0.7in;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── LIGHT PAGE ──────────────────────────────────────── */
+.page-light {
+  background: var(--cream);
+}
+
+.page-header {
+  background: var(--timber);
+  height: 0.72in;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5in;
+}
+
+.header-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.header-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.page-content {
+  padding: 0.45in 0.6in 0.85in;
+}
+
+.section-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.section-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--timber);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.body-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 400;
+  color: var(--saddle);
+  line-height: 1.85;
+  margin-bottom: 14px;
+  max-width: 6.4in;
+}
+
+.body-text p { margin-bottom: 12px; }
+
+/* ── CALLOUT BOXES ───────────────────────────────────── */
+.callout-gold {
+  border-left: 4px solid var(--gold);
+  padding: 13px 16px;
+  background: var(--goldlt);
+  border-radius: 0;
+  margin: 18px 0;
+}
+.callout-gold .callout-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.callout-gold .callout-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--timber);
+  line-height: 1.75;
+}
+
+.callout-teal {
+  border-left: 4px solid var(--teal);
+  padding: 13px 16px;
+  background: var(--teallt);
+  border-radius: 0;
+  margin: 18px 0;
+}
+.callout-teal .callout-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.callout-teal .callout-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--timber);
+  line-height: 1.75;
+}
+
+/* ── CARD GRID ───────────────────────────────────────── */
+.card-grid {
+  display: flex;
+  gap: 16px;
+  margin: 20px 0;
+}
+.card-grid-3 {
+  display: flex;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.card {
+  flex: 1;
+  background: var(--offwhite);
+  border: 0.5px solid #E8DFD0;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+.card-badge {
+  padding: 5px 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.badge-gold    { background: var(--gold);   color: var(--nearblk); }
+.badge-corporate { background: var(--saddle);  color: var(--cream); }
+.badge-teal    { background: var(--teal);   color: #D0F0EA; }
+.badge-partner { background: var(--timber); color: var(--gold); }
+
+.card-body {
+  padding: 14px 16px 16px;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--timber);
+  margin-bottom: 7px;
+  line-height: 1.25;
+}
+
+.card-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 400;
+  color: var(--saddle);
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.card-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* ── COMPARISON TABLE ────────────────────────────────── */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+}
+
+.comparison-table th {
+  background: var(--timber);
+  color: var(--cream);
+  font-weight: 700;
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+  padding: 9px 14px;
+  text-align: left;
+}
+
+.comparison-table th.gold-col {
+  background: var(--gold);
+  color: var(--nearblk);
+}
+
+.comparison-table td {
+  padding: 6px 12px;
+  border-bottom: 0.5px solid #E0D6C8;
+  color: var(--saddle);
+  line-height: 1.6;
+}
+
+.comparison-table td:first-child {
+  color: var(--timber);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.comparison-table tr:nth-child(even) td {
+  background: rgba(212,168,67,0.07);
+}
+
+.comparison-table td.highlight {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* ── STEPS ───────────────────────────────────────────── */
+.steps-grid {
+  display: table;
+  width: 100%;
+  border-spacing: 14px 0;
+  margin: 18px 0;
+  table-layout: fixed;
+}
+
+.step {
+  display: table-cell;
+  vertical-align: top;
+  width: 25%;
+}
+
+.step-num {
+  width: 30px; height: 30px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--nearblk);
+  margin-bottom: 9px;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--timber);
+  margin-bottom: 5px;
+}
+
+.step-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: var(--saddle);
+  line-height: 1.8;
+}
+
+/* ── TWO COLUMN ──────────────────────────────────────── */
+.two-col {
+  display: flex;
+  gap: 24px;
+  margin: 14px 0;
+}
+
+.col-left { flex: 1.1; }
+.col-right {
+  flex: 0.9;
+  background: var(--timber);
+  border-left: 5px solid var(--teal);
+  border-radius: 0 4px 4px 0;
+  padding: 18px 18px 18px 20px;
+}
+
+.right-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.right-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.right-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 400;
+  color: var(--leather);
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: var(--cream);
+  line-height: 1.75;
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 3px;
+}
+
+.feature-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ── PRICING TIER CARDS ──────────────────────────────── */
+.tier-card {
+  background: var(--offwhite);
+  border: 0.5px solid #E8DFD0;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+  overflow: hidden;
+  flex: 1;
+}
+
+.tier-header {
+  padding: 16px 18px 10px;
+  background: var(--timber);
+}
+
+.tier-badge {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.tier-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.tier-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--leather);
+}
+
+.tier-body {
+  padding: 14px 18px 16px;
+}
+
+.tier-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--timber);
+  margin-bottom: 10px;
+}
+
+.tier-price span {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.tier-includes {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.tier-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tier-list li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: var(--saddle);
+  line-height: 1.8;
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.tier-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* ── REVENUE GRID ────────────────────────────────────── */
+.revenue-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.revenue-item {
+  flex: 0 0 calc(50% - 7px);
+  background: var(--offwhite);
+  border: 0.5px solid #E8DFD0;
+  border-radius: 4px;
+  border-left: 4px solid var(--gold);
+  padding: 13px 15px;
+}
+
+.revenue-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--timber);
+  margin-bottom: 5px;
+}
+
+.revenue-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: var(--saddle);
+  line-height: 1.8;
+}
+
+/* ── LOGISTICS PAGE OVERRIDES ────────────────────────── */
+.page-logistics .page-content {
+  padding-top: 0.35in;
+  padding-bottom: 0.7in;
+}
+.page-logistics .section-heading {
+  font-size: 27px;
+  margin-bottom: 6px;
+}
+.page-logistics .body-text p {
+  font-size: 9px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.page-logistics .two-col {
+  gap: 20px;
+}
+.page-logistics .section-eyebrow {
+  margin-bottom: 4px;
+}
+.page-logistics .rule-thin {
+  margin: 6px 0;
+}
+.page-logistics .steps-grid {
+  gap: 10px;
+  margin: 7px 0;
+}
+.page-logistics .step-num {
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.page-logistics .step-title {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+.page-logistics .step-text {
+  font-size: 8px;
+  line-height: 1.55;
+}
+.page-logistics .feature-list li {
+  font-size: 9px;
+  padding: 4px 0 4px 14px;
+}
+.page-logistics .right-body {
+  font-size: 9px;
+  margin-bottom: 10px;
+}
+
+/* ── REVENUE PAGE OVERRIDES ──────────────────────────── */
+.page-revenue .page-content {
+  padding-top: 0.35in;
+  padding-bottom: 0.5in;
+}
+.page-revenue .section-eyebrow {
+  margin-bottom: 4px;
+}
+.page-revenue .section-heading {
+  font-size: 26px;
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+.page-revenue .body-text p {
+  font-size: 9px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.page-revenue .revenue-grid {
+  gap: 8px;
+  margin: 8px 0;
+}
+.page-revenue .revenue-item {
+  padding: 8px 12px;
+}
+.page-revenue .revenue-title {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.page-revenue .revenue-text {
+  font-size: 8.5px;
+  line-height: 1.6;
+}
+.page-revenue .callout-teal .callout-body {
+  font-size: 9.5px;
+  line-height: 1.6;
+}
+
+/* ── SOCIAL PAGE OVERRIDES ───────────────────────────── */
+.page-social .page-content {
+  padding-top: 0.3in;
+  padding-bottom: 0.45in;
+}
+.page-social .section-heading { font-size: 26px; margin-bottom: 4px; }
+.page-social .body-text p { font-size: 9px; line-height: 1.55; margin-bottom: 4px; }
+.page-social .card-grid-3 { gap: 8px; margin: 8px 0; }
+.page-social .card-body { padding: 9px 12px 11px; }
+.page-social .card-title { font-size: 13px; margin-bottom: 5px; }
+.page-social .card-text { font-size: 7.5px; line-height: 1.6; margin-bottom: 5px; }
+.page-social .tier-list li { font-size: 7.5px; padding: 1.5px 0 1.5px 13px; }
+.page-social .callout-gold { padding: 8px 13px; margin: 8px 0; }
+.page-social .callout-gold .callout-body { font-size: 9px; line-height: 1.55; }
+
+/* ── PACKAGES PAGE OVERRIDES ─────────────────────────── */
+.page-packages .page-content {
+  padding-top: 0.3in;
+  padding-bottom: 0.45in;
+}
+.page-packages .section-heading {
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+.page-packages .body-text p {
+  font-size: 8.5px;
+  line-height: 1.55;
+  margin-bottom: 3px;
+}
+.page-packages .card-grid {
+  gap: 10px;
+  margin: 8px 0;
+}
+.page-packages .tier-header {
+  padding: 10px 14px 7px;
+}
+.page-packages .tier-name {
+  font-size: 18px;
+}
+.page-packages .tier-body {
+  padding: 10px 14px 12px;
+}
+.page-packages .tier-price {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.page-packages .tier-price span {
+  font-size: 8.5px;
+}
+.page-packages .tier-list li {
+  font-size: 8px;
+  padding: 2.5px 0 2.5px 14px;
+}
+.page-packages .callout-teal {
+  padding: 9px 14px;
+  margin: 8px 0;
+}
+.page-packages .callout-teal .callout-body {
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+/* ── PAGE FOOTER ─────────────────────────────────────── */
+.page-footer {
+  position: absolute;
+  bottom: 18px;
+  left: 0; right: 0;
+  padding: 8px 0.6in 0;
+  border-top: 1px solid #E0D6C8;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.page-footer a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+/* ── SECTION DIVIDER ─────────────────────────────────── */
+.divider-page {
+  background: var(--timber);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 11in;
+  text-align: center;
+  padding: 1in;
+}
+
+/* ── CONTACT BLOCK ───────────────────────────────────── */
+.contact-block {
+  background: var(--timber);
+  border-radius: 4px;
+  padding: 20px 22px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-left .contact-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 3px;
+}
+.contact-left .contact-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--leather);
+  letter-spacing: 0.06em;
+  margin-bottom: 9px;
+}
+.contact-left .contact-details {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.contact-left .contact-details a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.cta-btn {
+  background: var(--gold);
+  color: var(--nearblk);
+  padding: 12px 28px;
+  border-radius: 3px;
+  border: 2px solid #B8901E;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+  display: inline-block;
+  margin-top: 8px;
+  min-width: 200px;
+  text-transform: uppercase;
+}
+
+/* ── DIVIDER LINES ───────────────────────────────────── */
+.rule-gold {
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  margin: 16px 0 14px;
+}
+
+.rule-thin {
+  width: 100%;
+  height: 0.5px;
+  background: #E0D6C8;
+  margin: 14px 0;
+}
+
+/* ── STAT BLOCKS ─────────────────────────────────────── */
+.stat-row {
+  display: flex;
+  gap: 14px;
+  margin: 18px 0;
+}
+.stat-box {
+  flex: 1;
+  background: var(--timber);
+  border-radius: 4px;
+  padding: 16px 14px;
+  text-align: center;
+}
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 1 — COVER
+═══════════════════════════════════════════════════════ -->
+<div class="page page-dark">
+  <div class="band-top"></div>
+  <div class="band-top-inner"></div>
+  <div class="band-bottom"></div>
+  <div class="band-bottom-inner"></div>
+
+  <div class="cover-body">
+    <img class="cover-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy Logo">
+
+    <div class="cover-eyebrow">Equine Activation Proposal</div>
+
+    <div class="cover-title">North 40 Outfitters</div>
+
+    <div class="cover-subtitle">A Live Horse Experience That Brings Families to Your Store, Extends Their Visit, and Puts Your Brand Across the Horse Community's Social Feeds</div>
+
+    <div class="cover-rule"></div>
+
+    <div class="cover-meta">
+      <strong>Prepared for:</strong> North 40 Outfitters — Store &amp; Events Management<br>
+      <strong>Presented by:</strong> Tribal Cowboy LLC — Stacie Huffhines, Owner<br>
+      <strong>Date:</strong> March 2026<br>
+      <strong>Location:</strong> North Idaho
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Confidential — Prepared Exclusively for North 40 Outfitters</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 2 — EXECUTIVE SUMMARY
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Executive Summary</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">The Opportunity</div>
+    <div class="section-heading" style="margin-bottom: 12px;">Your Customers Already Love Horses</div>
+
+    <!-- 2-COLUMN: OPPORTUNITY LEFT + WHY EASY RIGHT -->
+    <div style="display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start;">
+
+      <div style="flex: 1.1;">
+        <ul style="list-style: none; padding: 0; margin: 0 0 12px; font-family: 'Montserrat', sans-serif; font-size: 9.5px; color: var(--saddle); line-height: 1.85;">
+          <li style="padding-left: 16px; position: relative; margin-bottom: 7px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700; font-size: 12px;">›</span>North 40's customers are horse owners, ranchers, and farm families. They already come to your store.</li>
+          <li style="padding-left: 16px; position: relative; margin-bottom: 7px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700; font-size: 12px;">›</span>Tribal Cowboy gives them a reason to bring the whole family — and stay 30–60 minutes longer.</li>
+          <li style="padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700; font-size: 12px;">›</span>Every guest photo carries the North 40 logo — circulating in the horse community's feed for days after the event.</li>
+        </ul>
+        <div class="callout-gold" style="margin: 0; padding: 11px 14px;">
+          <div class="callout-label">The Core Idea</div>
+          <div class="callout-body" style="font-size: 9.5px;">Set up a working herd — Clydesdales and ponies — in your parking lot. Guests ride, photograph, and share. North 40 is in every photo. The horse community sees your brand in their feed all week.</div>
+        </div>
+      </div>
+
+      <div style="flex: 0.9; background: var(--timber); border-left: 4px solid var(--teal); border-radius: 0 4px 4px 0; padding: 14px 16px 14px 18px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px;">Why This Is Easy to Approve</div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8.5px; color: var(--cream); line-height: 1.9;">
+          <li style="padding-left: 18px; position: relative; margin-bottom: 4px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">✓</span>$2M liability insurance — COI names North 40 as additionally insured</li>
+          <li style="padding-left: 18px; position: relative; margin-bottom: 4px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">✓</span>Zero store staff required — we handle everything</li>
+          <li style="padding-left: 18px; position: relative; margin-bottom: 4px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">✓</span>Fully enclosed panels — no loose animals, ever</li>
+          <li style="padding-left: 18px; position: relative; margin-bottom: 4px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">✓</span>CCPA-aligned photo system — no PII stored or retained</li>
+          <li style="padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">✓</span>Start with one event — scale only if you want to</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rule-thin" style="margin: 8px 0;"></div>
+    <div class="section-eyebrow" style="margin-bottom: 10px;">What Tribal Cowboy Brings</div>
+
+    <!-- ACTIVATION ZONE CARDS WITH ICONS -->
+    <div class="card-grid-3" style="margin: 0 0 10px;">
+      <div class="card">
+        <div class="card-badge badge-gold">Zone 1</div>
+        <div class="card-body" style="padding: 10px 14px 12px;">
+          <div style="font-size: 24px; margin-bottom: 6px; line-height: 1;">🎠</div>
+          <div class="card-title">Pony Rides</div>
+          <div class="card-text" style="margin-bottom: 0;">Lead-line only · enclosed panels · 2 handlers · ages 3–10 · 80 lbs max</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-badge badge-teal">Zone 2</div>
+        <div class="card-body" style="padding: 10px 14px 12px;">
+          <div style="font-size: 24px; margin-bottom: 6px; line-height: 1;">📲</div>
+          <div class="card-title">Branded Photo Delivery</div>
+          <div class="card-text" style="margin-bottom: 0;">QR scan → instant branded photo · North 40 logo on every image · no app, no email, no wait</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-badge badge-corporate">Zone 3</div>
+        <div class="card-body" style="padding: 10px 14px 12px;">
+          <div style="font-size: 24px; margin-bottom: 6px; line-height: 1;">🐴</div>
+          <div class="card-title">Clydesdale Photo Area</div>
+          <div class="card-text" style="margin-bottom: 0;">1,800-lb purebred Clydesdale · adults + families welcome · your horse-savvy customers know exactly what they're looking at</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHOTO STRIP -->
+    <div style="display: table; width: 100%; table-layout: fixed;">
+      <div style="display: table-cell; padding-right: 4px;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/photography-community-events_IMG_1993_community-group-clydesdale_web.jpg" style="width: 100%; height: 115px; object-fit: cover; object-position: center center; border-radius: 2px; display: block;">
+      </div>
+      <div style="display: table-cell; padding: 0 4px;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/photography-private-events_IMG_7037_girl-pony-birthday_web.jpg" style="width: 100%; height: 115px; object-fit: cover; object-position: center center; border-radius: 2px; display: block;">
+      </div>
+      <div style="display: table-cell; padding-left: 4px;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/services-education_IMG_4910_school-group-with-pony_web.jpg" style="width: 100%; height: 115px; object-fit: cover; object-position: center center; border-radius: 2px; display: block;">
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 3 — EVENT LAYOUT & FAMILY FLOW
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Event Layout &amp; Experience Flow</div>
+  </div>
+
+  <div class="page-content" style="padding-bottom: 0.5in;">
+    <div class="section-eyebrow">Controlled, Predictable, Repeatable</div>
+    <div class="section-heading">Self-Contained. Parking Lot Ready.</div>
+
+    <div class="body-text" style="margin-bottom: 12px;">
+      <p>The activation runs within a defined 40' × 60' footprint in your parking lot — fully self-contained, no store access required, no disruption to customer flow. Every zone has a designated entry, exit, and staff position. Animals arrive in Tribal Cowboy's trailer and are managed exclusively by our handlers from start to finish.</p>
+    </div>
+
+    <!-- LAYOUT DIAGRAM -->
+    <div style="border: 1.5px solid #C8A96E; background: var(--offwhite); padding: 16px 20px; margin-bottom: 14px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; margin-bottom: 12px;">Activation Footprint — Approx. 40' × 60' Parking Lot Area</div>
+
+      <img src="file:///Users/staciehuffhines/TribalCowboy-Social/content/drafts/photo-on-a-pony-diagram.jpeg" style="width: 100%; display: block; border-radius: 3px; border: 1px solid #C8A96E;" alt="Photo on a Pony — activation layout diagram showing pony loop, photo stop, queue/check-in, resting ponies, and parent viewing rails">
+
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); text-align: center; margin-top: 8px; font-style: italic;">Footprint adapts to available parking area. Tribal Cowboy will walk the lot in advance and advise on optimal placement. No store access or staff involvement required.</div>
+    </div>
+
+    <!-- FAMILY FLOW -->
+    <div class="rule-thin" style="margin: 10px 0;"></div>
+    <div class="section-eyebrow" style="margin-bottom: 8px;">What a Family Experience Looks Like</div>
+
+    <div style="display: table; width: 100%; table-layout: fixed;">
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--gold); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--timber); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">1</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Pull In</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">Family came for feed. They see the horses. Nobody leaves without stopping.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--gold); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--timber); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">2</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Queue</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">10–20 min wait. The other parent heads inside. Incremental browsing begins.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--gold); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--timber); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">3</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Ride</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">Child rides the pony. 5–7 minutes. Handler leads the whole way.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--gold); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--timber); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">4</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Photo</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">Family poses with the Clydesdale. Your customers know what that horse is worth.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--gold); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--timber); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">5</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Scan</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">Parent scans QR. Photo delivered instantly. North 40 brand in the frame.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--teal); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: white; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">6</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Shop</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">Whole family goes inside. Browses longer than planned. Photo gets shared. North 40 reach continues.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 4 — WHY THIS WORKS FOR NORTH 40
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Why This Works for North 40</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">The Alignment Advantage</div>
+    <div class="section-heading" style="margin-bottom: 8px;">This Is Already Your Audience</div>
+
+    <div class="body-text">
+      <p>North 40's customers are ranch families, horse owners, and farm-lifestyle people — the exact demographic that stops everything when a Clydesdale walks by. The question isn't whether they'll respond. They will. The question is whether North 40 is the store they tell that story about — or someone else is.</p>
+    </div>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th style="width: 27%;">Factor</th>
+          <th>Typical Store Event</th>
+          <th class="gold-col">Tribal Cowboy Activation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>👥 Who Shows Up</strong></td>
+          <td>Solo customer — in for one thing, out in 15 minutes</td>
+          <td class="highlight">Whole family — kids, spouse, and anyone who heard about the horses</td>
+        </tr>
+        <tr>
+          <td><strong>⏱️ Dwell Time</strong></td>
+          <td>Task-based — planned purchase, minimal browsing</td>
+          <td class="highlight">30–60 min longer — queues, photos, and the Clydesdale do the work</td>
+        </tr>
+        <tr>
+          <td><strong>💰 Incremental Spend</strong></td>
+          <td>Purchase they already planned</td>
+          <td class="highlight">Unplanned browsing while waiting → unplanned purchases</td>
+        </tr>
+        <tr>
+          <td><strong>📱 Social Content</strong></td>
+          <td>Minimal — nothing worth posting</td>
+          <td class="highlight">Dozens to hundreds of branded photos per event — horse community sees North 40 in their feed</td>
+        </tr>
+        <tr>
+          <td><strong>📡 Audience Reach</strong></td>
+          <td>Existing customer base only</td>
+          <td class="highlight">Photos circulate to friends, family, and followers — all horse adjacent</td>
+        </tr>
+        <tr>
+          <td><strong>🏷️ Brand Association</strong></td>
+          <td>Retailer of farm &amp; ranch supplies</td>
+          <td class="highlight">The store that brings live Clydesdales — community hub, not just a store</td>
+        </tr>
+        <tr>
+          <td><strong>🔄 Repeat Visits</strong></td>
+          <td>Next purchase need</td>
+          <td class="highlight">"We go to North 40 for the horse events" — emotional loyalty, not transactional</td>
+        </tr>
+        <tr>
+          <td><strong>📰 Media Interest</strong></td>
+          <td>None</td>
+          <td class="highlight">Local news angle — North Idaho horse community + live Clydesdales at North 40</td>
+        </tr>
+        <tr>
+          <td><strong>✅ Customer Fit</strong></td>
+          <td>Generic event — may feel off-brand to working ranch customers</td>
+          <td class="highlight">Single contained zone — ranch customers park, shop, and leave unaffected.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout-gold">
+      <div class="callout-label">The Differentiator</div>
+      <div class="callout-body">This aligns with the knowledge and expectations of your core customer. Your customers trust you with their farm and their animals. A live Clydesdale in your parking lot tells them you understand their life — not just their shopping list.</div>
+    </div>
+
+    <div style="display: table; width: 100%; table-layout: fixed; margin-top: 8px; background: var(--offwhite); border: 0.5px solid #E0D6C8;">
+      <div style="display: table-cell; text-align: center; padding: 8px 6px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--timber);">270,000+</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;">Privately Owned Horses<br>in Idaho</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 8px 6px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--timber);">14%</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;">of Idaho Households<br>Own Equine</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 8px 6px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--teal);">$51M+</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;">North Idaho Equine Industry<br>Contribution to State GDP</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 8px 6px;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--timber);">30%</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;">Higher Monthly Spend<br>from Experiential Customers</div>
+      </div>
+    </div>
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); font-style: italic; margin-top: 4px;">Sources: Idaho Horse Council · Idaho Horse Board · American Horse Council · Rockbot/LinkedIn Experiential Retail Research</div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 5 — REVENUE & VALUE FOR NORTH 40
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light page-revenue">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Revenue &amp; Value for North 40</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">The Business Case</div>
+    <div class="section-heading">What North 40 Gets in Return</div>
+
+    <div class="body-text" style="margin-bottom: 6px;">
+      <p>The activation cost is the base fee. <strong style="color: var(--timber);">This activation is designed to convert parking lot traffic into in-store revenue in real time</strong> — through extended dwell time, whole-family store exposure, and North 40 branding circulating through the horse community's social feeds for days after the event ends.</p>
+    </div>
+
+    <!-- RETAIL IMPACT SNAPSHOT -->
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; margin-bottom: 4px;">Retail Impact Snapshot</div>
+    <div style="display: table; width: 100%; table-layout: fixed; margin-bottom: 4px; border: 0.5px solid #E0D6C8; background: var(--offwhite);">
+      <div style="display: table-cell; text-align: center; padding: 10px 6px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--timber);">60–120</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Families Engaged</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 10px 6px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--teal);">30–60 min</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Increased Dwell Time *</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 10px 6px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--teal);">$1,500–$3,000</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Est. Same-Day Revenue</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 10px 6px;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--timber);">100+</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Branded Social Shares *</div>
+      </div>
+    </div>
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--muted); font-style: italic; margin-bottom: 8px;">* Dwell-time and social-share figures are projections based on experiential retail benchmarks (McKinsey; active entertainment venue data). The $25/family revenue assumption is conservative vs. ICSC avg. spend data. Tribal Cowboy's own event history is on the Track Record page.</div>
+
+    <div class="revenue-grid">
+      <div class="revenue-item">
+        <div class="revenue-title">Conversion: Parking Lot → Store Floor</div>
+        <div class="revenue-text">Families in the lot for the horses end up in the store. The parent waiting in the queue had 15 minutes of unplanned browse time. McKinsey links experience-led retail to a 2–7% sales lift.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="revenue-title">Whole-Family Basket Size</div>
+        <div class="revenue-text">Your typical customer comes solo for a specific item. This brings the spouse, the kids, and grandparents — more people, more departments, more unplanned spend.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="revenue-title">Organic Social in the Right Feed</div>
+        <div class="revenue-text">Every photo carries the North 40 logo. When guests post, your brand shows up in the horse community's feed — reaching people who already buy what you sell.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="revenue-title">Repeat Visit &amp; Community Identity</div>
+        <div class="revenue-text">Partnering with an Indigenous-owned North Idaho horse business positions North 40 as a community hub. Families return for future events — emotional loyalty that outlasts any one transaction.</div>
+      </div>
+    </div>
+
+    <!-- IN-STORE TIE-IN BOX -->
+    <div style="background: var(--offwhite); border: 0.5px solid #E0D6C8; border-left: 4px solid var(--timber); padding: 10px 16px; margin: 8px 0;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.18em; color: var(--timber); text-transform: uppercase; margin-bottom: 7px;">In-Store Tie-In Opportunities</div>
+      <div style="display: table; width: 100%; table-layout: fixed;">
+        <div style="display: table-cell; vertical-align: top; padding-right: 12px;">
+          <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8.5px; line-height: 1.85; color: var(--saddle);">
+            <li>&#8250;&nbsp; <strong>Kids' western apparel</strong> — boots, hats, youth gear</li>
+            <li>&#8250;&nbsp; <strong>Horse treats &amp; grooming supplies</strong> — impulse purchase while waiting</li>
+          </ul>
+        </div>
+        <div style="display: table-cell; vertical-align: top;">
+          <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8.5px; line-height: 1.85; color: var(--saddle);">
+            <li>&#8250;&nbsp; <strong>Seasonal promotions</strong> — spring prep, fall supply, back-to-school</li>
+            <li>&#8250;&nbsp; <strong>"Ride day" promo signage</strong> inside store directing families to relevant departments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout-teal" style="margin-top: 8px; padding: 10px 16px;">
+      <div class="callout-label">The Math</div>
+      <div class="callout-body">At 60–120 families per event, even $25 in incremental per-family spend generates $1,500–$3,000 in additional store revenue on activation day. For context: ICSC data shows average retail spend per visit at $103–$140 — making $25 a floor, not a ceiling. The activation requires no operational changes and no staff allocation. The base fee pays for itself in a single event.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 6 — SOCIAL MARKETING PLAN
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light page-social">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Marketing the Activation</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">The Amplification Strategy</div>
+    <div class="section-heading">Before, During, and After — Every Phase Works for North 40</div>
+
+    <div class="body-text" style="margin-bottom: 10px;">
+      <p>The activation itself is one day. The content it generates circulates for weeks — and all of it carries North 40's brand into the exact communities you're trying to reach.</p>
+    </div>
+
+    <div class="card-grid-3" style="align-items: flex-start; gap: 12px;">
+
+      <!-- BEFORE -->
+      <div class="card">
+        <div class="card-badge badge-gold">Phase 1 — Before</div>
+        <div class="card-body">
+          <div class="card-title">Build the Anticipation</div>
+          <ul class="tier-list" style="margin-top: 8px;">
+            <li>Social posts + email to loyalty list 2–3 weeks out: "Live horses coming to your North 40 store"</li>
+            <li>Tribal Cowboy countdown content tagging @North40Outfitters across Instagram, Facebook, and TikTok</li>
+            <li>Share to local horse/ranch Facebook groups, 4-H accounts, and 2–3 horse community influencers</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DURING -->
+      <div class="card">
+        <div class="card-badge badge-teal">Phase 2 — During</div>
+        <div class="card-body">
+          <div class="card-title">Capture Everything</div>
+          <ul class="tier-list" style="margin-top: 8px; margin-bottom: 10px;">
+            <li>Every guest photo delivered instantly, branded with North 40 logo — no app, no email, no wait</li>
+            <li>Live stories from North 40 and @TribalCowboy simultaneously; QR station prompts guests to tag @North40Outfitters</li>
+            <li>Horse community customers stop and engage — and any local media can walk up without coordination</li>
+          </ul>
+          <div style="background: var(--goldlt); border-left: 3px solid var(--gold); padding: 7px 10px;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-weight: 700; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 3px;">Why UGC Drives Real Reach</div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--saddle); line-height: 1.6;">UGC generates <strong>6.9× more engagement</strong> than brand content. Photo booth content = <strong>40–60% of event hashtag volume</strong>. <span style="color: var(--muted); font-style: italic;">(Nosto, FeatureBooth, Salesforce)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="card">
+        <div class="card-badge badge-partner">Phase 3 — After</div>
+        <div class="card-body">
+          <div class="card-title">Extend the Shelf Life</div>
+          <ul class="tier-list" style="margin-top: 8px;">
+            <li>Tribal Cowboy delivers 5 edited event images to North 40 within 7 days — any platform, any use</li>
+            <li>Proof-of-performance summary: reach, photo shares, estimated impressions, incident log (if any)</li>
+            <li>"Next one is coming" teaser — every event builds the next one's audience and makes the calendar easier to fill</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout-gold" style="margin-top: 12px;">
+      <div class="callout-label">The Compounding Effect</div>
+      <div class="callout-body">A single activation generates content that circulates in the horse community for weeks. Every event adds to a brand story that no competitor can replicate — North 40 as a place that truly gets ranch and horse culture, not just sells to it.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 7 — PACKAGE TIERS
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light page-packages">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Partnership Packages</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">Investment Options</div>
+    <div class="section-heading">Three Ways to Partner</div>
+
+    <div class="body-text">
+      <p>North 40 pays a flat base fee. Guests pay $5 per pony ride — that revenue goes to Tribal Cowboy. Photos are $5 each, or North 40 can sponsor them flat, putting the store brand on every image the horse community shares. Every tier includes full insurance, on-site safety staff, and all animal handling. No hidden costs.</p>
+      <p style="color: var(--muted); font-size: 9px;">Comparable live animal activations at retail events run $5,000–$15,000. Our base fee model is priced as a low-risk entry point to prove performance. Limited to select dates due to animal scheduling and event capacity.</p>
+    </div>
+
+    <div class="card-grid" style="align-items: flex-start;">
+
+      <!-- TIER 1 -->
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-badge">Tier 1</div>
+          <div class="tier-name">The Pop-Up</div>
+          <div class="tier-tagline">Single-day, targeted activation</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-price">$2,500 <span>store base fee · 4-hour window</span></div>
+          <div class="tier-includes">Includes</div>
+          <ul class="tier-list">
+            <li>Pony rides — controlled loop, $5/guest (Tribal Cowboy revenue)</li>
+            <li>Photos — $5 each, matched instantly via our photo system OR store-sponsored ($500 flat — brand on every image shared)</li>
+            <li>Branded photo overlays with North 40 logo</li>
+            <li>2 handlers, full safety setup and fencing</li>
+            <li>QR code delivery — no email, no app, no wait</li>
+            <li>General liability insurance documentation</li>
+          </ul>
+          <div style="margin-top:12px; padding-top:10px; border-top: 0.5px solid #E0D6C8;">
+            <div class="tier-includes">Best For</div>
+            <div class="card-text" style="margin-top:4px;">Spring sale weekends, North Idaho Fair weekend, back-to-school. Lower commitment, full experience.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 2 — MOST REQUESTED -->
+      <div class="tier-card" style="border: 2px solid var(--gold); box-shadow: 0 8px 28px rgba(212,168,67,0.28); position: relative; z-index: 1;">
+        <div class="tier-header" style="background: #3D2D10;">
+          <div class="tier-badge" style="background: var(--gold); color: var(--timber); font-size: 8px; display: inline-block; padding: 2px 8px; border-radius: 2px; margin-bottom: 6px;">★ Most Requested</div>
+          <div class="tier-name">The Full Activation</div>
+          <div class="tier-tagline">Signature experience · all three zones</div>
+        </div>
+        <div class="tier-body" style="background: var(--goldlt);">
+          <div class="tier-price">$3,000 <span>store base fee · 6-hour window</span></div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">Recommended starting point for North 40</div>
+          <div class="tier-includes">Includes Everything in Tier 1, Plus</div>
+          <ul class="tier-list">
+            <li>Clydesdale photo area — one of our purebred mares on-site</li>
+            <li>Dedicated photo zone with professional lighting setup</li>
+            <li>Extended 6-hour activation window</li>
+            <li>Event signage with North 40 co-branding</li>
+            <li>Social media content pack — 5 edited images for store use</li>
+            <li>Written post-event summary delivered within 7 days: attendance, photos delivered, estimated social reach, incident log (if any), and recommendations</li>
+          </ul>
+          <div style="margin-top:12px; padding-top:10px; border-top: 0.5px solid #E0D6C8;">
+            <div class="tier-includes">Best For</div>
+            <div class="card-text" style="margin-top:4px;">Peak summer weekends, North Idaho Fair weekend, back-to-school, spring sale events.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 3 -->
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-badge">Tier 3 — Signature</div>
+          <div class="tier-name">The Partnership</div>
+          <div class="tier-tagline">Seasonal presence, co-branded story</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-price">$8,000–$10,000 <span>— 3–4 event seasonal package</span></div>
+          <div class="tier-includes">Includes Everything in Tier 2, Plus</div>
+          <ul class="tier-list">
+            <li>Priority date selection across Spring–Fall</li>
+            <li>Dedicated Tribal Cowboy × North 40 social content</li>
+            <li>Custom event press kit for media outreach</li>
+            <li>North 40 logo on ALL photo overlays, all events</li>
+            <li>Seasonal storytelling — behind-the-scenes, meet-the-horses content</li>
+            <li>Exclusivity option — we don't activate at competing North Idaho farm retailers</li>
+            <li>Revenue share structure available in lieu of flat fee</li>
+            <li>Model can be repeated across multiple North 40 locations — consistent regional event program</li>
+          </ul>
+          <div style="margin-top:12px; padding-top:10px; border-top: 0.5px solid #E0D6C8;">
+            <div class="tier-includes">Best For</div>
+            <div class="card-text" style="margin-top:4px;">Store and regional management teams building North 40 as the definitive hub for North Idaho's horse and ranch community — and scaling that identity across locations.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout-teal" style="margin-top: 16px;">
+      <div class="callout-label">How the Activation Pays for Itself</div>
+      <div class="callout-body">At 60–120 families per event, even $25 in incremental per-family in-store spend offsets the base fee in additional store revenue. (ICSC data puts average retail spend per visit at $103–$140 — $25 is conservative by design.) A photo sponsorship puts North 40's brand on every image the horse community shares for $500 flat. This is not a one-time event — it is built to repeat, scale, and compound with each date added.</div>
+    </div>
+
+    <div style="margin-top: 12px; padding: 11px 16px; border: 0.5px solid #E0D6C8; background: var(--offwhite);">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase; margin-bottom: 6px;">Optional Add-On</div>
+      <div style="display: table; width: 100%; table-layout: fixed;">
+        <div style="display: table-cell; vertical-align: middle; width: 70%;">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 600; color: var(--timber); margin-bottom: 2px;">Ride Sponsorship — "Free Pony Rides"</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; color: var(--saddle); line-height: 1.6;">North 40 covers all pony rides — guests ride at no charge. Lets the store advertise "Free pony rides this weekend," which drives significantly more foot traffic than a ticketed model. Removes cash transactions on-site and simplifies the guest experience.</div>
+        </div>
+        <div style="display: table-cell; vertical-align: middle; text-align: right; width: 30%; padding-left: 12px;">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--timber);">+$750</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--muted); letter-spacing: 0.06em;">per event · any tier</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 8 — LOGISTICS & SAFETY
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light page-logistics">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Logistics &amp; Safety</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">Operations &amp; Safety</div>
+    <div class="section-heading">Controlled by Design. Zero Burden on Store Staff.</div>
+
+    <div class="two-col">
+      <div class="col-left">
+        <div class="section-eyebrow">Space Requirements</div>
+        <div class="body-text" style="margin-bottom:10px;">
+          <p>Full three-zone setup requires a minimum 40' × 60' footprint in your parking lot — level ground, away from active traffic lanes. Pony loop needs level surface. Clydesdale photo area: 15' × 20'. Photo delivery station is self-contained and weatherproof.</p>
+          <p>Tribal Cowboy will walk the lot in advance and advise on optimal placement for each store's footprint. We have activated in parking lots, event fields, and covered outdoor areas.</p>
+        </div>
+
+        <div class="section-eyebrow" style="margin-top:8px;">Setup &amp; Teardown</div>
+        <div class="body-text">
+          <p>Tribal Cowboy handles all setup and teardown. Arrival 2 hours before open. Teardown complete within 90 minutes of close. Animals arrive in Tribal Cowboy's own trailer and are managed exclusively by our handlers. No store staff involvement required at any point.</p>
+        </div>
+
+        <div class="section-eyebrow" style="margin-top:8px;">Staffing</div>
+        <div class="body-text">
+          <p>Every activation includes a minimum of 2 animal handlers, 1 photo delivery operator, and 1 guest flow coordinator. Staffing scales to event size. All Tribal Cowboy personnel are uniformed and branded throughout the event.</p>
+        </div>
+      </div>
+
+      <div class="col-right">
+        <div class="right-eyebrow">Zero-Risk, Controlled Environment</div>
+        <div class="right-heading">We Handle Everything</div>
+        <div class="right-body">All documentation provided in advance. No delays, no gaps in coverage.</div>
+        <ul class="feature-list">
+          <li>Lead-line only — no independent riding at any time</li>
+          <li>Fully enclosed panel system — dedicated entry and exit</li>
+          <li>2 handlers per pony at all times — one leads, one manages guest flow</li>
+          <li>No loose animals — ever</li>
+          <li>Throughput capped + queue managed to prevent overflow into active lot</li>
+          <li>$2M general liability + animal liability endorsement</li>
+          <li>Rider guidelines enforced — ages 3–10, 80 lbs max</li>
+          <li>All animals current on health certificates</li>
+          <li>Rider waivers — digital, managed by Tribal Cowboy</li>
+          <li>Emergency Action Plan on file at every event</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div style="margin-top: 8px; background: var(--timber); border-radius: 4px; padding: 9px 14px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px;">Risk &amp; Welfare at a Glance</div>
+      <div style="display: table; width: 100%; table-layout: fixed;">
+        <div style="display: table-cell; vertical-align: top; padding-right: 14px;">
+          <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--leather); line-height: 1.85;">
+            <li>› Lead-line only — no independent riding, ever</li>
+            <li>› No loose animals — enclosed panel system at all times</li>
+            <li>› Animal welfare protocol: rotation schedule, shade, water, temp limits (no work above 90°F / below 20°F)</li>
+            <li>› Pre-event surface inspection — footing confirmed safe before animals leave the trailer</li>
+          </ul>
+        </div>
+        <div style="display: table-cell; vertical-align: top;">
+          <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--leather); line-height: 1.85;">
+            <li>› $2M general liability + animal liability endorsement</li>
+            <li>› Designated backup event lead: Nicole Trexler — (360) 979-7603</li>
+            <li>› Emergency Action Plan on file with host manager before gates open</li>
+          </ul>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--muted); font-style: italic; margin-top: 6px;">A full written EAP covering animal distress, perimeter breach, guest injury, weather holds, emergency evacuation, and ADA accessibility is available upon request.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-thin"></div>
+
+    <div class="section-eyebrow">Timeline to First Event</div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Align on Date &amp; Scope</div>
+        <div class="step-text">Initial call or meeting to confirm event date, parking area, and package tier. Typically 30–45 minutes.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Agreement &amp; Deposit</div>
+        <div class="step-text">Partnership agreement executed. 25% deposit secures the date. Balance due 14 days before event.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Co-Marketing Setup</div>
+        <div class="step-text">We provide social graphics, event copy, and custom photo overlay branding with North 40 logo. You promote through your channels.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">Event Day</div>
+        <div class="step-text">Tribal Cowboy arrives fully self-contained. We operate the event. You host the experience.</div>
+      </div>
+    </div>
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--muted); font-style: italic; margin-top: 6px; padding-bottom: 4px;">Cancellation policy: if the event is cancelled due to weather or emergency before activation begins, the deposit transfers in full to a rescheduled date within 90 days.</div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 9 — TRACK RECORD
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Track Record</div>
+  </div>
+
+  <div class="page-content" style="padding-top: 0.35in; padding-bottom: 0.45in;">
+    <div class="section-eyebrow">Our Track Record in North Idaho</div>
+    <div class="section-heading" style="font-size: 27px; margin-bottom: 8px;">Not a First-Time Experiment</div>
+
+    <div class="body-text" style="margin-bottom: 12px; font-size: 9.5px;">
+      <p>Tribal Cowboy has a multi-year history of safely bringing horses into the exact kinds of environments North 40 serves — churches, town streets, farmers markets, preschools, and private family properties. The operator you would be working with has already managed horses safely in high-traffic public spaces, shared parking lots, parade routes, and early childhood settings — with all animal handling and guest flow managed by our team, not the host.</p>
+    </div>
+
+    <!-- EVENT LIST -->
+    <div style="margin-bottom: 12px;">
+
+      <div style="display: table; width: 100%; table-layout: fixed; margin-bottom: 6px;">
+        <div style="display: table-cell; vertical-align: top; width: 32%; padding-right: 10px;">
+          <div style="background: var(--offwhite); border: 0.5px solid #E8DFD0; border-top: 3px solid var(--gold); padding: 10px 12px; height: 100%;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">September 2025</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 5px; line-height: 1.2;">Church Event — Wagon Rides</div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.7;">Pony-driven wagon rides in a compact parking-lot style space — managing horses, wagon, and guest queues in close quarters. Same footprint as a North 40 activation pad.</div>
+          </div>
+        </div>
+        <div style="display: table-cell; vertical-align: top; width: 34%; padding-right: 10px;">
+          <div style="background: var(--offwhite); border: 0.5px solid #E8DFD0; border-top: 3px solid var(--teal); padding: 10px 12px; height: 100%;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.14em; color: var(--teal); text-transform: uppercase; margin-bottom: 4px;">2024 — Full Herd Activation</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 5px; line-height: 1.2;">Rathdrum Days — <span style="font-weight: 700; color: var(--teal);">$2,000+</span></div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.7;">Brought full herd — Clydesdales, ponies, and our zebra — to a busy community festival. All-day operation with families, strollers, food vendors, and constant foot traffic nearby.</div>
+          </div>
+        </div>
+        <div style="display: table-cell; vertical-align: top; width: 34%;">
+          <div style="background: var(--offwhite); border: 0.5px solid #E8DFD0; border-top: 3px solid var(--gold); padding: 10px 12px; height: 100%;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">Repeat Vendor — Multiple Years</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 5px; line-height: 1.2;">Make It Messy — <span style="font-weight: 700; color: var(--teal);">$2,500</span></div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-style: italic; color: var(--muted); margin-bottom: 4px;">Recurring family event series — Hayden, Idaho</div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.7;">Two sold-out sessions of 40 per session (50+ in practice). $25/person: 2-hour session + pony ride. 100+ guests = $2,500 total event revenue generated. Photo system fully operational. Zero incidents.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: table; width: 100%; table-layout: fixed; margin-bottom: 10px;">
+        <div style="display: table-cell; vertical-align: top; padding: 8px 12px; border-left: 3px solid var(--gold); background: var(--offwhite); border-bottom: 0.5px solid #E8DFD0; width: 25%; padding-right: 8px; margin-right: 8px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px;">Town Parades</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.65;">Spirit Lake, Rathdrum, and Coeur d'Alene — horses and wagon integrated into city-managed routes, staging areas, and live crowd control plans.</div>
+        </div>
+        <div style="display: table-cell; width: 8px;"></div>
+        <div style="display: table-cell; vertical-align: top; padding: 8px 12px; border-left: 3px solid var(--teal); background: var(--offwhite); width: 25%; padding-right: 8px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px;">Farmers Markets</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.65;">Rathdrum farmers markets — contained interaction zones in active shared parking areas, managing space, sightlines, and pedestrian flow simultaneously.</div>
+        </div>
+        <div style="display: table-cell; width: 8px;"></div>
+        <div style="display: table-cell; vertical-align: top; padding: 8px 12px; border-left: 3px solid var(--gold); background: var(--offwhite); width: 25%; padding-right: 8px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px;">Private Parties</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.65;">Multiple birthday events and pony parties — self-contained lead-line loops and photo areas set up in residential driveways with young children and extended families on site.</div>
+        </div>
+        <div style="display: table-cell; width: 8px;"></div>
+        <div style="display: table-cell; vertical-align: top; padding: 8px 12px; border-left: 3px solid var(--teal); background: var(--offwhite); width: 25%;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px;">Preschool Programs</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.65;">Three years of repeat preschool visits — grown exclusively by word of mouth. Intentionally kept discounted for educators; focused on trust and safety, not volume.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SAFETY STAT BAR -->
+    <div style="display: table; width: 100%; table-layout: fixed; background: var(--timber); border-radius: 4px; margin-bottom: 12px;">
+      <div style="display: table-cell; text-align: center; padding: 11px 6px; border-right: 0.5px solid rgba(200,169,110,0.3);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--gold);">7+</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 600; color: var(--leather); letter-spacing: 0.1em; text-transform: uppercase;">Event Types</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 11px 6px; border-right: 0.5px solid rgba(200,169,110,0.3);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--gold);">Zero</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 600; color: var(--leather); letter-spacing: 0.1em; text-transform: uppercase;">Safety Incidents</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 11px 6px; border-right: 0.5px solid rgba(200,169,110,0.3);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--gold);">3 Years</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 600; color: var(--leather); letter-spacing: 0.1em; text-transform: uppercase;">Repeat Preschool Bookings</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 11px 6px;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--gold);">Word of Mouth</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 600; color: var(--leather); letter-spacing: 0.1em; text-transform: uppercase;">Primary Growth Channel</div>
+      </div>
+    </div>
+
+    <div class="callout-gold" style="padding: 11px 16px;">
+      <div class="callout-label">What This Means for North 40</div>
+      <div class="callout-body" style="font-size: 9.5px; line-height: 1.7;">This is not a "first-time experiment" — it's the next step for a program that's already working in your communities. The parking lot, the shared space, the live crowd: we've operated in all of it. The only thing new is the North 40 logo on the photo overlay.<br><br><span style="font-size: 8.5px; color: var(--muted);">Early events were intentionally priced below market to validate operations, refine the photo system, and build a zero-incident track record. Current partnership pricing reflects the proven model.</span></div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 10 — OPERATIONS + ANIMAL WELFARE + EAP
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Operations &amp; Animal Standards</div>
+  </div>
+
+  <div class="page-content" style="padding-top: 0.35in; padding-bottom: 0.45in;">
+
+    <!-- WHO DOES WHAT GRID -->
+    <div class="section-eyebrow">Responsibility Allocation</div>
+    <div class="section-heading" style="font-size: 26px; margin-bottom: 8px;">What We Handle. What You Don't Have To.</div>
+
+    <table style="width: 100%; border-collapse: collapse; font-family: 'Montserrat', sans-serif; font-size: 9px; margin-bottom: 14px;">
+      <thead>
+        <tr>
+          <th style="background: var(--timber); color: var(--gold); padding: 8px 14px; text-align: left; font-size: 8px; letter-spacing: 0.12em; width: 50%;">Tribal Cowboy Handles</th>
+          <th style="background: var(--teal); color: #D0F0EA; padding: 8px 14px; text-align: left; font-size: 8px; letter-spacing: 0.12em; width: 50%;">North 40 Provides</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">All animal transport, loading, and unloading</td>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Designate 6–8 parking spaces before event day</td>
+        </tr>
+        <tr style="background: rgba(243,237,227,0.5);">
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Full setup, teardown, and equipment</td>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Easy trailer access and turnaround space</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">All animal handlers and event staff (uniformed)</td>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">One store manager point of contact for day-of</td>
+        </tr>
+        <tr style="background: rgba(243,237,227,0.5);">
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Pony rides, photo delivery, queue management</td>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Power outlet access on request (hot/cold weather)</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Waste management and lot cleanup throughout and post-event</td>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Promote via store social, email, and in-store signage</td>
+        </tr>
+        <tr style="background: rgba(243,237,227,0.5);">
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">All permit research, applications, and compliance</td>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Share North 40 logo files for photo overlay branding</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Insurance COI — names North 40 as additionally insured</td>
+          <td style="padding: 6px 14px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Approve and file COI with your records team</td>
+        </tr>
+        <tr style="background: rgba(243,237,227,0.5);">
+          <td style="padding: 6px 14px; color: var(--saddle);">All guest complaints and incidents related to the activation</td>
+          <td style="padding: 6px 14px; color: var(--saddle);">General store security (your standard staffing)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- TWO COL: ANIMAL WELFARE + EAP -->
+    <div style="display: table; width: 100%; table-layout: fixed; margin-top: 4px;">
+
+      <!-- ANIMAL WELFARE -->
+      <div style="display: table-cell; vertical-align: top; width: 50%; padding-right: 12px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px;">Animal Welfare Standards</div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8.5px; color: var(--saddle); line-height: 1.85;">
+          <li style="padding-left: 12px; position: relative; margin-bottom: 3px;"><span style="position: absolute; left: 0; color: var(--teal); font-weight: 700;">›</span>3 ponies rotate through rides — max 45 min working per pony; minimum 20–30 min rest between rotations</li>
+          <li style="padding-left: 12px; position: relative; margin-bottom: 3px;"><span style="position: absolute; left: 0; color: var(--teal); font-weight: 700;">›</span>10–15 min interval between each rotation</li>
+          <li style="padding-left: 12px; position: relative; margin-bottom: 3px;"><span style="position: absolute; left: 0; color: var(--teal); font-weight: 700;">›</span>Shade provided: 10×20 tent + 2–3 10×10 canopies on-site</li>
+          <li style="padding-left: 12px; position: relative; margin-bottom: 3px;"><span style="position: absolute; left: 0; color: var(--teal); font-weight: 700;">›</span>Water: self-contained tank in Tribal Cowboy trailer — no venue supply needed</li>
+          <li style="padding-left: 12px; position: relative; margin-bottom: 3px;"><span style="position: absolute; left: 0; color: var(--teal); font-weight: 700;">›</span>Manure management: diaper bags on all working animals — zero lot mess</li>
+          <li style="padding-left: 12px; position: relative; margin-bottom: 3px;"><span style="position: absolute; left: 0; color: var(--teal); font-weight: 700;">›</span>On-call veterinarian: SAVE Veterinary Services — Sandpoint, Idaho</li>
+          <li style="padding-left: 12px; position: relative; margin-bottom: 3px;"><span style="position: absolute; left: 0; color: var(--teal); font-weight: 700;">›</span>Any animal showing stress is removed immediately — no exceptions</li>
+          <li style="padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal); font-weight: 700;">›</span>ADA: Clydesdale photo station fully accessible — horses trained alongside wheelchairs, power chairs, service animals, and guests with reactive movement</li>
+        </ul>
+      </div>
+
+      <!-- EAP EXCERPT -->
+      <div style="display: table-cell; vertical-align: top; width: 50%; padding-left: 12px;">
+        <div style="background: var(--timber); border-radius: 4px; padding: 14px 16px; height: 100%;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 7px;">Emergency Action Plan — Summary</div>
+          <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8.5px; color: var(--leather); line-height: 1.8;">
+            <li style="padding-left: 12px; position: relative; margin-bottom: 5px;"><span style="position: absolute; left: 0; color: var(--gold);">›</span><strong style="color: var(--cream);">Animal distress:</strong> Immediate removal from activation zone, loaded to trailer, vet contacted</li>
+            <li style="padding-left: 12px; position: relative; margin-bottom: 5px;"><span style="position: absolute; left: 0; color: var(--gold);">›</span><strong style="color: var(--cream);">Guest injury:</strong> Animal secured, area cleared, first aid administered, 911 if required — rides pause until resolved</li>
+            <li style="padding-left: 12px; position: relative; margin-bottom: 5px;"><span style="position: absolute; left: 0; color: var(--gold);">›</span><strong style="color: var(--cream);">Barrier breach:</strong> Handler verbal redirect; if physical breach, rides pause and perimeter is reset before resuming</li>
+            <li style="padding-left: 12px; position: relative; margin-bottom: 5px;"><span style="position: absolute; left: 0; color: var(--gold);">›</span><strong style="color: var(--cream);">Emergency evacuation:</strong> All animals loaded to trailer within 15 min; store manager notified immediately</li>
+            <li style="padding-left: 12px; position: relative; margin-bottom: 5px;"><span style="position: absolute; left: 0; color: var(--gold);">›</span><strong style="color: var(--cream);">Incident documentation:</strong> Written report provided to North 40 within 24 hours of any reportable event</li>
+            <li style="padding-left: 12px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold);">›</span><strong style="color: var(--cream);">Pre-event briefing:</strong> 10-minute all-hands with Tribal Cowboy staff and North 40 day-of contact before gates open</li>
+          </ul>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--muted); margin-top: 10px; font-style: italic;">Full written EAP provided to store manager before event open.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 11 — COMMON QUESTIONS
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Common Questions</div>
+  </div>
+
+  <div class="page-content" style="padding-top: 0.38in; padding-bottom: 0.5in;">
+    <div class="section-eyebrow">Before You Ask</div>
+    <div class="section-heading" style="font-size: 28px; margin-bottom: 10px;">The Five Questions Every Decision-Maker Has</div>
+
+    <div style="display: table; width: 100%; table-layout: fixed; border-spacing: 0;">
+
+      <!-- LEFT COLUMN — Q1, Q2, Q3 -->
+      <div style="display: table-cell; vertical-align: top; width: 50%; padding-right: 18px;">
+
+        <!-- Q1 -->
+        <div style="margin-bottom: 14px; padding-bottom: 14px; border-bottom: 0.5px solid #E0D6C8;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">Q1 — Liability</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 6px; line-height: 1.25;">What if a guest gets injured?</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 9px; color: var(--saddle); line-height: 1.75;">Tribal Cowboy carries $2M per-occurrence general liability insurance with a dedicated animal liability endorsement. Your company is named as additionally insured on the COI before the event date. Lead-line only riding, fully enclosed panels, and a minimum of two handlers per pony mean the activation is built around preventing injury. We have operated at schools, community events, and public venues without incident.</div>
+        </div>
+
+        <!-- Q2 -->
+        <div style="margin-bottom: 14px; padding-bottom: 14px; border-bottom: 0.5px solid #E0D6C8;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">Q2 — Animal Safety</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 6px; line-height: 1.25;">What if an animal behaves unpredictably?</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 9px; color: var(--saddle); line-height: 1.75;">Our animals are trained for public activations — not borrowed for the day. They're accustomed to crowds, children, noise, and unfamiliar settings. Our handlers read animal behavior continuously and remove any animal showing stress before it becomes a problem. Guests interact from one side of a fixed panel system; the animals are never loose in the activation area at any point.</div>
+        </div>
+
+        <!-- Q3 -->
+        <div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">Q3 — Permits &amp; Compliance</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 6px; line-height: 1.25;">Do we need permits or approvals?</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 9px; color: var(--saddle); line-height: 1.75;">Requirements vary by city and county. Tribal Cowboy handles all permit research and coordination — you don't manage this. We've navigated event permitting across multiple Idaho and Washington jurisdictions. If a permit is needed, we get it. If a health department notification is required, we handle that too. No action required from your team.</div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN — Q4, Q5 -->
+      <div style="display: table-cell; vertical-align: top; width: 50%; padding-left: 18px; border-left: 0.5px solid #E0D6C8;">
+
+        <!-- Q4 -->
+        <div style="margin-bottom: 14px; padding-bottom: 14px; border-bottom: 0.5px solid #E0D6C8;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">Q4 — Cleanup &amp; Sanitation</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 6px; line-height: 1.25;">What about animal waste and cleanup?</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 9px; color: var(--saddle); line-height: 1.75;">Entirely on us. Tribal Cowboy brings dedicated waste management supplies, cleanup materials, and sanitation equipment. The activation area is actively maintained throughout the event — not just at the end. The lot is fully cleared and restored within 90 minutes of close. We leave the parking lot the way we found it.</div>
+        </div>
+
+        <!-- Q5 -->
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 0.5px solid #E0D6C8;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">Q5 — Operations &amp; Parking</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 6px; line-height: 1.25;">How does this affect our lot and daily operations?</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 9px; color: var(--saddle); line-height: 1.75;">The activation uses approximately 6–8 standard parking spaces (40' × 60' footprint). Tribal Cowboy walks the site in advance with your store manager to confirm placement that keeps all traffic lanes, fire access, and store entrances clear. Setup happens before open, teardown is complete before close of business, and guest flow within the activation is managed entirely by our staff. Your team does not coordinate the event — you host it.</div>
+        </div>
+
+        <!-- BRANDED PHOTO CALLOUT -->
+        <div style="background: var(--timber); border-radius: 4px; padding: 13px 15px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; margin-bottom: 5px;">One More Thing Worth Noting</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 13px; font-weight: 500; color: var(--cream); line-height: 1.3; margin-bottom: 6px;">Every photo that leaves this event carries your brand.</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; color: var(--leather); line-height: 1.65;">Our instant photo delivery system overlays every guest photo with your company logo, event name, and date — then delivers it directly to their phone. When guests post to Instagram, Facebook, or text it to family, your brand is in the frame. Dozens to hundreds of branded impressions circulating through the horse community's social feeds from a single event day.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 10 — ABOUT TRIBAL COWBOY
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">About Tribal Cowboy</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">Who We Are</div>
+    <div class="section-heading" style="margin-bottom: 10px;">Real Horses. Real Experience. Real People.</div>
+
+    <div class="two-col">
+      <div class="col-left">
+        <div class="body-text">
+          <p>Tribal Cowboy LLC is an Indigenous-owned equine experience business in Athol, Idaho, operated by Stacie Huffhines — a Nisenan Maidu woman who has spent her life around horses. These are our animals. We know them by name. Every event is staffed by our own team.</p>
+        </div>
+
+        <div class="callout-gold">
+          <div class="callout-label">The Photo System</div>
+          <div class="callout-body">Guests scan a QR code and find their photos instantly — no app, no email, no wait. Every image carries a custom branded frame with your logo, event name, and date. Photos circulate on social for days after the event. CCPA-aligned — no PII stored.</div>
+        </div>
+      </div>
+
+      <div class="col-right">
+        <div class="right-eyebrow">Our Herd</div>
+        <div class="right-heading">Meet the Team</div>
+        <div class="right-body">These animals are our partners, not props. They're calm, trained, and experienced in public activations.</div>
+        <ul class="feature-list">
+          <li><strong style="color:var(--gold);">The Clydesdales</strong> — Four purebred mares, each over 1,800 lbs. Your customers will recognize exactly what they're looking at.</li>
+          <li><strong style="color:var(--gold);">The Pony Herd</strong> — Working ponies for riders ages 3–10, 80 lbs or under. Comfortable in crowds, trained for public events.</li>
+          <li><strong style="color:var(--gold);">All Animals</strong> — Current on health certificates, accustomed to music, crowds, trailers, and unfamiliar environments.</li>
+        </ul>
+        <div style="margin-top: 16px; padding-top: 12px; border-top: 0.5px solid rgba(200,169,110,0.3);">
+          <div class="right-eyebrow">Service Area</div>
+          <div class="right-body">North Idaho and Eastern Washington. Coeur d'Alene, Post Falls, Hayden, and surrounding communities are our primary market. North 40 locations across the region are exactly where we want to be.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MISSION + TESTIMONIALS -->
+    <div style="margin-top: 8px; padding-top: 10px; border-top: 0.5px solid #E0D6C8; display: table; width: 100%; table-layout: fixed;">
+      <div style="display: table-cell; vertical-align: top; width: 48%; padding-right: 16px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--teal); text-transform: uppercase; margin-bottom: 5px;">Why This Exists</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.65;">Horses should be accessible to everyone. Billy — Stacie's brother, who passed in March 2025 one week before his 48th birthday — had Down syndrome and spent his life in a world that didn't always make room for him. Tribal Cowboy is making that room. Every activation is fully accessible, and the business is building toward an indoor arena where people with Down syndrome can ride and work with horses on their own terms.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; width: 52%;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--teal); text-transform: uppercase; margin-bottom: 5px;">What People Say</div>
+        <div style="margin-bottom: 5px; padding: 7px 10px; background: #FBF6EE; border-left: 2px solid var(--gold);">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 10px; font-style: italic; color: var(--timber); line-height: 1.5;">"My 8-year-old said 'that lady in Coeur d'Alene because she let us ride her horses and was nice.'"</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; color: var(--muted); margin-top: 2px;">— Parent, private session</div>
+        </div>
+        <div style="margin-bottom: 5px; padding: 7px 10px; background: #FBF6EE; border-left: 2px solid var(--teal);">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 10px; font-style: italic; color: var(--timber); line-height: 1.5;">"Thank you for giving kids a space to bond with animals."</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; color: var(--muted); margin-top: 2px;">— Repeat weekly lesson family, Coeur d'Alene</div>
+        </div>
+        <div style="padding: 7px 10px; background: #FBF6EE; border-left: 2px solid var(--gold);">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 10px; font-style: italic; color: var(--timber); line-height: 1.5;">"The kids loved it. Thank you Stacie for all the love and kindness!"</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; color: var(--muted); margin-top: 2px;">— Smart Start Learning Academy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHOTO STRIP -->
+    <div style="display: table; width: 100%; table-layout: fixed; margin-top: 8px;">
+      <div style="display: table-cell; vertical-align: top; padding-right: 4px;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/photography-community-events_IMG_1993_community-group-clydesdale_web.jpg" style="width: 100%; height: 90px; display: block; border-radius: 2px; object-fit: cover;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6px; color: var(--muted); text-align: center; margin-top: 2px;">Community event activation</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; padding-right: 4px;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/services-education_IMG_2948_kids-meeting-clydesdale_web.jpg" style="width: 100%; height: 90px; display: block; border-radius: 2px; object-fit: cover; object-position: center top;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6px; color: var(--muted); text-align: center; margin-top: 2px;">Kids meeting the Clydesdale</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/services-education_IMG_4910_school-group-with-pony_web.jpg" style="width: 100%; height: 90px; display: block; border-radius: 2px; object-fit: cover;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6px; color: var(--muted); text-align: center; margin-top: 2px;">School program — parking lot setting</div>
+      </div>
+    </div>
+
+    <!-- QR CODE — SEE IT IN ACTION -->
+    <div style="display: table; width: 100%; table-layout: fixed; margin-top: 6px; background: var(--timber); border-radius: 3px; padding: 8px 14px;">
+      <div style="display: table-cell; vertical-align: middle; width: 60px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAIAAADdBSngAAAE/UlEQVR4nO3dwW3kOBRFUXswyfSi8g+kFh2KNwY8AaiBEQSKvGKfs7ZKZfuBwhfJz8+f768P6Pln9ReAPxNNokSTKNEkSjSJEk2iRJMo0SRKNIkSTaJEk6h/z/zQ69evj3Xev3//7/c58zNnPvma+77P69Inn/m9av/TI6MmUaJJlGgSJZpEiSZPrtDvq21rlePRqPr32l/sfemqa3ev/U+NmkSJJlGiSZRoEiWa7FWhj6rCRtWto+r6+36L+z75HausR30foyZRokmUaBIlmkSJJrtX6DONWlV+NHN+/Inr+WcyahIlmkSJJlGiSZRoEvXICn3mHPrxXqN2go9awb4royZRokmUaBIlmkSJJrtX6Gtnae9bZz7zqjPeg94PXLvXTEZNokSTKNEkSjSJEk32qtDXzuSO6nC+9meOZn6f/uy8UZMo0SRKNIkSTaJEkydX6P1dzDOry5m19tEe8+NnGDWJEk2iRJMo0SRKNIn6/Pn+Sp33fcbMvnD3vQ0Y1ZXuNfE8uJmd64yaRIkmUaJJlGgSJZo8uUJfu8967RuDtevD37fVv/e9UXHaGpvzQCdKNIkSTaJEk732oa+dpe2fONav/c9YW8UbNYkSTaJEkyjRJEo0eXKFft/542vP+x7VBX1mP7e16/BnvjEwahIlmkSJJlGiSZRoslenuPvWkM98G3DfVdd6vs2sf98TZ/CvvXkwahIlmkSJJlGiSZRosvt56KPMnEceNWN+5u79e71uezdyjVGTKNEkSjSJEk2iRJPdV7mPMrMz+VrXTm3rr7HXKY7NeaATJZpEiSZRoslevdyPajuv+6u4z3hNPI1u7V7+I6MmUaJJlGgSJZpEiSZ/3xz6fXPE135m5vlrZ+6+9lT3M9auTDBqEiWaRIkmUaJJlGgS9YA59Jn93tfWyDNX+L+W/lWdtsaDeaATJZpEiSZRoklUrlPc2n7v91Xxo855f5+46trd71tjoJc7W/FAJ0o0iRJNokSTvebQ1/aOu+a+zuRrP/kdm/selQ2jJlGiSZRoEiWaRIkmu+9Dv6+n2cw970+sZI9qO+WvMWoSJZpEiSZRokmUaPLkOfRR65/PXHXGzLcBM/u931f/vpfOs9uHzlY80IkSTaJEkyjRZPdOcWf8Paeb3ffJr6VV/H0984+MmkSJJlGiSZRoEiWa7NUprjbbO3P19ShrT1t7Le13d4ZRkyjRJEo0iRJNokSTqKnnoZ+p3dZ2b7uv2p05G/4aVH1fu2rUCgejJlGiSZRoEiWaRIkmT67Qr9VcZ656Yk+z+yr9UevM1755GMWoSZRoEiWaRIkmUaLJXnPoM8087/vaJ5+56tq9zpj5e818P2DUJEo0iRJNokSTKNFkr33o/V5to+Z/az3YR5m5e/3a3Y2aRIkmUaJJlGgSJZrsVaEfzexyNnN+vFZ9vybOs6/d3W/UJEo0iRJNokSTKNFk9wp9ptoe81FXrZ0xfw062fxM9z9z6DyYBzpRokmUaBIlmkQ9skJ/Yuf2Mz9z3/uB18ROAnq5szkPdKJEkyjRJEo02b1Cv2/+98y9Zs7tjtqZvraKf9/29zkyh85WPNCJEk2iRJMo0WSvCn1td/eZ+8dH3WtU1fxeevejM59jHzpb8UAnSjSJEk2iRJOoz5/vr9XfAf7AqEmUaBIlmkSJJlGiSZRoEiWaRIkmUaJJlGgSJZp8NP0HAOb5DU4MPu8AAAAASUVORK5CYII=" style="width: 56px; height: 56px; display: block;">
+      </div>
+      <div style="display: table-cell; vertical-align: middle; padding-left: 12px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">See Us In Action</div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 11px; font-weight: 500; color: var(--cream); line-height: 1.4;">Scan to watch a Tribal Cowboy activation — filmed at an Autism Society of Idaho event.</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; color: var(--muted); margin-top: 3px;">instagram.com/tribalcowboy &nbsp;·&nbsp; or search @TribalCowboy</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 10 — NEXT STEPS
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Next Steps</div>
+  </div>
+
+  <div class="page-content" style="padding-top: 0.35in; padding-bottom: 0.45in;">
+    <div class="section-eyebrow">The CDA Pilot Offer</div>
+    <div class="section-heading" style="font-size: 27px; margin-bottom: 6px;">One Event. Clear Metrics. No Guesswork.</div>
+
+    <div class="body-text" style="margin-bottom: 8px;">
+      <p>Start with a single Tier 2 activation at the CDA location — the founding event for what becomes a North Idaho program. Success metrics defined upfront. Debrief scheduled before the event date. You know exactly what you're measuring before the horses arrive.</p>
+    </div>
+
+    <!-- PILOT SCENARIO TABLE -->
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase; margin-bottom: 5px;">CDA Pilot — Projected Event Math <span style="font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); font-size: 7px;">(based on comparable North Idaho events — Rathdrum Days, Make It Messy [recurring family event series, Hayden])</span></div>
+    <table style="width: 100%; border-collapse: collapse; font-family: 'Montserrat', sans-serif; font-size: 8.5px; margin-bottom: 12px;">
+      <thead>
+        <tr>
+          <th style="background: var(--timber); color: var(--cream); padding: 7px 12px; text-align: left; font-size: 7.5px; letter-spacing: 0.1em; width: 34%;">Metric</th>
+          <th style="background: var(--saddle); color: var(--cream); padding: 7px 12px; text-align: center; font-size: 7.5px; letter-spacing: 0.1em; width: 22%;">Conservative</th>
+          <th style="background: var(--timber); color: var(--gold); padding: 7px 12px; text-align: center; font-size: 7.5px; letter-spacing: 0.1em; width: 22%;">Expected</th>
+          <th style="background: var(--teal); color: #D0F0EA; padding: 7px 12px; text-align: center; font-size: 7.5px; letter-spacing: 0.1em; width: 22%;">Strong Day</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Families engaged</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--saddle);">40–60</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; font-weight: 600; color: var(--timber);">80–100</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--teal); font-weight: 600;">120+</td>
+        </tr>
+        <tr style="background: rgba(243,237,227,0.5);">
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Avg incremental in-store basket</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--saddle);">$15</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; font-weight: 600; color: var(--timber);">$25</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--teal); font-weight: 600;">$35</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Est. same-day store revenue lift</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--saddle);">$600–$900</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; font-weight: 600; color: var(--timber);">$2,000–$2,500</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--teal); font-weight: 600;">$4,000+</td>
+        </tr>
+        <tr style="background: rgba(243,237,227,0.5);">
+          <td style="padding: 6px 12px; color: var(--saddle);">Branded photos delivered &amp; shared</td>
+          <td style="padding: 6px 12px; text-align: center; color: var(--saddle);">40+</td>
+          <td style="padding: 6px 12px; text-align: center; font-weight: 600; color: var(--timber);">100+</td>
+          <td style="padding: 6px 12px; text-align: center; color: var(--teal); font-weight: 600;">200+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); font-style: italic; margin-bottom: 10px;">Store revenue figures are projected incremental spend, not total store revenue. Comparable events (Rathdrum Days 2024, Make It Messy — Hayden) generated $2,000–$2,500 in total event revenue per activation in community festival settings. You know your store's actual traffic and average basket size better than any benchmark — if your numbers run higher, the math works harder. Does not include repeat visit value, social reach, or brand equity.</div>
+
+    <!-- THREE WINDOWS COMPACT -->
+    <div class="rule-thin" style="margin: 8px 0;"></div>
+    <div class="section-eyebrow" style="margin-bottom: 6px;">Recommended Starting Points</div>
+    <div style="display: table; width: 100%; table-layout: fixed; margin-bottom: 10px;">
+      <div style="display: table-cell; vertical-align: top; padding: 0 6px 0 0;">
+        <div style="background: var(--offwhite); border: 0.5px solid #E8DFD0; border-top: 2px solid var(--gold); padding: 9px 12px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase; margin-bottom: 3px;">Option A</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 3px;">Spring Sale Weekend</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.6;">Late April / early May. Peak spring traffic. Families stocking up — bring the kids for the horses.</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; color: var(--muted); margin-top: 4px;">Tier 1 — $2,500</div>
+        </div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; padding: 0 3px;">
+        <div style="background: var(--offwhite); border: 0.5px solid #E8DFD0; border-top: 2px solid var(--teal); padding: 9px 12px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.12em; color: var(--teal); text-transform: uppercase; margin-bottom: 3px;">Option B ★ Recommended</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 3px;">North Idaho Fair Weekend</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.6;">Late August. Families want horses without the fair chaos. North 40 becomes the easier stop.</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; color: var(--muted); margin-top: 4px;">Tier 2 — $3,000 · Founding Rate <span style="font-weight: 400; font-size: 7.5px;">(first-event rate — standard Tier 2 pricing applies after pilot)</span></div>
+        </div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; padding: 0 0 0 6px;">
+        <div style="background: var(--offwhite); border: 0.5px solid #E8DFD0; border-top: 2px solid var(--saddle); padding: 9px 12px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.12em; color: var(--saddle); text-transform: uppercase; margin-bottom: 3px;">Option C</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 3px;">Back to School / Fall</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.6;">Late August / September. Families in buying mode. Anchors the seasonal traffic spike.</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; color: var(--muted); margin-top: 4px;">Tier 1 or 2 — ask about bundled rate</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout-gold" style="padding: 10px 16px; margin: 0 0 14px 0;">
+      <div class="callout-label">Founding Location — CDA Coeur d'Alene</div>
+      <div class="callout-body" style="font-size: 9.5px;">The first North 40 location to partner becomes the anchor for a North Idaho program. First-event debrief included — attendance, photos delivered, estimated social reach, and a plain-language assessment of what worked. One call to start. No commitment beyond that.</div>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-left">
+        <div class="contact-name">Stacie Huffhines</div>
+        <div class="contact-title">Owner &amp; Operator — Tribal Cowboy LLC &nbsp;|&nbsp; Nisenan Maidu &nbsp;|&nbsp; Athol, Idaho</div>
+        <div class="contact-details">
+          <a href="mailto:info@tribalcowboy.com">info@tribalcowboy.com</a><br>
+          <a href="https://www.tribalcowboy.com">www.tribalcowboy.com</a><br>
+          Instagram: @TribalCowboy &nbsp;|&nbsp; Facebook: @TribalCowboys
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <div>
+          <div class="cta-btn" style="display: block; text-align: center; padding: 13px 28px; font-size: 11px; letter-spacing: 0.06em;">Schedule a 30-Min Call</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--leather); text-align: center; margin-top: 6px;">info@tribalcowboy.com · www.tribalcowboy.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — North 40 Outfitters Partnership Proposal — March 2026</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+</body>
+</html>

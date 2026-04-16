@@ -1,0 +1,982 @@
+<style>
+/* ============================================================
+   TRIBAL COWBOY — WAGON & CARRIAGE RIDES PAGE
+   Scope: body#collection-69dc4ccfb435b2346b235937
+   ============================================================ */
+
+body#collection-69dc4ccfb435b2346b235937 .page-section,
+body#collection-69dc4ccfb435b2346b235937 .content-wrapper {
+  display: none !important;
+}
+
+/* ---- RESET / WRAPPER ---- */
+#tc-cr {
+  font-family: 'Montserrat', sans-serif;
+  color: #2C2520;
+  background: #F3EDE3;
+}
+#tc-cr * { box-sizing: border-box; }
+#tc-cr a { text-decoration: none; }
+
+/* ---- HERO ---- */
+#tc-cr .cr-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background-position: center 35%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#tc-cr .cr-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,14,10,0.97) 0%, rgba(20,14,10,0.55) 45%, rgba(44,37,32,0.08) 100%);
+}
+#tc-cr .cr-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 64px;
+  max-width: 780px;
+}
+#tc-cr .cr-hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 20px 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+#tc-cr .cr-hero h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(56px, 9vw, 108px) !important;
+  font-weight: 400 !important;
+  line-height: 1.0 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 28px 0;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  letter-spacing: -0.5px;
+}
+#tc-cr .cr-hero-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(243,237,227,0.90) !important;
+  margin: 0 0 48px 0;
+  line-height: 1.75;
+  max-width: 540px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+#tc-cr .cr-hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+#tc-cr .cr-btn-gold {
+  display: inline-block;
+  padding: 16px 40px;
+  background: #D4A843;
+  color: #2C2520 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+#tc-cr .cr-btn-gold:hover { background: #c49930; }
+#tc-cr .cr-btn-ghost {
+  display: inline-block;
+  padding: 15px 38px;
+  background: transparent;
+  border: 1px solid rgba(243,237,227,0.45);
+  color: #F3EDE3 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: border-color 0.2s;
+}
+#tc-cr .cr-btn-ghost:hover { border-color: rgba(243,237,227,0.8); }
+
+/* ---- FOUR RIDE OPTIONS ---- */
+#tc-cr .cr-rides {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+#tc-cr .cr-rides-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+#tc-cr .cr-rides-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(36px, 4.5vw, 58px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+  line-height: 1.1;
+}
+#tc-cr .cr-rides-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  background: #2C2520;
+}
+#tc-cr .cr-ride-card {
+  background: #F3EDE3;
+  overflow: hidden;
+}
+#tc-cr .cr-ride-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+#tc-cr .cr-ride-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+#tc-cr .cr-ride-card:hover .cr-ride-img img { transform: scale(1.04); }
+#tc-cr .cr-ride-body { padding: 36px 32px 40px; }
+#tc-cr .cr-ride-num {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin-bottom: 12px;
+}
+#tc-cr .cr-ride-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #2C2520 !important;
+  margin: 0 0 16px 0;
+  line-height: 1.15;
+}
+#tc-cr .cr-ride-text {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #8A7868 !important;
+  margin: 0 0 20px 0;
+}
+#tc-cr .cr-ride-best {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #2C2520 !important;
+  border-top: 1px solid rgba(44,37,32,0.12);
+  padding-top: 16px;
+  margin: 0;
+}
+#tc-cr .cr-ride-best span { color: #D4A843 !important; font-weight: 700; }
+
+/* ---- WHAT'S INCLUDED ---- */
+#tc-cr .cr-included {
+  background: #2C2520;
+  padding: 100px 60px;
+}
+#tc-cr .cr-included-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+#tc-cr .cr-included-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 18px 0;
+}
+#tc-cr .cr-included-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0;
+  line-height: 1.15;
+}
+#tc-cr .cr-included-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background: rgba(212,168,67,0.10);
+}
+#tc-cr .cr-included-item {
+  background: #2C2520;
+  padding: 48px 36px;
+  border-top: 2px solid #D4A843;
+}
+#tc-cr .cr-included-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #F3EDE3 !important;
+  margin: 0 0 14px 0;
+}
+#tc-cr .cr-included-text {
+  font-size: 13px;
+  line-height: 1.85;
+  color: rgba(243,237,227,0.58) !important;
+  margin: 0;
+}
+
+/* ---- WHERE WE RIDE ---- */
+#tc-cr .cr-venues {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+#tc-cr .cr-venues-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+#tc-cr .cr-venues-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+}
+#tc-cr .cr-venues-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  max-width: 960px;
+  margin: 0 auto;
+  background: rgba(44,37,32,0.10);
+}
+#tc-cr .cr-venue-card {
+  background: #F3EDE3;
+  padding: 52px 44px;
+  border-top: 2px solid #D4A843;
+}
+#tc-cr .cr-venue-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #2C2520 !important;
+  margin: 0 0 16px 0;
+}
+#tc-cr .cr-venue-text {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #8A7868 !important;
+  margin: 0;
+}
+
+/* ---- PRICING ---- */
+#tc-cr .cr-pricing {
+  padding: 100px 60px;
+  background: #2C2520;
+}
+#tc-cr .cr-pricing-header { text-align: center; margin-bottom: 16px; }
+#tc-cr .cr-pricing-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 18px 0;
+}
+#tc-cr .cr-pricing-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 16px 0;
+}
+#tc-cr .cr-pricing-sub {
+  font-size: 13px;
+  color: rgba(243,237,227,0.55) !important;
+  max-width: 620px;
+  margin: 0 auto 64px;
+  line-height: 1.85;
+  text-align: center;
+}
+#tc-cr .cr-pricing-block {
+  max-width: 900px;
+  margin: 0 auto 56px;
+}
+#tc-cr .cr-pricing-block-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 20px 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(212,168,67,0.25);
+}
+#tc-cr .cr-pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+#tc-cr .cr-pricing-table th {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(243,237,227,0.40) !important;
+  padding: 0 16px 14px 0;
+  text-align: left;
+  border-bottom: 1px solid rgba(243,237,227,0.07);
+}
+#tc-cr .cr-pricing-table td {
+  padding: 20px 16px 20px 0;
+  font-size: 14px;
+  color: rgba(243,237,227,0.80) !important;
+  border-bottom: 1px solid rgba(243,237,227,0.06);
+  vertical-align: middle;
+  line-height: 1.4;
+}
+#tc-cr .cr-pricing-table tr:last-child td { border-bottom: none; }
+#tc-cr .cr-pricing-table .td-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #F3EDE3 !important;
+  white-space: nowrap;
+  text-align: right;
+  padding-right: 0;
+}
+#tc-cr .cr-pricing-table .th-price { text-align: right; }
+#tc-cr .cr-pricing-footnote {
+  font-size: 11px;
+  color: rgba(243,237,227,0.35) !important;
+  line-height: 1.75;
+  margin: 0;
+  font-style: italic;
+}
+#tc-cr .cr-pricing-combo {
+  max-width: 900px;
+  margin: 0 auto 0;
+  border-top: 1px solid rgba(212,168,67,0.2);
+  padding-top: 40px;
+}
+#tc-cr .cr-pricing-combo-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 14px 0;
+}
+#tc-cr .cr-pricing-combo p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: rgba(243,237,227,0.55) !important;
+  margin: 0;
+}
+#tc-cr .cr-pricing-fine {
+  max-width: 900px;
+  margin: 40px auto 0;
+  font-size: 11px;
+  color: rgba(243,237,227,0.35) !important;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* ---- HOW IT WORKS ---- */
+#tc-cr .cr-how {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+#tc-cr .cr-how-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+#tc-cr .cr-how-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+}
+#tc-cr .cr-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+#tc-cr .cr-steps::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background: #D4A843;
+  opacity: 0.3;
+}
+#tc-cr .cr-step { text-align: center; padding: 0 20px; position: relative; z-index: 1; }
+#tc-cr .cr-step-dot {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #F3EDE3;
+  border: 1px solid #D4A843;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: #D4A843 !important;
+  font-weight: 400;
+}
+#tc-cr .cr-step-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2C2520 !important;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.3px;
+}
+#tc-cr .cr-step-text {
+  font-size: 12px;
+  line-height: 1.75;
+  color: #8A7868 !important;
+  margin: 0;
+}
+
+/* ---- TESTIMONIALS ---- */
+#tc-cr .cr-testimonials {
+  background: #2C2520;
+  padding: 100px 60px;
+}
+#tc-cr .cr-testimonials-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+#tc-cr .cr-testimonials-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0;
+}
+#tc-cr .cr-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background: rgba(212,168,67,0.08);
+}
+#tc-cr .cr-testimonial { background: #2C2520; padding: 44px 36px; }
+#tc-cr .cr-testimonial-mark {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  line-height: 0.7;
+  color: #D4A843 !important;
+  margin-bottom: 24px;
+}
+#tc-cr .cr-testimonial-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(243,237,227,0.82) !important;
+  margin: 0 0 28px 0;
+  font-style: italic;
+}
+#tc-cr .cr-testimonial-source {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0;
+}
+
+/* ---- FAQ ---- */
+#tc-cr .cr-faq {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+#tc-cr .cr-faq-header { text-align: center; margin-bottom: 64px; }
+#tc-cr .cr-faq-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+}
+#tc-cr .cr-faq-list { max-width: 780px; margin: 0 auto; }
+#tc-cr .cr-faq-item { border-top: 1px solid rgba(44,37,32,0.13); }
+#tc-cr .cr-faq-item:last-child { border-bottom: 1px solid rgba(44,37,32,0.13); }
+#tc-cr .cr-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  cursor: pointer;
+  gap: 20px;
+}
+#tc-cr .cr-faq-q-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2C2520 !important;
+  margin: 0;
+  line-height: 1.4;
+}
+#tc-cr .cr-faq-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(44,37,32,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #D4A843;
+  font-weight: 300;
+  transition: transform 0.25s;
+  user-select: none;
+}
+#tc-cr .cr-faq-item.open .cr-faq-icon { transform: rotate(45deg); }
+#tc-cr .cr-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+#tc-cr .cr-faq-answer-inner {
+  padding: 0 24px 28px 0;
+  font-size: 14px;
+  line-height: 1.85;
+  color: #8A7868 !important;
+}
+
+/* ---- FINAL CTA ---- */
+#tc-cr .cr-cta {
+  background: #2C2520;
+  padding: 120px 48px;
+  text-align: center;
+}
+#tc-cr .cr-cta h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(38px, 5.5vw, 72px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+}
+#tc-cr .cr-cta-body {
+  font-size: 16px;
+  color: rgba(243,237,227,0.65) !important;
+  max-width: 480px;
+  margin: 0 auto 52px;
+  line-height: 1.75;
+}
+#tc-cr .cr-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+#tc-cr .cr-btn-cream {
+  display: inline-block;
+  padding: 16px 44px;
+  background: #F3EDE3;
+  color: #2C2520 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+#tc-cr .cr-btn-cream:hover { background: #fff; }
+#tc-cr .cr-btn-ghost-dark {
+  display: inline-block;
+  padding: 15px 42px;
+  background: transparent;
+  border: 1px solid rgba(243,237,227,0.35);
+  color: rgba(243,237,227,0.85) !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: border-color 0.2s;
+}
+#tc-cr .cr-btn-ghost-dark:hover { border-color: rgba(243,237,227,0.7); }
+#tc-cr .cr-cta-footnote {
+  margin-top: 48px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(243,237,227,0.28) !important;
+}
+#tc-cr .cr-cta-crosslink {
+  margin-top: 16px;
+  font-size: 13px;
+  color: rgba(243,237,227,0.45) !important;
+}
+#tc-cr .cr-cta-crosslink a {
+  color: rgba(243,237,227,0.55) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+#tc-cr .cr-cta-crosslink a:hover { color: #F3EDE3 !important; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  #tc-cr .cr-rides-grid { grid-template-columns: 1fr; }
+  #tc-cr .cr-included-grid { grid-template-columns: repeat(2, 1fr); }
+  #tc-cr .cr-venues-grid { grid-template-columns: 1fr; }
+  #tc-cr .cr-testimonials-grid { grid-template-columns: 1fr; }
+  #tc-cr .cr-steps { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+  #tc-cr .cr-steps::before { display: none; }
+}
+@media (max-width: 640px) {
+  #tc-cr .cr-hero-content { padding: 56px 24px; }
+  #tc-cr .cr-rides { padding: 72px 24px; }
+  #tc-cr .cr-included { padding: 72px 24px; }
+  #tc-cr .cr-included-grid { grid-template-columns: 1fr; }
+  #tc-cr .cr-venues { padding: 72px 24px; }
+  #tc-cr .cr-pricing { padding: 72px 24px; }
+  #tc-cr .cr-pricing-table th,
+  #tc-cr .cr-pricing-table td { font-size: 12px; padding-right: 8px; }
+  #tc-cr .cr-pricing-table .td-price { font-size: 18px; }
+  #tc-cr .cr-how { padding: 72px 24px; }
+  #tc-cr .cr-steps { grid-template-columns: 1fr; }
+  #tc-cr .cr-testimonials { padding: 72px 24px; }
+  #tc-cr .cr-faq { padding: 72px 24px; }
+  #tc-cr .cr-cta { padding: 80px 24px; }
+}
+</style>
+
+<script>
+(function() {
+  var HERO  = 'https://images.squarespace-cdn.com/content/v1/675345d03ff97b41f87c5858/363ac9fc-b824-4cdd-a60b-1bce83ec6a92/services-carriage_cinderella-carriage-lake-pend-oreille_web.jpg';
+  var TEAM  = 'https://images.squarespace-cdn.com/content/v1/675345d03ff97b41f87c5858/7fec5c91-b8e5-4e48-871c-b5dbd0bfb56b/12-passenger-wagon-wheelchair-ramp.png';
+  var CIN   = 'https://images.squarespace-cdn.com/content/v1/675345d03ff97b41f87c5858/363ac9fc-b824-4cdd-a60b-1bce83ec6a92/services-carriage_cinderella-carriage-lake-pend-oreille_web.jpg';
+  var AIR   = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/e3ab1333-0278-42c4-a205-4d1229835512/tribal-cowboy-clydesdale-red-air-ride-carriage-north-idaho-forest.jpg?content-type=image%2Fjpeg';
+  var PONY  = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/ac47c185-f08b-4d80-a40c-863391a522bf/services-wagon-rides_IMG_9073_girl-pony-wagon_web.jpg?content-type=image%2Fjpeg';
+
+  function buildPage() {
+    var page = document.getElementById('page');
+    if (!page) { setTimeout(buildPage, 120); return; }
+
+    page.querySelectorAll('.page-section').forEach(function(s) {
+      s.style.setProperty('display', 'none', 'important');
+    });
+
+    var wrap = document.createElement('div');
+    wrap.id = 'tc-cr';
+    wrap.innerHTML =
+
+      /* ── HERO ── */
+      '<section class="cr-hero">' +
+        '<div class="cr-hero-overlay"></div>' +
+        '<div class="cr-hero-content">' +
+          '<p class="cr-hero-eyebrow">Wagon &amp; Carriage Rides &mdash; North Idaho</p>' +
+          '<h1>The ride everyone<br>lines up for.</h1>' +
+          '<p class="cr-hero-sub">Clydesdale-drawn wagon rides, horse-drawn carriage rides, and mini pony wagon rides for festivals, holiday events, weddings, private parties, and farm experiences across North Idaho and Eastern Washington.</p>' +
+          '<div class="cr-hero-btns">' +
+            '<a href="mailto:info@tribalcowboy.com?subject=Wagon%20%26%20Carriage%20Ride%20Inquiry" class="cr-btn-gold">Check Availability</a>' +
+            '<a href="tel:+12082612092" class="cr-btn-ghost">Call (208) 261-2092</a>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── FOUR RIDE OPTIONS ── */
+      '<section class="cr-rides">' +
+        '<div class="cr-rides-header"><h2>Four ways to ride.</h2></div>' +
+        '<div class="cr-rides-grid">' +
+
+          '<div class="cr-ride-card">' +
+            '<div class="cr-ride-img"><img src="' + TEAM + '" alt="Clydesdale team pulling 12-passenger wagon at festival in North Idaho" loading="lazy"></div>' +
+            '<div class="cr-ride-body">' +
+              '<span class="cr-ride-num">01 &mdash; Clydesdale Team &amp; 12-Passenger Wagon</span>' +
+              '<p class="cr-ride-title">The showstopper.</p>' +
+              '<p class="cr-ride-text">Two Clydesdales pulling our full-size 12-passenger wagon. This is the one that stops traffic, draws crowds, and creates the longest line at any festival. Loop rides at public events or single-route rides at private gatherings. Twelve seats per trip means high throughput for big crowds. Includes wheelchair ramp.</p>' +
+              '<p class="cr-ride-best"><span>Best for:</span> Festivals, harvest events, holiday markets, corporate events, large private parties.</p>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="cr-ride-card">' +
+            '<div class="cr-ride-img"><img src="' + CIN + '" alt="Cinderella-style wagon pulled by single Clydesdale at event in North Idaho" loading="lazy"></div>' +
+            '<div class="cr-ride-body">' +
+              '<span class="cr-ride-num">02 &mdash; Cinderella Wagon (Single Clydesdale)</span>' +
+              '<p class="cr-ride-title">A storybook look.</p>' +
+              '<p class="cr-ride-text">Our Cinderella-style wagon pulled by a single Clydesdale. An eye-catching, storybook setup that works for weddings, holiday events, grand entrances, and photo-heavy occasions. Same Clydesdale power, more refined presentation.</p>' +
+              '<p class="cr-ride-best"><span>Best for:</span> Weddings, holiday events, formal gatherings, grand entrances, themed events.</p>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="cr-ride-card">' +
+            '<div class="cr-ride-img"><img src="' + AIR + '" alt="Air ride carriage pulled by Clydesdale for intimate event in North Idaho" loading="lazy"></div>' +
+            '<div class="cr-ride-body">' +
+              '<span class="cr-ride-num">03 &mdash; Air Ride Carriage (Single Clydesdale)</span>' +
+              '<p class="cr-ride-title">Smooth, intimate, comfortable.</p>' +
+              '<p class="cr-ride-text">Our smaller air ride carriage pulled by a single Clydesdale. Seats up to 5 passengers. A smoother, more intimate ride for events where comfort and conversation matter. Weddings, proposals, VIP guest experiences, or any event where the ride itself is the main attraction.</p>' +
+              '<p class="cr-ride-best"><span>Best for:</span> Weddings, proposals, VIP experiences, intimate events, photo sessions.</p>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="cr-ride-card">' +
+            '<div class="cr-ride-img"><img src="' + PONY + '" alt="Mini pony pulling decorated wagon with child at family event in North Idaho" loading="lazy"></div>' +
+            '<div class="cr-ride-body">' +
+              '<span class="cr-ride-num">04 &mdash; Mini Pony Wagon Ride</span>' +
+              '<p class="cr-ride-title">The one that makes parents pull out their phones.</p>' +
+              '<p class="cr-ride-text">A kid-sized wagon pulled by one of our mini ponies. Gentle, slow, and designed for the littlest riders who want their own experience. Decorated by season &mdash; it already looks the part when it shows up.</p>' +
+              '<p class="cr-ride-best"><span>Best for:</span> Birthday parties, family events, farmers markets, school programs, any event with young kids.</p>' +
+            '</div>' +
+          '</div>' +
+
+        '</div>' +
+      '</section>' +
+
+      /* ── WHAT'S INCLUDED ── */
+      '<section class="cr-included">' +
+        '<div class="cr-included-header">' +
+          '<p class="cr-included-eyebrow">Every Booking</p>' +
+          '<h2>Every ride includes the full setup.</h2>' +
+        '</div>' +
+        '<div class="cr-included-grid">' +
+          '<div class="cr-included-item">' +
+            '<p class="cr-included-title">The Horses</p>' +
+            '<p class="cr-included-text">Real Clydesdales &mdash; as a team or single &mdash; and mini ponies from our own herd. Not rented, not borrowed. These are animals we handle every day and trust in any crowd.</p>' +
+          '</div>' +
+          '<div class="cr-included-item">' +
+            '<p class="cr-included-title">Trained Driver &amp; Handler</p>' +
+            '<p class="cr-included-text">Our team manages hitching, driving, loading passengers, and all animal care from arrival to departure. No experience needed from your side.</p>' +
+          '</div>' +
+          '<div class="cr-included-item">' +
+            '<p class="cr-included-title">Professional Photography</p>' +
+            '<p class="cr-included-text">A photographer captures the ride and guest reactions. Not a snapshot &mdash; real candid moments with real horses that guests actually want to keep.</p>' +
+          '</div>' +
+          '<div class="cr-included-item">' +
+            '<p class="cr-included-title">Branded Photo Overlays</p>' +
+            '<p class="cr-included-text">Every photo gets a custom overlay with your event name, logo, and date. Your branding travels with every share.</p>' +
+          '</div>' +
+          '<div class="cr-included-item">' +
+            '<p class="cr-included-title">Same-Day Photo Delivery</p>' +
+            '<p class="cr-included-text">Guests scan a QR code and get their photos delivered to their phone before they leave. No app, no waiting, no follow-up email required.</p>' +
+          '</div>' +
+          '<div class="cr-included-item">' +
+            '<p class="cr-included-title">Full Setup &amp; Teardown</p>' +
+            '<p class="cr-included-text">Wagon, fencing, staging area, signage &mdash; we bring it all and clean it all up. You focus on the event.</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── WHERE WE RIDE ── */
+      '<section class="cr-venues">' +
+        '<div class="cr-venues-header"><h2>The kind of events we ride at.</h2></div>' +
+        '<div class="cr-venues-grid">' +
+          '<div class="cr-venue-card">' +
+            '<p class="cr-venue-title">Holiday Events &amp; Winter Markets</p>' +
+            '<p class="cr-venue-text">Tree lightings, Santa events, winter festivals. A Clydesdale wagon with string lights pulling through a holiday market is the thing people photograph and post about for weeks.</p>' +
+          '</div>' +
+          '<div class="cr-venue-card">' +
+            '<p class="cr-venue-title">Festivals &amp; Fairs</p>' +
+            '<p class="cr-venue-text">Loop rides at harvest festivals, county fairs, Fourth of July events, community celebrations. The wagon line is always the longest &mdash; and families stay longer because of it.</p>' +
+          '</div>' +
+          '<div class="cr-venue-card">' +
+            '<p class="cr-venue-title">Weddings &amp; Private Events</p>' +
+            '<p class="cr-venue-text">Carriage arrivals, wagon rides between ceremony and reception, guest rides during cocktail hour. A horse-drawn entrance changes the whole energy of the event.</p>' +
+          '</div>' +
+          '<div class="cr-venue-card">' +
+            '<p class="cr-venue-title">Farm &amp; Ranch Experiences</p>' +
+            '<p class="cr-venue-text">Rides on our property in Athol or at a partner location. Great for family outings, fall activities, or intimate gatherings that want the full ranch experience.</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── PRICING ── */
+      '<section class="cr-pricing">' +
+        '<div class="cr-pricing-header">' +
+          '<p class="cr-pricing-eyebrow">Transparent Pricing</p>' +
+          '<h2>Pricing.</h2>' +
+        '</div>' +
+        '<p class="cr-pricing-sub">All Clydesdale bookings are a half-day (4 hours) minimum. Full-day bookings available. Every booking includes driver, handler, professional photographer, branded photo overlays, and same-day QR photo delivery. Travel fees may apply depending on location.</p>' +
+
+        '<div class="cr-pricing-block">' +
+          '<p class="cr-pricing-block-label">Clydesdale Rides &mdash; 4-Hour Minimum</p>' +
+          '<table class="cr-pricing-table">' +
+            '<thead><tr>' +
+              '<th>Ride Type</th>' +
+              '<th class="th-price">Half Day (4 hrs)</th>' +
+              '<th class="th-price">Full Day (8 hrs)</th>' +
+            '</tr></thead>' +
+            '<tbody>' +
+              '<tr><td>Clydesdale Team + 12-Passenger Wagon</td><td class="td-price">$1,800</td><td class="td-price">$2,800</td></tr>' +
+              '<tr><td>Cinderella Wagon (Single Clydesdale)</td><td class="td-price">$1,800</td><td class="td-price">$2,800</td></tr>' +
+              '<tr><td>Air Ride Carriage (Single Clydesdale, up to 5 passengers)</td><td class="td-price">$1,200</td><td class="td-price">$1,800</td></tr>' +
+            '</tbody>' +
+          '</table>' +
+          '<p class="cr-pricing-footnote">Full-day bookings include scheduled 15-20 minute breaks every 2 hours and a full 1-hour break at the 4-hour mark. The horses work hard &mdash; we take care of them.</p>' +
+        '</div>' +
+
+        '<div class="cr-pricing-block">' +
+          '<p class="cr-pricing-block-label">Mini Pony Wagon</p>' +
+          '<table class="cr-pricing-table">' +
+            '<thead><tr>' +
+              '<th>Ride Type</th>' +
+              '<th class="th-price">Duration</th>' +
+              '<th class="th-price">Price</th>' +
+            '</tr></thead>' +
+            '<tbody>' +
+              '<tr><td>Mini Pony Wagon Ride</td><td class="td-price" style="font-size:14px;font-family:\'Montserrat\',sans-serif;">2 hours</td><td class="td-price">$400</td></tr>' +
+              '<tr><td>Mini Pony Wagon &mdash; Extended</td><td class="td-price" style="font-size:14px;font-family:\'Montserrat\',sans-serif;">Each additional hour</td><td class="td-price">Ask us</td></tr>' +
+            '</tbody>' +
+          '</table>' +
+        '</div>' +
+
+        '<div class="cr-pricing-combo">' +
+          '<p class="cr-pricing-combo-label">Combo Packages</p>' +
+          '<p>Book a Clydesdale ride + mini pony wagon at the same event for package pricing. This is one of our most popular setups for festivals and large events &mdash; the big wagon draws adults while the pony wagon keeps kids busy. Contact us for a custom quote.</p>' +
+        '</div>' +
+
+        '<p class="cr-pricing-fine">All pricing includes driver, handler, photographer, branded photo delivery, and full setup/teardown. No surprise fees on event day. Pricing may vary based on location and event setup requirements.</p>' +
+      '</section>' +
+
+      /* ── HOW IT WORKS ── */
+      '<section class="cr-how">' +
+        '<div class="cr-how-header"><h2>How booking works.</h2></div>' +
+        '<div class="cr-steps">' +
+          '<div class="cr-step"><div class="cr-step-dot">1</div><p class="cr-step-title">Tell Us What You Need</p><p class="cr-step-text">Email or contact us with your event date, location, guest count, and which ride type you have in mind. Not sure? We\'ll help you pick.</p></div>' +
+          '<div class="cr-step"><div class="cr-step-dot">2</div><p class="cr-step-title">Get a Quote</p><p class="cr-step-text">We\'ll respond within one business day with availability, pricing, and recommendations for your specific event layout.</p></div>' +
+          '<div class="cr-step"><div class="cr-step-dot">3</div><p class="cr-step-title">We Show Up Ready</p><p class="cr-step-text">Our team arrives early with the horse, wagon or carriage, fencing, staging area, and photography gear. Everything\'s handled.</p></div>' +
+          '<div class="cr-step"><div class="cr-step-dot">4</div><p class="cr-step-title">Guests Ride &amp; Get Their Photos</p><p class="cr-step-text">Every rider gets photos delivered same-day via QR code. Branded with your event name and logo before they leave.</p></div>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── TESTIMONIALS ── */
+      '<section class="cr-testimonials">' +
+        '<div class="cr-testimonials-header"><h2>From the people who booked rides.</h2></div>' +
+        '<div class="cr-testimonials-grid">' +
+          '<div class="cr-testimonial">' +
+            '<span class="cr-testimonial-mark">&ldquo;</span>' +
+            '<p class="cr-testimonial-text">The wagon ride line was the longest at our event all season. Families stayed twice as long as they usually do.</p>' +
+            '<p class="cr-testimonial-source">Festival Organizer &mdash; North Idaho</p>' +
+          '</div>' +
+          '<div class="cr-testimonial">' +
+            '<span class="cr-testimonial-mark">&ldquo;</span>' +
+            '<p class="cr-testimonial-text">You guys were awesome! Thank you for helping us make a little magic in our town.</p>' +
+            '<p class="cr-testimonial-source">The Donut House</p>' +
+          '</div>' +
+          '<div class="cr-testimonial">' +
+            '<span class="cr-testimonial-mark">&ldquo;</span>' +
+            '<p class="cr-testimonial-text">A huge thanks to Tribal Cowboy Photography for partnering up and being available to take some special photos for everyone.</p>' +
+            '<p class="cr-testimonial-source">South Boundary Fire Protection District &mdash; Holiday Festival</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── FAQ ── */
+      '<section class="cr-faq">' +
+        '<div class="cr-faq-header"><h2>Common questions.</h2></div>' +
+        '<div class="cr-faq-list">' +
+
+          '<div class="cr-faq-item"><div class="cr-faq-question"><p class="cr-faq-q-text">How much space do you need for wagon rides?</p><div class="cr-faq-icon">+</div></div><div class="cr-faq-answer"><div class="cr-faq-answer-inner">It depends on the ride type. Loop rides need a cleared path &mdash; ideally flat, firm surface (gravel, asphalt, packed dirt, or grass) with room for the wagon to make a circuit. For straight-line or point-to-point rides, we need a clear route between two stops. We\'ll help you figure out the best layout for your space when you reach out.</div></div></div>' +
+
+          '<div class="cr-faq-item"><div class="cr-faq-question"><p class="cr-faq-q-text">Can we book a wagon ride and pony interactions at the same event?</p><div class="cr-faq-icon">+</div></div><div class="cr-faq-answer"><div class="cr-faq-answer-inner">Yes. We do combo setups for festivals and larger events regularly. Wagon rides running alongside a pony interaction pen is one of our most popular setups. Ask for package pricing when you contact us.</div></div></div>' +
+
+          '<div class="cr-faq-item"><div class="cr-faq-question"><p class="cr-faq-q-text">What happens if the weather is bad?</p><div class="cr-faq-icon">+</div></div><div class="cr-faq-answer"><div class="cr-faq-answer-inner">Rain and mud are part of life in North Idaho. Light rain usually isn\'t a problem &mdash; the horses don\'t mind. If conditions become unsafe for the animals or guests, we\'ll work with you to reschedule. We don\'t cancel on you without a conversation first.</div></div></div>' +
+
+          '<div class="cr-faq-item"><div class="cr-faq-question"><p class="cr-faq-q-text">How many people fit on each ride?</p><div class="cr-faq-icon">+</div></div><div class="cr-faq-answer"><div class="cr-faq-answer-inner">The Clydesdale team wagon seats 12 adults per trip and includes a wheelchair ramp. The Cinderella wagon is smaller capacity &mdash; we\'ll confirm exact seating when we quote your event. The air ride carriage fits up to 5 passengers. The mini pony wagon fits up to 4 children, or 2 adults and 2 small children per ride.</div></div></div>' +
+
+          '<div class="cr-faq-item"><div class="cr-faq-question"><p class="cr-faq-q-text">What\'s the difference between the Cinderella wagon and the air ride carriage?</p><div class="cr-faq-icon">+</div></div><div class="cr-faq-answer"><div class="cr-faq-answer-inner">The Cinderella wagon has more of an open, storybook look &mdash; great for weddings and themed events. The air ride carriage is a smoother, more enclosed ride that seats up to 5 passengers &mdash; better for intimate events, VIP guest experiences, or events on rougher terrain. Both are pulled by a single Clydesdale.</div></div></div>' +
+
+          '<div class="cr-faq-item"><div class="cr-faq-question"><p class="cr-faq-q-text">Why is there a 4-hour minimum for Clydesdale bookings?</p><div class="cr-faq-icon">+</div></div><div class="cr-faq-answer"><div class="cr-faq-answer-inner">Transporting, hitching, and managing a 1,800-lb draft horse &mdash; or two &mdash; is a serious operation. By the time we load, haul, arrive, set up, and break down, shorter bookings don\'t make sense for the horses or for us. The 4-hour minimum means your event gets real value and the horses get proper pacing with breaks built in.</div></div></div>' +
+
+          '<div class="cr-faq-item"><div class="cr-faq-question"><p class="cr-faq-q-text">Do you travel outside North Idaho?</p><div class="cr-faq-icon">+</div></div><div class="cr-faq-answer"><div class="cr-faq-answer-inner">We\'re based in Athol and serve the full region &mdash; Coeur d\'Alene, Post Falls, Hayden, Rathdrum, Spirit Lake, Spokane, Spokane Valley. We can go further; travel fees apply outside our core service area. Just ask.</div></div></div>' +
+
+          '<div class="cr-faq-item"><div class="cr-faq-question"><p class="cr-faq-q-text">Is this safe for young children?</p><div class="cr-faq-icon">+</div></div><div class="cr-faq-answer"><div class="cr-faq-answer-inner">Yes. Our horses are trained for crowds and noise. The mini pony wagon is specifically designed for young kids &mdash; gentle, slow, and supervised at all times. All rides are managed by our trained handlers. We carry full liability insurance.</div></div></div>' +
+
+        '</div>' +
+      '</section>' +
+
+      /* ── FINAL CTA ── */
+      '<section class="cr-cta">' +
+        '<h2>Book a ride.</h2>' +
+        '<p class="cr-cta-body">Tell us your event date, location, and what kind of ride you\'re looking for. We\'ll get back to you within one business day.</p>' +
+        '<div class="cr-cta-btns">' +
+          '<a href="mailto:info@tribalcowboy.com?subject=Wagon%20Ride%20Inquiry" class="cr-btn-cream">Check Availability</a>' +
+          '<a href="tel:+12082612092" class="cr-btn-ghost-dark">Call (208) 261-2092</a>' +
+        '</div>' +
+        '<p class="cr-cta-footnote">Indigenous Owned &middot; Nisenan Maidu &middot; Athol, Idaho</p>' +
+        '<p class="cr-cta-crosslink">Looking for pony parties or corporate events? <a href="/services">See all services &rarr;</a></p>' +
+      '</section>';
+
+    /* Set hero background */
+    var hero = wrap.querySelector('.cr-hero');
+    if (hero) hero.style.backgroundImage = "url('" + HERO + "')";
+
+    page.insertBefore(wrap, page.firstChild);
+
+    /* ── COLOR FORCING ── */
+    wrap.querySelector('.cr-hero-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.cr-hero h1').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelector('.cr-hero-sub').style.setProperty('color', 'rgba(243,237,227,0.90)', 'important');
+
+    wrap.querySelector('.cr-rides-header h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelectorAll('.cr-ride-num').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.cr-ride-title').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important'); });
+    wrap.querySelectorAll('.cr-ride-text').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+    wrap.querySelectorAll('.cr-ride-best').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); });
+    wrap.querySelectorAll('.cr-ride-best span').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+
+    wrap.querySelector('.cr-included-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.cr-included-header h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelectorAll('.cr-included-title').forEach(function(el) { el.style.setProperty('color', '#F3EDE3', 'important'); el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important'); });
+    wrap.querySelectorAll('.cr-included-text').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.58)', 'important'); });
+
+    wrap.querySelector('.cr-venues-header h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelectorAll('.cr-venue-title').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important'); });
+    wrap.querySelectorAll('.cr-venue-text').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+
+    wrap.querySelector('.cr-pricing-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.cr-pricing-header h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelector('.cr-pricing-sub').style.setProperty('color', 'rgba(243,237,227,0.55)', 'important');
+    wrap.querySelectorAll('.cr-pricing-block-label').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.cr-pricing-table th').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.40)', 'important'); });
+    wrap.querySelectorAll('.cr-pricing-table td').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.80)', 'important'); });
+    wrap.querySelectorAll('.cr-pricing-table .td-price').forEach(function(el) { el.style.setProperty('color', '#F3EDE3', 'important'); el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important'); });
+    wrap.querySelectorAll('.cr-pricing-footnote').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.35)', 'important'); });
+    wrap.querySelector('.cr-pricing-combo-label').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.cr-pricing-combo p').style.setProperty('color', 'rgba(243,237,227,0.55)', 'important');
+    wrap.querySelector('.cr-pricing-fine').style.setProperty('color', 'rgba(243,237,227,0.35)', 'important');
+
+    wrap.querySelector('.cr-how-header h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelectorAll('.cr-step-dot').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.cr-step-title').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); });
+    wrap.querySelectorAll('.cr-step-text').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+
+    wrap.querySelector('.cr-testimonials-header h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelectorAll('.cr-testimonial-mark').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.cr-testimonial-text').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.82)', 'important'); });
+    wrap.querySelectorAll('.cr-testimonial-source').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+
+    wrap.querySelector('.cr-faq-header h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelectorAll('.cr-faq-q-text').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); });
+    wrap.querySelectorAll('.cr-faq-answer-inner').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+
+    wrap.querySelector('.cr-cta h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelector('.cr-cta-body').style.setProperty('color', 'rgba(243,237,227,0.65)', 'important');
+    wrap.querySelector('.cr-cta-footnote').style.setProperty('color', 'rgba(243,237,227,0.28)', 'important');
+    wrap.querySelector('.cr-cta-crosslink').style.setProperty('color', 'rgba(243,237,227,0.45)', 'important');
+
+    /* ── FAQ ACCORDION ── */
+    wrap.addEventListener('click', function(e) {
+      var question = e.target.closest('.cr-faq-question');
+      if (!question) return;
+      var item = question.closest('.cr-faq-item');
+      var answer = item.querySelector('.cr-faq-answer');
+      var isOpen = item.classList.contains('open');
+      wrap.querySelectorAll('.cr-faq-item.open').forEach(function(el) {
+        el.classList.remove('open');
+        el.querySelector('.cr-faq-answer').style.maxHeight = '0';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildPage);
+  } else {
+    buildPage();
+  }
+})();
+</script>

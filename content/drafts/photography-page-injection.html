@@ -1,0 +1,520 @@
+<style>
+/* ============================================================
+   TRIBAL COWBOY — PHOTOGRAPHY PAGE
+   Scope: body#collection-69b97442658f892919df21c5
+   ============================================================ */
+
+body#collection-69b97442658f892919df21c5 .page-section,
+body#collection-69b97442658f892919df21c5 .content-wrapper {
+  display: none !important;
+}
+
+/* ---- WRAPPER ---- */
+#tc-ph {
+  font-family: 'Montserrat', sans-serif;
+  color: #2C2520;
+  background: #F3EDE3;
+}
+
+/* ---- HERO ---- */
+#tc-ph .ph-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#tc-ph .ph-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,37,32,0.88) 0%, rgba(44,37,32,0.25) 55%, transparent 100%);
+}
+
+#tc-ph .ph-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 60px;
+  max-width: 700px;
+}
+
+#tc-ph .ph-hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 18px 0;
+}
+
+#tc-ph .ph-hero h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(52px, 8vw, 96px) !important;
+  font-weight: 400 !important;
+  line-height: 1.0 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 22px 0;
+}
+
+#tc-ph .ph-hero-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(243,237,227,0.82) !important;
+  margin: 0 0 40px 0;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+#tc-ph .ph-btn-gold {
+  display: inline-block;
+  padding: 15px 36px;
+  background: #D4A843;
+  color: #2C2520;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+#tc-ph .ph-btn-gold:hover {
+  background: #F3EDE3;
+}
+
+/* ---- NOTICE BAR ---- */
+#tc-ph .ph-notice {
+  background: #2C2520;
+  padding: 48px 60px;
+  text-align: center;
+}
+
+#tc-ph .ph-notice-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin-bottom: 14px;
+}
+
+#tc-ph .ph-notice-text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(243,237,227,0.88) !important;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ---- TWO-TRACK SPLIT ---- */
+#tc-ph .ph-tracks {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+
+#tc-ph .ph-tracks-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#tc-ph .ph-tracks-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+}
+
+#tc-ph .ph-tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#tc-ph .ph-track-card {
+  padding: 48px 40px;
+  background: white;
+  border-top: 3px solid #D4A843;
+}
+
+#tc-ph .ph-track-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #2C2520;
+  margin: 0 0 18px 0;
+}
+
+#tc-ph .ph-track-body {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #8A7868;
+  margin: 0 0 28px 0;
+}
+
+#tc-ph .ph-track-link {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #D4A843;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+#tc-ph .ph-track-link:hover {
+  border-color: #D4A843;
+}
+
+/* ---- HOW DELIVERY WORKS ---- */
+#tc-ph .ph-delivery {
+  background: #2C2520;
+  padding: 100px 60px;
+}
+
+#tc-ph .ph-delivery-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+#tc-ph .ph-delivery-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0;
+}
+
+#tc-ph .ph-delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+#tc-ph .ph-delivery-item {
+  text-align: center;
+}
+
+#tc-ph .ph-delivery-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 22px;
+  border: 1px solid rgba(212,168,67,0.4);
+  border-radius: 50%;
+  line-height: 48px;
+  font-size: 20px;
+  color: #D4A843;
+}
+
+#tc-ph .ph-delivery-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #F3EDE3;
+  margin: 0 0 14px 0;
+}
+
+#tc-ph .ph-delivery-text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(243,237,227,0.7) !important;
+  margin: 0;
+}
+
+#tc-ph .ph-delivery-privacy {
+  text-align: center;
+  margin-top: 56px;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(243,237,227,0.35) !important;
+  letter-spacing: 0.3px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* ---- GALLERY ---- */
+#tc-ph .ph-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: start;
+  background: #F3EDE3;
+  padding: 0 60px 80px;
+}
+
+#tc-ph .ph-gallery-item {
+  overflow: hidden;
+  background: #F3EDE3;
+  display: flex;
+  flex-direction: column;
+}
+
+#tc-ph .ph-gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+#tc-ph .ph-gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+#tc-ph .ph-gallery-caption {
+  background: #2C2520;
+  padding: 32px 28px;
+  flex: 1;
+}
+
+#tc-ph .ph-gallery-caption-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 14px 0;
+}
+
+#tc-ph .ph-gallery-caption-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #F3EDE3 !important;
+  margin: 0;
+}
+
+/* ---- CTA ---- */
+#tc-ph .ph-cta {
+  background: #2C2520;
+  padding: 100px 48px;
+  text-align: center;
+}
+
+#tc-ph .ph-cta h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(36px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 18px 0;
+}
+
+#tc-ph .ph-cta p {
+  font-size: 16px;
+  color: rgba(243,237,227,0.88) !important;
+  max-width: 520px;
+  margin: 0 auto 44px;
+  line-height: 1.75;
+}
+
+#tc-ph .ph-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#tc-ph .ph-btn-outline {
+  display: inline-block;
+  padding: 15px 36px;
+  border: 1px solid rgba(243,237,227,0.35);
+  color: #F3EDE3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+#tc-ph .ph-btn-outline:hover {
+  border-color: #D4A843;
+  color: #D4A843;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  #tc-ph .ph-gallery { grid-template-columns: repeat(2, 1fr); padding: 0 24px 60px; }
+
+  #tc-ph .ph-delivery-grid { grid-template-columns: 1fr; gap: 40px; }
+  #tc-ph .ph-tracks-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 768px) {
+  #tc-ph .ph-tracks-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 640px) {
+  #tc-ph .ph-hero-content { padding: 60px 24px; }
+  #tc-ph .ph-notice { padding: 40px 24px; }
+  #tc-ph .ph-tracks,
+  #tc-ph .ph-delivery,
+  #tc-ph .ph-cta { padding: 64px 24px; }
+  #tc-ph .ph-gallery { grid-template-columns: 1fr; padding: 0 16px 48px; }
+}
+</style>
+
+<script>
+(function() {
+  var HERO = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/820cf430-8d45-4736-9514-26a72e2bf7fe/branded-0K0A3587-1.jpg';
+  var G1   = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/8fb2622f-c601-499f-86cd-9403873d1adf/branded-0K0A4308.jpg';
+  var G2   = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/d4551da1-c0e0-44d0-976b-1793406cda34/branded-0K0A2326.jpg';
+  var G3   = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/016b8f3a-05a0-4ffd-b469-d0648f0ab0dd/Birthday+Overlay.png?content-type=image%2Fpng';
+  var G4   = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/68416c9b-d159-4923-acb7-fbc6ae30211b/Ste.png?content-type=image%2Fpng';
+
+  function buildPhotography() {
+    var page = document.getElementById('page');
+    if (!page) { setTimeout(buildPhotography, 120); }
+
+    // Hide all Squarespace page sections
+    page.querySelectorAll('.page-section').forEach(function(s) {
+      s.style.setProperty('display', 'none', 'important');
+    });
+
+    // Build the page
+    var wrap = document.createElement('div');
+    wrap.id = 'tc-ph';
+    wrap.innerHTML =
+
+      /* ── HERO ── */
+      '<section class="ph-hero">' +
+        '<div class="ph-hero-overlay"></div>' +
+        '<div class="ph-hero-content">' +
+          '<p class="ph-hero-eyebrow">Photography &mdash; North Idaho &amp; Eastern Washington</p>' +
+          '<h1>Every moment,<br>delivered.</h1>' +
+          '<p class="ph-hero-sub">On-site photography with same-day delivery for events and private sessions. Every guest gets their photos before they leave.</p>' +
+          '<a href="mailto:info@tribalcowboy.com" class="ph-btn-gold">Check Availability</a>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── NOTICE BAR ── */
+      '<div class="ph-notice">' +
+        '<span class="ph-notice-label">Heads Up</span>' +
+        '<p class="ph-notice-text">Horse events at Tribal Cowboy already include photography &mdash; it&rsquo;s built in. This page is for standalone photo coverage: events without the horses, private portrait sessions, and school or community programs.</p>' +
+      '</div>' +
+
+      /* ── TWO-TRACK SPLIT ── */
+      '<section class="ph-tracks">' +
+        '<div class="ph-tracks-header">' +
+          '<h2>Two ways to book.</h2>' +
+        '</div>' +
+        '<div class="ph-tracks-grid">' +
+          '<div class="ph-track-card">' +
+            '<p class="ph-track-title">Event Coverage</p>' +
+            '<p class="ph-track-body">Festivals, corporate gatherings, school programs, and community events. We photograph every attendee, deliver branded photos the same day via QR code, and leave before teardown. Pricing by event size and duration.</p>' +
+            '<a href="mailto:info@tribalcowboy.com" class="ph-track-link">Email to book &rarr;</a>' +
+          '</div>' +
+          '<div class="ph-track-card">' +
+            '<p class="ph-track-title">Private Sessions</p>' +
+            '<p class="ph-track-body">Equine portraits, family sessions with horses, and one-on-one time with our Clydesdales or the herd. Locations in North Idaho or your own property. Delivered gallery same day.</p>' +
+            '<a href="mailto:info@tribalcowboy.com" class="ph-track-link">Email to book &rarr;</a>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── HOW DELIVERY WORKS ── */
+      '<section class="ph-delivery">' +
+        '<div class="ph-delivery-header">' +
+          '<h2>How your photos get to you.</h2>' +
+        '</div>' +
+        '<div class="ph-delivery-grid">' +
+          '<div class="ph-delivery-item">' +
+            '<span class="ph-delivery-icon">&#9679;</span>' +
+            '<p class="ph-delivery-title">Shot on-site</p>' +
+            '<p class="ph-delivery-text">We photograph throughout your event &mdash; candid moments, portraits, group shots. No posing required.</p>' +
+          '</div>' +
+          '<div class="ph-delivery-item">' +
+            '<span class="ph-delivery-icon">&#9679;</span>' +
+            '<p class="ph-delivery-title">Matched instantly</p>' +
+            '<p class="ph-delivery-text">Facial recognition finds every photo of each guest automatically. No hunting through a shared album.</p>' +
+          '</div>' +
+          '<div class="ph-delivery-item">' +
+            '<span class="ph-delivery-icon">&#9679;</span>' +
+            '<p class="ph-delivery-title">Delivered same day</p>' +
+            '<p class="ph-delivery-text">Guests scan a QR code and their personal collection is waiting. Downloaded directly to their phone before they leave.</p>' +
+          '</div>' +
+        '</div>' +
+        '<p class="ph-delivery-privacy">Facial matching is used only to deliver photos and is never stored or shared. Guests may opt out at any time.</p>' +
+      '</section>' +
+
+      /* ── GALLERY ── */
+      '<div class="ph-gallery">' +
+        '<div class="ph-gallery-item">' +
+          '<img src="' + G1 + '" alt="Branded horse photography session" loading="lazy">' +
+          '<div class="ph-gallery-caption">' +
+            '<p class="ph-gallery-caption-label">Every event. Every guest.</p>' +
+            '<p class="ph-gallery-caption-text">Branded overlays. Same-day delivery. Guests scan a QR code and their photos are waiting before they leave.</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="ph-gallery-item">' +
+          '<img src="' + G3 + '" alt="Happy birthday unicorn pony branded photo overlay" loading="lazy">' +
+          '<div class="ph-gallery-caption">' +
+            '<p class="ph-gallery-caption-label">Custom Overlays</p>' +
+            '<p class="ph-gallery-caption-text">Every photo is branded to the event — name, date, logo. Guests keep a memory. You keep the marketing.</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="ph-gallery-item"><img src="' + G4 + '" alt="Step Up for Down Syndrome Walk branded photo with horse" loading="lazy"></div>' +
+      '</div>' +
+
+      /* ── CTA ── */
+      '<section class="ph-cta">' +
+        '<h2>Let&rsquo;s talk about your event.</h2>' +
+        '<p>Every event is different. Email us with your date, guest count, and what you&rsquo;re planning.</p>' +
+        '<div class="ph-cta-actions">' +
+          '<a href="mailto:info@tribalcowboy.com" class="ph-btn-gold">Email Us</a>' +
+          '<a href="https://www.tribalcowboy.com" class="ph-btn-outline">tribalcowboy.com</a>' +
+        '</div>' +
+      '</section>';
+
+    // Set hero background via JS
+    var hero = wrap.querySelector('.ph-hero');
+    if (hero) hero.style.backgroundImage = "url('" + HERO + "')";
+
+    page.insertBefore(wrap, page.firstChild);
+
+    // Force heading colors inline — beats Squarespace global style
+    wrap.querySelectorAll('h1, h2').forEach(function(el) {
+      var onDark = el.closest('.ph-hero, .ph-delivery, .ph-cta');
+      el.style.setProperty('color', onDark ? '#F3EDE3' : '#2C2520', 'important');
+      el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important');
+      el.style.setProperty('font-weight', '400', 'important');
+    });
+
+    // Force paragraph colors in dark sections — Squarespace global p styles override CSS
+    wrap.querySelector('.ph-hero-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ph-hero-sub').style.setProperty('color', 'rgba(243,237,227,0.82)', 'important');
+    wrap.querySelector('.ph-notice-label').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ph-notice-text').style.setProperty('color', 'rgba(243,237,227,0.88)', 'important');
+    wrap.querySelectorAll('.ph-delivery-title').forEach(function(el) {
+      el.style.setProperty('color', '#F3EDE3', 'important');
+    });
+    wrap.querySelectorAll('.ph-delivery-text').forEach(function(el) {
+      el.style.setProperty('color', 'rgba(243,237,227,0.7)', 'important');
+    });
+    wrap.querySelector('.ph-delivery-privacy').style.setProperty('color', 'rgba(243,237,227,0.35)', 'important');
+    wrap.querySelector('.ph-cta p').style.setProperty('color', 'rgba(243,237,227,0.88)', 'important');
+    wrap.querySelectorAll('.ph-gallery-caption-label').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.ph-gallery-caption-text').forEach(function(el) { el.style.setProperty('color', '#F3EDE3', 'important'); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildPhotography);
+  } else {
+    buildPhotography();
+  }
+})();
+</script>

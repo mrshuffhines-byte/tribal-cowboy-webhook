@@ -1,0 +1,902 @@
+<style>
+/* ============================================================
+   TRIBAL COWBOY -- CORPORATE EVENTS PAGE
+   Scope: body#collection-69c08724e2c87c2027ef2838
+   ============================================================ */
+
+body#collection-69c08724e2c87c2027ef2838 .page-section,
+body#collection-69c08724e2c87c2027ef2838 .content-wrapper {
+  display: none !important;
+}
+
+#tc-ce {
+  font-family: 'Montserrat', sans-serif;
+  color: #2C2520;
+  background: #F3EDE3;
+}
+
+/* ---- HERO ---- */
+#tc-ce .ce-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background-position: center 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#tc-ce .ce-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,14,10,0.95) 0%, rgba(20,14,10,0.55) 45%, rgba(44,37,32,0.08) 100%);
+}
+#tc-ce .ce-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 64px;
+  max-width: 800px;
+}
+#tc-ce .ce-hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 20px 0;
+}
+#tc-ce .ce-hero h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(60px, 9vw, 110px) !important;
+  font-weight: 400 !important;
+  line-height: 0.95 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 28px 0;
+  letter-spacing: -1px;
+}
+#tc-ce .ce-hero-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(243,237,227,0.85) !important;
+  margin: 0 0 44px 0;
+  line-height: 1.75;
+  max-width: 580px;
+}
+#tc-ce .ce-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+#tc-ce .ce-btn-gold {
+  display: inline-block;
+  padding: 15px 38px;
+  background: #D4A843;
+  color: #2C2520;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+#tc-ce .ce-btn-gold:hover { background: #F3EDE3; }
+#tc-ce .ce-btn-outline {
+  display: inline-block;
+  padding: 15px 38px;
+  border: 1px solid rgba(243,237,227,0.4);
+  color: #F3EDE3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+#tc-ce .ce-btn-outline:hover { border-color: #D4A843; color: #D4A843; }
+
+/* ---- NOT A PETTING ZOO ---- */
+#tc-ce .ce-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 520px;
+}
+#tc-ce .ce-intro-text {
+  background: #2C2520;
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#tc-ce .ce-intro-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 20px 0;
+}
+#tc-ce .ce-intro h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 3.5vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+}
+#tc-ce .ce-intro-body {
+  font-size: 14px;
+  line-height: 1.9;
+  color: rgba(243,237,227,0.72) !important;
+  margin: 0 0 14px 0;
+}
+#tc-ce .ce-intro-tag {
+  margin-top: 24px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(212,168,67,0.6) !important;
+}
+#tc-ce .ce-intro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  min-height: 400px;
+}
+
+/* ---- EVENTS WE WORK ---- */
+#tc-ce .ce-events {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+#tc-ce .ce-events-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+#tc-ce .ce-events-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 16px 0;
+  display: block;
+}
+#tc-ce .ce-events-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 54px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+}
+#tc-ce .ce-events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#tc-ce .ce-event-card {
+  background: white;
+  border-top: 3px solid #D4A843;
+  padding: 40px 32px;
+}
+#tc-ce .ce-event-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #D4A843 !important;
+  letter-spacing: 2px;
+  margin: 0 0 14px 0;
+  display: block;
+}
+#tc-ce .ce-event-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #2C2520 !important;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+}
+#tc-ce .ce-event-body {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #8A7868 !important;
+  margin: 0;
+}
+#tc-ce .ce-event-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+#tc-ce .ce-event-link:hover { border-color: #D4A843; }
+
+/* ---- PHOTO STRIP ---- */
+#tc-ce .ce-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  background: #2C2520;
+}
+#tc-ce .ce-strip-item {
+  overflow: hidden;
+  height: 380px;
+}
+#tc-ce .ce-strip-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+#tc-ce .ce-strip-item:hover img { transform: scale(1.04); }
+
+/* ---- WHAT'S INCLUDED ---- */
+#tc-ce .ce-included {
+  background: #2C2520;
+  padding: 100px 60px;
+}
+#tc-ce .ce-included-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+#tc-ce .ce-included-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 16px 0;
+  display: block;
+}
+#tc-ce .ce-included-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0;
+}
+#tc-ce .ce-included-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#tc-ce .ce-included-item {
+  padding: 40px 32px;
+  background: rgba(243,237,227,0.04);
+  border-top: 1px solid rgba(212,168,67,0.25);
+}
+#tc-ce .ce-included-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #F3EDE3 !important;
+  margin: 0 0 12px 0;
+}
+#tc-ce .ce-included-body {
+  font-size: 13px;
+  line-height: 1.85;
+  color: rgba(243,237,227,0.62) !important;
+  margin: 0;
+}
+
+/* ---- HOW IT WORKS ---- */
+#tc-ce .ce-how {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+#tc-ce .ce-how-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+#tc-ce .ce-how-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+}
+#tc-ce .ce-how-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#tc-ce .ce-how-step { border-top: 2px solid rgba(212,168,67,0.4); padding-top: 28px; }
+#tc-ce .ce-how-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 400;
+  color: rgba(212,168,67,0.3) !important;
+  line-height: 1;
+  margin-bottom: 16px;
+  display: block;
+}
+#tc-ce .ce-how-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #2C2520 !important;
+  margin: 0 0 12px 0;
+}
+#tc-ce .ce-how-text {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #8A7868 !important;
+  margin: 0;
+}
+
+/* ---- FEATURED TESTIMONIAL ---- */
+#tc-ce .ce-testimonial-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1100px;
+  margin: 0 auto 4px;
+  gap: 0;
+}
+#tc-ce .ce-testimonial-featured-img {
+  overflow: hidden;
+}
+#tc-ce .ce-testimonial-featured-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#tc-ce .ce-testimonial-featured-quote {
+  background: rgba(243,237,227,0.06);
+  padding: 60px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid rgba(212,168,67,0.2);
+}
+#tc-ce .ce-testimonial-featured-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  line-height: 1;
+  color: #D4A843 !important;
+  margin-bottom: 20px;
+  display: block;
+}
+#tc-ce .ce-testimonial-featured-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #F3EDE3 !important;
+  margin: 0 0 28px 0;
+  font-style: italic;
+}
+#tc-ce .ce-testimonial-featured-source {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+}
+
+@media (max-width: 760px) {
+  #tc-ce .ce-testimonial-featured { grid-template-columns: 1fr; }
+  #tc-ce .ce-testimonial-featured-img { max-height: 360px; }
+  #tc-ce .ce-testimonial-featured-quote { padding: 40px 24px; }
+}
+
+/* ---- TESTIMONIALS ---- */
+#tc-ce .ce-testimonials {
+  background: #2C2520;
+  padding: 100px 60px;
+}
+#tc-ce .ce-testimonials-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+#tc-ce .ce-testimonials-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0;
+}
+#tc-ce .ce-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#tc-ce .ce-testimonial {
+  background: rgba(243,237,227,0.04);
+  padding: 40px 32px;
+  border-top: 1px solid rgba(212,168,67,0.2);
+}
+#tc-ce .ce-testimonial-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  line-height: 1;
+  color: #D4A843 !important;
+  margin-bottom: 16px;
+  display: block;
+}
+#tc-ce .ce-testimonial-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #F3EDE3 !important;
+  margin: 0 0 20px 0;
+  font-style: italic;
+}
+#tc-ce .ce-testimonial-source {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+}
+
+/* ---- WHY REBOOK ---- */
+#tc-ce .ce-why {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+#tc-ce .ce-why-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+#tc-ce .ce-why-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 16px 0;
+  display: block;
+}
+#tc-ce .ce-why-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+}
+#tc-ce .ce-why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#tc-ce .ce-why-item {
+  background: white;
+  padding: 40px 36px;
+  border-left: 3px solid #D4A843;
+}
+#tc-ce .ce-why-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #2C2520 !important;
+  margin: 0 0 12px 0;
+}
+#tc-ce .ce-why-body {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #8A7868 !important;
+  margin: 0;
+}
+
+/* ---- SERVICE AREA ---- */
+#tc-ce .ce-area {
+  background: #2C2520;
+  padding: 64px 60px;
+  text-align: center;
+}
+#tc-ce .ce-area-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 16px 0;
+  display: block;
+}
+#tc-ce .ce-area h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(28px, 3vw, 42px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 20px 0;
+}
+#tc-ce .ce-area-body {
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(243,237,227,0.68) !important;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ---- CTA ---- */
+#tc-ce .ce-cta {
+  padding: 100px 48px;
+  background: #F3EDE3;
+  text-align: center;
+}
+#tc-ce .ce-cta h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(36px, 5vw, 68px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0 0 18px 0;
+}
+#tc-ce .ce-cta p {
+  font-size: 15px;
+  color: #8A7868 !important;
+  max-width: 540px;
+  margin: 0 auto 44px;
+  line-height: 1.8;
+}
+#tc-ce .ce-cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+#tc-ce .ce-cta-tag {
+  margin-top: 32px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(44,37,32,0.35) !important;
+}
+#tc-ce .ce-btn-dark {
+  display: inline-block;
+  padding: 15px 38px;
+  background: #2C2520;
+  color: #F3EDE3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+#tc-ce .ce-btn-dark:hover { background: #D4A843; color: #2C2520; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1000px) {
+  #tc-ce .ce-events-grid { grid-template-columns: repeat(2, 1fr); }
+  #tc-ce .ce-included-grid { grid-template-columns: repeat(2, 1fr); }
+  #tc-ce .ce-testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  #tc-ce .ce-how-steps { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  #tc-ce .ce-intro { grid-template-columns: 1fr; }
+  #tc-ce .ce-events-grid { grid-template-columns: 1fr; }
+  #tc-ce .ce-included-grid { grid-template-columns: 1fr; }
+  #tc-ce .ce-testimonials-grid { grid-template-columns: 1fr; }
+  #tc-ce .ce-why-grid { grid-template-columns: 1fr; }
+  #tc-ce .ce-how-steps { grid-template-columns: 1fr; }
+  #tc-ce .ce-strip { grid-template-columns: 1fr; }
+  #tc-ce .ce-stats { gap: 40px; padding: 36px 24px; }
+}
+@media (max-width: 640px) {
+  #tc-ce .ce-hero-content { padding: 60px 24px; }
+  #tc-ce .ce-intro-text { padding: 60px 24px; }
+  #tc-ce .ce-events,
+  #tc-ce .ce-included,
+  #tc-ce .ce-how,
+  #tc-ce .ce-testimonials,
+  #tc-ce .ce-why,
+  #tc-ce .ce-cta { padding: 64px 24px; }
+  #tc-ce .ce-area { padding: 48px 24px; }
+}
+</style>
+
+<script>
+(function() {
+  var HERO = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/bb324374-7979-44e4-b694-ed671d00261d/homepage-hero_IMG_6073_clydesdale-with-rider-outdoors_web.jpg?content-type=image%2Fjpeg';
+  var IMG1 = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/bc402c53-89a5-4df6-85ee-926e20abdb2d/photography-community-events_IMG_2520_couple-with-clydesdale_web.jpg';
+  var IMG2 = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/8fb2622f-c601-499f-86cd-9403873d1adf/branded-0K0A4308.jpg';
+  var IMG3 = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/85668d19-b717-4d56-bf72-75703ae69d44/services-wagon-rides_IMG_8948_pony-wagon-ride-behind_web.jpg?content-type=image%2Fjpeg';
+  var IMG4 = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/d1e65de1-e892-4a20-b427-ff3c21e114a8/services-education_IMG_2948_kids-meeting-clydesdale_web.jpg?content-type=image%2Fjpeg';
+
+  function buildCorporate() {
+    var page = document.getElementById('page');
+    if (!page) { setTimeout(buildCorporate, 120); return; }
+
+    page.querySelectorAll('.page-section').forEach(function(s) {
+      s.style.setProperty('display', 'none', 'important');
+    });
+
+    var wrap = document.createElement('div');
+    wrap.id = 'tc-ce';
+    wrap.innerHTML =
+
+      /* HERO */
+      '<section class="ce-hero">' +
+        '<div class="ce-hero-overlay"></div>' +
+        '<div class="ce-hero-content">' +
+          '<p class="ce-hero-eyebrow">Corporate Events &amp; Festival Entertainment &mdash; North Idaho</p>' +
+          '<h1>Horses that<br>draw a crowd.</h1>' +
+          '<p class="ce-hero-sub">Full-service equine experiences for festivals, farmers markets, corporate events, and community gatherings across North Idaho and Eastern Washington. We show up with the herd, the handlers, and the photography. You get the crowd.</p>' +
+          '<div class="ce-hero-actions">' +
+            '<a href="mailto:info@tribalcowboy.com?subject=Corporate%20Event%20Inquiry" class="ce-btn-gold">Request a Quote</a>' +
+            '<a href="tel:2082612092" class="ce-btn-outline">Call (208) 261-2092</a>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* NOT A PETTING ZOO */
+      '<section class="ce-intro">' +
+        '<div class="ce-intro-text">' +
+          '<p class="ce-intro-eyebrow">What We Are</p>' +
+          '<h2>Not a petting zoo. Not a drop-off.</h2>' +
+          '<p class="ce-intro-body">Tribal Cowboy is a full-service, mobile equine operation. We bring our own herd &mdash; Clydesdales, miniature horses, ponies &mdash; along with trained handlers, a professional photographer, and same-day branded photo delivery for every guest.</p>' +
+          '<p class="ce-intro-body">We handle setup, animal management, crowd flow, and teardown. Your event team doesn\'t touch a thing.</p>' +
+          '<p class="ce-intro-tag">Indigenous-Owned &middot; Nisenan Maidu &middot; Athol, Idaho</p>' +
+        '</div>' +
+        '<img class="ce-intro-img" src="' + IMG1 + '" alt="Couple with Clydesdale at community event in North Idaho" loading="lazy">' +
+      '</section>' +
+
+      /* EVENTS WE WORK */
+      '<section class="ce-events">' +
+        '<div class="ce-events-header">' +
+          '<span class="ce-events-eyebrow">Event Types</span>' +
+          '<h2>The kind of events we show up to.</h2>' +
+        '</div>' +
+        '<div class="ce-events-grid">' +
+          '<div class="ce-event-card">' +
+            '<span class="ce-event-num">01</span>' +
+            '<p class="ce-event-title">Community Festivals &amp; Holiday Events</p>' +
+            '<p class="ce-event-body">Harvest fests, tree lightings, Fourth of July celebrations, winter markets. We\'ve worked the South Boundary Holiday Festival and local community events across the region. The wagon ride line is always the longest one.</p>' +
+          '</div>' +
+          '<div class="ce-event-card">' +
+            '<span class="ce-event-num">02</span>' +
+            '<p class="ce-event-title">Farmers Markets</p>' +
+            '<p class="ce-event-body">Weekly, monthly, or seasonal. We bring ponies or Clydesdales that keep families on-site longer and give your market something worth posting about.</p>' +
+          '</div>' +
+          '<div class="ce-event-card">' +
+            '<span class="ce-event-num">03</span>' +
+            '<p class="ce-event-title">Corporate Team Events &amp; Client Appreciation</p>' +
+            '<p class="ce-event-body">Company picnics, employee appreciation days, client events. Horses break the ice faster than any team-building exercise. Every guest leaves with branded photos on their phone.</p>' +
+          '</div>' +
+          '<div class="ce-event-card">' +
+            '<span class="ce-event-num">04</span>' +
+            '<p class="ce-event-title">Grand Openings &amp; Ribbon Cuttings</p>' +
+            '<p class="ce-event-body">Nothing stops traffic like a Clydesdale parked out front. We\'ve partnered with local businesses to draw attention on opening day &mdash; and the photos travel.</p>' +
+          '</div>' +
+          '<div class="ce-event-card">' +
+            '<span class="ce-event-num">05</span>' +
+            '<p class="ce-event-title">School &amp; Youth Programs</p>' +
+            '<p class="ce-event-body">Hands-on horsemanship and animal education. We\'ve worked with Smart Start Learning Academy and other local schools. Discounts available for Title I schools and 501(c)(3)s.</p>' +
+            '<a href="/school-programs-community-events" class="ce-event-link">See school programs &rarr;</a>' +
+          '</div>' +
+          '<div class="ce-event-card">' +
+            '<span class="ce-event-num">06</span>' +
+            '<p class="ce-event-title">Private Large Events</p>' +
+            '<p class="ce-event-body">Family reunions, church events, fundraisers, milestone celebrations. If you\'ve got 30 to 300 guests and a flat surface, we can make it work.</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* PHOTO STRIP */
+      '<div class="ce-strip">' +
+        '<div class="ce-strip-item"><img src="https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/8c1db3a8-77d7-472c-b772-49d166ceb0ee/tribal-cowboy-holiday-photo-woman-girl-elf-donkeys+Large.jpeg?content-type=image%2Fjpeg" alt="Woman and girl with donkeys in elf hats at Tribal Cowboy holiday event" loading="lazy"></div>' +
+        '<div class="ce-strip-item"><img src="https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/05ee7fea-0269-49c3-ad11-d2f7ebb46ef7/IMG_7823.jpeg?content-type=image%2Fjpeg" alt="Decorated unicorn pony at Tribal Cowboy event North Idaho" loading="lazy"></div>' +
+        '<div class="ce-strip-item"><img src="https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/bc7270ce-f436-4c97-9015-97ff22962bd6/IMG_4855.jpg?content-type=image%2Fjpeg" alt="Girl feeding miniature donkey at Tribal Cowboy Christmas event" loading="lazy"></div>' +
+      '</div>' +
+
+      /* WHAT'S INCLUDED */
+      '<section class="ce-included">' +
+        '<div class="ce-included-header">' +
+          '<span class="ce-included-eyebrow">Every Booking</span>' +
+          '<h2>Every booking includes the full operation.</h2>' +
+        '</div>' +
+        '<div class="ce-included-grid">' +
+          '<div class="ce-included-item">' +
+            '<p class="ce-included-title">The Herd</p>' +
+            '<p class="ce-included-body">Real Clydesdales, miniature horses, and ponies from our own barn. Not rented. Not borrowed. These are animals we know, groom, and handle every day.</p>' +
+          '</div>' +
+          '<div class="ce-included-item">' +
+            '<p class="ce-included-title">Trained Handlers</p>' +
+            '<p class="ce-included-body">Our team manages every animal interaction, from setup to teardown. No experience or supervision needed from your side.</p>' +
+          '</div>' +
+          '<div class="ce-included-item">' +
+            '<p class="ce-included-title">Professional Photography</p>' +
+            '<p class="ce-included-body">A photographer covers the event and captures guest interactions with the animals. Every moment, documented.</p>' +
+          '</div>' +
+          '<div class="ce-included-item">' +
+            '<p class="ce-included-title">Branded Photo Overlays</p>' +
+            '<p class="ce-included-body">Every photo gets a custom overlay with your event name, logo, and date. Your branding on every image guests share.</p>' +
+          '</div>' +
+          '<div class="ce-included-item">' +
+            '<p class="ce-included-title">Same-Day Photo Delivery</p>' +
+            '<p class="ce-included-body">Guests scan a QR code on-site and get their individual photos delivered to their phone before they leave. No shared albums, no waiting, no apps to download.</p>' +
+          '</div>' +
+          '<div class="ce-included-item">' +
+            '<p class="ce-included-title">Full Setup &amp; Teardown</p>' +
+            '<p class="ce-included-body">We arrive early and leave clean. Fencing, signage, animal stations &mdash; all handled. Your event team doesn\'t lift a thing.</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* HOW IT WORKS */
+      '<section class="ce-how">' +
+        '<div class="ce-how-header"><h2>Four steps. That\'s it.</h2></div>' +
+        '<div class="ce-how-steps">' +
+          '<div class="ce-how-step">' +
+            '<span class="ce-how-num">01</span>' +
+            '<p class="ce-how-title">Tell us about your event</p>' +
+            '<p class="ce-how-text">Email or fill out our contact form with your date, location, expected attendance, and what kind of experience you\'re looking for. Wagon rides? Pony interactions? Both?</p>' +
+          '</div>' +
+          '<div class="ce-how-step">' +
+            '<span class="ce-how-num">02</span>' +
+            '<p class="ce-how-title">Get a custom quote</p>' +
+            '<p class="ce-how-text">We\'ll respond within one business day with availability, pricing, and a recommended setup based on your event size and layout.</p>' +
+          '</div>' +
+          '<div class="ce-how-step">' +
+            '<span class="ce-how-num">03</span>' +
+            '<p class="ce-how-title">We show up and handle everything</p>' +
+            '<p class="ce-how-text">Our team arrives early with the full operation. Setup, animal management, photography, crowd flow, teardown &mdash; all us.</p>' +
+          '</div>' +
+          '<div class="ce-how-step">' +
+            '<span class="ce-how-num">04</span>' +
+            '<p class="ce-how-title">Guests leave with photos on their phone</p>' +
+            '<p class="ce-how-text">Every guest scans a QR code and gets their individual branded photos delivered same-day. That\'s the part people talk about after.</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* TESTIMONIALS */
+      '<section class="ce-testimonials">' +
+        '<div class="ce-testimonials-header"><h2>From the people who booked us.</h2></div>' +
+
+        /* Featured: Make It Messy flyer + quote */
+        '<div class="ce-testimonial-featured">' +
+          '<div class="ce-testimonial-featured-img">' +
+            '<img src="https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/9c36b9c8-e0b1-43ad-8730-907803446d6f/tribal-cowboy-make-it-messy-pancakes-pals-ponies-flyer-august.png?content-type=image%2Fpng" alt="Make It Messy CDA Pancakes Pals and Ponies event flyer featuring Tribal Cowboy" loading="lazy">' +
+          '</div>' +
+          '<div class="ce-testimonial-featured-quote">' +
+            '<span class="ce-testimonial-featured-mark">&ldquo;</span>' +
+            '<p class="ce-testimonial-featured-text">Thank you for bringing these beautiful ponies! Today was magical!</p>' +
+            '<p class="ce-testimonial-featured-source">Make It Messy CDA &mdash; Event Partner</p>' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="ce-testimonials-grid">' +
+          '<div class="ce-testimonial">' +
+            '<span class="ce-testimonial-mark">&ldquo;</span>' +
+            '<p class="ce-testimonial-text">You guys were awesome! Thank you for helping us make a little magic in our town.</p>' +
+            '<p class="ce-testimonial-source">The Donut House</p>' +
+          '</div>' +
+          '<div class="ce-testimonial">' +
+            '<span class="ce-testimonial-mark">&ldquo;</span>' +
+            '<p class="ce-testimonial-text">A huge thanks to Tribal Cowboy Photography for partnering up and being available to take some special photos for everyone.</p>' +
+            '<p class="ce-testimonial-source">South Boundary Fire Protection District</p>' +
+          '</div>' +
+          '<div class="ce-testimonial">' +
+            '<span class="ce-testimonial-mark">&ldquo;</span>' +
+            '<p class="ce-testimonial-text">The kids loved learning about ducklings, chicks, goslings from Tribal Cowboy. Thank you Stacie for all the love and kindness!</p>' +
+            '<p class="ce-testimonial-source">Smart Start Learning Academy</p>' +
+          '</div>' +
+          '<div class="ce-testimonial">' +
+            '<span class="ce-testimonial-mark">&ldquo;</span>' +
+            '<p class="ce-testimonial-text">We love what you do @tribalcowboy.</p>' +
+            '<p class="ce-testimonial-source">Kona Ice of Coeur d\'Alene</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* WHY REBOOK */
+      '<section class="ce-why">' +
+        '<div class="ce-why-header">' +
+          '<span class="ce-why-eyebrow">Why Organizers Come Back</span>' +
+          '<h2>Why organizers rebook.</h2>' +
+        '</div>' +
+        '<div class="ce-why-grid">' +
+          '<div class="ce-why-item">' +
+            '<p class="ce-why-title">Foot traffic that sticks</p>' +
+            '<p class="ce-why-body">A Clydesdale-drawn wagon or a pen of decorated ponies keeps families on-site longer. More dwell time, more spending, more return visits.</p>' +
+          '</div>' +
+          '<div class="ce-why-item">' +
+            '<p class="ce-why-title">Content your guests create for you</p>' +
+            '<p class="ce-why-body">Branded photos get shared the same day &mdash; on Instagram, in group chats, on Facebook. Your event name goes with them.</p>' +
+          '</div>' +
+          '<div class="ce-why-item">' +
+            '<p class="ce-why-title">Zero vendor headaches</p>' +
+            '<p class="ce-why-body">We handle our own setup, insurance, animal management, and teardown. You don\'t assign us a volunteer. You don\'t manage our schedule. We show up ready.</p>' +
+          '</div>' +
+          '<div class="ce-why-item">' +
+            '<p class="ce-why-title">A booking people remember</p>' +
+            '<p class="ce-why-body">There are a hundred vendors at a festival. Horses are the one thing people tell their friends about.</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* SERVICE AREA */
+      '<div class="ce-area">' +
+        '<span class="ce-area-eyebrow">Where We Go</span>' +
+        '<h2>Based in Athol. We go further.</h2>' +
+        '<p class="ce-area-body">We serve the full North Idaho and Eastern Washington region: Coeur d\'Alene, Post Falls, Hayden, Rathdrum, Spirit Lake, Spokane, Spokane Valley, and beyond. Travel fees may apply outside our core service area. Ask us &mdash; we\'ll tell you straight.</p>' +
+      '</div>' +
+
+      /* FINAL CTA */
+      '<section class="ce-cta">' +
+        '<h2>Tell us about your event.</h2>' +
+        '<p>Include your date, location, estimated attendance, and what you\'re looking for. We\'ll get back within one business day with availability and a custom quote.</p>' +
+        '<div class="ce-cta-actions">' +
+          '<a href="mailto:info@tribalcowboy.com?subject=Corporate%20Event%20Inquiry" class="ce-btn-gold">Request a Quote</a>' +
+          '<a href="tel:2082612092" class="ce-btn-dark">Call (208) 261-2092</a>' +
+        '</div>' +
+        '<p class="ce-cta-tag">Indigenous Owned &middot; Nisenan Maidu &middot; Athol, Idaho</p>' +
+        '<p style="margin-top:24px;font-size:13px;color:#8A7868;">Looking for a birthday party or family event? <a href="/pony-parties" style="color:#D4A843;text-decoration:none;border-bottom:1px solid #D4A843;">See Pony Parties &rarr;</a></p>' +
+      '</section>';
+
+    /* Set hero background */
+    var hero = wrap.querySelector('.ce-hero');
+    if (hero) hero.style.backgroundImage = "url('" + HERO + "')";
+
+    page.insertBefore(wrap, page.firstChild);
+
+    /* Force colors */
+    wrap.querySelectorAll('h1, h2').forEach(function(el) {
+      var onDark = el.closest('.ce-hero, .ce-intro-text, .ce-included, .ce-testimonials, .ce-area');
+      el.style.setProperty('color', onDark ? '#F3EDE3' : '#2C2520', 'important');
+      el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important');
+      el.style.setProperty('font-weight', '400', 'important');
+    });
+
+    wrap.querySelector('.ce-hero-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ce-hero-sub').style.setProperty('color', 'rgba(243,237,227,0.85)', 'important');
+    wrap.querySelector('.ce-intro-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ce-intro h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelectorAll('.ce-intro-body').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.72)', 'important'); });
+    wrap.querySelector('.ce-intro-tag').style.setProperty('color', 'rgba(212,168,67,0.6)', 'important');
+    wrap.querySelector('.ce-events-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ce-events-header h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelectorAll('.ce-event-num').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.ce-event-title').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important'); });
+    wrap.querySelectorAll('.ce-event-body').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+    wrap.querySelector('.ce-included-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ce-included-header h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelectorAll('.ce-included-title').forEach(function(el) { el.style.setProperty('color', '#F3EDE3', 'important'); el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important'); });
+    wrap.querySelectorAll('.ce-included-body').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.62)', 'important'); });
+    wrap.querySelector('.ce-how-header h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelectorAll('.ce-how-num').forEach(function(el) { el.style.setProperty('color', 'rgba(212,168,67,0.3)', 'important'); });
+    wrap.querySelectorAll('.ce-how-title').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important'); });
+    wrap.querySelectorAll('.ce-how-text').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+    wrap.querySelector('.ce-testimonials-header h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelector('.ce-testimonial-featured-mark').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ce-testimonial-featured-text').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelector('.ce-testimonial-featured-source').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelectorAll('.ce-testimonial-mark').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.ce-testimonial-text').forEach(function(el) { el.style.setProperty('color', '#F3EDE3', 'important'); el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important'); });
+    wrap.querySelectorAll('.ce-testimonial-source').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelector('.ce-why-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ce-why-header h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelectorAll('.ce-why-title').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important'); });
+    wrap.querySelectorAll('.ce-why-body').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+    wrap.querySelector('.ce-area-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ce-area h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelector('.ce-area-body').style.setProperty('color', 'rgba(243,237,227,0.68)', 'important');
+    wrap.querySelector('.ce-cta h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelector('.ce-cta p').style.setProperty('color', '#8A7868', 'important');
+    wrap.querySelector('.ce-cta-tag').style.setProperty('color', 'rgba(44,37,32,0.35)', 'important');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildCorporate);
+  } else {
+    buildCorporate();
+  }
+})();
+</script>
