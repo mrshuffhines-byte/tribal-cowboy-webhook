@@ -10,10 +10,9 @@ Millie let a three-year-old hold her lead rope last Saturday. Just stood there, 
 
 We hear stories like that more than you'd think. But we don't always see them online — and for a small, Indigenous-owned business in North Idaho, those words matter more than people realize.
 
-If your family has a Tribal Cowboy story, we'd be grateful if you'd share it. A Google or Facebook review takes two minutes and helps other families find us.
+If your family has a Tribal Cowboy story, we'd be grateful if you'd share it. A Google review takes two minutes and helps other families find us.
 
-Google: https://g.page/r/CdYXljJLx6BZEAE/review
-Facebook: https://www.facebook.com/TribalCowboys/reviews
+Leave a review: https://g.page/r/CdYXljJLx6BZEAE/review
 
 GIVEAWAY: Tag someone in the comments who needs to meet the herd — and you're entered to win a free mini pony meet & greet for your family. Winner picked Friday. No purchase necessary.
 
@@ -30,11 +29,9 @@ A couple weeks ago a mom in Coeur d'Alene messaged me to say her daughter draws 
 
 That's the part of this work that doesn't show up on a spreadsheet. The hay bills show up. The trailer tires show up. The 5 AM grooming sessions definitely show up. But the stuff that actually makes it worth doing — a kid's entire world shifting because a Clydesdale stood still long enough — that lives in stories people tell each other.
 
-If you've got one of those stories, I'd love for you to share it where other North Idaho families can see it. A review helps more than people think — especially for a small, Indigenous-owned operation that doesn't have a marketing department. It's just me, Stacie, and a lot of horse hair.
+If you've got one of those stories, I'd love for you to share it where other North Idaho families can see it. A Google review helps more than people think — especially for a small, Indigenous-owned operation that doesn't have a marketing department. It's just me, Stacie, and a lot of horse hair.
 
-Leave a review:
-Google: https://g.page/r/CdYXljJLx6BZEAE/review
-Facebook: https://www.facebook.com/TribalCowboys/reviews
+Leave a review: https://g.page/r/CdYXljJLx6BZEAE/review
 
 GIVEAWAY: Share this post or tag a friend in the comments who needs to meet Belle, Millie, or the minis — and you're entered to win a free pony experience for your family. I'll pick a winner next Friday. Open to anyone in the North Idaho / Eastern Washington area.
 
