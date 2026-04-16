@@ -1,0 +1,101 @@
+{
+  "name": "Tribal Cowboy - Booking Closer",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger-closer",
+      "name": "Daily 9am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://tribal-cowboy-webhook.onrender.com/voice-inquiries",
+        "options": {}
+      },
+      "id": "fetch-leads",
+      "name": "Fetch Voice Leads",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "prompt-var",
+              "name": "prompt",
+              "value": "=Review these voice inquiries from Tribal Cowboy's ElevenLabs agent. For each lead, categorize it (Hot/Warm/Cold/Lost) and draft an appropriate follow-up SMS message. Return a prioritized action list with: lead name, phone, status, category, drafted message.\n\nLeads:\n{{ JSON.stringify($json) }}\n\nBooking URL: https://www.tribalcowboy.com\n\nPrioritize leads that need action today. Keep SMS messages under 160 characters, warm, personalized with their name and event details.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-prompt-closer",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are the Booking Closer Agent for Tribal Cowboy LLC — a relentless but warm follow-up specialist. Your job is to turn every inquiry into a confirmed, deposited booking.\n\nLead Categories:\n- Hot: inquired within 24hrs, specific date + service\n- Warm: 1-7 days ago, responded but no deposit\n- Cold: 7+ days, no response after 2 touchpoints\n- Lost: explicitly declined or no response after 3 touchpoints\n\nFollow-Up Sequences:\n1. First Contact (within 1hr): 'Hey [Name]! This is Tribal Cowboy — we got your message about [service] for [date]. We'd love to make that happen! Booking link: [URL]'\n2. 24hr follow-up: 'Hi [Name], just following up! Dates fill up fast. Ready to chat? [URL]'\n3. 72hr: 'Hey [Name]! Last reach out. If still interested: [URL]'\n4. Warm (post-response): 'To hold your [date], we just need a 25% deposit. [URL]'\n\nConversion Rules: Create urgency honestly. Reduce friction (always include booking link). Handle hesitation (offer a quick call). Anchor value before price. Frame deposit as 'what secures your date.'\n\nAlways personalize with name, service, event date. Never chase more than 3 times. Every message ends with booking link or clear next step."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "id": "llm-chain-closer",
+      "name": "Booking Closer Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-5-20250929",
+        "options": {
+          "maxTokensToSample": 4096
+        }
+      },
+      "id": "claude-model-closer",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [900, 500]
+    }
+  ],
+  "connections": {
+    "Daily 9am": {
+      "main": [[{"node": "Fetch Voice Leads", "type": "main", "index": 0}]]
+    },
+    "Fetch Voice Leads": {
+      "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]]
+    },
+    "Build Prompt": {
+      "main": [[{"node": "Booking Closer Agent", "type": "main", "index": 0}]]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [[{"node": "Booking Closer Agent", "type": "ai_languageModel", "index": 0}]]
+    }
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {}
+}

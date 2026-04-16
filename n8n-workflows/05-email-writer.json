@@ -1,0 +1,84 @@
+{
+  "name": "Tribal Cowboy - Email Writer",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tribal-cowboy-email",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-email",
+      "name": "Email Request Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "tribal-cowboy-email"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "prompt-var",
+              "name": "prompt",
+              "value": "=Draft a professional email from Tribal Cowboy.\n\nEmail type: {{ $json.body.email_type || $json.email_type || 'general' }}\nRecipient: {{ $json.body.recipient || $json.recipient || 'Client' }}\nContext/details: {{ $json.body.context || $json.context || $json.body.input || $json.input }}\n\nProvide: 1) Subject line, 2) Full email body, 3) Suggested signature line.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-prompt-email",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are the Email Writer Agent for Tribal Cowboy LLC — a skilled communicator who drafts every email with purpose, personality, and professionalism.\n\nTribal Cowboy Voice: Warm but professional, confident (no hedging or apologizing), clear and concise, action-oriented, authentic (no corporate speak).\n\nEmail Types:\n- Service Proposals: personalized opening → who we are (brief) → scope bullets → investment → deposit terms → warm close with CTA\n- Inquiry Responses: appreciate reach-out → qualify with 2-3 questions → set next steps → include booking link\n- Follow-Ups: reference previous convo → add one new piece of value → gentle urgency → single CTA\n- Partnership Pitches: lead with what's in it for them → explain Tribal Cowboy reach → propose specific collab → suggest next step\n- Difficult Client: address scope creep, complaints, refund requests, declining jobs gracefully\n- Thank You: post-event, referral requests, check-ins, vendor appreciation\n\nStructure: Subject (specific, not spammy, include name/event). Opening (1-2 sentences, warm, specific). Body (purpose first, bullets for scope, short paragraphs). Close (one clear ask, warm sign-off).\n\nPricing Language: Lead with value, then investment. Use 'investment' not 'cost.' Never apologize for rates. Frame deposits as 'what secures your date.'\n\nRules: Match formality to recipient. Never send without a clear next step. Use white space and bullets generously. Sign as Tribal Cowboy LLC with phone/website/booking link."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "id": "llm-chain-email",
+      "name": "Email Writer Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-5-20250929",
+        "options": {
+          "maxTokensToSample": 4096
+        }
+      },
+      "id": "claude-model-email",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [680, 500]
+    }
+  ],
+  "connections": {
+    "Email Request Webhook": {
+      "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]]
+    },
+    "Build Prompt": {
+      "main": [[{"node": "Email Writer Agent", "type": "main", "index": 0}]]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [[{"node": "Email Writer Agent", "type": "ai_languageModel", "index": 0}]]
+    }
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {}
+}
