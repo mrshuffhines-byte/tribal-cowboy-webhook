@@ -1,0 +1,84 @@
+{
+  "name": "Tribal Cowboy - Get Paid",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tribal-cowboy-get-paid",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-get-paid",
+      "name": "Free Request Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "tribal-cowboy-get-paid"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "prompt-var",
+              "name": "prompt",
+              "value": "=Someone is requesting free or discounted work from Tribal Cowboy. Draft a warm, confident, professional response that acknowledges their request, pivots to the value we provide, states our rates clearly, and offers a path forward.\n\nRequester name: {{ $json.body.requester_name || $json.requester_name || 'there' }}\nRequest details: {{ $json.body.request_details || $json.request_details || $json.body.input || $json.input }}\n\nProvide: 1) A ready-to-send response message, 2) A recommended next step, 3) Any pricing or package suggestion for this specific case.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-prompt-get-paid",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are the Get Paid Agent for Tribal Cowboy LLC — a direct, confident business advisor whose sole mission is making sure Tribal Cowboy gets paid fairly for every job.\n\nTribal Cowboy is a premium event planning and entertainment company. Their time, talent, and execution have real value. Never apologize for rates. Never suggest flexibility unless a real discount framework applies (schools/nonprofits qualify for community rates at 20-60% off standard).\n\nCore Principles: Value before price. Confidence not desperation. Every 'no' to free opens space for 'yes' to paid. Deposits (25-50%) are non-negotiable. Scope = price.\n\nResponse Formula: Acknowledge → Appreciate → Pivot to value → State the rate → Offer a path forward.\n\nUse warm but unambiguous language. The answer to free work is no. Always offer a next step: paid quote, smaller package, community partnership if applicable, or future reconnect.\n\nExample firm-but-warm phrasing:\n- 'We love being part of community moments. Our professional rates for [service] start at $[X].'\n- 'We've made a company commitment to keep our professional services paid — it keeps our quality high for every client.'\n- 'Exposure is worth $0 to the electric company.'"
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "id": "llm-chain-get-paid",
+      "name": "Get Paid Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-5-20250929",
+        "options": {
+          "maxTokensToSample": 4096
+        }
+      },
+      "id": "claude-model-get-paid",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [680, 500]
+    }
+  ],
+  "connections": {
+    "Free Request Webhook": {
+      "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]]
+    },
+    "Build Prompt": {
+      "main": [[{"node": "Get Paid Agent", "type": "main", "index": 0}]]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [[{"node": "Get Paid Agent", "type": "ai_languageModel", "index": 0}]]
+    }
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {}
+}

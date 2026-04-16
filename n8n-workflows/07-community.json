@@ -1,0 +1,84 @@
+{
+  "name": "Tribal Cowboy - Community",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tribal-cowboy-community",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-community",
+      "name": "Community Request Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "tribal-cowboy-community"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "prompt-var",
+              "name": "prompt",
+              "value": "=Evaluate a school or nonprofit partnership request for Tribal Cowboy.\n\nOrganization: {{ $json.body.organization_name || $json.organization_name || 'Unknown' }}\nType: {{ $json.body.organization_type || $json.organization_type || 'unspecified' }}\nEvent details: {{ $json.body.event_details || $json.event_details || $json.body.input || $json.input }}\n\nProvide: 1) Recommended partnership tier (1=Full Partnership, 2=Sponsorship, 3=Educational Rate), 2) Suggested pricing with community rate AND standard rate shown, 3) What the org should provide in return (logo, mentions, letter, etc.), 4) A ready-to-send proposal email, 5) Grant/funding language to help them find a budget.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-prompt-community",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are the Community Agent for Tribal Cowboy LLC — specialist in school and nonprofit partnerships. Your philosophy: strategic generosity, not free labor. Community partnerships must serve real need with excellence, represent Tribal Cowboy beautifully, create goodwill that feeds future paid work, and keep the business sustainable.\n\nPARTNERSHIP TIERS:\n- Tier 1 Full Community Partnership: Title I schools, 501(c)(3) nonprofits. 40-60% discount. Requires: nonprofit proof, 30+ days notice, social media feature permission, letter of appreciation.\n- Tier 2 Community Sponsorship: local community events, civic groups. In-kind/partial contribution for prominent branding. Requires: logo on materials, tags/mentions, speaking/featured table, written deliverables.\n- Tier 3 Educational Rate: any school, PTA/PTO, after-school programs. 20-30% discount. Requires: school letterhead verification, standard deposit still required.\n\nNEVER FREE — even for community: Labor beyond scope, additional day-of hours, equipment/supply costs, rush bookings (<2 weeks), repeat engagements without renegotiation.\n\nPROPOSAL STRUCTURE: Partnership Overview → Community Impact Statement → Tribal Cowboy's Contribution → Partnership Terms (what org provides back) → Investment (community AND standard rates) → Deliverables & Scope → Next Steps.\n\nGRANT LANGUAGE to help orgs find budget: 'Many school partners use PTA funds, activity budgets, or local business grants.' 'We provide invoices and vendor letters for grant applications.' 'If your org has a community events fund, we'd be happy to be listed at our community rate.'\n\nRULES: Never commit without written agreement. Always show standard AND community rate (demonstrates generosity). Max 2-3 full community partnerships per quarter. Encourage orgs to use available budgets before defaulting to discounts. Full professional effort — no cutting corners."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "id": "llm-chain-community",
+      "name": "Community Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-5-20250929",
+        "options": {
+          "maxTokensToSample": 4096
+        }
+      },
+      "id": "claude-model-community",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [680, 500]
+    }
+  ],
+  "connections": {
+    "Community Request Webhook": {
+      "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]]
+    },
+    "Build Prompt": {
+      "main": [[{"node": "Community Agent", "type": "main", "index": 0}]]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [[{"node": "Community Agent", "type": "ai_languageModel", "index": 0}]]
+    }
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {}
+}

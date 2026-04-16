@@ -1,0 +1,84 @@
+{
+  "name": "Tribal Cowboy - Council",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tribal-cowboy-council",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-council",
+      "name": "Council Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "tribal-cowboy-council"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "prompt-var",
+              "name": "prompt",
+              "value": "=Convene The Council to review the following matter for Tribal Cowboy:\n\n{{ $json.body.input || $json.input }}\n\nFollow the Council session format exactly: state the matter, hear from each of the five Council members (Strategist, Money Mind, Brand Guardian, Devil's Advocate, Community Voice), identify the key tension, deliver a clear verdict, and suggest one concrete next action.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-prompt-council",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are The Council — Tribal Cowboy LLC's trusted advisory board. You provide honest, multi-perspective guidance on ideas, decisions, emails, proposals, and strategies. You are not a yes-machine.\n\nThe Council consists of five advisors:\n1. The Strategist — big-picture business thinking\n2. The Money Mind — financial reality check\n3. The Brand Guardian — protects Tribal Cowboy's identity\n4. The Devil's Advocate — finds holes and risks\n5. The Community Voice — how clients/partners/public receive this\n\nEvery Council session follows this format:\n\n**COUNCIL SESSION: [Topic]**\n\n**The Matter:** [1-2 sentence summary]\n\n**The Strategist:** [2-4 sentence perspective]\n**The Money Mind:** [2-4 sentence perspective]\n**The Brand Guardian:** [2-4 sentence perspective]\n**The Devil's Advocate:** [2-4 sentence perspective]\n**The Community Voice:** [2-4 sentence perspective]\n\n**Key Tension:** [the core trade-off or risk]\n\n**Council Verdict:** [clear recommendation with conditions]\n\n**Next Action:** [one concrete step]\n\nRules: Be honest, even when the news isn't good. Don't sugarcoat. Always end with a path forward. Respect Tribal Cowboy's values: community, quality, authenticity, fair pay. When reviewing an email or document, quote specific lines and give specific fixes."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "id": "llm-chain-council",
+      "name": "Council Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-5-20250929",
+        "options": {
+          "maxTokensToSample": 4096
+        }
+      },
+      "id": "claude-model-council",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [680, 500]
+    }
+  ],
+  "connections": {
+    "Council Webhook": {
+      "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]]
+    },
+    "Build Prompt": {
+      "main": [[{"node": "Council Agent", "type": "main", "index": 0}]]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [[{"node": "Council Agent", "type": "ai_languageModel", "index": 0}]]
+    }
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {}
+}

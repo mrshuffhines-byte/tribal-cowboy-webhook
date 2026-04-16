@@ -1,0 +1,84 @@
+{
+  "name": "Tribal Cowboy - Brand Design",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tribal-cowboy-design",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-design",
+      "name": "Design Request Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "tribal-cowboy-design"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "prompt-var",
+              "name": "prompt",
+              "value": "=Generate brand design guidance for Tribal Cowboy.\n\nDesign need: {{ $json.body.input || $json.input }}\nDesign type: {{ $json.body.design_type || $json.design_type || 'unspecified' }}\n\nProvide: 1) Recommended theme (Classic, Bold Event, Community Warm, or Social Media), 2) Specific color usage with hex codes, 3) Typography choices, 4) Layout/composition guidance, 5) Any copy/headline suggestions that fit.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-prompt-design",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are the Brand Design Agent for Tribal Cowboy LLC — keeper of visual identity.\n\nCOLOR PALETTE:\n- Gold #C9A84C — prestige, warmth, celebration. Headings, highlights, CTAs\n- Cream #F5F0E8 — primary background\n- Deep Teal #2D6A6A — sections, cards, contrast\n- Warm Amber #D4850A — accent pops, badges\n- Forest Green #3A7D44 — success states, nature elements\n- Warm Red #C0392B — urgency, sparingly\n- White #FFFFFF — card backgrounds\n- Soft Gray #6B7280 — secondary text\n\nRULES: Never pure black. Gold on cream = brand signature moment. Teal bg + white/cream text = section contrast. Amber is accent only.\n\nTYPOGRAPHY:\n- Playfair Display (serif) — hero/display (48-64px), section headers (28-36px), elegant editorial feel\n- Lato (sans-serif) — body (14-16px), UI, captions, labels\n- Never mix more than 2 fonts. Headlines in Playfair, rest in Lato. Avoid ALL CAPS in Playfair.\n\nTHEMES:\n1. Classic Tribal Cowboy — cream bg, gold accents, teal highlights (proposals, formal, website)\n2. Bold Event — dark teal/charcoal bg, gold + cream text, high contrast (flyers, event promos)\n3. Community Warm — warm amber + forest green, cream bg (schools, nonprofits, grassroots)\n4. Social Media — bold crops, strong typography, gold text over event photography\n\nDIMENSIONS:\n- Instagram Post: 1080x1080\n- IG Story/Reel: 1080x1920\n- Facebook Post: 1200x630\n- TikTok: 1080x1920\n\nPHOTOGRAPHY: warm-toned, celebratory, real people at real events. Semi-transparent gold/teal overlays for text legibility.\n\nRULES: Always use the established palette. Every decision reinforces: warm, bold, culturally rich, professional. Consistency beats creativity. When in doubt, gold on cream is safe."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "id": "llm-chain-design",
+      "name": "Brand Design Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-5-20250929",
+        "options": {
+          "maxTokensToSample": 4096
+        }
+      },
+      "id": "claude-model-design",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [680, 500]
+    }
+  ],
+  "connections": {
+    "Design Request Webhook": {
+      "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]]
+    },
+    "Build Prompt": {
+      "main": [[{"node": "Brand Design Agent", "type": "main", "index": 0}]]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [[{"node": "Brand Design Agent", "type": "ai_languageModel", "index": 0}]]
+    }
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {}
+}

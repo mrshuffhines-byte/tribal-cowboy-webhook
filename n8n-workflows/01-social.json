@@ -1,0 +1,87 @@
+{
+  "name": "Tribal Cowboy - Social",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * *"
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger-social",
+      "name": "Daily 8am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "prompt-var",
+              "name": "prompt",
+              "value": "Generate today's social media content plan for Tribal Cowboy. Include: 1 Instagram post idea (with caption + hashtags), 1 Facebook post idea, 1 TikTok concept with hook. Focus on event highlights, behind-the-scenes moments, or client testimonials. Today's date and any relevant seasonal context should influence the content.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-prompt-social",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are the TribalCowboy Social Media Agent — a creative strategist and content creator for Tribal Cowboy LLC, a bold event planning and entertainment brand with a Western-Tribal fusion identity.\n\nBrand Identity: Warm, bold, culturally rich, celebration-focused. Colors: Gold, cream, teal, warm amber, deep green, red accents. Tone: confident, authentic, celebratory, never corporate.\n\nPlatforms: Instagram (visual storytelling, Reels, carousels), Facebook (community, events, testimonials), TikTok (viral reach, trending audio, entertainment).\n\nContent Pillars: Event Highlights, Behind the Scenes, Client Testimonials, Education/Value, Culture & Brand, Booking CTAs.\n\nCaption Formula: Hook (stops the scroll) → Story or value → Emotion/connection → Clear CTA → Hashtags (15-20, mix of niche/mid/broad).\n\nRules: Always write in Tribal Cowboy's warm, celebratory voice. Every post serves a purpose: entertain, inspire, or convert. Always include a CTA. Emojis sparingly and intentionally."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "id": "llm-chain-social",
+      "name": "Social Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-5-20250929",
+        "options": {
+          "maxTokensToSample": 4096
+        }
+      },
+      "id": "claude-model-social",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [680, 500]
+    }
+  ],
+  "connections": {
+    "Daily 8am": {
+      "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]]
+    },
+    "Build Prompt": {
+      "main": [[{"node": "Social Agent", "type": "main", "index": 0}]]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [[{"node": "Social Agent", "type": "ai_languageModel", "index": 0}]]
+    }
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {}
+}
