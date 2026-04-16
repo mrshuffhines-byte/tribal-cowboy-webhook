@@ -51,7 +51,7 @@ Before touching the Console, collect all the credentials you need. Do this first
 
 - [ ] **Step 3: Tavily API key**
 
-  1. Go to [app.tavily.com](https://app.tavily.com)
+  1. Go to [app.tavily.com](https://app.tavily.com) 
   2. Sign in (or create a free account)
   3. Copy your API key from the dashboard
   4. Save it
