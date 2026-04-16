@@ -24,7 +24,7 @@
         "options": {
           "respondWithOptions": {
             "values": {
-              "formSubmittedText": "Got it! Your response script is being drafted. Check n8n executions for the result."
+              "formSubmittedText": "Got it! Your response script is being drafted and will be emailed to you shortly."
             }
           }
         }
@@ -87,6 +87,19 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [680, 500]
+    },
+    {
+      "parameters": {
+        "sendTo": "YOUR_EMAIL@gmail.com",
+        "subject": "=💰 Get Paid Response — {{ $('Free Request Form').item.json['Requester Name'] }}",
+        "emailType": "text",
+        "message": "=Your Get Paid Agent drafted this response for {{ $('Free Request Form').item.json['Requester Name'] }}:\n\nREQUEST DETAILS:\n{{ $('Free Request Form').item.json['Request Details'] }}\n\n---\nAGENT RESPONSE:\n\n{{ $json.text }}"
+      },
+      "id": "gmail-get-paid",
+      "name": "Email Results to Yourself",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [900, 300]
     }
   ],
   "connections": {
@@ -98,6 +111,9 @@
     },
     "Anthropic Chat Model": {
       "ai_languageModel": [[{"node": "Get Paid Agent", "type": "ai_languageModel", "index": 0}]]
+    },
+    "Get Paid Agent": {
+      "main": [[{"node": "Email Results to Yourself", "type": "main", "index": 0}]]
     }
   },
   "settings": {"executionOrder": "v1"},

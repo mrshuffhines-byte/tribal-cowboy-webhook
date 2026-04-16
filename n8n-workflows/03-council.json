@@ -19,7 +19,7 @@
         "options": {
           "respondWithOptions": {
             "values": {
-              "formSubmittedText": "The Council is convening. Check n8n executions for your full advisory report."
+              "formSubmittedText": "The Council is convening. Your advisory report will be emailed to you shortly."
             }
           }
         }
@@ -82,6 +82,19 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [680, 500]
+    },
+    {
+      "parameters": {
+        "sendTo": "YOUR_EMAIL@gmail.com",
+        "subject": "=🤠 Council Report — {{ $now.toFormat('MMM d, yyyy') }}",
+        "emailType": "text",
+        "message": "=TOPIC SUBMITTED:\n{{ $('Council Form').item.json['Topic'] }}\n\n---\nCOUNCIL REPORT:\n\n{{ $json.text }}"
+      },
+      "id": "gmail-council",
+      "name": "Email Council Report",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [900, 300]
     }
   ],
   "connections": {
@@ -93,6 +106,9 @@
     },
     "Anthropic Chat Model": {
       "ai_languageModel": [[{"node": "Council Agent", "type": "ai_languageModel", "index": 0}]]
+    },
+    "Council Agent": {
+      "main": [[{"node": "Email Council Report", "type": "main", "index": 0}]]
     }
   },
   "settings": {"executionOrder": "v1"},

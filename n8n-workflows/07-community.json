@@ -41,7 +41,7 @@
         "options": {
           "respondWithOptions": {
             "values": {
-              "formSubmittedText": "Partnership proposal is being prepared. Check n8n executions for the full proposal and pricing."
+              "formSubmittedText": "Partnership proposal is being prepared and will be emailed to you shortly."
             }
           }
         }
@@ -104,6 +104,19 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [680, 500]
+    },
+    {
+      "parameters": {
+        "sendTo": "YOUR_EMAIL@gmail.com",
+        "subject": "=🏫 Community Partnership Proposal — {{ $('Community Request Form').item.json['Organization Name'] }}",
+        "emailType": "text",
+        "message": "=New community partnership request received:\n\nORGANIZATION: {{ $('Community Request Form').item.json['Organization Name'] }}\nTYPE: {{ $('Community Request Form').item.json['Organization Type'] }}\nEVENT: {{ $('Community Request Form').item.json['Event Details'] }}\n\n---\nPARTNERSHIP PROPOSAL:\n\n{{ $json.text }}"
+      },
+      "id": "gmail-community",
+      "name": "Email Partnership Proposal",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [900, 300]
     }
   ],
   "connections": {
@@ -115,6 +128,9 @@
     },
     "Anthropic Chat Model": {
       "ai_languageModel": [[{"node": "Community Agent", "type": "ai_languageModel", "index": 0}]]
+    },
+    "Community Agent": {
+      "main": [[{"node": "Email Partnership Proposal", "type": "main", "index": 0}]]
     }
   },
   "settings": {"executionOrder": "v1"},

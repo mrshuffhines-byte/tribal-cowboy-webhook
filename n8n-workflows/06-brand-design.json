@@ -36,7 +36,7 @@
         "options": {
           "respondWithOptions": {
             "values": {
-              "formSubmittedText": "Design spec is being generated. Check n8n executions for your brand-aligned design guidance."
+              "formSubmittedText": "Design spec is being generated and will be emailed to you shortly."
             }
           }
         }
@@ -99,6 +99,19 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [680, 500]
+    },
+    {
+      "parameters": {
+        "sendTo": "YOUR_EMAIL@gmail.com",
+        "subject": "=🎨 Design Spec — {{ $('Design Request Form').item.json['Design Type'] }}",
+        "emailType": "text",
+        "message": "=Your Brand Design Agent generated this spec:\n\nDESIGN TYPE: {{ $('Design Request Form').item.json['Design Type'] }}\nREQUEST: {{ $('Design Request Form').item.json['Design Need'] }}\n\n---\nDESIGN GUIDANCE:\n\n{{ $json.text }}"
+      },
+      "id": "gmail-design",
+      "name": "Email Design Spec",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [900, 300]
     }
   ],
   "connections": {
@@ -110,6 +123,9 @@
     },
     "Anthropic Chat Model": {
       "ai_languageModel": [[{"node": "Brand Design Agent", "type": "ai_languageModel", "index": 0}]]
+    },
+    "Brand Design Agent": {
+      "main": [[{"node": "Email Design Spec", "type": "main", "index": 0}]]
     }
   },
   "settings": {"executionOrder": "v1"},

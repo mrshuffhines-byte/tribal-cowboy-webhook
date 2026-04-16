@@ -36,7 +36,7 @@
         "options": {
           "respondWithOptions": {
             "values": {
-              "formSubmittedText": "Your content is being reviewed. Check n8n executions for the full brand voice analysis and corrected version."
+              "formSubmittedText": "Your content is being reviewed and the corrected version will be emailed to you shortly."
             }
           }
         }
@@ -99,6 +99,19 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [680, 500]
+    },
+    {
+      "parameters": {
+        "sendTo": "YOUR_EMAIL@gmail.com",
+        "subject": "=🎙️ Brand Voice Review — {{ $('Content Review Form').item.json['Content Type'] }}",
+        "emailType": "text",
+        "message": "=Brand Voice review complete:\n\nCONTENT TYPE: {{ $('Content Review Form').item.json['Content Type'] }}\n\nORIGINAL:\n{{ $('Content Review Form').item.json['Content to Review'] }}\n\n---\nREVIEW & CORRECTED VERSION:\n\n{{ $json.text }}"
+      },
+      "id": "gmail-voice",
+      "name": "Email Brand Voice Review",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [900, 300]
     }
   ],
   "connections": {
@@ -110,6 +123,9 @@
     },
     "Anthropic Chat Model": {
       "ai_languageModel": [[{"node": "Brand Voice Agent", "type": "ai_languageModel", "index": 0}]]
+    },
+    "Brand Voice Agent": {
+      "main": [[{"node": "Email Brand Voice Review", "type": "main", "index": 0}]]
     }
   },
   "settings": {"executionOrder": "v1"},
