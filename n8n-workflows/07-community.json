@@ -107,7 +107,7 @@
     },
     {
       "parameters": {
-        "sendTo": "YOUR_EMAIL@gmail.com",
+        "sendTo": "info@tribalcowboy.com",
         "subject": "=🏫 Community Partnership Proposal — {{ $('Community Request Form').item.json['Organization Name'] }}",
         "emailType": "text",
         "message": "=New community partnership request received:\n\nORGANIZATION: {{ $('Community Request Form').item.json['Organization Name'] }}\nTYPE: {{ $('Community Request Form').item.json['Organization Type'] }}\nEVENT: {{ $('Community Request Form').item.json['Event Details'] }}\n\n---\nPARTNERSHIP PROPOSAL:\n\n{{ $json.text }}"

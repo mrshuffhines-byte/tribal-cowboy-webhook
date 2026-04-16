@@ -102,7 +102,7 @@
     },
     {
       "parameters": {
-        "sendTo": "YOUR_EMAIL@gmail.com",
+        "sendTo": "info@tribalcowboy.com",
         "subject": "=🎙️ Brand Voice Review — {{ $('Content Review Form').item.json['Content Type'] }}",
         "emailType": "text",
         "message": "=Brand Voice review complete:\n\nCONTENT TYPE: {{ $('Content Review Form').item.json['Content Type'] }}\n\nORIGINAL:\n{{ $('Content Review Form').item.json['Content to Review'] }}\n\n---\nREVIEW & CORRECTED VERSION:\n\n{{ $json.text }}"

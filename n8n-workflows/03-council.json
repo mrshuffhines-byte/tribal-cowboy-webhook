@@ -85,7 +85,7 @@
     },
     {
       "parameters": {
-        "sendTo": "YOUR_EMAIL@gmail.com",
+        "sendTo": "info@tribalcowboy.com",
         "subject": "=🤠 Council Report — {{ $now.toFormat('MMM d, yyyy') }}",
         "emailType": "text",
         "message": "=TOPIC SUBMITTED:\n{{ $('Council Form').item.json['Topic'] }}\n\n---\nCOUNCIL REPORT:\n\n{{ $json.text }}"

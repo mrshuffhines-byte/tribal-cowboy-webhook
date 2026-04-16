@@ -156,7 +156,7 @@
     },
     {
       "parameters": {
-        "sendTo": "YOUR_EMAIL@gmail.com",
+        "sendTo": "info@tribalcowboy.com",
         "subject": "=📱 Booking Closer Report — {{ $now.toFormat('MMM d, yyyy') }}",
         "emailType": "text",
         "message": "=SMS sent to {{ $json.name }} ({{ $json.phone }})\nCategory: {{ $json.category }}\nMessage sent: {{ $json.message }}\nLead status updated to: Contacted\n\nTime: {{ $now.toFormat('h:mm a') }}"

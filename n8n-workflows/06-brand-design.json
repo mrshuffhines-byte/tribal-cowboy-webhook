@@ -102,7 +102,7 @@
     },
     {
       "parameters": {
-        "sendTo": "YOUR_EMAIL@gmail.com",
+        "sendTo": "info@tribalcowboy.com",
         "subject": "=🎨 Design Spec — {{ $('Design Request Form').item.json['Design Type'] }}",
         "emailType": "text",
         "message": "=Your Brand Design Agent generated this spec:\n\nDESIGN TYPE: {{ $('Design Request Form').item.json['Design Type'] }}\nREQUEST: {{ $('Design Request Form').item.json['Design Need'] }}\n\n---\nDESIGN GUIDANCE:\n\n{{ $json.text }}"

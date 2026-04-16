@@ -52,7 +52,7 @@
     },
     {
       "parameters": {
-        "sendTo": "YOUR_EMAIL@gmail.com",
+        "sendTo": "info@tribalcowboy.com",
         "subject": "=🤠 Tribal Cowboy Daily Brief — {{ $now.toFormat('EEE MMM d') }}{{ $json.newLeads > 0 ? ' ⚠️ ' + $json.newLeads + ' new lead(s)' : '' }}",
         "emailType": "text",
         "message": "={{ $json.summary }}"

@@ -90,7 +90,7 @@
     },
     {
       "parameters": {
-        "sendTo": "YOUR_EMAIL@gmail.com",
+        "sendTo": "info@tribalcowboy.com",
         "subject": "=💰 Get Paid Response — {{ $('Free Request Form').item.json['Requester Name'] }}",
         "emailType": "text",
         "message": "=Your Get Paid Agent drafted this response for {{ $('Free Request Form').item.json['Requester Name'] }}:\n\nREQUEST DETAILS:\n{{ $('Free Request Form').item.json['Request Details'] }}\n\n---\nAGENT RESPONSE:\n\n{{ $json.text }}"

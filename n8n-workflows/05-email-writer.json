@@ -107,7 +107,7 @@
     },
     {
       "parameters": {
-        "sendTo": "YOUR_EMAIL@gmail.com",
+        "sendTo": "info@tribalcowboy.com",
         "subject": "=✉️ Email Draft — {{ $('Email Request Form').item.json['Email Type'] }} to {{ $('Email Request Form').item.json['Recipient'] }}",
         "emailType": "text",
         "message": "=Your Email Writer drafted this for you. Copy, personalize if needed, and send!\n\nTYPE: {{ $('Email Request Form').item.json['Email Type'] }}\nFOR: {{ $('Email Request Form').item.json['Recipient'] }}\nCONTEXT: {{ $('Email Request Form').item.json['Context and Details'] }}\n\n---\nDRAFTED EMAIL:\n\n{{ $json.text }}"
