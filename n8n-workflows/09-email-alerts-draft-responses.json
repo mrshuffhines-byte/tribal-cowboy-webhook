@@ -1,0 +1,278 @@
+{
+  "name": "Tribal Cowboy - Email Alerts + Draft Responses",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [{ "mode": "everyMinute" }]
+        },
+        "filters": {},
+        "options": {}
+      },
+      "id": "gmail-trigger",
+      "name": "New Email — info@tribalcowboy.com",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "gmail-oauth",
+          "name": "Tribal Cowboy - Gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f-sender-email",
+              "name": "sender_email",
+              "value": "={{ $json.from && $json.from.value ? $json.from.value[0].address : ($json.from || 'unknown@sender.com') }}",
+              "type": "string"
+            },
+            {
+              "id": "f-sender-name",
+              "name": "sender_name",
+              "value": "={{ $json.from && $json.from.value ? ($json.from.value[0].name || $json.from.value[0].address) : ($json.from || 'Unknown Sender') }}",
+              "type": "string"
+            },
+            {
+              "id": "f-subject",
+              "name": "subject",
+              "value": "={{ $json.subject || '(no subject)' }}",
+              "type": "string"
+            },
+            {
+              "id": "f-body",
+              "name": "body",
+              "value": "={{ $json.text || $json.snippet || '(email body not available)' }}",
+              "type": "string"
+            },
+            {
+              "id": "f-received",
+              "name": "received_at",
+              "value": "={{ $json.date || $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "extract-email",
+      "name": "Extract Email Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "from": "={{ $env.TWILIO_PHONE_NUMBER }}",
+        "to": "={{ $env.STACIE_PHONE }}",
+        "body": "=New email at Tribal Cowboy\nFrom: {{ $json.sender_name }}\nSubject: {{ $json.subject }}\n\nCouncil review + draft reply on its way to your inbox."
+      },
+      "id": "sms-alert",
+      "name": "Alert Stacie via SMS",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [680, 80],
+      "credentials": {
+        "twilioApi": {
+          "id": "twilio-cred",
+          "name": "Tribal Cowboy - Twilio"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c-prompt",
+              "name": "council_prompt",
+              "value": "=Convene The Council to review this inbound email received at info@tribalcowboy.com for Tribal Cowboy LLC.\n\n---\nFROM: {{ $json.sender_name }} <{{ $json.sender_email }}>\nSUBJECT: {{ $json.subject }}\nRECEIVED: {{ $json.received_at }}\n\n{{ $json.body }}\n---\n\nProvide:\n1. Category: Booking Inquiry / Partnership / Media / Vendor / Community / Complaint / Spam / Other\n2. Priority: Urgent / High / Normal / Low\n3. Full Council review (all five voices)\n4. Recommended response strategy and tone\n5. Any red flags or high-value opportunities to flag for Stacie",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "build-council-prompt",
+      "name": "Build Council Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.council_prompt }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are The Council — Tribal Cowboy LLC's trusted advisory board. You provide honest, multi-perspective guidance on incoming emails, decisions, and opportunities.\n\nThe Council consists of five advisors:\n1. The Strategist — big-picture business thinking and opportunity assessment\n2. The Money Mind — financial reality check, revenue potential, and pricing signals\n3. The Brand Guardian — protects Tribal Cowboy's identity, values, and reputation\n4. The Devil's Advocate — finds holes, risks, red flags, and anything that seems off\n5. The Community Voice — how clients, partners, and the public receive this\n\nEvery Council session follows this exact format:\n\n**COUNCIL SESSION: [Sender / Topic]**\n\n**Category:** [Booking Inquiry / Partnership / Media / Vendor / Community / Complaint / Spam / Other]\n**Priority:** [Urgent / High / Normal / Low]\n**The Matter:** [1-2 sentence summary of the email]\n\n**The Strategist:** [2-4 sentences]\n**The Money Mind:** [2-4 sentences]\n**The Brand Guardian:** [2-4 sentences]\n**The Devil's Advocate:** [2-4 sentences]\n**The Community Voice:** [2-4 sentences]\n\n**Key Tension:** [the core trade-off or risk in how to respond]\n**Council Verdict:** [clear, direct recommendation]\n**Response Strategy:** [tone to use, key points to address, what NOT to say]\n**Next Action:** [one concrete step for Stacie]\n\nRules: Be honest — if this is spam or low-value, say so plainly. Flag anything suspicious. Respect Tribal Cowboy's values: community, authenticity, fair pay, Indigenous dignity. If this is a real booking inquiry, treat it with urgency. If it's a predatory or low-ball request, name it."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "id": "council-agent",
+      "name": "Council Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-6",
+        "options": {
+          "maxTokensToSample": 4096
+        }
+      },
+      "id": "claude-council",
+      "name": "Anthropic Chat Model (Council)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [900, 500],
+      "credentials": {
+        "anthropicApi": {
+          "id": "anthropic-cred",
+          "name": "Tribal Cowboy - Anthropic"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d-review",
+              "name": "council_review",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            },
+            {
+              "id": "d-prompt",
+              "name": "draft_prompt",
+              "value": "=Draft a professional email response for Tribal Cowboy LLC to the following inbound email. Use the Council's review to inform your tone, strategy, and what to address.\n\n--- ORIGINAL EMAIL ---\nFrom: {{ $('Extract Email Data').item.json.sender_name }} <{{ $('Extract Email Data').item.json.sender_email }}>\nSubject: {{ $('Extract Email Data').item.json.subject }}\nReceived: {{ $('Extract Email Data').item.json.received_at }}\n\n{{ $('Extract Email Data').item.json.body }}\n\n--- COUNCIL REVIEW ---\n{{ $json.text }}\n\n--- YOUR TASK ---\nWrite a complete, ready-to-send reply. Include:\n1. Suggested subject line\n2. Full email body\n3. Recommended send timing (immediate / wait X hours / other)\n4. Any info Stacie should confirm or clarify before hitting send\n\nThe reply must:\n- Open specifically — reference exactly what they asked about\n- Address their inquiry directly and warmly\n- Include relevant Tribal Cowboy service details if applicable\n- End with ONE clear next step\n- Sign as: Stacie | Tribal Cowboy LLC | www.tribalcowboy.com | info@tribalcowboy.com",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "build-draft-prompt",
+      "name": "Build Draft Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.draft_prompt }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are the Email Writer Agent for Tribal Cowboy LLC — an expert at writing replies that sound like Stacie: warm, direct, confident, and real. Not a marketing agency. A person who loves horses and runs a serious business.\n\nTribal Cowboy Voice Rules:\n- No corporate language: never 'leverage,' 'synergy,' 'unique experience,' 'memories to last a lifetime'\n- One exclamation mark per email maximum. Earn it.\n- No clichés: 'your special day,' 'dreams come true,' 'making memories' are banned\n- No AI-speak: 'delve,' 'testament to,' 'it's worth noting,' 'seamlessly,' 'in conclusion'\n- Specificity beats generality — reference what they actually asked about\n- Every email ends with ONE clear next step, not a menu of options\n- Short paragraphs. White space. No walls of text.\n\nFor booking inquiries: open with genuine interest in their event → ask 2-3 qualifying questions → include booking link\nFor partnerships: assess fit honestly → propose a specific next step if it is a fit → decline gracefully if it is not\nFor complaints: acknowledge first, take ownership where real, offer a resolution\nFor pricing questions: lead with value → state investment clearly → frame deposit as what secures their date\nFor vendors or spam: brief, professional, zero commitment\n\nSign off always as:\nStacie | Tribal Cowboy LLC\nwww.tribalcowboy.com | info@tribalcowboy.com"
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "id": "email-writer-agent",
+      "name": "Email Writer Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-6",
+        "options": {
+          "maxTokensToSample": 4096
+        }
+      },
+      "id": "claude-email",
+      "name": "Anthropic Chat Model (Email Writer)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [1340, 500],
+      "credentials": {
+        "anthropicApi": {
+          "id": "anthropic-cred",
+          "name": "Tribal Cowboy - Anthropic"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "javaScript",
+        "jsCode": "const emailData = $('Extract Email Data').item.json;\nconst councilReview = $('Build Draft Prompt').item.json.council_review;\nconst emailDraft = $input.item.json.text;\n\nconst sep = '══════════════════════════════════════════════';\nconst line = '──────────────────────────────────────────────';\n\nconst subject = '[TC Email Alert] ' + emailData.subject + ' — Council + Draft Ready';\n\nconst body = [\n  sep,\n  'ORIGINAL EMAIL',\n  sep,\n  'From:     ' + emailData.sender_name + ' <' + emailData.sender_email + '>',\n  'Subject:  ' + emailData.subject,\n  'Received: ' + emailData.received_at,\n  '',\n  emailData.body,\n  '',\n  sep,\n  'COUNCIL REVIEW',\n  sep,\n  councilReview,\n  '',\n  sep,\n  'SUGGESTED REPLY DRAFT',\n  sep,\n  emailDraft,\n  '',\n  line,\n  'Generated by Tribal Cowboy AI agents (Council + Email Writer).',\n  'Review carefully. Edit as needed. Send when ready.',\n  line\n].join('\\n');\n\nreturn [{ json: { subject, body } }];"
+      },
+      "id": "build-summary",
+      "name": "Build Alert Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "toList": "={{ $env.STACIE_EMAIL }}",
+        "subject": "={{ $json.subject }}",
+        "message": "={{ $json.body }}",
+        "options": {}
+      },
+      "id": "send-to-stacie",
+      "name": "Send Alert to Stacie",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [1780, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "gmail-oauth",
+          "name": "Tribal Cowboy - Gmail"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "New Email — info@tribalcowboy.com": {
+      "main": [[{"node": "Extract Email Data", "type": "main", "index": 0}]]
+    },
+    "Extract Email Data": {
+      "main": [
+        [
+          {"node": "Alert Stacie via SMS", "type": "main", "index": 0},
+          {"node": "Build Council Prompt", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Build Council Prompt": {
+      "main": [[{"node": "Council Agent", "type": "main", "index": 0}]]
+    },
+    "Council Agent": {
+      "main": [[{"node": "Build Draft Prompt", "type": "main", "index": 0}]]
+    },
+    "Anthropic Chat Model (Council)": {
+      "ai_languageModel": [[{"node": "Council Agent", "type": "ai_languageModel", "index": 0}]]
+    },
+    "Build Draft Prompt": {
+      "main": [[{"node": "Email Writer Agent", "type": "main", "index": 0}]]
+    },
+    "Email Writer Agent": {
+      "main": [[{"node": "Build Alert Email", "type": "main", "index": 0}]]
+    },
+    "Anthropic Chat Model (Email Writer)": {
+      "ai_languageModel": [[{"node": "Email Writer Agent", "type": "ai_languageModel", "index": 0}]]
+    },
+    "Build Alert Email": {
+      "main": [[{"node": "Send Alert to Stacie", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {}
+}

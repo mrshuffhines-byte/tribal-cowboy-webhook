@@ -1,6 +1,6 @@
 # Tribal Cowboy n8n Workflows
 
-Eight importable n8n workflows — one per Tribal Cowboy agent. Drag each JSON file into your n8n.cloud canvas to import.
+Nine importable n8n workflows. Drag each JSON file into your n8n.cloud canvas to import.
 
 ## One-Time Setup
 
@@ -16,10 +16,27 @@ Eight importable n8n workflows — one per Tribal Cowboy agent. Drag each JSON f
 3. Name it: `Tribal Cowboy - Twilio`
 4. Save
 
-### 3. Import Each Workflow
+### 3. Create Gmail OAuth2 Credential (for email workflows)
+1. **Credentials** → **New** → search "Gmail OAuth2"
+2. Follow the Google OAuth flow — connect the **info@tribalcowboy.com** account
+3. Name it: `Tribal Cowboy - Gmail`
+4. Save
+
+### 4. Set n8n Environment Variables
+In n8n.cloud → **Settings** → **Variables**, add:
+
+| Variable | Value | Used By |
+|---|---|---|
+| `STACIE_PHONE` | Your cell number (e.g. `+12085551234`) | Email alerts SMS |
+| `STACIE_EMAIL` | Your **personal** email (NOT info@tribalcowboy.com) | Email alert summary |
+| `TWILIO_PHONE_NUMBER` | Your Twilio number (e.g. `+12085559876`) | Email alerts SMS |
+
+> **Important:** `STACIE_EMAIL` must be a different address than `info@tribalcowboy.com` to avoid a loop.
+
+### 5. Import Each Workflow
 1. In n8n.cloud → **Workflows** → top-right menu (...) → **Import from File**
 2. Upload the `.json` file
-3. Open the workflow → click the **Anthropic Chat Model** node → select your credential
+3. Open the workflow → click each **Anthropic Chat Model** node → select `Tribal Cowboy - Anthropic`
 4. Click **Activate** (top-right toggle) to turn it on
 
 ---
@@ -36,6 +53,7 @@ Eight importable n8n workflows — one per Tribal Cowboy agent. Drag each JSON f
 | `06-brand-design.json` | Brand Design | Webhook | Generates design specs, color schemes, layouts |
 | `07-community.json` | Community | Webhook | Processes school/nonprofit partnership requests |
 | `08-brand-voice.json` | Brand Voice | Webhook | Reviews content for brand consistency |
+| `09-email-alerts-draft-responses.json` | Email Alerts + Drafts | Gmail Trigger (every 1 min) | Alerts Stacie via SMS + sends Council review + draft reply for every inbound email |
 
 ---
 
@@ -128,8 +146,38 @@ The `booking-closer` workflow demonstrates this pattern — it fetches voice lea
 
 ---
 
+---
+
+## How Workflow 09 Works — Email Alerts + Draft Responses
+
+When any email lands in info@tribalcowboy.com, this workflow fires automatically:
+
+1. **Gmail Trigger** polls the inbox every minute for new emails
+2. **Extract Email Data** pulls out sender, subject, and body
+3. **Two things happen in parallel:**
+   - Twilio sends Stacie an **instant SMS alert** with the sender and subject
+   - The Council + Email Writer pipeline starts running
+4. **Council Agent** reviews the email — categorizes it (Booking / Partnership / Spam / etc.), assigns priority, gives five-perspective analysis, and recommends a response strategy
+5. **Email Writer Agent** uses the email content AND the Council's recommendation to draft a complete, ready-to-edit reply in Tribal Cowboy's voice
+6. **Build Alert Email** combines everything into one clean document
+7. **Gmail sends the summary** to `STACIE_EMAIL` with three sections: original email, Council review, suggested draft
+
+**What Stacie gets:**
+- An SMS within seconds: "New email from [Name]. Council + draft on the way."
+- An email to her personal inbox with the full Council session and a ready-to-edit draft reply
+
+**What Stacie does:**
+- Review the Council's take on priority and strategy
+- Copy/edit the draft reply as needed
+- Send from her Gmail client
+
+---
+
 ## Troubleshooting
 
-- **"No credentials" error** → Set the Anthropic credential in each workflow's Anthropic Chat Model node
+- **"No credentials" error** → Click each Anthropic Chat Model node and select `Tribal Cowboy - Anthropic`; click Gmail nodes and select `Tribal Cowboy - Gmail`; click Twilio node and select `Tribal Cowboy - Twilio`
 - **Webhook returns 404** → Make sure the workflow is **Activated** (toggle at top-right)
-- **Model not found** → The JSON uses `claude-sonnet-4-5-20250929`; update to latest if n8n supports it
+- **Model not found** → Workflow 09 uses `claude-sonnet-4-6`; older workflows use `claude-sonnet-4-5-20250929` — update if needed
+- **Email loop** → Make sure `STACIE_EMAIL` is NOT set to `info@tribalcowboy.com`
+- **SMS not sending** → Confirm `STACIE_PHONE` and `TWILIO_PHONE_NUMBER` are set in n8n Variables and formatted with country code (e.g. `+12085551234`)
+- **Gmail trigger not firing** → Check that the Gmail OAuth credential has permission to read `info@tribalcowboy.com` and that the workflow is activated
