@@ -54,6 +54,7 @@ In n8n.cloud → **Settings** → **Variables**, add:
 | `07-community.json` | Community | Webhook | Processes school/nonprofit partnership requests |
 | `08-brand-voice.json` | Brand Voice | Webhook | Reviews content for brand consistency |
 | `09-email-alerts-draft-responses.json` | Email Alerts + Drafts | Gmail Trigger (every 1 min) | Alerts Stacie via SMS + sends Council review + draft reply for every inbound email |
+| `10-negotiation-replies.json` | Negotiation Intelligence | Gmail Trigger (every 1 min, label-filtered) | Watches for replies on threads Stacie labeled "TC Negotiations" — fetches full thread history, runs negotiation-specific Council analysis, drafts a strategic reply that protects TC's position |
 
 ---
 
@@ -181,3 +182,44 @@ When any email lands in info@tribalcowboy.com, this workflow fires automatically
 - **Email loop** → Make sure `STACIE_EMAIL` is NOT set to `info@tribalcowboy.com`
 - **SMS not sending** → Confirm `STACIE_PHONE` and `TWILIO_PHONE_NUMBER` are set in n8n Variables and formatted with country code (e.g. `+12085551234`)
 - **Gmail trigger not firing** → Check that the Gmail OAuth credential has permission to read `info@tribalcowboy.com` and that the workflow is activated
+
+---
+
+## How Workflow 10 Works — Negotiation Reply Intelligence
+
+This workflow only fires on threads you deliberately flag. It gives you the full conversation history and a negotiation-specific analysis — not just "what should I say" but "what are they actually doing, what's their leverage, and what should you never give up."
+
+### One-Time Gmail Setup
+
+1. In Gmail, create a new label: **TC Negotiations**
+2. When you send an important business email (event inquiry, partnership pitch, pricing discussion), open that sent thread and apply the **TC Negotiations** label to it
+3. When they reply, this workflow triggers automatically
+
+### What the Workflow Does
+
+1. **Gmail Trigger** watches for new replies in any thread labeled TC Negotiations (not from your own address)
+2. **Fetch Full Thread** pulls every message in the thread via Gmail API — Claude sees the entire conversation, not just the latest reply
+3. **Parse Thread History** decodes and formats all messages, labels each one as "SENT BY STACIE" or "RECEIVED FROM THEM"
+4. **SMS Alert** fires immediately with sender, subject, and message count
+5. **Negotiation Council** analyzes the full thread and latest reply:
+   - What are they actually saying vs. literally writing?
+   - Who has more leverage right now?
+   - Are they lowballing, stalling, or applying pressure?
+   - What should Stacie never concede?
+   - Walk-away recommendation
+6. **Strategic Reply Writer** reads the Council verdict and drafts a reply that holds TC's position — warm but firm, no apologizing for rates
+7. **Alert Email** lands in your personal inbox with: full thread, Council analysis, and strategic draft
+
+### What You Get in Your Inbox
+
+- Full conversation history so you can see the whole arc
+- A "Power Read" on who holds leverage
+- Specific red flags called out by name
+- Hard limits (what NOT to give up)
+- A ready-to-edit reply that doesn't undersell TC
+
+### Troubleshooting Workflow 10
+
+- **Not triggering** → Make sure the label is spelled exactly **TC Negotiations** in Gmail and the workflow query matches: `label:tc-negotiations`
+- **Thread fetch failing** → The HTTP Request node needs the Gmail OAuth2 credential selected under "Predefined Credential Type" — open the node, click the credential dropdown, select `Tribal Cowboy - Gmail`
+- **Empty thread history** → Some Gmail setups return emails in a different format; open the Parse Thread History node and check the output in a test run to confirm field names
