@@ -187,39 +187,34 @@ When any email lands in info@tribalcowboy.com, this workflow fires automatically
 
 ## How Workflow 10 Works — Negotiation Reply Intelligence
 
-This workflow only fires on threads you deliberately flag. It gives you the full conversation history and a negotiation-specific analysis — not just "what should I say" but "what are they actually doing, what's their leverage, and what should you never give up."
-
-### One-Time Gmail Setup
-
-1. In Gmail, create a new label: **TC Negotiations**
-2. When you send an important business email (event inquiry, partnership pitch, pricing discussion), open that sent thread and apply the **TC Negotiations** label to it
-3. When they reply, this workflow triggers automatically
+**Nothing to set up on your end.** Just send emails from info@tribalcowboy.com like you always do. When someone replies, the workflow automatically detects whether you started that thread. If you did, the full negotiation analysis runs. If you didn't (they emailed you cold), it skips — that's handled by workflow 09.
 
 ### What the Workflow Does
 
-1. **Gmail Trigger** watches for new replies in any thread labeled TC Negotiations (not from your own address)
-2. **Fetch Full Thread** pulls every message in the thread via Gmail API — Claude sees the entire conversation, not just the latest reply
-3. **Parse Thread History** decodes and formats all messages, labels each one as "SENT BY STACIE" or "RECEIVED FROM THEM"
+1. **Gmail Trigger** watches all new inbound emails (not from your own address)
+2. **Fetch Full Thread** pulls every message in the thread via Gmail API
+3. **Detect Direction** reads the first message in the thread — if it was sent by info@tribalcowboy.com, this is a reply to your outbound email and the negotiation pipeline runs; if not, it stops silently
 4. **SMS Alert** fires immediately with sender, subject, and message count
-5. **Negotiation Council** analyzes the full thread and latest reply:
+5. **Negotiation Council** reads the full thread — every message, labeled "SENT BY STACIE" or "RECEIVED FROM THEM" — then analyzes:
    - What are they actually saying vs. literally writing?
-   - Who has more leverage right now?
+   - Who holds more leverage right now?
    - Are they lowballing, stalling, or applying pressure?
+   - What specific language is a red flag?
    - What should Stacie never concede?
-   - Walk-away recommendation
-6. **Strategic Reply Writer** reads the Council verdict and drafts a reply that holds TC's position — warm but firm, no apologizing for rates
-7. **Alert Email** lands in your personal inbox with: full thread, Council analysis, and strategic draft
+   - Walk-away read
+6. **Strategic Reply Writer** uses the Council's verdict to draft a reply that holds TC's position — warm but firm, never apologizes for rates
+7. **Alert Email** lands in your personal inbox with: full thread history, Council verdict, and strategic draft
 
 ### What You Get in Your Inbox
 
-- Full conversation history so you can see the whole arc
-- A "Power Read" on who holds leverage
-- Specific red flags called out by name
-- Hard limits (what NOT to give up)
+- Full conversation labeled message-by-message so you see the whole arc
+- A "Power Read" — who holds leverage and why
+- Red flags called out with direct quotes from their email
+- Hard limits (what NOT to give up) listed specifically
 - A ready-to-edit reply that doesn't undersell TC
 
 ### Troubleshooting Workflow 10
 
-- **Not triggering** → Make sure the label is spelled exactly **TC Negotiations** in Gmail and the workflow query matches: `label:tc-negotiations`
-- **Thread fetch failing** → The HTTP Request node needs the Gmail OAuth2 credential selected under "Predefined Credential Type" — open the node, click the credential dropdown, select `Tribal Cowboy - Gmail`
-- **Empty thread history** → Some Gmail setups return emails in a different format; open the Parse Thread History node and check the output in a test run to confirm field names
+- **Not triggering on a reply** → Confirm the original email was sent FROM info@tribalcowboy.com (the workflow checks the first message in the thread)
+- **Thread fetch failing** → Open the "Fetch Full Thread" HTTP Request node → click the credential field → select `Tribal Cowboy - Gmail` under Predefined Credential Type
+- **Empty thread history** → Run a test execution and check the "Parse Thread + Detect Direction" node output to see what fields Gmail returned

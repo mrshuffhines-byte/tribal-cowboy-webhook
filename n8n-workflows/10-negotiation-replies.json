@@ -7,12 +7,12 @@
           "item": [{ "mode": "everyMinute" }]
         },
         "filters": {
-          "query": "label:tc-negotiations -from:(info@tribalcowboy.com) in:inbox"
+          "query": "in:inbox -from:(info@tribalcowboy.com)"
         },
         "options": {}
       },
       "id": "gmail-trigger-neg",
-      "name": "Reply on TC Negotiations Thread",
+      "name": "New Inbound Email",
       "type": "n8n-nodes-base.gmailTrigger",
       "typeVersion": 1,
       "position": [240, 300],
@@ -46,13 +46,38 @@
     {
       "parameters": {
         "language": "javaScript",
-        "jsCode": "const thread = $input.item.json;\nconst messages = thread.messages || [];\n\nfunction decodeBase64(data) {\n  if (!data) return '';\n  try {\n    return Buffer.from(data.replace(/-/g, '+').replace(/_/g, '/'), 'base64').toString('utf-8');\n  } catch (e) {\n    return '';\n  }\n}\n\nfunction extractBody(payload) {\n  if (!payload) return '';\n  if (payload.body && payload.body.data) {\n    return decodeBase64(payload.body.data);\n  }\n  if (payload.parts) {\n    const textPart = payload.parts.find(p => p.mimeType === 'text/plain');\n    if (textPart && textPart.body && textPart.body.data) {\n      return decodeBase64(textPart.body.data);\n    }\n    const htmlPart = payload.parts.find(p => p.mimeType === 'text/html');\n    if (htmlPart && htmlPart.body && htmlPart.body.data) {\n      return decodeBase64(htmlPart.body.data).replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim();\n    }\n  }\n  return '';\n}\n\nfunction getHeader(headers, name) {\n  const h = (headers || []).find(h => h.name.toLowerCase() === name.toLowerCase());\n  return h ? h.value : '';\n}\n\nconst parsedMessages = messages.map((msg, i) => {\n  const headers = msg.payload && msg.payload.headers ? msg.payload.headers : [];\n  const from = getHeader(headers, 'From');\n  const to = getHeader(headers, 'To');\n  const date = getHeader(headers, 'Date');\n  const subject = getHeader(headers, 'Subject');\n  const body = extractBody(msg.payload).substring(0, 800);\n  const direction = from.includes('info@tribalcowboy.com') ? 'SENT BY STACIE' : 'RECEIVED FROM THEM';\n  return `[${direction} — ${date}]\\nFrom: ${from}\\nTo: ${to}\\n\\n${body}`;\n});\n\nconst latestMsg = messages[messages.length - 1];\nconst latestHeaders = latestMsg && latestMsg.payload ? latestMsg.payload.headers || [] : [];\n\nreturn [{\n  json: {\n    threadHistory: parsedMessages.join('\\n\\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\\n\\n'),\n    messageCount: messages.length,\n    latestSender: getHeader(latestHeaders, 'From'),\n    latestSubject: getHeader(latestHeaders, 'Subject'),\n    latestBody: extractBody(latestMsg && latestMsg.payload ? latestMsg.payload : null).substring(0, 1000),\n    latestDate: getHeader(latestHeaders, 'Date'),\n    threadId: thread.id\n  }\n}];\n\nfunction getHeader(headers, name) {\n  const h = (headers || []).find(h => h.name.toLowerCase() === name.toLowerCase());\n  return h ? h.value : '';\n}"
+        "jsCode": "const thread = $input.item.json;\nconst messages = thread.messages || [];\n\nfunction decodeBase64(data) {\n  if (!data) return '';\n  try {\n    return Buffer.from(data.replace(/-/g, '+').replace(/_/g, '/'), 'base64').toString('utf-8');\n  } catch (e) { return ''; }\n}\n\nfunction extractBody(payload) {\n  if (!payload) return '';\n  if (payload.body && payload.body.data) return decodeBase64(payload.body.data);\n  if (payload.parts) {\n    const text = payload.parts.find(p => p.mimeType === 'text/plain');\n    if (text && text.body && text.body.data) return decodeBase64(text.body.data);\n    const html = payload.parts.find(p => p.mimeType === 'text/html');\n    if (html && html.body && html.body.data) return decodeBase64(html.body.data).replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim();\n  }\n  return '';\n}\n\nfunction getHeader(headers, name) {\n  const h = (headers || []).find(h => h.name.toLowerCase() === name.toLowerCase());\n  return h ? h.value : '';\n}\n\nif (messages.length === 0) {\n  return [{ json: { stacieStartedThread: false } }];\n}\n\n// Check if Stacie sent the FIRST message in this thread\nconst firstMsg = messages[0];\nconst firstHeaders = firstMsg.payload && firstMsg.payload.headers ? firstMsg.payload.headers : [];\nconst firstFrom = getHeader(firstHeaders, 'From');\nconst stacieStartedThread = firstFrom.toLowerCase().includes('info@tribalcowboy.com');\n\n// Only a single message = Stacie hasn't replied yet or this isn't a thread\nif (messages.length < 2 || !stacieStartedThread) {\n  return [{ json: { stacieStartedThread: false } }];\n}\n\n// Parse all messages for full thread history\nconst parsedMessages = messages.map((msg, i) => {\n  const headers = msg.payload && msg.payload.headers ? msg.payload.headers : [];\n  const from = getHeader(headers, 'From');\n  const date = getHeader(headers, 'Date');\n  const body = extractBody(msg.payload).substring(0, 800);\n  const direction = from.toLowerCase().includes('info@tribalcowboy.com') ? 'SENT BY STACIE' : 'RECEIVED FROM THEM';\n  return `[${direction} — ${date}]\\nFrom: ${from}\\n\\n${body}`;\n});\n\n// Latest message (the one that just arrived)\nconst latestMsg = messages[messages.length - 1];\nconst latestHeaders = latestMsg.payload && latestMsg.payload.headers ? latestMsg.payload.headers : [];\n\nreturn [{\n  json: {\n    stacieStartedThread: true,\n    threadHistory: parsedMessages.join('\\n\\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\\n\\n'),\n    messageCount: messages.length,\n    latestSender: getHeader(latestHeaders, 'From'),\n    latestSubject: getHeader(latestHeaders, 'Subject'),\n    latestBody: extractBody(latestMsg.payload).substring(0, 1000),\n    latestDate: getHeader(latestHeaders, 'Date'),\n    threadId: thread.id\n  }\n}];"
       },
       "id": "parse-thread",
-      "name": "Parse Thread History",
+      "name": "Parse Thread + Detect Direction",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "check-outbound",
+              "leftValue": "={{ $json.stacieStartedThread }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-if-reply",
+      "name": "Is This a Reply to Stacie?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [900, 300]
     },
     {
       "parameters": {
@@ -65,7 +90,7 @@
       "name": "Alert Stacie via SMS",
       "type": "n8n-nodes-base.twilio",
       "typeVersion": 1,
-      "position": [900, 80],
+      "position": [1120, 100],
       "credentials": {
         "twilioApi": {
           "id": "twilio-cred",
@@ -80,7 +105,7 @@
             {
               "id": "neg-prompt",
               "name": "negotiation_prompt",
-              "value": "=Convene The Council in NEGOTIATION MODE to analyze this business reply received by Tribal Cowboy LLC.\n\nThis email is a reply in an active business negotiation thread that Stacie initiated. Your job is to protect TC's interests, identify any pressure tactics or red flags, and give Stacie a clear read on where this stands.\n\n--- FULL THREAD HISTORY ({{ $json.messageCount }} messages) ---\n{{ $json.threadHistory }}\n\n--- LATEST REPLY (the one just received) ---\nFrom: {{ $json.latestSender }}\nSubject: {{ $json.latestSubject }}\nDate: {{ $json.latestDate }}\n\n{{ $json.latestBody }}\n---\n\nAnalyze this with the following in mind:\n1. What are they ACTUALLY saying vs. what they literally wrote? (Read the subtext)\n2. Power dynamics — who needs this deal more right now?\n3. Pricing or scope pressure — are they testing limits, lowballing, or asking for extras?\n4. Commitment signals — how serious are they? What does their language reveal?\n5. Red flags — anything evasive, manipulative, or that doesn't add up?\n6. Tribal Cowboy's leverage — what does TC uniquely offer that they can't easily get elsewhere?\n7. What Stacie should NOT concede under any circumstances\n8. What Stacie CAN flex on if needed to close\n9. Walk-away read — is this worth pursuing or cutting losses?",
+              "value": "=Convene The Council in NEGOTIATION MODE to analyze this business reply received by Tribal Cowboy LLC.\n\nThis is a reply in an active thread that Stacie started — a business negotiation she initiated. Your job is to protect TC's interests, identify any pressure tactics or red flags, and give Stacie a clear read on where this stands.\n\n--- FULL THREAD HISTORY ({{ $json.messageCount }} messages) ---\n{{ $json.threadHistory }}\n\n--- LATEST REPLY (the one just received) ---\nFrom: {{ $json.latestSender }}\nSubject: {{ $json.latestSubject }}\nDate: {{ $json.latestDate }}\n\n{{ $json.latestBody }}\n---\n\nAnalyze this with full context:\n1. What are they ACTUALLY saying vs. what they literally wrote? (Read the subtext)\n2. Power dynamics — who needs this deal more right now?\n3. Pricing or scope pressure — testing limits, lowballing, asking for extras?\n4. Commitment signals — how serious are they? What does their language reveal?\n5. Red flags — anything evasive, manipulative, or that doesn't add up?\n6. Tribal Cowboy's leverage — what does TC offer that they can't easily get elsewhere?\n7. What Stacie should NOT concede under any circumstances\n8. What Stacie CAN flex on if needed to close the deal\n9. Walk-away read — is this worth pursuing or is it time to cut losses?",
               "type": "string"
             }
           ]
@@ -91,7 +116,7 @@
       "name": "Build Negotiation Prompt",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [900, 300]
+      "position": [1120, 300]
     },
     {
       "parameters": {
@@ -100,7 +125,7 @@
         "messages": {
           "messageValues": [
             {
-              "message": "You are The Council — Tribal Cowboy LLC's trusted advisory board — operating in NEGOTIATION MODE. You are analyzing a live business negotiation reply. Your job is to protect Stacie's interests and make sure she doesn't get taken advantage of, undersell, or miss a real opportunity.\n\nThe Council consists of five advisors:\n1. The Strategist — reads the full situation, power dynamics, and what this deal means long-term\n2. The Money Mind — watches for pricing pressure, scope creep, payment risk, and whether the economics work\n3. The Brand Guardian — makes sure TC doesn't compromise its identity or position for a bad deal\n4. The Devil's Advocate — treats everything with skepticism. What's the worst realistic outcome? What are they NOT saying?\n5. The Community Voice — how will this relationship feel in 6 months? Is this someone worth doing business with?\n\nEvery Negotiation Council session follows this format:\n\n**NEGOTIATION COUNCIL: [Sender / Deal Topic]**\n\n**Thread Summary:** [What this negotiation is about and where it stands]\n**Their Latest Move:** [What this reply is doing — asking, stalling, pressuring, committing, etc.]\n\n**The Strategist:** [2-4 sentences]\n**The Money Mind:** [2-4 sentences — watch for red flags]\n**The Brand Guardian:** [2-4 sentences]\n**The Devil's Advocate:** [2-4 sentences — be the skeptic]\n**The Community Voice:** [2-4 sentences]\n\n**Power Read:** [Who holds more leverage right now and why]\n**Red Flags:** [Any specific language, tactics, or signals to watch]\n**What NOT to Concede:** [Hard limits — list specifically]\n**Flex Points:** [What TC can offer without losing ground]\n**Walk-Away Read:** [Pursue hard / Pursue cautiously / Let them come to you / Exit gracefully]\n\n**Council Verdict:** [Direct recommendation — what Stacie should do next]\n**Response Strategy:** [Specific tone, framing, and key points for the reply]\n\nRules: Be direct. Name manipulation tactics when you see them. Do not encourage Stacie to undervalue TC's work. If this deal is bad, say so clearly. If it's good, say that too. Protect the business."
+              "message": "You are The Council — Tribal Cowboy LLC's trusted advisory board — operating in NEGOTIATION MODE. You are analyzing a live business negotiation reply. Your job is to protect Stacie's interests and make sure she doesn't get taken advantage of, undersell, or miss a real opportunity.\n\nThe Council consists of five advisors:\n1. The Strategist — reads the full situation, power dynamics, and what this deal means long-term\n2. The Money Mind — watches for pricing pressure, scope creep, payment risk, and whether the economics actually work\n3. The Brand Guardian — makes sure TC doesn't compromise its identity or position for a bad deal\n4. The Devil's Advocate — treats everything with skepticism. What's the worst realistic outcome? What are they NOT saying?\n5. The Community Voice — how will this relationship feel in 6 months? Is this someone worth doing business with?\n\nEvery Negotiation Council session follows this format:\n\n**NEGOTIATION COUNCIL: [Sender / Deal Topic]**\n\n**Thread Summary:** [What this negotiation is about and where it stands across all messages]\n**Their Latest Move:** [What this reply is doing — asking, stalling, pressuring, committing, testing, etc.]\n\n**The Strategist:** [2-4 sentences]\n**The Money Mind:** [2-4 sentences — watch for red flags]\n**The Brand Guardian:** [2-4 sentences]\n**The Devil's Advocate:** [2-4 sentences — be the skeptic]\n**The Community Voice:** [2-4 sentences]\n\n**Power Read:** [Who holds more leverage right now and why]\n**Red Flags:** [Any specific language, tactics, or signals to watch — quote their words directly]\n**What NOT to Concede:** [Hard limits — list specifically]\n**Flex Points:** [What TC can offer without losing ground]\n**Walk-Away Read:** [Pursue hard / Pursue cautiously / Let them come to you / Exit gracefully]\n\n**Council Verdict:** [Direct, plain recommendation — what Stacie should do next]\n**Response Strategy:** [Specific tone, framing, and the 2-3 key points the reply must hit]\n\nRules: Be direct. Name manipulation tactics when you see them. Quote specific lines from their email when calling out red flags. Do not encourage Stacie to undervalue TC's work. If this deal is bad, say so clearly. If it is good, say that too. Protect the business."
             }
           ]
         },
@@ -110,7 +135,7 @@
       "name": "Negotiation Council Agent",
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.5,
-      "position": [1120, 300]
+      "position": [1340, 300]
     },
     {
       "parameters": {
@@ -123,7 +148,7 @@
       "name": "Anthropic Chat Model (Negotiation Council)",
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
-      "position": [1120, 500],
+      "position": [1340, 500],
       "credentials": {
         "anthropicApi": {
           "id": "anthropic-cred",
@@ -136,15 +161,15 @@
         "assignments": {
           "assignments": [
             {
-              "id": "neg-review-save",
+              "id": "save-verdict",
               "name": "council_verdict",
               "value": "={{ $json.text }}",
               "type": "string"
             },
             {
-              "id": "neg-reply-prompt",
+              "id": "reply-prompt",
               "name": "reply_prompt",
-              "value": "=Draft a strategic reply email for Stacie at Tribal Cowboy LLC for the following active negotiation thread. Use the Council's verdict to guide tone, firmness, and what to say.\n\n--- THREAD HISTORY ---\n{{ $('Parse Thread History').item.json.threadHistory }}\n\n--- LATEST REPLY FROM THEM ---\nFrom: {{ $('Parse Thread History').item.json.latestSender }}\nDate: {{ $('Parse Thread History').item.json.latestDate }}\n\n{{ $('Parse Thread History').item.json.latestBody }}\n\n--- COUNCIL VERDICT ---\n{{ $json.text }}\n\n--- INSTRUCTIONS ---\nWrite a complete, strategic reply that:\n- Opens with purpose — no fluff or filler opener\n- Responds to what they ACTUALLY said (including the subtext the Council identified)\n- Holds TC's position of value — never apologize for rates or availability\n- Moves the negotiation forward OR gracefully exits if the Council said to walk away\n- Is warm but firm — confident without being aggressive\n- Ends with ONE clear next step, not multiple options\n- Signs as: Stacie | Tribal Cowboy LLC | www.tribalcowboy.com | info@tribalcowboy.com\n\nAlso provide:\n- Suggested subject line\n- Send timing recommendation\n- One thing NOT to include in this reply (based on the Council's red flags)",
+              "value": "=Draft a strategic reply email for Stacie at Tribal Cowboy LLC for this active negotiation thread. Use the Council's verdict to guide tone, firmness, and what to say.\n\n--- THREAD HISTORY ---\n{{ $('Parse Thread + Detect Direction').item.json.threadHistory }}\n\n--- LATEST REPLY FROM THEM ---\nFrom: {{ $('Parse Thread + Detect Direction').item.json.latestSender }}\nDate: {{ $('Parse Thread + Detect Direction').item.json.latestDate }}\n\n{{ $('Parse Thread + Detect Direction').item.json.latestBody }}\n\n--- COUNCIL VERDICT ---\n{{ $json.text }}\n\n--- YOUR TASK ---\nWrite a complete, strategic reply. Include:\n1. Suggested subject line\n2. Full email body\n3. Recommended send timing\n4. One thing NOT to include in this reply (based on the Council's red flags and hard limits)\n\nThe reply must:\n- Open with purpose — no filler opener\n- Respond to what they ACTUALLY said, including the subtext the Council identified\n- Hold TC's position of value — never apologize for rates, timelines, or how TC works\n- Move the negotiation forward OR gracefully exit if the Council said walk away\n- Be warm but firm — confident without being aggressive\n- End with ONE clear next step\n- Sign as: Stacie | Tribal Cowboy LLC | www.tribalcowboy.com | info@tribalcowboy.com",
               "type": "string"
             }
           ]
@@ -155,7 +180,7 @@
       "name": "Build Strategic Reply Prompt",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [1340, 300]
+      "position": [1560, 300]
     },
     {
       "parameters": {
@@ -164,7 +189,7 @@
         "messages": {
           "messageValues": [
             {
-              "message": "You are the Strategic Reply Writer for Tribal Cowboy LLC — an expert at business negotiation emails that protect TC's interests while moving deals forward. You write like Stacie: real, warm, direct. Never like a lawyer or a corporation.\n\nNegotiation Writing Rules:\n- No over-explaining. State your position once, clearly.\n- Never apologize for TC's rates, availability, or how you do business\n- Don't hedge with phrases like 'I think,' 'perhaps,' 'maybe we could' — be direct\n- One exclamation mark per email maximum\n- No corporate language: 'leverage,' 'synergy,' 'circle back,' 'touch base,' 'moving forward'\n- No AI-speak: 'delve,' 'testament to,' 'it's worth noting,' 'seamlessly'\n- Short paragraphs. Clear sentences. No walls of text.\n- Match firmness to the situation — the Council told you the read\n\nWhen holding a position: state it plainly, give the reason briefly, don't repeat it\nWhen pushing for commitment: ask for one specific thing (signed agreement, deposit, confirmed date)\nWhen walking away: be gracious, be clear, leave no ambiguity\nWhen offering a flex: frame it as TC's choice, not as caving to pressure\n\nEvery reply ends with exactly ONE clear ask or next step.\n\nSign off as:\nStacie | Tribal Cowboy LLC\nwww.tribalcowboy.com | info@tribalcowboy.com"
+              "message": "You are the Strategic Reply Writer for Tribal Cowboy LLC — an expert at business negotiation emails that protect TC's interests while moving deals forward. You write like Stacie: real, warm, direct. Never like a lawyer or a corporation.\n\nNegotiation Writing Rules:\n- No over-explaining. State your position once, clearly, and move on.\n- Never apologize for TC's rates, availability, or how the business works\n- No hedging: avoid 'I think,' 'perhaps,' 'maybe we could' — be direct\n- One exclamation mark per email maximum\n- No corporate language: 'leverage,' 'circle back,' 'touch base,' 'moving forward,' 'synergy'\n- No AI-speak: 'delve,' 'testament to,' 'it's worth noting,' 'seamlessly'\n- Short paragraphs. Clear sentences. No walls of text.\n- Match firmness to what the Council recommended\n\nWhen holding a position: state it plainly, give the reason briefly, don't repeat it\nWhen pushing for commitment: ask for one specific thing (signed agreement, deposit, confirmed date)\nWhen walking away: be gracious, be clear, leave no ambiguity and no open door unless you mean it\nWhen offering a flex: frame it as TC's choice, not as caving to pressure\n\nEvery reply ends with exactly ONE clear ask or next step — not a list of options.\n\nSign off always as:\nStacie | Tribal Cowboy LLC\nwww.tribalcowboy.com | info@tribalcowboy.com"
             }
           ]
         },
@@ -174,7 +199,7 @@
       "name": "Strategic Reply Writer",
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.5,
-      "position": [1560, 300]
+      "position": [1780, 300]
     },
     {
       "parameters": {
@@ -187,7 +212,7 @@
       "name": "Anthropic Chat Model (Reply Writer)",
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
-      "position": [1560, 500],
+      "position": [1780, 500],
       "credentials": {
         "anthropicApi": {
           "id": "anthropic-cred",
@@ -198,13 +223,13 @@
     {
       "parameters": {
         "language": "javaScript",
-        "jsCode": "const thread = $('Parse Thread History').item.json;\nconst councilVerdict = $('Build Strategic Reply Prompt').item.json.council_verdict;\nconst strategyDraft = $input.item.json.text;\n\nconst sep = '══════════════════════════════════════════════';\nconst line = '──────────────────────────────────────────────';\n\nconst subject = '[TC Negotiation Alert] ' + thread.latestSubject + ' — Analysis + Draft Ready';\n\nconst body = [\n  sep,\n  'NEGOTIATION THREAD — ' + thread.messageCount + ' MESSAGES',\n  sep,\n  'Latest reply from: ' + thread.latestSender,\n  'Date: ' + thread.latestDate,\n  'Subject: ' + thread.latestSubject,\n  '',\n  line,\n  'THEIR LATEST MESSAGE',\n  line,\n  thread.latestBody,\n  '',\n  sep,\n  'FULL THREAD HISTORY',\n  sep,\n  thread.threadHistory,\n  '',\n  sep,\n  'NEGOTIATION COUNCIL VERDICT',\n  sep,\n  councilVerdict,\n  '',\n  sep,\n  'STRATEGIC REPLY DRAFT',\n  sep,\n  strategyDraft,\n  '',\n  line,\n  'Generated by Tribal Cowboy Negotiation Intelligence (Council + Strategic Reply Writer).',\n  'Review carefully. This is a business negotiation — edit before sending.',\n  line\n].join('\\n');\n\nreturn [{ json: { subject, body } }];"
+        "jsCode": "const thread = $('Parse Thread + Detect Direction').item.json;\nconst councilVerdict = $('Build Strategic Reply Prompt').item.json.council_verdict;\nconst strategyDraft = $input.item.json.text;\n\nconst sep = '══════════════════════════════════════════════';\nconst line = '──────────────────────────────────────────────';\n\nconst subject = '[TC Negotiation] ' + thread.latestSubject + ' — Analysis + Draft Ready';\n\nconst body = [\n  sep,\n  'NEGOTIATION REPLY — ' + thread.messageCount + ' MESSAGES IN THREAD',\n  sep,\n  'From: ' + thread.latestSender,\n  'Date: ' + thread.latestDate,\n  'Subject: ' + thread.latestSubject,\n  '',\n  line,\n  'THEIR LATEST MESSAGE',\n  line,\n  thread.latestBody,\n  '',\n  sep,\n  'FULL THREAD HISTORY',\n  sep,\n  thread.threadHistory,\n  '',\n  sep,\n  'NEGOTIATION COUNCIL VERDICT',\n  sep,\n  councilVerdict,\n  '',\n  sep,\n  'STRATEGIC REPLY DRAFT',\n  sep,\n  strategyDraft,\n  '',\n  line,\n  'Generated by Tribal Cowboy Negotiation Intelligence.',\n  'Review carefully before sending. This is a business negotiation.',\n  line\n].join('\\n');\n\nreturn [{ json: { subject, body } }];"
       },
       "id": "build-neg-summary",
       "name": "Build Negotiation Alert Email",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1780, 300]
+      "position": [2000, 300]
     },
     {
       "parameters": {
@@ -219,7 +244,7 @@
       "name": "Send Negotiation Alert to Stacie",
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2,
-      "position": [2000, 300],
+      "position": [2220, 300],
       "credentials": {
         "gmailOAuth2": {
           "id": "gmail-oauth",
@@ -229,18 +254,22 @@
     }
   ],
   "connections": {
-    "Reply on TC Negotiations Thread": {
+    "New Inbound Email": {
       "main": [[{"node": "Fetch Full Thread", "type": "main", "index": 0}]]
     },
     "Fetch Full Thread": {
-      "main": [[{"node": "Parse Thread History", "type": "main", "index": 0}]]
+      "main": [[{"node": "Parse Thread + Detect Direction", "type": "main", "index": 0}]]
     },
-    "Parse Thread History": {
+    "Parse Thread + Detect Direction": {
+      "main": [[{"node": "Is This a Reply to Stacie?", "type": "main", "index": 0}]]
+    },
+    "Is This a Reply to Stacie?": {
       "main": [
         [
           {"node": "Alert Stacie via SMS", "type": "main", "index": 0},
           {"node": "Build Negotiation Prompt", "type": "main", "index": 0}
-        ]
+        ],
+        []
       ]
     },
     "Build Negotiation Prompt": {
