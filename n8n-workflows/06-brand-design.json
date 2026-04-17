@@ -3,15 +3,48 @@
   "nodes": [
     {
       "parameters": {
-        "httpMethod": "POST",
-        "path": "tribal-cowboy-design",
-        "responseMode": "lastNode",
-        "options": {}
+        "formTitle": "Tribal Cowboy — Brand Design",
+        "formDescription": "Need a design spec, color guidance, or layout direction? Submit your request and get on-brand design guidance.",
+        "responseMode": "onReceived",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Design Need",
+              "fieldType": "textarea",
+              "requiredField": true,
+              "placeholder": "Describe what you need designed — e.g. flyer for NYE party, Instagram graphic for new service, banner for event booth..."
+            },
+            {
+              "fieldLabel": "Design Type",
+              "fieldType": "select",
+              "requiredField": true,
+              "fieldOptions": {
+                "values": [
+                  {"option": "Flyer"},
+                  {"option": "Social Media Post"},
+                  {"option": "Instagram Story"},
+                  {"option": "Banner"},
+                  {"option": "Proposal / Document"},
+                  {"option": "Business Card"},
+                  {"option": "Email Header"},
+                  {"option": "Other"}
+                ]
+              }
+            }
+          ]
+        },
+        "options": {
+          "respondWithOptions": {
+            "values": {
+              "formSubmittedText": "Design spec is being generated and will be emailed to you shortly."
+            }
+          }
+        }
       },
-      "id": "webhook-design",
-      "name": "Design Request Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
+      "id": "form-trigger-design",
+      "name": "Design Request Form",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
       "position": [240, 300],
       "webhookId": "tribal-cowboy-design"
     },
@@ -22,7 +55,7 @@
             {
               "id": "prompt-var",
               "name": "prompt",
-              "value": "=Generate brand design guidance for Tribal Cowboy.\n\nDesign need: {{ $json.body.input || $json.input }}\nDesign type: {{ $json.body.design_type || $json.design_type || 'unspecified' }}\n\nProvide: 1) Recommended theme (Classic, Bold Event, Community Warm, or Social Media), 2) Specific color usage with hex codes, 3) Typography choices, 4) Layout/composition guidance, 5) Any copy/headline suggestions that fit.",
+              "value": "=Generate brand design guidance for Tribal Cowboy.\n\nDesign need: {{ $json['Design Need'] }}\nDesign type: {{ $json['Design Type'] }}\n\nProvide: 1) Recommended theme (Classic, Bold Event, Community Warm, or Social Media), 2) Specific color usage with hex codes, 3) Typography choices, 4) Layout/composition guidance, 5) Any copy/headline suggestions that fit.",
               "type": "string"
             }
           ]
@@ -42,7 +75,7 @@
         "messages": {
           "messageValues": [
             {
-              "message": "You are the Brand Design Agent for Tribal Cowboy LLC — keeper of visual identity.\n\nCOLOR PALETTE:\n- Gold #C9A84C — prestige, warmth, celebration. Headings, highlights, CTAs\n- Cream #F5F0E8 — primary background\n- Deep Teal #2D6A6A — sections, cards, contrast\n- Warm Amber #D4850A — accent pops, badges\n- Forest Green #3A7D44 — success states, nature elements\n- Warm Red #C0392B — urgency, sparingly\n- White #FFFFFF — card backgrounds\n- Soft Gray #6B7280 — secondary text\n\nRULES: Never pure black. Gold on cream = brand signature moment. Teal bg + white/cream text = section contrast. Amber is accent only.\n\nTYPOGRAPHY:\n- Playfair Display (serif) — hero/display (48-64px), section headers (28-36px), elegant editorial feel\n- Lato (sans-serif) — body (14-16px), UI, captions, labels\n- Never mix more than 2 fonts. Headlines in Playfair, rest in Lato. Avoid ALL CAPS in Playfair.\n\nTHEMES:\n1. Classic Tribal Cowboy — cream bg, gold accents, teal highlights (proposals, formal, website)\n2. Bold Event — dark teal/charcoal bg, gold + cream text, high contrast (flyers, event promos)\n3. Community Warm — warm amber + forest green, cream bg (schools, nonprofits, grassroots)\n4. Social Media — bold crops, strong typography, gold text over event photography\n\nDIMENSIONS:\n- Instagram Post: 1080x1080\n- IG Story/Reel: 1080x1920\n- Facebook Post: 1200x630\n- TikTok: 1080x1920\n\nPHOTOGRAPHY: warm-toned, celebratory, real people at real events. Semi-transparent gold/teal overlays for text legibility.\n\nRULES: Always use the established palette. Every decision reinforces: warm, bold, culturally rich, professional. Consistency beats creativity. When in doubt, gold on cream is safe."
+              "message": "You are the Brand Design Agent for Tribal Cowboy LLC — keeper of visual identity.\n\nCOLOR PALETTE:\n- Gold #C9A84C — prestige, warmth, celebration. Headings, highlights, CTAs\n- Cream #F5F0E8 — primary background\n- Deep Teal #2D6A6A — sections, cards, contrast\n- Warm Amber #D4850A — accent pops, badges\n- Forest Green #3A7D44 — success states, nature elements\n- Warm Red #C0392B — urgency, sparingly\n- White #FFFFFF — card backgrounds\n- Soft Gray #6B7280 — secondary text\n\nRULES: Never pure black. Gold on cream = brand signature moment. Teal bg + white/cream text = section contrast. Amber is accent only.\n\nTYPOGRAPHY:\n- Playfair Display (serif) — hero/display (48-64px), section headers (28-36px), elegant editorial feel\n- Lato (sans-serif) — body (14-16px), UI, captions, labels\n- Never mix more than 2 fonts. Headlines in Playfair, rest in Lato. Avoid ALL CAPS in Playfair.\n\nTHEMES:\n1. Classic Tribal Cowboy — cream bg, gold accents, teal highlights (proposals, formal, website)\n2. Bold Event — dark teal/charcoal bg, gold + cream text, high contrast (flyers, event promos)\n3. Community Warm — warm amber + forest green, cream bg (schools, nonprofits, grassroots)\n4. Social Media — bold crops, strong typography, gold text over event photography\n\nDIMENSIONS:\n- Instagram Post: 1080x1080\n- IG Story/Reel: 1080x1920\n- Facebook Post: 1200x630\n- TikTok: 1080x1920\n\nRULES: Always use the established palette. Every decision reinforces: warm, bold, culturally rich, professional. Consistency beats creativity. When in doubt, gold on cream is safe."
             }
           ]
         },
@@ -56,7 +89,7 @@
     },
     {
       "parameters": {
-        "model": "claude-sonnet-4-5-20250929",
+        "model": "claude-sonnet-4-6",
         "options": {
           "maxTokensToSample": 4096
         }
@@ -66,10 +99,23 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [680, 500]
+    },
+    {
+      "parameters": {
+        "sendTo": "info@tribalcowboy.com",
+        "subject": "=🎨 Design Spec — {{ $('Design Request Form').item.json['Design Type'] }}",
+        "emailType": "text",
+        "message": "=Your Brand Design Agent generated this spec:\n\nDESIGN TYPE: {{ $('Design Request Form').item.json['Design Type'] }}\nREQUEST: {{ $('Design Request Form').item.json['Design Need'] }}\n\n---\nDESIGN GUIDANCE:\n\n{{ $json.text }}"
+      },
+      "id": "gmail-design",
+      "name": "Email Design Spec",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [900, 300]
     }
   ],
   "connections": {
-    "Design Request Webhook": {
+    "Design Request Form": {
       "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]]
     },
     "Build Prompt": {
@@ -77,6 +123,9 @@
     },
     "Anthropic Chat Model": {
       "ai_languageModel": [[{"node": "Brand Design Agent", "type": "ai_languageModel", "index": 0}]]
+    },
+    "Brand Design Agent": {
+      "main": [[{"node": "Email Design Spec", "type": "main", "index": 0}]]
     }
   },
   "settings": {"executionOrder": "v1"},

@@ -36,7 +36,7 @@
             {
               "id": "prompt-var",
               "name": "prompt",
-              "value": "=Review these voice inquiries from Tribal Cowboy's ElevenLabs agent. For each lead, categorize it (Hot/Warm/Cold/Lost) and draft an appropriate follow-up SMS message. Return a prioritized action list with: lead name, phone, status, category, drafted message.\n\nLeads:\n{{ JSON.stringify($json) }}\n\nBooking URL: https://www.tribalcowboy.com\n\nPrioritize leads that need action today. Keep SMS messages under 160 characters, warm, personalized with their name and event details.",
+              "value": "=Review these voice inquiries from Tribal Cowboy's ElevenLabs agent. For each lead that needs a follow-up SMS today, return a JSON array only — no extra text, no markdown, just the raw JSON array.\n\nEach item must have exactly:\n- id: the lead's id field\n- name: lead's first name\n- phone: phone number in E.164 format (e.g. +12145551234)\n- message: the SMS to send (under 160 chars, warm, personalized)\n- category: Hot, Warm, Cold, or Lost\n- action: \"send\" if SMS should be sent today, \"skip\" if Lost or already contacted 3+ times\n\nLeads:\n{{ JSON.stringify($json) }}\n\nBooking URL: https://www.tribalcowboy.com\n\nOnly set action \"send\" if the lead genuinely needs outreach today. Lost leads and over-contacted leads get action \"skip\".",
               "type": "string"
             }
           ]
@@ -56,7 +56,7 @@
         "messages": {
           "messageValues": [
             {
-              "message": "You are the Booking Closer Agent for Tribal Cowboy LLC — a relentless but warm follow-up specialist. Your job is to turn every inquiry into a confirmed, deposited booking.\n\nLead Categories:\n- Hot: inquired within 24hrs, specific date + service\n- Warm: 1-7 days ago, responded but no deposit\n- Cold: 7+ days, no response after 2 touchpoints\n- Lost: explicitly declined or no response after 3 touchpoints\n\nFollow-Up Sequences:\n1. First Contact (within 1hr): 'Hey [Name]! This is Tribal Cowboy — we got your message about [service] for [date]. We'd love to make that happen! Booking link: [URL]'\n2. 24hr follow-up: 'Hi [Name], just following up! Dates fill up fast. Ready to chat? [URL]'\n3. 72hr: 'Hey [Name]! Last reach out. If still interested: [URL]'\n4. Warm (post-response): 'To hold your [date], we just need a 25% deposit. [URL]'\n\nConversion Rules: Create urgency honestly. Reduce friction (always include booking link). Handle hesitation (offer a quick call). Anchor value before price. Frame deposit as 'what secures your date.'\n\nAlways personalize with name, service, event date. Never chase more than 3 times. Every message ends with booking link or clear next step."
+              "message": "You are the Booking Closer Agent for Tribal Cowboy LLC. Your job is to turn every inquiry into a confirmed, deposited booking.\n\nLead Categories:\n- Hot: inquired within 24hrs, specific date + service\n- Warm: 1-7 days ago, responded but no deposit\n- Cold: 7+ days, no response after 2 touchpoints\n- Lost: explicitly declined or no response after 3+ touchpoints\n\nSMS Sequences (under 160 chars each):\n1. First Contact: 'Hey [Name]! Tribal Cowboy here — got your inquiry about [service] for [date]. We'd love to help! Book here: [URL]'\n2. 24hr follow-up: 'Hi [Name], following up on your [service] inquiry! Dates go fast — grab yours: [URL]'\n3. 72hr: 'Hey [Name]! Last check-in from Tribal Cowboy. Still interested? [URL]'\n4. Warm/deposit: 'Hi [Name]! To hold your [date], just need a 25% deposit. Takes 2 min: [URL]'\n\nRules: Personalize every message with name, service, date. Never chase more than 3 times. Mark as skip if Lost or 3+ contacts already made.\n\nIMPORTANT: Return ONLY a valid JSON array. No explanation, no markdown, no extra text. Just raw JSON starting with [ and ending with ]."
             }
           ]
         },
@@ -70,7 +70,7 @@
     },
     {
       "parameters": {
-        "model": "claude-sonnet-4-5-20250929",
+        "model": "claude-sonnet-4-6",
         "options": {
           "maxTokensToSample": 4096
         }
@@ -80,6 +80,92 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [900, 500]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst raw = items[0].json.text || items[0].json.output || '';\n\nconst cleaned = raw.replace(/```json|```/g, '').trim();\nconst match = cleaned.match(/\\[[\\s\\S]*\\]/);\nif (!match) {\n  return [{ json: { error: 'No JSON array in response', raw } }];\n}\n\ntry {\n  const leads = JSON.parse(match[0]);\n  return leads.map(lead => ({ json: lead }));\n} catch(e) {\n  return [{ json: { error: 'JSON parse failed', raw, message: e.message } }];\n}"
+      },
+      "id": "parse-leads",
+      "name": "Parse Leads",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "filter-send",
+              "leftValue": "={{ $json.action }}",
+              "rightValue": "send",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-send",
+      "name": "Only Send Leads",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "from": "={{ $credentials.phoneNumber }}",
+        "to": "={{ $json.phone }}",
+        "message": "={{ $json.message }}"
+      },
+      "id": "twilio-send",
+      "name": "Send SMS via Twilio",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [1560, 260]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://tribal-cowboy-webhook.onrender.com/voice-inquiry/{{ $json.id }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "status",
+              "value": "Contacted"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "patch-lead-status",
+      "name": "Mark Lead as Contacted",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1780, 260]
+    },
+    {
+      "parameters": {
+        "sendTo": "info@tribalcowboy.com",
+        "subject": "=📱 Booking Closer Report — {{ $now.toFormat('MMM d, yyyy') }}",
+        "emailType": "text",
+        "message": "=SMS sent to {{ $json.name }} ({{ $json.phone }})\nCategory: {{ $json.category }}\nMessage sent: {{ $json.message }}\nLead status updated to: Contacted\n\nTime: {{ $now.toFormat('h:mm a') }}"
+      },
+      "id": "gmail-sms-confirm",
+      "name": "Email SMS Confirmation",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [2000, 260]
     }
   ],
   "connections": {
@@ -94,6 +180,24 @@
     },
     "Anthropic Chat Model": {
       "ai_languageModel": [[{"node": "Booking Closer Agent", "type": "ai_languageModel", "index": 0}]]
+    },
+    "Booking Closer Agent": {
+      "main": [[{"node": "Parse Leads", "type": "main", "index": 0}]]
+    },
+    "Parse Leads": {
+      "main": [[{"node": "Only Send Leads", "type": "main", "index": 0}]]
+    },
+    "Only Send Leads": {
+      "main": [
+        [{"node": "Send SMS via Twilio", "type": "main", "index": 0}],
+        []
+      ]
+    },
+    "Send SMS via Twilio": {
+      "main": [[{"node": "Mark Lead as Contacted", "type": "main", "index": 0}]]
+    },
+    "Mark Lead as Contacted": {
+      "main": [[{"node": "Email SMS Confirmation", "type": "main", "index": 0}]]
     }
   },
   "settings": {"executionOrder": "v1"},

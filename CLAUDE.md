@@ -69,7 +69,7 @@ Use these as your framework. Rotate through them — don't post the same pillar 
 `#TribalCowboy` `#NorthIdaho` `#IdahoHorses` `#ClydesdaleHorse` `#PonyParty` `#HorsePhotography` `#IndigenousOwned` `#NiseanMaidu` `#EquestrianLife` `#HorsesOfInstagram`
 
 ### Instagram Event/Service Tags
-`#CorporateEvents` `#KidsParty` `#PonyRides` `#WagonRide` `#FamilyFun` `#NorthIdahoEvents` `#EasternWashington` `#AthollIdaho` ``
+`#CorporateEvents` `#KidsParty` `#PonyRides` `#WagonRide` `#FamilyFun` `#NorthIdahoEvents` `#EasternWashington` `#AthollIdaho`
 
 ### Instagram Reach Tags (rotate)
 `#HorseMom` `#FarmLife` `#WesternLifestyle` `#CountryLife` `#HorseLife` `#RanchLife` `#HorsesOfIG`
@@ -165,3 +165,103 @@ TribalCowboy-Social/
 3. Never use AI-speak: "delve," "testament to," "it's worth noting," "in conclusion," "seamlessly"
 4. Always write for real people who live in North Idaho and Eastern Washington
 5. Indigenous identity is always handled with dignity — never trendy
+
+---
+
+## Technical Reference — Server & Dashboard
+
+### What This Project Is
+
+A Node.js/Express webhook server and single-page dashboard for Tribal Cowboy LLC. The server aggregates real-time social media analytics (Instagram, Facebook, TikTok), manages voice inquiries from an AI assistant (ElevenLabs), integrates with appointment scheduling (Acuity), and sends SMS follow-ups (Twilio).
+
+The dashboard (`index.html`) is a single-page app with tabs for: Overview, Tasks, Instagram, Facebook, TikTok, Email Tracker, Voice Leads, Bookings, and CRM.
+
+### Tech Stack
+
+- **Backend:** Node.js + Express
+- **Frontend:** Vanilla JS single-page app (no framework)
+- **Storage:** File-based JSON (`data.json`) — survives Render free-tier spin-downs
+- **Deployment:** Render (PaaS)
+- **External APIs:** Meta Graph API v19, Acuity Scheduling, Twilio, ElevenLabs
+
+### Running the Project
+
+```bash
+npm start          # production
+npm run dev        # development with auto-restart (requires nodemon)
+```
+
+Server runs on port 3000 by default (or `PORT` env var on Render).
+
+### Environment Variables
+
+```
+META_ACCESS_TOKEN      # Facebook/Instagram Graph API token
+IG_USER_ID             # Instagram business account ID
+FB_PAGE_ID             # Facebook page ID
+ACUITY_USER_ID         # Acuity Scheduling user ID
+ACUITY_API_KEY         # Acuity API key
+ACUITY_BOOKING_URL     # Public booking page URL
+TWILIO_ACCOUNT_SID     # Twilio account SID
+TWILIO_AUTH_TOKEN      # Twilio auth token
+TWILIO_PHONE_NUMBER    # Twilio phone number (e.g. +12085551234)
+VERIFY_TOKEN           # Meta webhook verification token
+PORT                   # Server port (set automatically by Render)
+```
+
+### Key API Endpoints
+
+| Method | Route | Purpose |
+|--------|-------|---------|
+| GET | `/` | Serve dashboard |
+| GET | `/health` | Health check with config status |
+| GET | `/data` | Return latest IG/FB stats + voice inquiries |
+| POST | `/refresh` | Trigger immediate Meta data pull |
+| GET/POST | `/webhook` | Meta webhook verification + event receiver |
+| POST | `/voice-inquiry` | Receive voice inquiry from ElevenLabs |
+| GET | `/voice-inquiries` | List all voice inquiries |
+| PATCH | `/voice-inquiry/:id` | Update inquiry status (New → Contacted → Booked) |
+| GET | `/acuity/availability` | Check available dates |
+| GET | `/acuity/appointment-types` | List appointment types |
+| GET | `/acuity/times` | Get time slots for a date |
+| POST | `/acuity/book` | Create booking |
+| POST | `/send-booking-link` | Send booking link via SMS |
+
+### Data Model (data.json)
+
+```js
+{
+  instagram: { followers, reach, impressions, profile_views, posts[], comments[], last_updated },
+  facebook: { followers, reach, engagement, views, posts[], last_updated },
+  voice_inquiries: [{
+    id, caller_name, service_requested, event_date,
+    guest_count, event_location, phone_number, notes, source,
+    status,       // New | Contacted | Booked
+    sms_sent,     // boolean
+    received_at, updated_at, acuity_id
+  }]
+}
+```
+
+### Claude Code Agents (.claude/agents/)
+
+| Agent File | Purpose |
+|---|---|
+| `social.md` | Instagram/Facebook/TikTok content, captions, hashtags, growth |
+| `get-paid.md` | Converts free requests into paid work, pricing scripts |
+| `council.md` | 5-voice advisory board — also use `/council` slash command |
+| `booking-closer.md` | Lead follow-up sequences via SMS/Acuity |
+| `email-writer.md` | Proposals, pitches, client communications |
+| `brand-design.md` | Full visual identity system — colors, fonts, themes |
+| `community.md` | School/nonprofit partnerships, tiered pricing |
+| `brand-voice.md` | Reviews all content before it goes out |
+
+### Common Tasks
+
+**Add a new voice inquiry status:** Edit `server.js` → find `PATCH /voice-inquiry/:id` → update allowed status values.
+
+**Change social media refresh schedule:** In `server.js`, find the `setInterval` call for `refreshInstagram()` / `refreshFacebook()`.
+
+**Update the booking URL:** Change `ACUITY_BOOKING_URL` environment variable on Render.
+
+**Add a new dashboard tab:** In `index.html`, add a tab button in the nav and a corresponding `<div id="p-tabname">` section.
