@@ -65,7 +65,7 @@
               "rightValue": true,
               "operator": {
                 "type": "boolean",
-                "operation": "true"
+                "operation": "equals"
               }
             }
           ],
@@ -81,6 +81,7 @@
     },
     {
       "parameters": {
+        "resource": "sms",
         "operation": "create",
         "from": "={{ $env.TWILIO_PHONE_NUMBER }}",
         "to": "={{ $env.STACIE_PHONE }}",

@@ -6,7 +6,9 @@
         "pollTimes": {
           "item": [{ "mode": "everyMinute" }]
         },
-        "filters": {},
+        "filters": {
+          "query": "in:inbox -from:(info@tribalcowboy.com)"
+        },
         "options": {}
       },
       "id": "gmail-trigger",
@@ -67,6 +69,7 @@
     },
     {
       "parameters": {
+        "resource": "sms",
         "operation": "create",
         "from": "={{ $env.TWILIO_PHONE_NUMBER }}",
         "to": "={{ $env.STACIE_PHONE }}",
