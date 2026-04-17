@@ -1,0 +1,896 @@
+<style>
+/* ============================================================
+   TRIBAL COWBOY — SCHOOL & COMMUNITY PROGRAMS PAGE
+   Scope: body#collection-69d80ad0f51b8f217cfc8677
+   ============================================================ */
+
+body#collection-69d80ad0f51b8f217cfc8677 .page-section,
+body#collection-69d80ad0f51b8f217cfc8677 .content-wrapper {
+  display: none !important;
+}
+
+/* ---- WRAPPER ---- */
+#tc-sc {
+  font-family: 'Montserrat', sans-serif;
+  color: #2C2520;
+  background: #F3EDE3;
+}
+
+/* ---- HERO ---- */
+#tc-sc .sc-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#tc-sc .sc-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,14,10,0.97) 0%, rgba(20,14,10,0.60) 45%, rgba(44,37,32,0.10) 100%);
+}
+
+#tc-sc .sc-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 64px;
+  max-width: 720px;
+}
+
+#tc-sc .sc-hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 20px 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+#tc-sc .sc-hero h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(50px, 7.5vw, 92px) !important;
+  font-weight: 400 !important;
+  line-height: 1.0 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 24px 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+#tc-sc .sc-hero-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(243,237,227,0.92) !important;
+  margin: 0 0 44px 0;
+  line-height: 1.7;
+  max-width: 520px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+#tc-sc .sc-btn-gold {
+  display: inline-block;
+  padding: 16px 40px;
+  background: #D4A843;
+  color: #2C2520;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+#tc-sc .sc-btn-gold:hover { background: #F3EDE3; }
+
+/* ---- STATS BAR ---- */
+#tc-sc .sc-stats {
+  background: #2C2520;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#tc-sc .sc-stat {
+  padding: 44px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(243,237,227,0.08);
+}
+
+#tc-sc .sc-stat:last-child { border-right: none; }
+
+#tc-sc .sc-stat-num {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #D4A843;
+  line-height: 1;
+}
+
+#tc-sc .sc-stat-label {
+  display: block;
+  margin-top: 10px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(243,237,227,0.50);
+}
+
+/* ---- INTRO ---- */
+#tc-sc .sc-intro {
+  padding: 100px 48px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#tc-sc .sc-intro h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0 0 26px 0;
+  line-height: 1.2;
+}
+
+#tc-sc .sc-intro p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #8A7868 !important;
+  margin: 0;
+}
+
+/* ---- GALLERY ---- */
+#tc-sc .sc-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3px;
+  background: #2C2520;
+}
+
+#tc-sc .sc-gallery-item {
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #574838;
+}
+
+#tc-sc .sc-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+#tc-sc .sc-gallery-item:hover img { transform: scale(1.04); }
+
+/* ---- PROGRAM OPTIONS ---- */
+#tc-sc .sc-programs {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+
+#tc-sc .sc-programs-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+#tc-sc .sc-programs-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0 0 14px 0;
+}
+
+#tc-sc .sc-programs-header p {
+  font-size: 15px;
+  color: #8A7868 !important;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+#tc-sc .sc-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: #2C2520;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+#tc-sc .sc-program-card {
+  background: white;
+  padding: 48px 36px;
+  border-top: 3px solid #D4A843;
+}
+
+#tc-sc .sc-program-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #D4A843;
+  margin: 0 0 14px 0;
+}
+
+#tc-sc .sc-program-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #2C2520;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+#tc-sc .sc-program-text {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #8A7868;
+  margin: 0;
+}
+
+/* ---- HOW IT WORKS ---- */
+#tc-sc .sc-how {
+  background: #2C2520;
+  padding: 100px 60px;
+}
+
+#tc-sc .sc-how-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+#tc-sc .sc-how-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 14px 0;
+}
+
+#tc-sc .sc-how-header p {
+  font-size: 15px;
+  color: rgba(243,237,227,0.55) !important;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+#tc-sc .sc-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  background: rgba(212,168,67,0.12);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#tc-sc .sc-step {
+  background: #2C2520;
+  padding: 44px 32px;
+  text-align: center;
+}
+
+#tc-sc .sc-step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #D4A843;
+  line-height: 1;
+  margin: 0 0 16px 0;
+}
+
+#tc-sc .sc-step-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #F3EDE3;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+#tc-sc .sc-step-text {
+  font-size: 12px;
+  line-height: 1.75;
+  color: rgba(243,237,227,0.50);
+  margin: 0;
+}
+
+/* ---- PRICING ---- */
+#tc-sc .sc-pricing {
+  background: #2C2520;
+  padding: 100px 60px;
+  text-align: center;
+}
+
+#tc-sc .sc-pricing h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 14px 0;
+}
+
+#tc-sc .sc-pricing-sub {
+  font-size: 15px;
+  color: rgba(243,237,227,0.55) !important;
+  max-width: 560px;
+  margin: 0 auto 56px;
+  line-height: 1.75;
+}
+
+#tc-sc .sc-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: rgba(212,168,67,0.12);
+  max-width: 960px;
+  margin: 0 auto 48px;
+}
+
+#tc-sc .sc-price-card {
+  background: #2C2520;
+  padding: 44px 32px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+#tc-sc .sc-price-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 12px 0;
+}
+
+#tc-sc .sc-price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: #F3EDE3 !important;
+  line-height: 1;
+  margin: 0 0 8px 0;
+}
+
+#tc-sc .sc-price-duration {
+  font-size: 11px;
+  color: rgba(243,237,227,0.45) !important;
+  margin: 0 0 20px 0;
+  font-weight: 300;
+}
+
+#tc-sc .sc-price-desc {
+  font-size: 12px;
+  line-height: 1.75;
+  color: rgba(243,237,227,0.55) !important;
+  margin: 0 0 28px 0;
+  flex: 1;
+}
+
+#tc-sc .sc-price-link {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #D4A843;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212,168,67,0.4);
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition: border-color 0.2s;
+}
+
+#tc-sc .sc-price-link:hover { border-color: #D4A843; }
+
+#tc-sc .sc-pricing-note {
+  font-size: 12px;
+  color: rgba(243,237,227,0.40) !important;
+  max-width: 600px;
+  margin: 0 auto 16px;
+  line-height: 1.7;
+}
+
+#tc-sc .sc-discount-note {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(212,168,67,0.75) !important;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ---- TESTIMONIALS ---- */
+#tc-sc .sc-testi {
+  background: #F3EDE3;
+  padding: 100px 60px;
+}
+
+#tc-sc .sc-testi h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(32px, 4vw, 48px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  text-align: center;
+  margin: 0 0 56px 0;
+}
+
+#tc-sc .sc-testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: #2C2520;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+#tc-sc .sc-testi-card {
+  background: white;
+  padding: 44px 36px;
+  border-top: 3px solid #D4A843;
+}
+
+#tc-sc .sc-testi-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: #2C2520 !important;
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+}
+
+#tc-sc .sc-testi-attr {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8A7868 !important;
+  margin: 0;
+}
+
+/* ---- FAQ ---- */
+#tc-sc .sc-faq {
+  background: #2C2520;
+  padding: 100px 60px;
+}
+
+#tc-sc .sc-faq h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(32px, 4vw, 48px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  text-align: center;
+  margin: 0 0 56px 0;
+}
+
+#tc-sc .sc-faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+#tc-sc .sc-faq-item {
+  border-bottom: 1px solid rgba(243,237,227,0.10);
+}
+
+#tc-sc .sc-faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #F3EDE3 !important;
+  line-height: 1.5;
+  gap: 20px;
+}
+
+#tc-sc .sc-faq-q:hover { color: #D4A843 !important; }
+
+#tc-sc .sc-faq-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(243,237,227,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #D4A843;
+  transition: transform 0.3s;
+  line-height: 1;
+}
+
+#tc-sc .sc-faq-q.open .sc-faq-icon { transform: rotate(45deg); }
+
+#tc-sc .sc-faq-a {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+#tc-sc .sc-faq-a p {
+  padding: 0 0 28px 0;
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(243,237,227,0.60) !important;
+  margin: 0;
+}
+
+/* ---- CTA ---- */
+#tc-sc .sc-cta {
+  padding: 100px 48px;
+  background: #F3EDE3;
+  text-align: center;
+}
+
+#tc-sc .sc-cta h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(36px, 5vw, 62px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0 0 18px 0;
+}
+
+#tc-sc .sc-cta p {
+  font-size: 16px;
+  color: #8A7868 !important;
+  max-width: 520px;
+  margin: 0 auto 44px;
+  line-height: 1.75;
+}
+
+#tc-sc .sc-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+#tc-sc .sc-btn-dark {
+  display: inline-block;
+  padding: 16px 44px;
+  background: #2C2520;
+  color: #F3EDE3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+#tc-sc .sc-btn-dark:hover { background: #1a0f0b; }
+
+#tc-sc .sc-btn-outline {
+  display: inline-block;
+  padding: 15px 44px;
+  background: transparent;
+  color: #2C2520;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #2C2520;
+  transition: background 0.2s, color 0.2s;
+}
+
+#tc-sc .sc-btn-outline:hover { background: #2C2520; color: #F3EDE3; }
+
+#tc-sc .sc-btn-email {
+  display: inline-block;
+  padding: 15px 44px;
+  background: transparent;
+  color: #8A7868;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(138,120,104,0.35);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+#tc-sc .sc-btn-email:hover { border-color: #8A7868; color: #2C2520; }
+
+#tc-sc .sc-cta-footer {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(138,120,104,0.6) !important;
+  margin: 0;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  #tc-sc .sc-gallery { grid-template-columns: 1fr 1fr; }
+  #tc-sc .sc-programs-grid { grid-template-columns: 1fr; }
+  #tc-sc .sc-steps { grid-template-columns: repeat(2, 1fr); }
+  #tc-sc .sc-pricing-grid { grid-template-columns: 1fr; }
+  #tc-sc .sc-testi-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  #tc-sc .sc-hero-content { padding: 56px 24px; }
+  #tc-sc .sc-stats { grid-template-columns: 1fr; }
+  #tc-sc .sc-stat { border-right: none; border-bottom: 1px solid rgba(243,237,227,0.08); }
+  #tc-sc .sc-intro { padding: 72px 24px; }
+  #tc-sc .sc-gallery { grid-template-columns: 1fr; }
+  #tc-sc .sc-programs { padding: 72px 24px; }
+  #tc-sc .sc-how { padding: 72px 24px; }
+  #tc-sc .sc-steps { grid-template-columns: 1fr; }
+  #tc-sc .sc-pricing { padding: 72px 24px; }
+  #tc-sc .sc-testi { padding: 72px 24px; }
+  #tc-sc .sc-faq { padding: 72px 24px; }
+  #tc-sc .sc-cta { padding: 72px 24px; }
+  #tc-sc .sc-cta-buttons { flex-direction: column; align-items: center; }
+}
+</style>
+
+<script>
+(function() {
+  var HERO = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/d1e65de1-e892-4a20-b427-ff3c21e114a8/services-education_IMG_2948_kids-meeting-clydesdale_web.jpg?content-type=image%2Fjpeg';
+  var G1   = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/d1e65de1-e892-4a20-b427-ff3c21e114a8/services-education_IMG_2948_kids-meeting-clydesdale_web.jpg?content-type=image%2Fjpeg';
+  var G2   = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/747830a2-e679-4635-8891-f9f5dcf769c3/tribal-cowboy-baby-chick-encounter-school-program-north-idaho.jpg?content-type=image%2Fjpeg';
+  var G3   = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/31ad6f91-f111-4acf-a0f0-6beee7883071/tribal-cowboy-school-community-program-kids-outdoor-learning.jpg?content-type=image%2Fjpeg';
+
+  function buildSchoolPrograms() {
+    var page = document.getElementById('page');
+    if (!page) { setTimeout(buildSchoolPrograms, 120); return; }
+
+    page.querySelectorAll('.page-section').forEach(function(s) {
+      s.style.setProperty('display', 'none', 'important');
+    });
+
+    var wrap = document.createElement('div');
+    wrap.id = 'tc-sc';
+    wrap.innerHTML =
+
+      /* -- HERO -- */
+      '<section class="sc-hero">' +
+        '<div class="sc-hero-overlay"></div>' +
+        '<div class="sc-hero-content">' +
+          '<p class="sc-hero-eyebrow">School &amp; Community Programs &mdash; North Idaho</p>' +
+          '<h1>Horses that<br>teach things.</h1>' +
+          '<p class="sc-hero-sub">Hands-on horsemanship and Indigenous culture education for schools, youth groups, and community organizations across North Idaho and Eastern Washington. We bring the animals to you.</p>' +
+          '<a href="/contact" class="sc-btn-gold">Check Your Date</a>' +
+        '</div>' +
+      '</section>' +
+
+      /* -- STATS -- */
+      '<div class="sc-stats">' +
+        '<div class="sc-stat"><span class="sc-stat-num">500+</span><span class="sc-stat-label">Students Served</span></div>' +
+        '<div class="sc-stat"><span class="sc-stat-num">15+</span><span class="sc-stat-label">Programs Offered</span></div>' +
+        '<div class="sc-stat"><span class="sc-stat-num">NI</span><span class="sc-stat-label">North Idaho &amp; Eastern WA</span></div>' +
+      '</div>' +
+
+      /* -- INTRO -- */
+      '<section class="sc-intro">' +
+        '<h2>Real animals. Real learning.</h2>' +
+        '<p>Tribal Cowboy brings horses, ponies, and hands-on agriculture experiences directly to your school or community site. Programs are led by Stacie Huffhines &mdash; Nisenan Maidu &mdash; and woven with Indigenous cultural context, horsemanship education, and animal care. Every program is tailored to your group&rsquo;s age range, size, and goals. No two are exactly the same.</p>' +
+      '</section>' +
+
+      /* -- GALLERY -- */
+      '<div class="sc-gallery">' +
+        '<div class="sc-gallery-item"><img src="' + G1 + '" alt="Kids meeting a Clydesdale during school program" loading="lazy"></div>' +
+        '<div class="sc-gallery-item"><img src="' + G2 + '" alt="Students with baby chicks at school program" loading="lazy"></div>' +
+        '<div class="sc-gallery-item"><img src="' + G3 + '" alt="Kids learning outdoors with Tribal Cowboy" loading="lazy"></div>' +
+      '</div>' +
+
+      /* -- PROGRAM OPTIONS -- */
+      '<section class="sc-programs">' +
+        '<div class="sc-programs-header">' +
+          '<h2>Program formats.</h2>' +
+          '<p>Every program is customized. These are the formats we work within.</p>' +
+        '</div>' +
+        '<div class="sc-programs-grid">' +
+          '<div class="sc-program-card">' +
+            '<p class="sc-program-tag">Half-Day</p>' +
+            '<p class="sc-program-title">Workshop Visit</p>' +
+            '<p class="sc-program-text">2&ndash;3 hours of hands-on learning. We bring horses or ponies to your site, lead structured activities around horsemanship and animal care, and connect the experience to Indigenous land relationships. Good for a single class or small group.</p>' +
+          '</div>' +
+          '<div class="sc-program-card">' +
+            '<p class="sc-program-tag">Full-Day</p>' +
+            '<p class="sc-program-title">Immersion Program</p>' +
+            '<p class="sc-program-text">A deeper experience for larger groups or multi-class days. Students rotate through stations &mdash; horse handling, grooming, animal behavior, cultural context. We bring multiple animals and run structured rotations throughout the day.</p>' +
+          '</div>' +
+          '<div class="sc-program-card">' +
+            '<p class="sc-program-tag">Custom</p>' +
+            '<p class="sc-program-title">Community Events</p>' +
+            '<p class="sc-program-text">Fairs, community gatherings, youth programs, and non-school organizations. We adapt the format to your event structure &mdash; demonstration, open interaction, or a mix of both. We&rsquo;ve worked with libraries, tribal organizations, and youth camps.</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* -- HOW IT WORKS -- */
+      '<section class="sc-how">' +
+        '<div class="sc-how-header">' +
+          '<h2>How it works.</h2>' +
+          '<p>From first email to the day your students meet the horses.</p>' +
+        '</div>' +
+        '<div class="sc-steps">' +
+          '<div class="sc-step"><p class="sc-step-num">1</p><p class="sc-step-title">Get in Touch</p><p class="sc-step-text">Tell us your group size, age range, and what you&rsquo;re hoping to cover. We&rsquo;ll take it from there.</p></div>' +
+          '<div class="sc-step"><p class="sc-step-num">2</p><p class="sc-step-title">Design the Program</p><p class="sc-step-text">We customize a format that fits your curriculum, budget, and venue. Every group is different.</p></div>' +
+          '<div class="sc-step"><p class="sc-step-num">3</p><p class="sc-step-title">We Show Up</p><p class="sc-step-text">We arrive with the animals, equipment, and everything needed. You don&rsquo;t lift a finger.</p></div>' +
+          '<div class="sc-step"><p class="sc-step-num">4</p><p class="sc-step-title">Students Learn</p><p class="sc-step-text">Real horses, real interaction, real questions. The kind of day kids actually remember.</p></div>' +
+        '</div>' +
+      '</section>' +
+
+      /* -- PRICING -- */
+      '<section class="sc-pricing">' +
+        '<h2>Program pricing.</h2>' +
+        '<p class="sc-pricing-sub">Starting prices for standard programs. Final cost depends on group size, location, and curriculum scope.</p>' +
+        '<div class="sc-pricing-grid">' +
+          '<div class="sc-price-card">' +
+            '<p class="sc-price-label">Half-Day Program</p>' +
+            '<p class="sc-price-amount">$350</p>' +
+            '<p class="sc-price-duration">Starting at &mdash; 2 to 3 hours</p>' +
+            '<p class="sc-price-desc">Includes instruction, professional photos with QR code delivery, and Q&amp;A with Stacie. Good for a single class or small group. Final cost based on group size and location.</p>' +
+            '<a href="/contact" class="sc-price-link">Get a Quote</a>' +
+          '</div>' +
+          '<div class="sc-price-card">' +
+            '<p class="sc-price-label">Full-Day Program</p>' +
+            '<p class="sc-price-amount">$600</p>' +
+            '<p class="sc-price-duration">Starting at &mdash; 4 to 5 hours</p>' +
+            '<p class="sc-price-desc">Extended time for deeper learning. Includes grooming, riding (if appropriate), wagon rides, and cultural components. Best for large groups with multiple class rotations.</p>' +
+            '<a href="/contact" class="sc-price-link">Get a Quote</a>' +
+          '</div>' +
+          '<div class="sc-price-card">' +
+            '<p class="sc-price-label">Multi-Day / Large Group</p>' +
+            '<p class="sc-price-amount">$900</p>' +
+            '<p class="sc-price-duration">Starting at &mdash; Groups 40+ or multi-day</p>' +
+            '<p class="sc-price-desc">Multiple stations, deeper skill-building, longer experience. Best for field days, camp programs, or special events. Contact us with your project details for an accurate quote.</p>' +
+            '<a href="/contact" class="sc-price-link">Get a Quote</a>' +
+          '</div>' +
+        '</div>' +
+        '<p class="sc-pricing-note">Whether you&rsquo;re a school, nonprofit, or community organization, we&rsquo;re here to create an experience your group will remember.</p>' +
+        '<p class="sc-discount-note">Nonprofit &amp; Title I School Discounts Available &mdash; We believe in making these experiences accessible. Ask about pricing support when you reach out.</p>' +
+      '</section>' +
+
+      /* -- TESTIMONIALS -- */
+      '<section class="sc-testi">' +
+        '<h2>What teachers are saying.</h2>' +
+        '<div class="sc-testi-grid">' +
+          '<div class="sc-testi-card">' +
+            '<p class="sc-testi-quote">"My students haven&rsquo;t stopped talking about it. We&rsquo;ve done a lot of field trips, but nothing hits the same as a real animal encounter led by someone who actually knows what they&rsquo;re talking about."</p>' +
+            '<p class="sc-testi-attr">4th Grade Teacher &mdash; North Idaho</p>' +
+          '</div>' +
+          '<div class="sc-testi-card">' +
+            '<p class="sc-testi-quote">"Having Stacie share the Nisenan Maidu perspective on the relationship between Indigenous people and horses was something I couldn&rsquo;t have taught from a textbook. My students asked questions I didn&rsquo;t even know to ask."</p>' +
+            '<p class="sc-testi-attr">Professor &mdash; University of Idaho</p>' +
+          '</div>' +
+          '<div class="sc-testi-card">' +
+            '<p class="sc-testi-quote">"We brought Tribal Cowboy in for our school program and it completely transformed the energy of the day. Kids who were disengaged were suddenly asking how to brush a horse."</p>' +
+            '<p class="sc-testi-attr">Program Director &mdash; North Idaho</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* -- FAQ -- */
+      '<section class="sc-faq">' +
+        '<h2>Frequently asked questions.</h2>' +
+        '<div class="sc-faq-list">' +
+
+          '<div class="sc-faq-item">' +
+            '<div class="sc-faq-q">What age groups are your programs designed for?<span class="sc-faq-icon">+</span></div>' +
+            '<div class="sc-faq-a"><p>We&rsquo;ve worked with students from preschool through high school. Younger kids (K&ndash;3) focus on calm interaction &mdash; meeting the animals, basic grooming, asking questions. Older students can go deeper: horse anatomy, groundwork, and the cultural and historical context of horses in Indigenous life. Tell us your grade level and we&rsquo;ll tailor accordingly.</p></div>' +
+          '</div>' +
+
+          '<div class="sc-faq-item">' +
+            '<div class="sc-faq-q">Do you come to us, or do we come to your property?<span class="sc-faq-icon">+</span></div>' +
+            '<div class="sc-faq-a"><p>We come to you. We&rsquo;ve brought horses to school parking lots, fairgrounds, open fields, and community parks. You need a flat outdoor space with enough room to safely contain the animals and move a group around. When you reach out, share your location and we&rsquo;ll confirm if it works.</p></div>' +
+          '</div>' +
+
+          '<div class="sc-faq-item">' +
+            '<div class="sc-faq-q">What if students are afraid of the horses?<span class="sc-faq-icon">+</span></div>' +
+            '<div class="sc-faq-a"><p>Expected, and never a problem. We start every program with the animals calm and settled before students arrive. Kids who are nervous can watch from a distance and approach at their own pace. In years of programs, the reluctant ones are usually the most engaged by the end.</p></div>' +
+          '</div>' +
+
+          '<div class="sc-faq-item">' +
+            '<div class="sc-faq-q">Do students get to ride?<span class="sc-faq-icon">+</span></div>' +
+            '<div class="sc-faq-a"><p>Riding is available on select programs depending on age, group size, insurance requirements, and venue. Most school programs focus on ground-based interaction &mdash; grooming, leading, handling, and learning. If riding is a priority for your program, mention it when you contact us and we&rsquo;ll see what&rsquo;s possible.</p></div>' +
+          '</div>' +
+
+          '<div class="sc-faq-item">' +
+            '<div class="sc-faq-q">Do you take photos during the program?<span class="sc-faq-icon">+</span></div>' +
+            '<div class="sc-faq-a"><p>Yes &mdash; every program includes professional photos of students with the animals, delivered via QR code with a branded overlay. Teachers and administrators have used these for newsletters, classroom walls, and grant reports. Parents love them.</p></div>' +
+          '</div>' +
+
+          '<div class="sc-faq-item">' +
+            '<div class="sc-faq-q">How far in advance should we book?<span class="sc-faq-icon">+</span></div>' +
+            '<div class="sc-faq-a"><p>Spring programs book fast &mdash; often 4&ndash;8 weeks out. Fall and winter have more availability. If you have a specific date in mind, reach out as early as possible. We&rsquo;ll always tell you straight if we can make it work.</p></div>' +
+          '</div>' +
+
+        '</div>' +
+      '</section>' +
+
+      /* -- FINAL CTA -- */
+      '<section class="sc-cta">' +
+        '<h2>The kind of field trip they actually remember.</h2>' +
+        '<p>Tell us your group size, grade level, and what you have in mind. We book programs year-round and offer discounts for Title I schools and 501(c)(3) nonprofits.</p>' +
+        '<div class="sc-cta-buttons">' +
+          '<a href="/contact" class="sc-btn-dark">Check Your Date</a>' +
+          '<a href="tel:+12082612092" class="sc-btn-outline">Call (208) 261-2092</a>' +
+          '<a href="mailto:info@tribalcowboy.com" class="sc-btn-email">Email Us</a>' +
+        '</div>' +
+        '<p class="sc-cta-footer">Indigenous Owned &middot; Nisenan Maidu &middot; Athol, Idaho</p>' +
+      '</section>';
+
+    var hero = wrap.querySelector('.sc-hero');
+    if (hero) hero.style.backgroundImage = "url('" + HERO + "')";
+
+    page.insertBefore(wrap, page.firstChild);
+
+    /* -- FAQ accordion -- */
+    wrap.querySelectorAll('.sc-faq-item').forEach(function(item) {
+      var q = item.querySelector('.sc-faq-q');
+      var a = item.querySelector('.sc-faq-a');
+      q.addEventListener('click', function() {
+        var isOpen = a.style.maxHeight && a.style.maxHeight !== '0px';
+        wrap.querySelectorAll('.sc-faq-a').forEach(function(el) { el.style.maxHeight = '0'; });
+        wrap.querySelectorAll('.sc-faq-q').forEach(function(el) { el.classList.remove('open'); });
+        if (!isOpen) {
+          a.style.maxHeight = a.scrollHeight + 'px';
+          q.classList.add('open');
+        }
+      });
+    });
+
+    /* -- Force heading colors -- */
+    wrap.querySelectorAll('h1, h2').forEach(function(el) {
+      var onDark = el.closest('.sc-hero, .sc-how, .sc-pricing, .sc-faq');
+      el.style.setProperty('color', onDark ? '#F3EDE3' : '#2C2520', 'important');
+      el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important');
+      el.style.setProperty('font-weight', '400', 'important');
+    });
+
+    wrap.querySelector('.sc-hero-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.sc-hero-sub').style.setProperty('color', 'rgba(243,237,227,0.92)', 'important');
+    wrap.querySelector('.sc-intro p').style.setProperty('color', '#8A7868', 'important');
+    wrap.querySelector('.sc-programs-header p').style.setProperty('color', '#8A7868', 'important');
+    wrap.querySelectorAll('.sc-program-tag').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.sc-program-title').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); });
+    wrap.querySelectorAll('.sc-program-text').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+    wrap.querySelector('.sc-how-header p').style.setProperty('color', 'rgba(243,237,227,0.55)', 'important');
+    wrap.querySelectorAll('.sc-step-num').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.sc-step-title').forEach(function(el) { el.style.setProperty('color', '#F3EDE3', 'important'); });
+    wrap.querySelectorAll('.sc-step-text').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.50)', 'important'); });
+    wrap.querySelector('.sc-pricing-sub').style.setProperty('color', 'rgba(243,237,227,0.55)', 'important');
+    wrap.querySelectorAll('.sc-price-label').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.sc-price-amount').forEach(function(el) { el.style.setProperty('color', '#F3EDE3', 'important'); });
+    wrap.querySelectorAll('.sc-price-duration').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.45)', 'important'); });
+    wrap.querySelectorAll('.sc-price-desc').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.55)', 'important'); });
+    wrap.querySelector('.sc-pricing-note').style.setProperty('color', 'rgba(243,237,227,0.40)', 'important');
+    wrap.querySelector('.sc-discount-note').style.setProperty('color', 'rgba(212,168,67,0.75)', 'important');
+    wrap.querySelectorAll('.sc-testi-quote').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); });
+    wrap.querySelectorAll('.sc-testi-attr').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+    wrap.querySelectorAll('.sc-faq-q').forEach(function(el) { el.style.setProperty('color', '#F3EDE3', 'important'); });
+    wrap.querySelectorAll('.sc-faq-a p').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.60)', 'important'); });
+    wrap.querySelectorAll('.sc-stat-num').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.sc-stat-label').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.50)', 'important'); });
+    wrap.querySelector('.sc-cta p').style.setProperty('color', '#8A7868', 'important');
+    wrap.querySelector('.sc-cta-footer').style.setProperty('color', 'rgba(138,120,104,0.6)', 'important');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildSchoolPrograms);
+  } else {
+    buildSchoolPrograms();
+  }
+})();
+</script>

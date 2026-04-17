@@ -1,0 +1,216 @@
+<!-- Tribal Cowboy Pony Parties - FAQ Section -->
+<!-- Copy this entire code block into a Squarespace Code block -->
+
+<style>
+  #tc-faq-container {
+    background: #F3EDE3;
+    padding: 48px 32px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  #tc-faq-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .tc-faq-eyebrow {
+    font-family: Trebuchet MS, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #D4A843;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .tc-faq-title {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #2C2520;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .tc-faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tc-faq-item {
+    background: #FFFCF7;
+    border: 1px solid #E8DFD0;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .tc-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    cursor: pointer;
+    background: #FFFCF7;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2C2520;
+    transition: background 0.3s ease;
+  }
+
+  .tc-faq-question:hover {
+    background: #FAF4EA;
+  }
+
+  .tc-faq-question::after {
+    content: '+';
+    display: inline-block;
+    font-size: 24px;
+    color: #D4A843;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+    margin-left: 12px;
+    flex-shrink: 0;
+  }
+
+  .tc-faq-question.open::after {
+    transform: rotate(45deg);
+  }
+
+  .tc-faq-answer {
+    display: none;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #FFFCF7;
+  }
+
+  .tc-faq-answer.open {
+    display: block;
+    padding: 16px 20px;
+    max-height: 500px;
+  }
+
+  .tc-faq-answer-text {
+    font-family: Trebuchet MS, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #574838;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    #tc-faq-container {
+      padding: 36px 20px;
+    }
+
+    .tc-faq-title {
+      font-size: 24px;
+    }
+
+    .tc-faq-question {
+      padding: 16px 16px;
+      font-size: 15px;
+    }
+
+    .tc-faq-answer-text {
+      font-size: 13px;
+    }
+  }
+</style>
+
+<div id="tc-faq-container">
+  <div id="tc-faq-header">
+    <div class="tc-faq-eyebrow">PLANNING YOUR PARTY</div>
+    <h2 class="tc-faq-title">What People Ask Before They Book</h2>
+  </div>
+
+  <ul class="tc-faq-list">
+    <li class="tc-faq-item">
+      <button class="tc-faq-question" onclick="toggleAnswer(this)">
+        How much does a pony party cost?
+      </button>
+      <div class="tc-faq-answer">
+        <p class="tc-faq-answer-text">Pricing is customized by group size, duration, location, and photo delivery. We quote after understanding what you're planning. No surprises.</p>
+      </div>
+    </li>
+
+    <li class="tc-faq-item">
+      <button class="tc-faq-question" onclick="toggleAnswer(this)">
+        What if the kids are nervous around animals?
+      </button>
+      <div class="tc-faq-answer">
+        <p class="tc-faq-answer-text">We've worked with hundreds of kids. Some come in nervous and leave asking to come back. We move slow and let kids set the pace.</p>
+      </div>
+    </li>
+
+    <li class="tc-faq-item">
+      <button class="tc-faq-question" onclick="toggleAnswer(this)">
+        Can we do it at our house?
+      </button>
+      <div class="tc-faq-answer">
+        <p class="tc-faq-answer-text">Yes, with a flat open area with good footing — grass or cleared field. No concrete or steep terrain. We confirm when you book.</p>
+      </div>
+    </li>
+
+    <li class="tc-faq-item">
+      <button class="tc-faq-question" onclick="toggleAnswer(this)">
+        What if it rains?
+      </button>
+      <div class="tc-faq-answer">
+        <p class="tc-faq-answer-text">We can reschedule at no penalty. If you have a covered area, we can sometimes work with that.</p>
+      </div>
+    </li>
+
+    <li class="tc-faq-item">
+      <button class="tc-faq-question" onclick="toggleAnswer(this)">
+        Do we need to do anything to prepare?
+      </button>
+      <div class="tc-faq-answer">
+        <p class="tc-faq-answer-text">Nope. We handle animals, equipment, and setup. You bring the cake.</p>
+      </div>
+    </li>
+
+    <li class="tc-faq-item">
+      <button class="tc-faq-question" onclick="toggleAnswer(this)">
+        How do we book?
+      </button>
+      <div class="tc-faq-answer">
+        <p class="tc-faq-answer-text">Email info@tribalcowboy.com or fill out the quick form at tribalcowboy.com. We reply within 24 hours.</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function toggleAnswer(button) {
+    const answer = button.nextElementSibling;
+    const isOpen = button.classList.contains('open');
+
+    // Close all other open answers
+    document.querySelectorAll('.tc-faq-question.open').forEach(q => {
+      if (q !== button) {
+        q.classList.remove('open');
+        q.nextElementSibling.classList.remove('open');
+      }
+    });
+
+    // Toggle current answer
+    if (isOpen) {
+      button.classList.remove('open');
+      answer.classList.remove('open');
+    } else {
+      button.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+</script>

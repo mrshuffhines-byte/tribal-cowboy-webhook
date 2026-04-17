@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tribal Cowboy — How Many Hands Tall Are YOU? — Banner Design Proof</title>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  TRIBAL COWBOY — TENSION FABRIC STAND DESIGN PROOF          ║
+  ║  Actual print size: 48" wide × 11'6" tall (138")            ║
+  ║  Preview scale: 1" = 8px  →  384px × 1104px                 ║
+  ║  Submit to: 48hourprint.com › Tension Fabric Stands          ║
+  ║  Required file: PDF or PNG at 150dpi minimum                 ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════
+   TRIBAL COWBOY BRAND TOKENS
+   ═══════════════════════════════════════════════════ */
+:root {
+  --timber:   #2C2520;
+  --saddle:   #574838;
+  --gold:     #D4A843;
+  --leather:  #C8A96E;
+  --cream:    #F3EDE3;
+  --teal:     #1A7A6B;
+  --brick:    #8B1A1A;
+  --nearblk:  #1E1208;
+  --muted:    #8A7560;
+  --offwhite: #FFFCF7;
+  --goldlt:   #FAF4EA;
+  --teallt:   #EEF7F5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #111008;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Page label above banner */
+.page-label {
+  color: var(--muted);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════
+   BANNER CONTAINER
+   Scale: 8px = 1 inch → 384px wide = 48"
+   Height: 1104px = 138" (11'6")
+   ═══════════════════════════════════════════════════ */
+.banner {
+  width: 384px;
+  height: 1104px;
+  background: var(--timber);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,168,67,0.2);
+}
+
+/* ── Gold bands ── */
+.band-top, .band-bottom {
+  position: absolute;
+  left: 0; right: 0;
+  height: 4px;
+  background: var(--gold);
+  z-index: 10;
+}
+.band-top { top: 0; }
+.band-bottom { bottom: 0; }
+.band-top::after, .band-bottom::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1.5px;
+  background: rgba(200,169,110,0.5);
+}
+.band-top::after { top: 8px; }
+.band-bottom::before { bottom: 8px; }
+
+
+/* ══════════════════════════════════════════════
+   SECTION 1: HEADER  (top 220px)
+   ══════════════════════════════════════════════ */
+.header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 24px 16px;
+  text-align: center;
+  border-bottom: 3px solid var(--gold);
+}
+
+/* Logo SVG (pencil-sketch appaloosa style placeholder) */
+.logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.logo-ring {
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inline horse SVG logo mark */
+.logo-horse {
+  width: 50px;
+  height: 42px;
+}
+
+.brand-arch {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.brand-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.38em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* Main headline */
+.headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.0;
+  text-align: center;
+}
+.headline em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* Hand badge */
+.hand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  background: var(--gold);
+  color: var(--nearblk);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 5px 14px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+
+/* ══════════════════════════════════════════════
+   SECTION 2: CHART ZONE  (220px – 920px = 700px)
+   Scale: 700px = 70" → 10px per inch → 40px per hand
+   Showing from floor (0") up to 70" (17.5H)
+   ══════════════════════════════════════════════ */
+.chart-zone {
+  position: absolute;
+  top: 220px;
+  left: 0; right: 0;
+  height: 700px;
+}
+
+/* ── Ruler strip (right edge) ── */
+.ruler {
+  position: absolute;
+  top: 0; bottom: 0;
+  right: 0;
+  width: 60px;
+  background: #231E1B;
+  border-left: 3px solid var(--gold);
+}
+
+/* Individual ruler marks — position: bottom-relative within .ruler */
+.r-mark {
+  position: absolute;
+  left: 0; right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(50%);
+}
+.r-mark .h-num {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gold);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+}
+.r-mark .h-unit {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--muted);
+  font-size: 5.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* Horizontal guide lines across full chart */
+.guide-line {
+  position: absolute;
+  left: 0;
+  right: 60px;
+  height: 1px;
+}
+.guide-line.major { background: rgba(212,168,67,0.35); }
+.guide-line.minor { background: rgba(212,168,67,0.12); }
+
+/* ── Horse entries ── */
+/* Each .horse-row is positioned bottom-relative within .chart-zone */
+/* Bottom = floor (0") — each inch = 10px */
+
+.horse-row {
+  position: absolute;
+  left: 0;
+  right: 60px;
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+}
+
+/* Horse graphic column */
+.h-graphic {
+  width: 90px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 4px;
+}
+
+/* Label column */
+.h-label {
+  flex: 1;
+  padding: 0 12px 10px 8px;
+  border-bottom: 1px solid rgba(212,168,67,0.22);
+}
+
+.h-name {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--cream);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.h-stats {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--gold);
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.h-note {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--muted);
+  font-size: 7px;
+  line-height: 1.55;
+  margin-top: 4px;
+}
+
+/* Special TC breed callout (teal) */
+.tc-badge {
+  display: inline-block;
+  background: var(--teal);
+  color: #D0F0EA;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5.5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-top: 4px;
+}
+
+/* Floor marker at bottom */
+.floor-marker {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 60px;
+  height: 42px;
+  border-top: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 10px;
+  background: rgba(0,0,0,0.2);
+}
+.floor-footprints {
+  font-size: 18px;
+  opacity: 0.6;
+  letter-spacing: -4px;
+}
+.floor-text {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--muted);
+  font-size: 6.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+
+/* ══════════════════════════════════════════════
+   SECTION 3: EDUCATION RIBBON  (920px – 1000px)
+   ══════════════════════════════════════════════ */
+.edu-ribbon {
+  position: absolute;
+  top: 920px;
+  left: 0; right: 0;
+  height: 80px;
+  background: #231E1B;
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 14px;
+}
+
+.edu-icon {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--teal);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--teal);
+  font-size: 16px;
+}
+
+.edu-text {
+  flex: 1;
+}
+
+.edu-label {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--teal);
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.edu-body {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+
+/* ══════════════════════════════════════════════
+   SECTION 4: FOOTER  (1000px – 1104px)
+   ══════════════════════════════════════════════ */
+.footer {
+  position: absolute;
+  top: 1000px;
+  left: 0; right: 0;
+  height: 104px;
+  background: var(--timber);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  text-align: center;
+  gap: 5px;
+}
+
+.footer-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--gold);
+  font-size: 6.5px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.footer-headline {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--cream);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.footer-services {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--muted);
+  font-size: 6px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.9;
+}
+
+.footer-cta {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--nearblk);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 5px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.footer-contact {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--muted);
+  font-size: 6px;
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="page-label">Design Proof · Tribal Cowboy · Tension Fabric Stand · 48″ × 11′6″ · Scale 1:8</div>
+
+<div class="banner">
+
+  <!-- ── Gold accent bands ── -->
+  <div class="band-top"></div>
+  <div class="band-bottom"></div>
+
+
+  <!-- ════════════════════════════════════════
+       SECTION 1: HEADER
+       ════════════════════════════════════════ -->
+  <div class="header">
+
+    <div class="logo-wrap">
+      <!-- Tribal Cowboy logo mark (horse head silhouette in ring) -->
+      <div class="logo-ring">
+        <svg class="logo-horse" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Body mass -->
+          <ellipse cx="26" cy="36" rx="20" ry="12" fill="#D4A843"/>
+          <!-- Shoulder / chest -->
+          <ellipse cx="40" cy="32" rx="13" ry="14" fill="#D4A843"/>
+          <!-- Neck -->
+          <path d="M 42 28 C 44 20 47 14 50 10 C 48 8 44 8 42 12 C 40 16 38 22 38 28 Z" fill="#D4A843"/>
+          <!-- Head -->
+          <path d="M 48 14 C 50 10 55 8 58 10 C 58 14 56 18 53 20 C 50 22 46 20 48 14 Z" fill="#C8A96E"/>
+          <!-- Ear -->
+          <path d="M 50 10 C 52 6 56 4 57 7 L 53 10 Z" fill="#D4A843"/>
+          <!-- Eye -->
+          <circle cx="53" cy="15" r="1.5" fill="#1E1208"/>
+          <!-- Tail -->
+          <path d="M 8 33 C 4 30 2 24 5 20" stroke="#C8A96E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Front legs -->
+          <rect x="36" y="44" width="5" height="10" rx="2" fill="#D4A843"/>
+          <rect x="42" y="44" width="5" height="8" rx="2" fill="#C8A96E"/>
+          <!-- Back legs -->
+          <rect x="14" y="44" width="5" height="10" rx="2" fill="#D4A843"/>
+          <rect x="20" y="44" width="5" height="8" rx="2" fill="#C8A96E"/>
+          <!-- Mane -->
+          <path d="M 44 20 C 41 18 40 14 43 12 M 46 24 C 43 22 42 18 45 16" stroke="#C8A96E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="brand-arch">Tribal Cowboy</div>
+      <div class="brand-sub">Indigenous Owned · Athol, Idaho</div>
+    </div>
+
+    <div class="headline">
+      How Many <em>Hands</em><br>Tall Are <em>YOU?</em>
+    </div>
+
+    <div class="hand-badge">
+      ✦ &nbsp; 1 hand = 4 inches &nbsp; ✦
+    </div>
+
+  </div><!-- /header -->
+
+
+  <!-- ════════════════════════════════════════
+       SECTION 2: CHART ZONE
+       700px total = 70" of height
+       Bottom = 0" (floor), Top = 70" (5'10")
+       10px = 1 inch  |  40px = 1 hand
+       ════════════════════════════════════════ -->
+  <div class="chart-zone">
+
+    <!-- ── Ruler strip ── -->
+    <div class="ruler">
+      <!-- Marks from bottom (floor) going up — bottom: Xpx where X = inches × 10 -->
+
+      <!-- 7H = 28" → bottom: 280px -->
+      <div class="r-mark" style="bottom: 280px">
+        <div class="h-num">7H</div>
+        <div class="h-unit">28"<br>2′4″</div>
+      </div>
+
+      <!-- 8H = 32" → bottom: 320px -->
+      <div class="r-mark" style="bottom: 320px">
+        <div class="h-num">8H</div>
+        <div class="h-unit">32"<br>2′8″</div>
+      </div>
+
+      <!-- 9H = 36" → bottom: 360px -->
+      <div class="r-mark" style="bottom: 360px">
+        <div class="h-num">9H</div>
+        <div class="h-unit">36"<br>3′</div>
+      </div>
+
+      <!-- 10H = 40" → bottom: 400px -->
+      <div class="r-mark" style="bottom: 400px">
+        <div class="h-num">10H</div>
+        <div class="h-unit">40"<br>3′4″</div>
+      </div>
+
+      <!-- 11H = 44" → bottom: 440px -->
+      <div class="r-mark" style="bottom: 440px">
+        <div class="h-num">11H</div>
+        <div class="h-unit">44"<br>3′8″</div>
+      </div>
+
+      <!-- 12H = 48" → bottom: 480px -->
+      <div class="r-mark" style="bottom: 480px">
+        <div class="h-num">12H</div>
+        <div class="h-unit">48"<br>4′</div>
+      </div>
+
+      <!-- 13H = 52" → bottom: 520px -->
+      <div class="r-mark" style="bottom: 520px">
+        <div class="h-num">13H</div>
+        <div class="h-unit">52"<br>4′4″</div>
+      </div>
+
+      <!-- 14H = 56" → bottom: 560px -->
+      <div class="r-mark" style="bottom: 560px">
+        <div class="h-num">14H</div>
+        <div class="h-unit">56"<br>4′8″</div>
+      </div>
+
+      <!-- 15H = 60" → bottom: 600px -->
+      <div class="r-mark" style="bottom: 600px">
+        <div class="h-num">15H</div>
+        <div class="h-unit">60"<br>5′</div>
+      </div>
+
+      <!-- 16H = 64" → bottom: 640px -->
+      <div class="r-mark" style="bottom: 640px">
+        <div class="h-num">16H</div>
+        <div class="h-unit">64"<br>5′4″</div>
+      </div>
+
+      <!-- 17H = 68" → bottom: 680px -->
+      <div class="r-mark" style="bottom: 680px">
+        <div class="h-num">17H</div>
+        <div class="h-unit">68"<br>5′8″</div>
+      </div>
+
+      <!-- Tick lines inside ruler (minor every 20px = 2") -->
+      <div style="position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden;">
+        <!-- Minor ticks every 20px = 2" -->
+        <div style="position:absolute;left:3px;bottom:300px;width:8px;height:1px;background:rgba(212,168,67,0.3)"></div>
+        <div style="position:absolute;left:3px;bottom:340px;width:8px;height:1px;background:rgba(212,168,67,0.3)"></div>
+        <div style="position:absolute;left:3px;bottom:380px;width:8px;height:1px;background:rgba(212,168,67,0.3)"></div>
+        <div style="position:absolute;left:3px;bottom:420px;width:8px;height:1px;background:rgba(212,168,67,0.3)"></div>
+        <div style="position:absolute;left:3px;bottom:460px;width:8px;height:1px;background:rgba(212,168,67,0.3)"></div>
+        <div style="position:absolute;left:3px;bottom:500px;width:8px;height:1px;background:rgba(212,168,67,0.3)"></div>
+        <div style="position:absolute;left:3px;bottom:540px;width:8px;height:1px;background:rgba(212,168,67,0.3)"></div>
+        <div style="position:absolute;left:3px;bottom:580px;width:8px;height:1px;background:rgba(212,168,67,0.3)"></div>
+        <div style="position:absolute;left:3px;bottom:620px;width:8px;height:1px;background:rgba(212,168,67,0.3)"></div>
+        <div style="position:absolute;left:3px;bottom:660px;width:8px;height:1px;background:rgba(212,168,67,0.3)"></div>
+      </div>
+    </div><!-- /ruler -->
+
+
+    <!-- ── Guide lines across chart ── -->
+    <!-- Every 2H (80px), major at 4H intervals -->
+    <div class="guide-line major" style="bottom: 480px"></div><!-- 12H -->
+    <div class="guide-line major" style="bottom: 320px"></div><!-- 8H -->
+    <div class="guide-line minor" style="bottom: 400px"></div><!-- 10H -->
+    <div class="guide-line minor" style="bottom: 560px"></div><!-- 14H -->
+    <div class="guide-line minor" style="bottom: 640px"></div><!-- 16H -->
+    <div class="guide-line minor" style="bottom: 360px"></div><!-- 9H -->
+
+
+    <!-- ══════════════════════════════
+         HORSE ENTRIES
+         bottom = breed height × 10px
+         ══════════════════════════════ -->
+
+    <!-- ────────────────────────────────────
+         CLYDESDALE · 17–18H · 68–72"
+         Tribal Cowboy's own: Millie & Abby
+         Position: bottom 680px (68")
+         ──────────────────────────────────── -->
+    <div class="horse-row" style="bottom: 660px;">
+      <div class="h-graphic">
+        <!-- Clydesdale — full-size horse silhouette -->
+        <svg width="76" height="130" viewBox="0 0 76 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Body -->
+          <ellipse cx="36" cy="62" rx="28" ry="18" fill="#D4A843"/>
+          <!-- Croup / hindquarters -->
+          <ellipse cx="18" cy="60" rx="17" ry="19" fill="#D4A843"/>
+          <!-- Chest / shoulder -->
+          <ellipse cx="54" cy="56" rx="16" ry="20" fill="#D4A843"/>
+          <!-- Neck -->
+          <path d="M 56 48 C 58 36 60 26 62 18 C 60 15 56 15 54 20 C 52 28 50 38 50 48 Z" fill="#D4A843"/>
+          <!-- Head -->
+          <path d="M 60 22 C 62 15 68 10 72 13 C 73 18 71 24 67 27 C 63 29 59 28 60 22 Z" fill="#C8A96E"/>
+          <!-- Ear -->
+          <path d="M 62 18 C 64 12 68 9 70 12 L 65 17 Z" fill="#D4A843"/>
+          <!-- Eye -->
+          <circle cx="66" cy="21" r="2" fill="#1E1208"/>
+          <!-- Nostril -->
+          <ellipse cx="73" cy="23" rx="1.5" ry="1" fill="#1E1208" opacity="0.8"/>
+          <!-- Feathering on legs (Clydesdale signature) -->
+          <ellipse cx="46" cy="97" rx="7" ry="5" fill="#C8A96E" opacity="0.5"/>
+          <ellipse cx="57" cy="97" rx="7" ry="5" fill="#C8A96E" opacity="0.5"/>
+          <ellipse cx="20" cy="97" rx="7" ry="5" fill="#C8A96E" opacity="0.5"/>
+          <!-- Front legs -->
+          <rect x="44" y="78" width="7" height="38" rx="3" fill="#D4A843"/>
+          <rect x="53" y="78" width="7" height="34" rx="3" fill="#C8A96E"/>
+          <!-- Back legs -->
+          <rect x="14" y="78" width="7" height="38" rx="3" fill="#D4A843"/>
+          <rect x="23" y="78" width="7" height="34" rx="3" fill="#C8A96E"/>
+          <!-- Tail (long, flowing — draft horse) -->
+          <path d="M 5 56 C 0 50 -2 40 0 32 C -1 30 2 28 4 30 C 2 38 4 48 8 54" stroke="#C8A96E" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M 6 55 C 2 52 0 44 3 38" stroke="#D4A843" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Mane -->
+          <path d="M 56 36 C 53 33 52 28 55 25 M 58 42 C 55 39 54 34 57 31" stroke="#C8A96E" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Hooves -->
+          <rect x="44" y="113" width="7" height="5" rx="1" fill="#1E1208" opacity="0.6"/>
+          <rect x="14" y="113" width="7" height="5" rx="1" fill="#1E1208" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="h-label" style="padding-bottom:14px;">
+        <div class="h-name">Clydesdale</div>
+        <div class="h-stats">17–18H &nbsp;·&nbsp; 68–72" &nbsp;·&nbsp; 5'8″–6′</div>
+        <div class="tc-badge">Meet Millie &amp; Abby — Tribal Cowboy's Clydesdales</div>
+        <div class="h-note" style="margin-top:5px;">Millie weighs around 1,800 lbs. She's gentle enough for a first-time visitor and big enough to stop traffic.</div>
+      </div>
+    </div>
+
+    <!-- ────────────────────────────────────
+         QUARTER HORSE · 14.3–16H · 59–64"
+         Position: bottom 580px (58")
+         ──────────────────────────────────── -->
+    <div class="horse-row" style="bottom: 560px;">
+      <div class="h-graphic">
+        <svg width="68" height="110" viewBox="0 0 68 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="32" cy="54" rx="24" ry="15" fill="#D4A843"/>
+          <ellipse cx="16" cy="52" rx="14" ry="16" fill="#D4A843"/>
+          <ellipse cx="47" cy="48" rx="14" ry="17" fill="#D4A843"/>
+          <path d="M 48 42 C 50 32 52 22 54 16 C 52 13 49 13 47 17 C 45 24 44 34 44 42 Z" fill="#D4A843"/>
+          <path d="M 52 19 C 54 13 59 9 62 11 C 62 16 60 21 57 23 C 54 25 51 23 52 19 Z" fill="#C8A96E"/>
+          <path d="M 54 16 C 55 11 58 9 60 11 L 57 15 Z" fill="#D4A843"/>
+          <circle cx="57" cy="17" r="1.8" fill="#1E1208"/>
+          <rect x="38" y="67" width="6" height="32" rx="2.5" fill="#D4A843"/>
+          <rect x="46" y="67" width="6" height="28" rx="2.5" fill="#C8A96E"/>
+          <rect x="11" y="67" width="6" height="32" rx="2.5" fill="#D4A843"/>
+          <rect x="19" y="67" width="6" height="28" rx="2.5" fill="#C8A96E"/>
+          <path d="M 4 48 C 0 43 -1 35 2 28" stroke="#C8A96E" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M 48 30 C 46 27 45 23 48 20 M 50 35 C 48 32 47 28 50 25" stroke="#C8A96E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <rect x="38" y="96" width="6" height="4" rx="1" fill="#1E1208" opacity="0.6"/>
+          <rect x="11" y="96" width="6" height="4" rx="1" fill="#1E1208" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="h-label" style="padding-bottom:12px;">
+        <div class="h-name">Quarter Horse</div>
+        <div class="h-stats">14.3–16H &nbsp;·&nbsp; 59–64" &nbsp;·&nbsp; 4'11″–5'4″</div>
+        <div class="h-note">America's most popular breed. Named for winning quarter-mile races. Compact, powerful, and built for ranch work.</div>
+      </div>
+    </div>
+
+    <!-- ────────────────────────────────────
+         ARABIAN · 14.1–15.1H · 57–61"
+         Position: bottom 460px (46")
+         ──────────────────────────────────── -->
+    <div class="horse-row" style="bottom: 460px;">
+      <div class="h-graphic">
+        <svg width="62" height="96" viewBox="0 0 62 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="48" rx="21" ry="13" fill="#D4A843"/>
+          <ellipse cx="16" cy="46" rx="13" ry="14" fill="#D4A843"/>
+          <ellipse cx="43" cy="43" rx="12" ry="15" fill="#D4A843"/>
+          <path d="M 44 37 C 46 28 48 20 50 14 C 48 12 45 12 43 16 C 41 22 40 30 40 37 Z" fill="#D4A843"/>
+          <!-- Arabian's distinctive dished head and high tail carriage -->
+          <path d="M 48 17 C 50 12 54 9 57 11 C 57 15 55 19 52 21 C 49 23 47 21 48 17 Z" fill="#C8A96E"/>
+          <path d="M 49 14 C 51 10 54 8 56 10 L 52 13 Z" fill="#D4A843"/>
+          <circle cx="52" cy="15" r="1.8" fill="#1E1208"/>
+          <!-- High tail carriage (Arabian signature) -->
+          <path d="M 4 42 C 0 36 0 28 3 22 C 6 18 8 20 7 26 C 5 32 5 38 7 42" stroke="#C8A96E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <rect x="35" y="60" width="5" height="28" rx="2" fill="#D4A843"/>
+          <rect x="42" y="60" width="5" height="24" rx="2" fill="#C8A96E"/>
+          <rect x="11" y="60" width="5" height="28" rx="2" fill="#D4A843"/>
+          <rect x="18" y="60" width="5" height="24" rx="2" fill="#C8A96E"/>
+          <path d="M 44 27 C 42 24 42 20 44 18 M 46 31 C 44 28 44 24 46 22" stroke="#C8A96E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <rect x="35" y="85" width="5" height="4" rx="1" fill="#1E1208" opacity="0.6"/>
+          <rect x="11" y="85" width="5" height="4" rx="1" fill="#1E1208" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="h-label" style="padding-bottom:12px;">
+        <div class="h-name">Arabian</div>
+        <div class="h-stats">14.1–15.1H &nbsp;·&nbsp; 57–61" &nbsp;·&nbsp; 4'9″–5'1″</div>
+        <div class="h-note">One of the oldest breeds on earth. Known for endurance, intelligence, and a naturally high tail carriage. Indigenous cultures across the world have prized them for centuries.</div>
+      </div>
+    </div>
+
+    <!-- ────────────────────────────────────
+         WELSH PONY · 12–13.2H · 48–54"
+         Position: bottom 360px (36")
+         ──────────────────────────────────── -->
+    <div class="horse-row" style="bottom: 340px;">
+      <div class="h-graphic">
+        <svg width="56" height="80" viewBox="0 0 56 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="28" cy="42" rx="19" ry="11" fill="#D4A843"/>
+          <ellipse cx="14" cy="40" rx="11" ry="13" fill="#D4A843"/>
+          <ellipse cx="39" cy="38" rx="11" ry="13" fill="#D4A843"/>
+          <path d="M 40 32 C 42 24 44 17 46 12 C 44 10 41 10 39 14 C 37 19 36 27 36 32 Z" fill="#D4A843"/>
+          <path d="M 44 14 C 46 10 50 8 52 10 C 52 14 50 17 47 19 C 45 20 43 18 44 14 Z" fill="#C8A96E"/>
+          <path d="M 45 12 C 47 8 50 7 51 9 L 48 12 Z" fill="#D4A843"/>
+          <circle cx="48" cy="13" r="1.5" fill="#1E1208"/>
+          <path d="M 4 36 C 1 31 1 24 3 19" stroke="#C8A96E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <rect x="32" y="52" width="5" height="24" rx="2" fill="#D4A843"/>
+          <rect x="38" y="52" width="5" height="20" rx="2" fill="#C8A96E"/>
+          <rect x="10" y="52" width="5" height="24" rx="2" fill="#D4A843"/>
+          <rect x="16" y="52" width="5" height="20" rx="2" fill="#C8A96E"/>
+          <path d="M 40 25 C 38 22 38 18 40 16 M 42 28 C 40 25 40 21 42 19" stroke="#C8A96E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <rect x="32" y="73" width="5" height="4" rx="1" fill="#1E1208" opacity="0.6"/>
+          <rect x="10" y="73" width="5" height="4" rx="1" fill="#1E1208" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="h-label" style="padding-bottom:12px;">
+        <div class="h-name">Welsh Pony</div>
+        <div class="h-stats">12–13.2H &nbsp;·&nbsp; 48–54" &nbsp;·&nbsp; 4′–4'6″</div>
+        <div class="h-note">Tough mountain ponies from Wales. Hardy, intelligent, and great with kids. Close in size to the ponies at Tribal Cowboy.</div>
+      </div>
+    </div>
+
+    <!-- ────────────────────────────────────
+         SHETLAND PONY · 9–10.2H · 36–42"
+         Position: bottom 240px (24")
+         Tribal Cowboy has ponies!
+         ──────────────────────────────────── -->
+    <div class="horse-row" style="bottom: 220px;">
+      <div class="h-graphic">
+        <svg width="52" height="62" viewBox="0 0 52 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="26" cy="34" rx="17" ry="10" fill="#D4A843"/>
+          <ellipse cx="13" cy="33" rx="10" ry="11" fill="#D4A843"/>
+          <ellipse cx="37" cy="30" rx="10" ry="12" fill="#D4A843"/>
+          <path d="M 38 25 C 40 18 41 13 43 9 C 41 7 39 8 37 11 C 36 16 35 22 35 26 Z" fill="#D4A843"/>
+          <path d="M 41 11 C 43 8 47 6 49 8 C 48 11 47 14 44 16 C 42 17 40 15 41 11 Z" fill="#C8A96E"/>
+          <path d="M 42 9 C 44 6 47 5 48 7 L 45 9 Z" fill="#D4A843"/>
+          <circle cx="45" cy="11" r="1.5" fill="#1E1208"/>
+          <!-- Thick body (Shetland is stocky) -->
+          <path d="M 3 29 C 0 25 0 20 2 16" stroke="#C8A96E" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <rect x="30" y="42" width="5" height="18" rx="2" fill="#D4A843"/>
+          <rect x="36" y="42" width="5" height="14" rx="2" fill="#C8A96E"/>
+          <rect x="9" y="42" width="5" height="18" rx="2" fill="#D4A843"/>
+          <rect x="15" y="42" width="5" height="14" rx="2" fill="#C8A96E"/>
+          <path d="M 37 20 C 35 17 35 14 37 12 M 39 23 C 37 20 37 17 39 14" stroke="#C8A96E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <rect x="30" y="57" width="5" height="3" rx="1" fill="#1E1208" opacity="0.6"/>
+          <rect x="9" y="57" width="5" height="3" rx="1" fill="#1E1208" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="h-label" style="padding-bottom:10px;">
+        <div class="h-name">Shetland Pony</div>
+        <div class="h-stats">9–10.2H &nbsp;·&nbsp; 36–42" &nbsp;·&nbsp; 3′–3'6″</div>
+        <div class="tc-badge">Tribal Cowboy has ponies just like this</div>
+        <div class="h-note" style="margin-top:4px;">Small but mighty — Shetlands can pull twice their own weight. Perfect size for pony parties and little riders.</div>
+      </div>
+    </div>
+
+    <!-- ────────────────────────────────────
+         MINIATURE HORSE · 7–8.2H · 28–34"
+         Position: bottom 120px (12")
+         ──────────────────────────────────── -->
+    <div class="horse-row" style="bottom: 100px;">
+      <div class="h-graphic">
+        <svg width="44" height="48" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="22" cy="26" rx="14" ry="8" fill="#D4A843"/>
+          <ellipse cx="11" cy="25" rx="8" ry="9" fill="#D4A843"/>
+          <ellipse cx="31" cy="23" rx="8" ry="10" fill="#D4A843"/>
+          <path d="M 32 19 C 34 14 35 10 37 7 C 35 5 33 6 31 9 C 30 13 29 18 29 20 Z" fill="#D4A843"/>
+          <path d="M 35 8 C 37 5 40 4 42 6 C 41 9 40 11 37 13 C 35 13 34 11 35 8 Z" fill="#C8A96E"/>
+          <path d="M 36 7 C 37 4 40 3 41 5 L 38 7 Z" fill="#D4A843"/>
+          <circle cx="38" cy="9" r="1.2" fill="#1E1208"/>
+          <path d="M 2 22 C 0 19 0 15 2 12" stroke="#C8A96E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <rect x="25" y="32" width="4" height="13" rx="1.5" fill="#D4A843"/>
+          <rect x="30" y="32" width="4" height="11" rx="1.5" fill="#C8A96E"/>
+          <rect x="8" y="32" width="4" height="13" rx="1.5" fill="#D4A843"/>
+          <rect x="13" y="32" width="4" height="11" rx="1.5" fill="#C8A96E"/>
+          <path d="M 31 16 C 29 14 29 11 31 9 M 33 18 C 31 16 31 13 33 10" stroke="#C8A96E" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <rect x="25" y="43" width="4" height="3" rx="1" fill="#1E1208" opacity="0.6"/>
+          <rect x="8" y="43" width="4" height="3" rx="1" fill="#1E1208" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="h-label" style="padding-bottom:10px;">
+        <div class="h-name">Miniature Horse</div>
+        <div class="h-stats">7–8.2H &nbsp;·&nbsp; 28–34" &nbsp;·&nbsp; 2'4″–2'10″</div>
+        <div class="h-note">Full horse, just smaller. Miniatures are known for being gentle, curious, and surprisingly clever. Many kids are taller than they are.</div>
+      </div>
+    </div>
+
+
+    <!-- ── Floor marker ── -->
+    <div class="floor-marker">
+      <div class="floor-footprints">👣</div>
+      <div class="floor-text">
+        Stand here<br>and find your height
+      </div>
+    </div>
+
+  </div><!-- /chart-zone -->
+
+
+  <!-- ════════════════════════════════════════
+       SECTION 3: EDUCATION RIBBON
+       ════════════════════════════════════════ -->
+  <div class="edu-ribbon">
+    <div class="edu-icon">⚊</div>
+    <div class="edu-text">
+      <div class="edu-label">Did You Know</div>
+      <div class="edu-body">Horses have been central to Indigenous cultures across North America for centuries — for hunting, travel, ceremony, and connection to the land.</div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+       SECTION 4: FOOTER
+       ════════════════════════════════════════ -->
+  <div class="footer">
+    <div class="footer-eyebrow">Come See Us In Person</div>
+    <div class="footer-headline">Tribal Cowboy — Athol, Idaho</div>
+    <div class="footer-services">
+      Horse Photography &nbsp;·&nbsp; Clydesdale Wagon Rides &nbsp;·&nbsp; Pony Parties<br>
+      School Programs &nbsp;·&nbsp; Corporate Events &nbsp;·&nbsp; North Idaho
+    </div>
+    <a class="footer-cta" href="https://www.tribalcowboy.com">www.tribalcowboy.com</a>
+    <div class="footer-contact">info@tribalcowboy.com &nbsp;·&nbsp; @TribalCowboy</div>
+  </div>
+
+</div><!-- /banner -->
+
+
+<!-- ════════════════════════════════════════
+     DESIGN NOTES (below banner, print only)
+     ════════════════════════════════════════ -->
+<div style="width:384px; margin-top:30px; padding:20px; background:#1a1510; border: 1px solid #3D3530; border-radius:4px;">
+  <div style="font-family:'Montserrat',sans-serif; color:#D4A843; font-size:8px; font-weight:700; letter-spacing:0.3em; text-transform:uppercase; margin-bottom:12px;">Design Notes for Print Production</div>
+
+  <div style="font-family:'Montserrat',sans-serif; color:#8A7560; font-size:9px; line-height:1.9;">
+
+    <div style="color:#F3EDE3; font-size:10px; font-weight:600; margin-bottom:4px;">Print Specs</div>
+    • Final file size: 48″ W × 138″ H (11′6″ tall)<br>
+    • Resolution: 150 dpi minimum (300 dpi preferred)<br>
+    • File format: PDF (print-ready) or PNG<br>
+    • Bleed: Add 0.5″ bleed on all sides per 48hourprint specs<br>
+    • Color mode: CMYK<br>
+    • Safe zone: Keep all text 1″ from all edges<br>
+    <br>
+    <div style="color:#F3EDE3; font-size:10px; font-weight:600; margin-bottom:4px;">Recommended Upgrade</div>
+    Replace the SVG horse silhouettes with <strong style="color:#D4A843;">cutout photos of Millie, Abby, and your ponies</strong>
+    at their correct heights. A real photo of Millie at 17H will stop kids and adults cold — no illustration can match it.
+    Use a white background removal tool (remove.bg) to create transparent PNGs.<br>
+    <br>
+    <div style="color:#F3EDE3; font-size:10px; font-weight:600; margin-bottom:4px;">Logo</div>
+    Replace the ring placeholder at top with your actual Tribal_Cowboy_Logo_2.png file embedded at full quality.<br>
+    <br>
+    <div style="color:#F3EDE3; font-size:10px; font-weight:600; margin-bottom:4px;">Fonts (embed before exporting)</div>
+    • Headings: Cormorant Garamond (Google Fonts — free)<br>
+    • Body/labels: Montserrat (Google Fonts — free)<br>
+    <br>
+    <div style="color:#F3EDE3; font-size:10px; font-weight:600; margin-bottom:4px;">Colors</div>
+    • Background: #2C2520 (Timber Dark)<br>
+    • Accent/ruler: #D4A843 (Warm Gold)<br>
+    • Secondary: #C8A96E (Saddle Leather)<br>
+    • Text: #F3EDE3 (Buckskin Cream)<br>
+    • Muted: #8A7560 (Muted Warm)<br>
+    • Teal callout: #1A7A6B (Heritage Teal)<br>
+    <br>
+    <div style="color:#F3EDE3; font-size:10px; font-weight:600; margin-bottom:4px;">Usage Ideas</div>
+    • School visits and community programs — kids measure themselves against the horses<br>
+    • Pony parties — photogenic backdrop, parents love it<br>
+    • Events and fairs — draws foot traffic without saying a word<br>
+    • Corporate events — adults love it just as much as kids do<br>
+
+  </div>
+</div>
+
+</body>
+</html>
