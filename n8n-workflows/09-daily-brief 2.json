@@ -1,0 +1,88 @@
+{
+  "name": "Tribal Cowboy - Daily Brief",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "schedule-brief",
+      "name": "Daily 7am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://tribal-cowboy-webhook.onrender.com/data",
+        "options": {}
+      },
+      "id": "fetch-dashboard",
+      "name": "Fetch Dashboard Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 220]
+    },
+    {
+      "parameters": {
+        "url": "https://tribal-cowboy-webhook.onrender.com/voice-inquiries",
+        "options": {}
+      },
+      "id": "fetch-leads-brief",
+      "name": "Fetch Voice Leads",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 380]
+    },
+    {
+      "parameters": {
+        "jsCode": "const dashData = $('Fetch Dashboard Data').item.json;\nconst leads = $('Fetch Voice Leads').all().map(i => i.json);\n\nconst ig = dashData.instagram || {};\nconst fb = dashData.facebook || {};\n\nconst newLeads = leads.filter(l => l.status === 'New').length;\nconst contactedLeads = leads.filter(l => l.status === 'Contacted').length;\nconst bookedLeads = leads.filter(l => l.status === 'Booked').length;\nconst totalLeads = leads.length;\n\nconst summary = `TRIBAL COWBOY DAILY BRIEF — ${new Date().toLocaleDateString('en-US', {weekday:'long', year:'numeric', month:'long', day:'numeric'})}\n\n📸 INSTAGRAM\n  Followers: ${ig.followers || 'N/A'}\n  Reach: ${ig.reach || 'N/A'}\n  Impressions: ${ig.impressions || 'N/A'}\n  Profile Views: ${ig.profile_views || 'N/A'}\n  Last Updated: ${ig.last_updated ? new Date(ig.last_updated).toLocaleString() : 'N/A'}\n\n👍 FACEBOOK\n  Followers: ${fb.followers || 'N/A'}\n  Reach: ${fb.reach || 'N/A'}\n  Engagement: ${fb.engagement || 'N/A'}\n  Last Updated: ${fb.last_updated ? new Date(fb.last_updated).toLocaleString() : 'N/A'}\n\n📞 VOICE LEADS PIPELINE\n  Total Leads: ${totalLeads}\n  New (need follow-up): ${newLeads}\n  Contacted: ${contactedLeads}\n  Booked: ${bookedLeads}\n\n${newLeads > 0 ? '⚠️  ACTION NEEDED: ' + newLeads + ' new lead(s) need follow-up today!' : '✅ All leads have been contacted.'}\n\n---\nLatest Leads:\n${leads.slice(0, 5).map(l => `  • ${l.caller_name || 'Unknown'} — ${l.service_requested || 'Service TBD'} — ${l.event_date || 'Date TBD'} — Status: ${l.status || 'New'}`).join('\\n')}`;\n\nreturn [{ json: { summary, newLeads, totalLeads, bookedLeads } }];"
+      },
+      "id": "build-brief",
+      "name": "Build Daily Brief",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "info@tribalcowboy.com",
+        "subject": "=🤠 Tribal Cowboy Daily Brief — {{ $now.toFormat('EEE MMM d') }}{{ $json.newLeads > 0 ? ' ⚠️ ' + $json.newLeads + ' new lead(s)' : '' }}",
+        "emailType": "text",
+        "message": "={{ $json.summary }}"
+      },
+      "id": "gmail-brief",
+      "name": "Email Daily Brief",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [940, 300]
+    }
+  ],
+  "connections": {
+    "Daily 7am": {
+      "main": [
+        [
+          {"node": "Fetch Dashboard Data", "type": "main", "index": 0},
+          {"node": "Fetch Voice Leads", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Fetch Dashboard Data": {
+      "main": [[{"node": "Build Daily Brief", "type": "main", "index": 0}]]
+    },
+    "Fetch Voice Leads": {
+      "main": [[{"node": "Build Daily Brief", "type": "main", "index": 0}]]
+    },
+    "Build Daily Brief": {
+      "main": [[{"node": "Email Daily Brief", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {}
+}
