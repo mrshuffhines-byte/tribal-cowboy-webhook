@@ -17,7 +17,7 @@ This file tracks recurring family commitments that affect Stacie's availability 
 |---|---|---|---|
 | Monday | 9:00 a.m. – 2:30 p.m. | Full Day Drop and Go Learning Day | In-person, Hayden |
 | Monday | 3:00 – 4:00 p.m. | Spanish Group | In-person, Hayden |
-| Wednesday | 2:15 – 3:15 p.m. | 1:1 Writing & SEL Session | In-person, Hayden |
+| Wednesday | 2:15 – 3:15 p.m. | 1:1 Writing & SEL Session | Online |
 | Thursday | 9:00 a.m. – 12:00 p.m. | Academic Small Group (4th/5th Math & ELA) | In-person, Hayden |
 
 **Bradden total: $2,435**
@@ -42,7 +42,7 @@ This file tracks recurring family commitments that affect Stacie's availability 
 |---|---|---|
 | **Monday** | Unavailable most of day | Both kids in Hayden 9:00 a.m. – 4:00 p.m. Drop-off ~8:30 a.m., pickup after 4:00 p.m. Drive time Athol ↔ Hayden ~25 min each way. Avoid booking events. |
 | **Tuesday** | Available all day | Best day for full-day events, shoots, or hauls. |
-| **Wednesday** | Unavailable 12:30 – 3:30 p.m. | Charlie in Hayden 1:00 – 3:00 p.m., Bradden in Hayden 2:15 – 3:15 p.m. One drop-off run covers both. Mornings and evenings open. |
+| **Wednesday** | Unavailable 12:30 – 3:30 p.m. | Charlie in Hayden 1:00 – 3:00 p.m. (in-person). Bradden's 1:1 Writing & SEL is online 2:15 – 3:15 p.m. — needs reliable wifi. Mornings and evenings open. |
 | **Thursday** | Unavailable 8:30 a.m. – 12:30 p.m. | Bradden in Hayden 9:00 a.m. – 12:00 p.m. Drop-off and pickup block the morning. Afternoon and evening open. |
 | **Friday** | Available all day | Open for full-day or evening events. |
 | **Saturday** | Available all day | Open. |
