@@ -8,25 +8,25 @@
 
 ## Caption
 
-Nick Morrow graduates vet school this week. Tribal Cowboy now has an official camel doctor.
+Nick Morrow graduates vet school this week.
 
-Means we've got a go-to vet for future camels and whatever other obsessions we pick up.
+Now we've got a go-to vet for future camels and whatever other obsessions come next.
 
 Congrats, Dr. Morrow.
 
-📷 by me
+Photo by Stacie.
 
 ---
 
 ## Hashtags
 
-#TribalCowboy #NorthIdaho #PortraitPhotography #IdahoPhotographer #VetSchoolGrad #CamelLife #LargeAnimalVet #NaturalLight #IndigenousOwned #AthollIdaho
+#TribalCowboy #NorthIdaho #HorsePhotography #CamelLife #IdahoHorses #EquestrianLife #HorsesOfInstagram #FarmLife #RanchLife #NorthIdahoEvents
 
 ---
 
 ## Notes
 
-- Short caption lets the photo carry the post — that's the whole point
-- "📷 by me" credit line tags this as Stacie's photography
-- Photography hashtags up front to reach that audience too
+- Short caption lets the photo carry the post
+- Photo credit calls Stacie out by name, not just "me" — earns the credit she deserves
+- Hashtag mix pulls photography reach (#HorsePhotography) plus the niche camel tag for genuine engagement
 - Tag Nick if he has a public account

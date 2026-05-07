@@ -8,24 +8,24 @@
 
 ## Caption
 
-Nick Morrow graduates vet school this week. Tribal Cowboy now has an official camel doctor.
+Nick Morrow graduates vet school this week.
 
-Means we've got a go-to vet for future camels and whatever other obsessions we pick up.
+Now we've got a go-to vet for future camels and whatever other obsessions come next.
 
 Congrats, Dr. Morrow.
 
-Photo by me.
+Photo by Stacie.
 
 ---
 
 ## Hashtags
 
-#TribalCowboy #NorthIdaho #IdahoPhotographer
+#TribalCowboy #NorthIdaho #IdahoHorses
 
 ---
 
 ## Notes
 
 - Tight caption — let the photo do the work
-- "Photo by me" instead of the camera emoji on Facebook (reads cleaner there)
+- Credit names Stacie outright instead of "me"
 - Tag Nick if he has a public profile so family/friends see it
