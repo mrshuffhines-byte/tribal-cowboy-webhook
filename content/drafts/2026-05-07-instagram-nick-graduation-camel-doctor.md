@@ -10,6 +10,8 @@
 
 Nick Morrow graduates vet school this week. Tribal Cowboy now has an official camel doctor.
 
+Means we've got a go-to vet for future camels and whatever other obsessions we pick up.
+
 Congrats, Dr. Morrow.
 
 📷 by me
