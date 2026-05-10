@@ -10,39 +10,70 @@ your weeks. Move slower if the body says so.
 
 ## What's different about your body, and why this course is designed this way
 
-Three realities are shaping the whole program:
+Four realities are shaping the whole program:
 
-**1. You've had babies.** Relaxin (the hormone that loosens ligaments during
-pregnancy) can linger for 6+ months after weaning. Your joints may still feel
-"loopy" — that's not weakness, that's laxity. The fix is *stability through
-strength*, not stretching. Pregnancy can also leave the linea alba (the front
-seam of the abs) widened — **diastasis recti** — which means crunches and
-front-loaded core work are off the table until you've checked and rehabbed it.
+**1. You've had babies and a tummy tuck (abdominoplasty).** Two big
+implications. First — the surgery repaired the rectus diastasis for you, so
+the deep core work in this course is **not** about closing a gap. It's
+about *reconnecting* with the deep abdominal muscles, because the surgery
+itself disrupts your nervous-system communication with that area for a
+while (sometimes a long while). Many women post-tuck report feeling
+"disconnected" from their core — like they can't *find* their lower abs.
+That feeling is normal and trainable. Second — the abdominal wall is now
+mechanically tighter, which changes how you breathe and how your rib cage
+moves. Diaphragmatic breathing becomes the first skill to rebuild, not
+the last. **If your scar feels tight or tethered, scar-tissue release
+work (with a PT or massage therapist trained in post-surgical scar work)
+is one of the highest-leverage things you can do.** Scar restriction
+limits pelvic motion, which limits the seat.
 
-**2. Weak joints.** For most women this means knees, ankles, SI joint
+**2. Hips are weak AND tight.** This is its own pattern and it's the
+single most common adult-rider issue. "Tight" and "weak" sound like
+opposites — they're not. They're usually the same problem wearing two
+faces:
+- **Tight in the front** (hip flexors / psoas / rectus femoris) — from
+  sitting, from pregnancy, from protecting the abs post-surgery
+- **Weak in the back and side** (glute max, glute medius, deep external
+  rotators) — from the front being tight (the body shuts down opposing
+  muscles), and from never having been deliberately trained
+- The tight muscles try to do everything, including the work the weak
+  muscles should be doing. So you bind up *and* you have no power.
+- The fix is in a specific order: **release the tight, then activate the
+  weak, then load the new pattern.** Just stretching the front makes it
+  worse temporarily because the weak back still can't hold. Just
+  strengthening the back fails because the tight front won't let you get
+  into range. There's a dedicated hip protocol below.
+
+**3. Weak joints.** For most women this means knees, ankles, SI joint
 (lower back / pelvis), and sometimes wrists. The course uses **isometrics
 and slow tempo** instead of plyometrics. We build joint stability before
 we ask the joints to absorb a 1000-lb horse's motion.
 
-**3. You're a beginner-rebooting, not a beginner.** Your body has riding
+**4. You're a beginner-rebooting, not a beginner.** Your body has riding
 memory but it also has compensations — gripping with the thigh, balancing
 on the rein, holding the breath at the lope. Half the work is unlearning.
 
-**The program respects all three. It is slow on purpose.**
+**The program respects all four. It is slow on purpose.**
 
 ---
 
 ## Before you start — five things to do this week
 
-1. **Check for diastasis recti.** Lie on your back, knees bent. Lift your head
-   and look at your belly. If you see a vertical "ridge" or "trough" down the
-   midline wider than two fingers, you have some separation. Don't panic —
-   it's super common after kids. But skip front-loaded core work (sit-ups,
-   crunches, planks) until you've worked with a pelvic floor PT. Replace
-   with the work in Week 1.
-2. **Find a pelvic floor PT** if you can. One session is worth ten YouTube
-   videos. Many take insurance now. North Idaho options exist — ask your
-   OB for a referral.
+1. **Scar check.** Run two fingers along your tummy-tuck scar. Does the
+   skin feel stuck to the layers below — like it doesn't glide? Can you
+   gently lift the skin away from the tissue underneath? In some spots
+   it'll move freely, in some it'll feel "tethered." Note where. Tethered
+   scar tissue is the single biggest hidden limiter of pelvic mobility
+   for women post-abdominoplasty. **If you find tethering, see a PT
+   trained in post-surgical scar mobilization** (search "myofascial scar
+   release" or "post-surgical scar work" near you, or ask your surgeon's
+   office for a referral). One to three sessions can change how your
+   pelvis moves for the next decade.
+2. **Find a pelvic floor PT** if you can. The pelvic floor and the
+   abdominal wall work as one unit, and post-tummy-tuck that unit needs
+   to be retrained. One PT session is worth ten YouTube videos. Many
+   take insurance now. North Idaho options exist — ask your OB or the
+   surgeon's office for a referral.
 3. **Pick the right horse.** For this whole 12 weeks, ride one horse that
    you trust. Ideally a well-trained, calm, confident horse who knows the
    lope and won't take advantage of a quiet rider. Switching horses every
@@ -59,11 +90,100 @@ on the rein, holding the breath at the lope. Half the work is unlearning.
 
 ---
 
+## THE HIP PROTOCOL (do this alongside the whole course)
+
+This is the most important addition for your body. The weak-AND-tight hip
+pattern won't fix itself, and the seat will not improve until it does.
+
+Order matters: **release → activate → load.** Don't skip the order.
+Don't only do steps 1 or 2.
+
+### Step 1 — Release the tight (5 min, daily, before everything else)
+
+The goal is not to stretch hard. It's to tell the nervous system "you
+can let go." Long, slow, gentle.
+
+- **Couch stretch** (hip flexor), 90 sec each side.
+  Kneel on one knee, the back foot up against a wall or couch behind
+  you, front foot planted. Tuck the tailbone *under* (posterior pelvic
+  tilt) — this is what actually stretches the front of the hip. Don't
+  arch the lower back. Breathe slow. Stop short of pain.
+
+- **Figure-4 stretch** (outer hip / deep rotators), 60 sec each side.
+  Lie on back, knees bent. Cross right ankle over left thigh. Pull the
+  left thigh toward you. Breathe.
+
+- **Lacrosse ball or tennis ball on the glute** (outer hip), 60 sec each side.
+  Sit on the ball, find the tight spot in the side of the glute, hold
+  pressure (no aggressive rolling). Breathe through it.
+
+### Step 2 — Activate the weak (8 min, daily, after the release)
+
+These are *low load, high awareness*. The goal is to make the dormant
+muscles wake up and learn to fire on demand.
+
+- **Glute bridge with deliberate squeeze** — 3 sets of 8.
+  Lie on back, feet flat. Before lifting: tuck tailbone slightly, squeeze
+  both glutes hard for 2 seconds *while still lying flat*. Then lift to
+  bridge. The glute squeeze comes first, the lift second. Most people
+  lift with their lower back — this drill stops that.
+
+- **Side-lying clamshell** — 2 sets of 12 each side, slow.
+  On side, knees bent, heels together. Open the top knee. **Do not roll
+  the hips back** — keep them stacked vertical. Slow up, slow down. You
+  should feel a burn in the upper outer butt by rep 10. If you don't,
+  you're rolling your hips.
+
+- **Side-lying hip abduction** — 2 sets of 10 each side.
+  On side, top leg straight, lift it about 12 inches up and slightly
+  *behind* the body (not forward). Slow. This isolates glute medius —
+  the single most undertrained muscle in adult riders.
+
+- **Standing fire hydrant** at a counter — 2 sets of 10 each side.
+  Stand at a kitchen counter, hands on it. Lift one leg out to the side
+  (knee can bend), keeping your pelvis level — don't let the hip hike.
+  Slow.
+
+### Step 3 — Load the new pattern (5 min, every other day)
+
+This is where the new strength gets integrated into how you stand,
+walk, and ride.
+
+- **Bodyweight split squat** — 2 sets of 6 each side, slow.
+  Step one foot forward into a lunge stance. Lower until the back knee
+  hovers just above the floor. Push through the *front heel*, not the
+  toe. Keep the back knee under or behind the hip. Stop short of any
+  knee pain.
+
+- **Single-leg glute bridge** — 2 sets of 5 each side.
+  Bridge as before, but extend one leg straight. Lift hips, keep them
+  level. Hold 2 sec at the top. Lower slow.
+
+- **Wall sit with band around knees** — 30 seconds, 2 reps.
+  If you have a resistance loop band — place it around the knees and
+  *press out* against it while sitting against a wall. If no band,
+  press out against your own hands. Trains glute med under load.
+
+### How to know it's working
+
+- The tight side starts to feel a little less locked within 7-10 days
+- You feel your butt working — not just your thigh and back
+- You can sit in the saddle longer without your inner thigh seizing
+- Your hips feel "wider" in the saddle (because they actually are
+  letting go)
+- Lower back feels less angry after rides
+
+If after 3 weeks of consistent daily work the tight side feels exactly
+the same, it's probably scar-tethering pulling on the fascia from above
+— go back to step 1 of "Before you start" and book the scar work.
+
+---
+
 ## The course at a glance
 
 | Weeks | Module | Focus | Where you ride |
 |---|---|---|---|
-| 1–2 | **Reset** | Body audit, breath, diastasis check, ground-only | Off-horse + groundwork |
+| 1–2 | **Reset** | Body audit, breath, scar/core reconnection, hip release, groundwork | Off-horse + groundwork |
 | 3–4 | **Foundation** | Mount, halt, walk only. Find seat bones. | Halt and walk, arena |
 | 5–6 | **Walk mastery** | Independent seat at walk. Drop the reins. | Walk only |
 | 7–8 | **Trot return** | Posting trot, sitting trot in short bursts | Walk + trot |
@@ -99,39 +219,54 @@ the riding.
 ## Week 1 — Audit and breathe
 
 **Learning goal:** Know what your body is starting with. Wake up the breath
-and the deep core (transverse abdominis + pelvic floor).
+and reconnect with the deep core post-surgery. Start the hip protocol.
 
-**Body work (daily, 15 min):**
+**Body work (daily, 30 min total):**
+
+*Breath + core reconnect (12 min):*
 
 - **Diaphragmatic breathing** (5 min)
-  Lie on back, knees bent, one hand on chest, one on belly. Breathe so only
-  the belly hand rises. 4 in through the nose, 6 out through the mouth.
-  This is your nervous-system reset and your core foundation.
+  Lie on back, knees bent, one hand on the ribs (sides), one on belly.
+  Breathe so the ribs *widen sideways* and the belly rises gently. 4 in
+  through the nose, 6 out through the mouth. Post tummy-tuck, the
+  abdominal wall is tighter, so rib-side breathing matters more than
+  belly-balloon breathing. This is your nervous-system reset and your
+  core foundation.
 
 - **Pelvic floor connection** (3 min)
   Same position. On the exhale, lightly draw the pelvic floor up — the
   feeling of stopping a stream of pee, but **gentle**. Hold 2 seconds.
-  Release fully (release matters as much as engage). 10 reps. Stop if you
-  feel doming/bulging in your belly.
+  Release fully (release matters as much as engage). 10 reps. **You may
+  feel disconnected from this at first** — that's normal post-surgery
+  and post-kids. Just keep trying. The connection comes back.
 
-- **Transverse abdominis activation** (3 min)
-  Same position. Exhale, draw belly button gently toward spine. Like
-  hugging the spine from the inside. Hold 5 seconds. 10 reps.
+- **Deep core re-connection** (4 min)
+  Same position. Exhale slowly, imagine drawing the two front hip points
+  gently *toward each other* (not pulling the belly button down — toward
+  each other, side to side). Tiny movement, big awareness. Hold 5 sec.
+  10 reps. This wakes up the transverse abdominis without dragging on
+  your scar.
 
-- **Glute bridge (joint-friendly version)** (2 min)
-  Knees bent, feet flat. Exhale, draw the deep core in, lift hips only
-  to a line from knees to shoulders (don't over-arch). Hold 3 seconds at
-  the top. 10 reps.
+*The hip protocol (15 min):* Do the full protocol described above —
+release (5 min), activate (8 min), load on alternate days (5 min).
+This is non-negotiable. Your seat depends on it.
 
-- **Side-lying clamshell** (2 min, each side)
+*Joint stability (3 min):*
+
+- **Side-lying clamshell** (3 min, each side)
   On your side, knees bent and stacked. Heels together, open the top knee
-  like a clam. Slow. 12 reps. Stops you collapsing to one side later.
+  like a clam. Slow. 12 reps each side. Already covered in the hip
+  protocol — this is a top-up.
 
 **Saddle time:** None. Resist the urge.
 
 **Body check:**
-- Diastasis test (described above). Photo of belly straight on. Save it.
-- Can you breathe into your belly without your shoulders rising?
+- Scar mobility — note where it's stuck, where it glides. Same spots
+  every day or changing?
+- Can you breathe into your *ribs* (widen sideways) and not just lift
+  your chest?
+- Pelvic floor — do you feel a "lift" or do you feel nothing at all?
+  Either answer is data, not a problem.
 - Can you find your two seat bones sitting on a hard chair? (Section 3 of
   the other guide.)
 
@@ -567,13 +702,19 @@ returning to the saddle. Lean on it.
 
 ## One-page version (cut this out and tape it to the barn wall)
 
-**Daily 20-min body work:**
-- Diaphragmatic breathing 5 min
+**Daily 25-30 min body work:**
+- Diaphragmatic / rib-side breathing 5 min
 - Pelvic floor lifts 3 min
-- TVA activation 3 min
-- Glute bridges 2 min
-- Clamshells 2 min each side
+- Deep core (hip points toward each other) 3 min
+- Hip release: couch stretch + figure-4 + lacrosse ball 5 min
+- Hip activate: glute bridge + clamshell + side-lying abduction 8 min
+- Hip load (every other day): split squat + single-leg bridge + banded
+  wall sit 5 min
 - 90/90 hip 3 min
+
+**Hip rule:** release → activate → load. Never skip the order.
+**Scar rule:** if it feels tethered, get scar mobilization PT before you
+get frustrated with the body work.
 
 **Before every ride:**
 - 4 in / 6 out breath x 5
