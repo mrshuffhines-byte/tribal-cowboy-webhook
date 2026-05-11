@@ -8,14 +8,21 @@
 
 ## What "pilot" means here
 
-A pilot is **two free visits at two friendly schools** that gives you:
-1. Photos of kids with the pony in a classroom setting (your case study)
-2. A teacher quote ("This was the best thing my class has done all year")
-3. A parent quote (from the photo delivery flow)
-4. Anonymous data on outcomes (kids' favorite sight words, what they learned)
-5. A 90-second highlight reel for sponsors and Instagram
+**Updated 2026-05-11 — Sprint + Heritage Visit model** (see `podcast-script-program-design.md` for full reasoning)
 
-That's it. Two visits. You're not selling anything yet. You're **building evidence.**
+A pilot is **two products tested at two schools** that gives you:
+1. **Pilot A — One 4-Week Reading Sprint** at a homeschool co-op (4 weekly visits, same class)
+2. **Pilot B — One Heritage Visit** at a private school or library (single 60-min visit)
+
+This gives you:
+- Photos of the pony in a classroom setting — wide shots, teacher with pony, setup shots (no kid faces required, see Section 11)
+- A teacher quote from each pilot ("This was the best thing my class has done all year")
+- A parent quote (collected through the take-home one-pager opt-in)
+- Anonymous learning outcome data (sight word recognition, kids' favorite word, what they remembered)
+- A short highlight reel for sponsors and Instagram
+- Real evidence the **Sprint model works** AND real evidence the **single-visit model works** — you'll know which one to lead with for each future school
+
+That's it. You're not selling anything yet. You're **building evidence on two distinct products.**
 
 ---
 
@@ -126,9 +133,9 @@ These don't require district approval. A single principal or co-op leader can gr
 - Public school districts: CDA #271, Lakeland #272, Post Falls #273, Kootenai #274
 - These need approval from a curriculum coordinator or enrichment coordinator. You'll need your pilot case study to get in the door.
 
-### Recommended pilot mix (pick TWO of these):
-1. **One homeschool co-op** — easiest yes, parents will rave online, fast turnaround
-2. **One private school OR library** — gives you a more formal "school" setting in the case study photos
+### Recommended pilot mix (Sprint + Heritage):
+1. **One homeschool co-op for the Sprint** — easiest yes, parents will rave online, 4 weekly visits, real learning outcomes
+2. **One private school OR library for the Heritage Visit** — single 60-min visit, tests the one-time format as a low-friction entry point that converts schools to next year's Sprint customers
 
 ### The exact outreach email
 
