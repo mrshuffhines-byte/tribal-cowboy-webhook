@@ -52,52 +52,263 @@ The answers determine which lesson plan below you use.
 
 ---
 
-## Hayden Canyon Charter — Thursday Visit Plan
+## Hayden Canyon Charter — Thursday Visit Plan (UPDATED: School-Wide Rotation)
 
-Three flexible options depending on the answers above. Pick the one that matches.
+**Confirmed format:** School-wide visit. 15–25 minutes with each grade level (K through 8). Groups of approximately 60–80 kids per session.
 
-### Option A — Single class, K–2 (most likely)
+This is a much bigger logistical lift than a single classroom. The plan below is built around this reality.
 
-**Format:** 45-minute classroom visit, similar to Visit 1 of the Reading Sprint
-**Bring:** Daisy (your calm classroom pony)
+### The day at a glance
+
+**Total kid-facing time:** ~3 hours of active sessions
+**Total on-site time:** ~5.5 hours (with setup, breaks, lunch, pack-up)
+**Total kids served:** ~668 across 9 grade-level sessions
+
+### Recommended schedule
+
+If the school is flexible, ask them to confirm a schedule along these lines (or close). Pony welfare comes first — Daisy must get rest breaks.
+
+| Time | Session | Length |
+|---|---|---|
+| 8:00–8:45 | Arrive, unload, set up "Pony Station" in the gym or designated room | 45 min |
+| 9:00–9:20 | **Kindergarten** | 20 min |
+| 9:25–9:45 | **1st grade** | 20 min |
+| 9:50–10:10 | **2nd grade** | 20 min |
+| 10:10–10:30 | **Daisy break** — hay, water, quiet room | 20 min |
+| 10:30–10:50 | **3rd grade** | 20 min |
+| 10:55–11:15 | **4th grade** | 20 min |
+| 11:20–11:40 | **5th grade** | 20 min |
+| 11:40–12:30 | **Lunch break** for Daisy + Stacie (Daisy stays in trailer or quiet stall area, you eat and rest) | 50 min |
+| 12:30–12:55 | **6th grade** | 25 min |
+| 13:00–13:25 | **7th grade** | 25 min |
+| 13:30–13:55 | **8th grade** | 25 min |
+| 14:00–14:30 | Pack up, debrief with principal, leave | 30 min |
+
+### CRITICAL: Logistics setup — Daisy stays, classes rotate
+
+Do NOT walk the pony from classroom to classroom. Daisy stays in ONE fixed location all day; classes rotate in and out. This is non-negotiable. Reasons:
+- Less stress for the pony
+- No slipping in hallways
+- Cleaner cleanup
+- Faster transitions
+- Easier supervision
+
+**Best location:** The gym (large, contained, easy to clean) OR a covered outdoor area if weather permits. Avoid carpeted spaces — Daisy needs a mat or shavings underfoot.
+
+**Setup:**
+- Daisy stands on a stall mat or tarp in the center
+- Hay net nearby (out of view of kids — let her snack between sessions)
+- Water bucket
+- "Quiet zone" rope or chair line where kids gather, 6+ feet from Daisy
+- Materials table at the entrance for take-home one-pagers (teachers grab a stack per class as they enter)
+
+### Required: Bring a helper
+
+Solo with a pony plus 75 kindergartners is too many things at once. Bring ONE adult helper for the day. Their job:
+- Manage take-home one-pagers and materials handoff to each teacher as they enter
+- Watch Daisy's body language for stress signals
+- Hand out water/hay during breaks
+- Take photos (no kid faces — wide shots, setup, teacher-with-pony shots)
+- Note-keeper — write down kid quotes, teacher quotes, observations
+
+Friend, family member, or paid helper for the day ($100–$150 for a full day is fair). Worth every dollar.
+
+---
+
+### Grade-band lesson plans (large-group adapted)
+
+These are designed for 60–80 kids per session, NOT a single class of 25. The activities are tuned for large groups: call-and-response, demonstrations, volunteer helpers, group Q&A. Individual hands-on activities (sight word relay, each kid touching the pony) are NOT feasible at this scale.
+
+#### Kindergarten (20 min) — Sensory + Wonder
 
 | Time | Activity |
 |---|---|
-| 0:00–0:05 | Arrival, brief land acknowledgment, introduce yourself + Daisy. *"I'm Stacie Hines, I'm Nisenan Maidu, and this is Daisy. She's a pony from a ranch in Athol. The land we're on today is the traditional home of the Schitsu'umsh people."* |
-| 0:05–0:15 | Pony anatomy + 4 vocab words. Hoof, mane, withers, tail. Kids touch their own body where Daisy's body part would be. |
-| 0:15–0:25 | Sight word relay (smaller version since it's a one-off). 5 cards: I, am, a, the, you. Each kid walks a few steps with Daisy (you hold the lead), stops at a card, reads it out loud. |
-| 0:25–0:35 | Read-aloud. *Jingle Dancer* by Cynthia Leitich Smith OR *Fry Bread* by Kevin Noble Maillard. Class in a semicircle, Daisy nearby. |
-| 0:35–0:42 | Q&A — kids ask Daisy anything. You answer "as" Daisy in pony voice. |
-| 0:42–0:45 | Goodbye + take-home one-pager for each kid to give parents. |
+| 0:00–0:03 | Intro: *"Hi everybody, I'm Stacie. I'm Nisenan Maidu. This is Daisy, she's a pony. The land we're on is the home of the Schitsu'umsh people."* Wave hello to Daisy as a group. |
+| 0:03–0:08 | Pony body parts call-and-response. *"What's this?"* (point to mane). Kids shout. Repeat: hoof, tail, eye, ear, withers. Use big animated motions. |
+| 0:08–0:13 | Pick 3 volunteers (one teacher's call) to come up one at a time and gently touch Daisy's neck while you narrate. Other kids watch from the group. |
+| 0:13–0:18 | Short read-aloud (a picture book — Daisy stands quietly). *Fry Bread* or *Jingle Dancer* work. Pick the one with the biggest, clearest pictures kids can see from a distance. |
+| 0:18–0:20 | Goodbye wave. Teachers grab take-home one-pagers from the materials table on their way out. |
 
-### Option B — Single class, 3rd–5th grade
-
-**Format:** 45-minute classroom visit, more conversational, less sight-word-heavy
-**Bring:** Daisy
+#### 1st grade (20 min) — Sensory + 3 Sight Words
 
 | Time | Activity |
 |---|---|
-| 0:00–0:05 | Arrival + introduction with land acknowledgment |
-| 0:05–0:15 | Pony care and history. The story of horses on the Plateau — Spanish ships, "elk dogs," the Nez Perce and the Appaloosa. Hands-on: how to brush a pony's mane, what hooves look like up close. |
-| 0:15–0:25 | Hay budget math (preview of the Math Sprint). *"Daisy eats 1 flake of hay a day. A Clydesdale named Abby eats FIVE. How much do they eat together in a week? In a month? In a year?"* Group does the math on a whiteboard. |
-| 0:25–0:35 | Cultural read-aloud or storytelling about working with horses |
-| 0:35–0:42 | Q&A |
-| 0:42–0:45 | Goodbye + take-home one-pager |
+| 0:00–0:03 | Intro + land acknowledgment + Daisy introduction |
+| 0:03–0:08 | Pony body parts call-and-response (same as K) — slightly faster, add: *Why does Daisy have such a big mane? Why are her hooves so hard?* |
+| 0:08–0:13 | Three sight words on big cards held up by you: **I, am, a.** Whole class reads them in unison. *"I am a pony!"* Class repeats together. |
+| 0:13–0:18 | Read-aloud OR a Daisy "fun facts" round (how much she eats, how fast she runs, what makes her happy) |
+| 0:18–0:20 | Goodbye, teachers grab one-pagers |
 
-### Option C — School-wide assembly (multiple grades together)
-
-**Format:** 30-minute assembly in the gym or outdoor courtyard
-**Bring:** Daisy (small pony) — possibly a Clydesdale ONLY if outdoors
+#### 2nd grade (20 min) — Sight Words + Story
 
 | Time | Activity |
 |---|---|
-| 0:00–0:05 | Arrival + land acknowledgment + Daisy introduction |
-| 0:05–0:10 | Pony anatomy + history of horses on the Plateau (age-flexible) |
-| 0:10–0:20 | Story circle. Read-aloud OR storytelling. Kids gather close. |
-| 0:20–0:25 | Group Q&A — kids ask Daisy anything |
-| 0:25–0:30 | Goodbye, hand each homeroom teacher a stack of take-home one-pagers to distribute |
+| 0:00–0:03 | Intro + land acknowledgment |
+| 0:03–0:08 | Pony anatomy + a "fun fact for each part" (mane keeps flies away, hooves grow like fingernails, etc.) |
+| 0:08–0:13 | Sight word call-and-response: **the, you, said, are, see** (5 cards held up one at a time, class reads in unison) |
+| 0:13–0:18 | Short read-aloud — kids can sit closer at this age, semi-circle around Daisy |
+| 0:18–0:20 | Goodbye |
 
-**If outdoors AND Hayden Canyon approves:** Bring Abby the Clydesdale for the last 10 minutes as a special reveal. Kids will lose their minds. Worth it.
+#### 3rd grade (20 min) — Sight Words + Plateau Story
+
+| Time | Activity |
+|---|---|
+| 0:00–0:03 | Intro + land acknowledgment |
+| 0:03–0:08 | Mini-lesson: How horses came to the Plateau. Spanish ships, "elk dogs," Nez Perce + Appaloosa. Use a printed Plateau map you hold up. |
+| 0:08–0:13 | Sight word call-and-response (5 harder words): **was, with, this, that, when** |
+| 0:13–0:18 | Q&A — call on 4 hands. Answer as Stacie. Encourage real questions. |
+| 0:18–0:20 | Goodbye |
+
+#### 4th grade (20 min) — Plateau History + Hay Math
+
+| Time | Activity |
+|---|---|
+| 0:00–0:03 | Intro + land acknowledgment |
+| 0:03–0:08 | The story of horses on the Plateau — slightly deeper. Plus: introduce that Stacie is Nisenan Maidu, briefly. *"My ancestors are from northern California originally — the Nisenan Maidu people. I built this business in North Idaho, working with horses, because the connection between people and horses goes back hundreds of years in Indigenous communities."* |
+| 0:08–0:13 | **Hay Budget Math on the board.** *"Daisy eats 1 flake of hay every day. A Clydesdale named Abby eats 5 flakes a day. How much do they eat together in a week?"* Kids shout answers. Then: *"In a year?"* (1 + 5 = 6 flakes/day × 365 = 2,190 flakes/year). Kids' faces. |
+| 0:13–0:18 | Q&A |
+| 0:18–0:20 | Goodbye |
+
+#### 5th grade (20 min) — Critical Thinking + Stacie's Story
+
+| Time | Activity |
+|---|---|
+| 0:00–0:03 | Intro + land acknowledgment |
+| 0:03–0:10 | The real story of Tribal Cowboy. *"I started this business with one pony. Now I have Clydesdales, ponies, a wagon, and a photography setup that uses facial recognition. I'm Nisenan Maidu, and I built this in North Idaho because nobody else was doing it here."* Lean into authenticity. 5th graders sniff out fake instantly. |
+| 0:10–0:15 | Hay Budget math (deeper version — add real prices: hay costs $15/week, vet $80 every 6 months, hoof trim $50 every 8 weeks). Group calculates a yearly budget. |
+| 0:15–0:18 | Q&A |
+| 0:18–0:20 | Goodbye |
+
+#### 6th grade (25 min) — Entrepreneurship + Indigenous Identity
+
+Middle schoolers can be tough. Lean into respect and real talk.
+
+| Time | Activity |
+|---|---|
+| 0:00–0:03 | Intro + land acknowledgment |
+| 0:03–0:10 | **Tribal Cowboy as a business case study.** Frame it like an entrepreneurship class: *"I'm going to show you how I built this business and ask you what you would do differently."* Walk through: how Stacie started, the original problem (no equine offerings in North Idaho), the differentiators (facial-recognition photos, Indigenous-owned, Clydesdales), the revenue streams (parties, photography, education program). |
+| 0:10–0:18 | Open Q&A or discussion: *"If you wanted to start a business in North Idaho, what's a problem you see that nobody is solving?"* — let them brainstorm out loud. |
+| 0:18–0:22 | Daisy show-and-tell — 2 volunteer helpers come up, learn how to properly approach a horse, get a quick pony-handling lesson |
+| 0:22–0:25 | Goodbye + take-home one-pager (modified for older kids — see below) |
+
+#### 7th grade (25 min) — Same structure as 6th, slightly more depth
+
+Same general flow as 6th grade with slightly more challenging discussion: *"What does it mean for a business to be 'Indigenous-owned'? Why does that matter? What's the difference between authenticity and marketing?"*
+
+#### 8th grade (25 min) — Career Conversation
+
+Old enough to think about their own futures.
+
+| Time | Activity |
+|---|---|
+| 0:00–0:03 | Intro + land acknowledgment |
+| 0:03–0:10 | Real talk about working with horses as a career — the hours, the costs, the rewards, the weird parts (4am hay deliveries, getting stepped on, etc.). Honesty wins this room. |
+| 0:10–0:18 | Open Q&A: *"What questions do you have for someone who actually runs a business in your hometown?"* |
+| 0:18–0:22 | Daisy show-and-tell — 2 volunteer helpers, proper handling lesson |
+| 0:22–0:25 | Goodbye + take-home one-pager |
+
+---
+
+### Materials for School-Wide Day (UPDATED)
+
+The volumes here are very different from a single-class visit.
+
+| Item | Quantity |
+|---|---|
+| Take-home one-pagers | **700 copies minimum** (one per student, plus extra for staff) |
+| Sight word cards (large, laminated, A3 size for visibility from the back) | One set of 10 words |
+| Plateau region map (laminated, large) | 1 |
+| Read-aloud books (4 options to rotate) | 4 |
+| Tribal Cowboy business cards | 50 (for staff, parents who pick up early) |
+| Liability waivers (blank, in case needed) | 20 |
+| Photo releases (blank) | 50 |
+| Certificate of Insurance | 2 printed copies |
+| Daisy's stall mat / tarp | 1 |
+| Hay net + hay | enough for the day |
+| Water bucket + refill water jug | 1 + 5 gallon refill |
+| Cleanup kit | x2 (you'll need to clean between sessions) |
+| Phone + backup battery | 1 each |
+| Note pad + pen | 1 |
+| Thank-you gifts | 1 for the principal + 1 for the lead point-of-contact teacher (framed Daisy photo, ~$30 total) |
+| Tribal Cowboy logo stickers | 100+ (kids will treasure these — hand to teachers to distribute) |
+
+**Printing the 700 take-home one-pagers:** Don't print at home, you'll burn out your printer. Use Staples or Office Depot — bulk B&W double-sided is about $0.10/page. Total cost: ~$70.
+
+---
+
+### Pony Welfare Protocol (read this BEFORE Thursday)
+
+A pony doing 9 sessions of 60–80 kids each is a working day for her. Watch for:
+
+**Signs of stress in Daisy — pause if you see these:**
+- Tail swishing more than usual
+- Pinned ears
+- Lifting feet anxiously
+- Refusing treats
+- Heavy sweating in a cool room
+- Sudden head-tossing or backing up
+
+**If you see any of these:**
+- Cut the session short, give her 30 min in a quiet space, water, hay
+- Let the school know you're prioritizing the pony's well-being
+- Reschedule whatever is left if needed — the school will understand
+
+**Mandatory pony breaks:**
+- 20 min after 2nd grade (in the schedule above)
+- 50 min lunch break (Daisy stays in her quiet zone or trailer)
+- 5 min between every session (water, hay, quiet)
+
+**Pick the RIGHT pony for this day.** The one who LOVES kids and crowds and stays calm under pressure. Not the easily-spooked one. If you're not 100% sure, take the most chill horse you have, even if she's a bigger pony.
+
+---
+
+### Capture Plan for School-Wide Day
+
+Volume is bigger so your capture protocol needs to scale.
+
+**Photos (helper takes these between sessions, no kid faces):**
+- Wide shot of each session group from the back (you want the variety across grades visible)
+- Daisy in her setup, materials laid out
+- Teacher + Daisy candid shots (with teacher's permission)
+- The take-home pile on the materials table
+- A "before and after" of the gym setup
+
+**Video clips (4 quick ones):**
+- One kindergartener asking Daisy a question (audio only)
+- One 5th grader doing the hay budget math out loud
+- One 8th grader's question to Stacie (audio only)
+- A teacher's one-sentence reaction after their class leaves
+
+**Notes (helper writes these in your notepad):**
+- One kid quote per grade level if possible
+- One teacher quote per grade level
+- Which activity worked best at each grade level
+- Which activity needed more time / felt rushed
+- Pony's mood throughout the day
+- Anything any teacher said about the 4-week Sprint
+
+**Numbers:**
+- Total kids served
+- Number of grade levels
+- Number of teachers/staff who saw the visit
+- Any parent contacts who stopped by
+
+This is gold for sponsor pitches. With ONE school-wide day at Hayden Canyon you can claim: "Tribal Cowboy programs served ~668 students across 9 grade levels in a single day at Hayden Canyon Charter."
+
+---
+
+### The Modified Take-Home One-Pager for K-8
+
+Since this is school-wide and you have kids from K (5 yrs) to 8th grade (14 yrs), you need ONE one-pager that works across all of them. Keep the parent-facing language simple and warm. Don't try to write differently for older kids — write for the parent, not the kid.
+
+**Front:** Same warm intro from the demo-visit one-pager template (your name, business, what we did today, an invite to visit the farm)
+
+**Back:** Same 4-Week Sprint pitch + your contact info, with one addition for older grades:
+
+> **For families of older students (grades 4–8):**
+> Tribal Cowboy occasionally offers **internships and shadowing opportunities** for students who want hands-on experience with horses, ranch business, or photography. If your student is interested, have them email Stacie at info@tribalcowboy.com.
+
+That single sentence may produce more value than the entire visit. A high-school-bound teen who shadows for a summer becomes a multiplier — for content, for word-of-mouth, and potentially for staff.
 
 ---
 
