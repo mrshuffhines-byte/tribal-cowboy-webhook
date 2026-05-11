@@ -4,9 +4,11 @@
 **Target grades:** 1st through 3rd grade (ages 6–9)
 **Duration:** 4 weekly visits, 45 min each, plus 3 between-visit pen-pal letters
 **Pony for school visits:** A small calm mini named **Penny** (Penny is the brand-facing name for the math program — substitute whichever pony actually does the visits)
-**Big-horse character:** **Abby the Clydesdale** — the kids meet Penny in class but the whole program is about figuring out how to feed Abby. Abby appears in person at Visit 4.
+**Big-horse character:** **Abby the Clydesdale** — the kids meet Penny in class but the whole program is about figuring out how to feed Abby. **Abby appears in person ONLY at Visit 4** as the "BIG REVEAL" capstone moment.
 **Cost to school:** Free
 **Cost to sponsor:** $2,000 per school
+
+> **Program structure note (updated 2026-05-11):** Penny the pony is the classroom character for Visits 1, 2, and 3. The Clydesdale (Abby) appears in person ONLY at Visit 4 — either at the school yard or, ideally, at a field trip to the farm. The whole math curriculum is built around figuring out how to feed Abby. Kids hear about her in every visit and every pen-pal letter, but they don't meet her until the final day. That three-week buildup is what makes the reveal land.
 
 ---
 

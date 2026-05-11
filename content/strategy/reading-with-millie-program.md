@@ -1,12 +1,14 @@
-# Reading with Millie — The 4-Week Sprint
+# Reading with Daisy — The 4-Week Sprint
 ## Full Program Specification
 
 **Target grades:** K through 2 (ages 5–8)
 **Duration:** 4 weekly visits, 45 min each, plus 3 between-visit pen-pal letters
-**Pony for school visits:** A calm, school-trained mini or small pony ("Millie" is the brand-facing name — substitute whichever horse is actually doing the visits)
-**Clydesdale appearance:** Visit 4 only, outdoors or at the farm
+**Pony for school visits:** A calm, school-trained mini or small pony — "Daisy" is the placeholder brand-facing name. Swap for the actual pony's real name once chosen (e.g. one of Stacie's ponies); update all letters, certificates, and materials to match.
+**Clydesdale appearance:** Visit 4 ONLY — Abby the Clydesdale comes outdoors or at the farm as the "BIG REVEAL" guest after three weeks of buildup in the pen-pal letters
 **Cost to school:** Free
 **Cost to sponsor:** $2,000 per school (covers 4 visits + materials + take-homes)
+
+> **Program structure note (updated 2026-05-11):** The classroom character is a PONY. The Clydesdale appears in person ONLY at Visit 4. For Visits 1, 2, and 3, the pony Daisy is the entire show — easier to transport, classroom-safe, and lets the Clydesdale moment land as a real surprise. Letters between visits build anticipation: by Letter 3, kids are obsessed with the idea of meeting Daisy's Clydesdale friend.
 
 ---
 
@@ -35,21 +37,21 @@ Teacher administers a quick before/after check (read the list aloud to each kid 
 
 ---
 
-## Visit 1 — "Meet Millie" (Week 1)
+## Visit 1 — "Meet Daisy" (Week 1)
 
 **Theme:** Hello, I'm a pony. Hello, we're readers.
 
-**Pre-visit (Monday before):** Teacher reads the kids a "Welcome from Millie" note announcing the visit. Builds anticipation.
+**Pre-visit (Monday before):** Teacher reads the kids a "Welcome from Daisy" note announcing the visit. Builds anticipation.
 
 ### Run-of-show (45 min)
 
 | Time | Activity | Detail |
 |---|---|---|
-| 0:00–0:05 | Arrival + introduction | Stacie introduces herself: *"I am Stacie Hines, I am Nisenan Maidu, and this is Millie. The land we're on today is the traditional home of the Schitsu'umsh people."* One sentence, no lecture. |
-| 0:05–0:15 | Pony anatomy + 4 vocab words | Point: hoof, mane, withers, tail. Kids touch their own body where Millie's body part is. |
-| 0:15–0:30 | Sight word relay | 5 cards on the floor: I, am, a, the, you. Each kid takes a turn walking a few steps beside Millie (Stacie holds the lead), stops at a card, reads it aloud. Millie "delivers" the word. |
-| 0:30–0:40 | Read-aloud | Suggested books: *Jingle Dancer* by Cynthia Leitich Smith, *Fry Bread* by Kevin Noble Maillard, *We Are Water Protectors* by Carole Lindstrom. Class in a semicircle, Millie nearby. |
-| 0:40–0:45 | Q&A + goodbye | Hand out the **Pony Passport** booklet to each kid. Tell them Millie will write them a letter. |
+| 0:00–0:05 | Arrival + introduction | Stacie introduces herself: *"I am Stacie Hines, I am Nisenan Maidu, and this is Daisy. The land we're on today is the traditional home of the Schitsu'umsh people."* One sentence, no lecture. |
+| 0:05–0:15 | Pony anatomy + 4 vocab words | Point: hoof, mane, withers, tail. Kids touch their own body where Daisy's body part is. |
+| 0:15–0:30 | Sight word relay | 5 cards on the floor: I, am, a, the, you. Each kid takes a turn walking a few steps beside Daisy (Stacie holds the lead), stops at a card, reads it aloud. Daisy "delivers" the word. |
+| 0:30–0:40 | Read-aloud | Suggested books: *Jingle Dancer* by Cynthia Leitich Smith, *Fry Bread* by Kevin Noble Maillard, *We Are Water Protectors* by Carole Lindstrom. Class in a semicircle, Daisy nearby. |
+| 0:40–0:45 | Q&A + goodbye | Hand out the **Pony Passport** booklet to each kid. Tell them Daisy will write them a letter. |
 
 ### Materials
 - Pony, halter, lead rope, hoof boots or floor mat
@@ -92,12 +94,12 @@ Teacher administers a quick before/after check (read the list aloud to each kid 
 > See you Wednesday!
 >
 > Love,
-> **Millie 🐴**
+> **Daisy 🐴**
 > *(hoof print here)*
 
 ---
 
-## Visit 2 — "Millie's Story" (Week 2)
+## Visit 2 — "Daisy's Story" (Week 2)
 
 **Theme:** Where ponies came from, where we come from.
 
@@ -107,7 +109,7 @@ Teacher administers a quick before/after check (read the list aloud to each kid 
 |---|---|---|
 | 0:00–0:05 | Welcome + recap | "I see you brought your Pony Passports." Quick recap of week 1 words. |
 | 0:05–0:15 | The story of horses on the Plateau | Brief, age-appropriate. Horses were not always here. They came from Spain hundreds of years ago. When the Plateau tribes — including the Schitsu'umsh, the Nimíipuu, the Spokane — first saw horses, they called them "elk dogs" or "big dogs." Show a small printed map of the Plateau region. Today, the Nez Perce are world-famous for breeding the Appaloosa horse. |
-| 0:15–0:25 | New sight words | Word delivery game. Kids at 5 stations, Millie walks past each station, kid reads their word as she arrives. Words: and, see, can, like, my. |
+| 0:15–0:25 | New sight words | Word delivery game. Kids at 5 stations, Daisy walks past each station, kid reads their word as she arrives. Words: and, see, can, like, my. |
 | 0:25–0:40 | Read-aloud | Book featuring a horse or Indigenous theme (rotation suggestion: *The Girl Who Loved Wild Horses* by Paul Goble, or continue the previous book). Kids draw their favorite image in their Pony Passport. |
 | 0:40–0:45 | Goodbye + tease | "Next week, YOU are going to read to ME." Build anticipation. |
 
@@ -144,7 +146,7 @@ Teacher administers a quick before/after check (read the list aloud to each kid 
 > See you in a week!
 >
 > Love,
-> **Millie 🐴**
+> **Daisy 🐴**
 > *(hoof print here)*
 
 ---
@@ -161,14 +163,14 @@ This is the magical visit. Most kids have never read aloud to anyone other than 
 |---|---|---|
 | 0:00–0:05 | Welcome | "Who brought a book?" |
 | 0:05–0:15 | Sight word warm-up | All 15 words from weeks 1–3, quick relay. |
-| 0:15–0:35 | **Read to Millie** | Each kid takes a 30–60 second turn reading to Millie. They sit on a small stool or rug, Millie stands quietly. They show her the pictures. Other kids watch silently. **This is the heart of the program.** |
-| 0:35–0:40 | Millie's question | Stacie speaks "as" Millie: *"Did anyone hear a word they didn't know?"* Group sounds it out. |
+| 0:15–0:35 | **Read to Daisy** | Each kid takes a 30–60 second turn reading to Daisy. They sit on a small stool or rug, Daisy stands quietly. They show her the pictures. Other kids watch silently. **This is the heart of the program.** |
+| 0:35–0:40 | Daisy's question | Stacie speaks "as" Daisy: *"Did anyone hear a word they didn't know?"* Group sounds it out. |
 | 0:40–0:45 | Goodbye + tease | "Next week is our last visit. Something big is coming." |
 
 ### Materials
 - Same as before
 - A small stool or rug for the reading position
-- Optional: a printed "Millie's Listening Ears" sign (fun visual)
+- Optional: a printed "Daisy's Listening Ears" sign (fun visual)
 
 ### Pro tip
 This visit will run long if you let it. 20 minutes for read-to-pony time with 15 kids means each kid gets about 60 seconds. With 20+ kids, consider splitting into two stations — half read to the pony, half do a quiet sight word puzzle, then swap.
@@ -196,7 +198,7 @@ This visit will run long if you let it. 20 minutes for read-to-pony time with 15
 > I learned every single word from you. Thank you for being my teachers.
 >
 > Love forever,
-> **Millie 🐴**
+> **Daisy 🐴**
 > *(hoof print here)*
 >
 > P.S. Bring your Pony Passport next week. There is a surprise stamp waiting.
@@ -216,11 +218,11 @@ This is your photo deliverable. Photo releases signed in advance. You can shoot 
 | Time | Activity | Detail |
 |---|---|---|
 | Arrival | Class arrives by bus | Greet at the gate, walking tour to the barn |
-| 15 min | Tour of the farm | Meet Millie + Abby the Clydesdale, see the wagon, the tack room, where the horses sleep |
+| 15 min | Tour of the farm | Meet Daisy + Abby the Clydesdale, see the wagon, the tack room, where the horses sleep |
 | 20 min | Wagon ride | Short ride around the property pulled by Abby. Kids in groups of 6–8 per ride. Sight words posted along the route — kids spot them and call them out as the wagon passes. |
-| 15 min | Final read-aloud at the farm | All kids on hay bales, Millie + Abby nearby. Stacie reads a final book. |
+| 15 min | Final read-aloud at the farm | All kids on hay bales, Daisy + Abby nearby. Stacie reads a final book. |
 | 15 min | Sight word celebration | All 20 words. Kids who can read all 20 get their Pony Passport stamped with the "Reading Star" stamp. |
-| 10 min | Photo session | Each kid gets a 1-minute photo opportunity with Millie or Abby. Branded Tribal Cowboy backdrop. (Photo releases required.) |
+| 10 min | Photo session | Each kid gets a 1-minute photo opportunity with Daisy or Abby. Branded Tribal Cowboy backdrop. (Photo releases required.) |
 | 5 min | Goodbye + gifts | Reader Certificate, photo magnet (mailed later if not printed onsite), take-home one-pager for parents |
 
 ### Option B — Final school visit
@@ -231,14 +233,14 @@ If field trip is not approved (cost, time, transport, district policy).
 |---|---|---|
 | 0:00–0:05 | Arrival + welcome | Outdoors, weather permitting |
 | 0:05–0:15 | Meet Abby the Clydesdale | Outdoor only — Clydesdale doesn't come indoors. Kids see scale. Vocab: Clydesdale, draft horse, hooves the size of dinner plates, eats 25 pounds of hay a day. |
-| 0:15–0:25 | Sight word celebration (all 20) | Quick group review. Each kid reads at least one word to Millie. |
+| 0:15–0:25 | Sight word celebration (all 20) | Quick group review. Each kid reads at least one word to Daisy. |
 | 0:25–0:35 | Wagon ride (if space allows) | Even back-and-forth in the parking lot counts. Otherwise: a short Clydesdale "demonstration" where Abby walks in a circle and shows what she can do. |
 | 0:35–0:40 | Final read-aloud | Sit outside if weather allows |
 | 0:40–0:45 | Goodbye + gifts | Same gifts as Option A |
 
 ### Take-home gifts (both options)
 - Pony Passport stamped with the Reading Star
-- Reader Certificate (8.5x11, printed and signed by Millie's hoof-print)
+- Reader Certificate (8.5x11, printed and signed by Daisy's hoof-print)
 - Photo magnet of the pony (no kid faces if printed in advance — pony only, with the sponsor logo)
 - Take-home one-pager for parents (template below)
 
@@ -250,7 +252,7 @@ If field trip is not approved (cost, time, transport, district policy).
 
 | Page | Content |
 |---|---|
-| Cover | "Millie's Pony Passport — [Kid's Name]" + photo of Millie |
+| Cover | "Daisy's Pony Passport — [Kid's Name]" + photo of Daisy |
 | 1 | My name, my school, my grade. Space to draw a self-portrait. |
 | 2 | **Sight Words I Learned** — all 20 words listed, kids check them off week by week |
 | 3 | **Cultural Word of the Month** — the Nisenan Maidu word and Schitsu'umsh word for "horse" (research and confirm exact words with a tribal cultural advisor before printing) |
@@ -270,11 +272,11 @@ Plain paper, 8.5x11, double-sided. Goes home in every backpack.
 
 > **Dear families,**
 >
-> Your child just finished the **Reading with Millie** program with Tribal Cowboy. Over four weeks, your child met Millie the pony, learned 20 sight words, heard four read-aloud books, and read out loud to a real pony.
+> Your child just finished the **Reading with Daisy** program with Tribal Cowboy. Over four weeks, your child met Daisy the pony, learned 20 sight words, heard four read-aloud books, and read out loud to a real pony.
 >
 > Tribal Cowboy is an Indigenous-owned equine business in Athol, Idaho. We bring ponies and Clydesdales to schools, libraries, and family events across North Idaho and Eastern Washington.
 >
-> If you'd ever like to visit Millie again as a family, we'd love to see you at the ranch.
+> If you'd ever like to visit Daisy again as a family, we'd love to see you at the ranch.
 >
 > — Stacie Hines, Tribal Cowboy
 > tribalcowboy.com
@@ -294,7 +296,7 @@ Plain paper, 8.5x11, double-sided. Goes home in every backpack.
 >
 > **This program was made free for your school thanks to [SPONSOR NAME].**
 >
-> [Photo of Millie — no kid faces]
+> [Photo of Daisy — no kid faces]
 > [Tribal Cowboy logo]
 > [QR code linking to tribalcowboy.com]
 
@@ -317,10 +319,10 @@ Track and report:
 
 ### Which horse goes where
 - **Visits 1–3 (classroom):** A calm, school-trained mini or small pony. Indoor-safe. Picks up after itself.
-- **Visit 4 (outdoor or farm):** Add a Clydesdale (Abby or Millie). Wagon is optional but high-impact.
+- **Visit 4 (outdoor or farm):** Add the Clydesdale (Abby). Wagon is optional but high-impact. The pony Daisy is still there as the familiar friend the kids already know.
 
 ### Names matter
-The flagship pony's name should appear on every material, every letter, every photo overlay. Pick one and stick with it. If "Millie" is your Clydesdale, consider naming the mini something memorable too — kids will tell their parents about her at dinner.
+The flagship pony's name (Daisy is the placeholder — substitute your real pony's name) should appear on every material, every letter, every photo overlay. Pick one pony, stick with it for the whole Sprint. The Clydesdale (Abby) is the surprise guest at Visit 4 — kids will spend three weeks hearing about her in the pen-pal letters before they finally see her in person. That buildup is the entire reason the Visit 4 reveal hits so hard.
 
 ### Sponsor logo placement
 Sponsor's logo goes on:
@@ -359,7 +361,7 @@ For older K–2 (more 2nd graders in the mix), substitute one with:
 
 | Item | Quantity | Notes |
 |---|---|---|
-| Welcome letter from Millie (pre-Visit 1) | 1 per class | Teacher reads aloud |
+| Welcome letter from Daisy (pre-Visit 1) | 1 per class | Teacher reads aloud |
 | Pony Passport booklets | 1 per kid | Print, fold, staple. Order extra. |
 | Sight word cards | 1 set of 20 | Laminated, A4 size |
 | Letter 1 | 1 per kid | Print, fold |
@@ -379,4 +381,4 @@ For older K–2 (more 2nd graders in the mix), substitute one with:
 
 The program works because three things happen at once: kids learn (sight words, cultural context), kids feel (the pony is a friend, the letters are real), and the program is sellable (clean four-week unit, $2,000 per sponsor, measurable outcomes).
 
-The letters are the secret weapon. They cost nothing to make and they multiply the emotional bond by ten. The first time a teacher hands a letter from Millie to a class and watches the kids' faces light up, you'll know.
+The letters are the secret weapon. They cost nothing to make and they multiply the emotional bond by ten. The first time a teacher hands a letter from Daisy to a class and watches the kids' faces light up, you'll know.

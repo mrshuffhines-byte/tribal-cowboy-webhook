@@ -303,7 +303,7 @@ If even one pilot leads to one $650 paid booking downstream — you're net posit
 
 1. **Don't try to charge schools.** Mobile Whinnies, Equest, Southern Reins, and Gentle Carousel all give it away free. Schools will say no instantly to a fee. Sponsors pay.
 
-2. **Don't bring a 1,800-lb Clydesdale to a classroom for the first pilot.** Use a calm, well-trained pony or mini. Save Millie for the *field-trip-to-the-farm* visit (visit 4 in the residency model). Indoor visits = mini or small pony only.
+2. **Don't bring a 1,800-lb Clydesdale to a classroom for the first pilot.** Use a calm, well-trained pony or mini for Visits 1, 2, and 3. The Clydesdale (Millie or Abby) makes ONE appearance — at Visit 4 only — outdoors or at the farm. This is the program structure across both the Reading Sprint and the Math Sprint. The three weeks of buildup is what makes the Visit 4 reveal land.
 
 3. **Don't skip the photo release.** Even one parent who didn't want their kid photographed can sink the program. The release form is non-negotiable.
 
