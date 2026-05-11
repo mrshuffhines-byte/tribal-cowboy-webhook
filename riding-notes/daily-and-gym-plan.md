@@ -109,6 +109,11 @@ End of week: re-read both journal entries. Notice anything.
 
 ## GYM ROUTINE — Two days a week, with your husband
 
+**See `gym-rp-framework.md` for the full Renaissance Periodization (Dr.
+Mike Israetel) framework — volume landmarks, RIR progression, mesocycle
+structure. That file is the canonical source for the gym program.** The
+section below is the simplified "what to do at the gym this week" view.
+
 This is the strength foundation for everything else. The home work is
 *reconnection and stability*. The gym work is *load* — the deliberate
 strengthening that gives you a quiet, powerful seat.
