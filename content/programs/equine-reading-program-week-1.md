@@ -10,7 +10,7 @@ A literacy-and-land program where kids read aloud to real horses. It is built fo
 
 ## The One-Liner (use this when pitching to teachers)
 
-> Kids read out loud to a 1,800-lb Clydesdale who never interrupts, never corrects, and never looks bored. By week four, the quiet readers are the ones asking to go first.
+> Kids read out loud to a pony at eye level who never interrupts, never corrects, and never looks bored. By week four, the quiet readers are the ones asking to go first.
 
 ---
 
@@ -22,7 +22,7 @@ A literacy-and-land program where kids read aloud to real horses. It is built fo
 | **Group size** | Up to 12 students (1 adult per 6 students) |
 | **Best for** | Grades K–5 (adapted for middle school on request) |
 | **Location** | Tribal Cowboy paddock, Athol, ID — or on-site at your school |
-| **What they leave with** | A 4-week Reading Log + one branded photo with their horse |
+| **What they leave with** | A 4-week Reading Log + one branded photo with their pony |
 
 ---
 
@@ -31,7 +31,7 @@ A literacy-and-land program where kids read aloud to real horses. It is built fo
 Week 1 is not a literacy lesson. It is a trust-building day.
 
 The goals are:
-1. Every student gets within arm's length of a horse.
+1. Every student gets within arm's length of a pony.
 2. Every student reads out loud — to a horse, to a partner, or to themselves.
 3. Every student leaves wanting to come back next week.
 
@@ -55,23 +55,24 @@ Before kids read *to* a horse, they learn to *read* one.
 
 Hand out the **Body Language Cheat Card** (one per student, fits in a pocket).
 
-### 3. Meet Millie & Abby — 15 min
+### 3. Meet the Ponies — 15 min
 - Supervised approach in small groups.
-- Hand on the shoulder if comfortable. No faces near faces yet.
-- Listen for the horse's breath. Match yours to it.
+- Hand on the shoulder or neck if comfortable. No faces near faces yet.
+- Listen for the pony's breath. Match yours to it.
+- Ponies are eye-level with most kids — that's the point. Less intimidating, more conversation.
 - Students who are nervous sit on the hay bales and watch — that counts.
 
 ### 4. First Read-Aloud — 30 min
-- Students pair up: one student, one horse, one book.
-- Reading mats spread along the fence line, three to six feet from the horse.
+- Students pair up: one student, one pony, one book.
+- Reading mats spread along the fence line, three to six feet from the pony.
 - Stacie and assistants circulate quietly.
-- Rule: *the horse decides if it listens. Your job is to read like it might.*
+- Rule: *the pony decides if it listens. Your job is to read like it might.*
 
 Books come from the teacher — five to ten titles at the right reading level. (We do not provide books — students should read what they are working on in class so this builds *their* literacy, not a separate one.)
 
 ### 5. Closing Circle — 15 min
 Three questions, one at a time, popcorn-style:
-- What did your horse do while you read?
+- What did your pony do while you read?
 - What did you notice about your own voice?
 - What do you want to read next week?
 
@@ -84,7 +85,7 @@ Each student gets:
 
 ## What Tribal Cowboy Provides
 
-- The horses — Millie and Abby (Clydesdales), plus pony herd as appropriate
+- The pony herd (4–6 ponies on-site depending on group size)
 - Safe paddock space, hay bales, reading mats
 - Body Language Cheat Card (printed)
 - 4-Week Reading Log (printed)
@@ -102,7 +103,7 @@ Each student gets:
 
 ## The Indigenous Lens (Built In, Not Bolted On)
 
-- The horses do not judge your reading. Neither does the land.
+- The ponies do not judge your reading. Neither does the land.
 - A quiet voice is a tradition, not a rule. You speak so the horse can hear you breathe.
 - We don't run drills. We sit. We listen. The animal teaches its half of the lesson.
 
@@ -112,10 +113,10 @@ This is not a "cultural component" tacked onto a reading program. It is how the 
 
 ## Stacie's Delivery Notes (for the facilitator)
 
-- **Watch for the nervous kid.** They will hover at the back of the group. Don't pull them forward. Give them a hay bale, a book, and a horse twenty feet away. By Week 2 they'll move closer on their own.
+- **Watch for the nervous kid.** They will hover at the back of the group. Don't pull them forward. Give them a hay bale, a book, and a pony twenty feet away. By Week 2 they'll move closer on their own.
 - **Don't fill silence.** Long pauses in the read-aloud are fine. Horses are slow. Reading should be too.
 - **End early.** Always close the session five minutes before the kids are ready to stop. Leave them wanting Week 2.
-- **One adult per six is the minimum.** Below that, the energy gets loud and the horses notice.
+- **One adult per six is the minimum.** Below that, the energy gets loud and the ponies notice.
 
 ---
 
@@ -123,7 +124,7 @@ This is not a "cultural component" tacked onto a reading program. It is how the 
 
 Track these three things on the way back to the bus:
 
-- [ ] Every student got within arm's length of a horse (or chose not to, calmly).
+- [ ] Every student got within arm's length of a pony (or chose not to, calmly).
 - [ ] Every student read aloud — at any volume, to any audience.
 - [ ] At least one student asked when they get to come back.
 
@@ -133,7 +134,7 @@ If you got all three, Week 1 worked.
 
 ## What's Next: Week 2 Preview
 
-**Week 2 — "Names and Voices."** Students learn each horse's personality and choose a **reading partner horse** for the rest of the program. Same horse, same student, every week — that's where the bond starts doing the work.
+**Week 2 — "Names and Voices."** Students learn each pony's personality and choose a **reading partner pony** for the rest of the program. Same pony, same student, every week — that's where the bond starts doing the work.
 
 ---
 
