@@ -224,162 +224,211 @@ This costs about 60 seconds. Pays back the whole rest of the visit.
 
 ---
 
-## 0:03–0:09 — Pony Body Parts (6 min)
+## 0:03–0:06 — The 3 Big Rules (3 min)
 
 **You say:**
-> *"Let's learn the pony's body. I'm going to point at her body, and you point at YOUR body in the same place. Ready?*
+> *"Before anybody touches a pony, we have to know THREE rules. Just three. Hold up three fingers like me.*
 >
-> *Touch where your HAIR grows. (Pause.) That's where YOUR hair is. For the pony, that's her MANE. Say 'MANE.'"*
+> *RULE ONE: **Inside voice.** No screaming. Ponies don't like big loud noises. They think a scream means something is hunting them. Say 'inside voice.'"*
 >
-> **Kids:** *"Mane!"*
+> **Kids:** *"Inside voice."*
 >
-> *"Now touch your foot. That's where your foot is. For the pony, that's her HOOF. She has — let's count — ONE, TWO, THREE, FOUR hooves! Say 'HOOF.'"*
+> *"RULE TWO: **Walk, don't run.** Quick moving things scare a pony. Walk slow like you're sneaking up on a deer. Say 'walk, don't run.'"*
 >
-> **Kids:** *"Hoof!"*
+> **Kids:** *"Walk, don't run."*
 >
-> *"Now reach behind you and touch your bottom. That's her TAIL. Say 'TAIL.'"*
+> *"RULE THREE: **Always tell the pony you're there.** Especially if you walk near her back. Just say 'Hi, pony.' I'll show you why in a minute. Say 'tell the pony.'"*
 >
-> *"Now touch your eye. Just one. That's her EYE — she has two. Say 'EYE.'"*
+> **Kids:** *"Tell the pony."*
 >
-> *"Now rub your hand on your arm. Feel how it feels. That's how the pony's mane feels. SOFT. Say 'SOFT.'"*
+> *"Three rules. Hold up three fingers. Inside voice. Walk slow. Tell the pony. Got it?"*
 
 **You do:**
-- Point at the pony's part each time
-- Move slowly between parts
-- Let kids repeat each word out loud
-
-**Pony does:**
-- Stands still
-- May shift weight, swish her tail — totally fine
+- Hold up three fingers as you say each rule
+- Match the kids' eyes when they repeat back
+- Don't go fast — let them hear each rule land
 
 **Kids do:**
-- Touch their own body parts
-- Repeat each word
+- Hold up three fingers
+- Say each rule back
 
-**Backup:** If a kid won't participate, leave them be on their spot. Don't force it.
+**Backup:** If kids race ahead and say all 3 at once, slow them down — "One at a time. One. Two. Three."
 
 ---
 
-## 0:09–0:11 — PONY BREATH #1 (First Teach) (2 min)
+## 0:06–0:12 — Pony Vision (6 min)
+
+This is the lesson kids tell their parents at dinner.
 
 **You say:**
-> *"Now I'm going to teach you the most important thing all year. It's called PONY BREATH. You can use it any time. At school. At home. Anytime you want to calm down with the pony.*
+> *"Watch this. I'm going to show you how the pony sees the world.*
 >
-> *Put one hand on your belly like this. (Demonstrate.)*
+> *Cover your eyes with your hands. (Pause.) Now uncover them. Look STRAIGHT ahead. Can you see your friend next to you without turning your head? A little bit, right?*
 >
-> *Look at the pony. Watch her breathe in and out.*
+> *That's because YOUR eyes are on the FRONT of your face. You see straight ahead.*
 >
-> *Now WE breathe with her. Slow in . . . slow out . . .*
+> *Now look at the pony. Where are her eyes? On the SIDE of her head. One here. One here. (Point.) That means she can see ALMOST ALL THE WAY AROUND her body. Like she has eyes in the back of her head.*
 >
-> *(Pause. Take an audible slow breath. Kids match.)*
+> *BUT — there are TWO spots she CAN'T see.*
 >
-> *Again. Slow in . . . slow out . . .*
+> *Number ONE: right in front of her nose. (Point.) That's a blind spot.*
 >
-> *One more. Slow in . . . slow out . . . Good."*
+> *Number TWO: right behind her tail. (Point.) THAT'S the most important one.*
+>
+> *Watch — I'm going to walk around her slowly. Tell me when she can see me and when she can't."*
 
 **You do:**
-- Hand on your own belly
-- Eyes on the pony
-- Breathe AUDIBLY so kids can hear
+- Walk slowly around the pony in a wide circle, narrating
+- *"Now she can see me. (Side.) Now she can see me. (Other side.) Now I'm at her face — close blind spot. Now I'm BEHIND her — she CAN'T SEE ME. Hi, pony!"* (Speak so the pony hears you.)
+- Return to the front.
+
+**You then say:**
+> *"That's why our third rule matters. If you walk behind a pony and don't tell her you're there, she might get SCARED. And a scared pony might KICK — not because she's mean, but because she got surprised. So we always say 'Hi, pony' so she knows where we are."*
 
 **Pony does:**
-- Calmly breathes (her ~10–12 breaths per minute set the pace)
+- Stands calmly
+- May turn her head to follow you — totally fine
 
 **Kids do:**
-- Hand on belly
-- Try to match the pony's breath
+- Watch
+- Some will narrate with you — "now she can see you!"
 
-**Backup:** If a kid laughs, fidgets, or won't try — don't redirect. The point is the OPTION. Some kids do it on Visit 4. Some do it Visit 1. Both are fine.
+**Backup:** If kids are restless, shorten the demonstration to just the "blind spot behind her tail" moment. That's the single most important takeaway.
 
 ---
 
-## 0:11–0:18 — Read-Aloud: *Brown Bear, Brown Bear* (7 min)
+## 0:12–0:17 — Pony Looks + Synonyms (5 min)
+
+The body language lesson. Use flip cards or act each one out yourself with the pony as backdrop.
 
 **You say:**
-> *"I have a book for us today. It's called Brown Bear, Brown Bear, What Do You See? — but today, I'm going to read it with a PONY in it. Listen for the pony."*
+> *"Now we're going to learn how the pony TALKS to us with her body. She doesn't have words. So she uses her ears, her eyes, and her tail.*
+>
+> *I'm going to show you SIX things. For each one, you say it back with me. AND we'll learn another word that means the same thing."*
 
-**Read the book, substituting "pony" into the rhyme on at least the first 2–3 spreads.**
+**Hold up Card 1 — Ears forward:**
+> *"Look at her ears. Pointed forward. That's HAPPY ears. She's curious. Another word: INTERESTED.*
+>
+> *Say it with me: HAPPY EARS. INTERESTED."*
 
-Example:
-> *"BROWN PONY, BROWN PONY, what do you see?"*
-> *"I see a red bird looking at me."*
-> *"Red bird, red bird, what do you see?"*
-> *"I see a yellow duck looking at me."*
+**Kids:** *"HAPPY EARS. INTERESTED."*
 
-After the first 2 substitutions, kids will start chanting it with you. Let them.
+**Card 2 — Ears pinned back:**
+> *"Ears flat against her head. That's GRUMPY ears. She's saying 'leave me alone.' Another word: MAD.*
+>
+> *Say it: GRUMPY EARS. MAD."*
+
+**Kids:** *"GRUMPY EARS. MAD."*
+
+**Card 3 — Soft eyes:**
+> *"Soft, blinking eyes. That's CALM eyes. Another word: RELAXED.*
+>
+> *Say it: CALM EYES. RELAXED."*
+
+**Card 4 — Wide eyes with white showing:**
+> *"Wide eyes, you can see the white part — that's SCARED eyes. Another word: AFRAID.*
+>
+> *Say it: SCARED EYES. AFRAID."*
+
+**Card 5 — Still tail:**
+> *"Tail not moving — that's QUIET tail. Another word: CALM.*
+>
+> *Say it: QUIET TAIL. CALM."*
+
+**Card 6 — Tail swishing:**
+> *"Tail going fast like a fly is bugging her — that's MAD tail. Another word: ANNOYED.*
+>
+> *Say it: MAD TAIL. ANNOYED."*
+
+**Then the 3 Warning Signs:**
+> *"Last thing. There are THREE signs that tell you a pony is going to bite or kick. If you see any of these, you STOP and tell a grown-up. Ready?*
+>
+> *Sign one — ears FLAT against her head.*
+> *Sign two — tail SWISHING hard and fast.*
+> *Sign three — lifting one foot OFF the ground.*
+>
+> *A pony only has a few ways to say no. She can swat with her tail. She can bite. She can kick. All three can hurt. So we WATCH her body. We LISTEN. Before she has to tell us in the scary ways."*
 
 **You do:**
-- Hold the book at kid height
-- Show every picture
-- Turn pages at a steady pace (don't rush, don't drag)
-- Use a slightly sing-song voice — Pre-K kids need the rhythm
+- Hold up each flip card OR act the look out yourself (eyes wide, ears mimed flat, etc.)
+- Pause for kids to repeat each pair
+- Slow down for the 3 Warning Signs — these matter most
+
+**Kids do:**
+- Repeat each word + synonym
+- Hold up imaginary "ears" with their hands for the ear positions
+
+**Backup:** If a kid struggles with the synonyms, just have them repeat the main word. The synonym is the bonus, not the requirement.
+
+---
+
+## 0:17–0:21 — Read-Aloud: *Tribal Cowboy Pony, What Do You See?* (4 min)
+
+**You say:**
+> *"I have a book for us. This is MY book — I made it. It's called Tribal Cowboy Pony, What Do You See? And every animal in the book is a real animal from my ranch. Watch."*
+
+**Read the book. The repeating pattern lets kids predict the next page.**
+
+By spread 3, kids will start saying *"what do you see?"* with you. Let them.
+
+**You do:**
+- Hold the oversized book at kid height
+- Show every photo
+- Turn pages at a steady pace
+- Pause on the Clydesdale spread — let them GASP
+- Land the last spread (*"What do YOU see?"*) and look around the room
 
 **Pony does:**
 - Stands near you, relaxed
-- May lower her head — totally fine
 
 **Kids do:**
 - Listen
-- Look at the pictures
-- Some will say "pony" along with you
+- Look at the photos
+- Chant the repeating question with you
 
-**Backup:** If kids are restless by minute 5 of the book, pause, do a 30-second Pony Breath, then continue or shorten. Better to cut to the last page early than fight kids who've lost focus.
+**Backup:** If kids are restless by spread 5, skip to the Clydesdale spread and the closer. Better to cut early than fight a lost room.
 
 ---
 
-## 0:18–0:22 — Sensory Touch (4 min)
+## 0:21–0:24 — Sensory Touch — Approach From the Side (3 min)
 
 **You say:**
-> *"Now you each get a turn to touch the pony. We have to be GENTLE. Like we're sneaking up on a deer.*
->
-> *When I call your name, walk slowly up. Touch her mane. Touch her shoulder. Say 'SOFT.' Then walk back to your spot.*
+> *"Now you each get a turn to touch the pony. Remember our rules. Remember her blind spots. Walk SLOW. Stay to her SIDE — never behind her. Touch her mane. Say SOFT. Walk back.*
 >
 > *If you don't want to touch her, that's okay. You can stay on your spot. You're still part of the group."*
 
 **You do:**
-- Stand beside the pony, hand loosely on the halter or lead
-- Demonstrate the touch yourself first — slow, gentle, mane then shoulder
+- Stand beside the pony, hand on the halter
+- Demonstrate the side-approach yourself first — slow, gentle, mane then shoulder
 - Call each kid by name
-- Keep the line moving — about 15 seconds per kid
+- Reinforce the rule: *"Approach from the side. That's right."*
+- About 12–15 seconds per kid
 
 **Pony does:**
 - Stands still
-- Accepts touch
-- If she shifts or lifts a foot — pause the next kid, give her 10 seconds, continue
+- Accepts touch from the side
 
 **Kids do:**
-- Walk up one at a time
-- Touch mane, touch shoulder
-- Say "soft"
+- One at a time
+- Walk slowly UP THE SIDE (not behind)
+- Touch mane, touch shoulder, say "soft"
 - Walk back
 
-**Backup:** If a kid is scared, offer the "watch from your spot" option immediately. Don't make them touch. If the pony is getting restless (tail swishing, head tossing), cut this section short and skip to Pony Breath #2.
+**Backup:** If a kid is scared, offer "watch from your spot." If the pony shows any warning sign (ears flat, tail swishing fast, foot lifted), pause the line. Have the class identify the body language — *"What is her tail saying? MAD. So we give her a minute."* Reinforces the lesson in real-time.
 
 ---
 
-## 0:22–0:24 — PONY BREATH #2 + Stickers (2 min)
+## 0:24–0:25 — Sticker + Body Language Check (final beat before goodbye)
 
 **You say:**
-> *"One more Pony Breath together. Hand on belly. Slow in . . . slow out . . .*
->
-> *Again. Slow in . . . slow out . . .*
->
-> *One more. Good.*
->
-> *Now your teacher is going to give you a sticker. Put it on the front of your Pony Pals book. That sticker is the pony I'm wearing today — the Pony Express Rider."*
+> *"Last thing before you go — look at the pony right now. What do her ears say? What does her tail say?"*
 
-**You do:**
-- Hand the stack of stickers to the teacher
-- Continue holding the pony
+Kids call out the answer (probably "happy ears!").
 
-**Pony does:**
-- Pony Breath with the group
-- Sticker distribution
+**You say:**
+> *"Good readers. You can read a pony already. Take a sticker from your teacher and put it on your Pony Pals book."*
 
-**Kids do:**
-- Pony Breath
-- Receive sticker
-- Put on Pony Pals book cover
+Stickers distributed.
 
 ---
 
@@ -492,7 +541,7 @@ tribalcowboy.com
 
 - Post ONE wide shot or behind-the-heads photo to Instagram + Facebook
 - Caption: short, warm, no fluff. Example:
-  > *"The pony went to school today. She wore her mail bag. The kids learned what 'soft' means. They taught us Pony Breath. Tomorrow she's writing them a letter. Thank you, [School Name]. — Stacie"*
+  > *"The pony went to school today. She wore her mail bag. The kids learned how a pony sees, what her ears say, and the 3 Big Rules for being safe around a horse. Tomorrow she's writing them a letter. Thank you, [School Name]. — Stacie"*
 - Use 5–7 hashtags from the brand bank
 - Tag the school if they have an active social presence (with permission)
 
@@ -553,11 +602,11 @@ In your notebook or CRM:
 
 ## The schedule runs short
 
-**You're done at minute 18 and you've still got 7 min:** Do an extra Pony Breath. Let kids ask the pony questions (Stacie answers as the pony). Add a second round of sensory touch. Re-read 1 page of the book. Never panic-improvise something unrehearsed.
+**You're done at minute 18 and you've still got 7 min:** Do another round of body language flip cards. Let kids ask the pony questions (Stacie answers as the pony). Add a second round of sensory touch. Re-read 1 page of the book. Never panic-improvise something unrehearsed.
 
 ## The schedule runs long
 
-**You're at minute 27 and not done:** Skip the second sensory touch round. Go straight to Pony Breath #2 + goodbye. Get out clean. The TEACHER's schedule matters more than yours.
+**You're at minute 27 and not done:** Skip the second sensory touch round. Go straight to sticker + body language check + goodbye. Get out clean. The TEACHER's schedule matters more than yours.
 
 ## The teacher cancels last minute
 
@@ -570,17 +619,18 @@ In your notebook or CRM:
 ```
 TIME    BLOCK                          KEY MOMENT
 0:00    Hello + schedule + callbacks   Teach SADDLE UP + WHOA PARTNERS
-0:03    Body parts                     hoof, mane, tail, eye, SOFT
-0:09    Pony Breath #1                 First teach. Hand on belly.
-0:11    Read-aloud                     Brown Bear (substitute pony)
-0:18    Sensory touch                  One at a time. 15 sec each.
-0:22    Pony Breath #2 + sticker
-0:24    Goodbye                        "A letter is coming Monday"
-0:25    OUT
+0:03    The 3 Big Rules                Inside voice. Walk slow. Tell the pony.
+0:06    Pony Vision                    Sides of head = 350°. 2 blind spots.
+0:12    Pony Looks + Synonyms          6 looks + 6 synonyms. 3 Warning Signs.
+0:17    Read-aloud                     Tribal Cowboy Pony, What Do You See?
+0:21    Sensory touch                  Approach FROM THE SIDE. Say SOFT.
+0:24    Sticker + body language check  "What do her ears say right now?"
+0:25    Goodbye                        "A letter is coming Monday"
 
-SAY THE WORD 5 TIMES: SOFT
-TEACH PONY BREATH (the calming activity)
-TEACH THE CALLBACKS:
+THE 3 BIG RULES: Inside voice / Walk slow / Tell the pony
+THE 6 LOOKS: Happy/Grumpy ears, Calm/Scared eyes, Quiet/Mad tail
+THE 3 WARNING SIGNS: Ears flat / Tail fast / Lifted foot
+THE 2 CALLBACKS:
   ENERGY UP:  "Saddle up!"     → "Giddy up!" + stomp x3 + Pony Hooves
   ENERGY DN:  "Whoa, partners!" → freeze + Pony Ears
 DON'T FORGET: Hand teacher framed photo on arrival

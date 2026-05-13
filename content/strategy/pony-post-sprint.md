@@ -17,7 +17,7 @@
 
 The Pony Post is an **Equine-Assisted Learning (EAL) program** — an educational literacy program built around a calm pony. It is **NOT** therapy, counseling, mental health treatment, or a substitute for any of those services. Activities support reading, vocabulary, syllable awareness, and classroom calm. They do not diagnose or treat any condition. Idaho regulates the practice of counseling, therapy, and psychology — The Pony Post stays firmly on the educational side of that line.
 
-When describing the program: it's an **educational reading program with a calming routine built in.** When describing Pony Breath: it's a **calming activity kids do with the pony.** Never use the words *therapy*, *therapeutic*, *treatment*, *clinical*, or *regulation* in client-facing materials.
+When describing the program: it's an **educational reading and animal-safety program** built around a calm pony. Kids learn to read body language, follow safety rules, and recognize when a horse is happy, grumpy, or scared. Never use the words *therapy*, *therapeutic*, *treatment*, *clinical*, or *regulation* in client-facing materials.
 
 ---
 
@@ -28,7 +28,7 @@ The Pony Post is a 4-week classroom literacy program where a real pony comes to 
 Three things happen at once across the four weeks:
 
 1. **Kids learn** — sight words (K-2) or vocabulary (Pre-K), syllable counting, fluency, comprehension
-2. **Kids calm down** — every visit teaches Pony Breath, a calming routine kids carry home
+2. **Kids learn animal safety** — every visit reinforces the 3 Big Rules + body language reading, real-world skills kids keep for life
 3. **Kids feel** — the pony is real, the letters are real, the relationship is real
 
 The letters are the program's signature mechanic. They cost almost nothing to produce and they multiply the emotional bond by ten. The first time a teacher hands a Pony Post letter to a class and watches the kids' faces, you'll know.
@@ -57,7 +57,7 @@ The Pony Post hits all five pillars of reading instruction from the National Rea
 
 ## How The Pony Post Works for Every Kid in the Room
 
-Every visit follows the same predictable structure because active learners thrive on predictability. Every activity is short — under 7 minutes for Pre-K, under 10 for K-2. Every block has built-in movement, sensory input, and choice. Every visit has the same opening ritual, the same closing ritual, and the same Pony Breath calming moment.
+Every visit follows the same predictable structure because active learners thrive on predictability. Every activity is short — under 7 minutes for Pre-K, under 10 for K-2. Every block has built-in movement, sensory input, and choice. Every visit has the same opening ritual (Saddle Up callback), the same quiet-down signal (Whoa Partners + Pony Ears), and the same body-language check throughout.
 
 ### The 9 design principles
 
@@ -65,7 +65,7 @@ Every visit follows the same predictable structure because active learners thriv
 2. **Visual schedule the kids can see.** A felt board with picture cards shows what's coming next. Stacie moves a clip down the board.
 3. **Predictable opening + closing ritual.** Every visit starts and ends the same way.
 4. **Movement embedded in learning.** Sight word relay = kids walk with the pony. Syllable counting = the pony stomps and the kids stomp along.
-5. **The Pony Breath reset.** A 30-second slow-breathing ritual matched to the pony, used whenever energy spikes.
+5. **The Whoa Partners reset.** A 20-second quiet-down signal using the Pony Ears body-action, used whenever energy spikes.
 6. **Choice within structure.** Kids pick which card to grab, which mat to sit on, which book page to look at.
 7. **Parallel stations for big classes.** Classes over 15 split into two pony-side stations.
 8. **Multi-sensory everything.** Touch, smell, sound, sight, proprioception — every activity uses multiple channels.
@@ -130,22 +130,20 @@ Use Version B when the school has explicitly asked for cultural programming, dur
 Bring a small felt board with 5–6 laminated picture cards. Move a clip down the board as you go.
 
 **Pre-K board:**
-[👋 Hello] → [🐴 Pony Body] → [🫁 Pony Breath] → [📖 Story] → [✋ Touch] → [👋 Goodbye]
+[👋 Hello] → [✋ 3 Rules] → [👀 Pony Vision] → [🐴 Pony Looks] → [📖 Story] → [👋 Goodbye]
 
 **K-2 board:**
-[👋 Hello] → [🐴 Pony Body] → [🫁 Pony Breath] → [📚 Words] → [📖 Story] → [👋 Goodbye]
+[👋 Hello] → [✋ 3 Rules] → [👀 Pony Vision] → [🐴 Pony Looks] → [📚 Words] → [📖 Story] → [👋 Goodbye]
 
 Many kids will walk to the board mid-activity. Don't redirect.
 
 ---
 
-## The Pony Breath Calming Activity
+## *Optional* — The Pony Breath Calming Activity
 
-Stacie says: *"Pony Breath."*
+This section is **optional.** The core curriculum centers on Pony Safety + Body Language (see the dedicated section in the Pre-K doc) plus the Saddle Up / Whoa Partners callbacks. Pony Breath remains available as an additional tool for sprints that want a calming closing moment.
 
-Kids place a hand on their belly, look at the pony, match her breath. One slow breath in. One slow breath out. Three rounds. Quiet.
-
-30–45 seconds. Used at least twice per visit and any time energy spikes. **Teach explicitly at Visit 1.** By Visit 4, kids do it on their own.
+If used: Stacie says *"Pony Breath."* Kids place a hand on their belly, look at the pony, match her breath. One slow breath in. One slow breath out. Three rounds. Quiet. The body language teaching does most of the heavier lifting in the safety-focused curriculum — most visits won't need this.
 
 ---
 
@@ -169,12 +167,9 @@ When the room gets too loud or too excited:
 - **Stacie:** *"Whoa, partners!"*
 - **Kids:** Freeze + cup both hands behind their ears (**Pony Ears**) — listening just like a horse listens
 
-Then immediately flow into the calming activity:
+Stacie keeps them on Pony Ears for 5–10 seconds of quiet, then resumes the next activity.
 
-- **Stacie:** *"Pony Breath."*
-- Whole class breathes with the pony, three rounds.
-
-Total flow: 40 seconds. Works every time.
+Total flow: about 20 seconds. Works every time.
 
 ### Teaching both at Visit 1
 
@@ -186,10 +181,10 @@ Teach in the first 5 minutes of Visit 1, right after the visual schedule. About 
 
 ---
 
-# Visit 1 — Meet the Pony
+# Visit 1 — Meet the Pony (Safety + Body Language)
 
-**Theme:** Hello, I'm a pony. You can be gentle with me. We can breathe together.
-**Pillar:** Vocabulary + print awareness
+**Theme:** I'm a pony. You can be safe with me. Here's how to read me.
+**Pillars:** Vocabulary + print awareness + real-world animal safety
 
 ## Pre-Visit (the Monday before)
 
@@ -201,7 +196,7 @@ The teacher reads the class a short Welcome Letter from the pony — the first P
 >
 > I am a pony. My owner is Stacie. We live at a place called Tribal Cowboy in Athol, Idaho.
 >
-> When I come, I will teach you a special breath called Pony Breath. You can use it any time — at school, at home, anytime you want to slow down and feel calm.
+> When I come, I'll teach you three rules for being safe around a pony, and how to read what my body says without using any words.
 >
 > See you soon!
 >
@@ -211,35 +206,35 @@ The teacher reads the class a short Welcome Letter from the pony — the first P
 
 | Time | Activity |
 |---|---|
-| 0:00–0:03 | Hello + visual schedule. Opening (Version A). |
-| 0:03–0:08 | **Pony body parts.** Point at pony parts and name slowly: **hoof, mane, tail, eye.** Kids touch their own body at each part. Count together: 4 hooves, 2 eyes, 1 tail. |
-| 0:08–0:09 | **Pony Breath #1** — first teach. |
-| 0:09–0:16 | **Read-aloud:** *Cowgirl Kate and Cocoa* (Erica Silverman) — pick one vignette, ~6–7 min. Kids on hay-bale spots, semicircle. Body motions embedded: when "Cocoa" appears, kids tap their thigh. |
-| 0:16–0:22 | **Sensory touch.** One kid at a time, 20 sec touch (mane, then shoulder). Vocabulary: **soft.** |
-| 0:22–0:24 | **Pony Breath #2** + goodbye. |
-| 0:24–0:25 | Teacher hands out the Pony Post Sticker Book starter page. |
+| 0:00–0:03 | Hello + visual schedule + Saddle Up/Whoa Partners callbacks. Opening (Version A). |
+| 0:03–0:06 | **The 3 Big Rules.** Three fingers. *Inside voice. Walk, don't run. Tell the pony you're there.* Kids repeat back. |
+| 0:06–0:12 | **Pony Vision.** Eyes on the sides of her head — almost 350° vision. Two blind spots (front of nose, behind tail). Walk around her, narrate. |
+| 0:12–0:17 | **Pony Looks + Synonyms.** 6 body language signals (happy/grumpy ears, calm/scared eyes, quiet/mad tail) + 6 synonyms (interested, mad, relaxed, afraid, calm, annoyed). End with the 3 Warning Signs (ears flat, tail fast, foot lifted). |
+| 0:17–0:21 | **Read-aloud:** *Tribal Cowboy Pony, What Do You See?* (Stacie's presentation book). |
+| 0:21–0:24 | **Sensory touch — approach from the side.** Reinforce rules in real-time. *"Walk slow. Stay to her side. Touch her mane. Say SOFT."* |
+| 0:24–0:25 | Sticker + body language quick check + goodbye. |
 
 ## K-2 Track — 45 minutes
 
 | Time | Activity |
 |---|---|
-| 0:00–0:05 | Hello + visual schedule. Opening (Version A). |
-| 0:05–0:13 | **Pony anatomy + 4 vocab words:** hoof, mane, withers, tail. Kids touch their own body where the pony's part is. Each kid says one word out loud. |
-| 0:13–0:14 | **Pony Breath #1** — first teach. |
-| 0:14–0:24 | **Sight word relay.** 5 laminated cards on the floor: **I, am, a, the, you.** Each kid picks WHICH card to grab (choice), walks beside the pony, stops at the card, reads it aloud. Pony "delivers" the word. Active waiting on spot markers — count the pony's spots, repeat the words quietly. Parallel lines if class > 15. |
-| 0:24–0:25 | **Pony Breath #2.** |
-| 0:25–0:35 | **Read-aloud:** *Cowgirl Kate and Cocoa* (Erica Silverman) — short chapter or vignette. Embedded body motions: when a horse appears, kids clap once. Cap at 10 min. |
-| 0:35–0:43 | **Q&A + Pony Passport handout.** Kids draw a quick picture of the pony on page 1. |
-| 0:43–0:45 | **Pony Breath #3** + goodbye. Tell them a Pony Post letter is coming Monday. |
+| 0:00–0:05 | Hello + visual schedule + teach Saddle Up/Whoa Partners callbacks. Opening (Version A). |
+| 0:05–0:09 | **The 3 Big Rules.** Same as Pre-K but tighter. *Inside voice. Walk, don't run. Tell the pony you're there.* Plus: *"You'll see WHY in a minute."* |
+| 0:09–0:15 | **Pony Vision.** Same demonstration — walk around the pony narrating. K-2 kids will ask questions; allow 1–2 minutes for Q&A. |
+| 0:15–0:23 | **Pony Looks + Synonyms (K-2 version).** 6 body language signals with more sophisticated synonym pairs: *alert/interested, pinned/angry, soft/gentle, wide/frightened, still/quiet, swishing/annoyed.* End with the 3 Warning Signs and the "3 ways a pony says no" (tail swat, bite, kick). |
+| 0:23–0:33 | **Sight word relay.** 5 cards on the floor: **I, am, a, the, you.** Each kid picks one, walks beside the pony (from the SIDE — reinforces Pony Vision), stops at the card, reads it aloud. Active waiting on spot markers. Parallel lines if class > 15. |
+| 0:33–0:40 | **Read-aloud:** *Tribal Cowboy Pony, What Do You See?* (Stacie's presentation book). Embedded body motions: when a new animal appears, kids point at where the pony would look (sides for prey animals, front for predators). |
+| 0:40–0:44 | **Q&A + Pony Express Rider's Log handout.** Kids draw a quick picture of the pony on page 1. |
+| 0:44–0:45 | Body language quick check + goodbye. *"Look at the pony's ears right now. What do they say?"* Then tease the Pony Post letter coming Monday. |
 
 ## Literacy lesson summary
 
 | | Pre-K | K-2 |
 |---|---|---|
-| **New words mastered** | hoof, mane, tail, eye, soft | I, am, a, the, you (sight words) + hoof, mane, withers, tail (anatomy) |
-| **Skill introduced** | Receptive vocabulary, print awareness | Sight word recognition, listening comprehension |
-| **Tool kept forever** | Pony Breath | Pony Breath |
-| **Book** | *Cowgirl Kate and Cocoa* (or rhyming picture book) | *Cowgirl Kate and Cocoa* |
+| **New words mastered** | hoof, mane, tail, eye, soft + 6 body language words (happy, grumpy, calm, scared, quiet, mad) | I, am, a, the, you (sight words) + hoof, mane, withers, tail (anatomy) + 6 body language words with more advanced synonyms |
+| **Skill introduced** | Receptive vocabulary, synonym pairing, real-world animal safety | Sight word recognition, listening comprehension, real-world animal safety, synonym word relationships (K.L.5 / 1.L.5) |
+| **Real-world skill kept** | How to be near a horse safely + read her body language | Same — plus deeper synonym vocabulary |
+| **Book** | *Tribal Cowboy Pony, What Do You See?* | *Tribal Cowboy Pony, What Do You See?* |
 
 ---
 
@@ -271,7 +266,7 @@ The teacher reads the class a short Welcome Letter from the pony — the first P
 >
 > Here's something cool — next week I am going to **stomp out syllables with my hoof.** A syllable is a beat in a word. *Pon-y* is two beats. *And* is one beat. See if you can count the syllables in your own name before I get there.
 >
-> Don't forget Pony Breath. Try it at home when you want to feel calm.
+> Don't forget our 3 rules. Watch the animals around you and see what their bodies say.
 >
 > See you Wednesday!
 >
@@ -290,7 +285,7 @@ The teacher reads the class a short Welcome Letter from the pony — the first P
 >
 > Next week I will come back. I will **stomp** with my hoof. You can count my stomps.
 >
-> Keep doing Pony Breath!
+> Keep practicing our 3 rules! Watch the animals around you and see what their bodies say.
 >
 > — Your pony friend 🐴
 
@@ -308,24 +303,24 @@ This is the week the pony earns her paycheck. She paws her hoof to count syllabl
 | Time | Activity |
 |---|---|
 | 0:00–0:03 | Hello + visual schedule recap. |
-| 0:03–0:05 | **Pony Breath.** |
+| 0:03–0:05 | **Rules + body language recap.** *"3 rules — who remembers? Now look at the pony — what do her ears say today?"* |
 | 0:05–0:10 | **The pony's colors + new vocab.** Color matching game. Kids hold up colored cards: **brown** like her mane, **white** like her star. Vocabulary: **brown, white, hay, friend, gentle.** Kids walk to the matching color spot in the room. |
 | 0:10–0:17 | **🐴 SYLLABLE PAWS — Pre-K version.** Stacie names a familiar animal. Class says it together. *"How many beats? Let's ask the pony."* The pony paws — *clop, clop* — and kids count out loud with each paw. Words: **goat** (1), **pon-y** (2), **but-ter-fly** (3), **kit-ten** (2). Then kids stomp the syllables of their own name. |
 | 0:17–0:22 | **Read-aloud.** Short picture book about friendship. When "friend" is read, kids touch a neighbor's shoulder. |
-| 0:22–0:25 | **Pony Breath** + new sticker for the book + goodbye. |
+| 0:22–0:25 | Body language quick check + new sticker for the book + goodbye. |
 
 ## K-2 Track — 45 minutes
 
 | Time | Activity |
 |---|---|
 | 0:00–0:05 | Hello + recap. *"Last week we learned 5 sight words. Who remembers one?"* (rapid-fire, no shaming.) |
-| 0:05–0:07 | **Pony Breath.** |
+| 0:05–0:07 | **Rules + body language recap.** *"Three rules. Who can name them? Now look at the pony — what do her ears say right now?"* |
 | 0:07–0:17 | **🐴 SYLLABLE PAWS — K-2 version. THE CENTERPIECE.** Stacie holds up a card. Class reads the word together. *"How many syllables? Ask the pony."* Stacie cues the pony — *clop, clop* — kids count out loud as she stomps. Kids then clap the syllables themselves to confirm. Word deck across the visit: **horse** (1), **pon-y** (2), **sad-dle** (2), **but-ter-fly** (3), **Ap-pa-loo-sa** (4 — sets up the history mini-lesson). |
 | 0:17–0:25 | **Mini-history lesson — "How Horses Got Here."** Brief, standing. Horses came from Spain on ships hundreds of years ago. When they got off the boats they spread north, all the way to Idaho. The Nez Perce became famous for breeding the **Appaloosa** horse. Show a small printed regional map. Kids point to where they live. Tie back to the syllable lesson: Appaloosa is four syllables — kids stomp it together. |
-| 0:25–0:26 | **Pony Breath.** |
+| 0:25–0:26 | **Whoa Partners reset.** Quick Pony Ears moment to settle before sight words. |
 | 0:26–0:36 | **Sight word relay.** New words: **and, see, can, like, my.** Same relay style as Visit 1. Each kid says their word in a sentence using their own name (*"My dog is brown"*). Movement + sentence-building. |
 | 0:36–0:43 | **Read-aloud.** *The Girl Who Loved Wild Horses* (Paul Goble) — Caldecott classic, the one Native-themed book in the rotation. Kids draw a favorite image in their Pony Passport while listening. |
-| 0:43–0:45 | **Pony Breath** + tease. *"Next week — YOU read to ME. Bring a book you love."* |
+| 0:43–0:45 | Body language check + tease. *"Next week — YOU read to ME. Bring a book you love."* |
 
 ## Literacy lesson summary
 
@@ -364,7 +359,7 @@ This is the week the pony earns her paycheck. She paws her hoof to count syllabl
 >
 > I see what I did there. I sneaked in some old words too. You are smarter than me.
 >
-> Don't forget Pony Breath if you feel nervous about reading next week. You can do it.
+> If you feel nervous about reading next week, remember — the pony doesn't judge anyone. She just listens.
 >
 > See you in a week!
 >
@@ -381,7 +376,7 @@ This is the week the pony earns her paycheck. She paws her hoof to count syllabl
 >
 > Next week I will show you what **kind** looks like. I will show you what **share** looks like.
 >
-> Keep doing Pony Breath!
+> Keep practicing our 3 rules! Watch the animals around you and see what their bodies say.
 >
 > — Your pony friend 🐴
 
@@ -399,23 +394,23 @@ This is the centerpiece of the entire Sprint for K-2 — and the most documented
 | Time | Activity |
 |---|---|
 | 0:00–0:03 | Hello + schedule. |
-| 0:03–0:05 | **Pony Breath.** |
+| 0:03–0:05 | **Rules + body language recap.** *"3 rules — who remembers? Now look at the pony — what do her ears say today?"* |
 | 0:05–0:12 | **Animal friendship.** Show photos of the pony with her real-life friends at the ranch — other ponies, a goat, a barn cat. Vocabulary: **share, kind, help, listen, breathe.** Kids act out each word with their body. **Syllable paw reinforcement:** the pony stomps the syllables of each friend's name. |
 | 0:12–0:18 | **Read-aloud about friendship.** Embedded motions: when "friend" is said, kids touch a neighbor's shoulder. |
 | 0:18–0:22 | **Draw your best friend** in the Pony Post sticker book. |
-| 0:22–0:25 | **Pony Breath** + sticker + goodbye. |
+| 0:22–0:25 | Sticker + body language quick check + goodbye. |
 
 ## K-2 Track — 45 minutes — "Read to the Pony"
 
 | Time | Activity |
 |---|---|
 | 0:00–0:05 | Hello + *"Who brought a book?"* High-energy welcome. Acknowledge every kid who brought one. |
-| 0:05–0:07 | **Pony Breath.** Important reset before the big activity. |
+| 0:05–0:07 | **Whoa Partners + body language check.** Important reset before the big activity. Look at the pony — what do her ears say? Is she ready to listen to you read? |
 | 0:07–0:13 | **Sight word warm-up (all 15 words so far) with syllable check.** Quick relay. New words this visit: **he, she, we, said, go.** Add them to the floor. Pony stomps syllables on a few of them as confirmation. |
-| 0:13–0:15 | **Pony Breath** + setup. Set up the reading stool next to the pony. Explain: *"You will read for 30–60 seconds. You can show her the pictures. You can stop and start. The pony decides if she listens. Your job is to read like she might."* |
+| 0:13–0:15 | **Whoa Partners + setup.** Set up the reading stool next to the pony. Explain: *"You will read for 30–60 seconds. You can show her the pictures. You can stop and start. The pony decides if she listens. Your job is to read like she might. Approach her from the side, remember."* |
 | 0:15–0:38 | **READ TO THE PONY.** Each kid 30–60 sec at the reading spot. Other kids on spot markers — active waiting: silently read along in their own book OR draw in their Pony Passport. Two parallel pony-side stations for classes over 20. |
 | 0:38–0:42 | **Comprehension check.** Stacie speaks "as" the pony: *"Did anyone hear a word they didn't know?"* Group sounds it out together. |
-| 0:42–0:44 | **Pony Breath** + tease. *"Next week is our last visit. Listen for the surprise in your next Pony Post letter."* |
+| 0:42–0:44 | Body language check + tease. *"Next week is our last visit. Listen for the surprise in your next Pony Post letter."* |
 | 0:44–0:45 | Goodbye. |
 
 ### Pro tip for the read-to-pony
@@ -470,7 +465,7 @@ If you let the read-aloud run, it will eat the whole visit. Use a quiet timer (a
 >
 > Next week she is coming to meet you.
 >
-> Get ready to feel **big** feelings. Use Pony Breath when you do!
+> She's BIG, but she follows the same 3 rules — inside voice, walk don't run, tell her you're there.
 >
 > — Your pony friend 🐴
 
@@ -493,12 +488,12 @@ This is your photo deliverable. Photo releases signed in advance.
 |---|---|
 | Arrival | Class arrives by bus. Greet at the gate. Quiet walking tour to the barn. |
 | 15 min | Tour of the farm. Meet the pony + Abby the Clydesdale, see the wagon, the tack room, where the horses sleep. |
-| 5 min | **Pony Breath at the barn** — first time outdoors. Powerful. |
+| 5 min | **Rules + body language refresher at the barn** — first time around BOTH a pony AND a Clydesdale. Compare Abby's body language with the pony's. |
 | 20 min | **Wagon ride** pulled by Abby. Groups of 6–8. Sight words posted along the route — kids spot and call them out as the wagon passes. The pony stomps syllables on a few words when the wagon stops. |
 | 15 min | **Final read-aloud at the farm.** Kids on hay bales, pony + Abby nearby. *Misty of Chincoteague* (Marguerite Henry) excerpt — the wild pony swim chapter. Cap at 10 min. |
 | 15 min | **20-Word Celebration.** All 20 sight words on cards in a loop. Kids who can read all 20 get the **Reading Star** stamp. Kids who read fewer get the **Pony Friend** stamp. Every kid gets a stamp. |
 | 10 min | **Photo session.** 1 min per kid with the pony or Abby. Tribal Cowboy branded backdrop. |
-| 5 min | Goodbye + take-home gifts. Final Pony Breath together. |
+| 5 min | Goodbye + take-home gifts. The pony bows (Trick #5). Wave goodbye. |
 
 ### Pre-K Field Trip (60–90 min)
 
@@ -506,7 +501,7 @@ This is your photo deliverable. Photo releases signed in advance.
 |---|---|
 | Arrival | Greet at gate. Small group walk. |
 | 10 min | Tour of the barn — pony, Abby, hay. |
-| 3 min | Pony Breath at the barn. |
+| 3 min | Rules + body language refresher at the barn. |
 | 10 min | **Meet Abby up close** (outdoor only). Kids touch her hoof (the size of a dinner plate). Vocab: **big, small, together.** Pony stomps the syllables of *big-gest* (2) and *Ab-by* (2) — compare/contrast with **pon-y** (2). |
 | 10 min | Final read-aloud on hay bales. |
 | 10 min | Photo session. |
@@ -521,12 +516,12 @@ If field trip isn't approved (cost, transport, district policy), Abby comes to t
 | Time | Activity |
 |---|---|
 | 0:00–0:05 | Arrival + welcome — outdoor, weather permitting. |
-| 0:05–0:07 | Pony Breath. |
+| 0:05–0:07 | Rules + body language refresher. |
 | 0:07–0:17 | **Meet Abby.** Outdoor only — Clydesdale doesn't come indoors. Kids see scale. Vocab: **Clydesdale, draft horse.** Her hooves are the size of dinner plates. She eats 25 pounds of hay a day. |
 | 0:17–0:27 | **20-Word Celebration.** All 20 sight words on cards. Each kid reads at least one. Pony stomps syllables on a few. Stamps awarded (Reading Star or Pony Friend). |
 | 0:27–0:35 | Wagon ride if space allows, or Abby walking demonstration. |
 | 0:35–0:42 | Final read-aloud — *Misty of Chincoteague* excerpt. Outdoor if weather allows. |
-| 0:42–0:44 | Pony Breath + goodbye. |
+| 0:42–0:44 | Body language check + goodbye. |
 | 0:44–0:45 | Hand out gifts: Reader Certificate, photo magnet, Take-Home One-Pager. |
 
 Pre-K Option B is the same as Option A condensed to 30 min.
@@ -573,7 +568,7 @@ Two jobs:
 
 ## Demo Lesson Plan
 
-**Use the Visit 1 lesson plan above** — Pre-K or K-2 depending on the school. Same flow, same Pony Breath, same sight words (K-2 only), same opening, **plus a sneak preview of the syllable paw** ("next time, the pony stomps out syllables — want to see one?"). The pony stomps just one or two words to whet the appetite.
+**Use the Visit 1 lesson plan above** — Pre-K or K-2 depending on the school. Same flow, same 3 Big Rules, same Pony Vision lesson, same Pony Looks + Synonyms, same sight words (K-2 only), same opening, **plus a sneak preview of the syllable paw** ("next time, the pony stomps out syllables — want to see one?"). The pony stomps just one or two words to whet the appetite.
 
 Three small differences from Sprint Visit 1:
 
@@ -639,7 +634,7 @@ Plain paper, 8.5×11, double-sided.
 
 > **Dear families,**
 >
-> Your child just finished **The Pony Post** — a 4-week classroom reading program from Tribal Cowboy. Over four weeks, your child met a pony, learned [K-2: 20 sight words / Pre-K: 20 new words], counted syllables with a real horse's hooves, practiced a calming breath called Pony Breath, heard four read-aloud books, and [K-2: read out loud to a real pony / Pre-K: built a friendship with a real pony]. They also got three real letters from the pony in the mail — one every week.
+> Your child just finished **The Pony Post** — a 4-week classroom reading program from Tribal Cowboy. Over four weeks, your child met a real pony, learned [K-2: 20 sight words / Pre-K: 20 new words], counted syllables with a real horse's hooves, learned how to safely approach a horse and read her body language, heard four read-aloud books, and [K-2: read out loud to a real pony / Pre-K: built a friendship with a real pony]. They also got three real letters from the pony in the mail — one every week.
 >
 > Tribal Cowboy is an equine business in Athol, Idaho. We bring ponies and Clydesdales to schools, libraries, and family events across North Idaho and Eastern Washington.
 >
@@ -664,8 +659,8 @@ Plain paper, 8.5×11, double-sided.
 > *Little Black, A Pony* (Walter Farley)
 > *Misty of Chincoteague* (Marguerite Henry)
 >
-> **Try Pony Breath at home:**
-> When your child needs to calm down, ask them to show you Pony Breath. They'll know what to do. It's a slow breath in, a slow breath out, three times. The pony taught it to them.
+> **Ask your child to teach YOU about horses:**
+> Ask them the 3 Big Rules (inside voice, walk don't run, tell the pony you're there). Ask them what HAPPY ears look like vs. GRUMPY ears. Ask them what a pony's swishing tail means. Your child has learned real horse-safety knowledge that will keep them safe around any animal for the rest of their life.
 >
 > **This program was made free for your school thanks to [SPONSOR NAME].**
 >
@@ -708,7 +703,7 @@ A few things from my end:
    Between visits, the pony mails the class real letters. Both
    tracks are 100% free to schools — funded by community sponsors.
    The 4-week structure produces measurable learning outcomes,
-   includes a Pony Breath calming routine kids carry home, and
+   teaches real animal-safety knowledge kids keep for life, and
    ends with a visit from our Clydesdale, Abby.
 
    If you'd ever want to talk about hosting [another] Sprint at
@@ -746,7 +741,7 @@ Every visit is potential case-study material. Capture deliberately.
 **Video clips** (30–60 sec each):
 - A kid asking the pony a question (audio only, no faces)
 - A teacher saying one sentence about how the visit went
-- A Pony Breath moment (wide shot, no faces)
+- A Whoa Partners + Pony Ears moment (wide shot, no faces)
 - **The pony stomping out syllables** — this clip will go viral on Instagram
 
 **Notes** (in the truck right after):
@@ -774,10 +769,10 @@ Share this with classroom teachers a week before Visit 1.
 **During the visit:**
 - It's fine for a student to look at the schedule board mid-activity. Don't redirect.
 - It's fine for a student to choose not to touch the pony. They participate by watching.
-- Pony Breath is the universal opt-out — any kid can call for one.
+- The Whoa Partners / Pony Ears callback is the universal reset — Stacie uses it whenever the room needs to quiet.
 
 **After the visit:**
-- Pony Breath is theirs to keep. Ask kids to show YOU how to do it for the rest of the year.
+- The body language knowledge is theirs to keep. Ask kids what the pony's ears or tail were saying during the visit.
 - The Pony Post letter arrives Monday. Reading it aloud as a class is part of the program.
 
 ---
@@ -805,7 +800,7 @@ If you see any of these: cut the session short, 30 min quiet, water, hay. Resche
 - **Learning gains:** sight word recognition (K-2) or vocabulary recognition (Pre-K) before/after
 - **Reading minutes generated:** ~60+ min of one-on-one literacy contact per K-2 kid across the 4 visits
 - **Syllable awareness:** teacher reports — % of class that can count syllables in their own name by Visit 4
-- **Pony Breath use at home:** teacher follow-up at 4 weeks post-Sprint — how often kids ask to do it on their own
+- **Animal-safety knowledge retention:** teacher follow-up at 4 weeks post-Sprint — what % of kids can name the 3 Big Rules and 3 body language signs from memory
 - **Teacher testimonial** (one paragraph, signed)
 - **3 parent testimonials** (opt-in via the Take-Home One-Pager)
 - **Photo documentation:** wide shots, teacher with pony, materials in use, Visit 4 farm photos
@@ -887,7 +882,7 @@ The default rotation is 3 mainstream classics + 1 Native-authored Caldecott. Rot
 The Pony Post works because **five things happen at the same time:**
 
 1. **Kids learn** — 20 vocabulary words, 20 sight words, syllable counting, reading fluency, comprehension
-2. **Kids calm down** — Pony Breath becomes a habit they keep
+2. **Kids learn real animal safety** — reading a pony's body language is a skill they keep for life
 3. **Active learners succeed** — short blocks, movement, sensory input, predictability, choice
 4. **Kids feel** — the pony is a friend, the letters are real, the wait between visits builds anticipation
 5. **The program is sellable** — 5-pillar literacy alignment, Idaho ELA standards, measurable outcomes, $1,500–$2,000 per sponsor, photo-rich case studies
@@ -895,6 +890,6 @@ The Pony Post works because **five things happen at the same time:**
 The signature moves are:
 - **The Pony Post letters** — three real envelopes between four real visits. Almost free to make. Multiplies emotional bond by ten.
 - **The syllable paw** — the pony stomps out syllables while kids count. The thing only this program does.
-- **The Pony Breath** — the calming routine kids carry into every classroom and every quiet moment for the rest of their lives.
+- **The 3 Big Rules + Pony Looks lesson** — real horse-safety knowledge kids carry around any animal, any farm, any neighbor's pasture, for the rest of their lives.
 
 Build those three things well and the rest of the program supports itself.
