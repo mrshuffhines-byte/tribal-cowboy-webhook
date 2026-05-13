@@ -18,7 +18,7 @@
 
 **Dear Families,**
 
-Today your child met three horses — **a pony, a horse, and a Clydesdale named Abby.** They came to Hayden Canyon Charter all the way from a ranch in Athol, Idaho called Tribal Cowboy.
+Today your child met **a pony, a horse, and Clydesdales.** They came to Hayden Canyon Charter all the way from a ranch in Athol, Idaho called Tribal Cowboy.
 
 Here's what your child learned today:
 
@@ -84,7 +84,7 @@ The Pony Post is a **4-week classroom reading program** built around real ponies
 - The 3 Big Rules + Pony Looks + 3 Warning Signs (full body language curriculum)
 - A custom book delivered by the pony at Visit 2
 
-**Every Sprint ends with a Big Day** — either a field trip to the ranch in Athol or Abby the Clydesdale visiting the school grounds.
+**Every Sprint ends with a Big Day** — either a field trip to the ranch in Athol or the Clydesdales visiting the school grounds.
 
 ---
 
