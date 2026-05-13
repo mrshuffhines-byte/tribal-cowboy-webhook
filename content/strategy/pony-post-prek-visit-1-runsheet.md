@@ -198,7 +198,17 @@ This is the show. Hold this page in your hand.
 - Sit on their spot markers
 - Watch you
 
-**Backup:** If kids are over-excited and won't settle, skip the schedule explanation and jump straight to Pony Breath. The board can be referenced later. Regulation first, content second.
+**Backup:** If kids are over-excited and won't settle, skip the schedule explanation and jump straight to **Whoa, partners! / Pony Ears** (see next block). Calm first, content second.
+
+**Also during these first 3 minutes — teach Pony Ears:**
+
+> *"One more thing before we start. Sometimes the room gets loud. When I say 'WHOA, PARTNERS!' — you freeze, and you put on your PONY EARS like this. (Cup both hands behind your ears.) That tells me you're ready to listen, just like a pony listens. Let's try it. WHOA, PARTNERS!"*
+>
+> Kids freeze + cup hands behind ears.
+>
+> *"Perfect. Pony Ears. We'll use it any time it gets noisy."*
+
+This costs 20 seconds. Pays back the whole rest of the visit.
 
 ---
 
@@ -241,7 +251,7 @@ This is the show. Hold this page in your hand.
 ## 0:09–0:11 — PONY BREATH #1 (First Teach) (2 min)
 
 **You say:**
-> *"Now I'm going to teach you the most important thing all year. It's called PONY BREATH. You can use it any time. At school. At home. When you have big feelings.*
+> *"Now I'm going to teach you the most important thing all year. It's called PONY BREATH. You can use it any time. At school. At home. Anytime you want to calm down with the pony.*
 >
 > *Put one hand on your belly like this. (Demonstrate.)*
 >
@@ -547,7 +557,7 @@ In your notebook or CRM:
 
 ```
 TIME    BLOCK                       KEY MOMENT
-0:00    Hello + schedule            Show the mailbag
+0:00    Hello + schedule + ears     Teach: "Whoa, Partners!" + Pony Ears
 0:03    Body parts                  hoof, mane, tail, eye, SOFT
 0:09    Pony Breath #1              First teach. Hand on belly.
 0:11    Read-aloud                  Brown Bear (substitute pony)
@@ -557,7 +567,9 @@ TIME    BLOCK                       KEY MOMENT
 0:25    OUT
 
 SAY THE WORD 5 TIMES: SOFT
-TEACH THE TOOL: PONY BREATH
+TEACH PONY BREATH (the calming activity)
+TEACH PONY EARS (the quiet-down signal)
+QUIET-DOWN CALL: "Whoa, partners!" → kids freeze + Pony Ears
 DON'T FORGET: Hand teacher framed photo on arrival
 THE FOLLOW-UP EMAIL GOES OUT BEFORE 8PM TONIGHT
 ```

@@ -9,7 +9,15 @@
 **Duration:** 4 weekly classroom visits + 3 between-visit pen-pal letters ("Pony Post deliveries") + 1 final Clydesdale reveal
 **Cost to school:** Free
 **Cost to sponsor:** $2,000 per K-2 Sprint, $1,500 per Pre-K Sprint
-**Designed for:** Neurotypical kids AND kids with ADHD, anxiety, sensory differences, and emerging readers — by design, not by accommodation.
+**Designed for:** Every kid in the room — including active learners, kids who need variety, and emerging readers.
+
+---
+
+## Important — About the Program Category
+
+The Pony Post is an **Equine-Assisted Learning (EAL) program** — an educational literacy program built around a calm pony. It is **NOT** therapy, counseling, mental health treatment, or a substitute for any of those services. Activities support reading, vocabulary, syllable awareness, and classroom calm. They do not diagnose or treat any condition. Idaho regulates the practice of counseling, therapy, and psychology — The Pony Post stays firmly on the educational side of that line.
+
+When describing the program: it's an **educational reading program with a calming routine built in.** When describing Pony Breath: it's a **calming activity kids do with the pony.** Never use the words *therapy*, *therapeutic*, *treatment*, *clinical*, or *regulation* in client-facing materials.
 
 ---
 
@@ -20,7 +28,7 @@ The Pony Post is a 4-week classroom literacy program where a real pony comes to 
 Three things happen at once across the four weeks:
 
 1. **Kids learn** — sight words (K-2) or vocabulary (Pre-K), syllable counting, fluency, comprehension
-2. **Kids regulate** — every visit teaches Pony Breath, a co-regulation tool kids carry forever
+2. **Kids calm down** — every visit teaches Pony Breath, a calming routine kids carry home
 3. **Kids feel** — the pony is real, the letters are real, the relationship is real
 
 The letters are the program's signature mechanic. They cost almost nothing to produce and they multiply the emotional bond by ten. The first time a teacher hands a Pony Post letter to a class and watches the kids' faces, you'll know.
@@ -47,9 +55,9 @@ The Pony Post hits all five pillars of reading instruction from the National Rea
 
 ---
 
-## What Makes The Pony Post ADHD-Friendly by Design
+## How The Pony Post Works for Every Kid in the Room
 
-Every visit follows the same predictable structure because ADHD brains thrive on predictability. Every activity is short — under 7 minutes for Pre-K, under 10 for K-2. Every block has built-in movement, sensory input, and choice. Every visit has the same opening ritual, the same closing ritual, and the same Pony Breath reset.
+Every visit follows the same predictable structure because active learners thrive on predictability. Every activity is short — under 7 minutes for Pre-K, under 10 for K-2. Every block has built-in movement, sensory input, and choice. Every visit has the same opening ritual, the same closing ritual, and the same Pony Breath calming moment.
 
 ### The 9 design principles
 
@@ -66,9 +74,9 @@ Every visit follows the same predictable structure because ADHD brains thrive on
 ### Why the pony is the lesson
 
 A horse provides:
-- A slow, steady breath rhythm kids can match (co-regulation)
+- A slow, steady breath rhythm kids can match
 - Warm sensory input
-- A non-judging audience
+- A non-judging audience for reading aloud
 - A focal point that pulls scattered attention into one room
 
 The pony doesn't need to do tricks. She needs to **stand calmly, accept gentle contact, and paw on cue.** That's it. Her calmness is the lesson.
@@ -127,17 +135,33 @@ Bring a small felt board with 5–6 laminated picture cards. Move a clip down th
 **K-2 board:**
 [👋 Hello] → [🐴 Pony Body] → [🫁 Pony Breath] → [📚 Words] → [📖 Story] → [👋 Goodbye]
 
-Many ADHD kids will walk to the board mid-activity. Don't redirect.
+Many kids will walk to the board mid-activity. Don't redirect.
 
 ---
 
-## The Pony Breath Ritual
+## The Pony Breath Calming Activity
 
 Stacie says: *"Pony Breath."*
 
 Kids place a hand on their belly, look at the pony, match her breath. One slow breath in. One slow breath out. Three rounds. Quiet.
 
 30–45 seconds. Used at least twice per visit and any time energy spikes. **Teach explicitly at Visit 1.** By Visit 4, kids do it on their own.
+
+---
+
+## Pony Ears — The Quiet-Down Callback
+
+When the room gets too loud or too excited, Stacie has a two-step reset:
+
+**Step 1 — Quiet-down call:**
+- **Stacie:** *"Whoa, partners!"*
+- **Kids:** Freeze + cup both hands behind their ears (**Pony Ears**) — listening just like a horse listens
+
+**Step 2 — Calming activity:**
+- **Stacie:** *"Pony Breath."*
+- Whole class breathes with the pony, three rounds.
+
+Total flow: 40 seconds. Works every time. Teach it the first 5 minutes of Visit 1 along with the visual schedule.
 
 ---
 
@@ -156,7 +180,7 @@ The teacher reads the class a short Welcome Letter from the pony — the first P
 >
 > I am a pony. My owner is Stacie. We live at a place called Tribal Cowboy in Athol, Idaho.
 >
-> When I come, I will teach you a special breath called Pony Breath. You can use it any time — at school, at home, when you feel big feelings.
+> When I come, I will teach you a special breath called Pony Breath. You can use it any time — at school, at home, anytime you want to slow down and feel calm.
 >
 > See you soon!
 >
@@ -226,7 +250,7 @@ The teacher reads the class a short Welcome Letter from the pony — the first P
 >
 > Here's something cool — next week I am going to **stomp out syllables with my hoof.** A syllable is a beat in a word. *Pon-y* is two beats. *And* is one beat. See if you can count the syllables in your own name before I get there.
 >
-> Don't forget Pony Breath. Try it at home when you have big feelings.
+> Don't forget Pony Breath. Try it at home when you want to feel calm.
 >
 > See you Wednesday!
 >
@@ -375,7 +399,7 @@ This is the centerpiece of the entire Sprint for K-2 — and the most documented
 
 ### Pro tip for the read-to-pony
 
-If you let the read-aloud run, it will eat the whole visit. Use a quiet timer (a small bell). Each kid gets the same beat. Time-bounded fairness matters for ADHD kids who fixate on "did she get longer than me?"
+If you let the read-aloud run, it will eat the whole visit. Use a quiet timer (a small bell). Each kid gets the same beat. Time-bounded fairness matters for kids who get stuck on "did she get longer than me?"
 
 ## Literacy lesson summary
 
@@ -620,9 +644,11 @@ Plain paper, 8.5×11, double-sided.
 > *Misty of Chincoteague* (Marguerite Henry)
 >
 > **Try Pony Breath at home:**
-> When your child has big feelings, ask them to show you Pony Breath. They'll know what to do. It's a slow breath in, a slow breath out, three times. The pony taught it to them.
+> When your child needs to calm down, ask them to show you Pony Breath. They'll know what to do. It's a slow breath in, a slow breath out, three times. The pony taught it to them.
 >
 > **This program was made free for your school thanks to [SPONSOR NAME].**
+>
+> *The Pony Post is an educational literacy program. It is not therapy or counseling. Activities are designed to support reading, vocabulary, and classroom calm.*
 >
 > [Photo of the pony — no kid faces]
 > [Tribal Cowboy logo]
@@ -661,7 +687,7 @@ A few things from my end:
    Between visits, the pony mails the class real letters. Both
    tracks are 100% free to schools — funded by community sponsors.
    The 4-week structure produces measurable learning outcomes,
-   includes a Pony Breath regulation tool kids carry forever, and
+   includes a Pony Breath calming routine kids carry home, and
    ends with a visit from our Clydesdale, Abby.
 
    If you'd ever want to talk about hosting [another] Sprint at
@@ -715,7 +741,7 @@ Every visit is potential case-study material. Capture deliberately.
 
 ---
 
-# ADHD Accommodation Notes for Teachers
+# Notes for Teachers — Active Learners and Sensitive Kids
 
 Share this with classroom teachers a week before Visit 1.
 
@@ -758,7 +784,7 @@ If you see any of these: cut the session short, 30 min quiet, water, hay. Resche
 - **Learning gains:** sight word recognition (K-2) or vocabulary recognition (Pre-K) before/after
 - **Reading minutes generated:** ~60+ min of one-on-one literacy contact per K-2 kid across the 4 visits
 - **Syllable awareness:** teacher reports — % of class that can count syllables in their own name by Visit 4
-- **Pony Breath retention:** teacher follow-up at 4 weeks post-Sprint — how often kids use it on their own
+- **Pony Breath use at home:** teacher follow-up at 4 weeks post-Sprint — how often kids ask to do it on their own
 - **Teacher testimonial** (one paragraph, signed)
 - **3 parent testimonials** (opt-in via the Take-Home One-Pager)
 - **Photo documentation:** wide shots, teacher with pony, materials in use, Visit 4 farm photos
@@ -840,14 +866,14 @@ The default rotation is 3 mainstream classics + 1 Native-authored Caldecott. Rot
 The Pony Post works because **five things happen at the same time:**
 
 1. **Kids learn** — 20 vocabulary words, 20 sight words, syllable counting, reading fluency, comprehension
-2. **Kids regulate** — Pony Breath becomes a self-administered tool they keep forever
-3. **ADHD brains succeed** — short blocks, movement, sensory input, predictability, choice
+2. **Kids calm down** — Pony Breath becomes a habit they keep
+3. **Active learners succeed** — short blocks, movement, sensory input, predictability, choice
 4. **Kids feel** — the pony is a friend, the letters are real, the wait between visits builds anticipation
 5. **The program is sellable** — 5-pillar literacy alignment, Idaho ELA standards, measurable outcomes, $1,500–$2,000 per sponsor, photo-rich case studies
 
 The signature moves are:
 - **The Pony Post letters** — three real envelopes between four real visits. Almost free to make. Multiplies emotional bond by ten.
 - **The syllable paw** — the pony stomps out syllables while kids count. The thing only this program does.
-- **The Pony Breath** — the regulation tool kids carry into every classroom, every test, every hard moment for the rest of their lives.
+- **The Pony Breath** — the calming routine kids carry into every classroom and every quiet moment for the rest of their lives.
 
 Build those three things well and the rest of the program supports itself.

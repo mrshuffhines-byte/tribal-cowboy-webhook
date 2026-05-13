@@ -13,6 +13,14 @@
 
 ---
 
+## Important — About the Program Category
+
+The Pony Post Pre-K Sprint is an **Equine-Assisted Learning (EAL) program** — an educational literacy program built around a calm pony. It is **NOT** therapy, counseling, mental health treatment, or a substitute for any of those services. Activities support reading, vocabulary, syllable awareness, and classroom calm. They do not diagnose or treat any condition. Idaho regulates the practice of counseling, therapy, and psychology — The Pony Post stays firmly on the educational side of that line.
+
+When describing the program: it's an **educational reading program with a calming routine built in.** When describing Pony Breath: it's a **calming activity kids do with the pony.** Never use the words *therapy*, *therapeutic*, *treatment*, *clinical*, or *regulation* in client-facing materials.
+
+---
+
 ## What's Different About the Pre-K Sprint
 
 Pre-K kids (3–5) don't need sight words yet. They need:
@@ -23,7 +31,7 @@ Pre-K kids (3–5) don't need sight words yet. They need:
 - **Pre-phonological awareness** — rhyming, syllables, beginning sounds
 - **Letter recognition** — the very first letter of their name
 - **Pre-writing** — drawing, mark-making
-- **Self-regulation** — a tool for big feelings (Pony Breath)
+- **A calming routine** — a way to slow down with the pony (Pony Breath)
 
 This Sprint hits all seven. Without ever asking a 4-year-old to decode a CVC word.
 
@@ -39,7 +47,7 @@ This Sprint hits all seven. Without ever asking a 4-year-old to decode a CVC wor
 |---|---|---|
 | Week 1 | hoof, mane, tail, eye, soft | The pony's body |
 | Week 2 | brown, white, hay, friend, gentle | Colors and care |
-| Week 3 | share, kind, help, listen, breathe | Friendship and self-regulation |
+| Week 3 | share, kind, help, listen, breathe | Friendship and calming |
 | Week 4 | big, small, together, ranch, goodbye | Compare, contrast, closure |
 
 ---
@@ -89,13 +97,29 @@ Kids check the board between activities. Many will walk up to look mid-visit. Do
 
 ---
 
-# The Pony Breath Ritual
+# The Pony Breath Calming Activity
 
 Stacie says: *"Pony Breath."*
 
 Kids put a hand on their belly, look at the pony, match her breath. One slow breath in. One slow breath out. Three rounds.
 
 Used at least twice per visit. **Teach explicitly at Visit 1.** By Visit 4, kids do it on their own.
+
+---
+
+# Pony Ears — The Quiet-Down Callback
+
+When the room gets too loud or too excited, Stacie has a two-step reset:
+
+**Step 1 — Quiet-down call:**
+- **Stacie:** *"Whoa, partners!"*
+- **Kids:** Freeze + cup both hands behind their ears (**Pony Ears**) — listening just like a horse listens
+
+**Step 2 — Calming activity:**
+- **Stacie:** *"Pony Breath."*
+- Whole class breathes with the pony, three rounds.
+
+Total flow: 40 seconds. Works every time. Teach it the first 5 minutes of Visit 1 along with the visual schedule.
 
 ---
 
@@ -139,7 +163,7 @@ The teacher reads the class a short Welcome Letter from the pony.
 - **Print awareness:** Stacie holds the book up showing the cover, points at the title, turns pages left to right
 - **Listening comprehension:** Kids follow the rhyme of *Brown Bear*
 - **Phonological awareness (intro):** The rhyming pattern of *Brown Bear* exposes kids to rhyme
-- **Self-regulation:** Pony Breath introduced
+- **Calming routine:** Pony Breath introduced
 
 ## Materials Checklist — Visit 1
 
@@ -534,9 +558,11 @@ Plain paper, 8.5×11, double-sided.
 > - Re-read of *The Pony Goes to School* (Visit 4)
 >
 > **Try Pony Breath at home:**
-> When your child has big feelings, ask them to show you Pony Breath. They'll know what to do. Slow breath in, slow breath out, three times. The pony taught them.
+> When your child needs to calm down, ask them to show you Pony Breath. They'll know what to do. Slow breath in, slow breath out, three times. The pony taught them.
 >
 > **This program was made free for your school thanks to [SPONSOR NAME].**
+>
+> *The Pony Post is an educational literacy program. It is not therapy or counseling. Activities are designed to support reading, vocabulary, and classroom calm.*
 >
 > [Photo of the pony in costume — no kid faces]
 > [Tribal Cowboy logo]
@@ -631,7 +657,7 @@ The Pre-K Sprint works because it does five things at once:
 
 1. **Kids build vocabulary** — 20 new words, all anchored to a real animal they touched
 2. **Kids build pre-reading skills** — print awareness, rhyming, syllables, first letters
-3. **Kids regulate emotions** — Pony Breath becomes theirs forever
+3. **Kids learn to calm down** — Pony Breath becomes a habit they keep
 4. **Kids own a book** — *The Pony Goes to School* lives on their shelf with the sponsor's logo on the back cover
 5. **The pony has a job** — costumes give her a character every visit, and the kids see her as a working animal with real work to do
 
