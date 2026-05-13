@@ -2,7 +2,7 @@
 ## Thursday — All Day Program with Pony + Horse + Clydesdales
 ### Tribal Cowboy — Stacie Hines
 
-**Animals:** 1 pony + 1 horse + 1 Clydesdale (Abby)
+**Animals:** 1 pony + 1 horse + Clydesdales
 **Total students:** ~325 across 9 sessions
 **Total day:** ~6 hours including setup, breaks, lunch, pack-up
 **Format:** Animals stay in ONE fixed location (the gym, outdoor covered area, or designated room). Classes rotate through.
@@ -78,7 +78,7 @@ Watch for stress signals on EACH animal:
 **Pick the RIGHT animals for this day:**
 - Pony: the calmest, most kid-loving one
 - Horse: same — chill, food-motivated, used to crowds
-- Clydesdale: Abby (or whichever Clyde is most patient) — must be okay with kids touching her hooves
+- Clydesdales: pick your calmest ones — must be okay with kids touching their hooves
 
 ---
 
@@ -88,7 +88,7 @@ This script works at every grade level. Adjust energy and vocabulary to the age 
 
 **(0:00–0:03 — 3 minutes)**
 
-> *"Hi everybody. I'm Stacie. I'm a horse person from a place called Tribal Cowboy in Athol. Today I brought THREE animals to meet you. This is [pony name] the pony. This is [horse name] the horse. And this — over here — is Abby, my Clydesdale. She's the biggest horse you'll ever see.*
+> *"Hi everybody. I'm Stacie. I'm a horse person from a place called Tribal Cowboy in Athol. Today I brought my pony, my horse, and my Clydesdales to meet you. The Clydesdales are the biggest horses you'll ever see.*
 >
 > *Before anybody does anything, we have THREE rules. Just three. Hold up three fingers like me.*
 >
@@ -124,11 +124,11 @@ That's 3 minutes. Same opening every session. Saves you from re-inventing each r
 | 0:00–0:03 | **Universal opening** (3 rules + Whoa Partners) |
 | 0:03–0:08 | **Pony body parts.** Point at the pony: hoof, mane, tail, eye. Kids touch their own body in each place. Count her hooves together (1, 2, 3, 4). |
 | 0:08–0:13 | **Meet the horse.** Walk over. *"This is a horse — bigger than a pony. Same body parts, just BIGGER. Watch her ears — what do they tell us?"* Quick happy ears / grumpy ears identification with the live horse. |
-| 0:13–0:20 | **Meet Abby the Clydesdale.** *"This is the biggest horse you'll ever see. Look at her HOOF — bigger than a dinner plate. She eats 25 pounds of hay every day."* Show her hoof up close (kids can touch the bottom of her hoof if they want). |
+| 0:13–0:20 | **Meet the Clydesdales.** *"These are the biggest horses you'll ever see. Look at their HOOVES — bigger than a dinner plate. Each one eats 25 pounds of hay every day."* Show a hoof up close (kids can touch the bottom of a hoof if they want — supervised). |
 | 0:20–0:23 | **Sensory wrap.** Each kid waves to one animal (their pick — pony, horse, or Clydesdale) and says GOODBYE. |
 | 0:23–0:25 | **Goodbye + sticker handout** at the door. |
 
-**Don't:** Don't let 5-year-olds approach Abby unsupervised. Helper holds her halter the whole time.
+**Don't:** Don't let 5-year-olds approach the Clydesdales unsupervised. Helper holds each halter the whole time.
 
 ---
 
