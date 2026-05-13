@@ -198,17 +198,29 @@ This is the show. Hold this page in your hand.
 - Sit on their spot markers
 - Watch you
 
-**Backup:** If kids are over-excited and won't settle, skip the schedule explanation and jump straight to **Whoa, partners! / Pony Ears** (see next block). Calm first, content second.
+**Backup:** If kids are over-excited and won't settle, skip the schedule explanation and jump straight to **Whoa, partners! / Pony Ears** (see below). Calm first, content second.
 
-**Also during these first 3 minutes — teach Pony Ears:**
+**Also during these first 3 minutes — teach the two callbacks:**
 
-> *"One more thing before we start. Sometimes the room gets loud. When I say 'WHOA, PARTNERS!' — you freeze, and you put on your PONY EARS like this. (Cup both hands behind your ears.) That tells me you're ready to listen, just like a pony listens. Let's try it. WHOA, PARTNERS!"*
+> *"Before we start, I want to teach you TWO things. Watch me.*
+>
+> *FIRST — when I say 'SADDLE UP!' — you say 'GIDDY UP!' and you stomp your feet three times like a pony pawing the ground, AND you make your PONY HOOVES like this. (Demonstrate: curl your fingers into fists, knuckles up, hold both hands close to your tummy.) That tells me you're ready to RIDE.*
+>
+> *Let's try it. SADDLE UP!"*
+>
+> Kids: *"GIDDY UP!"* + stomp 3 times + Pony Hooves at tummy.
+>
+> *"Yee-haw! That was great.*
+>
+> *SECOND — when I say 'WHOA, PARTNERS!' — you FREEZE, and you put on your PONY EARS like this. (Demonstrate: cup both hands behind your ears.) That tells me you're ready to LISTEN, just like a pony listens.*
+>
+> *Let's try it. WHOA, PARTNERS!"*
 >
 > Kids freeze + cup hands behind ears.
 >
-> *"Perfect. Pony Ears. We'll use it any time it gets noisy."*
+> *"Perfect. Saddle Up for go. Whoa Partners for listen. We'll use these all morning."*
 
-This costs 20 seconds. Pays back the whole rest of the visit.
+This costs about 60 seconds. Pays back the whole rest of the visit.
 
 ---
 
@@ -556,20 +568,21 @@ In your notebook or CRM:
 # One-Page Cheat Sheet (Print and Tape to the Truck Dashboard)
 
 ```
-TIME    BLOCK                       KEY MOMENT
-0:00    Hello + schedule + ears     Teach: "Whoa, Partners!" + Pony Ears
-0:03    Body parts                  hoof, mane, tail, eye, SOFT
-0:09    Pony Breath #1              First teach. Hand on belly.
-0:11    Read-aloud                  Brown Bear (substitute pony)
-0:18    Sensory touch               One at a time. 15 sec each.
+TIME    BLOCK                          KEY MOMENT
+0:00    Hello + schedule + callbacks   Teach SADDLE UP + WHOA PARTNERS
+0:03    Body parts                     hoof, mane, tail, eye, SOFT
+0:09    Pony Breath #1                 First teach. Hand on belly.
+0:11    Read-aloud                     Brown Bear (substitute pony)
+0:18    Sensory touch                  One at a time. 15 sec each.
 0:22    Pony Breath #2 + sticker
-0:24    Goodbye                     "A letter is coming Monday"
+0:24    Goodbye                        "A letter is coming Monday"
 0:25    OUT
 
 SAY THE WORD 5 TIMES: SOFT
 TEACH PONY BREATH (the calming activity)
-TEACH PONY EARS (the quiet-down signal)
-QUIET-DOWN CALL: "Whoa, partners!" → kids freeze + Pony Ears
+TEACH THE CALLBACKS:
+  ENERGY UP:  "Saddle up!"     → "Giddy up!" + stomp x3 + Pony Hooves
+  ENERGY DN:  "Whoa, partners!" → freeze + Pony Ears
 DON'T FORGET: Hand teacher framed photo on arrival
 THE FOLLOW-UP EMAIL GOES OUT BEFORE 8PM TONIGHT
 ```

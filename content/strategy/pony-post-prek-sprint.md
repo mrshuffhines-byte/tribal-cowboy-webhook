@@ -107,19 +107,40 @@ Used at least twice per visit. **Teach explicitly at Visit 1.** By Visit 4, kids
 
 ---
 
-# Pony Ears — The Quiet-Down Callback
+# Pony Ears + Pony Hooves — The Two Callbacks
 
-When the room gets too loud or too excited, Stacie has a two-step reset:
+Two body-action callbacks the Pre-K kids learn at Visit 1 and use across all four weeks.
 
-**Step 1 — Quiet-down call:**
+### 🐴 Energy UP — "Saddle up!" / Pony Hooves
+
+When you want to get their attention or start a new activity:
+
+- **Stacie:** *"Saddle up!"*
+- **Kids:** *"Giddy up!"* + **stomp feet 3 times** + show **Pony Hooves** (curl fingers into fists, knuckles up, hold both hands close to the tummy — like the pony's front hooves when she paws)
+
+Stomping ties to the syllable paw lesson. Pony Hooves keeps hands close to the body — no arms extended, no kids accidentally clobbering each other.
+
+### 🤫 Energy DOWN — "Whoa, partners!" / Pony Ears
+
+When the room gets too loud or too excited:
+
 - **Stacie:** *"Whoa, partners!"*
 - **Kids:** Freeze + cup both hands behind their ears (**Pony Ears**) — listening just like a horse listens
 
-**Step 2 — Calming activity:**
+Then immediately flow into the calming activity:
+
 - **Stacie:** *"Pony Breath."*
 - Whole class breathes with the pony, three rounds.
 
-Total flow: 40 seconds. Works every time. Teach it the first 5 minutes of Visit 1 along with the visual schedule.
+Total flow: 40 seconds. Works every time.
+
+### Teaching both at Visit 1
+
+Teach in the first 5 minutes of Visit 1, right after the visual schedule. About 30 seconds each:
+
+> *"Two things to learn before we start. When I say 'SADDLE UP,' you say 'GIDDY UP' and stomp your feet three times and make your Pony Hooves like this. (Demonstrate.) That tells me you're ready to ride.*
+>
+> *When I say 'WHOA, PARTNERS,' you freeze and put on your Pony Ears like this. (Demonstrate.) That tells me you're ready to listen."*
 
 ---
 
