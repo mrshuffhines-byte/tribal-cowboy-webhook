@@ -8,7 +8,7 @@
 **Duration:** 4 weekly classroom visits (30 min Pre-K / 45 min K) + 3 between-visit Pony Express letters
 **Group size:** Up to 18 students per visit
 **Cost to school:** Free
-**Cost to sponsor:** $1,750 per Sprint (includes 4 custom books per child — one per week)
+**Cost to sponsor:** $1,750 per Sprint — covers Stacie's time, travel, the pony's working day, insurance contribution, and all paper/craft materials. The sponsor's logo lives on the activity book each kid builds, on every Pony Post letter, and on the parent take-home one-pager.
 
 ---
 
@@ -32,7 +32,7 @@ The National Reading Panel synthesized 100,000+ studies and identified five evid
 |---|---|
 | **Phonemic & phonological awareness** | Week 2 (syllable counting with the pony's hoof) and Week 4 (rhyming refrains) |
 | **Phonics** | Week 1 (letters in their own name) and Week 3 (initial-sound matching) |
-| **Fluency** | Repeated, predictable text in every custom book — read aloud at the visit, re-read at home with parents |
+| **Fluency** | Repeated, predictable text in every weekly read-aloud — Stacie reads the same kind of patterned text every visit, kids chant the refrains, and the activity book's word list goes home for re-reading |
 | **Vocabulary** | 5 anchor words per week (20 total) + 4 weeks of themed content vocabulary |
 | **Comprehension** | Week 4 — kids retell the four-week story, identify characters, sequence events |
 
@@ -100,7 +100,7 @@ This Sprint maps to **two state frameworks**: the Idaho Early Learning eGuidelin
 | **Print Concepts & Conventions** | Every read-aloud — front cover, title, left-to-right tracking |
 | **Comprehension** | Week 4 retelling; dialogic prompts throughout |
 | **Early Writing** | Week 1 envelope; Week 3 miner's helmet name tag; Week 4 detective badge |
-| **Book Appreciation** | Each kid takes home 4 books over 4 weeks |
+| **Book Appreciation** | Each kid builds their own Pony Post Adventure Book across 4 weeks — they decorate, stamp, and write in it |
 
 ### Idaho Content Standards — Kindergarten ELA (selected anchor standards)
 
@@ -115,7 +115,7 @@ This Sprint maps to **two state frameworks**: the Idaho Early Learning eGuidelin
 | **K.RF.4** Read emergent-reader texts with purpose and understanding | Every visit — kids "read" along in their own copy |
 | **K.RL.1** Ask and answer questions about key details in a text | Dialogic prompts at every read-aloud |
 | **K.RL.2** Retell familiar stories, including key details | Week 4 retelling activity |
-| **K.RL.3** Identify characters, settings, and major events | Week 4 — characters across all 4 books |
+| **K.RL.3** Identify characters, settings, and major events | Week 4 — characters across all 4 read-aloud stories |
 | **K.W.2** Use a combination of drawing, dictating, and writing to compose informative texts | Pony Pals Sticker Book pages each week |
 | **K.SL.1.a** Follow agreed-upon rules for discussions | The 3 Big Rules + visual schedule |
 | **K.SL.2** Confirm understanding of a text read aloud | Dialogic questioning |
@@ -224,7 +224,7 @@ Happy ears, grumpy ears, calm eyes, scared eyes, quiet tail, mad tail. (See `pon
 
 **Materials:**
 - Pony in Pony Express Rider costume
-- *A Letter For You* — 1 reading copy + 18 take-home copies in the mailbag
+- *A Letter For You* — 1 oversized presentation copy (Stacie holds up; kids gather in semicircle to see)
 - 18 blank envelopes + crayons for name writing
 - Pony Pals Sticker Book starter pages
 - Week 1 stickers
@@ -232,7 +232,7 @@ Happy ears, grumpy ears, calm eyes, scared eyes, quiet tail, mad tail. (See `pon
 - Pony Looks flip cards (Card 1: HAPPY EARS reference)
 - Cleanup kit
 
-**Take-home this week:** *A Letter For You* book + Pony Pals Sticker Book Page 1
+**Take-home this week:** Pony Pals Adventure Book Page 1 (kid wrote their name + added Week 1 sticker)
 
 ---
 
@@ -272,15 +272,9 @@ Happy ears, grumpy ears, calm eyes, scared eyes, quiet tail, mad tail. (See `pon
 
 **Custom Book — *Tribal Cowboy Pony, What Do You See?***
 
-This book is already drafted in `tribal-cowboy-pony-what-do-you-see-book.md`. For the themed Sprint, **two changes** from the existing presentation version:
+This book is already drafted in `tribal-cowboy-pony-what-do-you-see-book.md` as a **presentation-only book** (12×12, 1–2 copies, lives in Stacie's truck). She holds it up at the read-aloud; kids gather around to see. Reuse the existing presentation copy — no new printing needed for this week.
 
-1. **Add a take-home version** — same text and photos, smaller format (5.5×8.5 saddle-stitched), 1 per kid. The 12×12 presentation copy stays in Stacie's truck for the read-aloud.
-2. **Final page tweak** — the closer reads:
-   > *"Hi, kids! We are Tribal Cowboy. What do YOU see?"*
-   > [blank space below]
-   > *Now draw what YOU see.*
-
-The blank space gives kids a place to write/draw on the last page of their own copy.
+For the activity book take-home: kids draw "what they see" on Page 2 of their Pony Pals Adventure Book — that's where the kid puts themselves into the story, not in a printed copy.
 
 **Modeled on:** *Brown Bear, Brown Bear, What Do You See?* by Bill Martin Jr. & Eric Carle (Henry Holt, 1967). Original text and photos by Stacie — uses the public-domain call-and-response pattern.
 
@@ -290,7 +284,7 @@ The blank space gives kids a place to write/draw on the last page of their own c
 |---|---|
 | 0:00–0:03 / 0:00–0:05 | Hello + Saddle Up callback. Notice the rainbow blanket. *"Who can name a color you see on the pony?"* |
 | 0:03–0:06 / 0:05–0:08 | 3 Rules recap + body language quick check (*"What are her ears saying right now?"*) |
-| 0:06–0:14 / 0:08–0:20 | **Read-aloud:** *Tribal Cowboy Pony, What Do You See?* — every kid has their own copy. Class joins in on the predictable refrain *"X, X, what do you see?"* Dialogic prompts at each new animal: *"What color is it? What does it say?"* |
+| 0:06–0:14 / 0:08–0:20 | **Read-aloud:** *Tribal Cowboy Pony, What Do You See?* — Stacie holds up the oversized presentation copy. Kids gather in a semicircle so all can see. Class joins in on the predictable refrain *"X, X, what do you see?"* Dialogic prompts at each new animal: *"What color is it? What does it say?"* |
 | 0:14–0:20 / 0:20–0:30 | **🐴 Syllable Hoof Paws.** Stacie names each animal. Class says it. *"How many beats? Let's ask the pony."* The pony paws once for each syllable. Words: **goat** (1), **pon-y** (2), **but-ter-fly** (3), **Clyde-s-dale** (3). Then kids stomp the syllables of their own name. |
 | 0:20–0:26 / 0:30–0:40 | **Color & Pony Sticker activity.** Sticker book page: each kid colors a blank pony their favorite color and writes (or copies) the color name. K kids fill in: *"I am a ___ pony. My name is ___."* |
 | 0:26–0:30 / 0:40–0:45 | Sticker + body language check + goodbye |
@@ -307,14 +301,14 @@ The blank space gives kids a place to write/draw on the last page of their own c
 
 **Materials:**
 - Pony in Rainbow Pony costume (blanket, ribbons, mane chalk)
-- *Tribal Cowboy Pony, What Do You See?* — Stacie's presentation copy + 18 take-home copies (or one per kid 5.5×8.5)
+- *Tribal Cowboy Pony, What Do You See?* — Stacie's oversized presentation copy (already produced — lives in the truck)
 - Pony Pals Sticker Book — color-the-pony page
 - Crayons in 6+ colors
 - Week 2 stickers
 - Visual schedule
 - Pony Looks flip cards
 
-**Take-home this week:** *Tribal Cowboy Pony, What Do You See?* take-home book + Pony Pals Page 2
+**Take-home this week:** Pony Pals Adventure Book Page 2 (kid colored their pony + added Week 2 sticker)
 
 ---
 
@@ -384,7 +378,7 @@ The blank space gives kids a place to write/draw on the last page of their own c
 |---|---|
 | 0:00–0:03 / 0:00–0:05 | Hello + Saddle Up. Notice the headlamp. *"Where do you think this pony works today?"* |
 | 0:03–0:06 / 0:05–0:08 | 3 Rules + body language check |
-| 0:06–0:14 / 0:08–0:20 | **Read-aloud:** *Pip the Pit Pony.* Every kid has their own copy. Class counts together: *"ONE rock... TWO rocks..."* Then on the days-of-week page, sing/chant the days. |
+| 0:06–0:14 / 0:08–0:20 | **Read-aloud:** *Pip the Pit Pony.* Stacie holds up the oversized presentation copy. Kids gather close. Class counts together: *"ONE rock... TWO rocks..."* Then on the days-of-week page, sing/chant the days. |
 | 0:14–0:20 / 0:20–0:30 | **🐴 Silver Counting & Miner's Helmet Naming.** Each kid gets a "Miner's Helmet" name tag (folded paper headband) and writes their name on it (Pre-K: first letter + decorate; K: full name). They wear it. Then 7 foil-wrapped rocks are passed out — kids count them into 7 day-of-the-week cart cutouts on the floor. |
 | 0:20–0:26 / 0:30–0:40 | **Initial Sound Hunt.** Kids hold up an object or picture (provided). Pony "picks" the ones that start with /p/ (pony, Pip, pan, pig). K kids can add the letter P at the top of their helmet. (Idaho K.RF.2.d) |
 | 0:26–0:30 / 0:40–0:45 | Sticker + goodbye |
@@ -406,7 +400,7 @@ The blank space gives kids a place to write/draw on the last page of their own c
 **Materials:**
 - Pony in Pip costume (headlamp, sash, sooty bandana)
 - Optional: small mine cart with foil-wrapped "silver" rocks (8+ rocks)
-- *Pip the Pit Pony* — Stacie's reading copy + 18 take-home copies
+- *Pip the Pit Pony* — Stacie's oversized presentation copy (1 copy total — kids gather to see)
 - 18 Miner's Helmet name-tag headbands (folded cardstock + elastic)
 - Crayons
 - 7 day-of-week cart cutouts (laminated, reused every Sprint)
@@ -415,7 +409,7 @@ The blank space gives kids a place to write/draw on the last page of their own c
 - Visual schedule
 - Pony Looks flip cards
 
-**Take-home this week:** *Pip the Pit Pony* book + Miner's Helmet name tag + a foil "silver" rock + Pony Pals Page 3
+**Take-home this week:** Pony Pals Adventure Book Page 3 (kid counted silver into 7 carts) + Miner's Helmet paper name tag + a foil "silver" rock
 
 ---
 
@@ -486,7 +480,7 @@ The blank space gives kids a place to write/draw on the last page of their own c
 |---|---|
 | 0:00–0:03 / 0:00–0:05 | Hello + Saddle Up. Notice the deerstalker hat. *"What is the pony today?"* |
 | 0:03–0:06 / 0:05–0:08 | 3 Rules + body language check (last time!) |
-| 0:06–0:14 / 0:08–0:20 | **Read-aloud:** *Detective Pony and the Missing Apple.* Every kid has their own copy. Class chants the *"Not me!"* refrain together. Dialogic prompts: *"Where did the pony look? Who did she ask? Who took it?!"* |
+| 0:06–0:14 / 0:08–0:20 | **Read-aloud:** *Detective Pony and the Missing Apple.* Stacie holds up the oversized presentation copy. Class chants the *"Not me!"* refrain together. Dialogic prompts: *"Where did the pony look? Who did she ask? Who took it?"* |
 | 0:14–0:20 / 0:20–0:30 | **🔍 Clue Hunt + Detective Badge.** Each kid gets a Detective Badge (cardstock badge with a magnifying-glass shape). They write their name on it. Then a worksheet: 5 scenes, each with a small apple hidden. Kids use a real magnifying glass to find each apple. K kids can label each scene with a first letter (B for barn, T for tree). |
 | 0:20–0:26 / 0:30–0:40 | **🐴 Retell the Sprint.** Stacie holds up all 4 books in order. *"Who can tell me what happened in book one? Book two? Book three? Book four?"* Kids take turns retelling. (K.RL.2) Then a rhyme game: *"What rhymes with PONY? With MAIL? With PIP? With BARN?"* (K.RF.2.a) |
 | 0:26–0:30 / 0:40–0:45 | **Final Goodbye.** The pony bows (if trained). Final sticker + Reader's Pin attached to the Pony Pals Sticker Book. Photo with the pony for each kid (school-approved photo release). Wave goodbye. |
@@ -505,7 +499,7 @@ The blank space gives kids a place to write/draw on the last page of their own c
 
 **Materials:**
 - Pony in Sherlock Pony costume (deerstalker, bow tie, magnifying glass, clue tags)
-- *Detective Pony and the Missing Apple* — Stacie's reading copy + 18 take-home copies
+- *Detective Pony and the Missing Apple* — Stacie's oversized presentation copy (1 copy total)
 - 18 Detective Badges (cardstock + pin or string)
 - 18 magnifying glasses (dollar store, plastic)
 - 18 Clue Hunt worksheets (1-page, 5 scenes with hidden apples)
@@ -516,7 +510,7 @@ The blank space gives kids a place to write/draw on the last page of their own c
 - Visual schedule
 - Pony Looks flip cards
 
-**Take-home this week:** *Detective Pony and the Missing Apple* book + Detective Badge + magnifying glass + Reader's Pin + completed Pony Pals Sticker Book + Take-Home Parent One-Pager (see below)
+**Take-home this week:** Completed Pony Pals Adventure Book (kid built across all 4 weeks) + Detective Badge (paper) + plastic magnifying glass + Take-Home Parent One-Pager (see below)
 
 ---
 
@@ -569,43 +563,63 @@ The blank space gives kids a place to write/draw on the last page of their own c
 | Pony Express stamp (rubber) | Etsy custom | $25 |
 | **TOTAL ONE-TIME SETUP** | | **~$230** |
 
-## What you need to print per Sprint
+## What you print/assemble per Sprint
+
+Everything below is paper and basic craft supplies. Stacie prints in-house or at a local copy shop on a small budget. **No bound take-home books.** Each kid builds their own Pony Post Adventure Book over the four weeks — they decorate it, stamp it, write in it, and walk out with what they made.
 
 | Item | Quantity | Per-unit | Total |
 |---|---|---|---|
-| *A Letter For You* (Week 1 book) | 18 | $3 | $54 |
-| *Tribal Cowboy Pony, What Do You See?* (Week 2 take-home) | 18 | $3 | $54 |
-| *Pip the Pit Pony* (Week 3 book) | 18 | $3 | $54 |
-| *Detective Pony and the Missing Apple* (Week 4 book) | 18 | $3 | $54 |
-| Pony Pals Sticker Book | 18 | $1 | $18 |
-| Miner's Helmet name tags | 18 | $0.50 | $9 |
-| Detective Badges | 18 | $0.50 | $9 |
-| Clue Hunt worksheets | 18 | $0.10 | $2 |
+| Pony Pals Activity Book covers + interior pages (8-page stapled, kids decorate weekly) | 18 | $1.50 | $27 |
+| Pony Post letters (4 per kid, printed in-house, fake-stamped envelopes) | 72 | $0.30 | $22 |
+| Envelopes for Week 1 name-writing | 18 | $0.10 | $2 |
+| Miner's Helmet paper name tags (Week 3) | 18 | $0.50 | $9 |
+| Detective Badges (paper, Week 4) | 18 | $0.50 | $9 |
+| Clue Hunt worksheets (Week 4) | 18 | $0.10 | $2 |
+| Foil-wrapped "silver" rocks (Week 3) | 18 | $0.20 | $4 |
+| Plastic magnifying glasses (Week 4, dollar store) | 18 | $1.00 | $18 |
 | Stickers (5 per kid × 18) | 90 | $0.30 | $27 |
-| Envelopes (Week 1) | 18 | $0.10 | $2 |
-| Foil-wrapped "silver" rocks | 18 | $0.20 | $4 |
-| Reader's Pins | 18 | $2 | $36 |
-| Pony Post letters (4 per kid) | 72 | $0.30 | $22 |
 | Take-Home Parent One-Pager | 18 | $0.30 | $5 |
-| **TOTAL PER-SPRINT MATERIALS** | | | **~$350** |
+| **TOTAL PER-SPRINT MATERIALS** | | | **~$125** |
 
 **Sponsor pays:** **$1,750** per Sprint
-**Margin for Stacie:** ~$1,400 (time, mileage, photos, fuel, insurance contribution)
 
-## Book Production Workflow
+**What the $1,750 actually covers:**
+- Stacie's time — 4 visits + prep + letter production (~18–20 hours per Sprint)
+- Travel — 4 round trips with the pony trailer, fuel, mileage, vehicle wear
+- The pony's working day — hay, vet contribution, transport stress, recovery time
+- Insurance contribution (allocated portion of annual equine liability policy)
+- All paper and craft materials above (~$125)
+- Business overhead and small operating margin
 
-**Step 1 — Photography (one weekend per book, 4 weekends total).**
-Each book needs 15–20 high-res photos of the pony in costume in the right setting. Schedule by season:
-- *A Letter For You* — morning light, ranch + barn
-- *Tribal Cowboy Pony, What Do You See?* — already shot; reuse
-- *Pip the Pit Pony* — dramatic lighting (overcast day or barn interior with one light)
-- *Detective Pony* — barn interior + scenes with kitten/puppy/chicken
+The pony in the classroom is the product. The materials are the artifacts that prove it happened.
 
-**Step 2 — Layout in Canva** (one weekend per book). Use the same 5.5×8.5 template for consistency across the four books.
+## Activity Book Production Workflow
 
-**Step 3 — Print** at a local saddle-stitched print shop (Office Depot, FedEx, Spokane Print Co.). Target $2.50–$3.50 per book at quantity 25.
+**The Pony Pals Activity Book** is an 8-page stapled paper booklet (4.25×5.5 folded, half-letter size). Cover features the Tribal Cowboy logo + sponsor logo + room for the child to write their name. Interior pages are mostly blank/template — designed for the kid to fill in, color, sticker, and decorate over 4 weeks.
 
-**Step 4 — Test the book** with one Pre-K kid before printing the full run. Watch where they get bored, where they laugh, where they want a second turn of the page.
+**Page-by-page template:**
+
+| Page | What's on it | Filled in by |
+|---|---|---|
+| Cover | "My Pony Post Adventure Book" + name line + Tribal Cowboy + sponsor logo | Kid writes their name Week 1 |
+| 1 | Week 1 sticker space + the word "soft" + drawing space ("Draw the pony you met today") | Kid Week 1 |
+| 2 | Week 2 sticker space + the word "see" + blank pony outline to color | Kid Week 2 |
+| 3 | Week 3 sticker space + the word "strong" + 7 cart cutouts to count silver into | Kid Week 3 |
+| 4 | Week 4 sticker space + the word "found" + 5 small "clue scenes" to circle | Kid Week 4 |
+| 5 | "I learned the 3 Big Rules!" + space to draw the pony | Kid any time |
+| 6 | "Words I know now" — 20 anchor words listed in a 4×5 grid | Kid checks them off |
+| 7 | "I am a reader." + space for parent or teacher signature | Kid + grown-up Week 4 |
+| Back cover | "Made by [name]" line + sponsor logo + Tribal Cowboy logo + tribalcowboy.com QR code | Kid writes their name Week 4 |
+
+**Production:**
+- Design the master template once in Canva (one weekend)
+- Print 20 covers + 20 interior sets per Sprint at a local copy shop (Office Depot, FedEx, Spokane Print Co.)
+- Staple together in-house (long-arm stapler, ~$15 one-time)
+- Target cost: $1.50 per assembled book at quantity 20
+- The sponsor logo on the cover and back is the placement — kids look at it every week as they add to the book
+
+**Why this is stronger than printed take-home books:**
+A printed book is given to a child. An activity book they decorated themselves is *theirs*. Pre-K and K kids treasure what they made. The activity book ends up on the refrigerator door, gets shown to grandparents, and stays a keepsake for years. That's where the sponsor's logo lives.
 
 ---
 
@@ -621,11 +635,11 @@ Each book needs 15–20 high-res photos of the pony in costume in the right sett
 >
 > - Wrote their own name on an envelope and mailed it back to the pony
 > - Counted the beats in 20+ words by stomping with the pony's hoof
-> - Heard four custom books featuring a real pony from a real ranch in Athol, Idaho
+> - Heard four read-aloud stories about a real pony from a real ranch in Athol, Idaho
 > - Learned the story of pit ponies who worked in Idaho's Silver Valley mines
 > - Solved a barn mystery as Detective Pony
 > - Learned how to safely approach a horse and read her body language
-> - Took home four books that now live on your shelf
+> - **Built their own Pony Post Adventure Book** — the one in their hand right now, decorated and written by them across four weeks
 >
 > Every activity was mapped to the Idaho Content Standards for Kindergarten ELA and the Idaho Early Learning eGuidelines.
 >
@@ -636,11 +650,8 @@ Each book needs 15–20 high-res photos of the pony in costume in the right sett
 
 ## Back
 
-> **Read these four books with your child this month:**
-> 1. *A Letter For You*
-> 2. *Tribal Cowboy Pony, What Do You See?*
-> 3. *Pip the Pit Pony*
-> 4. *Detective Pony and the Missing Apple*
+> **Open your child's Pony Post Adventure Book together this month:**
+> Ask them about each page. Who is in the drawing? What does that sticker mean? What does the word say? Their answers are the lesson — they made it themselves.
 >
 > **Ask your child to teach YOU about horses:**
 > - The 3 Big Rules (inside voice, walk don't run, tell the pony you're there)
@@ -712,14 +723,18 @@ In four weeks, every kid in a Pre-K or Kindergarten class:
 - **Builds 20 new words** (anchored to a real pony they touched)
 - **Writes their own name** on a real envelope
 - **Counts syllables** by stomping with a pony's hoof
-- **Owns four custom books** about a real pony from Athol, Idaho — with the sponsor's logo on every back cover
+- **Builds their own activity book** about a real pony from Athol, Idaho — with the sponsor's logo on the cover and back, and the kid's handwriting and decoration on every page
 - **Learns about Idaho mining history** through a story that ends in a hug
 - **Practices reading aloud** to a non-judging animal audience
 - **Solves a mystery** as a detective
 - **Hits 19 Idaho K ELA standards** plus the entire Pre-K eGuidelines Literacy domain
-- **Takes home seven branded artifacts** that live in the family's home: 4 books, a Pony Pals Sticker Book, a Detective Badge, and a magnifying glass — every one stamped with both Tribal Cowboy and the sponsor's logo
+- **Takes home a stack of branded artifacts** that live in the family's home: the activity book they built, 4 Pony Post letters in stamped envelopes, a paper miner's helmet, a paper detective badge, a magnifying glass, and a parent one-pager — every one stamped with both Tribal Cowboy and the sponsor's logo
 
-**That's 4 books × 18 kids × 4 family members reading them = 288 brand impressions in the sponsor's local market, in the year the kid learned to read.**
+**The placements that matter for the sponsor:**
+- **18 activity books** the kids made themselves — sponsor logo on the cover. These don't get tossed. Kids show them to grandparents. They live on refrigerator doors for months.
+- **72 Pony Post letters** in stamped envelopes — sponsor logo on each. Read aloud by parents at the kitchen table.
+- **18 take-home parent one-pagers** — sponsor logo at the bottom. Read by the adult who chooses where the family spends money.
+- **The pony in the classroom** — the conversation every kid has at dinner with their family for a month.
 
 For $1,750.
 
@@ -732,7 +747,7 @@ For $1,750.
 3. **Letters between visits** — kids retrieve and rehearse the previous week's content every Monday morning, free
 4. **Standards alignment is real, not decorative** — every activity earns a standard
 5. **Local heritage** — Pit Pony week ties the program to Idaho's silver mining story
-6. **Books go home** — four take-home books per kid, sponsor logo on every back cover
+6. **What the kids make goes home** — every child builds their own activity book and walks out with the thing they decorated, with the sponsor's logo on the cover
 7. **The pony is the lesson** — calmness, predictability, sensory grounding — research-backed reading conditions, built around an animal
 
 The signature moves:

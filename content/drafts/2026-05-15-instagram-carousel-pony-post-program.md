@@ -55,7 +55,7 @@
 > Every child finishes with:
 >
 > Their name — written by their own hand
-> 4 take-home books (theirs to keep)
+> A Pony Post Adventure Book they built themselves
 > Syllable counting, phonemic awareness,
 > print concepts, vocabulary — all 19 standards
 > Horse safety and body language
@@ -85,14 +85,14 @@
 ### SLIDE 6 — FOR SPONSORS
 
 **On-image text:**
-> Want your logo on
-> the books these kids take home?
+> Want your logo on the activity books
+> these kids built themselves?
 >
 > $1,750 sponsors one full Sprint.
-> Your brand on 4 books. 18 kids.
+> 18 kids. 4 weeks. 18 books they made.
 >
-> That's 72 books walking out of school
-> and into homes — with your name on the cover.
+> Plus 72 Pony Post letters going home —
+> every one with your name on it.
 >
 > Cost to the school: $0.
 
@@ -123,7 +123,7 @@
 
 Reading scores move when something makes the words feel real. The Pony Post is built to do that.
 
-The Pony Post brings a calm pony into Pre-K and Kindergarten classrooms once a week for four weeks. Each visit is themed. Each week, every kid gets a real letter in the mail from the pony with a clue about what's coming next. By the end of the Sprint, each child writes their own name, understands syllables, owns four take-home books, and has met 19 Idaho Kindergarten ELA standards.
+The Pony Post brings a calm pony into Pre-K and Kindergarten classrooms once a week for four weeks. Each visit is themed. Between visits, every kid gets a stamped envelope from the pony with a clue about what's coming next. Over the four weeks, each child builds their own Pony Post Adventure Book — they decorate it, stamp it, write their name in it, and walk out with what they made. By the end of the Sprint, each child has written their own name, learned syllable counting, built their own activity book, and met 19 Idaho Kindergarten ELA standards.
 
 The program is built on the National Reading Panel's 5 Pillars of Reading, Scarborough's Reading Rope, and the National Early Literacy Panel's early predictors. It is aligned to Idaho's full Communication-Language-Literacy domain in the Early Learning eGuidelines. This is the Science of Reading — delivered through something a five-year-old actually wants to pay attention to.
 
@@ -131,7 +131,7 @@ One of the four weeks draws on North Idaho's own history. Pip, named for the rea
 
 Cost to the school is zero.
 
-A single sponsor funds one full 4-week Sprint — $1,750 covers everything. Your logo goes on the back cover of all four take-home books. That is 72 books, each with your logo on the back cover, leaving school and going home with a kid who used them for four weeks.
+A single sponsor funds one full 4-week Sprint — $1,750 covers everything: Stacie's time, travel, the pony's working day, insurance, and all materials. Your logo goes on the cover of every activity book each kid built. Plus 72 Pony Post letters in stamped envelopes — your name on each one — going home over four weeks. The activity book is the one that matters. A kindergartener who decorated something themselves does not put it on a shelf. It goes on the refrigerator door.
 
 Sponsorships are one per Sprint.
 
