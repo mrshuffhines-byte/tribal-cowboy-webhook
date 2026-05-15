@@ -6,7 +6,8 @@
 **Pillar:** Events & Booking / Education (community angle)
 **Audience:** Local business owners — community banks, credit unions, regional real estate brokerages, pediatric/family dental practices, family-owned restaurants, local pharmacies, agricultural feed stores — North Idaho focus
 **Post time:** Thursday or Friday, 11:00am–1:00pm MT (business owners check in midday)
-**Status:** COPY READY — awaiting photography / visual assembly
+**Status:** ✅ Brand Voice approved — ship with edits applied below
+**Workflow:** Drafted by Social agent → revised by Brand Voice agent (tax-deductible language removed for legal safety; USPS-implication language corrected)
 
 ---
 
@@ -42,9 +43,9 @@ A photo of a child's hands holding open an activity book — showing stamps, dra
 A pony visits the same classroom four weeks in a row.
 
 **Body text:**
-Each week has a different theme and story. Between visits, every kid gets a stamped envelope — a letter from the pony with a clue about next week and a new word to look for.
+Each week has a different theme and story. Between visits, every kid gets a Pony Post envelope — stamped and addressed to them, hand-delivered by the teacher — a letter from the pony with a clue about next week and a new word to look for.
 
-Real letters. Real stamps. Real pony.
+Hand-delivered letters. Pony Express-style stamps. Real pony.
 
 Over four weeks, each child builds their own Pony Post Adventure Book — they decorate it, write in it, stamp it, and take it home when the Sprint ends.
 
@@ -120,7 +121,7 @@ A candid photo — a child showing a parent or sibling the activity book, or poi
 **Body text:**
 That sentence works at a chamber event. It works on your own Facebook page. It works when a parent who was in that classroom walks into your business.
 
-You get photos from the visits for your own social media. You get the story. And your contribution is tax-deductible as a community giving expense — check with your accountant on the specifics.
+You get photos from the visits for your own social media. You get the story.
 
 **Visual direction:**
 Simple, warm slide. Cream background. Two or three short lines in large type — the "We sponsored the literacy program" sentence should be the visual anchor, in Playfair Display or equivalent. Below it, the supporting lines in a smaller weight. Tribal Cowboy logo bottom right. This slide should feel like something a business owner would screenshot and text to their business partner.
@@ -150,7 +151,7 @@ Clean, warm cream background. Tribal Cowboy logo centered or top-left. Contact i
 
 Here is what sponsoring The Pony Post looks like.
 
-A real pony visits a Pre-K or Kindergarten classroom four weeks in a row. Each week has a different theme and a different story. Between visits, every child gets a stamped envelope — a letter from the pony with a new word and a clue about what's coming next.
+A real pony visits a Pre-K or Kindergarten classroom four weeks in a row. Each week has a different theme and a different story. Between visits, every child gets a Pony Post envelope — stamped and addressed to them, hand-delivered by the teacher — a letter from the pony with a new word and a clue about what's coming next.
 
 Over four weeks, each child builds their own Pony Post Adventure Book. They stamp it, draw in it, write their name in it. When the Sprint ends, they take home what they made.
 
@@ -158,7 +159,7 @@ Your logo is on the cover of every one of those books. On every letter that goes
 
 One sponsor covers one Sprint — 18 kids, four visits, 18 activity books, 72 letters. The cost to the school is zero. The cost to the sponsor is $1,750.
 
-You also get photos from the visits for your own social pages and the full rights to say you funded a free literacy program at a local elementary school. Because you did.
+You also get photos from the visits for your own social pages and the full rights to say you funded a free literacy program at a local elementary school.
 
 One sponsor per Sprint. If this fits what your business does for this community, email info@tribalcowboy.com or find us at www.tribalcowboy.com.
 
@@ -167,7 +168,7 @@ Tribal Cowboy LLC — Stacie Hines, Nisenan Maidu — Athol, Idaho.
 ---
 
 **Hashtags (first comment):**
-#TribalCowboy #NorthIdaho #SponsorLocal #CommunityGiving #LocalBusinessIdaho #NorthIdahoBusiness #SupportLocal #EarlyLiteracy #CommunitySponsorship #IndigenousOwned #NiseanMaidu #EasternWashington #IdahoBusiness #LocalImpact #SchoolProgram #NorthIdahoEvents #CommunityInvestment #KidsMatter #SmallBusinessIdaho
+#TribalCowboy #NorthIdaho #SponsorLocal #CommunityGiving #LocalBusinessIdaho #NorthIdahoBusiness #SupportLocal #EarlyLiteracy #CommunitySponsorship #IndigenousOwned #NisenanMaidu #EasternWashington #IdahoBusiness #LocalImpact #SchoolProgram #CommunityInvestment #KidsMatter #SmallBusinessIdaho
 
 ---
 
@@ -184,7 +185,7 @@ Tribal Cowboy LLC — Stacie Hines, Nisenan Maidu — Athol, Idaho.
 ## NOTES
 
 - The $1,750 figure is on Slide 3 and in the caption. Do not soften or remove it. Business owners who are going to say yes need to know the number before they DM. Business owners who are going to say no will say no faster, which saves everyone time.
-- "Tax-deductible as a community giving expense — check with your accountant on the specifics" is intentional hedging. Tribal Cowboy should not be giving tax advice. The sentence acknowledges it without claiming it as a guarantee.
+- **Tax language deliberately removed.** Tribal Cowboy is an LLC, not a 501(c)(3). Sponsorship payments are not charitable deductions. If a sponsor asks, the truthful answer is: "It may be deductible as a marketing or advertising expense — your accountant can confirm." Never put tax-deduction language in a public post.
 - Indigenous identity appears once, in the sign-off line, as a factual identification — not in the pitch, not as a value-add hook.
 - If Stacie has a real sponsor from a pilot Sprint, Slide 4 and the caption can be updated to reference them by name (with permission). A real example is stronger than a mockup.
 - This goes through the Brand Voice agent before it posts.

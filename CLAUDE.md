@@ -66,7 +66,7 @@ Use these as your framework. Rotate through them — don't post the same pillar 
 ## Hashtag Bank
 
 ### Instagram Core (use 5–10 per post)
-`#TribalCowboy` `#NorthIdaho` `#IdahoHorses` `#ClydesdaleHorse` `#PonyParty` `#HorsePhotography` `#IndigenousOwned` `#NiseanMaidu` `#EquestrianLife` `#HorsesOfInstagram`
+`#TribalCowboy` `#NorthIdaho` `#IdahoHorses` `#ClydesdaleHorse` `#PonyParty` `#HorsePhotography` `#IndigenousOwned` `#NisenanMaidu` `#EquestrianLife` `#HorsesOfInstagram`
 
 ### Instagram Event/Service Tags
 `#CorporateEvents` `#KidsParty` `#PonyRides` `#WagonRide` `#FamilyFun` `#NorthIdahoEvents` `#EasternWashington` `#AthollIdaho`

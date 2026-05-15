@@ -6,7 +6,8 @@
 **Pillar:** Education / School & Community Programs
 **Audience:** Principals, curriculum coordinators, early literacy specialists, Pre-K/K teachers, homeschool co-op leads — North Idaho and Eastern Washington
 **Post time:** Tuesday or Wednesday, 7:30–9:00am MT (educators scroll before school)
-**Status:** COPY READY — awaiting photography / visual assembly
+**Status:** ✅ Brand Voice approved — ship with edits applied below
+**Workflow:** Drafted by Social agent → revised by Brand Voice agent
 
 ---
 
@@ -55,7 +56,7 @@ A simple illustrated or designed graphic: four numbered weeks in a horizontal ro
 ### SLIDE 3 — WHAT EVERY CHILD FINISHES WITH
 
 **Headline:**
-Every child leaves the Sprint with something they made.
+Every child leaves the four-week Sprint with something they made.
 
 **Body text:**
 Over four weeks, each kid builds their own Pony Post Adventure Book — a paper activity book they decorate, stamp, write in, and personalize. Four Pony Post letters to keep. Themed take-homes from each visit.
@@ -99,7 +100,7 @@ Clean white or cream slide. No photo needed here — let the list breathe. Consi
 One week, the pony has a name tied to this place.
 
 **Body text:**
-Week three introduces Pip — named for the real pit ponies who worked Idaho's Silver Valley silver mines outside Kellogg. Kids learn what those ponies did, why they mattered, and what mining life looked like for the families who lived it.
+Week three introduces Pip — named for the real pit ponies who worked Idaho's Silver Valley silver mines. Kids learn what those ponies did, why they mattered, and what mining life looked like for the families who lived it.
 
 North Idaho history is part of the curriculum, not an add-on.
 
@@ -154,7 +155,7 @@ Clean, warm cream background. Tribal Cowboy logo centered or top-left. Contact i
 
 A real pony walks into a Pre-K classroom.
 
-Four weeks later, kids have written their names in their own activity books, learned what pit ponies did in Idaho's silver mines, and gotten four letters — stamped envelopes addressed to them — from a pony named Pip.
+Four weeks later, kids have written their names in their own activity books, learned what pit ponies did in Idaho's silver mines, and gotten four letters — hand-delivered in Pony Post envelopes, each one stamped and addressed to them — from a pony named Pip.
 
 This is The Pony Post. It's a four-week literacy Sprint we bring to Pre-K and Kindergarten classrooms at no cost to the school. One themed visit per week, one letter between each visit, one activity book every child builds themselves over the four weeks.
 
@@ -169,7 +170,7 @@ Tribal Cowboy LLC — Stacie Hines, Nisenan Maidu — Athol, Idaho.
 ---
 
 **Hashtags (first comment):**
-#TribalCowboy #NorthIdaho #EarlyLiteracy #PreKTeacher #KindergartenTeacher #ScienceOfReading #IdahoEducation #SchoolPrograms #EarlyChildhoodEducation #IndigenousOwned #NorthIdahoEducators #EasternWashington #ClassroomProgram #LiteracyProgram #HorsesOfInstagram #NiseanMaidu #IdahoTeacher #ReadingRope #EarlyLearning
+#TribalCowboy #NorthIdaho #EarlyLiteracy #PreKTeacher #KindergartenTeacher #ScienceOfReading #IdahoEducation #SchoolPrograms #EarlyChildhoodEducation #IndigenousOwned #NorthIdahoEducators #EasternWashington #ClassroomProgram #LiteracyProgram #NisenanMaidu #IdahoTeacher #ReadingRope #EarlyLearning
 
 ---
 
