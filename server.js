@@ -3,7 +3,10 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
+const Anthropic = require('@anthropic-ai/sdk');
 const app = express();
+
+const anthropic = process.env.ANTHROPIC_API_KEY ? new Anthropic() : null;
 
 // ââ ACUITY SCHEDULING API âââââââââââââââââââââââââââââââââââââââââââââââââ
 // Acuity uses Basic Auth with your User ID and API Key
@@ -118,7 +121,7 @@ function sendSMS(to, message) {
 }
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '15mb' })); // 15mb supports phone-camera photo uploads as base64
 
 // Serve the dashboard HTML at the root URL
 app.use(express.static(__dirname));
@@ -594,6 +597,268 @@ app.post('/send-booking-link', async (req, res) => {
 });
 
 // ââ HEALTH CHECK ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── INVENTORY ─────────────────────────────────────────────────────────────
+// File-based inventory store for horse tack & gear.
+// Data lives in inventory.json; photos in inventory-photos/.
+const INVENTORY_FILE = path.join(__dirname, 'inventory.json');
+const PHOTO_DIR = path.join(__dirname, 'inventory-photos');
+
+function loadInventory() {
+  try {
+    if (fs.existsSync(INVENTORY_FILE)) {
+      return JSON.parse(fs.readFileSync(INVENTORY_FILE, 'utf8'));
+    }
+  } catch (err) {
+    console.error('Could not read inventory.json:', err.message);
+  }
+  return { items: [], categories: [], locations: ['Trailer', 'Garage', 'Shed'] };
+}
+
+function saveInventory(inv) {
+  fs.writeFileSync(INVENTORY_FILE, JSON.stringify(inv, null, 2));
+}
+
+function newId() {
+  return 'inv_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+
+// Quote-aware CSV row parser (handles "a,b","c")
+function parseCsvRow(line) {
+  const out = [];
+  let cur = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"' && line[i + 1] === '"') { cur += '"'; i++; }
+      else if (ch === '"') { inQuotes = false; }
+      else { cur += ch; }
+    } else {
+      if (ch === '"') inQuotes = true;
+      else if (ch === ',') { out.push(cur); cur = ''; }
+      else cur += ch;
+    }
+  }
+  out.push(cur);
+  return out.map(s => s.trim());
+}
+
+// GET /inventory/meta — categories + locations
+app.get('/inventory/meta', (req, res) => {
+  const inv = loadInventory();
+  res.json({ categories: inv.categories || [], locations: inv.locations || [] });
+});
+
+// GET /inventory?q=&location=&category=&page=1&limit=50
+app.get('/inventory', (req, res) => {
+  const inv = loadInventory();
+  const q = (req.query.q || '').toLowerCase();
+  const location = req.query.location || '';
+  const category = req.query.category || '';
+  const page = Math.max(1, parseInt(req.query.page) || 1);
+  const limit = Math.min(200, Math.max(1, parseInt(req.query.limit) || 50));
+
+  let filtered = inv.items;
+  if (location) filtered = filtered.filter(i => i.location === location);
+  if (category) filtered = filtered.filter(i => i.category === category);
+  if (q) {
+    filtered = filtered.filter(i =>
+      (i.name || '').toLowerCase().includes(q) ||
+      (i.brand || '').toLowerCase().includes(q) ||
+      (i.notes || '').toLowerCase().includes(q) ||
+      (i.size || '').toLowerCase().includes(q)
+    );
+  }
+
+  filtered = filtered.slice().sort((a, b) =>
+    (b.updated_at || b.created_at || '').localeCompare(a.updated_at || a.created_at || '')
+  );
+
+  const totalValue = filtered.reduce((sum, i) => sum + (Number(i.value) || 0) * (Number(i.qty) || 1), 0);
+  const total = filtered.length;
+  const start = (page - 1) * limit;
+  const items = filtered.slice(start, start + limit);
+
+  res.json({ items, total, totalValue: Math.round(totalValue), page, limit, categories: inv.categories });
+});
+
+// POST /inventory — add new
+app.post('/inventory', (req, res) => {
+  const inv = loadInventory();
+  const now = new Date().toISOString();
+  const item = {
+    id: newId(),
+    name: (req.body.name || '').trim(),
+    brand: (req.body.brand || '').trim(),
+    size: (req.body.size || '').trim(),
+    category: req.body.category || '',
+    location: req.body.location || 'Trailer',
+    condition: req.body.condition || 'Good',
+    value: Number(req.body.value) || 0,
+    qty: Number(req.body.qty) || 1,
+    notes: (req.body.notes || '').trim(),
+    photo: req.body.photo || null,
+    created_at: now,
+    updated_at: now
+  };
+  if (!item.name) return res.status(400).json({ error: 'name required' });
+  inv.items.push(item);
+  saveInventory(inv);
+  res.json(item);
+});
+
+// PATCH /inventory/:id — update
+app.patch('/inventory/:id', (req, res) => {
+  const inv = loadInventory();
+  const idx = inv.items.findIndex(i => i.id === req.params.id);
+  if (idx === -1) return res.status(404).json({ error: 'not found' });
+  const cur = inv.items[idx];
+  const fields = ['name', 'brand', 'size', 'category', 'location', 'condition', 'notes', 'photo'];
+  fields.forEach(f => { if (req.body[f] !== undefined) cur[f] = req.body[f]; });
+  if (req.body.value !== undefined) cur.value = Number(req.body.value) || 0;
+  if (req.body.qty !== undefined) cur.qty = Number(req.body.qty) || 1;
+  cur.updated_at = new Date().toISOString();
+  saveInventory(inv);
+  res.json(cur);
+});
+
+// DELETE /inventory/:id
+app.delete('/inventory/:id', (req, res) => {
+  const inv = loadInventory();
+  const before = inv.items.length;
+  inv.items = inv.items.filter(i => i.id !== req.params.id);
+  if (inv.items.length === before) return res.status(404).json({ error: 'not found' });
+  saveInventory(inv);
+  res.json({ success: true });
+});
+
+// POST /inventory/upload-photo  { filename, dataUrl } → { filename }
+// Accepts a base64 data URL from the browser (works from a phone camera).
+app.post('/inventory/upload-photo', (req, res) => {
+  const { filename, dataUrl } = req.body;
+  if (!dataUrl || !dataUrl.startsWith('data:image/')) {
+    return res.status(400).json({ error: 'invalid dataUrl' });
+  }
+  const match = dataUrl.match(/^data:image\/(\w+);base64,(.+)$/);
+  if (!match) return res.status(400).json({ error: 'invalid dataUrl format' });
+  const ext = match[1] === 'jpeg' ? 'jpg' : match[1];
+  const buf = Buffer.from(match[2], 'base64');
+  if (buf.length > 12 * 1024 * 1024) return res.status(413).json({ error: 'photo too large (>12MB)' });
+
+  if (!fs.existsSync(PHOTO_DIR)) fs.mkdirSync(PHOTO_DIR, { recursive: true });
+  const safe = (filename || 'photo').replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 40);
+  const finalName = `${Date.now().toString(36)}_${safe.replace(/\.[^.]+$/, '')}.${ext}`;
+  fs.writeFileSync(path.join(PHOTO_DIR, finalName), buf);
+  res.json({ filename: finalName });
+});
+
+// POST /inventory/analyze-photo  { dataUrl } → { name, brand, size, category, condition, notes }
+// Uses Claude vision to identify the item in the photo and pre-fill the add-item form.
+// Requires ANTHROPIC_API_KEY env var. Returns {error: 'not configured'} if missing.
+app.post('/inventory/analyze-photo', async (req, res) => {
+  if (!anthropic) {
+    return res.status(503).json({ error: 'ANTHROPIC_API_KEY not configured on server' });
+  }
+  const { dataUrl } = req.body;
+  if (!dataUrl || !dataUrl.startsWith('data:image/')) {
+    return res.status(400).json({ error: 'invalid dataUrl' });
+  }
+  const match = dataUrl.match(/^data:image\/(\w+);base64,(.+)$/);
+  if (!match) return res.status(400).json({ error: 'invalid dataUrl format' });
+
+  let mediaType = `image/${match[1]}`;
+  if (mediaType === 'image/jpg') mediaType = 'image/jpeg';
+  const imageData = match[2];
+
+  const inv = loadInventory();
+  const categories = inv.categories || [];
+
+  try {
+    const response = await anthropic.messages.create({
+      model: 'claude-opus-4-7',
+      max_tokens: 1024,
+      output_config: {
+        format: {
+          type: 'json_schema',
+          schema: {
+            type: 'object',
+            properties: {
+              name: { type: 'string', description: 'Short item name, 2-5 words (e.g. "Rope Halter", "Western Saddle")' },
+              brand: { type: 'string', description: 'Brand if a logo or name is visible on the item. Empty string if not visible.' },
+              size: { type: 'string', description: 'Size if visible or apparent (e.g. "Cob", "16 in", "Large"). Empty string if unclear.' },
+              category: { type: 'string', enum: categories, description: 'Best-fit category from the provided list' },
+              condition: { type: 'string', enum: ['Excellent', 'Good', 'Fair', 'Needs Repair'] },
+              notes: { type: 'string', description: 'Color, distinguishing features, condition details. Keep under 100 chars.' }
+            },
+            required: ['name', 'brand', 'size', 'category', 'condition', 'notes'],
+            additionalProperties: false
+          }
+        }
+      },
+      messages: [{
+        role: 'user',
+        content: [
+          { type: 'image', source: { type: 'base64', media_type: mediaType, data: imageData } },
+          {
+            type: 'text',
+            text: `Identify this piece of horse tack, equine gear, or related ranch equipment. ` +
+                  `Pick the best-fit category from: ${categories.join(', ')}. ` +
+                  `If brand/size isn't visible, return empty strings — don't guess. Be brief and accurate.`
+          }
+        ]
+      }]
+    });
+
+    const textBlock = response.content.find(b => b.type === 'text');
+    if (!textBlock) return res.status(500).json({ error: 'no text response from model' });
+    const fields = JSON.parse(textBlock.text);
+    res.json(fields);
+  } catch (err) {
+    console.error('Photo analysis failed:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// POST /inventory/import  { csv } — bulk import from pasted CSV
+// Expected header: name,brand,size,category,condition,location,value,qty,notes
+app.post('/inventory/import', (req, res) => {
+  const csv = (req.body.csv || '').trim();
+  if (!csv) return res.status(400).json({ error: 'csv required' });
+
+  const lines = csv.split(/\r?\n/).filter(l => l.trim());
+  if (lines.length < 2) return res.status(400).json({ error: 'need at least a header + 1 row' });
+
+  const header = parseCsvRow(lines[0]).map(h => h.toLowerCase());
+  const inv = loadInventory();
+  const now = new Date().toISOString();
+  let added = 0;
+
+  for (let i = 1; i < lines.length; i++) {
+    const row = parseCsvRow(lines[i]);
+    const r = {};
+    header.forEach((h, idx) => r[h] = row[idx] || '');
+    if (!r.name) continue;
+    inv.items.push({
+      id: newId(),
+      name: r.name.trim(),
+      brand: (r.brand || '').trim(),
+      size: (r.size || '').trim(),
+      category: r.category || '',
+      location: r.location || 'Trailer',
+      condition: r.condition || 'Good',
+      value: Number(r.value) || 0,
+      qty: Number(r.qty) || 1,
+      notes: (r.notes || '').trim(),
+      photo: null,
+      created_at: now,
+      updated_at: now
+    });
+    added++;
+  }
+  saveInventory(inv);
+  res.json({ added, total: inv.items.length });
+});
+
 app.get('/health', (req, res) => {
   res.json({
     status: 'Tribal Cowboy Webhook Server is running',
