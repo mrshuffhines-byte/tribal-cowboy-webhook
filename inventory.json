@@ -1,0 +1,28 @@
+{
+  "items": [],
+  "categories": [
+    "Halters",
+    "Lead Ropes",
+    "Saddles",
+    "Saddle Pads",
+    "Bridles",
+    "Bits",
+    "Reins",
+    "Cinches",
+    "Blankets",
+    "Boots & Wraps",
+    "Grooming",
+    "First Aid",
+    "Buckets & Feeders",
+    "Feed & Supplements",
+    "Harness",
+    "Wagon & Cart",
+    "Photo Props",
+    "Costumes & Decor",
+    "Signage",
+    "Trailer Supplies",
+    "Tools",
+    "Other"
+  ],
+  "locations": ["Trailer", "Garage", "Shed"]
+}
