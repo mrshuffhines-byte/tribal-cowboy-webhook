@@ -3,7 +3,10 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
+const Anthropic = require('@anthropic-ai/sdk');
 const app = express();
+
+const anthropic = process.env.ANTHROPIC_API_KEY ? new Anthropic() : null;
 
 // ââ ACUITY SCHEDULING API âââââââââââââââââââââââââââââââââââââââââââââââââ
 // Acuity uses Basic Auth with your User ID and API Key
@@ -747,6 +750,73 @@ app.post('/inventory/upload-photo', (req, res) => {
   const finalName = `${Date.now().toString(36)}_${safe.replace(/\.[^.]+$/, '')}.${ext}`;
   fs.writeFileSync(path.join(PHOTO_DIR, finalName), buf);
   res.json({ filename: finalName });
+});
+
+// POST /inventory/analyze-photo  { dataUrl } → { name, brand, size, category, condition, notes }
+// Uses Claude vision to identify the item in the photo and pre-fill the add-item form.
+// Requires ANTHROPIC_API_KEY env var. Returns {error: 'not configured'} if missing.
+app.post('/inventory/analyze-photo', async (req, res) => {
+  if (!anthropic) {
+    return res.status(503).json({ error: 'ANTHROPIC_API_KEY not configured on server' });
+  }
+  const { dataUrl } = req.body;
+  if (!dataUrl || !dataUrl.startsWith('data:image/')) {
+    return res.status(400).json({ error: 'invalid dataUrl' });
+  }
+  const match = dataUrl.match(/^data:image\/(\w+);base64,(.+)$/);
+  if (!match) return res.status(400).json({ error: 'invalid dataUrl format' });
+
+  let mediaType = `image/${match[1]}`;
+  if (mediaType === 'image/jpg') mediaType = 'image/jpeg';
+  const imageData = match[2];
+
+  const inv = loadInventory();
+  const categories = inv.categories || [];
+
+  try {
+    const response = await anthropic.messages.create({
+      model: 'claude-opus-4-7',
+      max_tokens: 1024,
+      output_config: {
+        format: {
+          type: 'json_schema',
+          schema: {
+            type: 'object',
+            properties: {
+              name: { type: 'string', description: 'Short item name, 2-5 words (e.g. "Rope Halter", "Western Saddle")' },
+              brand: { type: 'string', description: 'Brand if a logo or name is visible on the item. Empty string if not visible.' },
+              size: { type: 'string', description: 'Size if visible or apparent (e.g. "Cob", "16 in", "Large"). Empty string if unclear.' },
+              category: { type: 'string', enum: categories, description: 'Best-fit category from the provided list' },
+              condition: { type: 'string', enum: ['Excellent', 'Good', 'Fair', 'Needs Repair'] },
+              notes: { type: 'string', description: 'Color, distinguishing features, condition details. Keep under 100 chars.' }
+            },
+            required: ['name', 'brand', 'size', 'category', 'condition', 'notes'],
+            additionalProperties: false
+          }
+        }
+      },
+      messages: [{
+        role: 'user',
+        content: [
+          { type: 'image', source: { type: 'base64', media_type: mediaType, data: imageData } },
+          {
+            type: 'text',
+            text: `Identify this piece of horse tack, equine gear, or related ranch equipment. ` +
+                  `Pick the best-fit category from: ${categories.join(', ')}. ` +
+                  `If brand/size isn't visible, return empty strings — don't guess. Be brief and accurate.`
+          }
+        ]
+      }]
+    });
+
+    const textBlock = response.content.find(b => b.type === 'text');
+    if (!textBlock) return res.status(500).json({ error: 'no text response from model' });
+    const fields = JSON.parse(textBlock.text);
+    res.json(fields);
+  } catch (err) {
+    console.error('Photo analysis failed:', err.message);
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // POST /inventory/import  { csv } — bulk import from pasted CSV

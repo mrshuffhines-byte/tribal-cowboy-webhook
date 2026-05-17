@@ -207,11 +207,11 @@
     <h2 id="editTitle">Add item</h2>
 
     <div class="row">
-      <label>Photo</label>
+      <label>Photo <span id="photoStatus" style="color: var(--accent-2); font-weight: normal;"></span></label>
       <div class="photo-zone" id="photoZone">
         <div class="ph-prompt" id="photoPrompt">
-          <strong>📷 Tap to add a photo</strong>
-          Camera or photo library
+          <strong>📷 Tap to snap or pick a photo</strong>
+          AI will fill in the form from the picture
         </div>
         <img id="photoPreview" style="display:none;" />
         <input type="file" id="photoInput" accept="image/*" capture="environment" style="display:none;" />
@@ -272,9 +272,9 @@
     </div>
 
     <div class="row">
-      <div>
-        <label>Notes</label>
-        <textarea id="f_notes" placeholder="Color, who it fits, where exactly…"></textarea>
+      <div style="position: relative;">
+        <label>Notes <button type="button" id="micBtn" class="ghost" style="font-size: 11px; padding: 2px 8px; margin-left: 6px; vertical-align: middle;" title="Voice to text">🎤 Talk</button></label>
+        <textarea id="f_notes" placeholder="Color, who it fits, where exactly… (or tap 🎤 to dictate)"></textarea>
       </div>
     </div>
 
@@ -417,6 +417,7 @@ function openEdit(id) {
   $('deleteBtn').style.display = id ? 'inline-block' : 'none';
   $('photoPreview').style.display = 'none';
   $('photoPrompt').style.display = 'block';
+  $('photoStatus').textContent = '';
 
   const fields = ['name','brand','size','category','location','condition','value','qty','notes'];
   fields.forEach(f => { const el = $('f_' + f); if (el) el.value = ''; });
@@ -490,7 +491,7 @@ $('deleteBtn').addEventListener('click', async () => {
   fetchItems();
 });
 
-// ── Photo upload ───────────────────────────────────────────────
+// ── Photo upload + AI analysis ─────────────────────────────────
 $('photoZone').addEventListener('click', () => $('photoInput').click());
 $('photoInput').addEventListener('change', async (e) => {
   const file = e.target.files[0];
@@ -502,18 +503,94 @@ $('photoInput').addEventListener('change', async (e) => {
     $('photoPreview').style.display = 'block';
     $('photoPrompt').style.display = 'none';
 
-    const res = await fetch('/inventory/upload-photo', {
+    // Upload + analyze in parallel
+    const isNew = !state.editingId;
+    $('photoStatus').textContent = isNew ? '· uploading…' : '· uploading…';
+
+    const uploadPromise = fetch('/inventory/upload-photo', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ filename: file.name, dataUrl })
-    });
-    const out = await res.json();
-    if (out.filename) {
-      state.photoFilename = out.filename;
+    }).then(r => r.json());
+
+    // Only auto-analyze on NEW items so we don't overwrite existing data
+    const analyzePromise = isNew ? fetch('/inventory/analyze-photo', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ dataUrl })
+    }).then(r => r.json()).catch(() => null) : Promise.resolve(null);
+
+    if (isNew) $('photoStatus').textContent = '· analyzing with AI…';
+
+    const [upload, analysis] = await Promise.all([uploadPromise, analyzePromise]);
+
+    if (upload.filename) state.photoFilename = upload.filename;
+    else toast('Photo upload failed');
+
+    if (analysis && !analysis.error) {
+      // Only fill empty fields — don't overwrite anything the user already typed
+      const fill = (id, val) => { if (val && !$(id).value) $(id).value = val; };
+      fill('f_name', analysis.name);
+      fill('f_brand', analysis.brand);
+      fill('f_size', analysis.size);
+      if (analysis.category && !$('f_category').value) $('f_category').value = analysis.category;
+      if (analysis.condition) $('f_condition').value = analysis.condition;
+      fill('f_notes', analysis.notes);
+      $('photoStatus').textContent = '· AI filled the form — review & save';
+      setTimeout(() => { $('photoStatus').textContent = ''; }, 4000);
+    } else if (analysis && analysis.error) {
+      $('photoStatus').textContent = '· AI unavailable: ' + analysis.error.slice(0, 40);
+      setTimeout(() => { $('photoStatus').textContent = ''; }, 5000);
     } else {
-      toast('Photo upload failed');
+      $('photoStatus').textContent = '';
     }
   };
   reader.readAsDataURL(file);
+});
+
+// ── Voice to text (browser-native, no API) ─────────────────────
+const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+let recognition = null;
+let listening = false;
+
+$('micBtn').addEventListener('click', () => {
+  if (!SpeechRec) {
+    toast('Voice not supported on this browser — use the keyboard mic instead');
+    return;
+  }
+  if (listening) {
+    recognition.stop();
+    return;
+  }
+  recognition = new SpeechRec();
+  recognition.lang = 'en-US';
+  recognition.continuous = false;
+  recognition.interimResults = true;
+
+  const baseText = $('f_notes').value;
+  const startedAt = baseText ? baseText + ' ' : '';
+
+  recognition.onstart = () => {
+    listening = true;
+    $('micBtn').textContent = '🔴 Stop';
+    $('micBtn').style.background = 'var(--bad)';
+    $('micBtn').style.color = '#fff';
+  };
+  recognition.onresult = (e) => {
+    let transcript = '';
+    for (let i = 0; i < e.results.length; i++) {
+      transcript += e.results[i][0].transcript;
+    }
+    $('f_notes').value = startedAt + transcript;
+  };
+  recognition.onerror = (e) => {
+    toast('Voice error: ' + e.error);
+  };
+  recognition.onend = () => {
+    listening = false;
+    $('micBtn').textContent = '🎤 Talk';
+    $('micBtn').style.background = '';
+    $('micBtn').style.color = '';
+  };
+  recognition.start();
 });
 
 // ── Bulk import ────────────────────────────────────────────────

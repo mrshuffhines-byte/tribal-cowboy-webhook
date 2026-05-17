@@ -206,6 +206,7 @@ TWILIO_ACCOUNT_SID     # Twilio account SID
 TWILIO_AUTH_TOKEN      # Twilio auth token
 TWILIO_PHONE_NUMBER    # Twilio phone number (e.g. +12085551234)
 VERIFY_TOKEN           # Meta webhook verification token
+ANTHROPIC_API_KEY      # Claude API key — powers AI photo recognition in /inventory.html (optional; photo upload still works without it)
 PORT                   # Server port (set automatically by Render)
 ```
 
