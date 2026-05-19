@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "content-extraction", "runs": [{"id": "eval-1-interview-extract-with_skill", "prompt": "I just did this long interview about how I got started with horse photography at events and why most photo booths are boring. Can you pull content ideas from this for my newsletter and Instagram?", "eval_id": 1, "outputs": [{"name": "output.md", "type": "text", "content": "# Content Extraction: Tribal Cowboy Interview\n\n## Source Material Summary\nInterview with Stacie about starting Tribal Cowboy and why standard photo booths fail at events. Core insight: the photo experience IS the marketing\u2014if guests won't post it, you've wasted money on it.\n\n---\n\n## Key Themes Mined\n\n**The Core Contrarian Take:**\n- Most event planners treat photo booths as an afterthought ($200 budget on something thousands attend)\n- The reality: photo experience drives all social media ROI\n- Better approach: front-load investment in the photo moment, not decor/catering\n\n**Proof Points:**\n- First event: 45-minute wait line, most-shared moment of the entire event\n- Solo setup (loads in under 20 min, no vendor management headache)\n- Real deliverable: guests get a shareable experience + venue gets weeks of organic content\n\n**Pain Points Addressed:**\n- Event planners defaulting to \"good enough\" photo setup\n- Photo booths that produce content nobody actually posts\n- Vendor management overhead\n- Photo experience ROI confusion (it's not a side expense\u2014it's the content engine)\n\n---\n\n## NEWSLETTER BRIEFS\n\n### Idea 1: \"The Photo Booth Budget Mistake\"\n\n**Title:** Why Your Event Budget is Backwards\n\n**Subject line:** The wrong place to save $200 (and where photo moments actually live)\n\n**Type:** Opinion / Framework\n\n**Angle:**\nEvent planners routinely underfund the one moment that lives online forever\u2014the photo experience. While catering and decor get thousands, photo booths get scraps. This essay flips that logic: the photo is your marketing engine. If nobody posts it, you spent nothing on visibility. This reframe changes vendor selection, budget allocation, and event ROI entirely.\n\n**Key points:**\n- The economics are backwards: planners spend thousands on decor/food that nobody photographs, then $200 on the photo moment itself\n- Photo posts are free advertising for your event. One shareable image = dozens of organic impressions\n- Standard booth aesthetic (wrinkled backdrop, cheap props) produces content guests actively avoid posting\n- When the photo experience is premium, guests self-select into marketing your event\n- This isn't luxury\u2014it's strategy\n\n**Estimated length:** 1,000\u20131,200 words\n\n---\n\n### Idea 2: \"Vendor Selection: Deliverables Over Logistics\"\n\n**Title:** What to Actually Ask a Vendor (Hint: It's Not What You're Asking Now)\n\n**Subject line:** One question that separates good vendors from the ones that sink events\n\n**Type:** How-To / Practical Framework\n\n**Angle:**\nEvent planners ask vendors about logistics (setup time, cost, included props) when they should be asking about deliverables (what will guests actually post? Will it work without adding your team's burden?). This piece walks through what questions matter and why. Use Tribal Cowboy as the proof: solo setup, predictable execution, guests so excited they create the content.\n\n**Key points:**\n- Ask vendors: \"What will guests actually want to post?\" not \"What props do you have?\"\n- Reliable vendors mean you don't have to manage them\u2014you can focus on the event\n- Setup complexity is a hidden cost (if the vendor needs 4 hours and your team, they own part of your labor)\n- Photo ROI lives in: aesthetic + ease + guest reaction (not fancy equipment)\n- Vendor selection should reduce your workload, not add to it\n\n**Estimated length:** 1,000\u20131,100 words\n\n---\n\n### Idea 3: \"The Post-Event Social Audit\"\n\n**Title:** How to Measure If Your Photo Experience Actually Worked\n\n**Subject line:** One metric that tells you if you invested right\n\n**Type:** Tactical How-To\n\n**Angle:**\nAfter an event, most planners check attendance and catering feedback. They should check: how many guests posted photos from our event? If that number is low, your photo experience failed\u2014not because it wasn't fun, but because it wasn't *shareable*. This piece gives a framework for measuring the real ROI of any vendor or experience you book.\n\n**Key points:**\n- Post-event metric: guest photo posts, shares, tags (not just attendance)\n- Shareable moments = free extended promotion (weeks of organic reach)\n- If your photo booth gets zero posts, you burned money on it\n- Next event, use this audit to judge whether to re-book the vendor\n- Track which vendors produce the most social content (this is competitive advantage)\n\n**Estimated length:** 700\u2013850 words\n\n---\n\n### Idea 4: \"Why 45 Guests Will Wait in Line for the Right Photo\"\n\n**Title:** Scarcity, Social Proof, and the Photo Line\n\n**Subject line:** What happens when guests actually want to be in your photo moment\n\n**Type:** Story / Case Study\n\n**Angle:**\nTribal Cowboy's first event had a 45-minute line. That's not a bug\u2014it's evidence that guests want to be part of something worth posting. This essay explores why that happens: scarcity (limited time/horses), novelty (nothing else like it), and urgency (fear of missing out on the shareable moment). Event planners can use these principles even without horses.\n\n**Key points:**\n- Long lines signal guests see value (not inconvenience)\n- Scarcity works: limited capacity, special element, unique-to-this-event feel\n- FOMO is real when the moment is actually shareable\n- Most photo booths fail because nothing is scarce\u2014it's always available, always generic\n- Create the conditions where guests choose to wait\n\n**Estimated length:** 900\u20131,100 words\n\n---\n\n### Idea 5: \"The Vendor You Can Actually Trust\"\n\n**Title:** How to Spot a Vendor Who Will Deliver (Without You Babysitting)\n\n**Subject line:** The sign that tells you this vendor owns their outcome\n\n**Type:** Insight / Profile\n\n**Angle:**\nReliable vendors don't need hand-holding. They show up, execute, deliver\u2014your team stays free to run the actual event. This piece explores what that looks like (solo execution, fast setup, predictable deliverables) and why it matters. When a vendor reduces your burden, they're a multiplier, not another task.\n\n**Key points:**\n- Good vendors own their setup, breakdown, guest experience\u2014you shouldn't need to manage them\n- Speed of setup = respect for your event timeline\n- If a vendor requires your team's help, calculate that hidden cost\n- Predictability beats fancy (does it work every time, or just sometimes?)\n- A vendor who delivers gives you peace of mind, which is worth money\n\n**Estimated length:** 800\u2013950 words\n\n**Newsletter Top Pick:**\n**Idea 1** \u2014 \"Why Your Event Budget is Backwards.\" This is the contrarian core insight that will make readers stop and rethink their entire approach. It's the hook that gets people to take action on your other advice. Execute this first because it reframes the entire problem for your audience.\n\n---\n\n## INSTAGRAM BRIEFS\n\n### Idea 1: Carousel Post \u2013 \"The Photo Booth Budget Flip\"\n\n**Format:** Carousel (5 slides)\n\n**Hook/Caption opener:** \"We're doing events backwards.\"\n\n**Caption (Full Draft):**\n\"We're doing events backwards. You know how it goes: spend thousands on decor, catering, lighting. Then throw $200 at a photo booth that looks like it belongs at a middle school dance. And then wonder why nobody posted anything.\n\nThe photo moment is the only thing that lives online forever. Every guest who posts is running a free ad for your event. But they'll only post if it's actually worth sharing.\n\nIf you're planning an event, flip the budget. Invest in the photo experience first. Everything else comes after.\n\nBecause a photo nobody posts is a photo nobody paid for.\"\n\n**Visual direction:**\n- Slide 1: Text graphic: \"Budget Flip\" with numbers \u2014 \"Catering: $5k. Decor: $3k. Photo booth: $200. What's wrong with this picture?\"\n- Slide 2: Image of a standard, uninspiring photo booth (wrinkled backdrop, generic props)\n- Slide 3: Contrast image of an actual shareable moment (could be Tribal Cowboy setup or similar)\n- Slide 4: Quote/stat: \"The most-shared moment from the entire event came from the photo experience\"\n- Slide 5: CTA text: \"What if you invested differently?\"\n\n**Hashtag suggestions:** #EventPlanning #EventMarketing #PhotoBooth #EventTips #ExperientialMarketing #EventPromo #SocialMediaRoi #EventVendor #EventPlanner #WesternEvents\n\n---\n\n### Idea 2: Single Image Post \u2013 \"45 Minutes in Line\"\n\n**Format:** Single image (text-forward graphic or photo of a queue)\n\n**Hook/Caption opener:** \"People waited 45 minutes for this.\"\n\n**Caption (Full Draft):**\n\"People waited 45 minutes for this.\n\nNot because they had to. Because they wanted to be part of it.\n\nThat line isn't a problem. It's proof that your photo experience is working. Guests see value. They want to be in that moment. They can already picture posting it.\n\nWhen your vendor setup gets lines, that's your sign they nailed it.\"\n\n**Visual direction:**\n- Main image: A photo of a line of people (waiting at an event) OR a graphic showing the number 45 with clock imagery and people silhouettes\n- Alternative: Design showing guest silhouettes with excitement/joy markers\n\n**Hashtag suggestions:** #EventPromo #EventPlanning #GuestExperience #EventSuccess #PhotoMoment #EventMarketing #ExperientialMarketing #SharedMoment #EventVendor\n\n---\n\n### Idea 3: Carousel Post \u2013 \"What Guests Will Actually Post\"\n\n**Format:** Carousel (4 slides)\n\n**Hook/Caption opener:** \"Not all photo moments are created equal.\"\n\n**Caption (Full Draft):**\n\"Not all photo moments are created equal.\n\nGeneric backdrop, cheap props, blurry lighting? Almost nobody posts it. They take the photo because they're told to, then they scroll past. No posts. No shares. No free advertising for your event.\n\nBut something different? Something worth talking about? That's what gets posted.\n\nWhen you pick a vendor, ask one question: What will my guests actually want to post? Not what sounds cool to you. What will THEY choose to share on their feed?\n\nThat's the only metric that matters.\"\n\n**Visual direction:**\n- Slide 1: \"The Bad Photo Moment\" \u2014 wrinkled backdrop, uninspired setup (shows the problem)\n- Slide 2: Text: \"Zero posts. Zero shares. Zero visibility.\"\n- Slide 3: \"The Good Photo Moment\" \u2014 dynamic, interesting, shareable setup\n- Slide 4: Text: \"More posts = more visibility = better ROI. Pick accordingly.\"\n\n**Hashtag suggestions:** #EventPlanning #EventVendor #PhotoBooth #EventMarketing #GuestExperience #EventSuccess #SocialMediaStrategy #EventPromo\n\n---\n\n### Idea 4: Reel Script \u2013 \"The 45-Minute Question\"\n\n**Format:** Reel (30\u201345 seconds)\n\n**Hook (first 3 seconds):**\n\"Your guests waited 45 minutes for this. Here's why.\"\n\n**Concept:**\nShow the contrast between a generic photo booth (people walk by) and a premium setup (people line up). Ask the question: what's the difference? Answer: the photo moment is actually worth posting.\n\n**Script outline:**\n1. Open: Show a crowded event (5 seconds)\n2. Cut to: Generic photo booth, person quickly takes photo, walks away (5 seconds)\n3. Text: \"Most booths get ignored.\"\n4. Cut to: Premium setup, line of people, excitement, energy (5 seconds)\n5. Text: \"One got 45-minute lines.\"\n6. Voiceover: \"Here's the difference: one is shareable. One isn't.\"\n7. Close: \"Invest in the moment people actually want to post.\" (3 seconds)\n8. CTA text: \"What would a line look like at your event?\"\n\n**Duration:** 30\u201345 seconds\n\n**Visual notes:**\n- Use contrast: boring booth vs. dynamic setup\n- Show people choosing to wait (not reluctantly)\n- Include actual photos/posts if available (social proof)\n- Energy and movement in the premium moment, stillness in the generic one\n\n---\n\n### Idea 5: Single Image Post \u2013 \"The Vendor Question\"\n\n**Format:** Single image (text graphic)\n\n**Hook/Caption opener:** \"Ask this before you hire any vendor.\"\n\n**Caption (Full Draft):**\n\"Before you hire any vendor, ask this one question:\n\n'What will my guests actually post?'\n\nNot 'What props do you have?' Not 'How much does it cost?' Not 'Can you set up in 30 minutes?'\n\nWhat will my guests see, experience, and actually choose to share on their social feed?\n\nIf they can answer that specifically\u2014with examples\u2014book them. If they can't, keep looking.\"\n\n**Visual direction:**\n- Clean text graphic with the question in bold\n- Minimal design, high contrast (readable in feed)\n- Simple, professional, direct\n\n**Hashtag suggestions:** #EventPlanning #EventVendor #BusinessTips #EventProTips #MarketingStrategy #EventMarketing #EventPromo\n\n---\n\n### Instagram Top Pick:\n**Idea 1** \u2014 \"The Photo Booth Budget Flip\" carousel. This is the most direct statement of your contrarian insight and will resonate immediately with event planners in your audience. It's visual, specific, and actionable. Execute this first because it establishes your positioning clearly.\n\n---\n\n## SUBSTACK NOTES BRIEFS\n\n### Note 1: Budget Backwards\n\n**Hook:** \"You spent $5k on catering and $200 on the photo booth. Which one lives on Instagram?\"\n\n**Type:** Hot take / observation\n\n**Full draft:**\n\"You spent $5k on catering and $200 on the photo booth. Which one lives on Instagram forever? Only the one people actually post. If nobody posts the photo moment, you didn't pay for visibility. You paid for nothing. Budget flip: invest in the experience people will choose to photograph.\"\n\n**Why it works:**\nDirect, confrontational, forces immediate reckoning with a budget decision every event planner makes.\n\n---\n\n### Note 2: The 45-Minute Signal\n\n**Hook:** \"A 45-minute line isn't a problem. It's proof your photo moment works.\"\n\n**Type:** Reframe / insight\n\n**Full draft:**\n\"A 45-minute line isn't a problem. It's proof your photo moment works. Guests are choosing to wait because they see value. They want to be part of it. They can already picture posting it. When you see a line, that's your signal you nailed the experience.\"\n\n**Why it works:**\nReframes something that sounds like a logistical burden (long wait) as evidence of success. Shifts mindset.\n\n---\n\n### Note 3: The Only Vendor Question\n\n**Hook:** \"Don't ask vendors about their props. Ask them what your guests will post.\"\n\n**Type:** Advice / tip\n\n**Full draft:**\n\"Don't ask vendors about their props. Ask them what your guests will post. Not theoretically. Specifically. If they show you examples of photos guests actually chose to share\u2014hire them. If they hedge or go generic\u2014keep looking.\"\n\n**Why it works:**\nActionable, immediately useful, flips the vendor-selection mindset.\n\n---\n\n## EXECUTION ROADMAP\n\n### This Week\n\n1. **Newsletter \u2014 Idea 1: \"Why Your Event Budget is Backwards\"** (priority: sets up your contrarian positioning; highest impact; gets subscribers thinking differently)\n2. **Instagram \u2014 Carousel: \"The Photo Booth Budget Flip\"** (priority: visual, shareable, establishes brand positioning on main platform)\n\n### Next Two Weeks\n\n3. Newsletter \u2014 Idea 2: \"Vendor Selection: Deliverables Over Logistics\"\n4. Instagram \u2014 Reel: \"The 45-Minute Question\"\n5. Instagram \u2014 Single: \"The Vendor Question\"\n6. Substack Notes (publish 3 notes mid-week as quick takes between longer posts)\n\n### Suggested Weekly Rhythm\n\n**Monday:** Substack Note (quick, timely hot take)\n**Wednesday:** Newsletter or Instagram carousel (deeper insight or strategy post)\n**Friday:** Instagram Reel or single (dynamic, visual, weekend scroll-stopping)\n\n---\n\n## Notes on This Extract\n\n**What worked in the interview:**\nThe core contrarian take (budget is backwards, photo ROI is misunderstood) is strong and specific. The proof point (45-minute line, most-shared moment) is concrete. The business logic (vendor reliability reduces your overhead) is practical.\n\n**What didn't have enough material:**\nSpecific case studies or before/after transformations for clients. If you have follow-up interviews with event planners who booked Tribal Cowboy, that would unlock deeper newsletter material on ROI, measurable results, and vendor comparison frameworks.\n\n**What to mine next:**\n- Guest testimonials or feedback from events (what did they say afterward?)\n- Behind-the-scenes of a full setup/breakdown (good short-form video material)\n- Comparison of photo booth setups side-by-side (visual proof)\n- Interview with an event planner who switched vendors and saw results\n\n---\n\n## Voicing Notes\n\nAll briefs above are written in your voice\u2014direct, specific, grounded in real constraint (solo setup, labor, logistics) rather than generic event advice. Avoid corporate language. Lead with the outcome. Back it up with your actual experience.\n\nThe newsletter angle centers event planners' pain (budget confusion, vendor reliability, ROI measurement). The Instagram angle is visual proof and shareable insights. Both reflect the way your audience actually thinks.\n"}], "grading": null}, {"id": "eval-1-interview-extract-without_skill", "prompt": "I just did this long interview about how I got started with horse photography at events and why most photo booths are boring. Can you pull content ideas from this for my newsletter and Instagram?", "eval_id": 1, "outputs": [{"name": "output.md", "type": "text", "content": "# Content Ideas from Tribal Cowboy Interview\n\n## Newsletter Ideas\n\n### Long-Form Essay: \"Why Your Photo Booth Is Your Marketing\"\n\n**Hook:** \"Event planners spend thousands on decor and catering, then throw $200 at a photo booth that looks like it belongs at a middle school dance. That's backwards.\"\n\n**Key Arguments:**\n- The photo experience IS your marketing (every guest who posts is running a free ad)\n- Most event planners treat photos as an afterthought when they should be the centerpiece\n- ROI for photo experiences isn't measured in immediate revenue\u2014it's measured in social media reach that lasts for weeks\n- Guests only post photos worth sharing; blurry selfies in front of wrinkled backdrops don't go anywhere\n\n**Story Element:** The first Tribal Cowboy event where guests lined up 45 minutes and the venue owner reported it was the most-shared moment on social media\n\n**Call to Action:** Challenge readers to audit their last event\u2014what was the most-posted photo moment? Was it planned or accidental?\n\n---\n\n### Newsletter Angle: \"The Boring Photo Booth Problem\"\n\n**Headline Options:**\n- \"Why Nobody Posts Photos from Your Event (And What to Do About It)\"\n- \"The Photo Experience Nobody Talks About (Until They Do)\"\n- \"Your Photo Booth Is Killing Your Social Media Strategy\"\n\n**Content Structure:**\n- Open: The inflatable photo booth problem (cheap backdrop, silly props, no one posts them)\n- Middle: Why this matters for event ROI and word-of-mouth\n- Close: The Tribal Cowboy philosophy\u2014what makes a photo experience shareable?\n\n---\n\n### Newsletter Angle: \"The Setup Philosophy\"\n\n**Headline:** \"I Load Everything Myself in Under 20 Minutes\"\n\n**Why This Resonates:** Event planners love vendor solutions that don't require managing the vendor. Position reliability and independence as a key differentiator.\n\n**Content:**\n- The operational advantage of being self-sufficient (you control quality, timing, setup)\n- Why event planners value \"show up, handle it, get results\" vendors\n- The behind-the-scenes: horses, lighting, full setup\u2014all your responsibility\n- The payoff: venue gets weeks of free social media content\n\n---\n\n## Instagram Content Ideas\n\n### Post 1: The Problem Statement\n**Caption Ideas:**\n- \"The inflatable photo booth at every event. The cheap backdrop. The props nobody actually uses. The photos nobody posts. If this is your photo experience, we need to talk.\"\n- \"You know the photos\u2014blurry selfies in front of wrinkled backdrops that nobody actually posts. What if your photo moment was THE moment people talked about?\"\n- \"Your guests are running free ads for your event every time they post a photo. But they'll only post if the photo is actually worth sharing.\"\n\n**Visual:** Side-by-side comparison of generic booth vs. something more immersive (or just a shot of a traditional inflatable booth with a red X)\n\n---\n\n### Post 2: The 45-Minute Lineup Story\n**Caption Ideas:**\n- \"First event. Guests lining up 45 minutes for photos. Venue owner said it was the most-shared moment from the entire event on social media. That's not a photo booth. That's an experience.\"\n- \"What happens when guests don't just take photos\u2014they *want* to take photos? Spoiler: 45-minute lines.\"\n\n**Visual:** Action shot of people waiting, energy, excitement\n\n---\n\n### Post 3: The Real ROI Message\n**Caption Ideas:**\n- \"Event planners spend thousands on decor and catering. Then $200 on a photo booth that looks like middle school. The photo moment is what lives online forever. That's where your actual ROI is.\"\n- \"Your photo experience isn't a side attraction. It's your marketing.\"\n- \"Photo ROI isn't immediate revenue. It's weeks of free social media content from every guest who attended.\"\n\n**Visual:** Graphic showing $ spent vs. reach gained, or a photo that clearly has high replay value\n\n---\n\n### Post 4: The Setup Philosophy\n**Caption Ideas:**\n- \"Event planners never have to manage me. I show up, I handle it, guests have an incredible time, and the venue gets weeks of free social media content. That's the system that works.\"\n- \"I load everything myself in under 20 minutes. Horses. Lighting. Full setup. My job is to make your job easier.\"\n\n**Visual:** Behind-the-scenes of setup or the finished product ready to go\n\n---\n\n### Post 5: The Mindset Flip\n**Caption Ideas:**\n- \"Stop treating the photo experience like an afterthought. Start treating it like what it actually is: the thing that lives online forever.\"\n- \"What if the photo moment was the thing people talked about? Not just a side attraction\u2014THE moment of the event.\"\n\n**Visual:** A stunning photo that people would actually want to post\n\n---\n\n## Reels/Short Video Ideas\n\n### Reel 1: The Problem/Solution Format\n**Hook:** Show a generic inflatable booth. \"This is boring.\"\n**Transition:** Cut to Tribal Cowboy experience. \"This is not.\"\n**Text Overlay:** \"Your photo experience IS your marketing.\"\n\n---\n\n### Reel 2: The Numbers Story\n**Hook:** \"Event planners spend $5,000 on decor, $3,000 on catering...\"\n**Pause:** \"...$200 on the photo booth.\"\n**Close:** \"The photo moment is what lives online forever.\"\n\n---\n\n### Reel 3: The Lineup\n**Footage:** People waiting, energy, excitement\n**Text:** \"45-minute wait for photos\"\n**Close:** \"What happens when guests *want* to take photos\"\n\n---\n\n## Social Media Series Ideas\n\n### Carousel Post: \"The Photo Booth Evolution\"\n**Slide 1:** The inflatable photo booth era (with humor)\n**Slide 2:** Why guests don't post\n**Slide 3:** What actually makes photos shareable\n**Slide 4:** The Tribal Cowboy approach\n**Slide 5:** The social media payoff\n\n---\n\n### Thread/Caption Series: \"5 Reasons Your Photo Experience Isn't Working\"\n1. It looks like every other photo booth\n2. The backdrop is forgettable\n3. You're treating it as an afterthought\n4. You haven't invested in quality\n5. It's not designed for social sharing\n\n---\n\n## Quote Highlights for Social\n\n**Pull these quotes for Instagram Stories or caption quotes:**\n\n- \"Nobody's posting a blurry selfie in front of a wrinkled backdrop.\"\n- \"Your photo experience IS your marketing.\"\n- \"The photo moment is the thing that lives online forever. That's where your ROI actually is.\"\n- \"Event planners love that because they don't have to manage me. I show up, I handle it, guests have an incredible time.\"\n- \"Every guest who posts a photo is basically running a free ad for your event.\"\n\n---\n\n## Newsletter Subject Line Ideas\n\n- \"Why Your Photo Booth Is Killing Your Event's Social Media\"\n- \"The 45-Minute Line Nobody Expected\"\n- \"What If Your Photo Experience Was the Thing People Talked About?\"\n- \"The Photo Booth Problem (And How to Fix It)\"\n- \"Your Event's Most Shareable Moment Is Accidental\"\n- \"Why Event Planners Are Getting Photo Booths Wrong\"\n\n---\n\n## Potential Deep Dives\n\n### Newsletter Series: \"The Photo Booth Problem\"\n- **Part 1:** The problem (most photo booths are boring)\n- **Part 2:** Why this matters (social media ROI)\n- **Part 3:** What works (the Tribal Cowboy philosophy)\n- **Part 4:** Implementation (how to audit and improve your own events)\n\n---\n\n## Talking Points for Other Content (Podcasts, Interviews, etc.)\n\n- The \"inflatable photo booth at every event\" is a symptom of treating photos as an afterthought\n- Event planners are optimizing for the wrong metrics (attendance vs. shareability)\n- Guest-generated content from photos is often your highest-reaching marketing\n- A great photo experience creates a feedback loop: great photos \u2192 more posts \u2192 more reach \u2192 more word-of-mouth\n- Operational excellence (self-setup, reliability) is a hidden differentiator for vendors\n\n---\n\n## Platform-Specific Posting Calendar (Draft)\n\n| Platform | Content Type | Frequency | Priority |\n|----------|-------------|-----------|----------|\n| Instagram | Carousel posts | 2x/week | High |\n| Instagram | Reels | 1x/week | High |\n| Instagram | Stories | 3-4x/week | Medium |\n| Newsletter | Long-form | Bi-weekly | High |\n| LinkedIn | Thought leadership posts | 1x/week | Medium |\n| TikTok | Shorter reels/clips | 2-3x/week | Medium |\n\n---\n\n## Key Messaging Pillars from Interview\n\n1. **The Experience Over Aesthetics:** Real, immersive experiences beat generic setups\n2. **Social Media as ROI:** Photos aren't side content; they're your marketing\n3. **Operational Excellence:** Reliability and independence are valuable\n4. **The Shareability Standard:** Only invest in what guests actually want to post\n5. **Long-Term Impact:** Photo moments create weeks of organic reach, not minutes\n\n"}], "grading": null}, {"id": "eval-2-facebook-repurpose-with_skill", "prompt": "I wrote a really long Facebook post about 5 lessons I learned from my first year running Tribal Cowboy and it got a ton of engagement. I want to squeeze as much content as possible out of it \u2014 newsletter, Substack Notes, Instagram, Twitter, the works.", "eval_id": 2, "outputs": [{"name": "output.md", "type": "text", "content": "# Content Extraction: Tribal Cowboy Facebook Post\n## Repurposing \"5 Things I Wish Someone Told Me\"\n\n---\n\n## Platform Content Briefs\n\n### NEWSLETTER (Substack)\n\n#### Brief 1: \"Load-In as a Selling Tool\"\n**Title:** Why Your Setup Speed is Actually a Marketing Asset\n**Subject line:** The 20-minute advantage nobody talks about\n**Type:** Insight + how-to\n**Angle:** Event planners are drowning in logistics. When they book a vendor who makes their life *easier* instead of harder, that's memorable. Your setup speed isn't just operational efficiency \u2014 it's a marketing message. Stacie cut her load-in from an hour to 20 minutes and turned it into a booking factor. This piece explores how she did it, why planners notice, and how to audit your own setup for unnecessary complexity.\n**Key points:**\n- Event planners track who adds friction vs. eliminates it\n- Setup speed signals professionalism and reliability\n- Identifying what's essential vs. what's slowing you down\n- How to communicate your efficiency as a feature to prospects\n- The ripple effect: faster setup + higher booking confidence\n**Estimated length:** 1,200\u20131,400 words\n\n#### Brief 2: \"The Price-Experience Disconnect\"\n**Title:** Stop Pricing Like a Photographer. Start Pricing Like an Experience Designer.\n**Subject line:** Why your rate card is costing you money\n**Type:** Business philosophy + framework\n**Angle:** Most photographers price by deliverable (hours worked, photos delivered). Stacie flipped this: she prices by the experience people buy. The photo is incidental. The moment with the horse, the atmosphere, the memory they leave with \u2014 that's the product. This shifts negotiations, positioning, and profitability entirely. The piece walks through how to audit your own pricing logic and what changes when you price the experience instead of the transaction.\n**Key points:**\n- What buyers actually value vs. what photographers think they value\n- Why deliverables-based pricing leaves money on the table\n- How experience pricing changes your positioning and authority\n- Real-world examples of the same setup at different price points\n- How to communicate value when you shift the frame\n**Estimated length:** 1,500\u20131,800 words\n\n#### Brief 3: \"Rural Markets Are Hungry, Not Broke\"\n**Title:** Why Small Towns Are the Best-Kept Secret in Experiential Events\n**Subject line:** The contrarian guide to rural event growth\n**Type:** Market analysis + case study\n**Angle:** Everyone says rural markets are \"tough.\" Stacie calls BS. Small towns are underserved, word of mouth travels faster, and competition is thin. The buyers are there \u2014 they just have different needs. This piece challenges the assumption that rural = low-margin, and walks through why Stacie's best bookings came from rural communities, not urban centers.\n**Key points:**\n- What \"underserved\" actually means in rural markets\n- Why word of mouth is more powerful in small towns\n- The truth about competition in rural areas\n- How to position for rural audiences without discounting\n- Case study: what Tribal Cowboy found when they went all-in on rural\n**Estimated length:** 1,300\u20131,500 words\n\n#### Brief 4: \"Let Guest Posts Sell for You\"\n**Title:** The Social Proof Strategy That Doesn't Require a Sales Pitch\n**Subject line:** Why guests' own words outsell your marketing\n**Type:** Strategy + framework\n**Angle:** Most vendors spend time and money creating compelling pitch decks and marketing materials. Stacie stopped. Instead, she reposts what guests already share. Real photos from real events, real captions, real enthusiasm. No edit, no filters, no sales angle \u2014 just authenticity doing the work. This piece explores the mechanics of social proof and how to build a system that makes it work for you.\n**Key points:**\n- Why real customer content beats professional marketing\n- How to create conditions where guests want to post\n- Systems for capturing and amplifying guest photos\n- The trust gradient: how social proof changes the booking conversation\n- What happens to your inbound when you stop convincing and start sharing\n**Estimated length:** 1,200\u20131,400 words\n\n#### Brief 5: \"Ready or Not\"\n**Title:** How to Get Comfortable With Imperfect Conditions\n**Subject line:** Mud, wind, chaos \u2014 and why it doesn't matter\n**Type:** Mindset + resilience\n**Angle:** Event work is messy. Horses are unpredictable. Weather doesn't cooperate. Instead of waiting for perfect conditions, Stacie embraced the mess. Not as a problem to solve, but as part of the experience. This piece is about reframing uncertainty from \"risk to mitigate\" to \"reality to work with\" \u2014 and how that shift changes your resilience, your client relationships, and your profitability.\n**Key points:**\n- What \"perfect conditions\" actually cost you\n- How messy events create better memories\n- Building confidence in imperfect setups\n- Communicating reliability even when conditions are tough\n- The business advantage of embracing chaos\n**Estimated length:** 1,100\u20131,300 words\n\n**Top Pick:** Brief 2 (\"Stop Pricing Like a Photographer\") \u2014 This hits the core pain point of her audience (pricing frustration, leaving money on the table) and introduces a framework they can immediately apply.\n\n---\n\n### SUBSTACK NOTES\n\n#### Note 1: Quick Pricing Reframe\n**Hook:** \"You're not selling a photo. You're selling the moment with the horse, the light, the whole feeling people leave with.\"\n**Type:** Single-punch insight\n**Full draft:**\nYou're not selling a photo. You're selling the moment with the horse, the light, the whole feeling people leave with. The photo is a byproduct.\n\nThat distinction changed everything about how I price, how I position, and what I charge. When you stop thinking like a photographer and start thinking like an experience designer, the numbers move.\n\nWhat are you actually selling that you've been under-pricing?\n**Why it works:** It challenges the reader's core assumption about their product in one sentence \u2014 immediate shift potential.\n\n#### Note 2: Setup as Visibility\n**Hook:** \"Event planners remember who made their life easier. I got my load-in down to 20 minutes because of that.\"\n**Type:** Observation + proof\n**Full draft:**\nEvent planners remember who made their life easier. I got my load-in down to 20 minutes because of that.\n\nIt sounds like an operations thing. It's actually a marketing thing.\n\nWhen you show up, set up fast, and stay out of their way, you stand out. Not because you're fancy. Because you're reliable. Event planners talk about that.\n**Why it works:** Reframes a boring operational detail as a marketing asset \u2014 makes people rethink what \"standing out\" means.\n\n#### Note 3: Rural Market Opportunity\n**Hook:** \"Small towns aren't underinterested in unique experiences. They're just underserved. Word of mouth travels faster too.\"\n**Type:** Contrarian take\n**Full draft:**\nSmall towns aren't underinterested in unique experiences. They're just underserved.\n\nThe competition is lower. Word of mouth travels faster. People are hungry for something different.\n\nEveryone told me horse photography wouldn't work in rural North Idaho. They were right \u2014 it wouldn't work with an urban playbook. But it thrives with a rural one.\n\nWhat market is everyone telling you won't work? Might be the opposite.\n**Why it works:** Flips conventional wisdom and gives permission to explore \"risky\" markets.\n\n#### Note 4: Social Proof Philosophy\n**Hook:** \"I stopped trying to convince people to book me. Now I just share what guests post.\"\n**Type:** Philosophy shift\n**Full draft:**\nI stopped trying to convince people to book me. Now I just share what guests post.\n\nReal photos from real events. That does more than any pitch deck I could write.\n\nYour guests are doing the selling for you if you let them. The trick isn't getting them to post \u2014 it's being worth talking about.\n**Why it works:** Gives permission to stop hustling and trust the product \u2014 resonates deeply.\n\n#### Note 5: Embracing Chaos\n**Hook:** \"You will set up in mud, wind, and chaos. And it will be worth it every single time.\"\n**Type:** Reassurance + reframe\n**Full draft:**\nYou will set up in mud, wind, and chaos. And it will be worth it every single time.\n\nI used to see rough conditions as a problem. Now I see them as part of why the memory sticks.\n\nThe best moments happen when nothing goes perfectly but you show up anyway.\n**Why it works:** Validates the reader's fear while offering immediate reframe \u2014 both comforting and empowering.\n\n**Top Pick:** Note 2 (\"Setup as Visibility\") \u2014 Short, actionable, and challenges a common assumption about what makes vendors memorable.\n\n---\n\n### INSTAGRAM\n\n#### Idea 1: Carousel \u2014 \"What Event Planners Actually Notice\"\n**Format:** Carousel (5 slides)\n**Hook/Caption opener:** \"What made event planners remember Tribal Cowboy? Not what you'd think.\"\n**Full caption:**\nWhat made event planners remember Tribal Cowboy? Not what you'd think.\n\nI spent my first year trying to be the flashiest, most impressive vendor in the room. Nobody cared.\n\nWhat they *remembered* was:\n- I got ready in 20 minutes (not an hour)\n- I didn't create chaos during setup\n- I was reliable, low-maintenance, professional\n- I made their life easier, not harder\n\nTurns out, standing out isn't about being impressive. It's about being dependable.\n\nIf you're a vendor, event planner, or business owner \u2014 what's your equivalent of \"load-in speed\"? What's the thing that actually gets you remembered?\n**Visual direction:**\n- Slide 1: Split image \u2014 busy, chaotic setup on left / calm, organized on right\n- Slide 2: Clock icon or timer \u2014 \"20 minutes\" big text\n- Slide 3: Checklist or checkmark icons \u2014 reliability\n- Slide 4: Quote graphic on simple background: \"Event planners remember who makes their life easier\"\n- Slide 5: Call to action text on background\n\n**Hashtag suggestions:** #TribalCowboy #EventPlanning #VendorLife #HorsePhotography #EventProf #SmallBiz #NorthIdaho #WesternEvents #Professionalism #BusinessOwner\n\n#### Idea 2: Single Image Post \u2014 \"Price the Experience\"\n**Format:** Single image\n**Hook/Caption opener:** \"Plot twist: you're not selling what you think you're selling.\"\n**Caption:**\nPlot twist: you're not selling what you think you're selling.\n\nI used to price like a photographer \u2014 hours worked, photos delivered.\n\nThen I realized: people aren't paying for the photo. They're paying for the moment with the horse. The light. The whole feeling they leave with. The photo is a byproduct.\n\nWhen you price the experience instead of the deliverable, everything changes.\n\nWhat's the real thing your customers are buying? (Comment below.)\n**Visual direction:**\nPhoto of a guest moment with horse \u2014 genuine interaction, real light, people engaged. Should feel like the \"experience,\" not a professional shoot.\n\n**Hashtag suggestions:** #PricingStrategy #SmallBusinessOwner #EventExperience #HorsePhotography #VendorTips #RuralBusiness #Entrepreneurship #TribalCowboy\n\n#### Idea 3: Reel \u2014 \"20-Minute Load-In\"\n**Format:** Reel (45\u201360 seconds)\n**Hook (first 3 seconds):**\nOn screen: \"I used to take 1 hour to set up. Now it's 20 minutes. Here's why it matters.\"\n**Script outline:**\n- Hook: \"I cut my setup time in half. Event planners noticed.\"\n- Show: Fast clips of actual setup (equipment being pulled out, arranged, ready)\n- Point: \"It's not about being flashy. It's about being reliable.\"\n- Payoff: \"When you make someone's life easier, they remember you.\"\n- CTA: \"What slows you down? Time to audit.\"\n**Duration:** 45\u201360 seconds\n**Visual notes:** Real setup footage if available, or fast-motion cuts of gear being organized, equipment ready, final setup. Should feel operational and real, not overly produced.\n\n#### Idea 4: Story Series \u2014 Social Proof Wins\n**Format:** Stories (3-4 carousel stories)\n**Hook/Caption opener:** \"This is what guests posted about Tribal Cowboy this week.\"\n**Story 1:** Repost guest photo with caption \"This moment speaks louder than any pitch I could make.\"\n**Story 2:** Another guest post: \"This is what I stopped trying to convince people about.\"\n**Story 3:** Text story: \"Guest posts >>> marketing copy. Every time.\"\n**Story 4:** Direct comment: \"If you're booking an event vendor, look for this: are other guests talking about them?\"\n\n**Hashtag suggestions (in main feed post if applicable):** #SocialProof #GuestExperience #WordOfMouth #AuthenticMarketing #RealReviews\n\n#### Idea 5: Carousel \u2014 \"The Reality of Rural Events\"\n**Format:** Carousel (4 slides)\n**Hook/Caption opener:** \"Everyone said horse photography wouldn't work in rural North Idaho. They were wrong.\"\n**Full caption:**\nEveryone said horse photography wouldn't work in rural North Idaho. They were wrong.\n\nSmall towns are underserved, not uninterested. What people told me:\n- \"Rural markets don't have budget\"\n- \"There's no demand for unique experiences\"\n- \"You need to be in the city\"\n\nWhat I actually found:\n- Word of mouth travels faster in small towns\n- Competition is lower\n- People are hungry for something different\n- Events feel more personal, more memorable\n\nIf you're thinking about serving a rural market, don't listen to the naysayers. Listen to what people actually want.\n**Visual direction:**\n- Slide 1: Wide landscape shot (field, ranch, rural setting) with overlay text: \"The Best Markets Are Overlooked\"\n- Slide 2: Icon/graphic: \"Lower competition\"\n- Slide 3: Icon/graphic: \"Word of mouth travels fast\"\n- Slide 4: Quote graphic: \"Rural isn't broken. It's just underserved.\"\n\n**Hashtag suggestions:** #RuralBusiness #SmallTownLove #HorseCountry #NorthIdaho #EasternWashington #LocalBusiness #EventPlanning #EntrepreneurLife #RuralEvents #TribalCowboy\n\n**Top Pick:** Idea 1 (Carousel \u2014 \"What Event Planners Actually Notice\") \u2014 Carousel format works best for complex multi-point lessons, and this hits a universal pain point for any service provider or vendor.\n\n---\n\n### TWITTER/X\n\n#### Thread 1: \"The Pricing Shift That Changed Everything\"\n**Hook tweet:**\n\"I spent my first year pricing like a photographer. Then I realized I was leaving money on the table. Here's what changed.\"\n**Thread structure:** 8 tweets\n**Key points:**\n1. Hook \u2014 pricing like photographer vs. experience designer\n2. What I was selling (deliverables) vs. what they were buying (the moment)\n3. The photo is incidental, not the main event\n4. Shift the frame = shift the price\n5. Shift the price = shift the positioning\n6. Real example: what changed in conversations\n7. What changed in bookings\n8. Closing: \"What are you underpricing because you've framed it wrong?\"\n**Closing CTA:** \"If you're a vendor or service business, audit your pricing frame. It might be costing you.\"\n\n#### Tweet 2: Standalone \u2014 Setup Speed\n**Tweet:** \"Event planners remember who made their life easier. I got my load-in down to 20 minutes. That's a selling point nobody expects. Setup speed = reliability signal = booking advantage.\"\n**Type:** Insight + tip\n**Why it works:** Concrete number, unexpected angle, immediately useful.\n\n#### Tweet 3: Standalone \u2014 Rural Markets\n**Tweet:** \"Everyone said 'horse photography won't work in rural Idaho.' They were right about the urban playbook. Wrong about the market. Small towns are underserved, not uninterested. Word travels fast. Competition is thin. It's a better market, not a harder one.\"\n**Type:** Contrarian take\n**Why it works:** Validates readers thinking about overlooked markets.\n\n#### Tweet 4: Standalone \u2014 Social Proof\n**Tweet:** \"Stopped trying to convince people to book me. Now I just share what guests post. Real moments. Real photos. Real reactions. That does more than any pitch deck. Your guests sell for you if you let them.\"\n**Type:** Philosophy shift\n**Why it works:** Gives permission to stop hustling, trust product.\n\n#### Tweet 5: Standalone \u2014 Embracing Chaos\n**Tweet:** \"You will set up in mud, wind, and chaos. And the moments that happen in those conditions are the ones people remember most. Not because conditions are perfect. Because you showed up anyway.\"\n**Type:** Reframe + mindset\n**Why it works:** Validates fear while offering resilience.\n\n**Top Pick:** Thread 1 (\"The Pricing Shift That Changed Everything\") \u2014 Threads are ideal for multi-step frameworks. This one builds a complete argument and gives followers something to think about and apply.\n\n---\n\n### SHORT-FORM VIDEO (YouTube Shorts/Reels/TikTok)\n\n#### Idea 1: \"20-Minute Setup\"\n**Hook (first 3 seconds):**\n\"I used to take an hour to set up. Event planners hated waiting. Now it's 20 minutes. Here's what changed.\"\n**Concept:** Operational efficiency as a marketing advantage\n**Script outline:**\n1. Hook: Establish the problem (slow setup = frustration)\n2. Show: Fast clips of actual setup (real speed)\n3. Explain: What got cut, what stayed (no fluff, essentials only)\n4. Impact: How event planners reacted (\"You actually came ready\")\n5. Payoff: \"Setup speed is a selling point\"\n6. CTA: \"What part of your business needs a speed audit?\"\n**Duration:** 45\u201360 seconds\n**Visual notes:** Real setup footage, fast-motion, professional but not polished. Include actual equipment, show the reality. On-screen text to reinforce each point.\n\n#### Idea 2: \"Price the Experience, Not the Photo\"\n**Hook (first 3 seconds):**\n\"I was pricing like a photographer. Then I realized people weren't paying for the photo. They were paying for the *moment*.\"\n**Concept:** Shift in pricing logic = bigger revenue\n**Script outline:**\n1. Hook: Wrong pricing frame\n2. Realization: What people actually buy\n3. Show: Guest moment (not just photo)\n4. Explain: Why experience > deliverable\n5. Result: Pricing power + positioning\n6. CTA: \"What's your wrong pricing frame costing you?\"\n**Duration:** 45\u201360 seconds\n**Visual notes:** Real guest moment (preferably with horse, emotion, atmosphere). Should feel like experience, not professional shoot. Text overlays for clarity.\n\n#### Idea 3: \"Rural Markets Are Better, Not Worse\"\n**Hook (first 3 seconds):**\n\"Everyone told me horse photography wouldn't work in small towns. They were wrong about the opportunity.\"\n**Concept:** Contrarian market insight\n**Script outline:**\n1. Hook: The thing everyone says won't work\n2. Wrong assumption: Why people think it's hard\n3. Reality: Why it's actually an advantage\n4. Point 1: Less competition\n5. Point 2: Word of mouth travels fast\n6. Point 3: People are hungry for different\n7. CTA: \"What overlooked market could work for you?\"\n**Duration:** 45\u201360 seconds\n**Visual notes:** Rural landscape, ranch, horses, real event footage. Should feel authentic to the market, not glossy. Include real moments from actual events.\n\n#### Idea 4: \"Social Proof > Sales Pitch\"\n**Hook (first 3 seconds):**\n\"I stopped trying to convince people to book me. Now I just share what guests post. That does all the selling.\"\n**Concept:** Real customer content as marketing strategy\n**Script outline:**\n1. Hook: What I stopped doing\n2. What I do now: Share guest posts\n3. Why it works: Authenticity, real proof\n4. Show: Examples of guest posts\n5. Impact: Booking conversation changes\n6. CTA: \"What's your best guest content?\"\n**Duration:** 45\u201360 seconds\n**Visual notes:** Mix of guest photos, real event moments, on-screen text emphasizing authenticity. Should feel organic, not over-produced.\n\n#### Idea 5: \"Mud, Wind, Chaos \u2014 Worth It\"\n**Hook (first 3 seconds):**\n\"You will set up in imperfect conditions. Here's why that's actually when magic happens.\"\n**Concept:** Resilience + embracing reality\n**Script outline:**\n1. Hook: The difficult conditions\n2. Setup: Show real messy conditions\n3. Show: How you work anyway\n4. Point: These are the memories people remember\n5. Mindset: Not a problem, part of the experience\n6. Payoff: That confidence makes you better\n**Duration:** 45\u201360 seconds\n**Visual notes:** Real event conditions (wind, mud, weather), actual setup work, guest moments despite conditions. Should feel grounded and real, not sanitized.\n\n**Top Pick:** Idea 2 (\"Price the Experience, Not the Photo\") \u2014 Core business insight with immediate applicability. Short, punchy, visual, and highly shareable among service providers and small business owners.\n\n---\n\n### FACEBOOK\n\n#### Idea 1: Text Post \u2014 \"What Made Us Stand Out\"\n**Post type:** Conversational text post\n**Opening line:** \"A year ago, I thought standing out meant being the flashiest, most impressive vendor in the room. I was wrong.\"\n**Full post:**\nA year ago, I thought standing out meant being the flashiest, most impressive vendor in the room. I was wrong.\n\nHere's what event planners actually remember:\n\n1. I get ready in 20 minutes (not an hour). That signals reliability. Planners notice when you're low-maintenance.\n\n2. I'm not creating chaos during setup. I'm making their life easier, not harder.\n\n3. I show up professional, ready, and out of the way. No drama. No complications.\n\nTurns out, standing out isn't about being impressive. It's about being dependable. It's about making the people around you feel like they made a smart choice.\n\nIf you're running a service business, what's your equivalent? What's the thing that actually makes you memorable \u2014 not to you, but to the people hiring you?\n\n**Engagement angle:** Direct question at the end invites comments and reflection. People naturally want to share what makes them memorable.\n\n**Visual notes:** Optional \u2014 a behind-the-scenes photo of calm, organized setup would work, but not required.\n\n---\n\n#### Idea 2: Text Post \u2014 \"Rural Markets Are Worth Your Time\"\n**Post type:** Longer conversational post with conviction\n**Opening line:** \"Everyone told me horse photography wouldn't work in rural North Idaho. But I'm building a business on it.\"\n**Full post:**\nEveryone told me horse photography wouldn't work in rural North Idaho. But I'm building a business on it.\n\nHere's what I found instead of what they predicted:\n\nSmall towns aren't broke \u2014 they're underserved. People are hungry for unique experiences. They just don't see them often.\n\nWord of mouth travels *fast* in small communities. One great event leads to five bookings. In the city, it takes twice as long.\n\nCompetition is lower. You're not fighting the same five vendors everyone uses. You're the different thing people have been wanting.\n\nIf you're thinking about going rural, don't listen to the people telling you it won't work. Listen to what people actually want. There's a market there. It's just quieter.\n\n**Engagement angle:** Validates readers considering rural markets and opens conversation about unconventional business decisions.\n\n**Visual notes:** Photo of an actual rural event or ranch setting \u2014 something that shows the authentic environment.\n\n---\n\n#### Idea 3: Photo Post \u2014 \"Setup Speed as a Feature\"\n**Post type:** Photo post with caption\n**Opening line:** \"Plot twist: Your setup speed is a selling point.\"\n**Full post:**\nPlot twist: Your setup speed is a selling point.\n\nI used to think my setup time was just logistics. Event planners think of it differently. They notice who gets ready fast and low-maintenance, and they book those vendors again.\n\nIn year one, my load-in was an hour. Event planners would get stressed \u2014 another vendor taking time, needing assistance, creating delays.\n\nI got it down to 20 minutes. Suddenly: \"You're so easy to work with. When can you come back?\"\n\nSame quality. Same impact. Different delivery time. Different perception.\n\nWhat part of your business could be faster? What would your clients think if you did?\n\n**Engagement angle:** Prompts reflection on operational improvements as marketing.\n\n**Visual notes:** Photo of actual setup in progress \u2014 should feel real and fast, not overly polished. Or a before/after comparison (messy vs. organized).\n\n---\n\n#### Idea 4: Story/Experience Post \u2014 \"You'll Never Have Perfect Conditions\"\n**Post type:** Conversational reflection post\n**Opening line:** \"You will set up in mud, wind, and chaos. And I promise it's worth it every single time.\"\n**Full post:**\nYou will set up in mud, wind, and chaos. And I promise it's worth it every single time.\n\nI used to see bad conditions as a problem I had to solve or manage around. I tried to wait for perfect weather, perfect ground, perfect circumstances.\n\nThen I realized: perfect rarely comes. But the events that happen in real, messy conditions? Those are the ones people remember.\n\nThere's something about showing up anyway, making it work, delivering excellence despite everything being difficult \u2014 that sticks with people. That's the story they tell.\n\nSome of my best reviews came from events where it poured rain, the ground was muddy, and nothing was easy. But we made it work. We showed up. We delivered.\n\nSo if you're waiting for perfect conditions to start, or perfect circumstances to say yes to something, or perfect clarity before you commit \u2014 I'm here to tell you: perfect waits for no one. The work is worth it anyway.\n\n**Engagement angle:** Reassuring + motivational. Invites comments about people's own experiences overcoming adversity.\n\n**Visual notes:** Real event photo in imperfect conditions \u2014 rain, mud, wind, but genuine moments happening anyway.\n\n---\n\n#### Idea 5: Poll/Question Post \u2014 \"Social Proof\"\n**Post type:** Question/engagement post\n**Opening line:** \"Quick question for event planners and vendors: What influences a booking decision more?\"\n**Full post:**\nQuick question for event planners and vendors: What influences a booking decision more?\n\nA. A vendor's pitch / sales materials\nB. Photos and reviews posted by guests who actually worked with them\n\nI'll give you the answer: It's B. Every time.\n\nThe photos guests post, the things they say in comments, the way they tag you and share their experience \u2014 that does more than any marketing copy or pitch deck.\n\nSo if you're a vendor: Stop trying so hard to convince people. Build something worth talking about. Then let your guests do the selling.\n\nIf you're an event planner: Look at what *guests* are saying about the vendors you're considering. That's your real intel.\n\n**Engagement angle:** Directly asks for engagement through the question format. Creates discussion thread.\n\n**Visual notes:** No specific photo required \u2014 the question itself is the hook. Optional: a graphic with \"A\" and \"B\" options.\n\n---\n\n#### Idea 6: Link Share / Event Promo\n**Post type:** Promotional (if applicable to upcoming events)\n**Opening line:** \"Booking is open for [season/occasion]. Here's what guests have been saying.\"\n**Full post:**\nBooking is open for [season]. Here's what guests have been saying without me asking them to:\n\n[Include 2-3 quotes or paraphrased feedback from past guests]\n\nPeople keep coming back because it's:\n- Real horses, real light, real experience\n- Simple to coordinate (we handle setup, you enjoy the moment)\n- Photo moments people actually use and share\n\nIf you're planning an event and want something your guests will actually talk about, let's make it happen.\n\n[CTA: Link to booking or inquiry form]\n\n**Engagement angle:** Social proof + clear call to action.\n\n**Visual notes:** Photo gallery or carousel of past events \u2014 real guest moments, actual setup, authentic atmosphere.\n\n---\n\n**Top Pick:** Idea 1 (\"What Made Us Stand Out\") \u2014 Highest engagement potential on Facebook. It's conversational, starts with a relatable realization, and ends with a genuine question that invites comment. This format performs well on Facebook's algorithm and builds community.\n\n---\n\n## Execution Roadmap\n\n### This Week\n1. **Substack Newsletter** \u2014 Brief 2 (\"Stop Pricing Like a Photographer\") \u2014 Highest impact for your core audience; establishes a framework they can apply immediately\n2. **Instagram Carousel** \u2014 Idea 1 (\"What Event Planners Actually Notice\") \u2014 Takes the key insight and makes it visual and shareable; drives referrals\n3. **Twitter Thread** \u2014 Thread 1 (\"The Pricing Shift That Changed Everything\") \u2014 Reaches a professional audience thinking about business model and pricing strategy\n\n### Next Two Weeks\n1. **Substack Notes** \u2014 Notes 1\u20133 (pricing, setup, rural markets) \u2014 Distribute across 3 separate posts; quick hits that drive engagement\n2. **Short-Form Video** \u2014 Idea 2 (\"Price the Experience, Not the Photo\") \u2014 Post to Reels, YouTube Shorts, TikTok; highest reach potential\n3. **Facebook Post** \u2014 Idea 2 (\"Rural Markets Are Worth Your Time\") \u2014 Builds community and validates underserved market positioning\n4. **Instagram Reel** \u2014 Idea 3 (\"20-Minute Load-In\") \u2014 Complement the carousel; shows the operational reality behind the concept\n5. **Twitter Standalone** \u2014 Tweet 2 (\"Setup Speed\") \u2014 Quick tactical insight; promotes the newsletter narrative\n\n### Suggested Weekly Rhythm\n- **Monday:** Substack Notes (quick insight, sets tone for the week)\n- **Wednesday:** Instagram (carousel or Reel \u2014 high visual format)\n- **Friday:** Twitter (Thread or standalone \u2014 ends week with conversational engagement or bold take)\n- **Bonus (as bandwidth allows):** Short-form video to Reels/Shorts/TikTok (extend reach beyond core audience)\n\n---\n\n## Content Mining Summary\n\n### Core Insights Extracted\n1. **Setup speed as operational excellence + marketing signal** \u2014 Most people see this as overhead. Stacie positioned it as competitive advantage.\n2. **Experience pricing over deliverable pricing** \u2014 Philosophical shift that changes positioning, negotiation, and profitability.\n3. **Rural market opportunity** \u2014 Contrarian take that challenges assumption and opens new market angle.\n4. **Social proof as primary sales tool** \u2014 Shifts from \"I convince you\" to \"my guests convince you\" \u2014 high-trust positioning.\n5. **Resilience in imperfect conditions** \u2014 Mindset reframe that builds confidence and differentiates on reliability.\n\n### Themes That Work Everywhere\n- **Operational reality** \u2014 Stacie's brand is grounded in real constraints (rural, solo operation, real horses, imperfect conditions)\n- **Contrarian takes** \u2014 \"Rural isn't broken\" / \"Social proof beats sales pitch\" / \"Setup speed matters\" \u2014 all challenge assumptions\n- **Concrete proof** \u2014 20 minutes (specific), guest posts (real), word of mouth (proven) \u2014 specificity builds trust\n- **Permission to operate differently** \u2014 Validates readers who feel outside conventional wisdom\n\n### Platforms Where This Content Performs Best\n- **Newsletter + Substack Notes:** Ideal for thought leadership and framework-building\n- **Instagram + Video:** Carousel and Reel formats work best for this tactical, visual content\n- **Twitter:** Ideal for contrarian takes and framework threads\n- **Facebook:** Best for conversational reflection and community-building questions\n\n---\n\n## Final Note on Voice & Execution\n\nEvery brief above is written in Stacie's voice \u2014 direct, specific, grounded in real constraints, and commercially aware. No corporate language, no fluff, no generic advice. The content challenges assumptions (rural markets, pricing logic, what makes you memorable) while offering concrete, applicable proof.\n\nThe goal is maximum value from one source: one post, five newsletter angles, multiple short-form pieces, and a complete platform strategy that works together, not in silos. Each piece stands alone, but they reinforce the same narrative: understanding your real value, serving overlooked markets, and letting authenticity do the selling.\n"}], "grading": null}], "previous_feedback": {}, "previous_outputs": {}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

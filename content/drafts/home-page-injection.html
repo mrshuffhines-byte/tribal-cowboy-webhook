@@ -1,0 +1,790 @@
+<style>
+/* ============================================================
+   TRIBAL COWBOY — HOMEPAGE
+   Scope: body#collection-6753462d6265c027201f6b5a
+   ============================================================ */
+
+body#collection-6753462d6265c027201f6b5a .page-section,
+body#collection-6753462d6265c027201f6b5a .content-wrapper {
+  display: none !important;
+}
+
+/* ---- RESET / WRAPPER ---- */
+#tc-hm {
+  font-family: 'Montserrat', sans-serif;
+  color: #2C2520;
+  background: #F3EDE3;
+}
+#tc-hm * { box-sizing: border-box; }
+#tc-hm a { text-decoration: none; }
+
+/* ---- HERO ---- */
+#tc-hm .hm-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#tc-hm .hm-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,14,10,0.97) 0%, rgba(20,14,10,0.55) 45%, rgba(44,37,32,0.10) 100%);
+}
+#tc-hm .hm-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 64px;
+  max-width: 820px;
+}
+#tc-hm .hm-hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 20px 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+#tc-hm .hm-hero h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(44px, 7vw, 88px) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 28px 0;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  letter-spacing: -0.5px;
+}
+#tc-hm .hm-hero-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(243,237,227,0.88) !important;
+  margin: 0 0 48px 0;
+  line-height: 1.75;
+  max-width: 580px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+#tc-hm .hm-hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+#tc-hm .hm-btn-gold {
+  display: inline-block;
+  padding: 16px 40px;
+  background: #D4A843;
+  color: #2C2520 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+#tc-hm .hm-btn-gold:hover { background: #c49930; }
+#tc-hm .hm-btn-ghost {
+  display: inline-block;
+  padding: 15px 36px;
+  background: transparent;
+  border: 1px solid rgba(243,237,227,0.40);
+  color: #F3EDE3 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: border-color 0.2s;
+}
+#tc-hm .hm-btn-ghost:hover { border-color: rgba(243,237,227,0.75); }
+
+/* ---- OUTCOMES BAR ---- */
+#tc-hm .hm-outcomes {
+  background: #2C2520;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#tc-hm .hm-outcome {
+  padding: 56px 40px;
+  text-align: center;
+  border-right: 1px solid rgba(243,237,227,0.07);
+}
+#tc-hm .hm-outcome:last-child { border-right: none; }
+#tc-hm .hm-outcome-stat {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 54px;
+  font-weight: 400;
+  color: #D4A843 !important;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+#tc-hm .hm-outcome-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: rgba(243,237,227,0.60) !important;
+  line-height: 1.55;
+}
+
+/* ---- SERVICES ---- */
+#tc-hm .hm-services {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+#tc-hm .hm-services-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+#tc-hm .hm-services-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 16px 0;
+}
+#tc-hm .hm-services-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(36px, 4.5vw, 60px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+  line-height: 1.05;
+}
+#tc-hm .hm-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  max-width: 1080px;
+  margin: 0 auto 52px;
+  background: rgba(44,37,32,0.10);
+}
+#tc-hm .hm-service-card {
+  background: #F3EDE3;
+  padding: 44px 36px 40px;
+  border-top: 2px solid #D4A843;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s;
+}
+#tc-hm .hm-service-card:hover { background: #ede6d8; }
+#tc-hm .hm-service-num {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 14px 0;
+}
+#tc-hm .hm-service-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #2C2520 !important;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+#tc-hm .hm-service-text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #8A7868 !important;
+  margin: 0 0 24px 0;
+  flex-grow: 1;
+}
+#tc-hm .hm-service-link {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2C2520 !important;
+  border-bottom: 1px solid rgba(44,37,32,0.25);
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition: border-color 0.2s, color 0.2s;
+}
+#tc-hm .hm-service-link:hover { color: #D4A843 !important; border-color: #D4A843; }
+#tc-hm .hm-services-footer {
+  text-align: center;
+}
+#tc-hm .hm-services-all {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2C2520 !important;
+  border-bottom: 1px solid rgba(44,37,32,0.3);
+  padding-bottom: 2px;
+}
+#tc-hm .hm-services-all:hover { color: #D4A843 !important; border-color: #D4A843; }
+
+/* ---- PHOTO DELIVERY ---- */
+#tc-hm .hm-photo {
+  background: #2C2520;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+#tc-hm .hm-photo-img {
+  overflow: hidden;
+}
+#tc-hm .hm-photo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#tc-hm .hm-photo-copy {
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#tc-hm .hm-photo-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 18px 0;
+}
+#tc-hm .hm-photo h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(32px, 3.5vw, 50px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+}
+#tc-hm .hm-photo-text {
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(243,237,227,0.65) !important;
+  margin: 0 0 14px 0;
+}
+#tc-hm .hm-photo-kicker {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(243,237,227,0.82) !important;
+  margin: 0 0 36px 0;
+  font-style: italic;
+}
+#tc-hm .hm-btn-cream {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 14px 36px;
+  background: #F3EDE3;
+  color: #2C2520 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+#tc-hm .hm-btn-cream:hover { background: #fff; }
+
+/* ---- TESTIMONIALS ---- */
+#tc-hm .hm-testimonials {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+#tc-hm .hm-testimonials-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+#tc-hm .hm-testimonials-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 56px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+}
+#tc-hm .hm-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background: rgba(44,37,32,0.10);
+}
+#tc-hm .hm-testimonial { background: #F3EDE3; padding: 44px 36px; }
+#tc-hm .hm-testimonial-mark {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 60px;
+  line-height: 0.7;
+  color: #D4A843 !important;
+  margin-bottom: 22px;
+}
+#tc-hm .hm-testimonial-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #8A7868 !important;
+  margin: 0 0 24px 0;
+  font-style: italic;
+}
+#tc-hm .hm-testimonial-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #2C2520 !important;
+  margin: 0 0 2px 0;
+}
+#tc-hm .hm-testimonial-role {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(44,37,32,0.40) !important;
+  margin: 0;
+}
+/* 5th testimonial spans full bottom row */
+#tc-hm .hm-testimonial-wide {
+  background: #F3EDE3;
+  padding: 44px 36px;
+  grid-column: span 3;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  border-top: 3px solid #2C2520;
+}
+#tc-hm .hm-testimonial-wide .hm-testimonial-mark { margin-bottom: 0; flex-shrink: 0; font-size: 80px; }
+#tc-hm .hm-testimonial-wide .hm-testimonial-text { margin-bottom: 0; font-size: 18px; }
+
+/* ---- MISSION ---- */
+#tc-hm .hm-mission {
+  background: #2C2520;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+#tc-hm .hm-mission-copy {
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#tc-hm .hm-mission-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 18px 0;
+}
+#tc-hm .hm-mission h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(30px, 3.5vw, 48px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 24px 0;
+  line-height: 1.15;
+}
+#tc-hm .hm-mission-text {
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(243,237,227,0.65) !important;
+  margin: 0 0 14px 0;
+}
+#tc-hm .hm-mission-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  border-bottom: 1px solid rgba(212,168,67,0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+  align-self: flex-start;
+}
+#tc-hm .hm-mission-link:hover { border-color: #D4A843; }
+#tc-hm .hm-mission-img {
+  overflow: hidden;
+}
+#tc-hm .hm-mission-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- SERVICE AREA ---- */
+#tc-hm .hm-area {
+  background: #2C2520;
+  padding: 100px 48px;
+  text-align: center;
+}
+#tc-hm .hm-area h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 54px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 24px 0;
+}
+#tc-hm .hm-area-text {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(243,237,227,0.62) !important;
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+#tc-hm .hm-btn-outline-cream {
+  display: inline-block;
+  padding: 14px 40px;
+  background: transparent;
+  border: 1px solid rgba(243,237,227,0.35);
+  color: #F3EDE3 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: border-color 0.2s;
+}
+#tc-hm .hm-btn-outline-cream:hover { border-color: rgba(243,237,227,0.7); }
+
+/* ---- FINAL CTA ---- */
+#tc-hm .hm-cta {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+#tc-hm .hm-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20,14,10,0.82);
+}
+#tc-hm .hm-cta-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 48px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+#tc-hm .hm-cta h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(36px, 5vw, 66px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 20px 0;
+  line-height: 1.05;
+}
+#tc-hm .hm-cta-body {
+  font-size: 16px;
+  color: rgba(243,237,227,0.70) !important;
+  max-width: 460px;
+  margin: 0 auto 48px;
+  line-height: 1.75;
+}
+#tc-hm .hm-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+#tc-hm .hm-btn-cta-gold {
+  display: inline-block;
+  padding: 16px 40px;
+  background: #D4A843;
+  color: #2C2520 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+#tc-hm .hm-btn-cta-gold:hover { background: #c49930; }
+#tc-hm .hm-btn-cta-ghost {
+  display: inline-block;
+  padding: 15px 36px;
+  background: transparent;
+  border: 1px solid rgba(243,237,227,0.40);
+  color: #F3EDE3 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: border-color 0.2s;
+}
+#tc-hm .hm-btn-cta-ghost:hover { border-color: rgba(243,237,227,0.75); }
+#tc-hm .hm-cta-footnote {
+  margin-top: 48px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(243,237,227,0.25) !important;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 960px) {
+  #tc-hm .hm-photo { grid-template-columns: 1fr; }
+  #tc-hm .hm-photo-img { min-height: 360px; }
+  #tc-hm .hm-photo-copy { padding: 60px 40px; }
+  #tc-hm .hm-mission { grid-template-columns: 1fr; }
+  #tc-hm .hm-mission-img { min-height: 360px; order: -1; }
+  #tc-hm .hm-mission-copy { padding: 60px 40px; }
+  #tc-hm .hm-testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  #tc-hm .hm-testimonial-wide { grid-column: span 2; }
+  #tc-hm .hm-services-grid { grid-template-columns: repeat(2, 1fr); }
+  #tc-hm .hm-outcomes { grid-template-columns: 1fr; }
+  #tc-hm .hm-outcome { border-right: none; border-bottom: 1px solid rgba(243,237,227,0.07); }
+  #tc-hm .hm-outcome:last-child { border-bottom: none; }
+}
+@media (max-width: 640px) {
+  #tc-hm .hm-hero-content { padding: 56px 24px; }
+  #tc-hm .hm-services { padding: 72px 24px; }
+  #tc-hm .hm-services-grid { grid-template-columns: 1fr; }
+  #tc-hm .hm-photo-copy { padding: 48px 24px; }
+  #tc-hm .hm-testimonials { padding: 72px 24px; }
+  #tc-hm .hm-testimonials-grid { grid-template-columns: 1fr; }
+  #tc-hm .hm-testimonial-wide { grid-column: span 1; flex-direction: column; gap: 16px; }
+  #tc-hm .hm-mission-copy { padding: 48px 24px; }
+  #tc-hm .hm-area { padding: 72px 24px; }
+  #tc-hm .hm-cta-content { padding: 64px 24px; }
+}
+</style>
+
+<script>
+(function() {
+  var HERO     = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/68521abb-7904-4464-9f38-024df9eab231/Screenshot_4-10-2025_10499_chatgpt.com.jpeg?content-type=image%2Fjpeg';
+  var PHOTO_IMG = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/branded-0K0A4308.jpg?content-type=image%2Fjpeg';
+  var MISSION_IMG = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/4487fa7b-d947-4abd-aeb5-106018207850/tribal-cowboy-clydesdale-snowstorm-north-idaho.jpg?content-type=image%2Fjpeg';
+  var CTA_BG   = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/8c1db3a8-77d7-472c-b772-49d166ceb0ee/tribal-cowboy-holiday-photo-woman-girl-elf-donkeys+Large.jpeg?content-type=image%2Fjpeg';
+
+  function buildPage() {
+    var page = document.getElementById('page');
+    if (!page) { setTimeout(buildPage, 120); return; }
+
+    page.querySelectorAll('.page-section').forEach(function(s) {
+      s.style.setProperty('display', 'none', 'important');
+    });
+
+    var wrap = document.createElement('div');
+    wrap.id = 'tc-hm';
+    wrap.innerHTML =
+
+      /* ── HERO ── */
+      '<section class="hm-hero">' +
+        '<div class="hm-hero-overlay"></div>' +
+        '<div class="hm-hero-content">' +
+          '<p class="hm-hero-eyebrow">Indigenous-Owned &middot; North Idaho &amp; Eastern Washington</p>' +
+          '<h1>Real horses. Real photos.<br>Right here in North Idaho.</h1>' +
+          '<p class="hm-hero-sub">Pony parties, Clydesdale wagon rides, and equine photography for families &mdash; plus full-service horse experiences for festivals, markets, and corporate events. Every guest goes home with branded photos on their phone.</p>' +
+          '<div class="hm-hero-btns">' +
+            '<a href="/contact" class="hm-btn-gold">Check Your Date</a>' +
+            '<a href="/for-event-planners" class="hm-btn-ghost">Planning a Festival or Corporate Event?</a>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── OUTCOMES BAR ── */
+      '<div class="hm-outcomes">' +
+        '<div class="hm-outcome"><span class="hm-outcome-stat">500+</span><span class="hm-outcome-label">Guests photographed<br>per season</span></div>' +
+        '<div class="hm-outcome"><span class="hm-outcome-stat">100%</span><span class="hm-outcome-label">Same-day branded<br>photo delivery</span></div>' +
+        '<div class="hm-outcome"><span class="hm-outcome-stat">NI + EWA</span><span class="hm-outcome-label">North Idaho &amp;<br>Eastern Washington</span></div>' +
+      '</div>' +
+
+      /* ── SERVICES ── */
+      '<section class="hm-services">' +
+        '<div class="hm-services-header">' +
+          '<p class="hm-services-eyebrow">Our Services</p>' +
+          '<h2>What we do.</h2>' +
+        '</div>' +
+        '<div class="hm-services-grid">' +
+
+          '<a href="/pony-parties" class="hm-service-card">' +
+            '<p class="hm-service-num">01</p>' +
+            '<p class="hm-service-title">Pony Parties</p>' +
+            '<p class="hm-service-text">Small horses. Big reactions. Birthday parties and family events starting at $300.</p>' +
+            '<span class="hm-service-link">See pony parties &rarr;</span>' +
+          '</a>' +
+
+          '<a href="/wagon-carriage-rides" class="hm-service-card">' +
+            '<p class="hm-service-num">02</p>' +
+            '<p class="hm-service-title">Clydesdale Wagon &amp; Carriage Rides</p>' +
+            '<p class="hm-service-text">A team of Clydesdales, a Cinderella carriage, or an air ride carriage. Half-day and full-day bookings.</p>' +
+            '<span class="hm-service-link">See ride options &rarr;</span>' +
+          '</a>' +
+
+          '<a href="/horse-photography-props" class="hm-service-card">' +
+            '<p class="hm-service-num">03</p>' +
+            '<p class="hm-service-title">Horse Photography Props</p>' +
+            '<p class="hm-service-text">Real horses for your photo or video shoot. Real estate, mini sessions, creative projects.</p>' +
+            '<span class="hm-service-link">See photography &rarr;</span>' +
+          '</a>' +
+
+          '<a href="/corporate-events" class="hm-service-card">' +
+            '<p class="hm-service-num">04</p>' +
+            '<p class="hm-service-title">Corporate &amp; Large Events</p>' +
+            '<p class="hm-service-text">Festivals, farmers markets, corporate picnics, holiday events. Full-service &mdash; we bring everything and manage it ourselves.</p>' +
+            '<span class="hm-service-link">See corporate events &rarr;</span>' +
+          '</a>' +
+
+          '<a href="/school-programs-community-events" class="hm-service-card">' +
+            '<p class="hm-service-num">05</p>' +
+            '<p class="hm-service-title">School &amp; Community Programs</p>' +
+            '<p class="hm-service-text">Horsemanship education, cultural programming, and hands-on animal experiences. Discounts for Title I schools and nonprofits.</p>' +
+            '<span class="hm-service-link">See school programs &rarr;</span>' +
+          '</a>' +
+
+          '<a href="/for-event-planners" class="hm-service-card">' +
+            '<p class="hm-service-num">06</p>' +
+            '<p class="hm-service-title">For Event Planners</p>' +
+            '<p class="hm-service-text">Planning a festival, market, or corporate event? We have a page just for you &mdash; with everything your committee needs.</p>' +
+            '<span class="hm-service-link">See the planner page &rarr;</span>' +
+          '</a>' +
+
+        '</div>' +
+        '<div class="hm-services-footer">' +
+          '<a href="/services" class="hm-services-all">View All Services &rarr;</a>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── PHOTO DELIVERY ── */
+      '<section class="hm-photo">' +
+        '<div class="hm-photo-img"><img src="' + PHOTO_IMG + '" alt="Branded event photo with custom overlay showing event name and date" loading="lazy"></div>' +
+        '<div class="hm-photo-copy">' +
+          '<p class="hm-photo-eyebrow">Every Booking Includes This</p>' +
+          '<h2>Photos on their phone before they leave.</h2>' +
+          '<p class="hm-photo-text">Every guest who interacts with our animals gets professional photos &mdash; candid-style, not posed &mdash; with a custom overlay showing your event name, date, and logo. They scan a QR code on-site and their individual photos show up on their phone in seconds. No app. No shared album. No waiting a week for an email.</p>' +
+          '<p class="hm-photo-kicker">This is the part people don\'t expect. And it\'s the part they talk about after.</p>' +
+          '<a href="/horse-photography-props" class="hm-btn-cream">See How It Works &rarr;</a>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── TESTIMONIALS ── */
+      '<section class="hm-testimonials">' +
+        '<div class="hm-testimonials-header"><h2>What people say after.</h2></div>' +
+        '<div class="hm-testimonials-grid">' +
+
+          '<div class="hm-testimonial">' +
+            '<span class="hm-testimonial-mark">&ldquo;</span>' +
+            '<p class="hm-testimonial-text">You guys were awesome! Thank you for helping us make a little magic in our town.</p>' +
+            '<p class="hm-testimonial-name">The Donut House</p>' +
+            '<p class="hm-testimonial-role">Local Business Event</p>' +
+          '</div>' +
+
+          '<div class="hm-testimonial">' +
+            '<span class="hm-testimonial-mark">&ldquo;</span>' +
+            '<p class="hm-testimonial-text">A huge thanks to Tribal Cowboy Photography for partnering up and being available to take some special holiday photos at our Holiday Festival.</p>' +
+            '<p class="hm-testimonial-name">South Boundary Fire Protection District</p>' +
+            '<p class="hm-testimonial-role">Holiday Festival</p>' +
+          '</div>' +
+
+          '<div class="hm-testimonial">' +
+            '<span class="hm-testimonial-mark">&ldquo;</span>' +
+            '<p class="hm-testimonial-text">The kids loved learning about ducklings, chicks, goslings from Tribal Cowboy. Thank you Stacie for always making it so fun and informative.</p>' +
+            '<p class="hm-testimonial-name">Smart Start Learning Academy</p>' +
+            '<p class="hm-testimonial-role">School Program</p>' +
+          '</div>' +
+
+          '<div class="hm-testimonial">' +
+            '<span class="hm-testimonial-mark">&ldquo;</span>' +
+            '<p class="hm-testimonial-text">Thank you for bringing these beautiful ponies! Today was magical!</p>' +
+            '<p class="hm-testimonial-name">Make It Messy CDA</p>' +
+            '<p class="hm-testimonial-role">Event Partner</p>' +
+          '</div>' +
+
+          '<div class="hm-testimonial">' +
+            '<span class="hm-testimonial-mark">&ldquo;</span>' +
+            '<p class="hm-testimonial-text">We love what you do.</p>' +
+            '<p class="hm-testimonial-name">Kona Ice of Coeur d\'Alene</p>' +
+            '<p class="hm-testimonial-role">Fellow Event Vendor</p>' +
+          '</div>' +
+
+        '</div>' +
+      '</section>' +
+
+      /* ── MISSION ── */
+      '<section class="hm-mission">' +
+        '<div class="hm-mission-copy">' +
+          '<p class="hm-mission-eyebrow">Who We Are</p>' +
+          '<h2>This started with a boy, a horse, and a dream.</h2>' +
+          '<p class="hm-mission-text">Tribal Cowboy exists because of Billy &mdash; Stacie\'s older brother, who had Down syndrome. He passed away in March 2025, a week before his birthday. The dream he inspired is still the same: build a permanent ranch where people like Billy can ride, drive, and connect with horses in a place that\'s theirs.</p>' +
+          '<p class="hm-mission-text">Every booking moves that dream forward. When you hire Tribal Cowboy for your party, your festival, or your corporate event &mdash; you\'re not just getting horses. You\'re helping build something in his memory.</p>' +
+          '<p class="hm-mission-text">Tribal Cowboy is Indigenous-owned (Nisenan Maidu), based in Athol, Idaho, and serves all of North Idaho and Eastern Washington.</p>' +
+          '<a href="/about" class="hm-mission-link">Read Our Full Story &rarr;</a>' +
+        '</div>' +
+        '<div class="hm-mission-img"><img src="' + MISSION_IMG + '" alt="Tribal Cowboy horses at the ranch in Athol North Idaho" loading="lazy"></div>' +
+      '</section>' +
+
+      /* ── SERVICE AREA ── */
+      '<section class="hm-area">' +
+        '<h2>Where we go.</h2>' +
+        '<p class="hm-area-text">Based in Athol, Idaho. Serving Coeur d\'Alene, Post Falls, Hayden, Rathdrum, Spirit Lake, Sandpoint, Moscow, Spokane, Spokane Valley, and everywhere in between. Travel fees may apply outside our core area.</p>' +
+        '<a href="/contact" class="hm-btn-outline-cream">Check Your Date &rarr;</a>' +
+      '</section>' +
+
+      /* ── FINAL CTA ── */
+      '<section class="hm-cta">' +
+        '<div class="hm-cta-overlay"></div>' +
+        '<div class="hm-cta-content">' +
+          '<h2>Let\'s talk about your event.</h2>' +
+          '<p class="hm-cta-body">Tell us your date, your headcount, and what you\'re planning. We\'ll get back to you within one business day.</p>' +
+          '<div class="hm-cta-btns">' +
+            '<a href="/contact" class="hm-btn-cta-gold">Check Your Date</a>' +
+            '<a href="tel:+12082612092" class="hm-btn-cta-ghost">Call (208) 261-2092</a>' +
+            '<a href="mailto:info@tribalcowboy.com" class="hm-btn-cta-ghost">Email Us</a>' +
+          '</div>' +
+          '<p class="hm-cta-footnote">Indigenous Owned &middot; Nisenan Maidu &middot; Athol, Idaho</p>' +
+        '</div>' +
+      '</section>';
+
+    /* Set backgrounds */
+    var hero = wrap.querySelector('.hm-hero');
+    if (hero) hero.style.backgroundImage = "url('" + HERO + "')";
+    var cta = wrap.querySelector('.hm-cta');
+    if (cta) cta.style.backgroundImage = "url('" + CTA_BG + "')";
+
+    page.insertBefore(wrap, page.firstChild);
+
+    /* ── COLOR FORCING ── */
+    wrap.querySelector('.hm-hero-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.hm-hero h1').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelector('.hm-hero-sub').style.setProperty('color', 'rgba(243,237,227,0.88)', 'important');
+
+    wrap.querySelectorAll('.hm-outcome-stat').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.hm-outcome-label').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.60)', 'important'); });
+
+    wrap.querySelector('.hm-services-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.hm-services-header h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelectorAll('.hm-service-num').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.hm-service-title').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important'); });
+    wrap.querySelectorAll('.hm-service-text').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+    wrap.querySelectorAll('.hm-service-link').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); });
+    wrap.querySelector('.hm-services-all').style.setProperty('color', '#2C2520', 'important');
+
+    wrap.querySelector('.hm-photo-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.hm-photo h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelector('.hm-photo-text').style.setProperty('color', 'rgba(243,237,227,0.65)', 'important');
+    wrap.querySelector('.hm-photo-kicker').style.setProperty('color', 'rgba(243,237,227,0.82)', 'important');
+
+    wrap.querySelector('.hm-testimonials-header h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelectorAll('.hm-testimonial-mark').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.hm-testimonial-text').forEach(function(el) { el.style.setProperty('color', '#8A7868', 'important'); });
+    wrap.querySelectorAll('.hm-testimonial-name').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); });
+    wrap.querySelectorAll('.hm-testimonial-role').forEach(function(el) { el.style.setProperty('color', 'rgba(44,37,32,0.40)', 'important'); });
+
+    wrap.querySelector('.hm-mission-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.hm-mission h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelectorAll('.hm-mission-text').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.65)', 'important'); });
+    wrap.querySelector('.hm-mission-link').style.setProperty('color', '#D4A843', 'important');
+
+    wrap.querySelector('.hm-area h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelector('.hm-area-text').style.setProperty('color', 'rgba(243,237,227,0.62)', 'important');
+
+    wrap.querySelector('.hm-cta h2').style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelector('.hm-cta-body').style.setProperty('color', 'rgba(243,237,227,0.70)', 'important');
+    wrap.querySelector('.hm-cta-footnote').style.setProperty('color', 'rgba(243,237,227,0.25)', 'important');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildPage);
+  } else {
+    buildPage();
+  }
+})();
+</script>

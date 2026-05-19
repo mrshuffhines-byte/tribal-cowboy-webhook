@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribal Cowboy Photo Overlay - Modern Homesteading Conference</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f5f5;
+            font-family: 'Montserrat', sans-serif;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: #2C2520;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #574838;
+            font-size: 14px;
+        }
+
+        .mockup-wrapper {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .photo-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(135deg, #e8dcc8 0%, #d9cbb5 100%);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+        }
+
+        /* Simulated photo background */
+        .photo-background {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right,
+                #8B7355 0%,
+                #6B5344 25%,
+                #9D8B7E 50%,
+                #7A6B5F 75%,
+                #5C4E44 100%);
+            opacity: 0.95;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .photo-text {
+            text-align: center;
+        }
+
+        /* Overlay layers */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 24px;
+            background: linear-gradient(
+                180deg,
+                rgba(44, 37, 32, 0.3) 0%,
+                rgba(44, 37, 32, 0) 50%,
+                rgba(44, 37, 32, 0.4) 100%
+            );
+        }
+
+        .overlay-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(212, 168, 67, 0.95);
+            padding: 8px 14px;
+            border-radius: 4px;
+            backdrop-filter: blur(8px);
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #2C2520;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .brand-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            color: #1E1208;
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+
+        .brand-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 8px;
+            color: #2C2520;
+            letter-spacing: 0.3px;
+            line-height: 1;
+        }
+
+        .event-badge {
+            background: rgba(26, 122, 107, 0.95);
+            color: #D0F0EA;
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .overlay-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .event-info {
+            background: rgba(44, 37, 32, 0.92);
+            padding: 14px 16px;
+            border-radius: 4px;
+            backdrop-filter: blur(8px);
+        }
+
+        .event-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #D4A843;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .event-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            color: #F3EDE3;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 6px;
+        }
+
+        .event-location {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            color: #C8A96E;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+        }
+
+        .cta-section {
+            background: rgba(44, 37, 32, 0.92);
+            padding: 12px 14px;
+            border-radius: 4px;
+            border-left: 4px solid #D4A843;
+            backdrop-filter: blur(8px);
+        }
+
+        .cta-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            color: #D4A843;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .cta-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            color: #F3EDE3;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .social-icon {
+            width: 28px;
+            height: 28px;
+            background: #D4A843;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #1E1208;
+        }
+
+        .social-icon:hover {
+            background: #C8A96E;
+            transform: scale(1.05);
+        }
+
+        /* Info section below mockup */
+        .mockup-info {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 4px solid #D4A843;
+        }
+
+        .info-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #2C2520;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            font-size: 13px;
+            color: #574838;
+            line-height: 1.6;
+        }
+
+        .info-card ul {
+            margin-left: 20px;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #574838;
+            line-height: 1.6;
+        }
+
+        .info-card li {
+            margin-bottom: 6px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .photo-container {
+                aspect-ratio: 9 / 16;
+            }
+
+            .overlay {
+                padding: 16px;
+            }
+
+            .overlay-top {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .mockup-info {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .event-date {
+                font-size: 18px;
+            }
+
+            .event-name {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Photo Overlay Mockup</h1>
+            <p>Modern Homesteading Conference — Instant Photo Delivery with Tribal Cowboy Branding</p>
+        </div>
+
+        <div class="mockup-wrapper">
+            <div class="photo-container">
+                <div class="photo-background">
+                    <div class="photo-text">
+                        <p>[Attendee with horse photo]</p>
+                    </div>
+                </div>
+
+                <div class="overlay">
+                    <!-- Top overlay -->
+                    <div class="overlay-top">
+                        <div class="logo-section">
+                            <div class="logo-placeholder">TRIBAL<br>COWBOY</div>
+                            <div class="brand-text">
+                                <div class="brand-name">TRIBAL COWBOY</div>
+                                <div class="brand-tagline">INDIGENOUS OWNED</div>
+                            </div>
+                        </div>
+                        <div class="event-badge">MODERN<br>HOMESTEADING<br>2026</div>
+                    </div>
+
+                    <!-- Bottom overlay -->
+                    <div class="overlay-bottom">
+                        <div class="event-info">
+                            <div class="event-date">April 12, 2026</div>
+                            <div class="event-name">MODERN HOMESTEADING CONFERENCE</div>
+                            <div class="event-location">North Idaho</div>
+                        </div>
+
+                        <div class="cta-section">
+                            <div class="cta-label">TAG US & SHARE</div>
+                            <div class="cta-text">@TribalCowboy</div>
+                            <div class="social-icons">
+                                <div class="social-icon">f</div>
+                                <div class="social-icon">📷</div>
+                                <div class="social-icon">#</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info cards -->
+            <div class="mockup-info">
+                <div class="info-card">
+                    <h3>What attendees see</h3>
+                    <p>Conference guests are photographed with our horses. They scan a QR code or visit a link, see their photo instantly with this custom overlay applied, and can share directly to social media.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Why this works</h3>
+                    <ul>
+                        <li><strong>Instant gratification</strong> — photo ready in seconds</li>
+                        <li><strong>Branded content</strong> — your logo on every share</li>
+                        <li><strong>Organic reach</strong> — attendees tag you & share</li>
+                        <li><strong>Professional look</strong> — polished, on-brand aesthetic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

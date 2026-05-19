@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tribal Cowboy LLC — Partnership Agreement Outline</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  --timber:  #2C2520;
+  --gold:    #D4A843;
+  --leather: #C8A96E;
+  --cream:   #F3EDE3;
+  --teal:    #1A7A6B;
+  --saddle:  #574838;
+  --muted:   #8A7560;
+  --offwhite:#FFFCF7;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: 8.5in 11in; margin: 0; }
+body { font-family: 'Montserrat', sans-serif; background: #fff; }
+
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  position: relative;
+  background: var(--offwhite);
+  page-break-after: always;
+}
+
+.doc-header {
+  background: var(--timber);
+  padding: 16px 0.55in 14px;
+  border-bottom: 4px solid var(--gold);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.doc-header-left .doc-label {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.doc-header-left .doc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.1;
+}
+.doc-header-right {
+  text-align: right;
+  font-size: 8px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.doc-header-right strong { color: var(--leather); }
+.doc-header-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin-left: 18px;
+}
+
+.doc-body { padding: 0.2in 0.55in 0.6in; }
+
+/* EVENT BANNER */
+.event-banner {
+  background: #FBF6EE;
+  border: 0.5px solid #E0D6C8;
+  border-radius: 3px;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.event-field { display: table-cell; vertical-align: top; padding-right: 12px; }
+.event-field:last-child { padding-right: 0; }
+.field-label {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.field-value {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--timber);
+  border-bottom: 1px solid #C8A96E;
+  padding-bottom: 2px;
+  min-height: 16px;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 12px;
+  border-bottom: 0.5px solid #E0D6C8;
+  padding-bottom: 10px;
+}
+.section:last-child { border-bottom: none; }
+.section-title {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--teal);
+  display: inline-block;
+}
+
+/* TWO-COLUMN */
+.two-col {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.col { display: table-cell; vertical-align: top; padding-right: 24px; }
+.col:last-child { padding-right: 0; }
+
+/* TERMS LIST */
+.terms-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.terms-list li {
+  font-size: 8px;
+  color: var(--saddle);
+  line-height: 1.65;
+  padding-left: 12px;
+  position: relative;
+  margin-bottom: 1px;
+}
+.terms-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+.terms-list li strong { color: var(--timber); }
+
+/* FILL LINE */
+.fill-row {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  margin-bottom: 8px;
+}
+.fill-cell { display: table-cell; vertical-align: bottom; padding-right: 16px; }
+.fill-cell:last-child { padding-right: 0; }
+.fill-label {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.fill-line {
+  width: 100%;
+  height: 22px;
+  background: white;
+  border: 1px solid #C8A96E;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+/* SIGNATURE BLOCK */
+.sig-block {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  margin-top: 14px;
+  border-top: 0.5px solid #E0D6C8;
+  padding-top: 12px;
+}
+.sig-cell { display: table-cell; vertical-align: top; padding-right: 30px; }
+.sig-cell:last-child { padding-right: 0; }
+.sig-party {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.sig-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--timber);
+  margin-bottom: 2px;
+}
+.sig-title {
+  font-size: 7.5px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.sig-line {
+  width: 100%;
+  height: 28px;
+  background: white;
+  border: 1px solid #C8A96E;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+.sig-sublabel {
+  font-size: 7px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* NOTICE BOX */
+.notice-box {
+  background: var(--timber);
+  border-radius: 3px;
+  padding: 8px 14px;
+  margin-bottom: 12px;
+  font-size: 7.5px;
+  color: var(--leather);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* FOOTER */
+.doc-footer {
+  position: absolute;
+  bottom: 14px;
+  left: 0; right: 0;
+  padding: 7px 0.55in 0;
+  border-top: 1px solid #E0D6C8;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7.5px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="doc-header">
+    <div class="doc-header-left">
+      <div class="doc-label">Partnership Agreement Outline</div>
+      <div class="doc-title">Tribal Cowboy LLC — Live Equine Activation</div>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <div class="doc-header-right">
+        <strong>Tribal Cowboy LLC</strong> — Athol, Idaho<br>
+        info@tribalcowboy.com &nbsp;|&nbsp; www.tribalcowboy.com<br>
+        Instagram: @TribalCowboy &nbsp;|&nbsp; Facebook: @TribalCowboys
+      </div>
+      <img class="doc-header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    </div>
+  </div>
+
+  <div class="doc-body">
+
+    <div class="notice-box">
+      This document outlines the key terms for a Tribal Cowboy LLC live equine activation partnership. It is provided for planning and review purposes. A full binding agreement will be issued upon booking confirmation and deposit receipt.
+    </div>
+
+    <!-- EVENT DETAILS -->
+    <div class="section">
+      <div class="section-title">📅 Event Details</div>
+      <div class="fill-row">
+        <div class="fill-cell" style="width: 35%;">
+          <div class="fill-label">Partner / Host Organization</div>
+          <div class="fill-line"></div>
+        </div>
+        <div class="fill-cell" style="width: 35%;">
+          <div class="fill-label">Event Location / Address</div>
+          <div class="fill-line"></div>
+        </div>
+        <div class="fill-cell" style="width: 15%;">
+          <div class="fill-label">Event Date</div>
+          <div class="fill-line"></div>
+        </div>
+        <div class="fill-cell" style="width: 15%;">
+          <div class="fill-label">Activation Hours</div>
+          <div class="fill-line"></div>
+        </div>
+      </div>
+      <div class="fill-row" style="margin-top: 10px;">
+        <div class="fill-cell" style="width: 25%;">
+          <div class="fill-label">Package Tier</div>
+          <div class="fill-line"></div>
+        </div>
+        <div class="fill-cell" style="width: 25%;">
+          <div class="fill-label">Base Fee</div>
+          <div class="fill-line"></div>
+        </div>
+        <div class="fill-cell" style="width: 25%;">
+          <div class="fill-label">Deposit (25%) Due on Signing</div>
+          <div class="fill-line"></div>
+        </div>
+        <div class="fill-cell" style="width: 25%;">
+          <div class="fill-label">Balance Due (14 Days Before Event)</div>
+          <div class="fill-line"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINANCIAL TERMS -->
+    <div class="section">
+      <div class="section-title">💰 Financial Terms</div>
+      <div class="two-col">
+        <div class="col">
+          <ul class="terms-list">
+            <li><strong>Deposit:</strong> 25% of base fee due upon signing. Secures the event date.</li>
+            <li><strong>Balance:</strong> Remaining balance due 14 days before the event date.</li>
+            <li><strong>Optional add-ons</strong> (ride sponsorship, additional hours, Clydesdale photo station) invoiced separately and due with balance.</li>
+            <li><strong>Payment methods:</strong> Check payable to Tribal Cowboy LLC, ACH transfer, or other method by mutual agreement.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="terms-list">
+            <li><strong>Cancellation by Partner (30+ days out):</strong> Deposit transfers to a rescheduled date within 90 days.</li>
+            <li><strong>Cancellation by Partner (within 14 days):</strong> Full balance is due. No refund of deposit.</li>
+            <li><strong>Cancellation due to weather or emergency before activation begins:</strong> Deposit transfers in full to a rescheduled date within 90 days.</li>
+            <li><strong>Cancellation by Tribal Cowboy (force majeure, animal emergency):</strong> Full refund of deposit and any balance paid, within 7 days.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTNER RESPONSIBILITIES -->
+    <div class="section">
+      <div class="section-title">🤝 Partner Responsibilities</div>
+      <div class="two-col">
+        <div class="col">
+          <ul class="terms-list">
+            <li>Designate <strong>6–8 parking spaces</strong> in the agreed activation footprint (approx. 40' × 60').</li>
+            <li>Provide access to a <strong>standard electrical outlet</strong> for fans/equipment if available.</li>
+            <li>Designate a <strong>named on-site day-of contact</strong> and provide name and phone number at least 7 days before event.</li>
+            <li>Approve Tribal Cowboy's <strong>event placement map</strong> no later than 7 days before event.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="terms-list">
+            <li>Provide <strong>partner logo file</strong> for branded photo overlay no later than 14 days before event.</li>
+            <li>Promote event through owned social media, email, and in-store channels.</li>
+            <li>Allow Tribal Cowboy to reference this partnership in marketing materials and track record documentation (with partner approval on any named references).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRIBAL COWBOY RESPONSIBILITIES -->
+    <div class="section">
+      <div class="section-title">🐴 Tribal Cowboy Responsibilities</div>
+      <div class="two-col">
+        <div class="col">
+          <ul class="terms-list">
+            <li>Provide all animals, handlers, panels, equipment, and safety infrastructure.</li>
+            <li>Carry <strong>$2M per-occurrence general liability + animal liability endorsement.</strong> Name Partner as additionally insured. Deliver Certificate of Insurance 14 days before event.</li>
+            <li>Provide <strong>Emergency Action Plan (EAP)</strong> to Partner's on-site manager before activation begins.</li>
+            <li>Complete full <strong>setup before opening</strong> and teardown within 90 minutes of close. No custodial involvement required from Partner.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="terms-list">
+            <li>Operate all guest interactions, animal handling, queue management, and photo delivery. <strong>Partner staff are not responsible for event operations.</strong></li>
+            <li>Deliver <strong>5 edited event images</strong> to Partner within 7 days for marketing use.</li>
+            <li>Deliver <strong>written post-event summary within 7 days:</strong> attendance, photos delivered, estimated social reach, incident log (if any), and recommendations.</li>
+            <li>Photo system is <strong>CCPA-aligned</strong> — no guest PII stored or retained, no third-party data sharing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- GENERAL TERMS -->
+    <div class="section">
+      <div class="section-title">⚖️ General Terms</div>
+      <div class="two-col">
+        <div class="col">
+          <ul class="terms-list">
+            <li><strong>Independent contractor:</strong> Tribal Cowboy LLC operates as an independent contractor. Partner assumes no liability for animal handling, staffing, or event operations.</li>
+            <li><strong>Animal welfare:</strong> Tribal Cowboy reserves the right to pause or cancel the activation at any time due to animal distress, weather conditions, or safety concerns. Applicable cancellation terms above apply.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="terms-list">
+            <li><strong>Photography & media:</strong> Partner may photograph the event for promotional use. Tribal Cowboy may photograph and share event content on owned channels with reasonable prior notice to Partner.</li>
+            <li><strong>Modifications:</strong> Changes to event date, scope, or tier must be agreed in writing at least 14 days before the event. Changes within 14 days are subject to availability and may affect pricing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNATURE BLOCK -->
+    <div class="sig-block">
+      <div class="sig-cell">
+        <div class="sig-party">Tribal Cowboy LLC</div>
+        <div class="sig-name">Stacie Huffhines</div>
+        <div class="sig-title">Owner & Operator — Nisenan Maidu — Athol, Idaho</div>
+        <div class="sig-line"></div>
+        <div class="sig-sublabel">Signature &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date</div>
+      </div>
+      <div class="sig-cell">
+        <div class="sig-party">Partner Organization</div>
+        <div class="sig-name">&nbsp;</div>
+        <div class="sig-title">&nbsp;</div>
+        <div class="sig-line"></div>
+        <div class="sig-sublabel">Name / Title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date</div>
+      </div>
+      <div class="sig-cell">
+        <div class="sig-party">&nbsp;</div>
+        <div class="sig-name">&nbsp;</div>
+        <div class="sig-title">&nbsp;</div>
+        <div class="sig-line"></div>
+        <div class="sig-sublabel">Signature</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span>This outline is provided for review purposes. Full binding agreement issued upon booking confirmation.</span>
+    <span>Tribal Cowboy LLC &nbsp;|&nbsp; info@tribalcowboy.com &nbsp;|&nbsp; www.tribalcowboy.com</span>
+    <span>Rev. March 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>

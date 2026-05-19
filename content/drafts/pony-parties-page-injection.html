@@ -1,0 +1,567 @@
+<style>
+/* ============================================================
+   TRIBAL COWBOY — PONY PARTIES PAGE
+   Scope: body#collection-69d870ec5859d8357875b029
+   ============================================================ */
+
+body#collection-69d870ec5859d8357875b029 .page-section,
+body#collection-69d870ec5859d8357875b029 .content-wrapper {
+  display: none !important;
+}
+
+/* ---- WRAPPER ---- */
+#tc-pp {
+  font-family: 'Montserrat', sans-serif;
+  color: #2C2520;
+  background: #F3EDE3;
+}
+
+/* ---- HERO ---- */
+#tc-pp .pp-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background-position: center 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#tc-pp .pp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,37,32,0.88) 0%, rgba(44,37,32,0.25) 55%, transparent 100%);
+}
+
+#tc-pp .pp-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 60px;
+  max-width: 700px;
+}
+
+#tc-pp .pp-hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #D4A843;
+  margin: 0 0 18px 0;
+}
+
+#tc-pp .pp-hero h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(52px, 8vw, 96px) !important;
+  font-weight: 400 !important;
+  line-height: 1.0 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 22px 0;
+}
+
+#tc-pp .pp-hero-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(243,237,227,0.82);
+  margin: 0 0 40px 0;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+#tc-pp .pp-btn-gold {
+  display: inline-block;
+  padding: 15px 36px;
+  background: #D4A843;
+  color: #2C2520;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+#tc-pp .pp-btn-gold:hover {
+  background: #F3EDE3;
+}
+
+/* ---- STATS BAR ---- */
+#tc-pp .pp-stats {
+  background: #2C2520;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#tc-pp .pp-stat {
+  padding: 40px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(243,237,227,0.08);
+}
+
+#tc-pp .pp-stat:last-child { border-right: none; }
+
+#tc-pp .pp-stat-num {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 46px;
+  font-weight: 400;
+  color: #D4A843;
+  line-height: 1;
+}
+
+#tc-pp .pp-stat-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(243,237,227,0.55);
+}
+
+/* ---- INTRO ---- */
+#tc-pp .pp-intro {
+  padding: 100px 48px;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+#tc-pp .pp-intro h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  line-height: 1.2;
+  margin: 0 0 28px 0;
+}
+
+#tc-pp .pp-intro p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #574838;
+}
+
+/* ---- GALLERY ---- */
+#tc-pp .pp-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  background: #2C2520;
+}
+
+#tc-pp .pp-gallery-item {
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: #574838;
+}
+
+#tc-pp .pp-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+#tc-pp .pp-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ---- WHAT'S INCLUDED ---- */
+#tc-pp .pp-includes {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+
+#tc-pp .pp-includes-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#tc-pp .pp-includes-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0 0 14px 0;
+}
+
+#tc-pp .pp-includes-header p {
+  font-size: 15px;
+  color: #574838;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+#tc-pp .pp-includes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+#tc-pp .pp-include-card {
+  padding: 48px 36px;
+  background: white;
+  border-top: 3px solid #D4A843;
+}
+
+#tc-pp .pp-include-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #2C2520;
+  margin: 0 0 18px 0;
+}
+
+#tc-pp .pp-include-text {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #574838;
+  margin: 0;
+}
+
+/* ---- TESTIMONIALS ---- */
+#tc-pp .pp-testi {
+  background: #2C2520;
+  padding: 100px 60px;
+}
+
+#tc-pp .pp-testi h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(32px, 4vw, 48px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  text-align: center;
+  margin: 0 0 56px 0;
+}
+
+#tc-pp .pp-testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: rgba(212,168,67,0.12);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+#tc-pp .pp-testi-card {
+  background: #2C2520;
+  padding: 44px 36px;
+  border-top: 3px solid #D4A843;
+}
+
+#tc-pp .pp-testi-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: #F3EDE3 !important;
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+}
+
+#tc-pp .pp-testi-attr {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(212,168,67,0.7) !important;
+  margin: 0;
+}
+
+/* ---- CTA ---- */
+#tc-pp .pp-cta {
+  background: #2C2520;
+  padding: 100px 48px;
+  text-align: center;
+}
+
+#tc-pp .pp-cta h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(36px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 18px 0;
+}
+
+#tc-pp .pp-cta p {
+  font-size: 16px;
+  color: rgba(243,237,227,0.88);
+  max-width: 520px;
+  margin: 0 auto 44px;
+  line-height: 1.75;
+}
+
+#tc-pp .pp-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#tc-pp .pp-btn-outline {
+  display: inline-block;
+  padding: 15px 36px;
+  border: 1px solid rgba(243,237,227,0.35);
+  color: #F3EDE3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+#tc-pp .pp-btn-outline:hover {
+  border-color: #D4A843;
+  color: #D4A843;
+}
+
+/* ---- FAQ ---- */
+#tc-pp .pp-faq {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+#tc-pp .pp-faq-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+#tc-pp .pp-faq-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0;
+}
+#tc-pp .pp-faq-list { max-width: 780px; margin: 0 auto; }
+#tc-pp .pp-faq-item { border-top: 1px solid rgba(44,37,32,0.13); }
+#tc-pp .pp-faq-item:last-child { border-bottom: 1px solid rgba(44,37,32,0.13); }
+#tc-pp .pp-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  cursor: pointer;
+  gap: 20px;
+}
+#tc-pp .pp-faq-q-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2C2520 !important;
+  margin: 0;
+  line-height: 1.4;
+}
+#tc-pp .pp-faq-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(44,37,32,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #D4A843;
+  font-weight: 300;
+  transition: transform 0.25s;
+  user-select: none;
+}
+#tc-pp .pp-faq-item.open .pp-faq-icon { transform: rotate(45deg); }
+#tc-pp .pp-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+#tc-pp .pp-faq-answer-inner {
+  padding: 0 24px 28px 0;
+  font-size: 14px;
+  line-height: 1.85;
+  color: #8A7868 !important;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  #tc-pp .pp-gallery { grid-template-columns: repeat(2, 1fr); }
+  #tc-pp .pp-includes-grid { grid-template-columns: 1fr; gap: 20px; }
+  #tc-pp .pp-testi-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  #tc-pp .pp-hero-content { padding: 60px 24px; }
+  #tc-pp .pp-stats { grid-template-columns: repeat(2, 1fr); }
+  #tc-pp .pp-stat:nth-child(odd) { border-right: 1px solid rgba(243,237,227,0.08); }
+  #tc-pp .pp-stat { border-bottom: 1px solid rgba(243,237,227,0.08); }
+  #tc-pp .pp-intro,
+  #tc-pp .pp-includes,
+  #tc-pp .pp-faq,
+  #tc-pp .pp-cta { padding: 64px 24px; }
+}
+</style>
+
+<script>
+(function() {
+  var HERO  = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/c54badc1-e860-4b51-a0f4-914a7ff69244/IMG_0300.jpeg';
+  var G1    = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/4f71f7f3-b339-4043-97d9-9d061f02a2ac/IMG_5358.jpeg';
+  var G2    = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/cdc5c763-2b00-4f4f-8aa3-20c694d14475/IMG_5894.jpeg';
+  var G3    = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/bd127c16-a37b-4c9f-9cbe-ee69d8da3a8b/photography-private-events_IMG_0428_unicorn-pony-party_web.jpg';
+  var G4    = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/c54badc1-e860-4b51-a0f4-914a7ff69244/IMG_0300.jpeg';
+
+  function buildPonyParties() {
+    var page = document.getElementById('page');
+    if (!page) { setTimeout(buildPonyParties, 120); return; }
+
+    // Hide all Squarespace page sections
+    page.querySelectorAll('.page-section').forEach(function(s) {
+      s.style.setProperty('display', 'none', 'important');
+    });
+
+    // Build the page
+    var wrap = document.createElement('div');
+    wrap.id = 'tc-pp';
+    wrap.innerHTML =
+      /* ── HERO ── */
+      '<section class="pp-hero">' +
+        '<div class="pp-hero-overlay"></div>' +
+        '<div class="pp-hero-content">' +
+          '<p class="pp-hero-eyebrow">Pony Parties &mdash; North Idaho</p>' +
+          '<h1>Small Horses.<br>Big Reactions.</h1>' +
+          '<p class="pp-hero-sub">Real decorated ponies. Instant photo delivery. The kind of birthday your kid describes for years.</p>' +
+          '<a href="/contact" class="pp-btn-gold">Check Your Date</a>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── STATS ── */
+      '<div class="pp-stats">' +
+        '<div class="pp-stat"><span class="pp-stat-num">Mini</span><span class="pp-stat-label">Ponies</span></div>' +
+        '<div class="pp-stat"><span class="pp-stat-num">100%</span><span class="pp-stat-label">Same-Day Photo Delivery</span></div>' +
+        '<div class="pp-stat"><span class="pp-stat-num">15+</span><span class="pp-stat-label">Events</span></div>' +
+        '<div class="pp-stat"><span class="pp-stat-num">300+</span><span class="pp-stat-label">Guests</span></div>' +
+      '</div>' +
+
+      /* ── INTRO ── */
+      '<section class="pp-intro">' +
+        '<h2>Ponies that show up dressed for the party.</h2>' +
+        '<p>Every pony arrives groomed, decorated, and ready &mdash; flower crowns, ribbons, colored mane extensions. We set up, handle the animals, photograph every guest, and deliver everything before the party is over. You just watch your kid&rsquo;s face when they see a real pony in the backyard.</p>' +
+      '</section>' +
+
+      /* ── GALLERY ── */
+      '<div class="pp-gallery">' +
+        '<div class="pp-gallery-item"><img src="' + G1 + '" alt="Princess birthday pony party" loading="lazy"></div>' +
+        '<div class="pp-gallery-item"><img src="' + G2 + '" alt="Decorated pony with pink flower garland" loading="lazy"></div>' +
+        '<div class="pp-gallery-item"><img src="' + G3 + '" alt="Unicorn pony party with guests" loading="lazy"></div>' +
+        '<div class="pp-gallery-item"><img src="' + G4 + '" alt="Unicorn pony close-up" loading="lazy"></div>' +
+      '</div>' +
+
+      /* ── WHAT'S INCLUDED ── */
+      '<section class="pp-includes">' +
+        '<div class="pp-includes-header">' +
+          '<h2>What&rsquo;s included.</h2>' +
+          '<p>No surprises, no add-ons. This is what every party gets.</p>' +
+        '</div>' +
+        '<div class="pp-includes-grid">' +
+          '<div class="pp-include-card">' +
+            '<p class="pp-include-title">The Ponies</p>' +
+            '<p class="pp-include-text">Our mini ponies arrive decorated to match your theme &mdash; flower crowns, ribbons, colored mane extensions. They&rsquo;re calm, kid-tested, and genuinely beautiful. We handle all setup, care, and cleanup throughout the event.</p>' +
+          '</div>' +
+          '<div class="pp-include-card">' +
+            '<p class="pp-include-title">The Photos</p>' +
+            '<p class="pp-include-text">We photograph every guest with the ponies &mdash; candid moments, portraits, group shots. Photos are delivered the same day via QR code with a custom branded overlay. Guests scan and download from their phone before they leave.</p>' +
+          '</div>' +
+          '<div class="pp-include-card">' +
+            '<p class="pp-include-title">The Experience</p>' +
+            '<p class="pp-include-text">Two-hour events at your location in North Idaho or Eastern Washington. Supervised pony interaction the whole time. We bring everything &mdash; ponies, grooming, photo gear. You get the full setup without lifting a finger.</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── TESTIMONIALS ── */
+      '<section class="pp-testi">' +
+        '<h2>What families are saying.</h2>' +
+        '<div class="pp-testi-grid">' +
+          '<div class="pp-testi-card">' +
+            '<p class="pp-testi-quote">"I asked my kids at dinner who they&rsquo;d trade places with. My 8-year-old said &lsquo;that lady in Coeur d&rsquo;Alene because she let us ride her horses and was nice.&rsquo; They loved it so much they came back the following summer."</p>' +
+            '<p class="pp-testi-attr">Joel D. &mdash; Returning Guest</p>' +
+          '</div>' +
+          '<div class="pp-testi-card">' +
+            '<p class="pp-testi-quote">"Tribal Cowboy brought Bullseye today and we are SO HAPPY."</p>' +
+            '<p class="pp-testi-attr">Lauren H. &mdash; Birthday Party</p>' +
+          '</div>' +
+          '<div class="pp-testi-card">' +
+            '<p class="pp-testi-quote">"We love our weekly lessons with Tribal Cowboy. Thank you for giving kids a space to bond with animals."</p>' +
+            '<p class="pp-testi-attr">@loholls &mdash; Coeur d&rsquo;Alene, Idaho</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── FAQ ── */
+      '<section class="pp-faq">' +
+        '<div class="pp-faq-header"><h2>Common questions.</h2></div>' +
+        '<div class="pp-faq-list">' +
+
+          '<div class="pp-faq-item"><div class="pp-faq-question"><p class="pp-faq-q-text">How much space do you need?</p><div class="pp-faq-icon">+</div></div><div class="pp-faq-answer"><div class="pp-faq-answer-inner">A backyard works. We need enough space to safely set up a small fenced pony area &mdash; roughly 20x20 feet minimum, on flat ground with no low overhead obstacles. A driveway, yard, or open parking area all work. When you contact us, mention your setup and we\'ll let you know if it\'s a good fit.</div></div></div>' +
+
+          '<div class="pp-faq-item"><div class="pp-faq-question"><p class="pp-faq-q-text">What happens if it rains?</p><div class="pp-faq-icon">+</div></div><div class="pp-faq-answer"><div class="pp-faq-answer-inner">Light rain we can usually work with &mdash; ponies don\'t mind drizzle, and honestly, kids don\'t either. If conditions become unsafe for the animals or guests (lightning, heavy rain, high wind), we\'ll contact you as soon as possible to reschedule. We don\'t cancel without a conversation first, and we work with you to find a new date.</div></div></div>' +
+
+          '<div class="pp-faq-item"><div class="pp-faq-question"><p class="pp-faq-q-text">How far in advance should I book?</p><div class="pp-faq-icon">+</div></div><div class="pp-faq-answer"><div class="pp-faq-answer-inner">Spring and summer weekends go fast &mdash; sometimes 6-8 weeks out. If you have a specific date in mind, reach out as soon as you know. We\'ll always tell you straight if the date is available or not.</div></div></div>' +
+
+          '<div class="pp-faq-item"><div class="pp-faq-question"><p class="pp-faq-q-text">What ages is this good for?</p><div class="pp-faq-icon">+</div></div><div class="pp-faq-answer"><div class="pp-faq-answer-inner">Pony parties work well for kids 2 and up. The ponies are calm and gentle with young children. We\'ve done parties for toddlers through elementary school age &mdash; and honestly, the parents tend to love it just as much as the kids.</div></div></div>' +
+
+          '<div class="pp-faq-item"><div class="pp-faq-question"><p class="pp-faq-q-text">What if my kid is scared of the horses?</p><div class="pp-faq-icon">+</div></div><div class="pp-faq-answer"><div class="pp-faq-answer-inner">Happens more than you\'d think &mdash; and it almost always resolves within five minutes. Our handlers are patient and experienced with nervous kids. We let them approach at their own speed. Some start by just watching, then petting, then suddenly they don\'t want to leave. No pressure, no rushing.</div></div></div>' +
+
+          '<div class="pp-faq-item"><div class="pp-faq-question"><p class="pp-faq-q-text">Do you travel outside North Idaho?</p><div class="pp-faq-icon">+</div></div><div class="pp-faq-answer"><div class="pp-faq-answer-inner">We\'re based in Athol and serve North Idaho and Eastern Washington &mdash; Coeur d\'Alene, Post Falls, Hayden, Rathdrum, Spirit Lake, Spokane, Spokane Valley. Further travel is possible; fees apply. Just ask.</div></div></div>' +
+
+        '</div>' +
+      '</section>' +
+
+      /* ── CTA ── */
+      '<section class="pp-cta">' +
+        '<h2>Your kid\'s going to talk about this one for a while.</h2>' +
+        '<p>Summer and fall book fast. Tell us your date and headcount, and we\'ll get back to you within one business day.</p>' +
+        '<div class="pp-cta-actions">' +
+          '<a href="/contact" class="pp-btn-gold">Check Your Date</a>' +
+          '<a href="tel:+12082612092" class="pp-btn-outline">Call (208) 261-2092</a>' +
+        '</div>' +
+      '</section>';
+
+    // Set hero background via JS
+    var hero = wrap.querySelector('.pp-hero');
+    if (hero) hero.style.backgroundImage = "url('" + HERO + "')";
+
+    page.insertBefore(wrap, page.firstChild);
+
+    // FAQ accordion
+    wrap.addEventListener('click', function(e) {
+      var question = e.target.closest('.pp-faq-question');
+      if (!question) return;
+      var item = question.closest('.pp-faq-item');
+      var answer = item.querySelector('.pp-faq-answer');
+      var isOpen = item.classList.contains('open');
+      wrap.querySelectorAll('.pp-faq-item.open').forEach(function(el) {
+        el.classList.remove('open');
+        el.querySelector('.pp-faq-answer').style.maxHeight = '0';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+
+    // Force heading colors inline — beats Squarespace global style
+    wrap.querySelectorAll('h1, h2').forEach(function(el) {
+      var onDark = el.closest('.pp-hero, .pp-cta, .pp-testi');
+      el.style.setProperty('color', onDark ? '#F3EDE3' : '#2C2520', 'important');
+      el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important');
+      el.style.setProperty('font-weight', '400', 'important');
+    });
+    wrap.querySelectorAll('.pp-testi-quote').forEach(function(el) { el.style.setProperty('color', '#F3EDE3', 'important'); });
+    wrap.querySelectorAll('.pp-testi-attr').forEach(function(el) { el.style.setProperty('color', 'rgba(212,168,67,0.7)', 'important'); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildPonyParties);
+  } else {
+    buildPonyParties();
+  }
+})();
+</script>

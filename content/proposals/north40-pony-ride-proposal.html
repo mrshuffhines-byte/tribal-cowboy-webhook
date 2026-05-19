@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tribal Cowboy × North 40 Outfitters — Equine Activation Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAFAF5;
+    --white: #FFFFFF;
+    --gold: #D4A843;
+    --gold-dark: #A07A1E;
+    --gold-deeper: #7A5C10;
+    --teal: #0F6E56;
+    --teal-light: #E6F4EF;
+    --saddle: #6B3A1F;
+    --text: #1A1208;
+    --text-mid: #5C4A28;
+    --text-light: #8A7050;
+    --border: #E8DFC8;
+    --amber-bg: #FDF3DC;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { max-width: 100%; margin: 0; box-shadow: none; }
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: #EDE8DC;
+    color: var(--text);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: 850px;
+    margin: 32px auto;
+    background: var(--white);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.15);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--saddle);
+    padding: 48px 56px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0; right: 0;
+    height: 6px;
+    background: var(--gold);
+  }
+  .header-eyebrow {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .header h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .header-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    font-weight: 300;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .header-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+  }
+  .header-meta-item {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-meta-item span {
+    display: block;
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-top: 2px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* ── BODY ── */
+  .body {
+    padding: 48px 56px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 6px;
+  }
+
+  /* ── INTRO ── */
+  .intro {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-mid);
+    margin-bottom: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+  }
+  .intro strong {
+    color: var(--text);
+  }
+
+  /* ── WHAT WE BRING ── */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .service-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 22px;
+    background: var(--cream);
+  }
+  .service-card-icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .service-card p {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+  .service-card .tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-light);
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 36px 0;
+  }
+
+  /* ── WHY THIS WORKS ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0 36px;
+  }
+  .stat-block {
+    text-align: center;
+    padding: 22px 16px;
+    border-radius: 6px;
+    background: var(--amber-bg);
+    border: 1px solid #E8CC88;
+  }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold-deeper);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--text-mid);
+    margin-top: 6px;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  .stat-source {
+    font-size: 9px;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
+
+  /* ── REVENUE TABLE ── */
+  .revenue-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 36px;
+    font-size: 13px;
+  }
+  .revenue-table thead tr {
+    background: var(--saddle);
+    color: white;
+  }
+  .revenue-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .revenue-table tbody tr:nth-child(even) {
+    background: var(--cream);
+  }
+  .revenue-table tbody td {
+    padding: 10px 14px;
+    color: var(--text-mid);
+    border-bottom: 1px solid var(--border);
+  }
+  .revenue-table tbody td:first-child {
+    font-weight: 700;
+    color: var(--text);
+  }
+  .revenue-table tfoot td {
+    padding: 12px 14px;
+    font-weight: 700;
+    color: var(--gold-deeper);
+    background: var(--amber-bg);
+    border-top: 2px solid var(--gold);
+    font-size: 14px;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0 36px;
+    counter-reset: step;
+  }
+  .step {
+    position: relative;
+    padding: 18px 16px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--cream);
+  }
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .step h4 {
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--text);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .step p {
+    font-size: 11.5px;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  /* ── SOCIAL PROOF / WHAT'S INCLUDED ── */
+  .included-list {
+    list-style: none;
+    margin: 16px 0 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .included-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.45;
+  }
+  .included-list li::before {
+    content: '✓';
+    color: var(--teal);
+    font-weight: 900;
+    font-size: 12px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  /* ── PHOTO/SOCIAL CALLOUT ── */
+  .callout {
+    background: var(--teal-light);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 6px 6px 0;
+    padding: 20px 24px;
+    margin: 0 0 36px;
+  }
+  .callout h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .callout p {
+    font-size: 13px;
+    color: #0A4A3A;
+    line-height: 1.6;
+  }
+  .callout strong {
+    color: var(--teal);
+  }
+
+  /* ── CTA / FOOTER ── */
+  .cta-section {
+    background: var(--saddle);
+    margin: 0 -56px -48px;
+    padding: 36px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .cta-left h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .cta-left p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+  }
+  .cta-right {
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .cta-contact {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 2;
+  }
+  .cta-contact a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .gold-bar {
+    height: 4px;
+    background: var(--gold);
+    margin: 0 -56px;
+    margin-bottom: 36px;
+  }
+
+  /* ── SAFETY BADGE ── */
+  .safety-row {
+    display: flex;
+    gap: 16px;
+    margin: 0 0 36px;
+  }
+  .safety-badge {
+    flex: 1;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .safety-badge-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .safety-badge h4 {
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--text);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .safety-badge p {
+    font-size: 12px;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Partnership Proposal</div>
+    <h1>Tribal Cowboy <em>&times;</em> North 40 Outfitters<br>Equine Activation</h1>
+    <div class="header-sub">
+      Pony rides, Clydesdale photo ops, and branded instant photos — brought directly to your parking lot. A live experience that keeps North 40's horse community on-site longer and spending more.
+    </div>
+    <div class="header-meta">
+      <div class="header-meta-item">Location<span>North 40 CDA — Coeur d'Alene, ID</span></div>
+      <div class="header-meta-item">Format<span>Weekend Activation Event</span></div>
+      <div class="header-meta-item">Insurance<span>$2M Liability Coverage</span></div>
+      <div class="header-meta-item">Presented by<span>Tribal Cowboy LLC</span></div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- INTRO -->
+    <p class="intro">
+      North 40's customer is a horse owner, a rancher, a farm family. <strong>This activation speaks to who already shops here.</strong> Idaho has 270,000+ privately owned horses — one of the highest per-capita ratios in the U.S. — and those owners spend <strong>$8,600–$26,000 per year</strong> on horse-related expenses in exactly the categories North 40 carries: feed, farrier supplies, tack, grooming, and western apparel. Bringing live horses to your lot isn't a gimmick. It's the most on-brand event this store could run.
+    </p>
+
+    <!-- WHAT WE BRING -->
+    <div class="section-label">What We Bring</div>
+    <div class="section-title">The Full Experience, Self-Contained</div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-icon">🐴</div>
+        <h3>Lead-Line Pony Rides</h3>
+        <p>Enclosed, handler-led rides in a dedicated area. Safe for toddlers through adults. We bring our own panels, footing, and handlers — no setup burden on North 40 staff.</p>
+        <div class="tag">Zero logistics on your end</div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">📸</div>
+        <h3>Clydesdale Photo Ops</h3>
+        <p>Millie and Abby — our Clydesdales — are the draw. Families line up. Guests get a real, close-up moment with a 1,800-lb horse they won't forget and will post about immediately.</p>
+        <div class="tag">Built-in content creation</div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🖼️</div>
+        <h3>Branded Instant Photos</h3>
+        <p>Guests scan a QR code and receive their photos instantly — with a custom overlay reading "North 40 Outfitters CDA" plus date. Every photo posted online is a branded impression for your store.</p>
+        <div class="tag">North 40 brand circulates for days</div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🤠</div>
+        <h3>Indigenous-Owned Authenticity</h3>
+        <p>Tribal Cowboy is owned by Stacie, Nisenan Maidu, based in Athol, Idaho. This is a local business partnership rooted in the region — not a rented vendor from out of state.</p>
+        <div class="tag">100% North Idaho</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- WHY THIS WORKS -->
+    <div class="section-label">The Business Case</div>
+    <div class="section-title">Your Customers Already Spend Like This</div>
+
+    <div class="stats-row">
+      <div class="stat-block">
+        <div class="stat-number">270K+</div>
+        <div class="stat-label">Privately owned horses in Idaho</div>
+        <div class="stat-source">One of the highest per-capita ratios in the U.S.</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">14%</div>
+        <div class="stat-label">Idaho households own equine — 3× the national average</div>
+        <div class="stat-source">Northern Idaho equine industry = $51M+ state GDP</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">30%</div>
+        <div class="stat-label">Sales lift when dwell time doubles in a retail location</div>
+        <div class="stat-source">Experiential retail benchmark</div>
+      </div>
+    </div>
+
+    <!-- REVENUE TABLE -->
+    <div class="section-label">Revenue Impact Projection</div>
+    <div class="section-title">Conservative Estimate — Same-Day Incremental Spend</div>
+
+    <table class="revenue-table">
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>Families Attending</th>
+          <th>Est. Incremental Spend / Family</th>
+          <th>Same-Day Revenue Lift</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Worst Case</td>
+          <td>30 families</td>
+          <td>$25</td>
+          <td>$750</td>
+        </tr>
+        <tr>
+          <td>Expected</td>
+          <td>60–90 families</td>
+          <td>$25</td>
+          <td>$1,500–$2,250</td>
+        </tr>
+        <tr>
+          <td>Best Case</td>
+          <td>120 families</td>
+          <td>$25</td>
+          <td>$3,000</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Post-event lift (weeks following) — experiential retail benchmark</td>
+          <td>+15% over baseline</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p style="font-size:11px;color:var(--text-light);margin:-28px 0 36px;font-style:italic;">Based on experiential retail benchmarks. $25/family assumption is conservative — families of 3–4 average $204/grocery trip. Will be measured at first event via queue observation and timestamp comparison.</p>
+
+    <hr class="divider">
+
+    <!-- HOW IT WORKS -->
+    <div class="section-label">Logistics</div>
+    <div class="section-title">How a Day Works</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Setup</h4>
+        <p>We arrive 90 min early. Panels, footing, animals, equipment — we bring it all. Zero labor from your team.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Activation</h4>
+        <p>4–6 hour event window. Rides run continuously. Photo op area stays open. QR code for instant photo delivery is live.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Social Push</h4>
+        <p>Guests post tagged photos with "North 40 CDA" branded overlay. UGC generates 6.9× more engagement than brand posts.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Teardown</h4>
+        <p>We leave the space exactly as we found it. Full cleanup included. No liability, no mess, no follow-up needed from North 40.</p>
+      </div>
+    </div>
+
+    <!-- SOCIAL CALLOUT -->
+    <div class="callout">
+      <h4>The Photo Delivery Difference</h4>
+      <p>Every family that attends gets a photo with a Clydesdale — and that photo has <strong>"North 40 Outfitters CDA"</strong> printed on it. When they post it to Instagram, Facebook, or TikTok, your store name circulates in the North Idaho horse community's feed for days. Branded photo booth activations deliver <strong>3–5× ROI</strong> through social amplification alone, independent of any in-store sales lift. 79% of consumers report increased trust in brands that appear in UGC.</p>
+    </div>
+
+    <!-- WHAT'S INCLUDED -->
+    <div class="section-label">What's Included</div>
+    <div class="section-title">Everything, On Our End</div>
+
+    <ul class="included-list">
+      <li>Lead-line pony rides with certified handlers</li>
+      <li>Clydesdale photo opportunity station</li>
+      <li>Branded instant photo overlay — North 40 CDA name + date</li>
+      <li>QR code delivery system — guests scan, photos arrive instantly</li>
+      <li>All animal panels, footing, and safety equipment</li>
+      <li>Certificate of insurance naming North 40 as additional insured</li>
+      <li>Full setup and teardown — zero logistics for your staff</li>
+      <li>Social media content shared to @TribalCowboy tagging North 40</li>
+    </ul>
+
+    <hr class="divider">
+
+    <!-- SAFETY -->
+    <div class="section-label">Safety &amp; Liability</div>
+    <div class="section-title">Covered, Documented, and Proven</div>
+
+    <div class="safety-row">
+      <div class="safety-badge">
+        <div class="safety-badge-icon">🛡️</div>
+        <div>
+          <h4>$2M Liability Coverage</h4>
+          <p>North 40 named as additional insured. Certificate of Liability provided before any activation date is confirmed.</p>
+        </div>
+      </div>
+      <div class="safety-badge">
+        <div class="safety-badge-icon">📋</div>
+        <div>
+          <h4>Lead-Line Protocol</h4>
+          <p>98.2% of equestrian injuries occur in independent riding events. Lead-line, enclosed, handler-led rides eliminate the primary risk categories entirely.</p>
+        </div>
+      </div>
+      <div class="safety-badge">
+        <div class="safety-badge-icon">✅</div>
+        <div>
+          <h4>Proven at Similar Venues</h4>
+          <p>Tribal Cowboy has activated at schools, county fairs, corporate events, and high-traffic community venues — with zero incidents requiring medical response.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="gold-bar"></div>
+    <div class="cta-section">
+      <div class="cta-left">
+        <h3>Ready to talk dates?</h3>
+        <p>We're scheduling spring and summer activations now. Spring weekends book fast — North 40 CDA sees its highest foot traffic in June, which is exactly when this activation performs best.</p>
+      </div>
+      <div class="cta-right">
+        <div class="cta-contact">
+          <a href="mailto:info@tribalcowboy.com">info@tribalcowboy.com</a><br>
+          <a href="https://www.tribalcowboy.com">www.tribalcowboy.com</a><br>
+          <span style="color:rgba(255,255,255,0.5)">@TribalCowboy</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+</div><!-- /page -->
+
+</body>
+</html>

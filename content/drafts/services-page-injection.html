@@ -1,0 +1,536 @@
+<style>
+/* ============================================================
+   TRIBAL COWBOY — SERVICES PAGE
+   Scope: body#collection-6753462d6265c027201f6b53
+   ============================================================ */
+
+body#collection-6753462d6265c027201f6b53 .page-section,
+body#collection-6753462d6265c027201f6b53 .content-wrapper {
+  display: none !important;
+}
+
+/* ---- WRAPPER ---- */
+#tc-sv {
+  font-family: 'Montserrat', sans-serif;
+  color: #2C2520;
+  background: #F3EDE3;
+}
+
+/* ---- HERO ---- */
+#tc-sv .sv-hero {
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: flex-end;
+  background-position: center 0%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#tc-sv .sv-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,14,10,0.75) 0%, rgba(20,14,10,0.40) 35%, rgba(44,37,32,0.10) 100%);
+}
+
+#tc-sv .sv-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 64px 60px;
+  max-width: 700px;
+}
+
+#tc-sv .sv-hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 18px 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+#tc-sv .sv-hero h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(48px, 7vw, 84px) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 20px 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+#tc-sv .sv-hero-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(243,237,227,0.92) !important;
+  margin: 0;
+  line-height: 1.7;
+  max-width: 500px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+/* ---- NOTICE BAR ---- */
+#tc-sv .sv-notice {
+  background: #D4A843;
+  padding: 18px 48px;
+  text-align: center;
+}
+
+#tc-sv .sv-notice p {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2C2520 !important;
+  margin: 0;
+}
+
+/* ---- SERVICE CARDS ---- */
+#tc-sv .sv-services {
+  padding: 100px 60px;
+  background: #F3EDE3;
+}
+
+#tc-sv .sv-services-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+#tc-sv .sv-services-header h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0 0 14px 0;
+}
+
+#tc-sv .sv-services-header p {
+  font-size: 15px;
+  color: #8A7868 !important;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+#tc-sv .sv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: #2C2520;
+  max-width: 1200px;
+  margin: 0 auto 3px;
+}
+
+#tc-sv .sv-grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  background: #2C2520;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#tc-sv .sv-card {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#tc-sv .sv-card-img {
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #574838;
+  flex-shrink: 0;
+}
+
+#tc-sv .sv-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+#tc-sv .sv-card-img--duo {
+  display: flex;
+  gap: 2px;
+}
+
+#tc-sv .sv-card-img--duo img {
+  width: 50%;
+  flex-shrink: 0;
+  transition: transform 0.5s ease;
+}
+
+#tc-sv .sv-card:hover .sv-card-img img {
+  transform: scale(1.04);
+}
+
+#tc-sv .sv-card-body {
+  padding: 36px 32px 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#tc-sv .sv-card-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #D4A843;
+  margin: 0 0 12px 0;
+}
+
+#tc-sv .sv-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #2C2520;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+}
+
+#tc-sv .sv-card-text {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #8A7868;
+  margin: 0 0 24px 0;
+  flex: 1;
+}
+
+#tc-sv .sv-card-link {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2C2520;
+  text-decoration: none;
+  border-bottom: 1px solid #D4A843;
+  padding-bottom: 3px;
+  align-self: flex-start;
+  transition: color 0.2s;
+}
+
+#tc-sv .sv-card-link:hover {
+  color: #D4A843;
+}
+
+/* ---- WHAT'S INCLUDED BAR ---- */
+#tc-sv .sv-included {
+  background: #2C2520;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+#tc-sv .sv-included h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(28px, 3vw, 42px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 12px 0;
+}
+
+#tc-sv .sv-included-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(243,237,227,0.65) !important;
+  max-width: 540px;
+  margin: 0 auto 56px;
+  line-height: 1.75;
+}
+
+#tc-sv .sv-included-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(212,168,67,0.15);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#tc-sv .sv-included-item {
+  background: #2C2520;
+  padding: 32px 24px;
+}
+
+#tc-sv .sv-included-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #D4A843 !important;
+  margin: 0 0 8px 0;
+}
+
+#tc-sv .sv-included-desc {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(243,237,227,0.55) !important;
+  margin: 0;
+}
+
+/* ---- CTA ---- */
+#tc-sv .sv-cta {
+  padding: 100px 48px;
+  background: #F3EDE3;
+  text-align: center;
+}
+
+#tc-sv .sv-cta h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(36px, 5vw, 62px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0 0 18px 0;
+}
+
+#tc-sv .sv-cta p {
+  font-size: 16px;
+  color: #8A7868 !important;
+  max-width: 520px;
+  margin: 0 auto 44px;
+  line-height: 1.75;
+}
+
+#tc-sv .sv-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#tc-sv .sv-btn-gold {
+  display: inline-block;
+  padding: 15px 36px;
+  background: #D4A843;
+  color: #2C2520;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+#tc-sv .sv-btn-gold:hover { background: #2C2520; color: #F3EDE3; }
+
+#tc-sv .sv-btn-dark {
+  display: inline-block;
+  padding: 15px 36px;
+  border: 1px solid #2C2520;
+  color: #2C2520;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+#tc-sv .sv-btn-dark:hover { background: #2C2520; color: #F3EDE3; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  #tc-sv .sv-grid { grid-template-columns: repeat(2, 1fr); }
+  #tc-sv .sv-grid-bottom { grid-template-columns: repeat(2, 1fr); }
+  #tc-sv .sv-included-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  #tc-sv .sv-hero-content { padding: 48px 24px; }
+  #tc-sv .sv-services { padding: 64px 24px; }
+  #tc-sv .sv-grid,
+  #tc-sv .sv-grid-bottom { grid-template-columns: 1fr; }
+  #tc-sv .sv-included { padding: 64px 24px; }
+  #tc-sv .sv-included-grid { grid-template-columns: 1fr; }
+  #tc-sv .sv-cta { padding: 64px 24px; }
+  #tc-sv .sv-notice { padding: 16px 24px; }
+}
+</style>
+
+<script>
+(function() {
+  var HERO   = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/801171c9-6f42-4e62-945a-87e39386bb9f/IMG_6298.jpg?content-type=image%2Fjpeg';
+  var S_PONY = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/c54badc1-e860-4b51-a0f4-914a7ff69244/IMG_0300.jpeg';
+  var S_RIDE  = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/ac47c185-f08b-4d80-a40c-863391a522bf/services-wagon-rides_IMG_9073_girl-pony-wagon_web.jpg?content-type=image%2Fjpeg';
+  var S_RIDE2 = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/85668d19-b717-4d56-bf72-75703ae69d44/services-wagon-rides_IMG_8948_pony-wagon-ride-behind_web.jpg?content-type=image%2Fjpeg';
+  var S_PHOT = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/8fb2622f-c601-499f-86cd-9403873d1adf/branded-0K0A4308.jpg';
+  var S_CORP = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/bb324374-7979-44e4-b694-ed671d00261d/homepage-hero_IMG_6073_clydesdale-with-rider-outdoors_web.jpg?content-type=image%2Fjpeg';
+  var S_SCHO = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/d1e65de1-e892-4a20-b427-ff3c21e114a8/services-education_IMG_2948_kids-meeting-clydesdale_web.jpg?content-type=image%2Fjpeg';
+
+  function buildServices() {
+    var page = document.getElementById('page');
+    if (!page) { setTimeout(buildServices, 120); return; }
+
+    page.querySelectorAll('.page-section').forEach(function(s) {
+      s.style.setProperty('display', 'none', 'important');
+    });
+
+    var wrap = document.createElement('div');
+    wrap.id = 'tc-sv';
+    wrap.innerHTML =
+
+      /* ── HERO ── */
+      '<section class="sv-hero">' +
+        '<div class="sv-hero-overlay"></div>' +
+        '<div class="sv-hero-content">' +
+          '<p class="sv-hero-eyebrow">North Idaho &amp; Eastern Washington</p>' +
+          '<h1>Real horses.<br>Real events.</h1>' +
+          '<p class="sv-hero-sub">Five ways to bring the herd to your event &mdash; from birthday parties to corporate programs to private photo sessions.</p>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── NOTICE BAR ── */
+      '<div class="sv-notice">' +
+        '<p>Every horse event includes on-site photography &amp; same-day photo delivery &mdash; built in, not an add-on</p>' +
+      '</div>' +
+
+      /* ── SERVICE CARDS ── */
+      '<section class="sv-services">' +
+        '<div class="sv-services-header">' +
+          '<h2>What we offer.</h2>' +
+          '<p>Every service runs with our herd, our equipment, and our team. Nothing rented. Nothing outsourced.</p>' +
+        '</div>' +
+
+        '<div class="sv-grid">' +
+
+          '<div class="sv-card">' +
+            '<div class="sv-card-img"><img src="' + S_PONY + '" alt="Pony party with decorated mini ponies" loading="lazy"></div>' +
+            '<div class="sv-card-body">' +
+              '<p class="sv-card-tag">Family Events</p>' +
+              '<p class="sv-card-title">Pony Parties</p>' +
+              '<p class="sv-card-text">Mini ponies arrive decorated &mdash; flower crowns, ribbons, colored mane extensions. We handle setup, animal care, photography, and same-day photo delivery. You just watch your kid see a real pony in the backyard.</p>' +
+              '<a href="/pony-parties" class="sv-card-link">Learn more &rarr;</a>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="sv-card">' +
+            '<div class="sv-card-img sv-card-img--duo">' +
+              '<img src="' + S_RIDE + '" alt="Girl with pony wagon" loading="lazy" style="width:50%;height:100%;object-fit:cover;display:inline-block;">' +
+              '<img src="' + S_RIDE2 + '" alt="Pony wagon ride from behind" loading="lazy" style="width:50%;height:100%;object-fit:cover;display:inline-block;">' +
+            '</div>' +
+            '<div class="sv-card-body">' +
+              '<p class="sv-card-tag">Heritage Experience</p>' +
+              '<p class="sv-card-title">Horse Wagon Rides</p>' +
+              '<p class="sv-card-text">Authentic draft horse wagon rides with our herd. Works for festivals, harvest events, holiday gatherings, and private bookings. Photos included &mdash; guests leave with their images the same day.</p>' +
+              '<a href="mailto:info@tribalcowboy.com" class="sv-card-link">Check availability &rarr;</a>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="sv-card">' +
+            '<div class="sv-card-img"><img src="' + S_PHOT + '" alt="Branded horse photography session" loading="lazy"></div>' +
+            '<div class="sv-card-body">' +
+              '<p class="sv-card-tag">Photo Experience</p>' +
+              '<p class="sv-card-title">Horse Photography Props</p>' +
+              '<p class="sv-card-text">Candid-style photo sessions with our horses as the backdrop. Custom branded overlays, instant delivery via QR code. Every guest leaves with photos on their phone before the event ends.</p>' +
+              '<a href="/photography" class="sv-card-link">Learn more &rarr;</a>' +
+            '</div>' +
+          '</div>' +
+
+        '</div>' +
+
+        '<div class="sv-grid-bottom">' +
+
+          '<div class="sv-card">' +
+            '<div class="sv-card-img"><img src="' + S_CORP + '" alt="Corporate event with horse photography" loading="lazy"></div>' +
+            '<div class="sv-card-body">' +
+              '<p class="sv-card-tag">Corporate &amp; Business</p>' +
+              '<p class="sv-card-title">Corporate Events</p>' +
+              '<p class="sv-card-text">Team events, client appreciation, festivals, and company gatherings. We bring the horses, handle everything on-site, photograph attendees, and deliver branded photos same day. Pricing by event size and duration.</p>' +
+              '<a href="mailto:info@tribalcowboy.com" class="sv-card-link">Get pricing &rarr;</a>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="sv-card">' +
+            '<div class="sv-card-img"><img src="' + S_SCHO + '" alt="School program with horses" loading="lazy"></div>' +
+            '<div class="sv-card-body">' +
+              '<p class="sv-card-tag">Education</p>' +
+              '<p class="sv-card-title">School &amp; Community Programs</p>' +
+              '<p class="sv-card-text">Hands-on horsemanship and Indigenous culture education for schools, community organizations, and youth groups. Programs are tailored to your group&rsquo;s age and goals. We bring the horses to you.</p>' +
+              '<a href="mailto:info@tribalcowboy.com" class="sv-card-link">Inquire &rarr;</a>' +
+            '</div>' +
+          '</div>' +
+
+        '</div>' +
+      '</section>' +
+
+      /* ── WHAT'S INCLUDED ── */
+      '<section class="sv-included">' +
+        '<h2>Every horse event includes.</h2>' +
+        '<p class="sv-included-sub">These come with all horse events &mdash; no add-on fees, no surprises.</p>' +
+        '<div class="sv-included-grid">' +
+          '<div class="sv-included-item">' +
+            '<p class="sv-included-label">The Herd</p>' +
+            '<p class="sv-included-desc">Our animals, groomed and ready. Same horses every time &mdash; we know them and they know crowds.</p>' +
+          '</div>' +
+          '<div class="sv-included-item">' +
+            '<p class="sv-included-label">Photography</p>' +
+            '<p class="sv-included-desc">On-site coverage throughout your event. Candid moments, portraits, group shots.</p>' +
+          '</div>' +
+          '<div class="sv-included-item">' +
+            '<p class="sv-included-label">Branded Overlays</p>' +
+            '<p class="sv-included-desc">Custom overlay with your event name, logo, and date on every delivered photo.</p>' +
+          '</div>' +
+          '<div class="sv-included-item">' +
+            '<p class="sv-included-label">Same-Day Delivery</p>' +
+            '<p class="sv-included-desc">Guests scan a QR code and download their photos before they leave. No follow-up emails needed.</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── CTA ── */
+      '<section class="sv-cta">' +
+        '<h2>Not sure which service fits?</h2>' +
+        '<p>Email us with what you&rsquo;re planning &mdash; date, guest count, type of event &mdash; and we&rsquo;ll tell you what makes sense.</p>' +
+        '<div class="sv-cta-actions">' +
+          '<a href="mailto:info@tribalcowboy.com" class="sv-btn-gold">Email Us</a>' +
+          '<a href="https://www.tribalcowboy.com/about" class="sv-btn-dark">About Tribal Cowboy</a>' +
+        '</div>' +
+      '</section>';
+
+    var hero = wrap.querySelector('.sv-hero');
+    if (hero) hero.style.backgroundImage = "url('" + HERO + "')";
+
+    page.insertBefore(wrap, page.firstChild);
+
+    // Force heading colors
+    wrap.querySelectorAll('h1, h2').forEach(function(el) {
+      var onDark = el.closest('.sv-hero, .sv-included');
+      el.style.setProperty('color', onDark ? '#F3EDE3' : '#2C2520', 'important');
+      el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important');
+      el.style.setProperty('font-weight', '400', 'important');
+    });
+
+    // Force paragraph colors
+    wrap.querySelector('.sv-hero-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.sv-hero-sub').style.setProperty('color', 'rgba(243,237,227,0.92)', 'important');
+    wrap.querySelector('.sv-notice p').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelector('.sv-services-header p').style.setProperty('color', '#8A7868', 'important');
+    wrap.querySelectorAll('.sv-card-tag').forEach(function(el) {
+      el.style.setProperty('color', '#D4A843', 'important');
+    });
+    wrap.querySelectorAll('.sv-card-text').forEach(function(el) {
+      el.style.setProperty('color', '#8A7868', 'important');
+    });
+    wrap.querySelector('.sv-included-sub').style.setProperty('color', 'rgba(243,237,227,0.65)', 'important');
+    wrap.querySelectorAll('.sv-included-label').forEach(function(el) {
+      el.style.setProperty('color', '#D4A843', 'important');
+    });
+    wrap.querySelectorAll('.sv-included-desc').forEach(function(el) {
+      el.style.setProperty('color', 'rgba(243,237,227,0.55)', 'important');
+    });
+    wrap.querySelector('.sv-cta p').style.setProperty('color', '#8A7868', 'important');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildServices);
+  } else {
+    buildServices();
+  }
+})();
+</script>

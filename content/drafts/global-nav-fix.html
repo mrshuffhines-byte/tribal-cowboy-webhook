@@ -1,0 +1,57 @@
+<script>
+(function() {
+  var fixes = {
+    '/corporate-events':             '/corporate',
+    '/carriage-rides':               '/carriage-ride',
+    '/school-programs':              '/school-programs-community-events',
+    '/horse-photography':            '/horse-photography-props'
+  };
+
+  function fixLink(a) {
+    var href = a.getAttribute('href');
+    if (!href) return;
+    Object.keys(fixes).forEach(function(bad) {
+      if (
+        href === bad ||
+        href === 'https://www.tribalcowboy.com' + bad ||
+        href === 'http://www.tribalcowboy.com' + bad
+      ) {
+        a.setAttribute('href', fixes[bad]);
+      }
+    });
+  }
+
+  function fixAllLinks() {
+    document.querySelectorAll('a[href]').forEach(fixLink);
+  }
+
+  // Run immediately and on DOM ready
+  fixAllLinks();
+  document.addEventListener('DOMContentLoaded', fixAllLinks);
+
+  // Watch for Squarespace dynamically injecting dropdown links
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      m.addedNodes.forEach(function(node) {
+        if (node.nodeType !== 1) return;
+        // Fix the node itself if it's a link
+        if (node.tagName === 'A') fixLink(node);
+        // Fix any links inside the added node
+        node.querySelectorAll && node.querySelectorAll('a[href]').forEach(fixLink);
+      });
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+
+  // Also catch hover-triggered renders: intercept mouseenter on nav folder items
+  document.addEventListener('mouseenter', function(e) {
+    var t = e.target;
+    if (t && (t.closest('.header-nav-folder') || t.closest('.header-nav-item--folder'))) {
+      setTimeout(fixAllLinks, 50);
+      setTimeout(fixAllLinks, 200);
+    }
+  }, true);
+
+})();
+</script>

@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silver Lake Mall — Experiential Partnership Proposal</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --timber:   #2C2520;
+  --saddle:   #574838;
+  --gold:     #D4A843;
+  --leather:  #C8A96E;
+  --cream:    #F3EDE3;
+  --teal:     #1A7A6B;
+  --brick:    #8B1A1A;
+  --nearblk:  #1E1208;
+  --muted:    #8A7560;
+  --offwhite: #FFFCF7;
+  --goldlt:   #FAF4EA;
+  --teallt:   #EEF7F5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page { size: 8.5in 11in; margin: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+}
+
+.page {
+  width: 8.5in;
+  height: 11in;
+  position: relative;
+  page-break-after: always;
+  overflow: hidden;
+}
+
+/* ── DARK PAGE (Cover, section dividers) ─────────────── */
+.page-dark {
+  background: var(--timber);
+}
+
+.band-top {
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--gold);
+}
+.band-top-inner {
+  position: absolute; top: 12px; left: 0; right: 0; height: 1.5px;
+  background: rgba(200, 169, 110, 0.5);
+}
+.band-bottom {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+  background: var(--gold);
+}
+.band-bottom-inner {
+  position: absolute; bottom: 12px; left: 0; right: 0; height: 1.5px;
+  background: rgba(200, 169, 110, 0.5);
+}
+
+/* ── COVER ───────────────────────────────────────────── */
+.cover-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 11in;
+  padding: 0.9in 1in;
+  text-align: center;
+}
+
+.cover-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 28px;
+}
+
+.cover-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.cover-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--leather);
+  line-height: 1.5;
+  max-width: 5.5in;
+  margin-bottom: 34px;
+}
+
+.cover-rule {
+  width: 3in;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 34px;
+}
+
+.cover-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+}
+
+.cover-meta strong {
+  color: var(--leather);
+  font-weight: 600;
+}
+
+.cover-footer {
+  position: absolute;
+  bottom: 28px;
+  left: 0; right: 0;
+  padding: 0 0.7in;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── LIGHT PAGE ──────────────────────────────────────── */
+.page-light {
+  background: var(--cream);
+}
+
+.page-header {
+  background: var(--timber);
+  height: 0.72in;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5in;
+}
+
+.header-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.header-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.page-content {
+  padding: 0.45in 0.6in 0.85in;
+}
+
+.section-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.section-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--timber);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.body-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 400;
+  color: var(--saddle);
+  line-height: 1.85;
+  margin-bottom: 14px;
+  max-width: 6.4in;
+}
+
+.body-text p { margin-bottom: 12px; }
+
+/* ── CALLOUT BOXES ───────────────────────────────────── */
+.callout-gold {
+  border-left: 4px solid var(--gold);
+  padding: 13px 16px;
+  background: var(--goldlt);
+  border-radius: 0;
+  margin: 18px 0;
+}
+.callout-gold .callout-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.callout-gold .callout-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--timber);
+  line-height: 1.75;
+}
+
+.callout-teal {
+  border-left: 4px solid var(--teal);
+  padding: 13px 16px;
+  background: var(--teallt);
+  border-radius: 0;
+  margin: 18px 0;
+}
+.callout-teal .callout-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.callout-teal .callout-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--timber);
+  line-height: 1.75;
+}
+
+/* ── CARD GRID ───────────────────────────────────────── */
+.card-grid {
+  display: flex;
+  gap: 16px;
+  margin: 20px 0;
+}
+.card-grid-3 {
+  display: flex;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.card {
+  flex: 1;
+  background: var(--offwhite);
+  border: 0.5px solid #E8DFD0;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+.card-badge {
+  padding: 5px 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.badge-gold    { background: var(--gold);   color: var(--nearblk); }
+.badge-corporate { background: var(--saddle);  color: var(--cream); }
+.badge-teal    { background: var(--teal);   color: #D0F0EA; }
+.badge-partner { background: var(--timber); color: var(--gold); }
+
+.card-body {
+  padding: 14px 16px 16px;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--timber);
+  margin-bottom: 7px;
+  line-height: 1.25;
+}
+
+.card-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 400;
+  color: var(--saddle);
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.card-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* ── COMPARISON TABLE ────────────────────────────────── */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+}
+
+.comparison-table th {
+  background: var(--timber);
+  color: var(--cream);
+  font-weight: 700;
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+  padding: 9px 14px;
+  text-align: left;
+}
+
+.comparison-table th.gold-col {
+  background: var(--gold);
+  color: var(--nearblk);
+}
+
+.comparison-table td {
+  padding: 8px 14px;
+  border-bottom: 0.5px solid #E0D6C8;
+  color: var(--saddle);
+  line-height: 1.7;
+}
+
+.comparison-table td:first-child {
+  color: var(--timber);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.comparison-table tr:nth-child(even) td {
+  background: rgba(212,168,67,0.07);
+}
+
+.comparison-table td.highlight {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* ── STEPS ───────────────────────────────────────────── */
+.steps-grid {
+  display: table;
+  width: 100%;
+  border-spacing: 14px 0;
+  margin: 18px 0;
+  table-layout: fixed;
+}
+
+.step {
+  display: table-cell;
+  vertical-align: top;
+  width: 25%;
+}
+
+.step-num {
+  width: 30px; height: 30px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--nearblk);
+  margin-bottom: 9px;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--timber);
+  margin-bottom: 5px;
+}
+
+.step-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: var(--saddle);
+  line-height: 1.8;
+}
+
+/* ── TWO COLUMN ──────────────────────────────────────── */
+.two-col {
+  display: flex;
+  gap: 24px;
+  margin: 14px 0;
+}
+
+.col-left { flex: 1.1; }
+.col-right {
+  flex: 0.9;
+  background: var(--timber);
+  border-left: 5px solid var(--teal);
+  border-radius: 0 4px 4px 0;
+  padding: 18px 18px 18px 20px;
+}
+
+.right-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.right-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.right-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 400;
+  color: var(--leather);
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: var(--cream);
+  line-height: 1.75;
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 3px;
+}
+
+.feature-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ── PRICING TIER CARDS ──────────────────────────────── */
+.tier-card {
+  background: var(--offwhite);
+  border: 0.5px solid #E8DFD0;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+  overflow: hidden;
+  flex: 1;
+}
+
+.tier-header {
+  padding: 16px 18px 10px;
+  background: var(--timber);
+}
+
+.tier-badge {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.tier-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.tier-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--leather);
+}
+
+.tier-body {
+  padding: 14px 18px 16px;
+}
+
+.tier-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--timber);
+  margin-bottom: 10px;
+}
+
+.tier-price span {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.tier-includes {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.tier-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tier-list li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: var(--saddle);
+  line-height: 1.8;
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.tier-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* ── REVENUE GRID ────────────────────────────────────── */
+.revenue-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.revenue-item {
+  flex: 0 0 calc(50% - 7px);
+  background: var(--offwhite);
+  border: 0.5px solid #E8DFD0;
+  border-radius: 4px;
+  border-left: 4px solid var(--gold);
+  padding: 13px 15px;
+}
+
+.revenue-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--timber);
+  margin-bottom: 5px;
+}
+
+.revenue-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  color: var(--saddle);
+  line-height: 1.8;
+}
+
+/* ── LOGISTICS PAGE OVERRIDES (fit timeline to page) ─── */
+.page-logistics .page-content {
+  padding-top: 0.35in;
+  padding-bottom: 0.5in;
+}
+.page-logistics .section-heading {
+  font-size: 27px;
+  margin-bottom: 6px;
+}
+.page-logistics .body-text p {
+  font-size: 9px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.page-logistics .two-col {
+  gap: 20px;
+}
+.page-logistics .section-eyebrow {
+  margin-bottom: 4px;
+}
+.page-logistics .rule-thin {
+  margin: 4px 0;
+}
+.page-logistics .steps-grid {
+  gap: 8px;
+  margin: 6px 0;
+}
+.page-logistics .step-num {
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.page-logistics .step-title {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.page-logistics .step-text {
+  font-size: 7.5px;
+  line-height: 1.5;
+}
+.page-logistics .feature-list li {
+  font-size: 8.5px;
+  padding: 3px 0 3px 14px;
+}
+.page-logistics .right-body {
+  font-size: 9px;
+  margin-bottom: 8px;
+}
+
+/* ── REVENUE PAGE OVERRIDES (fit content to one page) ── */
+.page-revenue .page-content {
+  padding-top: 0.35in;
+  padding-bottom: 0.5in;
+}
+.page-revenue .section-eyebrow {
+  margin-bottom: 4px;
+}
+.page-revenue .section-heading {
+  font-size: 26px;
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+.page-revenue .body-text p {
+  font-size: 9px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.page-revenue .revenue-grid {
+  gap: 8px;
+  margin: 8px 0;
+}
+.page-revenue .revenue-item {
+  padding: 8px 12px;
+}
+.page-revenue .revenue-title {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.page-revenue .revenue-text {
+  font-size: 8.5px;
+  line-height: 1.6;
+}
+.page-revenue .callout-teal .callout-body {
+  font-size: 9.5px;
+  line-height: 1.6;
+}
+
+/* ── PACKAGES PAGE OVERRIDES (fit 3 tiers + callout + add-on to one page) ── */
+.page-packages .page-content {
+  padding-top: 0.3in;
+  padding-bottom: 0.45in;
+}
+.page-packages .section-heading {
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+.page-packages .body-text p {
+  font-size: 8.5px;
+  line-height: 1.55;
+  margin-bottom: 3px;
+}
+.page-packages .card-grid {
+  gap: 10px;
+  margin: 8px 0;
+}
+.page-packages .tier-header {
+  padding: 10px 14px 7px;
+}
+.page-packages .tier-name {
+  font-size: 18px;
+}
+.page-packages .tier-body {
+  padding: 10px 14px 12px;
+}
+.page-packages .tier-price {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.page-packages .tier-price span {
+  font-size: 8.5px;
+}
+.page-packages .tier-list li {
+  font-size: 8px;
+  padding: 2.5px 0 2.5px 14px;
+}
+.page-packages .callout-teal {
+  padding: 9px 14px;
+  margin: 8px 0;
+}
+.page-packages .callout-teal .callout-body {
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+/* ── PAGE FOOTER ─────────────────────────────────────── */
+.page-footer {
+  position: absolute;
+  bottom: 18px;
+  left: 0; right: 0;
+  padding: 8px 0.6in 0;
+  border-top: 1px solid #E0D6C8;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.page-footer a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+/* ── SECTION DIVIDER (dark accent page) ──────────────── */
+.divider-page {
+  background: var(--timber);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 11in;
+  text-align: center;
+  padding: 1in;
+}
+
+.divider-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.divider-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.divider-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: italic;
+  color: var(--leather);
+  max-width: 5in;
+  line-height: 1.6;
+}
+
+/* ── CONTACT BLOCK ───────────────────────────────────── */
+.contact-block {
+  background: var(--timber);
+  border-radius: 4px;
+  padding: 20px 22px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-left .contact-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 3px;
+}
+.contact-left .contact-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--leather);
+  letter-spacing: 0.06em;
+  margin-bottom: 9px;
+}
+.contact-left .contact-details {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.contact-left .contact-details a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.cta-btn {
+  background: var(--gold);
+  color: var(--nearblk);
+  padding: 12px 28px;
+  border-radius: 3px;
+  border: 2px solid #B8901E;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+  display: inline-block;
+  margin-top: 8px;
+  min-width: 200px;
+  text-transform: uppercase;
+}
+
+/* ── DIVIDER LINE ────────────────────────────────────── */
+.rule-gold {
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  margin: 16px 0 14px;
+}
+
+.rule-thin {
+  width: 100%;
+  height: 0.5px;
+  background: #E0D6C8;
+  margin: 14px 0;
+}
+
+/* ── STAT BLOCKS ─────────────────────────────────────── */
+.stat-row {
+  display: flex;
+  gap: 14px;
+  margin: 18px 0;
+}
+.stat-box {
+  flex: 1;
+  background: var(--timber);
+  border-radius: 4px;
+  padding: 16px 14px;
+  text-align: center;
+}
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+/* ── NEXT STEPS PAGE OVERRIDES ── */
+.page-nextsteps .page-content { padding-top: 0.3in; padding-bottom: 0.35in; }
+.page-nextsteps .section-heading { font-size: 26px; margin-bottom: 4px; }
+.page-nextsteps .body-text p { font-size: 9px; line-height: 1.6; margin-bottom: 0; }
+.page-nextsteps .card-grid-3 { gap: 8px; margin: 8px 0 10px; }
+.page-nextsteps .card-body { padding: 8px 11px 10px; }
+.page-nextsteps .card-title { font-size: 13px; margin-bottom: 3px; }
+.page-nextsteps .card-text { font-size: 7.5px; line-height: 1.6; margin-bottom: 4px; }
+.page-nextsteps .card-price { font-size: 8px; }
+.page-nextsteps .callout-gold { padding: 8px 14px; margin-bottom: 10px; }
+.page-nextsteps .callout-body { font-size: 9px; line-height: 1.6; }
+.page-nextsteps .contact-block { margin-top: 10px; padding-top: 10px; }
+
+/* ── SOCIAL MARKETING PAGE OVERRIDES (fit content to one page) ── */
+.page-social .page-content { padding-top: 0.3in; padding-bottom: 0.45in; }
+.page-social .section-heading { font-size: 26px; margin-bottom: 4px; }
+.page-social .card-grid-3 { gap: 8px; margin: 8px 0; }
+.page-social .card-body { padding: 9px 12px 11px; }
+.page-social .card-text { font-size: 7.5px; line-height: 1.6; margin-bottom: 5px; }
+.page-social .tier-list li { font-size: 7.5px; padding: 1.5px 0 1.5px 13px; }
+.page-social .callout-gold { padding: 8px 13px; margin: 8px 0; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 1 — COVER
+═══════════════════════════════════════════════════════ -->
+<div class="page page-dark">
+  <div class="band-top"></div>
+  <div class="band-top-inner"></div>
+  <div class="band-bottom"></div>
+  <div class="band-bottom-inner"></div>
+
+  <div class="cover-body">
+    <img class="cover-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy Logo">
+
+    <div class="cover-eyebrow">Experiential Partnership Proposal</div>
+
+    <div class="cover-title">Silver Lake Mall</div>
+
+    <div class="cover-subtitle">A Live Equine Activation That Drives Foot Traffic, Extends Dwell Time, and Generates Organic Social Reach</div>
+
+    <div class="cover-rule"></div>
+
+    <div class="cover-meta">
+      <strong>Prepared for:</strong> Silver Lake Mall / Black Sheep Properties<br>
+      <strong>Presented by:</strong> Tribal Cowboy LLC — Stacie Huffhines, Owner<br>
+      <strong>Date:</strong> March 2026<br>
+      <strong>Location:</strong> Coeur d'Alene, Idaho
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Confidential — Prepared Exclusively for Silver Lake Mall</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 2 — EXECUTIVE SUMMARY
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Executive Summary</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">The Opportunity</div>
+    <div class="section-heading" style="margin-bottom: 12px;">An Activation That Works While You Watch</div>
+
+    <!-- 2-COLUMN: OPPORTUNITY LEFT + WHY EASY RIGHT -->
+    <div style="display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start;">
+
+      <div style="flex: 1.1;">
+        <ul style="list-style: none; padding: 0; margin: 0 0 12px; font-family: 'Montserrat', sans-serif; font-size: 9.5px; color: var(--saddle); line-height: 1.85;">
+          <li style="padding-left: 16px; position: relative; margin-bottom: 7px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700; font-size: 12px;">›</span>Silver Lake Mall has the foot traffic. Tribal Cowboy has the horses.</li>
+          <li style="padding-left: 16px; position: relative; margin-bottom: 7px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700; font-size: 12px;">›</span>Fully managed equine activation — extends dwell time, drives tenant spend, no mall staff needed.</li>
+          <li style="padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700; font-size: 12px;">›</span>Every guest photo carries the Silver Lake Mall logo and circulates on social for days after the event.</li>
+        </ul>
+        <div class="callout-gold" style="margin: 0; padding: 11px 14px;">
+          <div class="callout-label">The Core Idea</div>
+          <div class="callout-body" style="font-size: 9.5px;">Bring Clydesdales, ponies, and an instant branded photo system into the mall. Guests ride, photograph, and share. Silver Lake Mall is in every post.</div>
+        </div>
+      </div>
+
+      <div style="flex: 0.9; background: var(--timber); border-left: 4px solid var(--teal); border-radius: 0 4px 4px 0; padding: 14px 16px 14px 18px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px;">Why This Is Easy to Approve</div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8.5px; color: var(--cream); line-height: 1.9;">
+          <li style="padding-left: 18px; position: relative; margin-bottom: 4px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">✓</span>$2M liability insurance — COI names mall as additionally insured</li>
+          <li style="padding-left: 18px; position: relative; margin-bottom: 4px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">✓</span>Zero mall staff required — we handle everything</li>
+          <li style="padding-left: 18px; position: relative; margin-bottom: 4px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">✓</span>Fully enclosed panels — no loose animals, ever</li>
+          <li style="padding-left: 18px; position: relative; margin-bottom: 4px;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">✓</span>CCPA-aligned photo system — no PII stored or retained</li>
+          <li style="padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">✓</span>Start with one event — scale only if you want to</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rule-thin" style="margin: 8px 0;"></div>
+    <div class="section-eyebrow" style="margin-bottom: 10px;">What Tribal Cowboy Brings</div>
+
+    <!-- ACTIVATION ZONE CARDS WITH ICONS -->
+    <div class="card-grid-3" style="margin: 0 0 10px;">
+      <div class="card">
+        <div class="card-badge badge-gold">Zone 1</div>
+        <div class="card-body" style="padding: 10px 14px 12px;">
+          <div style="font-size: 24px; margin-bottom: 6px; line-height: 1;">🎠</div>
+          <div class="card-title">Pony Rides</div>
+          <div class="card-text" style="margin-bottom: 0;">Lead-line only · enclosed panels · 2 handlers · ages 3–10 · 80 lbs max</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-badge badge-teal">Zone 2</div>
+        <div class="card-body" style="padding: 10px 14px 12px;">
+          <div style="font-size: 24px; margin-bottom: 6px; line-height: 1;">📲</div>
+          <div class="card-title">Branded Photo Delivery</div>
+          <div class="card-text" style="margin-bottom: 0;">QR scan → instant branded photo · Silver Lake Mall logo on every image · no app, no email, no wait</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-badge badge-corporate">Zone 3</div>
+        <div class="card-body" style="padding: 10px 14px 12px;">
+          <div style="font-size: 24px; margin-bottom: 6px; line-height: 1;">🐴</div>
+          <div class="card-title">Clydesdale Photo Area</div>
+          <div class="card-text" style="margin-bottom: 0;">1,800-lb purebred Clydesdale · adults + families welcome · the photo that doesn't exist anywhere else in CDA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHOTO STRIP -->
+    <div style="display: table; width: 100%; table-layout: fixed;">
+      <div style="display: table-cell; padding-right: 3px;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/photography-community-events_IMG_1993_community-group-clydesdale_web.jpg" style="width: 100%; height: 62px; object-fit: cover; border-radius: 2px; display: block;">
+      </div>
+      <div style="display: table-cell; padding: 0 3px;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/photography-private-events_IMG_7037_girl-pony-birthday_web.jpg" style="width: 100%; height: 62px; object-fit: cover; border-radius: 2px; display: block;">
+      </div>
+      <div style="display: table-cell; padding-left: 3px;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/services-education_IMG_4910_school-group-with-pony_web.jpg" style="width: 100%; height: 62px; object-fit: cover; border-radius: 2px; display: block;">
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 3 — EVENT LAYOUT & FAMILY FLOW
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Event Layout &amp; Experience Flow</div>
+  </div>
+
+  <div class="page-content" style="padding-bottom: 0.5in;">
+    <div class="section-eyebrow">Controlled, Predictable, Repeatable</div>
+    <div class="section-heading">A Fixed Footprint. A Managed Flow.</div>
+
+    <div class="body-text" style="margin-bottom: 12px;">
+      <p>The activation runs within a defined 40' × 60' footprint — fully self-contained with no impact on surrounding retail traffic. Every zone has a designated entry, exit, and staff position. Nothing is improvised.</p>
+    </div>
+
+    <!-- LAYOUT DIAGRAM -->
+    <div style="border: 1.5px solid #C8A96E; background: var(--offwhite); padding: 16px 20px; margin-bottom: 14px; position: relative;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; margin-bottom: 12px;">Activation Footprint — Approx. 40' × 60'</div>
+
+      <img src="file:///Users/staciehuffhines/TribalCowboy-Social/content/drafts/photo-on-a-pony-diagram.jpeg" style="width: 100%; display: block; border-radius: 3px; border: 1px solid #C8A96E;" alt="Photo on a Pony — activation layout diagram showing pony loop, photo stop, queue/check-in, resting ponies, and parent viewing rails">
+
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); text-align: center; margin-top: 8px; font-style: italic;">Layout is flexible — can adapt to parking lot, entry corridor, or covered outdoor space. Tribal Cowboy advises on optimal placement for Silver Lake's footprint.</div>
+    </div>
+
+    <!-- FAMILY FLOW -->
+    <div class="rule-thin" style="margin: 10px 0;"></div>
+    <div class="section-eyebrow" style="margin-bottom: 8px;">What a Family Experience Looks Like</div>
+
+    <div style="display: table; width: 100%; table-layout: fixed;">
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--gold); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--timber); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">1</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Arrive</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">Family sees horses. Full stop. They are not walking past this.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--gold); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--timber); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">2</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Queue</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">10–20 min wait. Parents browse, shop, grab food. Dwell time increases.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--gold); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--timber); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">3</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Ride</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">Child rides the pony. 5–7 minutes. Handler in control the entire time.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--gold); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--timber); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">4</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Photo</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">Stops at Clydesdale zone. Family photo. Silver Lake Mall in the frame.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--gold); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--timber); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">5</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Scan</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">Parent scans QR. Photo delivered instantly. Mall brand on every share.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; text-align: center; padding: 0 6px;">
+        <div style="width: 26px; height: 26px; background: var(--teal); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: white; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 5px;">6</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; color: var(--timber); margin-bottom: 2px;">Shop</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); line-height: 1.5;">Family shops, eats, returns to mall. Photo posts. Mall reach continues.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 4 — WHY THIS IS MORE VALUABLE THAN NORTH 40
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Why Silver Lake Mall</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">The Mall Advantage</div>
+    <div class="section-heading">Why This Delivers More Than a Retail Activation</div>
+
+    <div class="body-text">
+      <p>Tribal Cowboy activates at outdoor retail venues — those events perform well. But the audience is pre-selected. Silver Lake Mall is a different category: broader, higher volume, and far more likely to post. The surprise of horses at a mall is what drives organic reach.</p>
+    </div>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th style="width: 28%;">Factor</th>
+          <th>Outdoor &amp; Farm Retail</th>
+          <th class="gold-col">Silver Lake Mall</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🚶 Foot Traffic</strong></td>
+          <td>Rural/ag customer base — pre-selected audience</td>
+          <td class="highlight">Mall-level volume — families, tourists, general public</td>
+        </tr>
+        <tr>
+          <td><strong>👥 Audience Profile</strong></td>
+          <td>Ag/outdoor enthusiasts — already horse-adjacent</td>
+          <td class="highlight">First-time horse experiences — maximum emotional impact</td>
+        </tr>
+        <tr>
+          <td><strong>📱 Social Sharing</strong></td>
+          <td>Moderate — familiar demographic</td>
+          <td class="highlight">High — unexpected setting amplifies shareability</td>
+        </tr>
+        <tr>
+          <td><strong>📰 Media Interest</strong></td>
+          <td>Low — expected at that venue type</td>
+          <td class="highlight">High — "Horses at the mall" is a local news story</td>
+        </tr>
+        <tr>
+          <td><strong>⬆️ Mall Brand Lift</strong></td>
+          <td>None — benefits the retailer only</td>
+          <td class="highlight">Positions mall as the experiential destination in CDA</td>
+        </tr>
+        <tr>
+          <td><strong>📸 Photo Branding</strong></td>
+          <td>Tribal Cowboy + retailer logo</td>
+          <td class="highlight">Silver Lake Mall logo on every single photo delivered</td>
+        </tr>
+        <tr>
+          <td><strong>🔄 Repeat Visits</strong></td>
+          <td>Low — single-purpose trip</td>
+          <td class="highlight">High — families return specifically for event dates</td>
+        </tr>
+        <tr>
+          <td><strong>🤝 Co-Marketing</strong></td>
+          <td>Limited retail channel</td>
+          <td class="highlight">Mall email list, signage, social, digital — full stack</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout-gold">
+      <div class="callout-label">The Differentiator</div>
+      <div class="callout-body">When horses show up at a farm store, it's expected. When horses show up at Silver Lake Mall, people stop, photograph, tag, and tell their friends. The surprise is the strategy.</div>
+    </div>
+
+    <div style="display: table; width: 100%; table-layout: fixed; margin-top: 16px; background: var(--offwhite); border: 0.5px solid #E0D6C8;">
+      <div style="display: table-cell; text-align: center; padding: 12px 8px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--timber);">270,000+</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;">Privately Owned Horses<br>in Idaho</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 12px 8px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--timber);">14%</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;">of Idaho Households<br>Own Equine</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 12px 8px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--teal);">9.7%</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;">YoY Mall Foot Traffic<br>Increase (2024)</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 12px 8px;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--timber);">75%</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;">of U.S. Adults Visited<br>a Mall in Past 3 Months</div>
+      </div>
+    </div>
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--muted); font-style: italic; margin-top: 4px;">Sources: Idaho Horse Council · Idaho Horse Board · V-Count (2024) · U.S. Census Bureau · ICSC</div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE — TRACK RECORD
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Track Record</div>
+  </div>
+
+  <div class="page-content" style="padding-top: 0.35in; padding-bottom: 0.45in;">
+    <div class="section-eyebrow">Our Track Record in the CDA Community</div>
+    <div class="section-heading" style="font-size: 27px; margin-bottom: 8px;">Already Operating in Your Backyard</div>
+
+    <div class="body-text" style="margin-bottom: 12px; font-size: 9.5px;">
+      <p>Tribal Cowboy is not a traveling roadshow. It is a North Idaho equine experience business that has been quietly building trust with families, schools, and community organizers across the region for years. Silver Lake Mall would not be "testing horses at a mall for the first time" — you would be partnering with an operator that has already managed horses safely in high-traffic public spaces, shared parking lots, street parades, and early childhood education settings.</p>
+    </div>
+
+    <!-- EVENT LIST -->
+    <div style="margin-bottom: 12px;">
+
+      <div style="display: table; width: 100%; table-layout: fixed; margin-bottom: 6px;">
+        <div style="display: table-cell; vertical-align: top; width: 32%; padding-right: 10px;">
+          <div style="background: var(--offwhite); border: 0.5px solid #E8DFD0; border-top: 3px solid var(--gold); padding: 10px 12px; height: 100%;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">September 2025</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 5px; line-height: 1.2;">Church Event — Wagon Rides</div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.7;">Pony-driven wagon rides in a small shared lot — managing horses, wagon, and guest queues in a tight footprint very similar to a mall activation pad. Zero incidents.</div>
+          </div>
+        </div>
+        <div style="display: table-cell; vertical-align: top; width: 34%; padding-right: 10px;">
+          <div style="background: var(--offwhite); border: 0.5px solid #E8DFD0; border-top: 3px solid var(--teal); padding: 10px 12px; height: 100%;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.14em; color: var(--teal); text-transform: uppercase; margin-bottom: 4px;">2024 — Full Herd Activation</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 5px; line-height: 1.2;">Rathdrum Days — <span style="font-weight: 700; color: var(--teal);">$2,000+</span></div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.7;">Full herd on-site — Clydesdales, ponies, and our zebra — operating safely all day in a crowded festival with constant foot traffic, vehicles, food vendors, and children moving in and out.</div>
+          </div>
+        </div>
+        <div style="display: table-cell; vertical-align: top; width: 34%;">
+          <div style="background: var(--offwhite); border: 0.5px solid #E8DFD0; border-top: 3px solid var(--gold); padding: 10px 12px; height: 100%;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">Repeat Vendor — Multiple Years</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--timber); margin-bottom: 5px; line-height: 1.2;">Make It Messy — <span style="font-weight: 700; color: var(--teal);">$2,500</span></div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-style: italic; color: var(--muted); margin-bottom: 4px;">Recurring family event series — Hayden, Idaho</div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.7;">Two sold-out sessions of 40 per session (50+ in practice). $25/person: 2-hour session + pony ride. 100+ guests = $2,500 total event revenue generated. Zero incidents.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: table; width: 100%; table-layout: fixed; margin-bottom: 10px;">
+        <div style="display: table-cell; vertical-align: top; padding: 8px 12px; border-left: 3px solid var(--gold); background: var(--offwhite); width: 25%; padding-right: 8px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px;">Town Parades</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.65;">Spirit Lake, Rathdrum, and Coeur d'Alene — horses and wagon along city streets, integrated into parade staging and dense sidewalk crowds.</div>
+        </div>
+        <div style="display: table-cell; width: 8px;"></div>
+        <div style="display: table-cell; vertical-align: top; padding: 8px 12px; border-left: 3px solid var(--teal); background: var(--offwhite); width: 25%; padding-right: 8px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px;">Farmers Markets</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.65;">Rathdrum farmers markets — bringing horses into mixed-use public areas where space, sightlines, and pedestrian flow all have to be actively managed.</div>
+        </div>
+        <div style="display: table-cell; width: 8px;"></div>
+        <div style="display: table-cell; vertical-align: top; padding: 8px 12px; border-left: 3px solid var(--gold); background: var(--offwhite); width: 25%; padding-right: 8px;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px;">Private Parties</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.65;">Birthday events and pony parties at homes — self-contained pony loops and photo areas set up and torn down without burdening the host family.</div>
+        </div>
+        <div style="display: table-cell; width: 8px;"></div>
+        <div style="display: table-cell; vertical-align: top; padding: 8px 12px; border-left: 3px solid var(--teal); background: var(--offwhite); width: 25%;">
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px;">Preschool Programs</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.65;">Three years of return visits to the same preschools, grown strictly by word of mouth. Safety, education, and trust kept above volume and pricing.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SAFETY STAT BAR -->
+    <div style="display: table; width: 100%; table-layout: fixed; background: var(--timber); border-radius: 4px; margin-bottom: 12px;">
+      <div style="display: table-cell; text-align: center; padding: 11px 6px; border-right: 0.5px solid rgba(200,169,110,0.3);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--gold);">7+</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 600; color: var(--leather); letter-spacing: 0.1em; text-transform: uppercase;">Event Types</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 11px 6px; border-right: 0.5px solid rgba(200,169,110,0.3);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--gold);">Zero</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 600; color: var(--leather); letter-spacing: 0.1em; text-transform: uppercase;">Safety Incidents</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 11px 6px; border-right: 0.5px solid rgba(200,169,110,0.3);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--gold);">3 Years</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 600; color: var(--leather); letter-spacing: 0.1em; text-transform: uppercase;">Repeat Preschool Bookings</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 11px 6px;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--gold);">CDA Area</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 600; color: var(--leather); letter-spacing: 0.1em; text-transform: uppercase;">Primary Operating Region</div>
+      </div>
+    </div>
+
+    <div style="background: var(--teallt); border-left: 4px solid var(--teal); padding: 11px 16px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--teal); text-transform: uppercase; margin-bottom: 6px;">The Operational Foundation Behind This Proposal</div>
+      <div style="display: table; width: 100%; table-layout: fixed; margin-bottom: 8px;">
+        <div style="display: table-cell; vertical-align: top; padding-right: 14px;">
+          <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8.5px; color: var(--saddle); line-height: 1.85;">
+            <li>&#10003;&nbsp; High-traffic public spaces</li>
+            <li>&#10003;&nbsp; Shared parking lots and church grounds</li>
+          </ul>
+        </div>
+        <div style="display: table-cell; vertical-align: top;">
+          <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8.5px; color: var(--saddle); line-height: 1.85;">
+            <li>&#10003;&nbsp; Street parades and festival environments</li>
+            <li>&#10003;&nbsp; Early childhood education settings and private homes</li>
+          </ul>
+        </div>
+      </div>
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--teal); line-height: 1.65; border-top: 0.5px solid rgba(26,122,107,0.25); padding-top: 7px;">Early events were intentionally priced below market to validate operations, refine the photo system, and build a zero-incident track record. Current partnership pricing reflects the proven model.</div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 4 — REVENUE & VALUE FOR THE MALL
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light page-revenue">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Revenue &amp; Value for Silver Lake Mall</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">The Business Case</div>
+    <div class="section-heading">What Silver Lake Mall Gets in Return</div>
+
+    <div class="body-text" style="margin-bottom: 6px;">
+      <p>This is not an event cost. It is a customer acquisition and retention tool that generates measurable value across traffic, dwell time, media, and tenant performance.</p>
+    </div>
+
+    <div style="display: table; width: 100%; table-layout: fixed; margin-bottom: 10px; border: 0.5px solid #E0D6C8; background: var(--offwhite);">
+      <div style="display: table-cell; text-align: center; padding: 10px 6px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--timber);">15–20</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Rides per Hour</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 10px 6px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--timber);">60–120</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Families per 4-Hour Event</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 10px 6px; border-right: 0.5px solid #E0D6C8;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--teal);">10–20 min</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Avg Wait = Browsing Time</div>
+      </div>
+      <div style="display: table-cell; text-align: center; padding: 10px 6px;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--teal);">100+</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Branded Photos Per Event</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; color: var(--muted); font-style: italic; margin-top: 2px;">(confirmed at Make It Messy)</div>
+      </div>
+    </div>
+
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--muted); text-align: center; font-style: italic; margin-bottom: 8px;">Dwell-time figures are projections based on experiential retail benchmarks (McKinsey, ICSC avg. $103–$140/visit). Photo count confirmed at Make It Messy (100+ guests per activation, photo delivery fully operational). Tribal Cowboy's own event history is on the Track Record page.</div>
+
+    <div class="revenue-grid">
+      <div class="revenue-item">
+        <div class="revenue-title">Incremental Foot Traffic</div>
+        <div class="revenue-text">Families visit specifically for the horses — not incidentally. Every incremental visitor drives spend in retail, food, and services.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="revenue-title">Extended Dwell Time</div>
+        <div class="revenue-text">Pony rides generate queues. Waiting families browse. McKinsey links experience-led retail to 2–7% sales lift — dwell time is the strongest predictor of per-visit spend.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="revenue-title">Organic Social Reach</div>
+        <div class="revenue-text">Every photo carries the Silver Lake Mall logo. When guests post, the mall earns branded impressions across Instagram, Facebook, and TikTok at zero cost — circulating for days after the event closes.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="revenue-title">Earned Media Coverage</div>
+        <div class="revenue-text">"Horses at the mall" is a local news story. CDA Press, KREM 2, and regional lifestyle media will cover a well-executed activation.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="revenue-title">Tenant Co-Marketing</div>
+        <div class="revenue-text">The activation can be co-promoted with anchor tenants and restaurants, driving targeted traffic to specific stores on event days. A direct, tangible benefit you can present to your tenant mix.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="revenue-title">Market Differentiation</div>
+        <div class="revenue-text">No mall in North Idaho or Eastern Washington is running live equine activations. This positions Silver Lake as the region's experiential destination — defensible and durable.</div>
+      </div>
+    </div>
+
+    <div class="callout-teal" style="margin-top: 10px; padding: 10px 16px;">
+      <div class="callout-label">Community Partnership</div>
+      <div class="callout-body">Partnering with an Indigenous-owned business gives the mall an authentic community story that resonates with regional values and supports genuine local economic development.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 5 — SOCIAL MARKETING PLAN
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light page-social">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Marketing the Activation</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">The Amplification Strategy</div>
+    <div class="section-heading">Before, During, and After — Every Phase Drives the Mall</div>
+
+    <div class="body-text" style="margin-bottom: 10px;">
+      <p>The event itself is not the full campaign. The three phases below are how a single activation day compounds into weeks of visibility for Silver Lake Mall.</p>
+    </div>
+
+    <div class="card-grid-3" style="align-items: flex-start; gap: 12px;">
+
+      <!-- BEFORE -->
+      <div class="card">
+        <div class="card-badge badge-gold">Phase 1 — Before</div>
+        <div class="card-body">
+          <div class="card-title">Build the Anticipation</div>
+          <ul class="tier-list" style="margin-top: 8px;">
+            <li>Email blast + social posts 2–3 weeks out: "The horses are coming to Silver Lake Mall"</li>
+            <li>Tribal Cowboy countdown content tagging @SilverLakeMall across Instagram, Facebook, and TikTok</li>
+            <li>Press release pitched to CDA Press, KREM 2, and local family influencers — seeded before event day</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DURING -->
+      <div class="card">
+        <div class="card-badge badge-teal">Phase 2 — During</div>
+        <div class="card-body">
+          <div class="card-title">Capture Everything</div>
+          <ul class="tier-list" style="margin-top: 8px; margin-bottom: 10px;">
+            <li>Every guest photo delivered instantly, branded with Silver Lake Mall logo — no app, no email</li>
+            <li>Live stories from mall account and @TribalCowboy simultaneously; QR station prompts guests to tag @SilverLakeMall</li>
+            <li>Pre-seeded local creators post live; any news crew can walk up — no coordination needed</li>
+          </ul>
+          <div style="background: var(--goldlt); border-left: 3px solid var(--gold); padding: 7px 10px;">
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; font-weight: 700; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 3px;">Why UGC Works</div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--saddle); line-height: 1.6;">UGC generates <strong>6.9× more engagement</strong> than brand content. Photo booth content = <strong>40–60% of event hashtag volume</strong>. <span style="color: var(--muted); font-style: italic;">(Nosto, FeatureBooth, Salesforce)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="card">
+        <div class="card-badge badge-partner">Phase 3 — After</div>
+        <div class="card-body">
+          <div class="card-title">Extend the Shelf Life</div>
+          <ul class="tier-list" style="margin-top: 8px;">
+            <li>Tribal Cowboy delivers 5 edited event images to the mall within 7 days — any platform, any use</li>
+            <li>Proof-of-performance summary: reach, photo shares, estimated impressions, incident log (if any)</li>
+            <li>"See you at the next one" teaser — every event builds the next one's audience and makes the calendar easier to fill</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout-gold" style="margin-top: 12px;">
+      <div class="callout-label">The Compounding Effect</div>
+      <div class="callout-body">A single activation day generates content that circulates for weeks. Each event builds the audience for the next one. The marketing value compounds with every date added to the calendar.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 6 — PACKAGE TIERS
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light page-packages">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Partnership Packages</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">Investment Options</div>
+    <div class="section-heading">Three Ways to Partner</div>
+
+    <div class="body-text">
+      <p>The mall pays a flat base fee. Guests pay $5 per pony ride — that revenue goes to Tribal Cowboy. Photos are $5 each, or one of your tenants can sponsor them flat, putting their brand on every image guests share online. Every tier includes full insurance, on-site safety staff, and all animal handling. No hidden costs.</p>
+      <p style="color: var(--muted); font-size: 9px;">Typical mall experiential activations run $5,000–$15,000. Our base fee model is intentionally priced as a low-risk entry point to prove performance — not a reflection of what it delivers. Limited to select dates due to animal scheduling and event capacity.</p>
+    </div>
+
+    <div class="card-grid" style="align-items: flex-start;">
+
+      <!-- TIER 1 -->
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-badge">Tier 1</div>
+          <div class="tier-name">The Pop-Up</div>
+          <div class="tier-tagline">Single-day, targeted activation</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-price">$2,500 <span>mall base fee · 4-hour window</span></div>
+          <div class="tier-includes">Includes</div>
+          <ul class="tier-list">
+            <li>Pony rides — controlled loop, $5/guest (Tribal Cowboy revenue)</li>
+            <li>Photos — $5 each, matched instantly via our photo system OR tenant-sponsored ($400–$600 flat)</li>
+            <li>Branded photo overlays with Silver Lake Mall logo</li>
+            <li>2 handlers, full safety setup and fencing</li>
+            <li>QR code delivery — no email, no app, no wait</li>
+            <li>General liability insurance documentation</li>
+          </ul>
+          <div style="margin-top:12px; padding-top:10px; border-top: 0.5px solid #E0D6C8;">
+            <div class="tier-includes">Best For</div>
+            <div class="card-text" style="margin-top:4px;">End of school year, North Idaho Fair weekend, holiday pop-ups. Lower commitment, full experience.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 2 — MOST BOOKED -->
+      <div class="tier-card" style="border: 2px solid var(--gold); box-shadow: 0 8px 28px rgba(212,168,67,0.28); position: relative; z-index: 1;">
+        <div class="tier-header" style="background: #3D2D10;">
+          <div class="tier-badge" style="background: var(--gold); color: var(--timber); font-size: 8px; display: inline-block; padding: 2px 8px; border-radius: 2px; margin-bottom: 6px;">★ Most Requested</div>
+          <div class="tier-name">The Full Activation</div>
+          <div class="tier-tagline">Signature experience · all three zones</div>
+        </div>
+        <div class="tier-body" style="background: var(--goldlt);">
+          <div class="tier-price">$3,000 <span>mall base fee · 6-hour window</span></div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">Recommended starting point for Silver Lake Mall</div>
+          <div class="tier-includes">Includes Everything in Tier 1, Plus</div>
+          <ul class="tier-list">
+            <li>Clydesdale photo area — one of our mares on-site</li>
+            <li>Dedicated photo zone with professional lighting setup</li>
+            <li>Extended 6-hour activation window</li>
+            <li>Event signage with Silver Lake Mall co-branding</li>
+            <li>Social media content pack — 5 edited images for mall use</li>
+            <li>Written post-event summary delivered within 7 days: attendance, photos delivered, estimated social reach, incident log (if any), and recommendations</li>
+          </ul>
+          <div style="margin-top:12px; padding-top:10px; border-top: 0.5px solid #E0D6C8;">
+            <div class="tier-includes">Best For</div>
+            <div class="card-text" style="margin-top:4px;">Peak summer weekends, North Idaho Fair weekend (full program), Back to School, high-traffic community events.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 3 -->
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-badge">Tier 3 — Signature</div>
+          <div class="tier-name">The Partnership</div>
+          <div class="tier-tagline">Seasonal presence, co-branded story</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-price">$8,000–$10,000 <span>— 3–4 event seasonal package</span></div>
+          <div class="tier-includes">Includes Everything in Tier 2, Plus</div>
+          <ul class="tier-list">
+            <li>Priority date selection across Spring–Fall</li>
+            <li>Dedicated Tribal Cowboy × Silver Lake Mall social content</li>
+            <li>Custom event press kit for media outreach</li>
+            <li>Silver Lake Mall logo on ALL photo overlays, all events</li>
+            <li>Seasonal storytelling — behind-the-scenes content, meet-the-horses</li>
+            <li>Exclusivity option — we don't activate at competing CDA venues</li>
+            <li>Revenue share structure available in lieu of flat fee</li>
+          </ul>
+          <div style="margin-top:12px; padding-top:10px; border-top: 0.5px solid #E0D6C8;">
+            <div class="tier-includes">Best For</div>
+            <div class="card-text" style="margin-top:4px;">Mall ownership and management teams seeking a differentiated, recurring experiential identity throughout the peak season.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout-teal" style="margin-top: 16px;">
+      <div class="callout-label">How the Activation Pays for Itself</div>
+      <div class="callout-body">The mall's investment is the base fee. At 60–120 families per event, even a conservative $20–$40 per-family incremental spend across food and retail can offset the full activation cost in tenant revenue alone. For context: ICSC data shows average mall spend per visit ranging from $103 to $140+ — making $20–40 a floor, not a ceiling. A photo sponsorship costs one tenant $400–$600 flat and puts their brand on every image guests share. This is not a one-time event model — it is designed to be repeated, scaled, and built into a seasonal traffic strategy.</div>
+    </div>
+
+    <div style="margin-top: 12px; padding: 11px 16px; border: 0.5px solid #E0D6C8; background: var(--offwhite);">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase; margin-bottom: 6px;">Optional Add-On</div>
+      <div style="display: table; width: 100%; table-layout: fixed;">
+        <div style="display: table-cell; vertical-align: middle; width: 70%;">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 600; color: var(--timber); margin-bottom: 2px;">Ride Sponsorship — "Free Pony Rides"</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; color: var(--saddle); line-height: 1.6;">The mall covers all pony rides — guests ride at no charge. Allows the mall to advertise "Free pony rides today," which is a significantly stronger foot traffic message than a ticketed model. Removes cash transactions on-site and simplifies the guest experience.</div>
+        </div>
+        <div style="display: table-cell; vertical-align: middle; text-align: right; width: 30%; padding-left: 12px;">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--timber);">+$750</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--muted); letter-spacing: 0.06em;">per event · any tier</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 6 — LOGISTICS & SAFETY
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light page-logistics">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Logistics &amp; Safety</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">Operations &amp; Safety</div>
+    <div class="section-heading">Controlled by Design. Zero Burden on Mall Staff.</div>
+
+    <div class="two-col">
+      <div class="col-left">
+        <div class="section-eyebrow">Space Requirements</div>
+        <div class="body-text" style="margin-bottom:10px;">
+          <p>Full three-zone setup requires a minimum 40' × 60' footprint — outdoor, covered, or a combination. Pony loop needs level ground. Clydesdale photo area: 15' × 20'. Photo delivery station works indoors or outdoors.</p>
+          <p>Tribal Cowboy will advise on optimal layout for Silver Lake's specific footprint — parking lot, entry corridor, or event lawn. We have operated in all three.</p>
+        </div>
+
+        <div class="section-eyebrow" style="margin-top:12px;">Setup &amp; Teardown</div>
+        <div class="body-text">
+          <p>Tribal Cowboy handles all setup and teardown. Arrival 2 hours before open. Teardown complete within 90 minutes of close. Animals arrive in Tribal Cowboy's own trailer and are managed exclusively by our handlers. No mall staff involvement required.</p>
+        </div>
+
+        <div class="section-eyebrow" style="margin-top:12px;">Staffing</div>
+        <div class="body-text">
+          <p>Every activation includes a minimum of 2 animal handlers, 1 photo delivery operator, and 1 guest flow coordinator. Staffing scales to event size. All Tribal Cowboy personnel are uniformed and branded throughout the event.</p>
+        </div>
+
+        <div class="section-eyebrow" style="margin-top:7px;">Animal Welfare Standards</div>
+        <div class="body-text" style="margin-bottom: 0;">
+          <p style="font-size: 8px; line-height: 1.55; margin-bottom: 0;">Our animals — not rented stock. Every activation follows our daily ranch protocols: no work above 90°F · 45-min max per pony · current vet certificates · SAVE Veterinary on-call · diaper bags on all animals · all animals pre-conditioned to crowds and music before deployment.</p>
+        </div>
+      </div>
+
+      <div class="col-right">
+        <div class="right-eyebrow">Zero-Risk, Controlled Environment</div>
+        <div class="right-heading">We Handle Everything</div>
+        <div class="right-body">All documentation provided in advance. No delays, no gaps in coverage.</div>
+        <ul class="feature-list">
+          <li>Lead-line only — no independent riding at any time</li>
+          <li>Fully enclosed panel system — dedicated entry and exit</li>
+          <li>Minimum 2 handlers per pony — one leads, one controls spacing and guest interaction</li>
+          <li>No loose animals — ever</li>
+          <li>Throughput intentionally capped to maintain safety and guest experience quality</li>
+          <li>Queue actively managed to prevent overflow into retail walkways</li>
+          <li>General liability insurance — $2M per occurrence</li>
+          <li>Animal liability endorsement included</li>
+          <li>Rider guidelines posted &amp; enforced — ages 3–10, 80 lbs max</li>
+          <li>All animals current on veterinary health certificates</li>
+          <li>Rider waivers — digital, managed by Tribal Cowboy</li>
+          <li>Emergency action plan on file at every event</li>
+          <li>Industry benchmark: PRCA data across 355,000 exposures/year shows 99.9% animal safety record</li>
+          <li>Lead-line format eliminates 98.2% of documented equestrian injury mechanisms (national ER database, 2018–2022)</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div style="margin-top: 7px; background: var(--timber); border-radius: 4px; padding: 8px 12px;">
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 5px;">Risk &amp; Welfare at a Glance</div>
+      <div style="display: table; width: 100%; table-layout: fixed;">
+        <div style="display: table-cell; vertical-align: top; padding-right: 14px;">
+          <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--leather); line-height: 1.85;">
+            <li>› Lead-line only — no independent riding, ever</li>
+            <li>› No loose animals — enclosed panel system at all times</li>
+            <li>› Animal welfare protocol: rotation schedule, shade, water, temp limits (no work above 90°F / below 20°F)</li>
+            <li>› Pre-event surface inspection — footing confirmed safe before animals leave the trailer</li>
+          </ul>
+        </div>
+        <div style="display: table-cell; vertical-align: top;">
+          <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--leather); line-height: 1.85;">
+            <li>› $2M general liability + animal liability endorsement</li>
+            <li>› Designated backup event lead: Nicole Trexler — (360) 979-7603</li>
+            <li>› Emergency Action Plan on file with host manager before gates open</li>
+          </ul>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--muted); font-style: italic; margin-top: 6px;">A full written EAP covering animal distress, perimeter breach, guest injury, weather holds, emergency evacuation, and ADA accessibility is available upon request.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-thin"></div>
+
+    <div class="section-eyebrow">Timeline to First Event</div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Align on Date &amp; Scope</div>
+        <div class="step-text">Initial call or meeting to confirm event date, space, and package tier. Typically 30–45 minutes.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Agreement &amp; Deposit</div>
+        <div class="step-text">Partnership agreement executed. 25% deposit secures the date. Balance due 14 days before event.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Co-Marketing Setup</div>
+        <div class="step-text">We provide social graphics, event copy, and custom photo overlay branding with mall logo. You promote through your channels.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">Event Day</div>
+        <div class="step-text">Tribal Cowboy arrives fully self-contained. We operate the event. You host the experience.</div>
+      </div>
+    </div>
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--muted); font-style: italic; margin-top: 4px;">Cancellation policy: if the event is cancelled due to weather or emergency before activation begins, the deposit transfers in full to a rescheduled date within 90 days.</div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 7 — ABOUT TRIBAL COWBOY
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">About Tribal Cowboy</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-eyebrow">Who We Are</div>
+    <div class="section-heading" style="margin-bottom: 10px;">Real Horses. Real Experience. Real People.</div>
+
+    <div class="two-col">
+      <div class="col-left">
+        <div class="body-text">
+          <p>Tribal Cowboy LLC is an Indigenous-owned equine experience business in Athol, Idaho, operated by Stacie Huffhines — a Nisenan Maidu woman who has spent her life around horses. These are our animals. We know them by name. Every event is staffed by our own team.</p>
+        </div>
+
+        <div class="callout-gold">
+          <div class="callout-label">The Photo System</div>
+          <div class="callout-body">Guests scan a QR code and find their photos instantly — no app, no email, no wait. Every image carries a custom branded frame with your logo, event name, and date. Photos circulate on social for days after the event. CCPA-aligned — no PII stored.</div>
+        </div>
+      </div>
+
+      <div class="col-right">
+        <div class="right-eyebrow">Our Herd</div>
+        <div class="right-heading">Meet the Team</div>
+        <div class="right-body">These animals are our partners, not props. They're calm, trained, and experienced in public activations.</div>
+        <ul class="feature-list">
+          <li><strong style="color:var(--gold);">The Clydesdales</strong> — Four purebred mares, each over 1,800 lbs. Gentle giants who stop every person in the room.</li>
+          <li><strong style="color:var(--gold);">The Pony Herd</strong> — Working ponies for riders ages 3–10, 80 lbs or under. Comfortable in crowds, trained for public events.</li>
+          <li><strong style="color:var(--gold);">All Animals</strong> — Current on health certificates, accustomed to music, crowds, and unfamiliar environments.</li>
+        </ul>
+        <div style="margin-top: 16px; padding-top: 12px; border-top: 0.5px solid rgba(200,169,110,0.3);">
+          <div class="right-eyebrow">Service Area</div>
+          <div class="right-body">North Idaho and Eastern Washington. Coeur d'Alene is our primary market. Silver Lake Mall is exactly where we want to be.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MISSION + TESTIMONIALS -->
+    <div style="margin-top: 8px; padding-top: 10px; border-top: 0.5px solid #E0D6C8; display: table; width: 100%; table-layout: fixed;">
+      <div style="display: table-cell; vertical-align: top; width: 48%; padding-right: 16px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--teal); text-transform: uppercase; margin-bottom: 5px;">Why This Exists</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: var(--saddle); line-height: 1.65;">Horses should be accessible to everyone. Billy — Stacie's brother, who passed in March 2025 one week before his 48th birthday — had Down syndrome and spent his life in a world that didn't always make room for him. Tribal Cowboy is making that room. Every activation is fully accessible, and the business is building toward an indoor arena where people with Down syndrome can ride and work with horses on their own terms.</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; width: 52%;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--teal); text-transform: uppercase; margin-bottom: 5px;">What People Say</div>
+        <div style="margin-bottom: 5px; padding: 7px 10px; background: #FBF6EE; border-left: 2px solid var(--gold);">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 10px; font-style: italic; color: var(--timber); line-height: 1.5;">"My 8-year-old said 'that lady in Coeur d'Alene because she let us ride her horses and was nice.'"</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; color: var(--muted); margin-top: 2px;">— Parent, private session</div>
+        </div>
+        <div style="margin-bottom: 5px; padding: 7px 10px; background: #FBF6EE; border-left: 2px solid var(--teal);">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 10px; font-style: italic; color: var(--timber); line-height: 1.5;">"Thank you for giving kids a space to bond with animals."</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; color: var(--muted); margin-top: 2px;">— Repeat weekly lesson family, Coeur d'Alene</div>
+        </div>
+        <div style="padding: 7px 10px; background: #FBF6EE; border-left: 2px solid var(--gold);">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 10px; font-style: italic; color: var(--timber); line-height: 1.5;">"The kids loved it. Thank you Stacie for all the love and kindness!"</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; color: var(--muted); margin-top: 2px;">— Smart Start Learning Academy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHOTO STRIP -->
+    <div style="display: table; width: 100%; table-layout: fixed; margin-top: 8px;">
+      <div style="display: table-cell; vertical-align: top; padding-right: 4px;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/photography-community-events_IMG_1993_community-group-clydesdale_web.jpg" style="width: 100%; height: 80px; display: block; border-radius: 2px; object-fit: cover;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6px; color: var(--muted); text-align: center; margin-top: 2px;">Community event activation</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top; padding-right: 4px;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/photography-private-events_IMG_7037_girl-pony-birthday_web.jpg" style="width: 100%; height: 80px; display: block; border-radius: 2px; object-fit: cover;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6px; color: var(--muted); text-align: center; margin-top: 2px;">Birthday pony party</div>
+      </div>
+      <div style="display: table-cell; vertical-align: top;">
+        <img src="file:///Users/staciehuffhines/TribalCowboy-Social/Tribal-Cowboy-Website-Photos/EXPORTED-FOR-SQUARESPACE/services-education_IMG_4910_school-group-with-pony_web.jpg" style="width: 100%; height: 80px; display: block; border-radius: 2px; object-fit: cover;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6px; color: var(--muted); text-align: center; margin-top: 2px;">School program — parking lot setting</div>
+      </div>
+    </div>
+
+    <!-- QR CODE — SEE IT IN ACTION -->
+    <div style="display: table; width: 100%; table-layout: fixed; margin-top: 6px; background: var(--timber); border-radius: 3px; padding: 8px 14px;">
+      <div style="display: table-cell; vertical-align: middle; width: 60px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAIAAADdBSngAAAE/UlEQVR4nO3dwW3kOBRFUXswyfSi8g+kFh2KNwY8AaiBEQSKvGKfs7ZKZfuBwhfJz8+f768P6Pln9ReAPxNNokSTKNEkSjSJEk2iRJMo0SRKNIkSTaJEk6h/z/zQ69evj3Xev3//7/c58zNnPvma+77P69Inn/m9av/TI6MmUaJJlGgSJZpEiSZPrtDvq21rlePRqPr32l/sfemqa3ev/U+NmkSJJlGiSZRoEiWa7FWhj6rCRtWto+r6+36L+z75HausR30foyZRokmUaBIlmkSJJrtX6DONWlV+NHN+/Inr+WcyahIlmkSJJlGiSZRoEvXICn3mHPrxXqN2go9awb4royZRokmUaBIlmkSJJrtX6Gtnae9bZz7zqjPeg94PXLvXTEZNokSTKNEkSjSJEk32qtDXzuSO6nC+9meOZn6f/uy8UZMo0SRKNIkSTaJEkydX6P1dzDOry5m19tEe8+NnGDWJEk2iRJMo0SRKNIn6/Pn+Sp33fcbMvnD3vQ0Y1ZXuNfE8uJmd64yaRIkmUaJJlGgSJZo8uUJfu8967RuDtevD37fVv/e9UXHaGpvzQCdKNIkSTaJEk732oa+dpe2fONav/c9YW8UbNYkSTaJEkyjRJEo0eXKFft/542vP+x7VBX1mP7e16/BnvjEwahIlmkSJJlGiSZRoslenuPvWkM98G3DfVdd6vs2sf98TZ/CvvXkwahIlmkSJJlGiSZRosvt56KPMnEceNWN+5u79e71uezdyjVGTKNEkSjSJEk2iRJPdV7mPMrMz+VrXTm3rr7HXKY7NeaATJZpEiSZRoslevdyPajuv+6u4z3hNPI1u7V7+I6MmUaJJlGgSJZpEiSZ/3xz6fXPE135m5vlrZ+6+9lT3M9auTDBqEiWaRIkmUaJJlGgS9YA59Jn93tfWyDNX+L+W/lWdtsaDeaATJZpEiSZRoklUrlPc2n7v91Xxo855f5+46trd71tjoJc7W/FAJ0o0iRJNokSTvebQ1/aOu+a+zuRrP/kdm/selQ2jJlGiSZRoEiWaRIkmu+9Dv6+n2cw970+sZI9qO+WvMWoSJZpEiSZRokmUaPLkOfRR65/PXHXGzLcBM/u931f/vpfOs9uHzlY80IkSTaJEkyjRZPdOcWf8Paeb3ffJr6VV/H0984+MmkSJJlGiSZRoEiWa7NUprjbbO3P19ShrT1t7Le13d4ZRkyjRJEo0iRJNokSTqKnnoZ+p3dZ2b7uv2p05G/4aVH1fu2rUCgejJlGiSZRoEiWaRIkmT67Qr9VcZ656Yk+z+yr9UevM1755GMWoSZRoEiWaRIkmUaLJXnPoM8087/vaJ5+56tq9zpj5e818P2DUJEo0iRJNokSTKNFkr33o/V5to+Z/az3YR5m5e/3a3Y2aRIkmUaJJlGgSJZrsVaEfzexyNnN+vFZ9vybOs6/d3W/UJEo0iRJNokSTKNFk9wp9ptoe81FXrZ0xfw062fxM9z9z6DyYBzpRokmUaBIlmkQ9skJ/Yuf2Mz9z3/uB18ROAnq5szkPdKJEkyjRJEo02b1Cv2/+98y9Zs7tjtqZvraKf9/29zkyh85WPNCJEk2iRJMo0WSvCn1td/eZ+8dH3WtU1fxeevejM59jHzpb8UAnSjSJEk2iRJOoz5/vr9XfAf7AqEmUaBIlmkSJJlGiSZRoEiWaRIkmUaJJlGgSJZp8NP0HAOb5DU4MPu8AAAAASUVORK5CYII=" style="width: 56px; height: 56px; display: block;">
+      </div>
+      <div style="display: table-cell; vertical-align: middle; padding-left: 12px;">
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">See Us In Action</div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 11px; font-weight: 500; color: var(--cream); line-height: 1.4;">Scan to watch a Tribal Cowboy activation — filmed at an Autism Society of Idaho event.</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; color: var(--muted); margin-top: 3px;">instagram.com/tribalcowboy &nbsp;·&nbsp; or search @TribalCowboy</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE — COMMON QUESTIONS
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light" style="--page-content-pb: 0.5in;">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Common Questions</div>
+  </div>
+
+  <div class="page-content" style="padding-bottom: 0.5in;">
+    <div class="section-eyebrow">What Decision-Makers Ask</div>
+    <div class="section-heading">Straight Answers to the Hard Questions</div>
+
+    <div style="margin-top: 14px;">
+
+      <div style="margin-bottom: 12px; padding: 13px 16px; background: var(--offwhite); border: 0.5px solid #E0D6C8; border-left: 4px solid var(--gold);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--timber); margin-bottom: 6px;">1. What if a child gets hurt?</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 9.5px; color: var(--saddle); line-height: 1.75;">No rider is ever on a pony unsupervised. Lead-line only — a handler holds the pony and controls all movement at every step. The enclosure, fencing, and rider weight limit (80 lbs max) are additional layers. National emergency room data shows 98.2% of equestrian injuries involve independent riding or being thrown — both of which are structurally impossible in our format. Tribal Cowboy carries $2M per-occurrence general liability insurance, and the Certificate of Insurance names Silver Lake Mall as additionally insured. An Emergency Action Plan is on file with your team before gates open.</div>
+      </div>
+
+      <div style="margin-bottom: 12px; padding: 13px 16px; background: var(--offwhite); border: 0.5px solid #E0D6C8; border-left: 4px solid var(--teal);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--timber); margin-bottom: 6px;">2. What does the mall actually have to do?</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 9.5px; color: var(--saddle); line-height: 1.75;">Approve the event, designate a space, and promote it through your existing channels (email, social, signage). That's it. Tribal Cowboy handles all setup, teardown, animal handling, guest flow management, photo operations, permitting coordination, and post-event cleanup. No mall staff involvement is required on event day — not for animal handling, not for crowd management, not for photo delivery. You host the event. We run it.</div>
+      </div>
+
+      <div style="margin-bottom: 12px; padding: 13px 16px; background: var(--offwhite); border: 0.5px solid #E0D6C8; border-left: 4px solid var(--gold);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--timber); margin-bottom: 6px;">3. How do you handle waste and sanitation in a retail environment?</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 9.5px; color: var(--saddle); line-height: 1.75;">All working animals wear diaper bags. The entire enclosed footprint is laid with ground cover or appropriate flooring that Tribal Cowboy brings and removes. Any waste is collected and removed by our team — no mall custodial involvement required. Setup and breakdown includes full cleanup of the activation area. We have operated in indoor/adjacent spaces before. This has never been an issue.</div>
+      </div>
+
+      <div style="margin-bottom: 12px; padding: 13px 16px; background: var(--offwhite); border: 0.5px solid #E0D6C8; border-left: 4px solid var(--teal);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--timber); margin-bottom: 6px;">4. What if the weather doesn't cooperate or turnout is low?</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 9.5px; color: var(--saddle); line-height: 1.75;">The activation is designed for outdoor, covered, or combination footprints — we advise on optimal placement for Silver Lake's space during planning. For weather, we build a hold protocol into the Emergency Action Plan: activation pauses, animals are secured in the trailer, and resumes when conditions allow. If turnout is lower than projected, the fixed base fee is the mall's only cost — there's no performance penalty. A smaller first event still validates the model, generates content, and builds the audience for the next one.</div>
+      </div>
+
+      <div style="padding: 13px 16px; background: var(--offwhite); border: 0.5px solid #E0D6C8; border-left: 4px solid var(--gold);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--timber); margin-bottom: 6px;">5. What if parking lot or load-in logistics are complicated?</div>
+        <div style="font-family: 'Montserrat', sans-serif; font-size: 9.5px; color: var(--saddle); line-height: 1.75;">Tribal Cowboy arrives with our own truck and trailer — we need a designated unloading lane and access to the activation footprint, ideally accessible without crossing active pedestrian traffic. We scout the location in advance and advise on the cleanest approach. Our trailer fits in a standard commercial vehicle parking bay. If a vendor staging area exists, we use it. If not, we coordinate directly with your facilities team to identify the lowest-disruption load-in route. This is handled before event day — not improvised on arrival.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE 8 — NEXT STEPS
+═══════════════════════════════════════════════════════ -->
+<div class="page page-light">
+  <div class="page-header">
+    <img class="header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    <div class="header-label">Next Steps</div>
+  </div>
+
+  <div class="page-content page-nextsteps">
+    <div class="section-eyebrow">The Pilot Offer</div>
+    <div class="section-heading">One Event. Clear Results. No Guesswork.</div>
+
+    <div class="body-text" style="margin-bottom: 8px;">
+      <p>Start with a single Tier 1 or Tier 2 activation — the founding event for what becomes a mall program. Success metrics defined upfront. Debrief scheduled before the event date. You know exactly what you're measuring before the horses arrive.</p>
+    </div>
+
+    <!-- PILOT SCENARIO TABLE -->
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase; margin-bottom: 5px;">Silver Lake Pilot — Projected Event Math <span style="font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); font-size: 7px;">(based on Make It Messy [Hayden] and comparable family event activations)</span></div>
+    <table style="width: 100%; border-collapse: collapse; font-family: 'Montserrat', sans-serif; font-size: 8.5px; margin-bottom: 8px;">
+      <thead>
+        <tr>
+          <th style="background: var(--timber); color: var(--cream); padding: 7px 12px; text-align: left; font-size: 7.5px; letter-spacing: 0.1em; width: 34%;">Metric</th>
+          <th style="background: var(--saddle); color: var(--cream); padding: 7px 12px; text-align: center; font-size: 7.5px; letter-spacing: 0.1em; width: 22%;">Conservative</th>
+          <th style="background: var(--timber); color: var(--gold); padding: 7px 12px; text-align: center; font-size: 7.5px; letter-spacing: 0.1em; width: 22%;">Expected</th>
+          <th style="background: var(--teal); color: #D0F0EA; padding: 7px 12px; text-align: center; font-size: 7.5px; letter-spacing: 0.1em; width: 22%;">Strong Day</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Families engaged</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--saddle);">50–80</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; font-weight: 600; color: var(--timber);">100–140</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--teal); font-weight: 600;">175+</td>
+        </tr>
+        <tr style="background: rgba(243,237,227,0.5);">
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Avg family incremental spend (food + retail)</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--saddle);">$20</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; font-weight: 600; color: var(--timber);">$30</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--teal); font-weight: 600;">$45</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; color: var(--saddle);">Est. same-day tenant revenue lift</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--saddle);">$1,000–$1,600</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; font-weight: 600; color: var(--timber);">$3,000–$4,200</td>
+          <td style="padding: 6px 12px; border-bottom: 0.5px solid #E0D6C8; text-align: center; color: var(--teal); font-weight: 600;">$7,875+</td>
+        </tr>
+        <tr style="background: rgba(243,237,227,0.5);">
+          <td style="padding: 6px 12px; color: var(--saddle);">Branded photos delivered &amp; shared</td>
+          <td style="padding: 6px 12px; text-align: center; color: var(--saddle);">50+</td>
+          <td style="padding: 6px 12px; text-align: center; font-weight: 600; color: var(--timber);">100+</td>
+          <td style="padding: 6px 12px; text-align: center; color: var(--teal); font-weight: 600;">175+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 7px; color: var(--muted); font-style: italic; margin-bottom: 10px;">Tenant revenue figures are projected incremental spend, not total store revenue. The $20–$30/family assumption is conservative by design (ICSC avg. mall spend: $103–$140/visit). You know your actual traffic and average basket size better than any benchmark — if your numbers are higher, the math works harder. Make It Messy (Hayden, 100+ guests per activation) confirms photo delivery operational. Does not include repeat visit value, social reach, or tenant co-marketing lift.</div>
+
+    <div class="rule-thin" style="margin: 6px 0 8px;"></div>
+    <div class="section-eyebrow" style="margin-bottom: 6px;">Recommended Starting Points</div>
+
+    <div class="card-grid-3">
+      <div class="card">
+        <div class="card-badge badge-gold">Option A</div>
+        <div class="card-body">
+          <div class="card-title">End of School Year</div>
+          <div class="card-text">Late May or early June. Families are celebrating, kids are hyped, the timing is natural. A 4-hour Saturday pop-up with pony rides and instant photos.</div>
+          <div class="card-price">Tier 1 — $2,500 base fee</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-badge badge-teal">Option B ★</div>
+        <div class="card-body">
+          <div class="card-title">North Idaho Fair Weekend</div>
+          <div class="card-text">Late August. Families want the horse experience without the fair crowds and cost. Silver Lake becomes the easier, closer alternative.</div>
+          <div class="card-price">Tier 1 or Tier 2 · Founding Rate</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-badge badge-partner">Option C</div>
+        <div class="card-body">
+          <div class="card-title">Book Both</div>
+          <div class="card-text">Lock in end-of-year and fair weekend together. Two events, cross-promotional content. Best value of the summer.</div>
+          <div class="card-price">Tier 1 × 2 — ask about bundled rate</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout-gold">
+      <div class="callout-label">Founding Location — Silver Lake Mall</div>
+      <div class="callout-body">Silver Lake Mall would be the first mall partner in North Idaho for Tribal Cowboy — the anchor for what becomes a regional indoor activation program. First-event debrief included: attendance, photos delivered, estimated social reach, and a plain-language assessment of what worked. One 30-minute call to start. No commitment beyond that.</div>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-left">
+        <div class="contact-name">Stacie Huffhines</div>
+        <div class="contact-title">Owner &amp; Operator — Tribal Cowboy LLC &nbsp;|&nbsp; Nisenan Maidu &nbsp;|&nbsp; Athol, Idaho</div>
+        <div class="contact-details">
+          <a href="mailto:info@tribalcowboy.com">info@tribalcowboy.com</a><br>
+          <a href="https://www.tribalcowboy.com">www.tribalcowboy.com</a><br>
+          Instagram: @TribalCowboy &nbsp;|&nbsp; Facebook: @TribalCowboys
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <div>
+          <div class="cta-btn" style="display: block; text-align: center; padding: 13px 28px; font-size: 11px; letter-spacing: 0.06em;">Schedule a 30-Min Call</div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; color: var(--leather); text-align: center; margin-top: 6px;">info@tribalcowboy.com · www.tribalcowboy.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>www.tribalcowboy.com</span>
+    <span>Tribal Cowboy LLC — Silver Lake Mall Partnership Proposal — March 2026</span>
+    <span>info@tribalcowboy.com</span>
+  </div>
+</div>
+
+</body>
+</html>

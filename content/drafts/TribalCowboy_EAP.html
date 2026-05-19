@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tribal Cowboy LLC — Emergency Action Plan</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  --timber:  #2C2520;
+  --gold:    #D4A843;
+  --leather: #C8A96E;
+  --cream:   #F3EDE3;
+  --teal:    #1A7A6B;
+  --saddle:  #574838;
+  --muted:   #8A7560;
+  --red:     #8B1A1A;
+  --offwhite:#FFFCF7;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: 8.5in 11in; margin: 0; }
+body { font-family: 'Montserrat', sans-serif; background: #fff; }
+
+.page {
+  width: 8.5in;
+  height: 11in;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  background: var(--offwhite);
+}
+
+/* HEADER */
+.doc-header {
+  background: var(--timber);
+  padding: 14px 0.55in 12px;
+  border-bottom: 4px solid var(--gold);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.doc-header-left .doc-label {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.doc-header-left .doc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.1;
+}
+.doc-header-right {
+  text-align: right;
+  font-size: 8px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.doc-header-right strong { color: var(--leather); }
+.doc-header-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin-left: 18px;
+}
+
+/* EVENT BANNER */
+.event-banner {
+  background: #FBF6EE;
+  border-bottom: 1px solid #E0D6C8;
+  padding: 8px 0.55in;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 8.5px;
+  color: var(--saddle);
+}
+.event-field {
+  display: table-cell;
+  vertical-align: top;
+  padding-right: 10px;
+}
+.event-field:last-child { padding-right: 0; }
+.event-field .field-label {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  display: block;
+}
+.event-field .field-value {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--timber);
+  border: 1px solid #C8A96E;
+  border-radius: 2px;
+  background: white;
+  padding: 3px 6px;
+  min-height: 20px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* BODY */
+.doc-body { padding: 0.08in 0.55in 0.1in; }
+
+/* CONTACT CHAIN */
+.contact-chain {
+  background: var(--red);
+  border-radius: 4px;
+  padding: 7px 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.contact-chain .chain-label {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  margin-right: 16px;
+  white-space: nowrap;
+}
+.chain-item {
+  text-align: center;
+  flex: 1;
+}
+.chain-item .chain-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  line-height: 1.2;
+}
+.chain-item .chain-role {
+  font-size: 7px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.chain-item .chain-num {
+  font-size: 9px;
+  font-weight: 700;
+  color: #FFD580;
+}
+.chain-arrow {
+  font-size: 16px;
+  color: rgba(255,255,255,0.4);
+  padding: 0 6px;
+  flex-shrink: 0;
+}
+
+/* PROTOCOL GRID */
+.protocol-grid {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 8px 0;
+  margin-bottom: 8px;
+}
+.protocol-col { display: table-cell; vertical-align: top; }
+
+.protocol-block {
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 7px;
+}
+.protocol-header {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.protocol-header .proto-icon {
+  font-size: 12px;
+  line-height: 1;
+}
+.protocol-header .proto-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.protocol-steps {
+  padding: 5px 10px 7px;
+  background: var(--offwhite);
+  border: 0.5px solid #E0D6C8;
+  border-top: none;
+}
+.protocol-steps ol {
+  padding-left: 14px;
+  margin: 0;
+}
+.protocol-steps ol li {
+  font-size: 7.5px;
+  color: var(--saddle);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.protocol-steps ol li strong {
+  color: var(--timber);
+}
+
+/* COLOR VARIANTS */
+.proto-red    .protocol-header { background: var(--red);    color: white; }
+.proto-red    .proto-title     { color: white; }
+.proto-amber  .protocol-header { background: #7A4A00;       color: white; }
+.proto-amber  .proto-title     { color: #FFD580; }
+.proto-teal   .protocol-header { background: var(--teal);   color: white; }
+.proto-teal   .proto-title     { color: #D0F0EA; }
+.proto-timber .protocol-header { background: var(--timber); color: white; }
+.proto-timber .proto-title     { color: var(--gold); }
+.proto-gold   .protocol-header { background: var(--gold);   color: var(--timber); }
+.proto-gold   .proto-title     { color: var(--timber); }
+.proto-slate  .protocol-header { background: #3D4D5C;       color: white; }
+.proto-slate  .proto-title     { color: #C8D8E8; }
+
+/* BOTTOM ROW */
+.bottom-row {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 10px 0;
+  margin-top: 0;
+}
+.bottom-cell { display: table-cell; vertical-align: top; }
+
+.checklist-block {
+  background: var(--offwhite);
+  border: 0.5px solid #E0D6C8;
+  border-top: 3px solid var(--gold);
+  padding: 7px 10px;
+  border-radius: 0 0 3px 3px;
+}
+.checklist-block .cl-title {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.checklist-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.checklist-block ul li {
+  font-size: 7.5px;
+  color: var(--saddle);
+  line-height: 1.5;
+  padding-left: 14px;
+  position: relative;
+}
+.checklist-block ul li::before {
+  content: '☐';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 8px;
+}
+
+.incident-block {
+  background: var(--offwhite);
+  border: 0.5px solid #E0D6C8;
+  border-top: 3px solid var(--red);
+  padding: 7px 10px;
+  border-radius: 0 0 3px 3px;
+}
+.incident-block .inc-title {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.incident-field {
+  margin-bottom: 5px;
+}
+.incident-field .if-label {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 1px;
+}
+.incident-field .if-line {
+  width: 100%;
+  height: 18px;
+  background: white;
+  border: 1px solid #C8A96E;
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+/* FOOTER */
+.doc-footer {
+  position: absolute;
+  bottom: 14px;
+  left: 0; right: 0;
+  padding: 7px 0.55in 0;
+  border-top: 1px solid #E0D6C8;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7.5px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.doc-footer strong { color: var(--red); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <div class="doc-header-left">
+      <div class="doc-label">Emergency Action Plan</div>
+      <div class="doc-title">Tribal Cowboy LLC — Live Equine Activation</div>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <div class="doc-header-right">
+        <strong>Owner / Event Lead:</strong> Stacie Huffhines<br>
+        <strong>On-Call Vet:</strong> SAVE Veterinary — Sandpoint &nbsp;|&nbsp; (208) 946-1998 &nbsp;|&nbsp; 24-hr large animal emergency<br>
+        <strong>Insurance:</strong> $2M per-occurrence GL + Animal Liability
+      </div>
+      <img class="doc-header-logo" src="Tribal_Cowboy_Logo_2.png" alt="Tribal Cowboy">
+    </div>
+  </div>
+
+  <!-- EMERGENCY ALERT STRIPE -->
+  <div style="background: var(--red); padding: 4px 0.55in; display: flex; align-items: center; gap: 10px;">
+    <span style="font-size: 11px; line-height: 1;">🚨</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.2em; color: white; text-transform: uppercase;">Active Emergency Plan — Print One Copy Per Event · Leave With Host Manager Before Gates Open</span>
+  </div>
+
+  <!-- EVENT BANNER -->
+  <div class="event-banner">
+    <div class="event-field">
+      <div class="field-label">Event / Venue</div>
+      <div class="field-value">&nbsp;</div>
+    </div>
+    <div class="event-field">
+      <div class="field-label">Date</div>
+      <div class="field-value">&nbsp;</div>
+    </div>
+    <div class="event-field">
+      <div class="field-label">Event Hours</div>
+      <div class="field-value">&nbsp;</div>
+    </div>
+    <div class="event-field">
+      <div class="field-label">Host Contact (Day-Of)</div>
+      <div class="field-value">&nbsp;</div>
+    </div>
+    <div class="event-field">
+      <div class="field-label">Host Contact Phone</div>
+      <div class="field-value">&nbsp;</div>
+    </div>
+    <div class="event-field">
+      <div class="field-label">Nearest Hospital</div>
+      <div class="field-value">&nbsp;</div>
+    </div>
+  </div>
+
+  <div class="doc-body">
+
+    <!-- CONTACT CHAIN -->
+    <div class="contact-chain">
+      <div class="chain-label">Emergency<br>Contact Chain</div>
+      <div class="chain-item">
+        <div class="chain-role">Step 1 — Event Lead</div>
+        <div class="chain-name">Stacie Huffhines</div>
+        <div class="chain-num">____________________</div>
+      </div>
+      <div class="chain-arrow">›</div>
+      <div class="chain-item">
+        <div class="chain-role">Step 1B — Backup Lead</div>
+        <div class="chain-name">Nicole Trexler</div>
+        <div class="chain-num">(360) 979-7603</div>
+      </div>
+      <div class="chain-arrow">›</div>
+      <div class="chain-item">
+        <div class="chain-role">Step 2 — Host Manager</div>
+        <div class="chain-name">On-Site Contact</div>
+        <div class="chain-num">(filled in above)</div>
+      </div>
+      <div class="chain-arrow">›</div>
+      <div class="chain-item">
+        <div class="chain-role">Step 3 — On-Call Vet</div>
+        <div class="chain-name">SAVE Vet — Sandpoint</div>
+        <div class="chain-num">(208) 946-1998</div>
+      </div>
+      <div class="chain-arrow">›</div>
+      <div class="chain-item">
+        <div class="chain-role">Step 4 — Emergency Services</div>
+        <div class="chain-name">911</div>
+        <div class="chain-num">If any injury, fire, or threat to life</div>
+      </div>
+    </div>
+
+    <!-- PROTOCOL GRID — 3 COLUMNS -->
+    <div class="protocol-grid">
+
+      <!-- COLUMN 1 -->
+      <div class="protocol-col">
+
+        <div class="protocol-block proto-red">
+          <div class="protocol-header">
+            <div class="proto-icon">🐴</div>
+            <div class="proto-title">Animal Distress</div>
+          </div>
+          <div class="protocol-steps">
+            <ol>
+              <li><strong>Stop rides immediately</strong> — handler signals pause to all staff</li>
+              <li>Remove distressed animal from activation zone — lead calmly to trailer</li>
+              <li>Provide water, shade, and rest — do not return without full assessment</li>
+              <li><strong>Temp policy:</strong> no animal works above 90°F or below 20°F ambient</li>
+              <li>Rotate replacement pony if available and ready</li>
+              <li>Contact SAVE Veterinary if any medical concern — <strong>(208) 946-1998</strong></li>
+              <li>Document in Incident Log — time, animal, trigger observed</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="protocol-block proto-amber">
+          <div class="protocol-header">
+            <div class="proto-icon">🚧</div>
+            <div class="proto-title">Barrier / Perimeter Breach</div>
+          </div>
+          <div class="protocol-steps">
+            <ol>
+              <li><strong>Handler verbally redirects</strong> the guest immediately</li>
+              <li>Pause rides — announce brief hold</li>
+              <li>Secure the animal — move to far side of panel if needed</li>
+              <li>Re-seat and confirm panel perimeter integrity</li>
+              <li>Resume only after full perimeter check</li>
+              <li>If repeat breach: guest removed from activation area</li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COLUMN 2 -->
+      <div class="protocol-col">
+
+        <div class="protocol-block proto-teal">
+          <div class="protocol-header">
+            <div class="proto-icon">🩹</div>
+            <div class="proto-title">Guest Injury</div>
+          </div>
+          <div class="protocol-steps">
+            <ol>
+              <li><strong>Secure all animals</strong> — rides pause immediately</li>
+              <li>Clear the immediate area — ask bystanders to step back</li>
+              <li>Administer first aid if trained and appropriate</li>
+              <li><strong>Call 911 if</strong> injury is beyond minor (fall, bite, head contact)</li>
+              <li>Notify host manager on-site — do not leave them uninformed</li>
+              <li>Do not resume rides until area is fully secure and cleared</li>
+              <li>Document: guest name (if provided), time, what occurred, witness names</li>
+              <li>Written incident report to host within <strong>24 hours</strong></li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="protocol-block proto-slate">
+          <div class="protocol-header">
+            <div class="proto-icon">🌩</div>
+            <div class="proto-title">Weather Hold</div>
+          </div>
+          <div class="protocol-steps">
+            <ol>
+              <li>Pause rides at first sign of lightning or sustained high wind</li>
+              <li>Move animals to trailer for shelter — do not leave in open</li>
+              <li>Notify host manager — announce hold to guests</li>
+              <li>Resume when safe — minimum 30 min after last lightning</li>
+              <li><strong>Heat hold:</strong> rides paused if ambient temp exceeds <strong>90°F</strong> — animals moved to shade with continuous water access</li>
+              <li><strong>Cold hold:</strong> rides paused if temp drops below <strong>20°F</strong></li>
+              <li>If event cannot safely resume: full pack-out protocol (below)</li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COLUMN 3 -->
+      <div class="protocol-col">
+
+        <div class="protocol-block proto-timber">
+          <div class="protocol-header">
+            <div class="proto-icon">🚨</div>
+            <div class="proto-title">Emergency Evacuation</div>
+          </div>
+          <div class="protocol-steps">
+            <ol>
+              <li><strong>Call out "Pack out"</strong> to all Tribal Cowboy staff</li>
+              <li>Clear guest queue — direct people away from activation zone</li>
+              <li>All animals led to and loaded into trailer — target: <strong>15 minutes</strong></li>
+              <li>Remove panels and fencing — leave clear path for emergency vehicles</li>
+              <li>Stacie notifies host manager immediately with reason and timeline</li>
+              <li>Written debrief to host within <strong>24 hours</strong></li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="protocol-block proto-gold">
+          <div class="protocol-header">
+            <div class="proto-icon">♿</div>
+            <div class="proto-title">ADA &amp; Accessibility</div>
+          </div>
+          <div class="protocol-steps">
+            <ol>
+              <li>Clydesdale photo station is <strong>fully accessible</strong> — no riding required</li>
+              <li>Clear path maintained from event entry to photo station at all times</li>
+              <li>Horses trained alongside wheelchairs, power chairs, and service animals</li>
+              <li>Handler adjusts interaction for guests with reactive movement or sound</li>
+              <li>No guest is turned away from the photo experience for mobility reasons</li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ROW: PRE-EVENT CHECKLIST + INCIDENT LOG -->
+    <div class="bottom-row">
+
+      <div class="bottom-cell" style="width: 45%; padding-right: 10px;">
+        <div class="checklist-block">
+          <div class="cl-title">Pre-Event Briefing Checklist</div>
+          <ul>
+            <li>Host manager contact confirmed and on-site</li>
+            <li>Trailer parking and access path confirmed — clear turnaround</li>
+            <li>Power connection located (if needed for fans)</li>
+            <li>Perimeter panels installed — all entry/exit points confirmed</li>
+            <li>Shade structure (10×20 tent + canopies) set up over rest area</li>
+            <li>Water tank filled — animals watered before first rides</li>
+            <li>Diaper bags on all working animals</li>
+            <li>Rotation schedule confirmed (3 ponies — 45 min on / 20–30 min rest; <strong>4 hr max per animal per event</strong>)</li>
+            <li>Ground surface inspected — no glass, metal, holes, or slick conditions</li>
+            <li>Safety signage posted at queue entry — rules and rider requirements visible</li>
+            <li>All Tribal Cowboy staff briefed — roles assigned</li>
+            <li>Host staff briefed — 10-min walk-through complete</li>
+            <li>EAP copy left with host day-of manager</li>
+            <li>SAVE Vet on standby: (208) 946-1998 (24-hr large animal line)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom-cell" style="width: 55%; padding-left: 10px;">
+        <div class="incident-block">
+          <div class="inc-title">Incident Log — Use for Any Reportable Event</div>
+          <div style="display: table; width: 100%; table-layout: fixed; margin-bottom: 6px;">
+            <div style="display: table-cell; padding-right: 10px;">
+              <div class="incident-field">
+                <div class="if-label">Date &amp; Time of Incident</div>
+                <div class="if-line"></div>
+              </div>
+              <div class="incident-field">
+                <div class="if-label">Nature of Incident</div>
+                <div class="if-line"></div>
+              </div>
+              <div class="incident-field">
+                <div class="if-label">Person(s) Involved</div>
+                <div class="if-line"></div>
+              </div>
+            </div>
+            <div style="display: table-cell; padding-left: 4px;">
+              <div class="incident-field">
+                <div class="if-label">Immediate Action Taken</div>
+                <div class="if-line"></div>
+              </div>
+              <div class="incident-field">
+                <div class="if-label">Witnesses (name / contact)</div>
+                <div class="if-line"></div>
+              </div>
+              <div class="incident-field">
+                <div class="if-label">911 / Vet Called? &nbsp; ☐ Yes &nbsp; ☐ No — Outcome:</div>
+                <div class="if-line"></div>
+              </div>
+            </div>
+          </div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; margin-bottom: 4px;">Description of What Occurred</div>
+          <div style="border: 0.5px solid #C8A96E; height: 28px; background: white; border-radius: 2px;"></div>
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 6.5px; color: var(--muted); margin-top: 4px; font-style: italic;">Written report to host within 24 hours. Follow-up within 7 days for any guest injury or animal distress. — Stacie Huffhines, info@tribalcowboy.com</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <span><strong>CONTROLLED DOCUMENT</strong></span>
+    <span>Tribal Cowboy LLC &nbsp;|&nbsp; Stacie Huffhines, Owner &nbsp;|&nbsp; info@tribalcowboy.com &nbsp;|&nbsp; www.tribalcowboy.com</span>
+    <span>Rev. March 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>

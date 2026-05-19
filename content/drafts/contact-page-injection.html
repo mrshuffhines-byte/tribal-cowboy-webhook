@@ -1,0 +1,650 @@
+<style>
+/* ============================================================
+   TRIBAL COWBOY — CONTACT PAGE
+   Scope: body#collection-6753462d6265c027201f6b4a
+   ============================================================ */
+
+body#collection-6753462d6265c027201f6b4a .page-section,
+body#collection-6753462d6265c027201f6b4a .content-wrapper {
+  display: none !important;
+}
+
+/* ---- WRAPPER ---- */
+#tc-ct {
+  font-family: 'Montserrat', sans-serif;
+  color: #2C2520;
+  background: #F3EDE3;
+}
+
+/* ---- HERO HEADER ---- */
+#tc-ct .ct-header {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#tc-ct .ct-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,14,10,0.97) 0%, rgba(20,14,10,0.55) 50%, rgba(44,37,32,0.10) 100%);
+}
+
+#tc-ct .ct-header-content {
+  position: relative;
+  z-index: 2;
+  padding: 64px 64px;
+  max-width: 700px;
+}
+
+#tc-ct .ct-header-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 18px 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+#tc-ct .ct-header h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(48px, 7vw, 84px) !important;
+  font-weight: 400 !important;
+  line-height: 1.0 !important;
+  color: #F3EDE3 !important;
+  margin: 0 0 20px 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+#tc-ct .ct-header-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(243,237,227,0.88) !important;
+  margin: 0;
+  line-height: 1.7;
+  max-width: 500px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+/* ---- CONTACT LAYOUT ---- */
+#tc-ct .ct-body {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px 100px;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ---- LEFT: CONTACT INFO ---- */
+#tc-ct .ct-info-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 20px 0;
+}
+
+#tc-ct .ct-info h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(30px, 3vw, 44px) !important;
+  font-weight: 400 !important;
+  color: #2C2520 !important;
+  margin: 0 0 24px 0;
+  line-height: 1.2;
+}
+
+#tc-ct .ct-info-intro {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #8A7868 !important;
+  margin: 0 0 44px 0;
+}
+
+#tc-ct .ct-contact-items {
+  border-top: 1px solid rgba(44,37,32,0.12);
+}
+
+#tc-ct .ct-contact-item {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(44,37,32,0.12);
+}
+
+#tc-ct .ct-item-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #D4A843 !important;
+  margin: 0 0 6px 0;
+}
+
+#tc-ct .ct-item-value {
+  font-size: 15px;
+  color: #2C2520 !important;
+  margin: 0;
+  font-weight: 400;
+}
+
+#tc-ct .ct-item-value a {
+  color: #2C2520 !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212,168,67,0.5);
+  padding-bottom: 1px;
+  transition: color 0.2s;
+}
+
+#tc-ct .ct-item-value a:hover { color: #D4A843 !important; }
+
+#tc-ct .ct-pricing-link {
+  display: inline-block;
+  margin-top: 32px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #D4A843;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212,168,67,0.4);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+  line-height: 1.5;
+}
+
+#tc-ct .ct-pricing-link:hover { color: #2C2520; border-color: #2C2520; }
+
+/* ---- RIGHT: FORM ---- */
+#tc-ct .ct-form-wrap {
+  background: white;
+  padding: 52px 48px;
+  border-top: 3px solid #D4A843;
+}
+
+#tc-ct .ct-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #2C2520;
+  margin: 0 0 8px 0;
+}
+
+#tc-ct .ct-form-sub {
+  font-size: 13px;
+  color: #8A7868 !important;
+  margin: 0 0 36px 0;
+  line-height: 1.7;
+}
+
+/* ---- FORM FIELDS ---- */
+#tc-ct .ct-field {
+  margin-bottom: 20px;
+}
+
+#tc-ct .ct-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+#tc-ct .ct-field label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8A7868;
+  margin-bottom: 8px;
+}
+
+#tc-ct .ct-field input,
+#tc-ct .ct-field select,
+#tc-ct .ct-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(44,37,32,0.20);
+  border-radius: 0;
+  background: #FAFAFA;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #2C2520;
+  padding: 14px 16px;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color 0.2s;
+}
+
+#tc-ct .ct-field input:focus,
+#tc-ct .ct-field select:focus,
+#tc-ct .ct-field textarea:focus {
+  border-color: #D4A843;
+  outline: none;
+}
+
+#tc-ct .ct-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#tc-ct .ct-field-select-wrap {
+  position: relative;
+}
+
+#tc-ct .ct-field-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #8A7868;
+  pointer-events: none;
+}
+
+#tc-ct .ct-field select {
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+#tc-ct .ct-submit-btn {
+  width: 100%;
+  padding: 16px 40px;
+  background: #2C2520;
+  color: #F3EDE3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 8px;
+}
+
+#tc-ct .ct-submit-btn:hover { background: #D4A843; color: #2C2520; }
+#tc-ct .ct-submit-btn:disabled { opacity: 0.6; cursor: default; }
+
+#tc-ct .ct-form-success {
+  padding: 32px;
+  background: #2C2520;
+  border-left: 3px solid #D4A843;
+  display: none;
+}
+
+#tc-ct .ct-form-success p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(243,237,227,0.85);
+  margin: 0;
+}
+
+/* ---- SERVICE GUIDE ---- */
+#tc-ct .ct-guide {
+  background: #2C2520;
+  padding: 100px 60px;
+}
+
+#tc-ct .ct-guide-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#tc-ct .ct-guide-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #D4A843;
+  margin: 0 0 16px 0;
+}
+
+#tc-ct .ct-guide h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(32px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  color: #F3EDE3 !important;
+  margin: 0;
+  line-height: 1.2;
+}
+
+#tc-ct .ct-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: rgba(212,168,67,0.10);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+#tc-ct .ct-guide-card {
+  background: #2C2520;
+  padding: 44px 36px;
+  border-top: 3px solid #D4A843;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+#tc-ct .ct-guide-card:hover { background: #3a2e27; }
+
+#tc-ct .ct-guide-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #D4A843;
+  margin: 0 0 12px 0;
+  display: block;
+}
+
+#tc-ct .ct-guide-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #F3EDE3;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+  display: block;
+}
+
+#tc-ct .ct-guide-desc {
+  font-size: 13px;
+  line-height: 1.85;
+  color: rgba(243,237,227,0.55);
+  margin: 0 0 20px 0;
+  display: block;
+}
+
+#tc-ct .ct-guide-price {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(212,168,67,0.65);
+  display: block;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  #tc-ct .ct-body { grid-template-columns: 1fr; padding: 60px 24px; gap: 48px; }
+  #tc-ct .ct-header-content { padding: 48px 24px; }
+  #tc-ct .ct-form-wrap { padding: 40px 28px; }
+  #tc-ct .ct-guide { padding: 72px 24px; }
+  #tc-ct .ct-guide-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  #tc-ct .ct-field-row { grid-template-columns: 1fr; }
+  #tc-ct .ct-guide-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+(function() {
+  var HERO = 'https://images.squarespace-cdn.com/content/675345d03ff97b41f87c5858/1abc1dce-957c-4a3c-8d64-c418270bbf77/cowgirl-pony-native-blanket-golden-hour-tribal-cowboy.jpg?content-type=image%2Fjpeg';
+  var FORMSPREE = 'https://formspree.io/f/xkoknpgk';
+  var PRICING_PDF = 'https://www.tribalcowboy.com/s/Tribal-Cowboy-Pricing-Guide.pdf';
+
+  function buildContact() {
+    var page = document.getElementById('page');
+    if (!page) { setTimeout(buildContact, 120); return; }
+
+    page.querySelectorAll('.page-section').forEach(function(s) {
+      s.style.setProperty('display', 'none', 'important');
+    });
+
+    var wrap = document.createElement('div');
+    wrap.id = 'tc-ct';
+    wrap.innerHTML =
+
+      /* ── HEADER ── */
+      '<section class="ct-header">' +
+        '<div class="ct-header-overlay"></div>' +
+        '<div class="ct-header-content">' +
+          '<p class="ct-header-eyebrow">Contact &mdash; Tribal Cowboy</p>' +
+          '<h1>Let&rsquo;s talk<br>horses.</h1>' +
+          '<p class="ct-header-sub">Tell us what you&rsquo;re planning. We&rsquo;ll get back to you within one business day with availability and pricing.</p>' +
+        '</div>' +
+      '</section>' +
+
+      /* ── BODY ── */
+      '<div class="ct-body">' +
+
+        /* LEFT: INFO */
+        '<div class="ct-info">' +
+          '<p class="ct-info-eyebrow">Get in Touch</p>' +
+          '<h2>We respond within one business day.</h2>' +
+          '<p class="ct-info-intro">Use the form or reach us directly. Either way works. For event bookings, it helps to include your date, location, and guest count so we can give you accurate availability and pricing.</p>' +
+          '<div class="ct-contact-items">' +
+            '<div class="ct-contact-item">' +
+              '<p class="ct-item-label">Phone</p>' +
+              '<p class="ct-item-value"><a href="tel:+12082612092">(208) 261-2092</a></p>' +
+            '</div>' +
+            '<div class="ct-contact-item">' +
+              '<p class="ct-item-label">Email</p>' +
+              '<p class="ct-item-value"><a href="mailto:info@tribalcowboy.com">info@tribalcowboy.com</a></p>' +
+            '</div>' +
+            '<div class="ct-contact-item">' +
+              '<p class="ct-item-label">Location</p>' +
+              '<p class="ct-item-value">Athol, Idaho &mdash; serving North Idaho &amp; Eastern Washington</p>' +
+            '</div>' +
+            '<div class="ct-contact-item">' +
+              '<p class="ct-item-label">Instagram</p>' +
+              '<p class="ct-item-value"><a href="https://instagram.com/TribalCowboy" target="_blank">@TribalCowboy</a></p>' +
+            '</div>' +
+            '<div class="ct-contact-item">' +
+              '<p class="ct-item-label">Facebook</p>' +
+              '<p class="ct-item-value"><a href="https://facebook.com/TribalCowboys" target="_blank">@TribalCowboys</a></p>' +
+            '</div>' +
+          '</div>' +
+          '<a href="' + PRICING_PDF + '" target="_blank" class="ct-pricing-link">Want to see all our pricing? Download the full guide.</a>' +
+        '</div>' +
+
+        /* RIGHT: FORM */
+        '<div class="ct-form-wrap">' +
+          '<p class="ct-form-title">Send a message.</p>' +
+          '<p class="ct-form-sub">We&rsquo;ll get back to you within one business day with availability and pricing.</p>' +
+          '<form id="ct-contact-form" novalidate>' +
+            '<div class="ct-field-row">' +
+              '<div class="ct-field">' +
+                '<label for="ct-fname">First Name *</label>' +
+                '<input type="text" id="ct-fname" name="first_name" required>' +
+              '</div>' +
+              '<div class="ct-field">' +
+                '<label for="ct-lname">Last Name *</label>' +
+                '<input type="text" id="ct-lname" name="last_name" required>' +
+              '</div>' +
+            '</div>' +
+            '<div class="ct-field">' +
+              '<label for="ct-email">Email *</label>' +
+              '<input type="email" id="ct-email" name="email" required>' +
+            '</div>' +
+            '<div class="ct-field">' +
+              '<label for="ct-phone">Phone (optional &mdash; for faster response)</label>' +
+              '<input type="tel" id="ct-phone" name="phone">' +
+            '</div>' +
+            '<div class="ct-field">' +
+              '<label for="ct-service">Service Interested In *</label>' +
+              '<div class="ct-field-select-wrap">' +
+                '<select id="ct-service" name="service" required>' +
+                  '<option value="" disabled selected>Select a service...</option>' +
+                  '<option value="Pony Parties and Birthday Events">Pony Parties &amp; Birthday Events</option>' +
+                  '<option value="Wagon and Carriage Rides">Wagon &amp; Carriage Rides</option>' +
+                  '<option value="Horse Photography Props">Horse Photography Props</option>' +
+                  '<option value="Corporate Events and Team Building">Corporate Events &amp; Team Building</option>' +
+                  '<option value="School Programs and Community Events">School Programs &amp; Community Events</option>' +
+                  '<option value="Brand Partnerships and Creator Content">Brand Partnerships &amp; Creator Content</option>' +
+                  '<option value="Portrait Sessions">Portrait Sessions</option>' +
+                  '<option value="Festival or Farmers Market Booking">Festival or Farmers Market Booking</option>' +
+                  '<option value="Something Else">Something Else</option>' +
+                '</select>' +
+              '</div>' +
+            '</div>' +
+            '<div class="ct-field-row">' +
+              '<div class="ct-field">' +
+                '<label for="ct-date">Event Date (or approximate)</label>' +
+                '<input type="date" id="ct-date" name="event_date">' +
+              '</div>' +
+              '<div class="ct-field">' +
+                '<label for="ct-guests">Estimated Guest Count</label>' +
+                '<input type="text" id="ct-guests" name="guest_count" placeholder="e.g. 50">' +
+              '</div>' +
+            '</div>' +
+            '<div class="ct-field">' +
+              '<label for="ct-location">Event Location (city or venue name)</label>' +
+              '<input type="text" id="ct-location" name="event_location">' +
+            '</div>' +
+            '<div class="ct-field">' +
+              '<label for="ct-message">Tell us more about what you have in mind</label>' +
+              '<textarea id="ct-message" name="message" rows="4"></textarea>' +
+            '</div>' +
+            '<div class="ct-field">' +
+              '<label for="ct-source">How Did You Hear About Us?</label>' +
+              '<div class="ct-field-select-wrap">' +
+                '<select id="ct-source" name="source">' +
+                  '<option value="" selected>Select...</option>' +
+                  '<option value="Google Search">Google Search</option>' +
+                  '<option value="Instagram">Instagram</option>' +
+                  '<option value="Facebook">Facebook</option>' +
+                  '<option value="Word of Mouth / Friend Referral">Word of Mouth / Friend Referral</option>' +
+                  '<option value="Saw Us at an Event">Saw Us at an Event</option>' +
+                  '<option value="Other">Other</option>' +
+                '</select>' +
+              '</div>' +
+            '</div>' +
+            '<button type="submit" class="ct-submit-btn">Send Message</button>' +
+          '</form>' +
+          '<div class="ct-form-success" id="ct-form-success">' +
+            '<p>Got it &mdash; we&rsquo;ll get back to you within one business day with availability and pricing. If your event is within 48 hours, call us directly at (208) 261-2092.</p>' +
+          '</div>' +
+        '</div>' +
+
+      '</div>' +
+
+      /* ── SERVICE GUIDE ── */
+      '<section class="ct-guide">' +
+        '<div class="ct-guide-header">' +
+          '<p class="ct-guide-eyebrow">All Services</p>' +
+          '<h2>Not sure which service fits?</h2>' +
+        '</div>' +
+        '<div class="ct-guide-grid">' +
+          '<a href="/pony-parties" class="ct-guide-card">' +
+            '<span class="ct-guide-tag">Birthday Parties &amp; Kids Events</span>' +
+            '<span class="ct-guide-title">Pony Parties</span>' +
+            '<span class="ct-guide-desc">Real decorated ponies at your location. Hands-on time with the animals and same-day photos delivered to every guest&rsquo;s phone before they leave.</span>' +
+            '<span class="ct-guide-price">Starting at $350</span>' +
+          '</a>' +
+          '<a href="/for-event-planners" class="ct-guide-card">' +
+            '<span class="ct-guide-tag">Festivals &amp; Community Events</span>' +
+            '<span class="ct-guide-title">For Event Planners</span>' +
+            '<span class="ct-guide-desc">Full-service horse experiences with same-day branded photo delivery. We bring the herd, the handlers, and the photography. Your team doesn&rsquo;t manage a thing.</span>' +
+            '<span class="ct-guide-price">Custom quote by event</span>' +
+          '</a>' +
+          '<a href="/corporate-events" class="ct-guide-card">' +
+            '<span class="ct-guide-tag">Corporate &amp; Team Building</span>' +
+            '<span class="ct-guide-title">Corporate Events</span>' +
+            '<span class="ct-guide-desc">Wagon rides, horse interaction, and custom branded photo overlays for company family days, team building, and client events.</span>' +
+            '<span class="ct-guide-price">Starting at $1,200 / 2 hours</span>' +
+          '</a>' +
+          '<a href="/horse-photography-props" class="ct-guide-card">' +
+            '<span class="ct-guide-tag">Photography &amp; Video Production</span>' +
+            '<span class="ct-guide-title">Horse Photography Props</span>' +
+            '<span class="ct-guide-desc">Clydesdales and ponies for your shoot. Professional handler on site. Calm, camera-ready animals for real estate photography, brand content, and creative projects.</span>' +
+            '<span class="ct-guide-price">Starting at $250</span>' +
+          '</a>' +
+          '<a href="/school-programs-community-events" class="ct-guide-card">' +
+            '<span class="ct-guide-tag">Schools, Camps &amp; Youth Groups</span>' +
+            '<span class="ct-guide-title">School Programs</span>' +
+            '<span class="ct-guide-desc">Hands-on horsemanship and Indigenous culture education. Half-day and full-day formats. We come to your school or community site with all animals and equipment.</span>' +
+            '<span class="ct-guide-price">Starting at $350</span>' +
+          '</a>' +
+          '<a href="/wagon-carriage-rides" class="ct-guide-card">' +
+            '<span class="ct-guide-tag">Weddings &amp; Private Events</span>' +
+            '<span class="ct-guide-title">Wagon &amp; Carriage Rides</span>' +
+            '<span class="ct-guide-desc">Mini pony wagon rides for smaller events, plus full Clydesdale-drawn wagon and carriage rides for weddings, festivals, and private parties. Four ride types to fit your event.</span>' +
+            '<span class="ct-guide-price">Starting at $400 &mdash; Clydesdale rates vary</span>' +
+          '</a>' +
+        '</div>' +
+      '</section>';
+
+    var header = wrap.querySelector('.ct-header');
+    if (header) header.style.backgroundImage = "url('" + HERO + "')";
+
+    page.insertBefore(wrap, page.firstChild);
+
+    // Form submission via Formspree
+    var form = document.getElementById('ct-contact-form');
+    var successBox = document.getElementById('ct-form-success');
+    if (form && successBox) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = form.querySelector('.ct-submit-btn');
+        var firstName = form.querySelector('#ct-fname').value.trim();
+        var lastName  = form.querySelector('#ct-lname').value.trim();
+        var email     = form.querySelector('#ct-email').value.trim();
+        var service   = form.querySelector('#ct-service').value;
+        if (!firstName || !lastName || !email || !service) {
+          alert('Please fill in your name, email, and the service you\'re interested in.');
+          return;
+        }
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        fetch(FORMSPREE, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function(r) {
+          if (r.ok) {
+            form.style.display = 'none';
+            successBox.style.display = 'block';
+          } else {
+            btn.textContent = 'Send Message';
+            btn.disabled = false;
+            alert('Something went wrong. Please call (208) 261-2092 or email info@tribalcowboy.com.');
+          }
+        }).catch(function() {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+          alert('Something went wrong. Please call (208) 261-2092 or email info@tribalcowboy.com.');
+        });
+      });
+    }
+
+    // Force colors
+    wrap.querySelector('.ct-header-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ct-header-sub').style.setProperty('color', 'rgba(243,237,227,0.88)', 'important');
+    wrap.querySelector('.ct-info-eyebrow').style.setProperty('color', '#D4A843', 'important');
+    wrap.querySelector('.ct-info h2').style.setProperty('color', '#2C2520', 'important');
+    wrap.querySelector('.ct-info-intro').style.setProperty('color', '#8A7868', 'important');
+    wrap.querySelectorAll('.ct-item-label').forEach(function(el) { el.style.setProperty('color', '#D4A843', 'important'); });
+    wrap.querySelectorAll('.ct-item-value').forEach(function(el) { el.style.setProperty('color', '#2C2520', 'important'); });
+    wrap.querySelector('.ct-form-sub').style.setProperty('color', '#8A7868', 'important');
+    wrap.querySelectorAll('h1').forEach(function(el) {
+      el.style.setProperty('color', '#F3EDE3', 'important');
+      el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important');
+      el.style.setProperty('font-weight', '400', 'important');
+    });
+    wrap.querySelectorAll('h2').forEach(function(el) {
+      el.style.setProperty('font-family', "'Cormorant Garamond', serif", 'important');
+      el.style.setProperty('font-weight', '400', 'important');
+    });
+    var guideH2 = wrap.querySelector('.ct-guide h2');
+    if (guideH2) guideH2.style.setProperty('color', '#F3EDE3', 'important');
+    wrap.querySelectorAll('.ct-guide-title').forEach(function(el) { el.style.setProperty('color', '#F3EDE3', 'important'); });
+    wrap.querySelectorAll('.ct-guide-desc').forEach(function(el) { el.style.setProperty('color', 'rgba(243,237,227,0.55)', 'important'); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildContact);
+  } else {
+    buildContact();
+  }
+})();
+</script>
