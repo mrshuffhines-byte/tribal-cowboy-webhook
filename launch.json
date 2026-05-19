@@ -4,7 +4,7 @@
     {
       "name": "Tribal Cowboy Webhook Server",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["/Users/staciehuffhines/Documents/Tech & Apps/GitHub/tribal-cowboy-webhook/server.js"],
+      "runtimeArgs": ["${workspaceFolder}/server.js"],
       "port": 3000
     }
   ]
