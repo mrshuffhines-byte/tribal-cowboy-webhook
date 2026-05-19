@@ -1,0 +1,17 @@
+{
+  "project": "real-estate-outreach-tribal-cowboy",
+  "version": "1.0",
+  "granularity": "phase",
+  "yolo_mode": false,
+  "commit_docs": true,
+  "agents_enabled": true,
+  "runtime": "claude",
+  "instruction_file": "CLAUDE.md",
+  "phases": {
+    "total": 3,
+    "current": 2,
+    "completed": [1]
+  },
+  "image_output_dir": "content/drafts/real-estate-campaign/images",
+  "draft_source": "content/drafts/2026-04-15-real-estate-social-campaign.md"
+}

@@ -1,0 +1,810 @@
+<style>
+    /* ============ HERO SECTION ============ */
+    #tc-hero {
+        background: linear-gradient(135deg, #D4A843 0%, #F3EDE3 100%);
+        padding: 80px 40px;
+        text-align: center;
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #tc-hero h1 {
+        font-size: 48px;
+        color: #2C2520;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-family: Georgia, serif;
+    }
+
+    #tc-hero p {
+        font-size: 20px;
+        color: #574838;
+        margin-bottom: 30px;
+        max-width: 600px;
+    }
+
+    .tc-cta-button {
+        background-color: #D4A843;
+        color: #2C2520;
+        padding: 14px 32px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .tc-cta-button:hover {
+        background-color: #c19830;
+    }
+
+    /* ============ STATS SECTION ============ */
+    #tc-stats-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+        padding: 60px 40px;
+        background-color: #F3EDE3;
+    }
+
+    .tc-stat {
+        min-width: 140px;
+        max-width: 160px;
+        text-align: center;
+    }
+
+    .tc-stat-number {
+        font-size: 36px;
+        color: #D4A843;
+        font-weight: bold;
+        font-family: Georgia, serif;
+    }
+
+    .tc-stat-label {
+        font-size: 11px;
+        color: #574838;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 8px;
+    }
+
+    /* ============ HOW IT WORKS SECTION ============ */
+    #tc-how-it-works {
+        padding: 60px 40px;
+        background-color: #ffffff;
+    }
+
+    #tc-how-it-works h2 {
+        font-size: 36px;
+        color: #2C2520;
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-steps-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .tc-step {
+        flex: 1;
+        min-width: 200px;
+        max-width: 250px;
+        text-align: center;
+    }
+
+    .tc-step-number {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        background-color: #D4A843;
+        color: #ffffff;
+        border-radius: 50%;
+        line-height: 60px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .tc-step h3 {
+        font-size: 18px;
+        color: #2C2520;
+        margin-bottom: 10px;
+    }
+
+    .tc-step p {
+        font-size: 14px;
+        color: #574838;
+    }
+
+    /* ============ WHAT'S INCLUDED SECTION ============ */
+    #tc-included {
+        padding: 60px 40px;
+        background-color: #F3EDE3;
+    }
+
+    #tc-included h2 {
+        font-size: 36px;
+        color: #2C2520;
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .tc-card {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 4px;
+        flex: 1;
+        min-width: 250px;
+        max-width: 300px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tc-card h3 {
+        font-size: 20px;
+        color: #D4A843;
+        margin-bottom: 15px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-card p {
+        font-size: 14px;
+        color: #574838;
+        line-height: 1.6;
+    }
+
+    /* ============ WHO IT'S FOR SECTION ============ */
+    #tc-audience {
+        padding: 60px 40px;
+        background-color: #ffffff;
+    }
+
+    #tc-audience h2 {
+        font-size: 36px;
+        color: #2C2520;
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-chips-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .tc-chip {
+        background-color: #D4A843;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    /* ============ DIFFERENTIATORS SECTION ============ */
+    #tc-differentiators {
+        padding: 60px 40px;
+        background-color: #F3EDE3;
+    }
+
+    #tc-differentiators h2 {
+        font-size: 36px;
+        color: #2C2520;
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-differentiators-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .tc-differentiator {
+        flex: 1;
+        min-width: 250px;
+        max-width: 280px;
+    }
+
+    .tc-differentiator h3 {
+        font-size: 18px;
+        color: #D4A843;
+        margin-bottom: 10px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-differentiator p {
+        font-size: 14px;
+        color: #574838;
+        line-height: 1.6;
+    }
+
+    /* ============ TESTIMONIALS SECTION ============ */
+    #tc-testimonials {
+        padding: 60px 40px;
+        background-color: #ffffff;
+    }
+
+    #tc-testimonials h2 {
+        font-size: 36px;
+        color: #2C2520;
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-testimonials-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .tc-testimonial {
+        background-color: #F3EDE3;
+        padding: 30px;
+        border-radius: 4px;
+        flex: 1;
+        min-width: 280px;
+        max-width: 350px;
+    }
+
+    .tc-testimonial p {
+        font-size: 14px;
+        color: #574838;
+        margin-bottom: 15px;
+        font-style: italic;
+    }
+
+    .tc-testimonial-author {
+        font-size: 14px;
+        color: #D4A843;
+        font-weight: bold;
+    }
+
+    /* ============ PRICING SECTION ============ */
+    #tc-pricing {
+        padding: 60px 40px;
+        background-color: #F3EDE3;
+    }
+
+    #tc-pricing h2 {
+        font-size: 36px;
+        color: #2C2520;
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-pricing-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .tc-price-card {
+        background-color: #ffffff;
+        padding: 40px 30px;
+        border-radius: 4px;
+        flex: 1;
+        min-width: 280px;
+        max-width: 320px;
+        text-align: center;
+        border: 2px solid #D4A843;
+    }
+
+    .tc-price-card h3 {
+        font-size: 22px;
+        color: #2C2520;
+        margin-bottom: 15px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-price {
+        font-size: 36px;
+        color: #D4A843;
+        font-weight: bold;
+        margin-bottom: 20px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-price-details {
+        font-size: 13px;
+        color: #574838;
+        margin-bottom: 20px;
+        line-height: 1.8;
+    }
+
+    .tc-price-list {
+        text-align: left;
+        font-size: 13px;
+        color: #574838;
+        margin-bottom: 25px;
+    }
+
+    .tc-price-list li {
+        list-style: none;
+        padding: 5px 0;
+        border-bottom: 1px solid #e0d5c7;
+    }
+
+    .tc-price-list li:before {
+        content: "✓ ";
+        color: #D4A843;
+        font-weight: bold;
+        margin-right: 8px;
+    }
+
+    /* ============ FAQ SECTION ============ */
+    #tc-faq-container {
+        padding: 60px 40px;
+        background-color: #F3EDE3;
+    }
+
+    #tc-faq-container h2 {
+        font-size: 36px;
+        color: #2C2520;
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: Georgia, serif;
+    }
+
+    .tc-faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .tc-faq-question {
+        background-color: #ffffff;
+        border: none;
+        padding: 20px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        font-size: 16px;
+        color: #2C2520;
+        font-weight: bold;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .tc-faq-question:hover {
+        background-color: #f9f6f2;
+    }
+
+    .tc-faq-question::after {
+        content: "+";
+        font-size: 24px;
+        color: #D4A843;
+        transition: transform 0.3s ease;
+    }
+
+    .tc-faq-question.open::after {
+        transform: rotate(45deg);
+    }
+
+    .tc-faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        background-color: #ffffff;
+        padding: 0 20px;
+        transition: max-height 0.3s ease;
+    }
+
+    .tc-faq-answer.open {
+        max-height: 500px;
+        padding: 20px;
+    }
+
+    .tc-faq-answer p {
+        font-size: 14px;
+        color: #574838;
+        line-height: 1.8;
+    }
+
+    /* ============ FINAL CTA SECTION ============ */
+    #tc-final-cta {
+        padding: 60px 40px;
+        background-color: #D4A843;
+        text-align: center;
+    }
+
+    #tc-final-cta h2 {
+        font-size: 36px;
+        color: #ffffff;
+        margin-bottom: 20px;
+        font-family: Georgia, serif;
+    }
+
+    #tc-final-cta p {
+        font-size: 18px;
+        color: #2C2520;
+        margin-bottom: 30px;
+    }
+
+    .tc-cta-button-light {
+        background-color: #ffffff;
+        color: #D4A843;
+        padding: 14px 32px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .tc-cta-button-light:hover {
+        background-color: #f0ebe0;
+    }
+
+    /* ============ RESPONSIVE DESIGN ============ */
+    @media (max-width: 600px) {
+        #tc-hero {
+            padding: 40px 20px;
+            min-height: 350px;
+        }
+
+        #tc-hero h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        #tc-hero p {
+            font-size: 16px;
+        }
+
+        #tc-stats-container {
+            padding: 40px 20px;
+            gap: 15px;
+        }
+
+        #tc-how-it-works,
+        #tc-included,
+        #tc-audience,
+        #tc-differentiators,
+        #tc-testimonials,
+        #tc-pricing,
+        #tc-faq-container,
+        #tc-final-cta {
+            padding: 40px 20px;
+        }
+
+        #tc-how-it-works h2,
+        #tc-included h2,
+        #tc-audience h2,
+        #tc-differentiators h2,
+        #tc-testimonials h2,
+        #tc-pricing h2,
+        #tc-faq-container h2,
+        #tc-final-cta h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .tc-steps-container,
+        .tc-cards-container,
+        .tc-differentiators-container,
+        .tc-testimonials-container,
+        .tc-pricing-container {
+            gap: 20px;
+        }
+
+        .tc-step,
+        .tc-card,
+        .tc-differentiator,
+        .tc-testimonial,
+        .tc-price-card {
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        .tc-chips-container {
+            gap: 10px;
+        }
+
+        .tc-chip {
+            font-size: 12px;
+            padding: 8px 16px;
+        }
+
+        .tc-faq-question {
+            font-size: 14px;
+            padding: 15px;
+        }
+
+        .tc-price {
+            font-size: 28px;
+        }
+
+        .tc-stat {
+            min-width: 120px;
+            max-width: 140px;
+        }
+
+        .tc-stat-number {
+            font-size: 28px;
+        }
+    }
+</style>
+
+<!-- HERO SECTION -->
+<section id="tc-hero">
+    <h1>Pony Parties</h1>
+    <p>Real horses. Real smiles. Real memories.</p>
+    <button class="tc-cta-button">Check Availability</button>
+</section>
+
+<!-- STATS SECTION -->
+<section id="tc-stats-container">
+    <div class="tc-stat">
+        <div class="tc-stat-number">500+</div>
+        <div class="tc-stat-label">Happy Kids</div>
+    </div>
+    <div class="tc-stat">
+        <div class="tc-stat-number">12</div>
+        <div class="tc-stat-label">Ponies & Horses</div>
+    </div>
+    <div class="tc-stat">
+        <div class="tc-stat-number">15+</div>
+        <div class="tc-stat-label">Years Experience</div>
+    </div>
+    <div class="tc-stat">
+        <div class="tc-stat-number">100%</div>
+        <div class="tc-stat-label">Indigenous Owned</div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS SECTION -->
+<section id="tc-how-it-works">
+    <h2>How It Works</h2>
+    <div class="tc-steps-container">
+        <div class="tc-step">
+            <div class="tc-step-number">1</div>
+            <h3>Contact Us</h3>
+            <p>Reach out to check availability for your date and location.</p>
+        </div>
+        <div class="tc-step">
+            <div class="tc-step-number">2</div>
+            <h3>Plan Details</h3>
+            <p>We'll work with you on group size, timing, and any special requests.</p>
+        </div>
+        <div class="tc-step">
+            <div class="tc-step-number">3</div>
+            <h3>Party Day</h3>
+            <p>Arrive and let the kids meet their new four-legged friends.</p>
+        </div>
+        <div class="tc-step">
+            <div class="tc-step-number">4</div>
+            <h3>Photos Instant</h3>
+            <p>Guests scan a QR code—photos delivered right away.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT'S INCLUDED SECTION -->
+<section id="tc-included">
+    <h2>What's Included</h2>
+    <div class="tc-cards-container">
+        <div class="tc-card">
+            <h3>Pony Rides</h3>
+            <p>Safe, supervised rides. Your choice of gentle pony or calm horse depending on age and comfort level.</p>
+        </div>
+        <div class="tc-card">
+            <h3>Photo Moments</h3>
+            <p>Professional-quality candid shots with your custom event overlay. QR code delivery—no chasing down photos later.</p>
+        </div>
+        <div class="tc-card">
+            <h3>Meet & Greet</h3>
+            <p>Kids learn about the ponies, ask questions, brush them, and get up close with these amazing animals.</p>
+        </div>
+        <div class="tc-card">
+            <h3>Safety First</h3>
+            <p>All equipment checked. Experienced handlers present. Age-appropriate supervision and instruction throughout.</p>
+        </div>
+        <div class="tc-card">
+            <h3>Flexible Timing</h3>
+            <p>We work around your schedule. Weekends, weekdays, mornings, afternoons—we're here to fit your event.</p>
+        </div>
+        <div class="tc-card">
+            <h3>Setup & Cleanup</h3>
+            <p>We handle it all. You focus on the party. We bring the horses, photos, and take everything back home.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHO IT'S FOR SECTION -->
+<section id="tc-audience">
+    <h2>Perfect For</h2>
+    <div class="tc-chips-container">
+        <div class="tc-chip">Birthday Parties</div>
+        <div class="tc-chip">Family Events</div>
+        <div class="tc-chip">School Groups</div>
+        <div class="tc-chip">Corporate Events</div>
+        <div class="tc-chip">Community Fairs</div>
+        <div class="tc-chip">Reunions</div>
+        <div class="tc-chip">Horse-Loving Kids</div>
+        <div class="tc-chip">First-Time Riders</div>
+    </div>
+</section>
+
+<!-- DIFFERENTIATORS SECTION -->
+<section id="tc-differentiators">
+    <h2>Why Tribal Cowboy</h2>
+    <div class="tc-differentiators-container">
+        <div class="tc-differentiator">
+            <h3>Real Horses</h3>
+            <p>We own our animals. No rentals. These are our herd—they've got personality and they're healthy, well-trained, and loved.</p>
+        </div>
+        <div class="tc-differentiator">
+            <h3>Indigenous-Owned</h3>
+            <p>Stacie is Nisenan Maidu. Every dollar supports a Native-owned business right here in North Idaho.</p>
+        </div>
+        <div class="tc-differentiator">
+            <h3>Instant Photos</h3>
+            <p>Custom overlays, QR-code delivery, photos in hand same-day. No waiting, no hassle, no lost pics.</p>
+        </div>
+        <div class="tc-differentiator">
+            <h3>Clydesdale Wagons</h3>
+            <p>Heritage breed. 1,800 lbs of gentle giant. Wagon rides are an experience most kids never forget.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section id="tc-testimonials">
+    <h2>What Parents Say</h2>
+    <div class="tc-testimonials-container">
+        <div class="tc-testimonial">
+            <p>"My daughter still talks about Millie. She was so gentle with her, and the photos came in so fast. Best party decision we made."</p>
+            <div class="tc-testimonial-author">— Jennifer P., Coeur d'Alene</div>
+        </div>
+        <div class="tc-testimonial">
+            <p>"The kids absolutely loved it. Stacie made it safe, fun, and so personal. We're already planning next year's event."</p>
+            <div class="tc-testimonial-author">— Marcus T., Post Falls</div>
+        </div>
+        <div class="tc-testimonial">
+            <p>"We did this for a corporate team-building event. Everyone was laughing, relaxed, and genuinely surprised how much fun it was."</p>
+            <div class="tc-testimonial-author">— Lisa M., Spokane</div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section id="tc-pricing">
+    <h2>Pricing</h2>
+    <div class="tc-pricing-container">
+        <div class="tc-price-card">
+            <h3>Pony Party</h3>
+            <div class="tc-price">$250</div>
+            <div class="tc-price-details">Up to 10 kids<br>1 hour</div>
+            <ul class="tc-price-list">
+                <li>Pony rides</li>
+                <li>Photo session</li>
+                <li>Meet & greet</li>
+                <li>QR delivery</li>
+            </ul>
+            <button class="tc-cta-button">Book Now</button>
+        </div>
+        <div class="tc-price-card">
+            <h3>Family Event</h3>
+            <div class="tc-price">$400</div>
+            <div class="tc-price-details">Up to 20 people<br>1.5 hours</div>
+            <ul class="tc-price-list">
+                <li>Pony rides</li>
+                <li>Wagon ride</li>
+                <li>Photo session</li>
+                <li>QR delivery</li>
+            </ul>
+            <button class="tc-cta-button">Book Now</button>
+        </div>
+        <div class="tc-price-card">
+            <h3>Custom Event</h3>
+            <div class="tc-price">Varies</div>
+            <div class="tc-price-details">School groups<br>Corporate events</div>
+            <ul class="tc-price-list">
+                <li>Custom timing</li>
+                <li>Multiple horses</li>
+                <li>Full photo package</li>
+                <li>Education included</li>
+            </ul>
+            <button class="tc-cta-button">Get Quote</button>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section id="tc-faq-container">
+    <h2>Frequently Asked</h2>
+    <div class="tc-faq-list">
+        <button class="tc-faq-question" onclick="toggleAnswer(this)">
+            <span>What's the age range?</span>
+        </button>
+        <div class="tc-faq-answer">
+            <p>Kids as young as 3 can participate in our pony parties, though maturity and comfort with animals matter more than age. Toddlers love the meet-and-greet and wagon rides. Rides are best for kids 5+. We adjust activities to the group's age and comfort level.</p>
+        </div>
+
+        <button class="tc-faq-question" onclick="toggleAnswer(this)">
+            <span>Are the animals safe?</span>
+        </button>
+        <div class="tc-faq-answer">
+            <p>Yes. Our ponies and horses are hand-selected for gentleness and patience with kids. They're well-trained, healthy, and genuinely enjoy this work. All riding equipment is checked before every event, and experienced handlers supervise at all times.</p>
+        </div>
+
+        <button class="tc-faq-question" onclick="toggleAnswer(this)">
+            <span>What if my kid is scared of horses?</span>
+        </button>
+        <div class="tc-faq-answer">
+            <p>That's okay. We've worked with plenty of nervous kids. The meet-and-greet is low-pressure—brush them, talk to them, go at their pace. Riding is optional. Sometimes just being near a calm horse in a safe space changes minds. We never force anyone into anything.</p>
+        </div>
+
+        <button class="tc-faq-question" onclick="toggleAnswer(this)">
+            <span>Can we do this at our location?</span>
+        </button>
+        <div class="tc-faq-answer">
+            <p>Absolutely. We travel throughout North Idaho and Eastern Washington. Your home, a park, a fairground, a school—if there's enough space and safe ground, we can make it work. Transportation and setup are all included.</p>
+        </div>
+
+        <button class="tc-faq-question" onclick="toggleAnswer(this)">
+            <span>When can we book?</span>
+        </button>
+        <div class="tc-faq-answer">
+            <p>Availability varies by season. Spring through fall are peak months. Winter is possible but limited. Check www.tribalcowboy.com for dates, or email info@tribalcowboy.com to ask about your preferred date. We often book 4-6 weeks in advance, but we'll let you know.</p>
+        </div>
+
+        <button class="tc-faq-question" onclick="toggleAnswer(this)">
+            <span>What about photos?</span>
+        </button>
+        <div class="tc-faq-answer">
+            <p>We provide professional-quality candid photos during the event, edited with your custom overlay (event name, date, logo if you have one). Guests scan a QR code on the day of the party—photos download instantly. No chasing down photos later. You'll have them before the kids go to bed.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA SECTION -->
+<section id="tc-final-cta">
+    <h2>Ready for an Unforgettable Day?</h2>
+    <p>Let's bring the ponies to your party.</p>
+    <button class="tc-cta-button-light">Check Availability</button>
+</section>
