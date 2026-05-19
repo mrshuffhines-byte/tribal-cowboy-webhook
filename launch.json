@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Tribal Cowboy Webhook Server",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/Users/staciehuffhines/Documents/Tech & Apps/GitHub/tribal-cowboy-webhook/server.js"],
+      "port": 3000
+    }
+  ]
+}
