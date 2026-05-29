@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Tribal Cowboy Webhook Server",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["${workspaceFolder}/server.js"],
+      "port": 3000
+    }
+  ]
+}
