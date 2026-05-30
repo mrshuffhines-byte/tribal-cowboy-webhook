@@ -40,6 +40,32 @@ Comment 🐴 and I'll tell you where to find it.
 
 ---
 
+## Final Carousel Build (7 slides)
+
+Hybrid: 2 AI-designed watercolor bookend slides + your 5 real book photos.
+
+| # | Slide | Source |
+|---|-------|--------|
+| 1 | Title card — "I wrote a book / Pony, Pony, What Do You See?" | Canva (designed) |
+| 2 | Book cover | Your photo |
+| 3 | Brown horse spread | Your photo |
+| 4 | Big horse spread | Your photo |
+| 5 | Yellow horse spread | Your photo |
+| 6 | Spotted horse → zebra spread (the surprise) | Your photo |
+| 7 | Closing — "Part of the Pony Express Program" | Canva (designed) |
+
+### Slide 1 — Title card
+- Edit: https://www.canva.com/d/gbFjrJtOBJdfcj9
+- Alt versions (if you prefer a different look): https://www.canva.com/d/aSX_pBh8y15rCzV · https://www.canva.com/d/QzRheNqDPYZuaI8 · https://www.canva.com/d/jwfy8SHUfBcbvah
+
+### Slide 7 — Closing / Pony Express card
+- Edit: https://www.canva.com/d/mKg_5BKxhSsR6Qu
+- Alt versions: https://www.canva.com/d/aRkDWewuEw6qQPw · https://www.canva.com/d/mQl6NaGpFZUlyI6 · https://www.canva.com/d/SLfOdCcgQYSEL_s
+
+> **Confirm before posting:** the closing card says "one of four little books in the Pony Express Program." Tell me exactly how you want the Pony Express Program described (and whether/where folks can get the books) and I'll fix the wording + caption CTA.
+
+---
+
 ## Notes
 - **Photos provided are great as-is** — natural light, real hands holding the book, on the kitchen table. Keep that. Don't over-style it. Raw beats polished here.
 - **Slide order:** cover first → brown → big → yellow → spotted/zebra last (saves the surprise for the swipe).
