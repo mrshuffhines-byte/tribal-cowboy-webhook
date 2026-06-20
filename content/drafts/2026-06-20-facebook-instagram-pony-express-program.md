@@ -11,18 +11,18 @@
 
 ## Facebook Caption (primary)
 
-Teachers, principals, and educators — this one's for you.
+Teachers, principals, and educators, this one's for you.
 
-This is the cover of *Pony, Pony, What Do You See?* — one of four books in the Tribal Cowboy Pony Express program, written and illustrated for preschool through 2nd grade. Every class in the program gets the same book. What changes is the activities and demonstrations — we shape those to fit each grade level, so a preschooler and a 2nd grader both walk away with something that landed for them.
+This is the cover of *Pony, Pony, What Do You See?*, one of four books in the Tribal Cowboy Pony Express program, written and illustrated for preschool through 2nd grade. Every class in the program gets the same book. What changes is the activities and demonstrations. We shape those to fit each grade level, so a preschooler and a 2nd grader both walk away with something that landed for them.
 
 Here's the part that matters: it costs your school nothing. Not a dime.
 
-We run this entirely on our own as a small business, which also means we can only reach as many classrooms as we can afford to. That's where the rest of you come in. If you own a business — or you know someone who does — and you'd like to put a real pony book in the hands of a North Idaho classroom, you can sponsor the program and help us get to more kids.
+We run this entirely on our own as a small business, which also means we can only reach as many classrooms as we can afford to. That's where the rest of you come in. If you own a business, or you know someone who does, and you'd like to put a real pony book in the hands of a North Idaho classroom, you can sponsor the program and help us get to more kids.
 
 Educators: sign up at tribalcowboy.com/school-request-a-visit.
 Everyone else: share this with a business or a person who'd want to back it.
 
-— Stacie, Tribal Cowboy (Nisenan Maidu)
+Stacie, Tribal Cowboy (Nisenan Maidu)
 
 ---
 
@@ -30,11 +30,11 @@ Everyone else: share this with a business or a person who'd want to back it.
 
 Four books. One program. Zero cost to the school.
 
-This is *Pony, Pony, What Do You See?* — the first of four books in the Tribal Cowboy Pony Express program, made for preschool through 2nd grade. Every class gets the same book; the activities and demonstrations get tailored to each grade level so it fits the kids in front of us.
+This is *Pony, Pony, What Do You See?*, the first of four books in the Tribal Cowboy Pony Express program, made for preschool through 2nd grade. Every class gets the same book; the activities and demonstrations get tailored to each grade level so it fits the kids in front of us.
 
-We fund this ourselves, so how far it reaches comes down to what we can afford. Teachers and principals — sign up at the link in bio (tribalcowboy.com/school-request-a-visit). And if you own a business, or know someone who does, you can sponsor a classroom and help us reach more kids. Share this with someone who would.
+We fund this ourselves, so how far it reaches comes down to what we can afford. Teachers and principals, sign up at the link in bio (tribalcowboy.com/school-request-a-visit). And if you own a business, or know someone who does, you can sponsor a classroom and help us reach more kids. Share this with someone who would.
 
-— Stacie, Tribal Cowboy
+Stacie, Tribal Cowboy
 
 ---
 
