@@ -547,6 +547,7 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
   <div class="tab" onclick="go('agents',this)">Agent Hub</div>
   <div class="tab" onclick="go('brand',this)">Brand Hub</div>
   <div class="tab" onclick="go('voice',this)">Voice Leads</div>
+  <div class="tab" onclick="go('giveaway',this)">Giveaway</div>
   <div class="tab" onclick="go('heart',this)">Why I Do This</div>
 </div>
 
@@ -1574,6 +1575,32 @@ Nobody warned the <mark>[person/group]</mark> about <mark>[horse name]</mark>.</
     </div>
   </div>
 
+  <!-- GIVEAWAY TAB -->
+  <div id="p-giveaway" class="page">
+    <div class="greet">Giveaway entries collected through your entry page. Every entry is a lead: name, phone, and what they'd book. Share this link on the giveaway post and in your bio: <strong id="gw-link" style="user-select:all"></strong></div>
+    <div class="stats">
+      <div class="sc"><div class="sc-label">Total Entries</div><div class="sc-val" id="gw-total">0</div><div class="sc-delta neutral">All time</div></div>
+      <div class="sc"><div class="sc-label">Text Opt-Ins</div><div class="sc-val teal" id="gw-consent">0</div><div class="sc-delta neutral">Can receive offers</div></div>
+      <div class="sc"><div class="sc-label">Winners Drawn</div><div class="sc-val" id="gw-winners">0</div><div class="sc-delta neutral" id="gw-winner-name"></div></div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Draw &amp; Follow Up</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+        <button class="vi-btn mark-booked" style="padding:8px 14px;font-size:12px" onclick="drawGiveawayWinner()">Draw a Winner</button>
+      </div>
+      <div style="font-size:12px;color:var(--text-mid);margin-bottom:6px">Consolation offer text — goes to every opted-in entrant who didn't win and hasn't gotten one yet:</div>
+      <textarea id="gw-offer-msg" style="width:100%;min-height:70px;padding:10px;font-family:'Lato',sans-serif;font-size:13px;border:1.5px solid var(--border);border-radius:8px" placeholder="You didn't win this time, but thanks for entering. Here's $25 off any fall booking with Tribal Cowboy — mention this text when you book at www.tribalcowboy.com. Good through October."></textarea>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+        <button class="vi-btn mark-contacted" style="padding:8px 14px;font-size:12px" onclick="sendGiveawayOffer()">Send Offer to Non-Winners</button>
+        <span id="gw-action-status" style="font-size:12px;color:var(--text-mid)"></span>
+      </div>
+    </div>
+    <div class="section">
+      <div class="sec-title">Entries <span class="badge badge-teal">Leads</span></div>
+      <div id="gw-list"><div style="font-size:13px;color:var(--text-light);font-style:italic">No entries yet. Share the entry link on your giveaway post and they'll show up here.</div></div>
+    </div>
+  </div>
+
   <div id="p-heart" class="page">
     <div class="greet">"We bring horses to the people who need them most. Every child who touches a horse for the first time leaves a little different." &mdash; Stacie</div>
     <div class="section">
@@ -1831,8 +1858,10 @@ async function fetchFromWebhook(){
     renderInstagram();
     renderFacebook();
     if(data.voice_inquiries) voiceInquiries = data.voice_inquiries;
+    if(data.giveaway_entries) giveawayEntries = data.giveaway_entries;
     renderOverview();
     renderVoiceInquiries();
+    renderGiveaway();
     updateLastRefresh();
     const hasReal = igData.last_updated;
     document.getElementById('liveLabel').textContent = hasReal ? 'Live' : (savedIg ? 'Saved' : 'No Data Yet');
@@ -2277,6 +2306,63 @@ function getTimeAgo(dateStr){
   const days = Math.floor(hrs/24);
   if(days<7) return days+'d ago';
   return new Date(dateStr).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+}
+
+// ── GIVEAWAY ENTRIES ──────────────────────────────────────────────────
+let giveawayEntries = [];
+
+function renderGiveaway(){
+  const linkEl = document.getElementById('gw-link');
+  if(linkEl) linkEl.textContent = WEBHOOK_URL + '/giveaway';
+  const list = document.getElementById('gw-list');
+  if(!list) return;
+  document.getElementById('gw-total').textContent = giveawayEntries.length;
+  document.getElementById('gw-consent').textContent = giveawayEntries.filter(e=>e.sms_consent).length;
+  const winners = giveawayEntries.filter(e=>e.status==='Winner');
+  document.getElementById('gw-winners').textContent = winners.length;
+  document.getElementById('gw-winner-name').textContent = winners.length ? winners.map(w=>w.name).join(', ') : '';
+  if(!giveawayEntries.length){
+    list.innerHTML='<div style="font-size:13px;color:var(--text-light);font-style:italic">No entries yet. Share the entry link on your giveaway post and they\'ll show up here.</div>';
+    return;
+  }
+  list.innerHTML = giveawayEntries.map(e => {
+    const isWinner = e.status==='Winner';
+    return '<div class="vi-card '+(isWinner?'booked':'')+'"><div class="vi-header"><div class="vi-name">'+escHtml(e.name)+(isWinner?' &#127942;':'')+'</div><div style="display:flex;align-items:center;gap:8px"><span class="badge '+(isWinner?'badge-green':'badge-teal')+'">'+(isWinner?'Winner':'Entered')+'</span><span class="vi-time">'+getTimeAgo(e.entered_at)+'</span></div></div>'+
+      '<div class="vi-detail"><strong>Phone:</strong> '+escHtml(e.phone)+(e.sms_consent?' <span class="badge badge-teal" style="font-size:10px">Text OK</span>':'')+(e.offer_sent?' <span class="badge badge-amber" style="font-size:10px">Offer Sent</span>':'')+'</div>'+
+      (e.email?'<div class="vi-detail"><strong>Email:</strong> '+escHtml(e.email)+'</div>':'')+
+      '<div class="vi-detail"><strong>Would book:</strong> '+escHtml(e.interest)+'</div></div>';
+  }).join('');
+}
+
+async function drawGiveawayWinner(){
+  if(!confirm('Draw a random winner from all entries that haven\'t won yet?')) return;
+  const status = document.getElementById('gw-action-status');
+  try {
+    const r = await fetch(WEBHOOK_URL+'/giveaway/draw', {method:'POST'});
+    const data = await r.json();
+    if(!r.ok || !data.success) throw new Error(data.error||'Draw failed');
+    status.textContent = 'Winner: '+data.winner.name+' — '+data.winner.phone;
+    await fetchFromWebhook();
+  } catch(e){ status.textContent = e.message; }
+}
+
+async function sendGiveawayOffer(){
+  const msg = document.getElementById('gw-offer-msg').value.trim();
+  const status = document.getElementById('gw-action-status');
+  if(!msg){ status.textContent='Write the offer text first.'; return; }
+  const count = giveawayEntries.filter(e=>e.sms_consent && e.status!=='Winner' && !e.offer_sent).length;
+  if(!confirm('Send this text to '+count+' opted-in entrant'+(count===1?'':'s')+'? This can\'t be unsent.')) return;
+  status.textContent = 'Sending...';
+  try {
+    const r = await fetch(WEBHOOK_URL+'/giveaway/send-offer', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({message: msg})
+    });
+    const data = await r.json();
+    if(!r.ok || !data.success) throw new Error(data.error||'Send failed');
+    status.textContent = 'Sent to '+data.sent+(data.failed?' ('+data.failed+' failed)':'')+(data.note?' — '+data.note:'');
+    await fetchFromWebhook();
+  } catch(e){ status.textContent = e.message; }
 }
 
 function go(name,el){

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tribal Cowboy Giveaway</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1A2A44; --navy-deep:#12203A; --gold:#D9A441; --gold-deep:#B8862F;
+    --cream:#FAF6EE; --text:#2B2B28; --text-mid:#6B6B62; --border:#E4DFD3;
+    --red:#A5402D; --green:#3F7A4E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Lato',sans-serif;background:var(--navy);color:var(--text);min-height:100vh;
+    background-image:radial-gradient(ellipse at top,#24365577 0%,transparent 60%);
+    display:flex;align-items:flex-start;justify-content:center;padding:24px 16px 60px}
+  .card{background:var(--cream);border-radius:14px;max-width:480px;width:100%;overflow:hidden;
+    box-shadow:0 18px 50px rgba(0,0,0,0.45)}
+  .hero{background:var(--navy-deep);color:#fff;text-align:center;padding:28px 24px 22px;
+    border-bottom:4px solid var(--gold)}
+  .hero .brand{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;letter-spacing:0.06em;color:var(--gold)}
+  .hero .sub{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#C9CEDA;margin-top:5px}
+  .hero h1{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;margin-top:14px;line-height:1.3}
+  .body{padding:24px}
+  .intro{font-size:14px;line-height:1.55;color:var(--text-mid);margin-bottom:18px}
+  label{display:block;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--text);margin:14px 0 5px}
+  label .opt{font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-mid)}
+  input[type=text],input[type=tel],input[type=email],select{
+    width:100%;padding:11px 12px;font-family:'Lato',sans-serif;font-size:15px;
+    border:1.5px solid var(--border);border-radius:8px;background:#fff;color:var(--text)}
+  input:focus,select:focus{outline:none;border-color:var(--gold)}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:12.5px;
+    line-height:1.5;color:var(--text-mid)}
+  .consent input{margin-top:2px;width:16px;height:16px;accent-color:var(--gold-deep)}
+  .hp{position:absolute;left:-5000px;top:-5000px}
+  button{width:100%;margin-top:20px;padding:14px;font-family:'Lato',sans-serif;font-size:15px;
+    font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;background:var(--red);
+    border:none;border-radius:8px;cursor:pointer}
+  button:hover{background:#8E3524}
+  button:disabled{background:#B7A98F;cursor:default}
+  .fine{font-size:11px;color:var(--text-mid);line-height:1.5;margin-top:14px;text-align:center}
+  .msg{display:none;padding:14px;border-radius:8px;font-size:14px;line-height:1.5;margin-top:18px;text-align:center}
+  .msg.ok{display:block;background:#E9F2E7;color:var(--green);border:1px solid #BCD8B8}
+  .msg.err{display:block;background:#F7E8E4;color:var(--red);border:1px solid #E0BBB1}
+  .done h2{font-family:'Playfair Display',serif;font-size:22px;color:var(--green);margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="hero">
+    <div class="brand">TRIBAL COWBOY</div>
+    <div class="sub">Indigenous Owned &middot; North Idaho</div>
+    <h1 id="hero-title">Enter the Giveaway</h1>
+  </div>
+  <div class="body">
+    <form id="entry-form">
+      <div class="intro">Takes about thirty seconds. One entry per person here, and the bonus entries on our post still count.</div>
+
+      <label for="f-name">Your Name</label>
+      <input type="text" id="f-name" name="name" required maxlength="80" autocomplete="name">
+
+      <label for="f-phone">Phone</label>
+      <input type="tel" id="f-phone" name="phone" required maxlength="20" autocomplete="tel" placeholder="(208) 555-1234">
+
+      <label for="f-email">Email <span class="opt">(optional)</span></label>
+      <input type="email" id="f-email" name="email" maxlength="120" autocomplete="email">
+
+      <label for="f-interest">What would you book with us?</label>
+      <select id="f-interest" name="interest">
+        <option>Pony party</option>
+        <option>Clydesdale wagon ride</option>
+        <option>Horse photo experience</option>
+        <option>Corporate or business event</option>
+        <option>School or community program</option>
+        <option selected>Just here for the giveaway</option>
+      </select>
+
+      <!-- honeypot: real people never see or fill this -->
+      <div class="hp" aria-hidden="true">
+        <label for="f-website">Website</label>
+        <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="f-consent" name="consent">
+        <label for="f-consent" style="margin:0;font-weight:400;text-transform:none;letter-spacing:0">
+          It's okay to text me about this giveaway and Tribal Cowboy offers. Message and data rates may apply. Reply STOP anytime to opt out.
+        </label>
+      </div>
+
+      <button type="submit" id="submit-btn">Enter the Giveaway</button>
+      <div class="msg" id="form-msg"></div>
+      <div class="fine">One winner drawn at random. No purchase necessary. This giveaway is not sponsored, endorsed, or administered by Instagram, Facebook, or Meta. Questions: info@tribalcowboy.com</div>
+    </form>
+    <div id="done" style="display:none" class="done">
+      <h2>You're in.</h2>
+      <div class="intro">Your entry is counted. Watch our Instagram and Facebook for the winner announcement. If you checked the text box, we'll confirm by text in a minute.</div>
+      <div class="fine">Want extra entries? Head back to the giveaway post: tag the person you'd bring (each tag in its own comment counts) and share it to your story.</div>
+    </div>
+  </div>
+</div>
+<script>
+document.getElementById('entry-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const msg = document.getElementById('form-msg');
+  msg.className = 'msg';
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  try {
+    const r = await fetch('/giveaway/enter', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        name: document.getElementById('f-name').value.trim(),
+        phone: document.getElementById('f-phone').value.trim(),
+        email: document.getElementById('f-email').value.trim(),
+        interest: document.getElementById('f-interest').value,
+        sms_consent: document.getElementById('f-consent').checked,
+        website: document.getElementById('f-website').value
+      })
+    });
+    const data = await r.json();
+    if (!r.ok || !data.success) throw new Error(data.error || 'Something went wrong');
+    document.getElementById('entry-form').style.display = 'none';
+    document.getElementById('done').style.display = 'block';
+    document.getElementById('hero-title').textContent = 'Entry Received';
+  } catch (err) {
+    msg.className = 'msg err';
+    msg.textContent = err.message;
+    btn.disabled = false;
+    btn.textContent = 'Enter the Giveaway';
+  }
+});
+</script>
+</body>
+</html>

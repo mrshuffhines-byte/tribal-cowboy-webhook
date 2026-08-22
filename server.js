@@ -138,7 +138,8 @@ const DEFAULT_DATA = {
     followers: 0, reach: 0, engagement: 0,
     posts: [], last_updated: null
   },
-  voice_inquiries: []
+  voice_inquiries: [],
+  giveaway_entries: []
 };
 
 function loadData() {
@@ -157,7 +158,7 @@ function loadData() {
 
 function saveData() {
   try {
-    fs.writeFileSync(DATA_FILE, JSON.stringify({ instagram: igData, facebook: fbData, voice_inquiries: voiceInquiries }, null, 2));
+    fs.writeFileSync(DATA_FILE, JSON.stringify({ instagram: igData, facebook: fbData, voice_inquiries: voiceInquiries, giveaway_entries: giveawayEntries }, null, 2));
   } catch (err) {
     console.error('Could not write data.json:', err.message);
   }
@@ -167,6 +168,7 @@ const saved = loadData();
 let igData = saved.instagram;
 let fbData = saved.facebook;
 let voiceInquiries = saved.voice_inquiries || [];
+let giveawayEntries = saved.giveaway_entries || [];
 
 console.log(`Stats loaded â IG followers: ${igData.followers} | FB followers: ${fbData.followers} | Voice inquiries: ${voiceInquiries.length}`);
 
@@ -380,6 +382,7 @@ app.get('/data', (req, res) => {
     instagram: igData,
     facebook: fbData,
     voice_inquiries: voiceInquiries,
+    giveaway_entries: giveawayEntries,
     server_time: new Date().toISOString()
   });
 });
@@ -594,6 +597,108 @@ app.post('/send-booking-link', async (req, res) => {
 });
 
 // ââ HEALTH CHECK ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── GIVEAWAY: PUBLIC ENTRY PAGE ───────────────────────────────────────────
+// Link this from the giveaway post / link in bio. Entries become leads.
+app.get('/giveaway', (req, res) => {
+  res.sendFile(path.join(__dirname, 'giveaway.html'));
+});
+
+// ── GIVEAWAY: RECEIVE AN ENTRY ────────────────────────────────────────────
+// POST /giveaway/enter { name, phone, email, interest, sms_consent, website }
+// "website" is a honeypot field — real people never fill it.
+app.post('/giveaway/enter', async (req, res) => {
+  const { name, phone, email, interest, sms_consent, website } = req.body;
+
+  // Honeypot filled → bot. Pretend success so it doesn't retry.
+  if (website) return res.json({ success: true });
+
+  if (!name || !String(name).trim()) return res.status(400).json({ error: 'Please enter your name' });
+  const cleanPhone = String(phone || '').replace(/[^0-9]/g, '');
+  if (cleanPhone.length < 10) return res.status(400).json({ error: 'Please enter a valid phone number' });
+
+  const duplicate = giveawayEntries.find(e => e.phone_digits === cleanPhone);
+  if (duplicate) return res.status(400).json({ error: "You're already entered! One entry per person here — tag friends on the post for extras." });
+
+  const entry = {
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+    name: String(name).trim().slice(0, 80),
+    phone: String(phone).trim().slice(0, 20),
+    phone_digits: cleanPhone,
+    email: String(email || '').trim().slice(0, 120),
+    interest: String(interest || '').slice(0, 60),
+    sms_consent: !!sms_consent,
+    status: 'Entered',       // Entered | Winner
+    offer_sent: false,
+    entered_at: new Date().toISOString()
+  };
+  giveawayEntries.unshift(entry);
+  if (giveawayEntries.length > 500) giveawayEntries = giveawayEntries.slice(0, 500);
+  saveData();
+  console.log(`Giveaway entry: ${entry.name} — ${entry.interest}`);
+
+  if (entry.sms_consent) {
+    try {
+      await sendSMS(entry.phone,
+        `You're entered in the Tribal Cowboy giveaway, ${entry.name.split(' ')[0]}! ` +
+        `Winner announced on our Instagram and Facebook. Want extra entries? ` +
+        `Tag friends on the giveaway post — each tag in its own comment counts. Good luck!`);
+      entry.confirm_sms_sent = true;
+      saveData();
+    } catch (smsErr) {
+      console.error('Giveaway confirmation SMS failed:', smsErr.message);
+    }
+  }
+
+  res.json({ success: true });
+});
+
+// ── GIVEAWAY: LIST ENTRIES (dashboard) ────────────────────────────────────
+app.get('/giveaway-entries', (req, res) => {
+  res.json({ entries: giveawayEntries });
+});
+
+// ── GIVEAWAY: DRAW A WINNER ───────────────────────────────────────────────
+// Picks one random entry that hasn't already won and marks it Winner.
+// Does NOT text the winner automatically — announce it yourself first.
+app.post('/giveaway/draw', (req, res) => {
+  const pool = giveawayEntries.filter(e => e.status !== 'Winner');
+  if (!pool.length) return res.status(400).json({ error: 'No eligible entries to draw from' });
+  const winner = pool[Math.floor(Math.random() * pool.length)];
+  winner.status = 'Winner';
+  winner.won_at = new Date().toISOString();
+  saveData();
+  console.log(`Giveaway winner drawn: ${winner.name} (${winner.phone})`);
+  res.json({ success: true, winner });
+});
+
+// ── GIVEAWAY: TEXT AN OFFER TO NON-WINNERS ────────────────────────────────
+// POST /giveaway/send-offer { message }
+// Sends the message to every consented entrant who hasn't won and hasn't
+// already received an offer. This is the "everyone wins something" step.
+app.post('/giveaway/send-offer', async (req, res) => {
+  const { message } = req.body;
+  if (!message || !String(message).trim()) return res.status(400).json({ error: 'message required' });
+
+  const targets = giveawayEntries.filter(e => e.sms_consent && e.status !== 'Winner' && !e.offer_sent);
+  if (!targets.length) return res.json({ success: true, sent: 0, note: 'No one left to send to (needs consent, not a winner, not already sent)' });
+
+  let sent = 0, failed = 0;
+  for (const entry of targets) {
+    try {
+      await sendSMS(entry.phone, String(message));
+      entry.offer_sent = true;
+      entry.offer_sent_at = new Date().toISOString();
+      sent++;
+    } catch (smsErr) {
+      failed++;
+      console.error(`Offer SMS failed for ${entry.name}:`, smsErr.message);
+    }
+  }
+  saveData();
+  console.log(`Giveaway offer sent: ${sent} ok, ${failed} failed`);
+  res.json({ success: true, sent, failed });
+});
+
 app.get('/health', (req, res) => {
   res.json({
     status: 'Tribal Cowboy Webhook Server is running',
@@ -602,6 +707,7 @@ app.get('/health', (req, res) => {
     uptime: Math.floor(process.uptime()) + ' seconds',
     data_file: fs.existsSync(DATA_FILE) ? 'data.json persisted' : 'data.json not yet written',
     voice_inquiries: voiceInquiries.length,
+    giveaway_entries: giveawayEntries.length,
     meta_configured: !!(process.env.META_ACCESS_TOKEN && process.env.IG_USER_ID && process.env.FB_PAGE_ID),
     acuity_configured: !!(process.env.ACUITY_USER_ID && process.env.ACUITY_API_KEY),
     twilio_configured: !!(process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN && process.env.TWILIO_PHONE_NUMBER)
