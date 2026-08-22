@@ -1,7 +1,7 @@
-# Instagram — Lee Brice Ticket Giveaway
+# Instagram — Lee Brice Ticket Giveaway (v2: tag 3 + bonus-entry form)
 
-**Post date:** Friday, Aug 21, 2026, between 6–8pm (weekend fair traffic starts scrolling)
-**Format:** Feed post with the giveaway graphic. Also share it to stories immediately with a "tap to enter" sticker pointing at the post.
+**Post date:** ASAP — merge the website PR first so tribalcowboy.com/giveaway is live
+**Format:** Feed post with the giveaway graphic. Put tribalcowboy.com/giveaway in your bio link, then share the post to stories with a "5 bonus entries at the link" sticker.
 
 ---
 
@@ -16,12 +16,12 @@ Win 2 tickets to Lee Brice at the North Idaho State Fair, Monday, Aug 24 in Coeu
 To enter:
 1. Follow @TribalCowboy
 2. Like this post
-3. Tag the person you'd take. Each tag in its own comment is an extra entry, so tag as many people as you want.
+3. Tag 3 people you'd want there. Put each tag in its own comment, and every extra tag after that is another entry.
 4. Share this post to your story and tag @TribalCowboy
 
-Keep your account public so we can see your story share.
+Want 5 bonus entries? Fill out the quick form at tribalcowboy.com/giveaway (link in bio). Takes thirty seconds and puts you first in line for fall booking offers.
 
-Bonus entry: tag a local business on our sponsor post. Every business that partners with us helps bring no-cost horsemanship and culture programs to local schools and community groups.
+Keep your account public so we can see your story share.
 
 Winner drawn Sunday, Aug 23 at 7pm. We'll announce it in stories and DM the winner from this account only. We will never ask for payment or card info to claim tickets.
 
@@ -33,14 +33,9 @@ This giveaway is not sponsored, endorsed, or administered by Instagram or Meta.
 
 ---
 
-## Why it's built this way (algorithm notes)
+## Why it's built this way
 
-- **First line is the hook.** "They're not for us" earns the tap on "more."
-- **Tags = comments = reach.** "Each tag in its own comment is an extra entry" is the single biggest multiplier. One person tagging 5 friends in 5 comments looks like a conversation to the algorithm.
-- **Story shares are the #1 ranking signal on IG right now.** The story-share entry step feeds it directly.
-- **Saves matter too.** People save giveaway posts to come back and enter, which also boosts ranking.
-- **Follow-up moves (do these, they matter):**
-  - Reply to every comment for the first hour. Comment replies double the comment count and keep the post "active."
-  - Post a story Saturday and Sunday morning re-pointing at the post ("last day to enter").
-  - Announce the winner in a story AND a feed post Sunday night. The winner announcement post is a second reach event, tag the winner.
-- Adjust the 7pm Sunday draw time if you want more runway, but keep it Sunday so the winner can plan for Monday's show.
+- **"Tag 3" beats "tag someone."** A floor of 3 tags in separate comments means the average entrant produces 3+ comments instead of 1. Comments are the ranking signal.
+- **The form is the email list.** Every bonus-entry form submission lands in Formspree tagged GIVEAWAY ENTRY with name, email, and social handle. Export as CSV after the giveaway — that's your list.
+- **The handle field matters.** It lets you match form entries to post entries and verify the winner actually did the steps.
+- **Follow-up moves:** reply to comments in the first hour, re-point stories at the post Saturday and Sunday, winner announcement as its own post Sunday night with the winner tagged.
