@@ -18,8 +18,8 @@ Every fill-in spot is in **[ brackets ]**. The deck covers all five of Ruth's pr
 
 | Slide | Covers |
 |---|---|
-| 2 | Both sessions at a glance — lesson, reader, horse, date (Session 1 = Word Racer, pre-filled) |
-| 3 & 5 | What happened in each session + a photo (slide 3 has the Word Racer setup and Magic E concept filled in — adjust to match how your session actually went) |
+| 2 | Both sessions at a glance — done: Session 1 = Word Racer, Session 2 = Ride to Build a Word, both with Charlie (6) and Monster on Aug 23 |
+| 3 & 5 | What happened in each session + a photo — both filled in with the activity write-ups; adjust to match how the sessions actually went |
 | 4 & 6 | Ah-ha moment · what you learned · the horse holding space / giving feedback |
 | 7 | Your one metaphor, described |
 | 8 | GLOW & GROW — you, the reader, the horse |
