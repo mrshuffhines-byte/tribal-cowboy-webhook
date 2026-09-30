@@ -35,7 +35,7 @@ def test_no_false_positive_on_leveraged():
     assert code == 0, out
 
 def test_curly_apostrophe_detected():
-    code, out, _ = run("We'd love to help with your party.")
+    code, out, _ = run("We’d love to help with your party.")
     assert code == 1 and "banned: we'd love to help" in out.lower()
 
 def test_suspect_without_horse_word_passes():
@@ -61,3 +61,15 @@ def test_missing_brand_file_exits_2():
     env["BRAND_MEMORY_PATH"] = "/nonexistent/path/to/brand-memory.md"
     code, out, err = run("Some text", env=env)
     assert code == 2 and out == "" and "Error parsing brand memory" in err
+
+def test_curly_double_quotes_in_brand_file_parse():
+    with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.md') as f:
+        f.write("## Banned Phrases — Complete List\n\n1. “Making memories”\n\n## Premium Vocabulary Bank\n")
+        temp_path = f.name
+    try:
+        env = os.environ.copy()
+        env["BRAND_MEMORY_PATH"] = temp_path
+        code, out, _ = run("Making memories with Millie.", env=env)
+        assert code == 1 and "banned: making memories" in out.lower()
+    finally:
+        Path(temp_path).unlink()
