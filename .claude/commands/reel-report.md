@@ -10,7 +10,7 @@ Read only against Metricool. Proposes; never writes a rule without a yes.
 
 ## Steps
 
-1. **Pull Instagram reels.** Call `getAnalyticsDataByMetrics` with `brandId` "6106320", `from` = 30 days ago at 00:00:00-07:00, `to` = now, `metrics` = ["IGRE02","IGRE03","IGRE06","IGRE23","IGRE11","IGRE27","IGRE24","IGRE28","IGRE12","IGRE21","IGRE07","IGRE26"]. If `$ARGUMENTS` contains a number of days, use that window instead. If the result has no rows, say "Metricool has no reels in this window" and stop.
+1. **Pull Instagram reels.** Call `getAnalyticsDataByMetrics` with `brandId` "6106320", `from` = 30 days ago at 00:00:00-07:00, `to` = now, `metrics` = ["IGRE02","IGRE03","IGRE06","IGRE23","IGRE11","IGRE27","IGRE24","IGRE28","IGRE12","IGRE21","IGRE07","IGRE26"]. IGRE02 arrives as a 14 digit string like `20260923223140` (YYYYMMDDHHMMSS, UTC). Convert every timestamp to America/Los_Angeles before you show a date or read a posting hour: subtract 7 hours from the second Sunday in March to the first Sunday in November, 8 hours otherwise. If `$ARGUMENTS` contains a number of days, use that window instead. If the result has no rows, say "Metricool has no reels in this window" and stop.
 
 2. **Pull TikTok posts if present.** Call `getAnalyticsAvailableMetrics` with network tiktok, connector posts, and take the field ids for date, content, url, views, reach, average watch time, likes, comments, shares. Call `getAnalyticsDataByMetrics` with them. If it errors, note "TikTok analytics unavailable" and continue.
 
@@ -18,7 +18,7 @@ Read only against Metricool. Proposes; never writes a rule without a yes.
 
 4. **Show top and bottom.** A table of the top three and bottom three: date, first 60 characters of the caption, duration, views, 3 second hold percent, retention percent, saves, shares. Link each url.
 
-5. **Find patterns.** Read every caption's first line and each posting hour (IGRE02). Answer in plain sentences, one per line, only where the data supports it:
+5. **Find patterns.** Read every caption's first line and each posting hour (IGRE02, converted to Pacific as in step 1). Answer in plain sentences, one per line, only where the data supports it:
    - Which horse names appear in the top half more than the bottom half.
    - Whether reels under 30 s, 30 to 60 s, or over 60 s held better.
    - Which posting hours the top half used.
