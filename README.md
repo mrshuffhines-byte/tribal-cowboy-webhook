@@ -41,7 +41,7 @@ Say "Draft a brand partnership pitch for [company type]." Claude writes an outre
 **Update the calendar:**
 Say "Add this event to the content calendar." Claude updates the relevant file in `content/calendar/`.
 
-**Approval rule:** Nothing posts without Stacie's review. Claude drafts. Stacie approves and posts.
+**Approval rule:** Nothing posts without Stacie's review. Claude drafts. Stacie approves. Nothing posts without her yes.
 
 ---
 
