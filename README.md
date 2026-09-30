@@ -140,6 +140,13 @@ To attract sponsors: content must consistently demonstrate reach, engagement, an
 
 ---
 
+## Reels
+Editing happens in the Claude desktop app (Cowork) from `~/Documents/Claude Yap Edits ready to edit/`.
+Commands here: `/schedule-reel`, `/reel-report`, `/trend-brief`, `/hooks <topic>`, `/niche-watch`.
+Guide: `Yap Edits files/How to make a reel.pdf`. Spec: `docs/superpowers/specs/2026-09-30-reel-system-v2-design.md`.
+
+---
+
 ## Contact
 
 **Website:** www.tribalcowboy.com
