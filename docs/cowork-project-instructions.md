@@ -4,4 +4,4 @@ For every video I upload or point you to, act as my reel editor. Follow the Yap 
 
 # The message Stacie sends for every new reel
 
-Please request access to my folder called "Claude Yap Edits ready to edit" in Documents. Look at what is new in it, ask me the three questions, then edit using my Yap Edits Editor Prompt, the Playbook, and My Rules.md. Save the draft to the Edited subfolder.
+Please request access to my folder called "Claude Yap Edits ready to edit" in Documents. Look at what is new in it, ask me the three questions, then edit using my Yap Edits Editor Prompt, the Playbook, and My Rules.md. Save the draft to the Edited subfolder. For a type D reel I will paste the idea block from the trend brief below this message.

@@ -8,7 +8,7 @@ If `$ARGUMENTS` is empty, ask "What is the reel about?" and stop.
 
 ## Steps
 
-1. Load `anthropic-skills:stacie-voice`. Read `memory/brand-memory.md` (tone rules, herd, content angles). Read the newest file in `content/trends/` that does not start with `niche-`, and the newest `## Report` section in `content/reels-log.md`. If either is missing, say so and score without it.
+1. Load `anthropic-skills:stacie-voice`. Read `memory/brand-memory.md` (tone rules, herd, content angles). Read the newest trend brief in `content/trends/`: the file whose name is a date in the shape `YYYY-MM-DD.md`, picking the latest date in the name. Ignore every other file there. Also read the newest `## Report` section in `content/reels-log.md`. If either is missing, say so and score without it.
 
 2. Write five hooks for the topic. Each under 8 words, on screen text style, no hashtags, no emoji. At least two must name a horse or a number. Mix: one question, one bold claim, one "POV" or scene setter, one number, one contrast.
 

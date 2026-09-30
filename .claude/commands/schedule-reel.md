@@ -23,9 +23,9 @@ Closes the loop from a finished Cowork render to a scheduled post.
 
 3. **Get a public URL.** Copy the file to `~/Library/CloudStorage/Dropbox-Mrs.huffhines/Tribal Cowboy Reels/` (create the folder if missing). Ask Stacie to right click it in Finder → Copy Dropbox Link and paste it. Set the `dl` query parameter to `1`, whether it follows `?` or `&`. If the link has no `dl` parameter, append `&dl=1`.
 
-4. **Pick the time.** If `$ARGUMENTS` has a date or time, use it. Otherwise call `getBestTimeToPostByNetwork` for instagram for the last 30 days and pick the highest value hour within the next 3 days that is at least 2 hours from now. Show the hour and the value. If the call returns no data, say so and ask Stacie for a time. Do not guess.
+4. **Pick the time.** If `$ARGUMENTS` has a date or time, use it. Otherwise call `getBestTimeToPostByNetwork` for instagram with brandId "6106320", timezone America/Los_Angeles, `fromDate` = now and `toDate` = now plus 3 days, both ISO 8601 with the Pacific offset. The result comes back by `dayOfWeek` and hour. Convert each dayOfWeek to the real date it falls on inside that window, confirming what 1 means against one known post from `getScheduledPosts` if any exists; if none exists, keep the raw number beside the date. Pick the highest value hour at least 2 hours from now. Show it as a full date, like `Sat Oct 3, 6 PM`, with `(dayOfWeek 6, unconfirmed)` appended when the mapping is unconfirmed. Show the value too. If the call returns no data, say so and ask Stacie for a time. Do not guess.
 
-5. **Show the plan and stop.** Print: file, type, caption, hashtags, networks, time, cover frame (`videoCoverMilliseconds` 1500). Ask: "Schedule this? yes / change something / draft only". Do nothing until the answer.
+5. **Show the plan and stop.** Print: file, type, caption, hashtags, networks, time, media URL (the Dropbox link after the dl fix), cover frame (`videoCoverMilliseconds` 1500). Ask: "Schedule this? yes / change something / draft only". Do nothing until the answer.
 
 6. **Schedule.** Call `createScheduledPost` with `blogId` "6106320", `date` in ISO 8601 with the Pacific offset, and `info`:
    - `date` and `publicationDate.dateTime` carry the same instant. Use offset `-07:00` from the second Sunday in March to the first Sunday in November (Pacific daylight time) and `-08:00` otherwise.

@@ -18,7 +18,7 @@ Sources fail independently. Skip a source that errors, say so in one line, keep 
 
 3. **Trending music.** Call Higgsfield `tiktok_accounts`. If none, print once: "Link TikTok in Higgsfield to get the trending chart: use tiktok_connect" and skip. If an active account exists, call `tiktok_music_trending` with its `connector_id`, `country_code` US, `date_range` 7DAY, `genre` COUNTRY, limit 10, then again with genre ALL. Keep the titles and listen links. When the chart is skipped, Audio for each idea is a sound named in step 1 if one fits, otherwise natural sound.
 
-4. **Best hours.** Call `getBestTimeToPostByNetwork` for instagram and tiktok, last 30 days, brandId 6106320, timezone America/Los_Angeles. Keep the top two hours per network. Metricool returns `dayOfWeek` as a number. Confirm what 1 means by comparing one known scheduled post from `getScheduledPosts` with its dayOfWeek before naming days. If nothing is scheduled to compare, print the raw number beside the day name in every Post at line and say in the header that the mapping is unconfirmed.
+4. **Best hours.** Call `getBestTimeToPostByNetwork` for instagram and tiktok, `fromDate` = now and `toDate` = now plus 7 days, both ISO 8601 with the Pacific offset, brandId 6106320, timezone America/Los_Angeles. Keep the top two hours per network. Metricool returns `dayOfWeek` as a number. Confirm what 1 means by comparing one known scheduled post from `getScheduledPosts` with its dayOfWeek before naming days. If nothing is scheduled to compare, print the raw number beside the day name in every Post at line and say in the header that the mapping is unconfirmed.
 
 5. **Write 3 to 5 ideas.** Each idea must map a format or sound from steps 1 to 3 onto something real at the ranch: a named horse, a real chore, a real event, a real place. Use `memory/brand-memory.md` for names and content angles. Format each idea exactly like this:
 
@@ -30,7 +30,7 @@ Sources fail independently. Skip a source that errors, say so in one line, keep 
    Shot: <camera position, which horse or place, what happens, how long to film>
    Audio: <track name and link, or "your voice", or "natural sound">
    Type: <A, B, C or D>  Length: <under 30 s / 30 to 60 s / 60 to 90 s>
-   Post at: <day and hour from step 4; add (dayOfWeek N) after the day when the mapping is unconfirmed>
+   Post at: <full date and hour from step 4, like Sat Oct 3, 6 PM; add (dayOfWeek N) after the day when the mapping is unconfirmed>
    ```
 
    Type letters: A is one clip of Stacie talking to camera. B is voice over: 3 to 10 clips plus a voice memo. C is a highlight cut: one existing clip over 60 seconds mined for short moments. D is a trend remix: footage filmed on purpose for this idea, edited to the trend's length and beats, audio added at posting. Footage filmed for a trend idea is D even when it runs on natural sound. Use C only when the idea is to mine a long clip Stacie already has.
