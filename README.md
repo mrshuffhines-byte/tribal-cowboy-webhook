@@ -8,7 +8,7 @@
 
 ## System Overview
 
-This is a multi-agent social media and monetization operating system for Tribal Cowboy LLC. It is not a post scheduler. It is not a content calendar app. It is a full content strategy, brand voice, funnel, and creator income infrastructure — managed through Claude Code with structured documents and draft files.
+This is a multi-agent social media and monetization operating system for Tribal Cowboy LLC. Scheduling runs through Metricool after Stacie says yes. It is not a content calendar app. It is a full content strategy, brand voice, funnel, and creator income infrastructure — managed through Claude Code with structured documents and draft files.
 
 The system serves four revenue streams in priority order:
 
@@ -41,7 +41,7 @@ Say "Draft a brand partnership pitch for [company type]." Claude writes an outre
 **Update the calendar:**
 Say "Add this event to the content calendar." Claude updates the relevant file in `content/calendar/`.
 
-**Approval rule:** Nothing posts without Stacie's review. Claude drafts. Stacie approves and posts.
+**Approval rule:** Nothing posts without Stacie's review. Claude drafts. Stacie approves. Nothing posts without her yes.
 
 ---
 
@@ -95,7 +95,7 @@ TribalCowboy-Social/
 ## Weekly Workflow (5-Step Summary)
 
 1. **Monday:** Review the week's content calendar. Ask Claude to draft any posts not yet written. Confirm which pillar each post serves.
-2. **Tuesday–Thursday:** Review drafts, approve or request revisions. Schedule approved posts in your platform of choice (Later, Meta Business Suite, TikTok native).
+2. **Tuesday–Thursday:** Review drafts, approve or request revisions. Schedule approved reels with /schedule-reel (Metricool); other posts in your platform of choice.
 3. **Wednesday:** Engage with comments and DMs. If an inquiry comes in, refer to the funnel strategy doc for lead nurture steps.
 4. **Friday:** Review what performed. Drop observations into `insights/` — no analytics tools required. Note: saves, shares, DMs are more valuable than likes.
 5. **Weekend (light):** Post one organic, low-effort piece — behind the scenes, animal moment, land/season shot. These often outperform planned content.
@@ -129,14 +129,29 @@ To attract sponsors: content must consistently demonstrate reach, engagement, an
 
 ## Key Rules
 
-1. **Approval first, always.** Claude drafts. Stacie posts. Nothing goes live without human review.
-2. **No auto-posting.** This system does not connect to any posting API. It is a drafting and strategy system.
+1. **Approval first, always.** Claude drafts. Stacie approves. Nothing posts without her yes in the same conversation.
+2. **Approval before posting.** Claude schedules through Metricool only after Stacie says yes in the same conversation; nothing publishes without that yes.
 3. **Premium positioning always.** Tribal Cowboy is not a cheap pony party vendor. Every word, every photo choice, every CTA reinforces that this is a premium, owner-operated, Indigenous-led brand.
 4. **Indigenous identity is not a marketing tactic.** It is part of who Stacie is. It is never used as a hook or an angle. It is present with dignity when relevant.
 5. **No urgency language.** Never "book before it's too late" or "limited spots remaining." If spots are actually limited, say that plainly: "We have two open weekends in May."
 6. **No AI-sounding language.** Review every draft before posting. Remove: "delve," "testament to," "seamlessly," "in conclusion," "it's worth noting," "unique experience," "making memories."
 7. **Pillar rotation matters.** Never post the same pillar back to back. Max one booking/promotional post per five posts.
 8. **Platform voice is different on each channel.** Do not copy-paste from Instagram to TikTok. See `voice-guide.md`.
+
+---
+
+## Reels
+Editing happens in the Claude desktop app (Cowork) from `~/Documents/Claude Yap Edits ready to edit/`.
+Commands here: `/schedule-reel`, `/reel-report`, `/trend-brief`, `/hooks <topic>`, `/niche-watch`.
+Guide: `Yap Edits files/How to make a reel.pdf`. Spec: `docs/superpowers/specs/2026-09-30-reel-system-v2-design.md`.
+
+Before your first reel:
+1. Replace the Editor Prompt copy in the Claude Project with the current `Yap_Edits_Editor_Prompt.docx` from the Yap Edits files folder, and paste the text from `docs/cowork-project-instructions.md` into the Project instructions.
+2. Run `/mcp` in Claude Code and confirm an Apify server is connected. Until it is, `/niche-watch` stops at step 2 and `/trend-brief` skips the hashtag scrape.
+3. Link TikTok inside Higgsfield if you want the trending music chart in `/trend-brief`.
+4. First `/schedule-reel` run: answer "draft only" and check the date shown at the gate against the Metricool planner.
+
+Type D: paste the idea block from the trend brief into the Cowork chat along with the message.
 
 ---
 
