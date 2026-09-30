@@ -16,10 +16,12 @@ If `$ARGUMENTS` is empty, ask "What is the reel about?" and stop.
    - Report match: uses a pattern the report said held (horse name first, question vs statement, length).
    - Trend match: fits a format in the latest trend brief.
    - Specific: names a horse, number, place, or moment.
-   - Short: 5 = under 6 words, 3 = 6 to 8, 1 = over 8.
+   - Short: 5 = 5 words or fewer, 3 = 6 to 7 words, 1 = 8 or more (a hook of 8 or more words breaks the step 2 limit and must be rewritten).
 
-4. Run `python3 scripts/check_voice.py` on all five. Rewrite any flagged hook before scoring it.
+   With no report section in `content/reels-log.md`, give every hook 3 for report match and say in the output that the score carries no report signal. Do the same for trend match when there is no trend brief.
 
-5. Show a table: hook, four scores, total. Recommend the top two and say in one line each why. Ask: "Save these two to content/hooks.md? yes / no".
+4. Write the five hooks one per line to a scratch file and run `python3 scripts/check_voice.py <file>`. Exit 0 means clean. Exit 1 lists problems: rewrite the flagged hooks, recheck the step 2 rules (word limit, mix, horse or number), and run the checker again until it exits 0. Exit 2 means the checker itself failed: say so, show what it printed, and stop without scoring.
 
-6. On yes, append: `- YYYY-MM-DD | <topic> | <hook> | score <n>/20` for each of the two.
+5. Show a table: hook, four scores, total. Recommend the top two. Break ties by the higher Specific score, then by fewer words. Say in one line each why. Ask: "Save these two to content/hooks.md? yes / no".
+
+6. On yes, append one line per recommended hook: `- YYYY-MM-DD | <topic> | <hook> | score <n>/20`, with today's date. On no, write nothing.

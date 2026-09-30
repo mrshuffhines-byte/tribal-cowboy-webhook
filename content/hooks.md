@@ -1,2 +1,4 @@
 # Hooks bank
-# date | topic | hook | score
+
+One line per saved hook, newest at the bottom:
+- YYYY-MM-DD | topic | hook | score n/20
