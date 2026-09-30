@@ -25,16 +25,16 @@ PAGES = [
         picture="review",
     ),
     dict(
-        num="5", title="Schedule", one="Open Claude Code in TribalCowboy Social and run one command.",
-        checklist=["Type /schedule-reel", "Paste the Dropbox link when asked", "Say yes to the plan"],
+        num="5", title="Schedule", one="Open Terminal, go to the TribalCowboy Social folder, type claude, then run one command.",
+        checklist=["Type /schedule-reel and press return", "Paste the Dropbox link when asked", "Say yes to the plan"],
         say="/schedule-reel",
         picture="schedule",
     ),
     dict(
         num="6", title="Weekly", one="Two commands on Monday. Ten minutes.",
-        checklist=["/reel-report shows what held attention", "/trend-brief gives you 3 to 5 things to film", "/hooks before a talking reel"],
-        say="/reel-report   then   /trend-brief",
-        picture="weekly",
+        checklist=["/reel-report shows what held attention", "/trend-brief gives you 3 to 5 things to film", "Send one command, wait for it to finish, then send the next"],
+        say="/reel-report<br>/trend-brief",
+        picture="terminal_weekly",
     ),
 ]
 LOOP = ["Film", "Drop", "Ask and edit", "Review", "Schedule", "Report", "Next idea"]

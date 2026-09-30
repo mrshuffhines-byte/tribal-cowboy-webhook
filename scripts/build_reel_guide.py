@@ -72,7 +72,7 @@ def pic_review():
         f'<text x="220" y="212" font-size="12" fill="{MUTED}">paste the rule into My Rules.md</text>')
 
 def pic_schedule():
-    return svg(window(30, 15, 460, 270, "Terminal · Claude Code · TribalCowboy Social") +
+    return svg(window(30, 15, 460, 255, "Terminal · Claude Code · TribalCowboy Social") +
         f'<text x="55" y="60" font-size="12" fill="{TEAL}" font-family="Menlo, monospace">&gt; /schedule-reel</text>'
         f'<text x="55" y="88" font-size="11" fill="{TIMBER}">Picked Edited/2026-10-03-belle-at-22/render.mp4 (type A)</text>'
         f'<text x="55" y="108" font-size="11" fill="{TIMBER}">Caption: Belle had opinions about breakfast this morning...</text>'
@@ -80,7 +80,25 @@ def pic_schedule():
         f'<text x="55" y="156" font-size="11" fill="{TIMBER}">Best hour: Saturday 6 pm (Instagram)   Networks: IG, FB, TikTok</text>'
         f'<rect x="55" y="180" width="410" height="60" rx="8" fill="#FAF4EA" stroke="{GOLD}"/>'
         f'<text x="70" y="203" font-size="12" fill="{TIMBER}">Schedule this?  yes / change something / draft only</text>'
-        f'<text x="70" y="226" font-size="12" fill="{TEAL}" font-family="Menlo, monospace">&gt; yes</text>')
+        f'<text x="70" y="226" font-size="12" fill="{TEAL}" font-family="Menlo, monospace">&gt; yes</text>' +
+        f'<rect x="30" y="288" width="300" height="30" rx="6" fill="#E8F0FA" stroke="#B7C9E2"/>'
+        f'<text x="42" y="307" font-size="10.5" fill="{TIMBER}">Tribal Cowboy Reels › 2026-10-03-belle-at-22.mp4</text>'
+        f'<rect x="342" y="280" width="148" height="62" rx="6" fill="#FFFFFF" stroke="#CFC5B5"/>'
+        f'<text x="352" y="298" font-size="10" fill="{MUTED}">Open</text>'
+        f'<rect x="344" y="306" width="144" height="18" fill="{TEAL}"/><text x="352" y="319" font-size="10" fill="#fff">Copy Dropbox Link</text>'
+        f'<text x="352" y="336" font-size="10" fill="{MUTED}">Move to trash</text>', h=350)
+
+def pic_terminal_weekly():
+    mono = 'font-family="Menlo, monospace"'
+    return svg(window(30, 15, 460, 270, "Terminal · Claude Code · TribalCowboy Social") +
+        f'<text x="55" y="58" font-size="12" fill="{TEAL}" {mono}>&gt; /reel-report</text>'
+        f'<text x="55" y="80" font-size="10.5" fill="{TIMBER}">4 reels in 30 days. Top: Belle at 22 (45% held past 3 s)</text>'
+        f'<text x="55" y="98" font-size="10.5" fill="{TIMBER}">Pattern: reels that open with a horse&#39;s name held better</text>'
+        f'<text x="55" y="122" font-size="10.5" fill="{TIMBER}">PROPOSED: open with the horse&#39;s name in the first line.</text>'
+        f'<text x="55" y="138" font-size="10.5" fill="{TIMBER}">Add it? yes / no</text>'
+        f'<text x="55" y="188" font-size="12" fill="{TEAL}" {mono}>&gt; /trend-brief</text>'
+        f'<text x="55" y="210" font-size="10.5" fill="{TIMBER}">3 ideas saved to content/trends.</text>'
+        f'<text x="55" y="228" font-size="10.5" fill="{TIMBER}">Which one do you want to film first?</text>')
 
 def pic_weekly():
     cx, cy, r = 260, 150, 105
@@ -95,7 +113,7 @@ def pic_weekly():
         dots += f'<text x="{lx:.0f}" y="{ly+4:.0f}" font-size="12" text-anchor="{anchor}" fill="{TIMBER}">{label}</text>'
     return svg(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{LEATHER}" stroke-width="3" stroke-dasharray="6 6"/>' + dots)
 
-PICS = dict(film=pic_film, folder=pic_folder, claude=pic_claude, review=pic_review, schedule=pic_schedule, weekly=pic_weekly)
+PICS = dict(film=pic_film, folder=pic_folder, claude=pic_claude, review=pic_review, schedule=pic_schedule, weekly=pic_weekly, terminal_weekly=pic_terminal_weekly)
 
 # ---------- HTML ----------
 CSS = f"""
@@ -145,7 +163,7 @@ def map_html(logo):
 # This script measures in the browser instead and flags any page whose content reaches its footer.
 CHECK_JS = """<script>window.addEventListener('load',function(){var bad=0;
 document.querySelectorAll('.page').forEach(function(pg){var b=pg.querySelector('.body').getBoundingClientRect().bottom;
-var f=pg.querySelector('.footer').getBoundingClientRect().top;if(b>f-4){bad++;}});
+var f=pg.querySelector('.footer').getBoundingClientRect().top;if(b>f-12){bad++;}});
 document.body.setAttribute('data-overflow',String(bad));});</script>"""
 
 def build():
